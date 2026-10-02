@@ -1,0 +1,267 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-random-variables-mcq-01",
+      "topic": "random-variables",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề biến ngẫu nhiên?",
+        "en": "Which statement best describes random variables?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng xem biến ngẫu nhiên là ánh xạ từ kết quả sang số. Các lựa chọn sai đồng nhất nó với chuỗi tung thô, bắt nó phải liên tục, hoặc bắt nó có phân phối đều.",
+        "en": "The correct answer treats a random variable as a map from outcomes to numbers. The wrong choices identify it with the raw toss sequence, require it to be continuous, or force it to be uniform."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là mapping outcomes to numbers.",
+          "en": "The focus is mapping outcomes to numbers."
+        },
+        {
+          "vi": "Biến ngẫu nhiên số mặt ngửa chính là chuỗi HHT, không phải con số 2.",
+          "en": "The random variable 'number of heads' is the sequence HHT itself, not the number 2."
+        },
+        {
+          "vi": "Mọi biến ngẫu nhiên đều phải nhận mọi giá trị trong một khoảng.",
+          "en": "Every random variable must take every value in an interval."
+        },
+        {
+          "vi": "Nếu $X$ đếm số mặt ngửa thì các giá trị 0 đến 10 phải đồng xác suất.",
+          "en": "If $X$ counts heads, the values 0 through 10 must be equally likely."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-random-variables-truefalse-02",
+      "topic": "random-variables",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong biến ngẫu nhiên, công thức $X:S\\to\\mathbb R$ chỉ có ý nghĩa sau khi xác định đúng biến cố và giả định.",
+        "en": "In random variables, the formula $X:S\\to\\mathbb R$ is meaningful only after identifying the event and assumptions."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "A random variable is a numeric mapping; here the assumption is about what number the outcome becomes."
+      },
+      "answer": true,
+      "reasons": [
+        {
+          "vi": "Đúng: trước khi viết $P(X=1)$ phải biết $X$ mã hóa mặt ngửa là 1 hay một đại lượng khác.",
+          "en": "True: before writing $P(X=1)$, you must know whether $X$ encodes heads as 1 or some other quantity."
+        },
+        {
+          "vi": "Sai: cùng chuỗi tung đồng xu có thể được ánh xạ thành số mặt ngửa, số sấp, hoặc biến 0/1.",
+          "en": "False: the same coin-toss sequence can map to heads count, tails count, or a 0/1 indicator."
+        },
+        {
+          "vi": "Sai: biến ngẫu nhiên rời rạc không cần PDF; các xác suất khối vẫn không âm.",
+          "en": "False: a discrete random variable does not need a PDF; its probability masses are still nonnegative."
+        }
+      ],
+      "reasonAnswer": 0
+    },
+    {
+      "id": "c3w1-random-variables-construct-03",
+      "topic": "random-variables",
+      "type": "construct",
+      "difficulty": 2,
+      "tags": [
+        "construct"
+      ],
+      "hints": [
+        {
+          "vi": "Các xác suất phải không âm và cộng bằng 1 nếu là PMF.",
+          "en": "Probabilities must be non-negative and sum to 1 for a PMF."
+        }
+      ],
+      "prompt": {
+        "vi": "Tạo PMF trên {0,1,2} có $E[X]=1.5$.",
+        "en": "Build a PMF on {0,1,2} with $E[X]=1.5$."
+      },
+      "explanation": {
+        "vi": "Ví dụ thỏa ràng buộc; nhiều đáp án khác vẫn đúng.",
+        "en": "The probabilities on 0, 1, and 2 are nonnegative, sum to 1, and give the requested expectation."
+      },
+      "rows": 1,
+      "cols": 3,
+      "constraints": [
+        {
+          "kind": "expectation",
+          "values": [
+            0,
+            1,
+            2
+          ],
+          "value": 1.5
+        }
+      ],
+      "example": [
+        [
+          0.1,
+          0.3,
+          0.6
+        ]
+      ]
+    },
+    {
+      "id": "c3w1-random-variables-matching-04",
+      "topic": "random-variables",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong biến ngẫu nhiên.",
+        "en": "Match key terms in random variables."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches distinguish the outcome space, the numeric variable, its mass function, and later evidence."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3w1-random-variables-multistep-05",
+      "topic": "random-variables",
+      "type": "multi-step",
+      "difficulty": 3,
+      "tags": [
+        "word-problem"
+      ],
+      "hints": [
+        {
+          "vi": "Xác định mẫu số ở từng phần.",
+          "en": "Identify the denominator in each part."
+        }
+      ],
+      "prompt": {
+        "vi": "Bài nhiều bước kết nối biến ngẫu nhiên với ví dụ xúc xắc/email.",
+        "en": "Multi-step problem connecting random variables to a dice/email example."
+      },
+      "explanation": {
+        "vi": "Mỗi phần kiểm tra một quyết định mô hình hóa khác nhau.",
+        "en": "The parts move from dice outcomes to a numeric count, showing why the variable is not the raw outcome."
+      },
+      "parts": [
+        {
+          "type": "numeric",
+          "prompt": {
+            "vi": "Hai xúc xắc: xác suất tổng bằng 7 là bao nhiêu?",
+            "en": "Two dice: what is the probability the sum is 7?"
+          },
+          "answers": [
+            {
+              "value": 0.16666666666666666
+            }
+          ],
+          "tolerance": 0.001,
+          "explanation": {
+            "vi": "Có 6 kết quả trên 36.",
+            "en": "There are 6 outcomes out of 36."
+          }
+        },
+        {
+          "type": "true-false",
+          "prompt": {
+            "vi": "Biết xúc xắc đầu là 6 không đổi mẫu số.",
+            "en": "Knowing the first die is 6 does not change the denominator."
+          },
+          "answer": false,
+          "explanation": {
+            "vi": "Điều kiện làm mẫu số còn 6.",
+            "en": "The condition reduces the denominator to 6."
+          }
+        },
+        {
+          "type": "mcq",
+          "prompt": {
+            "vi": "Trong lọc spam, prior là gì?",
+            "en": "In spam filtering, what is the prior?"
+          },
+          "options": [
+            {
+              "vi": "Xác suất một email bất kỳ là spam trước khi biến từ thành đặc trưng.",
+              "en": "The chance a random email is spam before converting words into features."
+            },
+            {
+              "vi": "$P(word\\mid spam)$.",
+              "en": "$P(word\\mid spam)$."
+            },
+            {
+              "vi": "Kết quả phân loại sau khi các biến từ đã được quan sát.",
+              "en": "The classification result after the word variables have been observed."
+            }
+          ],
+          "answer": [
+            0
+          ],
+          "explanation": {
+            "vi": "Prior là xác suất trước bằng chứng.",
+            "en": "The prior is probability before evidence."
+          }
+        }
+      ]
+    }
+  ]
+}

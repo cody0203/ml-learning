@@ -1,0 +1,144 @@
+exercises:
+- id: c1w3-matvec-matrix-01
+  topic: matrix-vector
+  type: matrix
+  difficulty: 1
+  tags:
+  - matvec
+  prompt:
+    vi: Tính $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$.
+    en: Compute $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$.
+  explanation:
+    vi: Hai hàng dot với $x$ cho $(4,10)$.
+    en: Rows dotted with $x$ give $(4,10)$.
+  hints: []
+  answer:
+  - - 4
+  - - 10
+  tolerance: 0
+- id: c1w3-matvec-mcq-01
+  topic: matrix-vector
+  type: mcq
+  difficulty: 1
+  tags:
+  - shape
+  prompt:
+    vi: $A$ là $3\times2$. $x$ cần mấy thành phần để $Ax$ hợp lệo
+    en: $A$ is $3\times2$. How many entries must $x$ have for $Ax$ to be valido
+  explanation:
+    vi: 'Bằng số cột: 2.'
+    en: 'Equal to columns: 2.'
+  hints: []
+  options:
+  - vi: '2'
+    en: '2'
+  - vi: '3'
+    en: '3'
+  - vi: '5'
+    en: '5'
+  answer:
+  - 0
+- id: c1w3-matvec-parsons-01
+  topic: matrix-vector
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp cách tính $Ax$.
+    en: Order how to compute $Ax$.
+  explanation:
+    vi: Tính từng hàng dot vector.
+    en: Compute row-by-row dot products.
+  hints: []
+  steps:
+  - vi: Kiểm tra shape.
+    en: Check shapes.
+  - vi: Dot hàng 1 với $x$.
+    en: Dot row 1 with $x$.
+  - vi: Lặp cho mọi hàng.
+    en: Repeat for all rows.
+  - vi: Xếp kết quả thành vector.
+    en: Stack results into a vector.
+- id: c1w3-matvec-predict-01
+  topic: matrix-vector
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output NumPy của phép nhân ma trận với vector.
+    en: Predict the NumPy matrix-vector product output.
+  explanation:
+    vi: '`@` làm matrix-vector product.'
+    en: '`@` performs matrix-vector product.'
+  hints: []
+  code: 'import numpy as np
+
+    A=np.array([[1,2],[3,4]]); x=np.array([2,1])
+
+    print(A@x)'
+  options:
+  - '[ 4 10]'
+  - '[[4],[10]]'
+  - '[5 11]'
+  answer: 0
+- id: c1w3-matvec-parametric-01
+  topic: matrix-vector
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Tính matrix-vector product sinh ngẫu nhiên.
+    en: Compute generated matrix-vector product.
+  explanation:
+    vi: Generator tạo ma trận và vector.
+    en: Generator creates matrix and vector.
+  hints: []
+  generator: matrix-vector
+  params: {}
+- id: c1w3-matvec-multi-01
+  topic: matrix-vector
+  type: multi-step
+  difficulty: 2
+  tags:
+  - systems
+  prompt:
+    vi: Hệ $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$ viết thành $Ax=b$.
+    en: Write the system $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$ as $Ax=b$.
+  explanation:
+    vi: Mỗi phương trình là một hàng.
+    en: Each equation is a row.
+  hints: []
+  parts:
+  - type: matrix
+    prompt:
+      vi: Ma trận $A$o
+      en: Matrix $A$o
+    answer:
+    - - 1
+      - 1
+      - 1
+    - - 1
+      - 2
+      - 1
+    - - 1
+      - 1
+      - 2
+    tolerance: 0
+    explanation:
+      vi: Hệ số theo hàng.
+      en: Coefficients by row.
+  - type: matrix
+    prompt:
+      vi: Vector $b$o
+      en: Vector $b$o
+    answer:
+    - - 10
+    - - 15
+    - - 12
+    tolerance: 0
+    explanation:
+      vi: Vế phải là vector cột.
+      en: Right-hand side is column vector.

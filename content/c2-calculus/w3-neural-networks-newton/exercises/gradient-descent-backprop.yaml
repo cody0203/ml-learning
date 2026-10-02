@@ -1,0 +1,107 @@
+exercises:
+- id: c2w3-gradient-descent-backprop-matching-03
+  topic: gradient-descent-backprop
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong một bước gradient descent.
+    en: Match the symbols in one gradient-descent step.
+  explanation:
+    vi: Alpha là độ dài bước, gradient cho hướng dốc, còn bias là tham số cũng được update.
+    en: Alpha sets step length, the gradient gives slope direction, and the bias is also updated.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-gradient-descent-backprop-find-error-04
+  topic: gradient-descent-backprop
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi dấu trong update gradient descent.
+    en: Find the sign error in the gradient-descent update.
+  explanation:
+    vi: Bước 2 biến thuật toán thành đi lên dốc; để minimize phải dùng $\theta-\alpha g$.
+    en: Step 2 turns the method into uphill motion; minimizing requires $\theta-\alpha g$.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-gradient-descent-backprop-numeric-05
+  topic: gradient-descent-backprop
+  type: numeric
+  difficulty: 1
+  tags:
+  - gradient
+  prompt:
+    vi: Với $L(w)=\frac12(w-3)^2$, $w_0=0$, $\alpha=0.1$, tính $w_1$.
+    en: For $L(w)=\frac12(w-3)^2$, $w_0=0$, $\alpha=0.1$, compute $w_1$.
+  explanation:
+    vi: Gradient là $w-3=-3$, nên $w_1=0-0.1(-3)=0.3$.
+    en: The gradient is $w-3=-3$, so $w_1=0-0.1(-3)=0.3$.
+  hints: []
+  answers:
+  - value: 0.3
+  tolerance: 1.0e-06
+- id: c2w3-gradient-descent-backprop-parsons-06
+  topic: gradient-descent-backprop
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp vòng lặp training một batch.
+    en: Order the steps of one batch training loop.
+  explanation:
+    vi: Đây là chu trình forward-loss-backward-update.
+    en: This is the forward-loss-backward-update loop.
+  hints: []
+  steps:
+  - vi: Tính forward pass để có $\hat y$.
+    en: Compute the forward pass to get $\hat y$.
+  - vi: Tính loss từ $y$ và $\hat y$.
+    en: Compute loss from $y$ and $\hat y$.
+  - vi: Backprop để lấy gradients.
+    en: Backprop to obtain gradients.
+  - vi: Cập nhật tham số bằng gradient descent.
+    en: Update parameters by gradient descent.
+- id: c2w3-gradient-descent-backprop-parametric-07
+  topic: gradient-descent-backprop
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Một bước gradient descent sinh ngẫu nhiên.
+    en: Generated one-step gradient descent.
+  explanation:
+    vi: Generator thay prompt bằng một bài cụ thể.
+    en: The generator replaces the prompt with a concrete problem.
+  hints: []
+  generator: gradient-step
+  params: {}

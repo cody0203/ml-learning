@@ -1,0 +1,39 @@
+'id': 'w3'
+'order': 3
+'source': 'syllabus/c3-probability-statistics/W3.pdf'
+'title':
+  'vi': 'Tuần 3: Lấy mẫu và ước lượng điểm'
+  'en': 'Week 3: Sampling and point estimates'
+'topics':
+- 'id': 'population-sample'
+  'title':
+    'vi': 'Tổng thể, mẫu và lấy mẫu ngẫu nhiên'
+    'en': 'Population, samples, and random sampling'
+- 'id': 'sample-statistics'
+  'title':
+    'vi': 'Trung bình mẫu, tỉ lệ mẫu và phương sai mẫu'
+    'en': 'Sample mean, sample proportion, and sample variance'
+- 'id': 'lln'
+  'title':
+    'vi': 'Luật số lớn'
+    'en': 'Law of large numbers'
+- 'id': 'clt'
+  'title':
+    'vi': 'Định lý giới hạn trung tâm'
+    'en': 'Central limit theorem'
+- 'id': 'point-estimation'
+  'title':
+    'vi': 'Ước lượng điểm'
+    'en': 'Point estimation'
+- 'id': 'mle-bernoulli'
+  'title':
+    'vi': 'MLE cho Bernoulli'
+    'en': 'MLE for Bernoulli'
+- 'id': 'mle-gaussian-regression'
+  'title':
+    'vi': 'MLE cho Gaussian và hồi quy tuyến tính'
+    'en': 'MLE for Gaussian models and linear regression'
+- 'id': 'bayesian-regularization'
+  'title':
+    'vi': 'Bayes, MAP và regularization'
+    'en': 'Bayes, MAP, and regularization'

@@ -1,0 +1,166 @@
+exercises:
+- id: c3w2-marginal-conditional-mcq-01
+  topic: marginal-conditional
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về marginal-conditional.
+    en: Choose the best statement about marginal-conditional.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Marginals sum out the variable you ignore; conditionals divide a joint slice by its marginal total.
+  hints: []
+  options:
+  - vi: Phân phối biên cộng joint PMF qua biến bị bỏ qua.
+    en: A marginal distribution sums the joint PMF over the variable being ignored.
+  - vi: Conditional PMF được tạo bằng cách nhân một hàng với tổng hàng.
+    en: A conditional PMF is made by multiplying a row by its row total.
+  - vi: Nếu biết $X=9$, ta vẫn dùng toàn bộ bảng mà không chuẩn hóa.
+    en: Given $X=9$, you still use the whole table without renormalizing.
+  - vi: Marginal của $X$ luôn giống conditional của $Y|X$.
+    en: The marginal of $X$ is always identical to the conditional of $Y|X$.
+  answer:
+  - 0
+- id: c3w2-marginal-conditional-tf-02
+  topic: marginal-conditional
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: $P(Y=49|X=9)$ is found by dividing the joint cell by the row total for $X=9$.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the age-height slide normalizes the $X=9$ row, turning $3/10$ over $4/10$ into $3/4$.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Conditional dùng joint cell chia cho marginal của biến điều kiện.
+    en: A conditional uses the joint cell divided by the marginal of the conditioning variable.
+  - vi: Conditional luôn chia cho xác suất của biến được hỏi.
+    en: A conditional always divides by the probability of the variable being asked about.
+  - vi: Hàng điều kiện không cần chuẩn hóa lại.
+    en: The conditioned row does not need to be renormalized.
+  reasonAnswer: 0
+- id: c3w2-marginal-conditional-matching-03
+  topic: marginal-conditional
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho marginal-conditional.
+    en: Match concepts for marginal-conditional.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs connect row sums, column sums, and row normalization to marginal and conditional PMFs.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-marginal-conditional-parsons-04
+  topic: marginal-conditional
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho marginal-conditional.
+    en: Order the solution workflow for marginal-conditional.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: Compute the marginal denominator before forming a conditional probability; otherwise the slice is not normalized.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-marginal-conditional-numeric-05
+  topic: marginal-conditional
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: If P(X=9,Y=49)=0.3 and P(X=9)=0.4, compute P(Y=49|X=9).
+    en: If P(X=9,Y=49)=0.3 and P(X=9)=0.4, compute P(Y=49|X=9).
+  explanation:
+    vi: 'Divide joint by marginal: 0.3/0.4=0.75.'
+    en: 'Divide joint by marginal: 0.3/0.4=0.75.'
+  hints: []
+  answers:
+  - value: 0.75
+  tolerance: 0.001
+- id: c3w2-marginal-conditional-predict-06
+  topic: marginal-conditional
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output NumPy cho marginal-conditional.
+    en: Predict the NumPy output for marginal-conditional.
+  explanation:
+    vi: Theo dõi axis, ddof và phép chuẩn hóa.
+    en: Summing with `axis=1` adds each row of the joint table, giving the marginal over the row variable.
+  hints: []
+  code: 'import numpy as np
+
+    P=np.array([[.1,.2],[.3,.4]])
+
+    print(P.sum(axis=1))'
+  options:
+  - '[0.3 0.7]'
+  - '[0.4 0.6]'
+  - '1.0'
+  answer: 0
+- id: c3w2-marginal-conditional-code-07
+  topic: marginal-conditional
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài đặt `marginal_x` từ đầu; không dùng shortcut một dòng của thư viện.
+    en: Implement `marginal_x` from scratch; avoid one-line library shortcuts.
+  explanation:
+    vi: Lời giải duyệt dữ liệu rõ ràng và kiểm tra edge cases.
+    en: The function returns each row sum, exactly the operation needed for an $X$ marginal in a row-indexed joint table.
+  hints:
+  - vi: Viết công thức trước rồi chuyển thành vòng lặp/NumPy cơ bản.
+    en: Write the formula first, then turn it into loops/basic NumPy.
+  starter: "def marginal_x(P):\n    return None\n"
+  solution: "def marginal_x(P):\n    return [sum(row) for row in P]\n"
+  tests: "def test_rows():\n    assert marginal_x([[0.1,0.2],[0.3,0.4]]) == [0.30000000000000004,0.7]\n"

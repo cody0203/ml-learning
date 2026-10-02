@@ -1,0 +1,269 @@
+exercises:
+- id: c3w4-hypotheses-errors-mcq-05
+  topic: hypotheses-errors
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Trong coin-test $H_0:p=0.5$, phát biểu nào đúng?
+    en: In the coin test $H_0:p=0.5$, which statement is correct?
+  explanation:
+    vi: Null là mô hình fair coin; dữ liệu chỉ chống lại null nếu tail probability đủ nhỏ so với $\alpha$.
+    en: The null is the fair-coin model; data argue against it only when the tail probability is small enough relative to $\alpha$.
+  hints: []
+  options:
+  - vi: $H_0$ là coin công bằng; $H_1$ có thể là $p>0.5$.
+    en: $H_0$ is a fair coin; $H_1$ could be $p>0.5$.
+  - vi: $H_0$ phải luôn là điều ta muốn chứng minh.
+    en: $H_0$ must always be what we want to prove.
+  - vi: $\alpha$ là xác suất $H_0$ đúng.
+    en: $\alpha$ is the probability that $H_0$ is true.
+  answer:
+  - 0
+- id: c3w4-hypotheses-errors-tf-05
+  topic: hypotheses-errors
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Type I error trong spam filter là gắn spam cho email thật sự ham nếu $H_0$ là ham.
+    en: A Type I error in a spam filter is marking a truly ham email as spam if $H_0$ is ham.
+  explanation:
+    vi: Đúng. Type I error là reject null khi null đúng; ở đây reject ham nghĩa là gửi vào spam.
+    en: True. Type I error rejects the null when it is true; here rejecting ham means sending it to spam.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Null đúng nhưng bị reject là false positive.
+    en: A true null that gets rejected is a false positive.
+  - vi: Type I error là bỏ sót spam thật.
+    en: A Type I error is missing true spam.
+  reasonAnswer: 0
+- id: c3w4-hypotheses-errors-match-05
+  topic: hypotheses-errors
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép khái niệm kiểm định với ví dụ courtroom.
+    en: Match each testing concept with the courtroom analogy.
+  explanation:
+    vi: Trong ví dụ courtroom, presumption of innocence là $H_0$; kết án người vô tội là Type I error.
+    en: In the courtroom analogy, the presumption of innocence is $H_0$; convicting an innocent person is Type I error.
+  hints: []
+  pairs:
+  - left:
+      vi: $H_0$
+      en: $H_0$
+    right:
+      vi: bị cáo được giả định vô tội
+      en: defendant presumed innocent
+  - left:
+      vi: Type I error
+      en: Type I error
+    right:
+      vi: kết án người vô tội
+      en: convicting an innocent person
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-hypotheses-errors-parsons-05
+  topic: hypotheses-errors
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình đặt giả thuyết trước khi test.
+    en: Order the steps for defining hypotheses before a test.
+  explanation:
+    vi: Trước khi tính toán, cần xác định baseline, claim, loại lỗi quan trọng và mức $\alpha$ chấp nhận được.
+    en: Before computing, identify the baseline, the claim, the important error type, and the acceptable $\alpha$.
+  hints:
+  - vi: Alternative quyết định tail của p-value.
+    en: The alternative determines the p-value tail.
+  steps:
+  - vi: Chọn parameter cần kiểm định, ví dụ $p$ hoặc $\mu$.
+    en: Choose the parameter to test, such as $p$ or $\mu$.
+  - vi: Viết $H_0$ như baseline có dấu bằng.
+    en: Write $H_0$ as the baseline with equality.
+  - vi: Viết $H_1$ theo claim cần bằng chứng.
+    en: Write $H_1$ according to the claim needing evidence.
+  - vi: Chọn $\alpha$ dựa trên rủi ro Type I.
+    en: Choose $\alpha$ based on Type I error risk.
+- id: c3w4-hypotheses-errors-matching-02
+  topic: hypotheses-errors
+  type: matching
+  difficulty: 1
+  tags:
+  - errors
+  prompt:
+    vi: Ghép error type với mô tả.
+    en: Match each error type with its description.
+  explanation:
+    vi: Type I là false positive; Type II là false negative.
+    en: Type I is a false positive; Type II is a false negative.
+  hints: []
+  pairs:
+  - left:
+      vi: Type I error
+      en: Type I error
+    right:
+      vi: Reject true $H_0$
+      en: Reject true $H_0$
+  - left:
+      vi: Type II error
+      en: Type II error
+    right:
+      vi: Fail to reject false $H_0$
+      en: Fail to reject false $H_0$
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: Maximum Type I error probability
+      en: Maximum Type I error probability
+  - left:
+      vi: Power
+      en: Power
+    right:
+      vi: Probability of rejecting when alternative is true
+      en: Probability of rejecting when alternative is true
+- id: c3w4-hypotheses-errors-numeric-01
+  topic: hypotheses-errors
+  type: numeric
+  difficulty: 1
+  tags:
+  - binomial
+  - coin
+  prompt:
+    vi: 'Đồng xu công bằng, tung 10 lần. Tính $P(X\ge8)$ (gợi ý: $(45+10+1)/1024$).'
+    en: 'Fair coin, 10 tosses. Compute $P(X\ge8)$ (hint: $(45+10+1)/1024$).'
+  explanation:
+    vi: Có 45 cách ra 8 heads, 10 cách ra 9, 1 cách ra 10; chia $2^{10}$.
+    en: There are 45 ways for 8 heads, 10 for 9, 1 for 10; divide by $2^{10}$.
+  hints: []
+  answers:
+  - value: 0.0546875
+  tolerance: 1.0e-06
+- id: c3w4-hypotheses-errors-multi-01
+  topic: hypotheses-errors
+  type: multi-step
+  difficulty: 2
+  tags:
+  - full-test
+  - coin
+  prompt:
+    vi: Tung đồng xu 10 lần được 8 heads. Test $H_0:p=0.5$ vs $H_1:p>0.5$ ở $\alpha=0.05$; dùng p-value $0.0547$.
+    en: A coin is tossed 10 times and gives 8 heads. Test $H_0:p=0.5$ vs $H_1:p>0.5$ at $\alpha=0.05$; use p-value $0.0547$.
+  explanation:
+    vi: Vì p-value hơi lớn hơn 0.05, chưa reject; không kết luận coin fair, chỉ chưa đủ bằng chứng bias về heads.
+    en: Because the p-value is slightly above 0.05, do not reject; do not conclude the coin is fair, only insufficient evidence
+      of head bias.
+  hints: []
+  parts:
+  - type: mcq
+    prompt:
+      vi: Alternative là gì?
+      en: What is the alternative?
+    options:
+    - vi: $p>0.5$
+      en: $p>0.5$
+    - vi: $p<0.5$
+      en: $p<0.5$
+    - vi: $p=0.5$
+      en: $p=0.5$
+    answer:
+    - 0
+  - type: true-false
+    prompt:
+      vi: Reject $H_0$ ở $\alpha=0.05$.
+      en: Reject $H_0$ at $\alpha=0.05$.
+    answer: false
+  - type: mcq
+    prompt:
+      vi: Diễn giải đúng?
+      en: Correct interpretation?
+    options:
+    - vi: Chưa đủ bằng chứng coin biased về heads.
+      en: Not enough evidence that the coin is biased toward heads.
+    - vi: Đã chứng minh coin fair.
+      en: We proved the coin is fair.
+    - vi: p-value là xác suất coin fair.
+      en: The p-value is the probability the coin is fair.
+    answer:
+    - 0
+- id: c3w4-hypotheses-errors-find-error-01
+  topic: hypotheses-errors
+  type: find-error
+  difficulty: 2
+  tags:
+  - tail
+  - coin
+  prompt:
+    vi: Tìm lỗi đầu tiên.
+    en: Find the first error.
+  explanation:
+    vi: Với $H_1:p>0.5$, p-value phải là $P(X\ge8)$, không chỉ $P(X=8)$.
+    en: For $H_1:p>0.5$, the p-value is $P(X\ge8)$, not just $P(X=8)$.
+  hints: []
+  steps:
+  - vi: Đặt $H_0:p=0.5$, $H_1:p>0.5$.
+    en: Set $H_0:p=0.5$, $H_1:p>0.5$.
+  - vi: Quan sát $X=8$ heads trong 10 tosses.
+    en: Observe $X=8$ heads in 10 tosses.
+  - vi: p-value = $P(X=8)$ vì ta quan sát đúng 8.
+    en: p-value = $P(X=8)$ because exactly 8 was observed.
+  - vi: So sánh p-value với $\alpha$.
+    en: Compare p-value with $\alpha$.
+  answer: 2
+- id: c3w4-hypotheses-errors-construct-01
+  topic: hypotheses-errors
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  - probability
+  prompt:
+    vi: Tạo PMF trên {0,1,2} có kỳ vọng 1.5.
+    en: Construct a PMF on {0,1,2} with expectation 1.5.
+  explanation:
+    vi: Ví dụ $[0,0.5,0.5]$ có tổng 1 và expectation $0+0.5+1=1.5$.
+    en: Example $[0,0.5,0.5]$ sums to 1 and has expectation $0+0.5+1=1.5$.
+  hints: []
+  rows: 1
+  cols: 3
+  constraints:
+  - kind: probabilityVector
+  - kind: expectation
+    values:
+    - 0
+    - 1
+    - 2
+    value: 1.5
+  example:
+  - - 0
+    - 0.5
+    - 0.5
+- id: c3w4-hypotheses-errors-param-01
+  topic: hypotheses-errors
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - binomial
+  prompt:
+    vi: Generator xác suất nhị thức để liên hệ coin-test.
+    en: Binomial probability generator related to coin tests.
+  explanation:
+    vi: Generator tạo xác suất nhị thức mới.
+    en: The generator creates new binomial probabilities.
+  hints: []
+  generator: binomial-prob
+  params: {}

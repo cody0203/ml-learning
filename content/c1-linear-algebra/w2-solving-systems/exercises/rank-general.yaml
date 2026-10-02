@@ -1,0 +1,190 @@
+exercises:
+- id: c1w2-rank-general-mcq-01
+  topic: rank-general
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: "A $2\times5$ matrix has three columns that look independent by eye. What is the largest rank it can actually have?"
+    vi: "Một ma trận $2\\times5$ có ba cột nhìn có vẻ độc lập. Rank lớn nhất thật sự có thể là bao nhiêu?"
+  explanation:
+    en: "Rank is at most $\\min(m,n)$, so a $2\times5$ matrix cannot exceed rank 2. Five columns and ten entries do not create extra pivot rows; visual guesses about three columns must still respect the two-row cap."
+    vi: "Rank không vượt quá $\\min(m,n)$, nên ma trận $2\\times5$ không thể vượt rank 2. Năm cột và mười entry không tạo thêm hàng pivot; phỏng đoán ba cột độc lập vẫn bị giới hạn bởi hai hàng."
+  hints: []
+  options:
+  - en: 2, because each pivot needs its own row as well as its own column.
+    vi: 2, vì mỗi pivot cần một hàng riêng cũng như một cột riêng.
+  - en: 5, because there are five columns available.
+    vi: 5, vì có năm cột sẵn có.
+  - en: 3, because three columns looked independent at first glance.
+    vi: 3, vì ban đầu nhìn thấy ba cột có vẻ độc lập.
+  - en: 10, because the matrix has ten scalar entries.
+    vi: 10, vì ma trận có mười phần tử vô hướng.
+  answer:
+  - 0
+- id: c1w2-rank-general-truefalse-02
+  topic: rank-general
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Ma trận m by n không bao giờ có rank lớn hơn min(m,n).
+    en: An m by n matrix can never have rank larger than min(m,n).
+  explanation:
+    vi: Mỗi pivot cần một hàng và một cột riêng, vì vậy kích thước nhỏ hơn chặn số pivot.
+    en: Each pivot needs both a distinct row and a distinct column, so the smaller dimension caps the pivot count.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Số pivot không thể vượt số hàng hoặc số cột.
+    en: Pivots cannot outnumber rows or columns.
+  - vi: Một ma trận nhiều cột luôn có rank bằng số cột, dù có ít hàng hơn.
+    en: A matrix with many columns always has rank equal to its column count, even with fewer rows.
+  - vi: Rank có thể vượt cả số hàng lẫn số cột nếu các entry khác 0.
+    en: Rank can exceed both row and column counts when entries are non-zero.
+  reasonAnswer: 0
+- id: c1w2-rank-general-matching-03
+  topic: rank-general
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến hạng trong trường hợp tổng quát.
+    en: Match concepts related to rank in the general case.
+  explanation:
+    vi: Các cặp bao quát giới hạn chữ nhật, cột pivot, và biến tự do trong bối cảnh rank tổng quát.
+    en: The pairs cover rectangular limits, pivot columns, and free variables for the general rank setting.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-rank-general-numeric-04
+  topic: rank-general
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Rank tối đa của ma trận 4×3 là bao nhiêu?
+    en: What is the maximum rank of a 4×3 matrix?
+  explanation:
+    vi: $\min(4,3)=3$.
+    en: $\min(4,3)=3$.
+  hints: []
+  answers:
+  - value: 3
+- id: c1w2-rank-general-construct-05
+  topic: rank-general
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 3×2 rank 2.
+    en: Construct a 3×2 rank-2 matrix.
+  explanation:
+    vi: Ví dụ 2 by 3 có rank tối đa 2, và hai hàng không là bội của nhau, nên mẫu đạt rank 2.
+    en: The 2 by 3 example can have rank at most 2, and the two rows are not multiples, so the sample reaches rank 2.
+  hints: []
+  rows: 3
+  cols: 2
+  constraints:
+  - kind: rank
+    value: 2
+  - kind: integerEntries
+  example:
+  - - 1
+    - 0
+  - - 0
+    - 1
+  - - 1
+    - 1
+- id: c1w2-rank-general-parsons-06
+  topic: rank-general
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho hạng trong trường hợp tổng quát.
+    en: Order the workflow for rank in the general case.
+  explanation:
+    vi: Với ma trận chữ nhật, quy trình có thể bỏ qua cột, nhưng mỗi pivot được nhận vẫn tăng rank đúng một đơn vị.
+    en: For rectangular matrices, the ordered process may skip columns, but every accepted pivot still increases rank by exactly one.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-rank-general-finderror-07
+  topic: rank-general
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về hạng trong trường hợp tổng quát.
+    en: Find the first error in the argument about rank in the general case.
+  explanation:
+    vi: Trong trường hợp tổng quát, vị trí pivot mới quan trọng, không phải pivot có bằng 1 không. Lỗi đầu tiên là bác bỏ pivot 2.
+    en: In the general case, pivot positions matter, not whether the pivot is 1. The first bad step is rejecting the pivot value 2.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-rank-general-code-08
+  topic: rank-general
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt `rank_by_elimination` bằng NumPy cơ bản; không dùng `np.linalg.*` shortcuts.
+    en: Implement `rank_by_elimination` with basic NumPy; do not use `np.linalg.*` shortcuts.
+  explanation:
+    vi: Lời giải đếm pivot bằng cách quét cột và khử phía dưới, hoạt động cho ma trận chữ nhật mà không dựa vào matrix_rank.
+    en: The solution counts pivots by scanning columns and eliminating below them, which works for rectangular inputs without relying on matrix_rank.
+  hints: []
+  starter: "import numpy as np\n\ndef rank_by_elimination(A, tol=1e-9):\n    return 0\n"
+  solution: "import numpy as np\n\ndef rank_by_elimination(A, tol=1e-9):\n    M=np.array(A,dtype=float).copy(); m,n=M.shape; r=0\n    for c in range(n):\n        pivot=None\n        for i in range(r,m):\n            if abs(M[i,c])>tol: pivot=i; break\n        if pivot is None: continue\n        if pivot!=r: M[[r,pivot]]=M[[pivot,r]]\n        for i in range(r+1,m): M[i,c:]-=(M[i,c]/M[r,c])*M[r,c:]\n        r+=1\n        if r==m: break\n    return r\n"
+  tests: "import numpy as np\n\ndef test_rectangular():\n    assert rank_by_elimination(np.array([[1.,0.],[0.,1.],[1.,1.]])) == 2\n\ndef test_rank_one():\n    assert rank_by_elimination(np.array([[1.,2.,3.],[2.,4.,6.],[-1.,-2.,-3.]])) == 1\n\ndef test_zero():\n    assert rank_by_elimination(np.zeros((3,4))) == 0\n"

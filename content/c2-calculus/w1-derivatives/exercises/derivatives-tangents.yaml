@@ -1,0 +1,129 @@
+exercises:
+- id: c2w1-derivatives-tangents-mcq-01
+  topic: derivative-foundations
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm và tiếp tuyến'?
+    en: At $x=1$, the curve $y=x^2$ has slope $2$. Which statement correctly describes the tangent there?
+  explanation:
+    vi: 'Ý đúng: đạo hàm là độ dốc của đường tiếp tuyến tại điểm đang xét.'
+    en: 'Correct: a derivative is the slope of the tangent line at a point.'
+  hints: []
+  options:
+  - vi: đạo hàm là độ dốc của đường tiếp tuyến tại điểm đang xét
+    en: a derivative is the slope of the tangent line at a point
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The tangent line must pass through the origin because the derivative formula contains $x$.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The tangent slope is found by joining $(1,1)$ to a faraway point such as $(4,16)$.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Any line touching the drawing near $x=1$ has the same slope, even if it misses $(1,1)$.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - -2
+    - 6
+    functions:
+    - f: x^2
+      label: f(x)=x^2
+      color: '#2563eb'
+    points:
+    - at:
+      - 0
+      - 0
+      label: flat
+    xLabel: x
+    yLabel: y
+- id: c2w1-derivatives-tangents-truefalse-02
+  topic: derivative-foundations
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm và tiếp tuyến', công thức $y\approx f(a)+f'(a)(x-a)$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: The tangent approximation $y\approx f(a)+f'(a)(x-a)$ should use $f(a)$ and $f'(a)$ from the same base point.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: A tangent formula applies at one base point, so the chosen point and slope must match.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Tiếp tuyến tại $a$ phải dùng đúng $f(a)$ và đúng độ dốc $f'(a)$.
+    en: A tangent at $a$ must use the matching value $f(a)$ and slope $f'(a)$.
+  - vi: Có thể lấy độ dốc ở $a$ nhưng lấy điểm neo ở vị trí khác.
+    en: You may use the slope at $a$ but anchor the line at a different point.
+  - vi: Mọi dây cung gần đồ thị đều là tiếp tuyến.
+    en: Any secant drawn near the graph is a tangent line.
+  reasonAnswer: 0
+- id: c2w1-derivatives-tangents-matching-03
+  topic: derivative-foundations
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match each tangent-related function with its derivative.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The pairs distinguish the tangent point, tangent slope, and local linear formula instead of using a derivative table blindly.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$
+- id: c2w1-derivatives-tangents-predictoutput-04
+  topic: derivative-foundations
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output của NumPy.
+    en: Predict the NumPy output for tangent slopes of a parabola.
+  explanation:
+    vi: Gradient của $x^2$ tại các điểm là $2x$.
+    en: The NumPy result represents tangent slopes of $x^2$ at the listed x-values.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  code: 'import numpy as np
+
+    x = np.array([-1., 0., 2.])
+
+    print(2*x)'
+  options:
+  - '[-2.  0.  4.]'
+  - '[-1.  0.  2.]'
+  - '[1. 0. 4.]'
+  - shape error
+  answer: 0

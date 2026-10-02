@@ -1,0 +1,220 @@
+exercises:
+- id: c3w4-confidence-known-sigma-mcq-01
+  topic: confidence-known-sigma
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Khi biết $\sigma$ và muốn CI cho mean, phát biểu nào đúng?
+    en: When $\sigma$ is known and we want a CI for a mean, which statement is correct?
+  explanation:
+    vi: CI known-$\sigma$ dùng phân phối chuẩn của $\bar X$ và standard error $\sigma/\sqrt n$; nó không tự chứng minh claim.
+    en: A known-$\sigma$ CI uses the normal sampling distribution of $\bar X$ and standard error $\sigma/\sqrt n$; it does not prove a claim by itself.
+  hints: []
+  options:
+  - vi: Kết luận thống kê luôn phải gắn với giả định và độ bất định.
+    en: A statistical conclusion must be tied to assumptions and uncertainty.
+  - vi: Nếu một kết quả có công thức, nó luôn chứng minh được claim.
+    en: If a result has a formula, it always proves the claim.
+  - vi: Sample size không ảnh hưởng standard error.
+    en: Sample size does not affect standard error.
+  answer:
+  - 0
+- id: c3w4-confidence-known-sigma-tf-01
+  topic: confidence-known-sigma
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Nếu biết $\sigma$, thay $\sigma$ bằng $s$ luôn làm CI chính xác hơn.
+    en: If $\sigma$ is known, replacing $\sigma$ by $s$ always makes the CI more correct.
+  explanation:
+    vi: Sai. Khi population standard deviation đã biết, công thức z interval dùng chính $\sigma$; thay bằng $s$ đưa thêm nhiễu không cần thiết.
+    en: False. When the population standard deviation is known, the z interval uses $\sigma$ itself; substituting $s$ adds unnecessary sampling noise.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Khi biết độ lệch chuẩn tổng thể, công thức khoảng dùng $\sigma$ trực tiếp.
+    en: When the population standard deviation is known, the interval formula uses $\sigma$ directly.
+  - vi: Sample standard deviation luôn tốt hơn mọi thông tin về population.
+    en: The sample standard deviation is always better than any population information.
+  reasonAnswer: 0
+- id: c3w4-confidence-known-sigma-match-01
+  topic: confidence-known-sigma
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép thành phần của CI known-$\sigma$ với vai trò.
+    en: Match each known-$\sigma$ CI component with its role.
+  explanation:
+    vi: $\bar x$ là tâm khoảng, $z_{\alpha/2}$ đặt mức cover, còn $\sigma/\sqrt n$ đo độ dao động của mean mẫu.
+    en: $\bar x$ centers the interval, $z_{\alpha/2}$ sets the coverage level, and $\sigma/\sqrt n$ measures the sample mean's variability.
+  hints: []
+  pairs:
+  - left:
+      vi: $\bar x$
+      en: $\bar x$
+    right:
+      vi: tâm của khoảng
+      en: center of the interval
+  - left:
+      vi: $z_{\alpha/2}$
+      en: $z_{\alpha/2}$
+    right:
+      vi: critical value từ normal
+      en: normal critical value
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-confidence-known-sigma-parsons-01
+  topic: confidence-known-sigma
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp các bước tính CI mean khi biết $\sigma$.
+    en: Order the steps for computing a mean CI when $\sigma$ is known.
+  explanation:
+    vi: Bắt đầu từ $\bar x$ và confidence level, lấy z critical, tính SE và MOE, rồi cộng trừ quanh $\bar x$.
+    en: Start from $\bar x$ and the confidence level, get the z critical value, compute SE and MOE, then add and subtract around $\bar x$.
+  hints:
+  - vi: CI không cần alternative hypothesis.
+    en: A CI does not need an alternative hypothesis.
+  steps:
+  - vi: Tính sample mean $\bar x$ và ghi confidence level.
+    en: Compute the sample mean $\bar x$ and note the confidence level.
+  - vi: Lấy $z_{\alpha/2}$ từ phân phối chuẩn.
+    en: Get $z_{\alpha/2}$ from the standard normal distribution.
+  - vi: Tính $SE=\sigma/\sqrt n$ và $MOE=zSE$.
+    en: Compute $SE=\sigma/\sqrt n$ and $MOE=zSE$.
+  - vi: Báo cáo $\bar x-MOE$ đến $\bar x+MOE$.
+    en: Report $\bar x-MOE$ to $\bar x+MOE$.
+- id: c3w4-confidence-known-sigma-numeric-01
+  topic: confidence-known-sigma
+  type: numeric
+  difficulty: 1
+  tags:
+  - ci
+  - mean
+  prompt:
+    vi: Tính CI 95% khi $\bar x=170$, $\sigma=25$, $n=49$, dùng $z=1.96$. Nhập lower và upper.
+    en: Compute the 95% CI when $\bar x=170$, $\sigma=25$, $n=49$, use $z=1.96$. Enter lower and upper.
+  explanation:
+    vi: SE=$25/7$, MOE=$1.96\cdot25/7=7$. CI là $(163,177)$.
+    en: SE=$25/7$, MOE=$1.96\cdot25/7=7$. The CI is $(163,177)$.
+  hints: []
+  answers:
+  - label: lower
+    value: 163
+  - label: upper
+    value: 177
+  tolerance: 0.001
+- id: c3w4-confidence-known-sigma-figure-01
+  topic: confidence-known-sigma
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - confidence
+  prompt:
+    vi: Hình nào biểu diễn phần trung tâm 95% của phân phối chuẩn chuẩn hóa cho CI hai phía?
+    en: Which figure represents the central 95% of the standard normal for a two-sided CI?
+  explanation:
+    vi: Central 95% nằm giữa $-1.96$ và $1.96$; hai tail còn lại tổng $0.05$.
+    en: The central 95% lies between $-1.96$ and $1.96$; the two tails total $0.05$.
+  hints: []
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.3989*exp(-0.5*x^2)
+      label: N(0,1)
+      color: '#1f77b4'
+    areas:
+    - f: 0.3989*exp(-0.5*x^2)
+      from: -1.96
+      to: 1.96
+      color: '#93c5fd'
+    xLabel: z
+    yLabel: density
+  options:
+  - vi: Vùng tô giữa $-1.96$ và $1.96$
+    en: Shaded region between $-1.96$ and $1.96$
+  - vi: Chỉ tô đuôi phải sau $1.96$
+    en: Only the right tail beyond $1.96$
+  - vi: Tô toàn bộ bên trái 0
+    en: Everything left of 0 is shaded
+  answer:
+  - 0
+- id: c3w4-confidence-known-sigma-code-01
+  topic: confidence-known-sigma
+  type: code
+  difficulty: 2
+  tags:
+  - python
+  - ci
+  prompt:
+    vi: Hoàn thiện hàm trả về CI mean khi biết $\sigma$ (không dùng scipy).
+    en: Complete the function returning a mean CI with known $\sigma$ (do not use scipy).
+  explanation:
+    vi: Dùng $\bar x\pm z\sigma/\sqrt n$ và trả tuple `(lower, upper)`.
+    en: Use $\bar x\pm z\sigma/\sqrt n$ and return `(lower, upper)`.
+  hints: []
+  starter: "import math\n\ndef z_ci_mean(xbar, sigma, n, zcrit):\n    # return (lower, upper)\n    return None\n"
+  solution: "import math\n\ndef z_ci_mean(xbar, sigma, n, zcrit):\n    me = zcrit * sigma / math.sqrt(n)\n    return (xbar\
+    \ - me, xbar + me)\n"
+  tests: "def test_statistopia():\n    lo, hi = z_ci_mean(170, 25, 49, 1.96)\n    assert abs(lo-163) < 1e-9 and abs(hi-177)\
+    \ < 1e-9, 'CI should be (163,177)'\n\ndef test_smaller():\n    assert z_ci_mean(10, 4, 16, 2) == (8, 12)\n"
+- id: c3w4-confidence-known-sigma-predict-01
+  topic: confidence-known-sigma
+  type: predict-output
+  difficulty: 1
+  tags:
+  - python
+  prompt:
+    vi: Đoạn code in gì?
+    en: What does this code print?
+  explanation:
+    vi: Margin là $1.96\cdot25/7=7.0$, nên round ra `(163.0, 177.0)`.
+    en: The margin is $1.96\cdot25/7=7.0$, so rounding prints `(163.0, 177.0)`.
+  hints: []
+  code: 'import math
+
+    xbar, sigma, n, z = 170, 25, 49, 1.96
+
+    me = z * sigma / math.sqrt(n)
+
+    print((round(xbar-me, 1), round(xbar+me, 1)))'
+  options:
+  - (163.0, 177.0)
+  - (165.0, 175.0)
+  - (170.0, 177.0)
+  answer: 0
+- id: c3w4-confidence-known-sigma-param-01
+  topic: confidence-known-sigma
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - ci
+  prompt:
+    vi: Generator CI mean known sigma.
+    en: Generator CI mean known sigma.
+  explanation:
+    vi: Generator tạo bài tính CI khác nhau.
+    en: The generator creates varied CI calculations.
+  hints: []
+  generator: confidence-interval
+  params: {}

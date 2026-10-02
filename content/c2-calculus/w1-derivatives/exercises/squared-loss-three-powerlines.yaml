@@ -1,0 +1,80 @@
+exercises:
+- id: c2w1-squared-loss-three-powerlines-mcq-01
+  topic: optimization-losses
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tối ưu squared loss: ba đường điện''?'
+    en: 'For powerlines at $1$, $4$, and $10$, which statistic minimizes total squared distance?'
+  explanation:
+    vi: 'Ý đúng: tổng bình phương khoảng cách tới nhiều điểm được tối thiểu tại trung bình.'
+    en: 'Correct: the sum of squared distances to many points is minimized at their mean.'
+  hints: []
+  options:
+  - vi: tổng bình phương khoảng cách tới nhiều điểm được tối thiểu tại trung bình
+    en: the sum of squared distances to many points is minimized at their mean
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The minimum is the smallest position, because that makes one squared distance zero.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The minimum is the median only because there are three lines.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The minimum is found by multiplying all three positions.
+  answer:
+  - 0
+- id: c2w1-squared-loss-three-powerlines-truefalse-02
+  topic: optimization-losses
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tối ưu squared loss: ba đường điện'', công thức $J(x)=\sum_i(x-a_i)^2$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'Summing three squared distances and setting the derivative to zero gives the mean of the three locations.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: With three powerlines, setting the derivative to zero produces their average position.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Tổng bình phương khoảng cách được tối thiểu tại trung bình các vị trí.
+    en: The sum of squared distances is minimized at the mean of the positions.
+  - vi: Với ba vị trí, squared loss luôn chọn median.
+    en: With three positions, squared loss always chooses the median.
+  - vi: Nghiệm tối ưu là tích của các vị trí đường điện.
+    en: The optimum is the product of the powerline locations.
+  reasonAnswer: 0
+- id: c2w1-squared-loss-three-powerlines-parametric-03
+  topic: optimization-losses
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-squared-loss-three-powerlines-matrix-04
+  topic: optimization-losses
+  type: matrix
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Nhập vector cột gồm $f'(1)$ và $f'(2)$ cho $f(x)=x^2+1$.
+    en: Enter the column vector for two checks of the three-powerline gradient.
+  explanation:
+    vi: Vì $f'(x)=2x$, vector là $(2,4)^T$.
+    en: The vector answer summarizes two components of the three-powerline squared-loss derivative.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answer:
+  - - 2
+  - - 4

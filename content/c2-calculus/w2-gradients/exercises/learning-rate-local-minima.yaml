@@ -1,0 +1,188 @@
+exercises:
+- id: c2w2-learning-rate-local-minima-mcq-29
+  topic: learning-rate-local-minima
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Với $f(x)=x^2$, learning rate nào làm cập nhật đổi dấu và tăng độ lớn từ $x_0=1$?
+    en: For $f(x)=x^2$, which learning rate flips the sign and increases magnitude from $x_0=1$?
+  explanation:
+    vi: Cập nhật là $x_{k+1}=(1-2\alpha)x_k$. Khi $\alpha=1.1$, hệ số là $-1.2$, vừa đổi dấu vừa có trị tuyệt đối lớn hơn 1.
+    en: The update is $x_{k+1}=(1-2\alpha)x_k$. With $\alpha=1.1$, the factor is $-1.2$, which flips sign and has magnitude greater than 1.
+  hints: []
+  options:
+  - vi: $\alpha=1.1$
+    en: $\alpha=1.1$
+  - vi: $\alpha=0.1$
+    en: $\alpha=0.1$
+  - vi: $\alpha=0.25$
+    en: $\alpha=0.25$
+  - vi: $\alpha=0$
+    en: $\alpha=0$
+  answer:
+  - 0
+- id: c2w2-learning-rate-local-minima-truefalse-30
+  topic: learning-rate-local-minima
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Không có một learning rate cố định nào luôn tối ưu cho mọi hàm và mọi điểm bắt đầu.
+    en: There is no single fixed learning rate that is always best for every function and starting point.
+  explanation:
+    vi: Đúng. Slides nhấn mạnh rate quá nhỏ chậm, quá lớn hỗn loạn; độ cong và scale của từng bài quyết định lựa chọn tốt.
+    en: True. The slides emphasize that too small is slow and too large is chaotic; curvature and scale determine a good choice.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Rate tốt phụ thuộc vào hình dạng hàm và scale gradient.
+    en: A good rate depends on function shape and gradient scale.
+  - vi: Vì gradient descent không dùng learning rate.
+    en: Because gradient descent does not use a learning rate.
+  reasonAnswer: 0
+- id: c2w2-learning-rate-local-minima-matching-31
+  topic: learning-rate-local-minima
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép hiện tượng học với nguyên nhân thường gặp.
+    en: Match each training behavior to a common cause.
+  explanation:
+    vi: Hành vi của dãy lặp cho biết learning rate có đang quá nhỏ, quá lớn, hay bị ảnh hưởng bởi non-convexity.
+    en: The behavior of the iterates indicates whether the learning rate is too small, too large, or affected by non-convexity.
+  hints: []
+  pairs:
+  - left:
+      vi: Cost giảm rất chậm
+      en: Cost decreases very slowly
+    right:
+      vi: Learning rate thường quá nhỏ
+      en: Learning rate is often too small
+  - left:
+      vi: Dãy đổi dấu và xa dần đáy
+      en: Iterates flip sign and move away
+    right:
+      vi: Learning rate thường quá lớn
+      en: Learning rate is often too large
+  - left:
+      vi: Hai điểm khởi tạo hội tụ tới hai đáy khác nhau
+      en: Two starts converge to different valleys
+    right:
+      vi: Có cực tiểu cục bộ
+      en: Local minima are present
+- id: c2w2-learning-rate-local-minima-numeric-32
+  topic: learning-rate-local-minima
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Với $f(x)=x^2$, $x_0=1$, $\alpha=1.1$, tính $x_1$ và $x_2$.
+    en: For $f(x)=x^2$, $x_0=1$, $\alpha=1.1$, compute $x_1$ and $x_2$.
+  explanation:
+    vi: Hệ số cập nhật là $1-2(1.1)=-1.2$. Vì vậy $x_1=-1.2$ và $x_2=(-1.2)^2=1.44$ theo phép nhân hệ số.
+    en: The update factor is $1-2(1.1)=-1.2$. Thus $x_1=-1.2$ and $x_2=(-1.2)(-1.2)=1.44$.
+  hints: []
+  answers:
+  - label: x_1
+    value: -1.2
+  - label: x_2
+    value: 1.44
+- id: c2w2-learning-rate-local-minima-mcq-51
+  topic: learning-rate-local-minima
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - learning-rate
+  prompt:
+    vi: Hình minh họa $f(x)=x^2$. Với $x_0=2$, chọn learning rate nào có nguy cơ dao động mạnh nhất?
+    en: The figure shows $f(x)=x^2$. From $x_0=2$, which learning rate is most likely to oscillate strongly?
+  explanation:
+    vi: Với $x_{k+1}=(1-2\alpha)x_k$, $\alpha=1.2$ cho hệ số $-1.4$ nên phân kỳ.
+    en: With $x_{k+1}=(1-2\alpha)x_k$, $\alpha=1.2$ gives factor $-1.4$, so it diverges.
+  hints: []
+  figure:
+    xRange:
+    - -3
+    - 3
+    yRange:
+    - 0
+    - 9
+    functions:
+    - f: x^2
+      label: f(x)=x^2
+    points:
+    - at:
+      - 2
+      - 4
+      label: x0
+  options:
+  - vi: $\alpha=0.1$
+    en: $\alpha=0.1$
+  - vi: $\alpha=0.4$
+    en: $\alpha=0.4$
+  - vi: $\alpha=1.2$
+    en: $\alpha=1.2$
+  - vi: $\alpha=0.01$
+    en: $\alpha=0.01$
+  answer:
+  - 2
+- id: c2w2-learning-rate-local-minima-multistep-52
+  topic: learning-rate-local-minima
+  type: multi-step
+  difficulty: 2
+  tags:
+  - divergence
+  prompt:
+    vi: Với $f(x)=x^2$, $x_0=1$, $\alpha=1.1$.
+    en: For $f(x)=x^2$, $x_0=1$, $\alpha=1.1$.
+  explanation:
+    vi: Hệ số cập nhật là $1-2\alpha=-1.2$, trị tuyệt đối lớn hơn 1 nên phân kỳ.
+    en: The update factor is $1-2\alpha=-1.2$, whose magnitude exceeds 1, so it diverges.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $x_1=?$
+      en: $x_1=?$
+    answers:
+    - value: -1.2
+  - type: true-false
+    prompt:
+      vi: Dãy hội tụ về 0.
+      en: The sequence converges to 0.
+    answer: false
+- id: c2w2-learning-rate-local-minima-predictoutput-64
+  topic: learning-rate-local-minima
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Dự đoán số in ra khi $\alpha=1.1$ cho $f(x)=x^2$.
+    en: Predict the printed value when $\alpha=1.1$ for $f(x)=x^2$.
+  explanation:
+    vi: Code thực hiện $x=1-1.1\cdot2\cdot1=-1.2$ rồi làm tròn một chữ số, nên output là `-1.2`.
+    en: The code computes $x=1-1.1\cdot2\cdot1=-1.2$ and rounds to one decimal place, so the output is `-1.2`.
+  hints: []
+  code: 'x=1.0
+
+    alpha=1.1
+
+    x=x-alpha*2*x
+
+    print(round(x,1))
+
+    '
+  options:
+  - '-1.2'
+  - '0.0'
+  - '1.2'
+  - '2.2'
+  answer: 0

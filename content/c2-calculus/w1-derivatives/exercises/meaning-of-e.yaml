@@ -1,0 +1,97 @@
+exercises:
+- id: c2w1-meaning-of-e-mcq-01
+  topic: inverse-trig-exp-log
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Ý nghĩa của hằng số e'?
+    en: The slides compare 100%, 50% twice, and 33.3% three times interest. What is the limiting idea?
+  explanation:
+    vi: 'Ý đúng: $e$ là giới hạn của lãi kép liên tục.'
+    en: 'Correct: $e$ is the limit of continuously compounded growth.'
+  hints: []
+  options:
+  - vi: $e$ là giới hạn của lãi kép liên tục
+    en: $e$ is the limit of continuously compounded growth
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: More compounding makes the amount grow without bound after one year.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The limiting number is exactly $3$ because three compounding periods are shown.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Compounding frequency is unrelated to the natural base used later for $e^x$.
+  answer:
+  - 0
+- id: c2w1-meaning-of-e-truefalse-02
+  topic: inverse-trig-exp-log
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Ý nghĩa của hằng số e', công thức $e=\lim_{n\to\infty}(1+\frac1n)^n$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: The expression $(1+1/n)^n$ approaches $e$ as compounding is split into more and more periods.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The compounding formula approaches e only when the number of compounding periods grows.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Khi số lần ghép lãi tăng, $(1+1/n)^n$ tiến gần $e$.
+    en: As the number of compounding periods grows, $(1+1/n)^n$ approaches $e$.
+  - vi: Ba lần ghép lãi chứng minh giới hạn đúng bằng 3.
+    en: Three compounding periods prove that the limiting value is exactly 3.
+  - vi: Lãi kép không liên quan đến cơ số tự nhiên của hàm mũ.
+    en: Compounding has no connection to the natural exponential base.
+  reasonAnswer: 0
+- id: c2w1-meaning-of-e-finderror-03
+  topic: inverse-trig-exp-log
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên trong lời giải đạo hàm.
+    en: Find the first incorrect step in the compounding argument.
+  explanation:
+    vi: Bước sai bỏ sót đóng góp của quy tắc tích hoặc quy tắc dây chuyền.
+    en: The first error confuses repeated compounding with a derivative rule that is not being applied here.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Đặt $f(x)=x^2\sin x$.
+    en: Let $f(x)=x^2\sin x$.
+  - vi: Vì đây là tích, dùng $(gh)'=g'h+gh'$.
+    en: Because this is a product, use $(gh)'=g'h+gh'$.
+  - vi: Suy ra $f'(x)=2x\cos x$.
+    en: Therefore $f'(x)=2x\cos x$.
+  - vi: Kết luận tại $x=0$, $f'(0)=0$.
+    en: Conclude at $x=0$, $f'(0)=0$.
+  answer: 2
+- id: c2w1-meaning-of-e-finderror-04
+  topic: inverse-trig-exp-log
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên trong lời giải đạo hàm.
+    en: Find the first incorrect step in the finite-n approximation to e.
+  explanation:
+    vi: Bước sai bỏ sót đóng góp của quy tắc tích hoặc quy tắc dây chuyền.
+    en: The second error treats the limiting expression for e as if n were already infinite at a finite value.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Đặt $f(x)=x^2\sin x$.
+    en: Let $f(x)=x^2\sin x$.
+  - vi: Vì đây là tích, dùng $(gh)'=g'h+gh'$.
+    en: Because this is a product, use $(gh)'=g'h+gh'$.
+  - vi: Suy ra $f'(x)=2x\cos x$.
+    en: Therefore $f'(x)=2x\cos x$.
+  - vi: Kết luận tại $x=0$, $f'(0)=0$.
+    en: Conclude at $x=0$, $f'(0)=0$.
+  answer: 2

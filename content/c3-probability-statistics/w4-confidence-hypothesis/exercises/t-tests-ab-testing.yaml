@@ -1,0 +1,264 @@
+exercises:
+- id: c3w4-t-tests-ab-testing-mcq-08
+  topic: t-tests-ab-testing
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Khi nào paired t-test phù hợp hơn independent two-sample t-test?
+    en: When is a paired t-test more appropriate than an independent two-sample t-test?
+  explanation:
+    vi: Paired t-test dùng khi mỗi quan sát ở nhóm A được ghép tự nhiên với một quan sát ở nhóm B, như before/after cùng user.
+    en: A paired t-test is used when each A observation is naturally matched with a B observation, such as before/after on the same user.
+  hints: []
+  options:
+  - vi: Cùng user được đo trước và sau một thay đổi.
+    en: The same user is measured before and after a change.
+  - vi: Hai nhóm users được random độc lập.
+    en: Two user groups are randomized independently.
+  - vi: Outcome là conversion nhị phân không ghép cặp.
+    en: The outcome is unpaired binary conversion.
+  answer:
+  - 0
+- id: c3w4-t-tests-ab-testing-tf-08
+  topic: t-tests-ab-testing
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong A/B conversion, pooled $\hat p$ dưới $H_0:p_A=p_B$ dùng tổng successes chia tổng trials.
+    en: In A/B conversion, the pooled $\hat p$ under $H_0:p_A=p_B$ uses total successes divided by total trials.
+  explanation:
+    vi: Đúng. Nếu null nói hai tỷ lệ bằng nhau, ước lượng chung tốt nhất là $(x_A+x_B)/(n_A+n_B)$.
+    en: True. If the null says the rates are equal, the shared estimate is $(x_A+x_B)/(n_A+n_B)$.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Null equality cho phép gộp dữ liệu để ước lượng tỷ lệ chung.
+    en: Null equality lets us pool the data to estimate one common rate.
+  - vi: Pooled rate chỉ lấy group B vì B là treatment.
+    en: The pooled rate uses only group B because B is treatment.
+  reasonAnswer: 0
+- id: c3w4-t-tests-ab-testing-match-08
+  topic: t-tests-ab-testing
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép loại test với thiết kế dữ liệu A/B.
+    en: Match each test type with the A/B data design.
+  explanation:
+    vi: Purchase amount thường là metric liên tục; conversion là tỷ lệ; before/after cùng user là paired.
+    en: Purchase amount is usually continuous; conversion is a proportion; before/after on the same user is paired.
+  hints: []
+  pairs:
+  - left:
+      vi: Welch two-sample t
+      en: Welch two-sample t
+    right:
+      vi: purchase amounts từ hai nhóm độc lập
+      en: purchase amounts from two independent groups
+  - left:
+      vi: two-proportion z
+      en: two-proportion z
+    right:
+      vi: conversion counts A và B
+      en: conversion counts for A and B
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-t-tests-ab-testing-parsons-08
+  topic: t-tests-ab-testing
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình two-proportion A/B test.
+    en: Order the two-proportion A/B test procedure.
+  explanation:
+    vi: Conversion test biến counts thành rates, dùng pooled rate dưới null, rồi chuẩn hóa difference.
+    en: A conversion test turns counts into rates, uses the pooled rate under the null, then standardizes the difference.
+  hints:
+  - vi: Tail phụ thuộc claim A tốt hơn hay B tốt hơn.
+    en: The tail depends on whether the claim favors A or B.
+  steps:
+  - vi: Tính $\hat p_A=x_A/n_A$ và $\hat p_B=x_B/n_B$.
+    en: Compute $\hat p_A=x_A/n_A$ and $\hat p_B=x_B/n_B$.
+  - vi: Tính pooled $\hat p=(x_A+x_B)/(n_A+n_B)$.
+    en: Compute pooled $\hat p=(x_A+x_B)/(n_A+n_B)$.
+  - vi: Tính z statistic cho $\hat p_A-\hat p_B$.
+    en: Compute the z statistic for $\hat p_A-\hat p_B$.
+  - vi: Lấy p-value theo alternative và kết luận.
+    en: Take the p-value for the alternative and conclude.
+- id: c3w4-t-tests-ab-testing-numeric-01
+  topic: t-tests-ab-testing
+  type: numeric
+  difficulty: 2
+  tags:
+  - one-sample-t
+  prompt:
+    vi: 'One-sample t: $\bar x=68.442$, $\mu_0=66.7$, $s=3.113$, $n=10$. Tính t.'
+    en: 'One-sample t: $\bar x=68.442$, $\mu_0=66.7$, $s=3.113$, $n=10$. Compute t.'
+  explanation:
+    vi: $t=(68.442-66.7)/(3.113/\sqrt{10})=1.771$.
+    en: $t=(68.442-66.7)/(3.113/\sqrt{10})=1.771$.
+  hints: []
+  answers:
+  - value: 1.771
+  tolerance: 0.001
+- id: c3w4-t-tests-ab-testing-numeric-02
+  topic: t-tests-ab-testing
+  type: numeric
+  difficulty: 2
+  tags:
+  - ab
+  - proportion
+  prompt:
+    vi: 'A/B conversion: $n_A=80,x_A=20,n_B=20,x_B=8$. Tính pooled $\hat p$ và z statistic cho $H_0:p_A=p_B$.'
+    en: 'A/B conversion: $n_A=80,x_A=20,n_B=20,x_B=8$. Compute pooled $\hat p$ and z statistic for $H_0:p_A=p_B$.'
+  explanation:
+    vi: Pooled $\hat p=28/100=0.28$. SE=$\sqrt{0.28(0.72)(1/80+1/20)}=0.1123$. Difference $-0.15$, so $z=-1.336$.
+    en: Pooled $\hat p=28/100=0.28$. SE=$\sqrt{0.28(0.72)(1/80+1/20)}=0.1123$. Difference $-0.15$, so $z=-1.336$.
+  hints: []
+  answers:
+  - label: p_pool
+    value: 0.28
+  - label: z
+    value: -1.336
+  tolerance: 0.001
+- id: c3w4-t-tests-ab-testing-multi-01
+  topic: t-tests-ab-testing
+  type: multi-step
+  difficulty: 3
+  tags:
+  - full-test
+  - ab
+  prompt:
+    vi: 'A/B purchase amount: $n_A=80,n_B=20,\bar x_A=50,\bar x_B=55,s_A=10,s_B=15$. Test $H_0:\mu_A-\mu_B=0$ vs $H_1:\mu_A-\mu_B<0$
+      at $\alpha=0.05$. Use Welch df≈23.4 and p-value≈0.076.'
+    en: 'A/B purchase amount: $n_A=80,n_B=20,\bar x_A=50,\bar x_B=55,s_A=10,s_B=15$. Test $H_0:\mu_A-\mu_B=0$ vs $H_1:\mu_A-\mu_B<0$
+      at $\alpha=0.05$. Use Welch df≈23.4 and p-value≈0.076.'
+  explanation:
+    vi: Đây là two-sample Welch t-test, left-tailed. p-value 0.076 > 0.05 nên fail to reject.
+    en: This is a two-sample Welch t-test, left-tailed. p-value 0.076 > 0.05, so fail to reject.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: Tính statistic $t$ (xấp xỉ).
+      en: Compute the test statistic $t$ (approx).
+    answers:
+    - value: -1.482
+    tolerance: 0.001
+    explanation:
+      vi: SE=$\sqrt{10^2/80+15^2/20}=3.374$; t=$-5/3.374=-1.482$.
+      en: SE=$\sqrt{10^2/80+15^2/20}=3.374$; t=$-5/3.374=-1.482$.
+  - type: true-false
+    prompt:
+      vi: Reject $H_0$ ở 5%.
+      en: Reject $H_0$ at 5%.
+    answer: false
+    explanation:
+      vi: p=0.076 lớn hơn 0.05.
+      en: p=0.076 is larger than 0.05.
+  - type: mcq
+    prompt:
+      vi: Diễn giải đúng?
+      en: Correct interpretation?
+    options:
+    - vi: Chưa đủ bằng chứng rằng B tăng purchase amount so với A.
+      en: Not enough evidence that B increases purchase amount over A.
+    - vi: B chắc chắn không tốt hơn A.
+      en: B is definitely not better than A.
+    - vi: A chắc chắn tốt hơn B.
+      en: A is definitely better than B.
+    answer:
+    - 0
+- id: c3w4-t-tests-ab-testing-code-01
+  topic: t-tests-ab-testing
+  type: code
+  difficulty: 3
+  tags:
+  - python
+  - ab
+  - proportion
+  prompt:
+    vi: Viết hàm z statistic và left-tail p-value cho two-proportion A/B test.
+    en: Write a function returning z statistic and left-tail p-value for a two-proportion A/B test.
+  explanation:
+    vi: Dưới $H_0:p_A=p_B$, dùng pooled proportion và normal CDF.
+    en: Under $H_0:p_A=p_B$, use the pooled proportion and normal CDF.
+  hints: []
+  starter: "import math\n\ndef two_prop_left(xA, nA, xB, nB):\n    return None\n"
+  solution: "import math\n\ndef two_prop_left(xA, nA, xB, nB):\n    pA = xA / nA\n    pB = xB / nB\n    p = (xA + xB) / (nA\
+    \ + nB)\n    se = math.sqrt(p * (1 - p) * (1/nA + 1/nB))\n    z = (pA - pB) / se\n    pval = 0.5 * (1 + math.erf(z / math.sqrt(2)))\n\
+    \    return z, pval\n"
+  tests: "def test_ab_conversion():\n    z, p = two_prop_left(20, 80, 8, 20)\n    assert abs(z + 1.336306) < 1e-5\n    assert\
+    \ abs(p - 0.0907) < 0.002\n\ndef test_equal_rates():\n    z, p = two_prop_left(10, 100, 20, 200)\n    assert abs(z) <\
+    \ 1e-12 and abs(p - 0.5) < 1e-12\n"
+- id: c3w4-t-tests-ab-testing-code-02
+  topic: t-tests-ab-testing
+  type: code
+  difficulty: 2
+  tags:
+  - python
+  - t-test
+  prompt:
+    vi: Viết hàm tính one-sample t statistic từ data và $\mu_0$ (dùng sample std, ddof=1).
+    en: Write a function computing one-sample t statistic from data and $\mu_0$ (use sample std, ddof=1).
+  explanation:
+    vi: Tính mean, sample standard deviation, rồi $t=(\bar x-\mu_0)/(s/\sqrt n)$.
+    en: Compute mean, sample standard deviation, then $t=(\bar x-\mu_0)/(s/\sqrt n)$.
+  hints: []
+  starter: "import numpy as np\n\ndef one_sample_t(data, mu0):\n    return None\n"
+  solution: "import numpy as np\n\ndef one_sample_t(data, mu0):\n    x = np.array(data, dtype=float)\n    n = x.size\n   \
+    \ xbar = float(np.mean(x))\n    s = float(np.std(x, ddof=1))\n    return (xbar - mu0) / (s / np.sqrt(n))\n"
+  tests: "def test_known_values():\n    data = [66.75,70.24,67.19,67.09,63.65,64.64,69.81,69.79,73.52,71.74]\n    t = one_sample_t(data,\
+    \ 66.7)\n    assert abs(t - 1.7709) < 0.01\n\ndef test_zero_when_mean_equals_mu0():\n    assert abs(one_sample_t([1,2,3],\
+    \ 2)) < 1e-12\n"
+- id: c3w4-t-tests-ab-testing-find-error-01
+  topic: t-tests-ab-testing
+  type: find-error
+  difficulty: 2
+  tags:
+  - paired
+  prompt:
+    vi: Tìm lỗi đầu tiên trong paired t-test.
+    en: Find the first error in the paired t-test.
+  explanation:
+    vi: 'Sai ở bước 2: dữ liệu paired phải chuyển thành differences theo từng cặp, không xử lý như independent groups.'
+    en: 'Step 2 is wrong: paired data should be converted to pairwise differences, not treated as independent groups.'
+  hints: []
+  steps:
+  - vi: Có before/after trên cùng 10 người.
+    en: There are before/after measurements on the same 10 people.
+  - vi: Dùng independent two-sample t-test vì có hai cột số liệu.
+    en: Use an independent two-sample t-test because there are two columns of numbers.
+  - vi: Tính $d_i=x_i-y_i$ cho từng người.
+    en: Compute $d_i=x_i-y_i$ for each person.
+  - vi: Kiểm định $H_0:\mu_D=0$ bằng one-sample t trên differences.
+    en: Test $H_0:\mu_D=0$ with a one-sample t test on differences.
+  answer: 1
+- id: c3w4-t-tests-ab-testing-param-01
+  topic: t-tests-ab-testing
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - binomial
+  prompt:
+    vi: Generator binomial để luyện conversion counts.
+    en: Binomial generator for conversion counts.
+  explanation:
+    vi: Conversion data là số successes trên trials.
+    en: Conversion data are successes over trials.
+  hints: []
+  generator: binomial-prob
+  params: {}

@@ -1,0 +1,91 @@
+exercises:
+- id: c2w1-chain-rule-mcq-01
+  topic: derivative-rules
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tính chất: quy tắc dây chuyền''?'
+    en: 'For $(3x+1)^2$, which mistake does the chain rule prevent?'
+  explanation:
+    vi: 'Ý đúng: đạo hàm hàm hợp nhân tốc độ ngoài với tốc độ trong.'
+    en: 'Correct: a composite derivative multiplies the outer rate by the inner rate.'
+  hints: []
+  options:
+  - vi: đạo hàm hàm hợp nhân tốc độ ngoài với tốc độ trong
+    en: a composite derivative multiplies the outer rate by the inner rate
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: It prevents using the product rule on $3x+1$ and $2$ as if they were factors.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: It prevents forgetting the inner derivative $3$ after differentiating the outer square.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: It prevents replacing the inside expression by $x$ before differentiating.
+  answer:
+  - 0
+- id: c2w1-chain-rule-truefalse-02
+  topic: derivative-rules
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tính chất: quy tắc dây chuyền'', công thức $\frac{d}{dx}g(h(x))=g''(h(x))h''(x)$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'A composite such as $g(h(x))$ requires the outside slope evaluated at $h(x)$ times the inside slope.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The chain rule applies after separating the outside function from the inside function.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Hàm hợp cần đạo hàm lớp ngoài tại đầu vào trong, rồi nhân đạo hàm lớp trong.
+    en: A composite needs the outer derivative at the inner value, multiplied by the inner derivative.
+  - vi: Chỉ cần lấy đạo hàm lớp ngoài và bỏ qua lớp trong.
+    en: You only differentiate the outer layer and ignore the inner layer.
+  - vi: Quy tắc dây chuyền chỉ dùng khi có phép nhân hai hàm.
+    en: The chain rule is only used when two functions are multiplied.
+  reasonAnswer: 0
+- id: c2w1-chain-rule-code-03
+  topic: derivative-rules
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Hoàn thiện hàm `sigmoid_derivative` bằng NumPy/Python.
+    en: Complete the `sigmoid_derivative` function with NumPy/Python.
+  explanation:
+    vi: Lời giải dùng công thức đạo hàm tương ứng và được kiểm tra trên nhiều trường hợp.
+    en: The sigmoid test compares $s(1-s)$ with a finite-difference slope, confirming the chain-rule factor.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  starter: "import numpy as np\ndef sigmoid_derivative(x):\n    return x\n"
+  solution: "import numpy as np\ndef sigmoid_derivative(x):\n    s = 1/(1+np.exp(-x))\n    return s*(1-s)\n"
+  tests: "import numpy as np\ndef test_zero():\n    assert abs(sigmoid_derivative(0.0) - 0.25) < 1e-8, 'sigmoid derivative at 0 is 1/4'\ndef test_numeric():\n    x=1.3; h=1e-5; sig=lambda z: 1/(1+np.exp(-z))\n    fd=(sig(x+h)-sig(x-h))/(2*h)\n    assert abs(sigmoid_derivative(x)-fd) < 1e-5, 'analytic derivative should match finite difference'"
+- id: c2w1-chain-rule-predictoutput-04
+  topic: derivative-rules
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output của NumPy.
+    en: Predict the NumPy output for the chain-rule slope array.
+  explanation:
+    vi: Gradient của $x^2$ tại các điểm là $2x$.
+    en: The printed array doubles each input, matching the derivative of the square function used in the snippet.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  code: 'import numpy as np
+
+    x = np.array([-1., 0., 2.])
+
+    print(2*x)'
+  options:
+  - '[-2.  0.  4.]'
+  - '[-1.  0.  2.]'
+  - '[1. 0. 4.]'
+  - shape error
+  answer: 0

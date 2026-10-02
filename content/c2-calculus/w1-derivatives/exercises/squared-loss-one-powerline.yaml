@@ -1,0 +1,89 @@
+exercises:
+- id: c2w1-squared-loss-one-powerline-mcq-01
+  topic: optimization-losses
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tối ưu squared loss: một đường điện''?'
+    en: 'One blue powerline is at $a=6$. Where should a house be placed to make $(x-6)^2$ smallest?'
+  explanation:
+    vi: 'Ý đúng: bình phương khoảng cách phạt sai lệch xa mạnh hơn sai lệch gần.'
+    en: 'Correct: squared distance penalizes far errors more than near errors.'
+  hints: []
+  options:
+  - vi: bình phương khoảng cách phạt sai lệch xa mạnh hơn sai lệch gần
+    en: squared distance penalizes far errors more than near errors
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: At $x=0$, because the origin is where distances are measured from.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: At any $x>6$, because squared values are always positive there.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: At $x=12$, because doubling the line location balances the square.
+  answer:
+  - 0
+- id: c2w1-squared-loss-one-powerline-truefalse-02
+  topic: optimization-losses
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tối ưu squared loss: một đường điện'', công thức $J(x)=(x-a)^2$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'For one powerline at $a$, the squared connection cost $(x-a)^2$ is minimized when the distance is zero.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: With one powerline, the squared-loss derivative points directly back to the line.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Với một đường điện, khoảng cách bình phương nhỏ nhất khi khoảng cách bằng 0.
+    en: With one powerline, squared distance is minimized when the distance is 0.
+  - vi: Bình phương khoảng cách nhỏ nhất tại gốc tọa độ dù đường điện ở đâu.
+    en: Squared distance is minimized at the origin no matter where the powerline is.
+  - vi: Khoảng cách càng lớn thì chi phí bình phương càng nhỏ.
+    en: A larger distance makes the squared cost smaller.
+  reasonAnswer: 0
+- id: c2w1-squared-loss-one-powerline-parsons-03
+  topic: optimization-losses
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình tối ưu hóa bằng đạo hàm.
+    en: Order the one-powerline squared-loss workflow.
+  explanation:
+    vi: Ta lập loss, lấy đạo hàm, tìm điểm tới hạn, rồi kiểm tra cực trị.
+    en: The one-powerline procedure is short because the squared distance is minimized exactly at the line.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Viết hàm mục tiêu hoặc loss theo biến cần tối ưu.
+    en: Write the objective or loss in terms of the variable to optimize.
+  - vi: Tính đạo hàm của hàm mục tiêu.
+    en: Compute the derivative of the objective.
+  - vi: Giải phương trình đạo hàm bằng 0 hoặc xét dấu đạo hàm.
+    en: Solve derivative equals zero or inspect derivative signs.
+  - vi: Kiểm tra miền xác định, biên và ý nghĩa của nghiệm.
+    en: Check the domain, boundaries, and meaning of the candidate.
+- id: c2w1-squared-loss-one-powerline-numeric-04
+  topic: optimization-losses
+  type: numeric
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Tính đạo hàm của $f(x)=2x^2+x$ tại $x=1$.
+    en: Compute the one-powerline derivative at the requested location.
+  explanation:
+    vi: Tính đạo hàm rồi thay điểm cần xét; không dùng giá trị hàm thay cho độ dốc.
+    en: The numeric answer uses $2(x-a)$ for the chosen line location, then evaluates at the requested x-value.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answers:
+  - value: 5
+  tolerance: 0.001

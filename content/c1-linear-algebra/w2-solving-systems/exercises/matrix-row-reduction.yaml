@@ -1,0 +1,193 @@
+exercises:
+- id: c1w2-matrix-row-reduction-mcq-01
+  topic: matrix-row-reduction
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: For the augmented rows $[1,2\mid5]$ and $[2,5\mid12]$, what must happen when applying $R_2\leftarrow R_2-2R_1$?
+    vi: Với hai hàng mở rộng $[1,2\mid5]$ và $[2,5\mid12]$, điều gì phải xảy ra khi áp dụng $R_2\leftarrow R_2-2R_1$?
+  explanation:
+    en: Row operations act on entire equations, so $[2,5,12]-2[1,2,5]=[0,1,2]$. Leaving 12 unchanged would solve a different system; the bar is only notation; and adding a multiple of one equation to another is a valid operation.
+    vi: Phép dòng tác động lên toàn bộ phương trình, nên $[2,5,12]-2[1,2,5]=[0,1,2]$. Giữ nguyên 12 sẽ giải hệ khác; vạch dọc chỉ là ký hiệu; và cộng bội của một phương trình vào phương trình khác là hợp lệ.
+  hints: []
+  options:
+  - en: The whole second row changes to $[0,1\mid2]$, including the right-hand side.
+    vi: Toàn bộ hàng hai đổi thành $[0,1\mid2]$, gồm cả vế phải.
+  - en: Only the coefficient entries change, leaving the constant 12 untouched.
+    vi: Chỉ các hệ số đổi, còn hằng số 12 giữ nguyên.
+  - en: The vertical bar blocks row operations from crossing into the constant column.
+    vi: Vạch dọc chặn phép dòng đi sang cột hằng số.
+  - en: The operation is invalid because it combines two different equations.
+    vi: Phép này không hợp lệ vì kết hợp hai phương trình khác nhau.
+  answer:
+  - 0
+- id: c1w2-matrix-row-reduction-truefalse-02
+  topic: matrix-row-reduction
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Khi khử ma trận mở rộng, cột vế phải phải chịu cùng phép dòng như các cột hệ số.
+    en: When reducing an augmented matrix, the right-hand-side column must undergo the same row operation as the coefficient columns.
+  explanation:
+    vi: Phép dòng biến đổi cả phương trình; giữ nguyên b sẽ tạo một hệ khác và thường cho nghiệm khác.
+    en: A row operation changes the whole equation; leaving b unchanged would create a different system with generally different solutions.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Mỗi hàng mở rộng là một phương trình.
+    en: The augmented row is one equation.
+  - vi: Vạch dọc tách b khỏi phép dòng, nên chỉ hệ số thay đổi.
+    en: The vertical bar shields b from row operations, so only coefficients change.
+  - vi: Giữ nguyên cột vế phải luôn bảo toàn nghiệm tốt hơn khi khử.
+    en: Leaving the right-hand side fixed always preserves solutions better during reduction.
+  reasonAnswer: 0
+- id: c1w2-matrix-row-reduction-matching-03
+  topic: matrix-row-reduction
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến khử dòng bằng ma trận.
+    en: Match concepts related to matrix row reduction.
+  explanation:
+    vi: Các cặp nhắc rằng mỗi phép dòng tác động lên toàn bộ phương trình mở rộng, gồm cả cột hằng số.
+    en: The pairs remind you that each row operation acts on an entire augmented equation, including the constant column.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-matrix-row-reduction-matrix-04
+  topic: matrix-row-reduction
+  type: matrix
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Áp dụng $R_2\leftarrow R_2-2R_1$ cho $[[1,2,5],[2,5,12]]$.
+    en: Apply $R_2\leftarrow R_2-2R_1$ to $[[1,2,5],[2,5,12]]$.
+  explanation:
+    vi: Hàng 2 mới là $[0,1,2]$.
+    en: The new row 2 is $[0,1,2]$.
+  hints: []
+  answer:
+  - - 1
+    - 2
+    - 5
+  - - 0
+    - 1
+    - 2
+  tolerance: 0.001
+- id: c1w2-matrix-row-reduction-construct-05
+  topic: matrix-row-reduction
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận nguyên 2×2 sao cho hệ mở rộng tương ứng sẽ có hai pivot.
+    en: Construct a 2×2 integer matrix whose augmented system would have two pivots.
+  explanation:
+    vi: Determinant của ví dụ là -2, nên khi khử hệ mở rộng sẽ tạo hai pivot thay vì hàng không.
+    en: The example determinant is -2, so reducing the augmented system would produce two pivots instead of a zero row.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: nonsingular
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+  - - 3
+    - 4
+- id: c1w2-matrix-row-reduction-parsons-06
+  topic: matrix-row-reduction
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho khử dòng bằng ma trận.
+    en: Order the workflow for matrix row reduction.
+  explanation:
+    vi: Quy trình phép dòng phải tác động lên cả hàng mở rộng, vì vậy cột nghiệm được biến đổi cùng lúc với A.
+    en: The row-operation workflow must act on the whole augmented row, so the solution column is transformed at the same time as A.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-matrix-row-reduction-finderror-07
+  topic: matrix-row-reduction
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về khử dòng bằng ma trận.
+    en: Find the first error in the argument about matrix row reduction.
+  explanation:
+    vi: 'Bước 3 nhầm hình thức với tính hợp lệ: ma trận mở rộng vẫn có thể ở REF dù leading entry bằng 2.'
+    en: 'Step 3 confuses formatting with validity: the augmented matrix may be in REF even when a leading entry is 2.'
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-matrix-row-reduction-code-08
+  topic: matrix-row-reduction
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt `add_scaled_row` bằng NumPy cơ bản; không dùng `np.linalg.*` shortcuts.
+    en: Implement `add_scaled_row` with basic NumPy; do not use `np.linalg.*` shortcuts.
+  explanation:
+    vi: Hàm thực hiện cập nhật hàng mở rộng rõ ràng, nên test kiểm tra b biến đổi cùng A trong quá trình khử.
+    en: The function performs explicit augmented-row updates, so the tests check that b changes together with A during elimination.
+  hints: []
+  starter: "import numpy as np\n\ndef add_scaled_row(M, target, source, scale):\n    return np.array(M, dtype=float)\n"
+  solution: "import numpy as np\n\ndef add_scaled_row(M, target, source, scale):\n    out=np.array(M,dtype=float).copy(); out[target]=out[target]+scale*out[source]; return out\n"
+  tests: "import numpy as np\n\ndef test_row_replacement():\n    M=np.array([[1.,2.,5.],[2.,5.,12.]])\n    assert np.allclose(add_scaled_row(M,1,0,-2), [[1,2,5],[0,1,2]])\n\ndef test_original_not_mutated():\n    M=np.array([[1.,0.],[3.,4.]]); R=add_scaled_row(M,1,0,-3)\n    assert np.allclose(M, [[1,0],[3,4]]) and np.allclose(R, [[1,0],[0,4]])\n"

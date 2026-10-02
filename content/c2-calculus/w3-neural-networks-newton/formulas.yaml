@@ -1,0 +1,230 @@
+formulas:
+  - id: c2w3-f-parameter-gd
+    topic: gradient-descent-backprop
+    name: { vi: 'Cập nhật gradient descent cho tham số', en: 'Gradient descent parameter update' }
+    tex: '\theta_{k+1}=\theta_k-\alpha\nabla_\theta L'
+    where:
+      vi: '$\theta$ là vector tham số, $L$ là loss; đi ngược hướng gradient để minimize.'
+      en: '$\theta$ is the parameter vector and $L$ is the loss; move opposite the gradient to minimize.'
+    numpy: 'theta = theta - alpha * grad_L'
+    exercises: [c2w3-gradient-descent-backprop-numeric-05, c2w3-gradient-descent-backprop-parsons-06, c2w3-gradient-descent-backprop-parametric-07]
+  - id: c2w3-f-newton-root-1d
+    topic: newtons-method
+    name: { vi: 'Newton tìm nghiệm một biến', en: 'One-dimensional Newton root update' }
+    tex: 'x_{k+1}=x_k-\frac{f(x_k)}{f''(x_k)}'
+    where:
+      vi: 'Dùng tiếp tuyến để tìm nghiệm $f(x)=0$; cần $f''(x_k)\ne0$.'
+      en: 'Uses the tangent line to solve $f(x)=0$; requires $f''(x_k)\ne0$.'
+    numpy: 'x = x - f(x) / fp(x)'
+    exercises: [c2w3-newtons-method-numeric-05, c2w3-newtons-method-parsons-06, c2w3-newtons-method-parametric-07]
+  - id: c2w3-f-newton-opt-1d
+    topic: newtons-method
+    name: { vi: 'Newton tối ưu một biến', en: 'One-dimensional Newton optimization update' }
+    tex: 'x_{k+1}=x_k-\frac{g''(x_k)}{g''''(x_k)}'
+    where:
+      vi: 'Tối ưu $g$ bằng cách áp dụng Newton cho phương trình $g''(x)=0$; cần độ cong khác $0$.'
+      en: 'Optimizes $g$ by applying Newton to $g''(x)=0$; requires nonzero curvature.'
+    numpy: 'x = x - gp(x) / gpp(x)'
+    exercises: [c2w3-newtons-method-matching-03, c2w3-newtons-method-example-numeric-05, c2w3-newtons-method-example-code-07]
+  - id: c2w3-f-newton-exp-log
+    topic: newtons-method-example
+    name: { vi: 'Bước Newton cho e^x - log x', en: 'Newton step for e^x minus log x' }
+    tex: 'x_{k+1}=x_k-\frac{e^{x_k}-1/x_k}{e^{x_k}+1/x_k^2}'
+    where:
+      vi: 'Cho $g(x)=e^x-\log x$ trên miền $x>0$, với $g''(x)=e^x-1/x$ và $g''''(x)=e^x+1/x^2$.'
+      en: 'For $g(x)=e^x-\log x$ on $x>0$, with $g''(x)=e^x-1/x$ and $g''''(x)=e^x+1/x^2$.'
+    numpy: 'x = x - (np.exp(x) - 1/x) / (np.exp(x) + 1/x**2)'
+    exercises: [c2w3-newtons-method-example-find-error-04, c2w3-newtons-method-example-numeric-05, c2w3-newtons-method-example-predict-output-06]
+  - id: c2w3-f-second-derivative
+    topic: second-derivative
+    name: { vi: 'Đạo hàm bậc hai', en: 'Second derivative' }
+    tex: 'f''''(x)=\frac{d}{dx}f''(x)=\frac{d^2f}{dx^2}'
+    where:
+      vi: 'Đo tốc độ thay đổi của slope; dùng để mô tả độ cong một biến.'
+      en: 'Measures the rate of change of slope; use it to describe one-variable curvature.'
+    exercises: [c2w3-second-derivative-matching-03, c2w3-second-derivative-numeric-05, c2w3-second-derivative-parametric-07]
+  - id: c2w3-f-curvature-sign
+    topic: second-derivative
+    name: { vi: 'Dấu của đạo hàm bậc hai', en: 'Sign of the second derivative' }
+    tex: 'f''''(x)>0\Rightarrow\text{concave up},\qquad f''''(x)<0\Rightarrow\text{concave down}'
+    where:
+      vi: 'Dấu của $f''''$ cho biết đường cong uốn lên hay uốn xuống tại điểm đang xét.'
+      en: 'The sign of $f''''$ tells whether the curve bends up or down at the point.'
+    exercises: [c2w3-second-derivative-mcq-06, c2w3-second-derivative-find-error-04, c2w3-hessians-concavity-matching-03]
+  - id: c2w3-f-hessian-matrix
+    topic: hessian
+    name: { vi: 'Ma trận Hessian hai biến', en: 'Two-variable Hessian matrix' }
+    tex: 'H_f(x,y)=\begin{bmatrix}f_{xx}&f_{xy}\\ f_{yx}&f_{yy}\end{bmatrix}'
+    where:
+      vi: 'Lưu các đạo hàm riêng bậc hai; là thông tin độ cong của bề mặt.'
+      en: 'Stores second partial derivatives; it is curvature information for the surface.'
+    numpy: 'np.array([[fxx, fxy], [fyx, fyy]])'
+    exercises: [c2w3-hessian-matrix-05, c2w3-hessian-parametric-07, c2w3-newton-two-variables-matrix-05]
+  - id: c2w3-f-mixed-partials-symmetry
+    topic: hessian
+    name: { vi: 'Đối xứng đạo hàm riêng hỗn hợp', en: 'Mixed partial symmetry' }
+    tex: 'f_{xy}=f_{yx}'
+    where:
+      vi: 'Đúng cho các hàm đủ trơn trong ví dụ của khóa học; Hessian khi đó đối xứng.'
+      en: 'Holds for sufficiently smooth functions in the course examples; the Hessian is then symmetric.'
+    exercises: [c2w3-hessian-matching-03, c2w3-hessian-find-error-04]
+  - id: c2w3-f-hessian-local-min
+    topic: hessians-concavity
+    name: { vi: 'Kiểm tra cực tiểu bằng Hessian', en: 'Hessian test for a local minimum' }
+    tex: '\lambda_i(H)>0\ \forall i\Rightarrow\text{local minimum}'
+    where:
+      vi: 'Áp dụng tại critical point; mọi eigenvalue dương nghĩa là mặt cong lên mọi hướng.'
+      en: 'Apply at a critical point; all positive eigenvalues mean the surface bends upward in every direction.'
+    numpy: 'np.all(np.linalg.eigvalsh(H) > 0)'
+    exercises: [c2w3-hessians-concavity-numeric-05, c2w3-hessians-concavity-mcq-06, c2w3-hessians-concavity-construct-07]
+  - id: c2w3-f-hessian-local-max
+    topic: hessians-concavity
+    name: { vi: 'Kiểm tra cực đại bằng Hessian', en: 'Hessian test for a local maximum' }
+    tex: '\lambda_i(H)<0\ \forall i\Rightarrow\text{local maximum}'
+    where:
+      vi: 'Áp dụng tại critical point; mọi eigenvalue âm nghĩa là mặt cong xuống mọi hướng.'
+      en: 'Apply at a critical point; all negative eigenvalues mean the surface bends downward in every direction.'
+    numpy: 'np.all(np.linalg.eigvalsh(H) < 0)'
+    exercises: [c2w3-hessians-concavity-matching-03, c2w3-hessians-concavity-find-error-04, c2w3-hessians-concavity-mcq-06]
+  - id: c2w3-f-hessian-saddle
+    topic: hessians-concavity
+    name: { vi: 'Kiểm tra saddle bằng Hessian', en: 'Hessian test for a saddle point' }
+    tex: '\exists i,j:\lambda_i(H)>0,\ \lambda_j(H)<0\Rightarrow\text{saddle}'
+    where:
+      vi: 'Dấu eigenvalue lẫn dương và âm nghĩa là có hướng cong lên và hướng cong xuống.'
+      en: 'Mixed positive and negative eigenvalue signs mean some directions curve up and others down.'
+    numpy: 'eig = np.linalg.eigvalsh(H); np.any(eig > 0) and np.any(eig < 0)'
+    exercises: [c2w3-hessians-concavity-find-error-04, c2w3-hessians-concavity-numeric-05, c2w3-hessians-concavity-construct-07]
+  - id: c2w3-f-newton-multivariable
+    topic: newton-two-variables
+    name: { vi: 'Newton nhiều biến', en: 'Multivariable Newton update' }
+    tex: '\mathbf{x}_{k+1}=\mathbf{x}_k-H_f(\mathbf{x}_k)^{-1}\nabla f(\mathbf{x}_k)'
+    where:
+      vi: 'Dùng gradient và Hessian; thường giải $H\Delta=\nabla f$ rồi đặt $\mathbf{x}_{k+1}=\mathbf{x}_k-\Delta$.'
+      en: 'Uses gradient and Hessian; usually solve $H\Delta=\nabla f$ and set $\mathbf{x}_{k+1}=\mathbf{x}_k-\Delta$.'
+    numpy: 'x = x - np.linalg.solve(H, grad)'
+    exercises: [c2w3-newton-two-variables-matrix-05, c2w3-newton-two-variables-parsons-06, c2w3-newton-two-variables-code-07]
+  - id: c2w3-f-regression-perceptron
+    topic: regression-perceptron
+    name: { vi: 'Dự đoán perceptron hồi quy', en: 'Regression perceptron prediction' }
+    tex: '\hat y=w_1x_1+w_2x_2+b'
+    where:
+      vi: '$x_i$ là đặc trưng, $w_i$ là trọng số, $b$ là bias; đầu ra là số thực.'
+      en: '$x_i$ are features, $w_i$ weights, and $b$ bias; the output is a real number.'
+    numpy: 'yhat = w @ x + b'
+    exercises: [c2w3-regression-perceptron-numeric-05, c2w3-regression-perceptron-matrix-06, c2w3-regression-perceptron-code-07]
+  - id: c2w3-f-regression-squared-loss
+    topic: regression-loss
+    name: { vi: 'Squared loss đơn mẫu cho hồi quy', en: 'Single-example squared loss for regression' }
+    tex: 'L(y,\hat y)=\frac12(y-\hat y)^2'
+    where:
+      vi: 'Loss hồi quy một ví dụ; hệ số $1/2$ làm đạo hàm theo $\hat y$ gọn.'
+      en: 'Single-example regression loss; the $1/2$ makes the derivative with respect to $\hat y$ clean.'
+    numpy: '0.5 * (y - yhat)**2'
+    exercises: [c2w3-regression-loss-numeric-05, c2w3-regression-loss-code-07, c2w3-regression-loss-predict-output-06]
+  - id: c2w3-f-regression-loss-derivative
+    topic: regression-loss
+    name: { vi: 'Đạo hàm squared loss theo dự đoán', en: 'Squared-loss derivative with respect to prediction' }
+    tex: '\frac{\partial L}{\partial\hat y}=\hat y-y'
+    where:
+      vi: 'Sai số có dấu $\hat y-y$ là tín hiệu local đi vào backprop.'
+      en: 'The signed error $\hat y-y$ is the local signal passed into backprop.'
+    numpy: 'dL_dyhat = yhat - y'
+    exercises: [c2w3-regression-loss-find-error-04, c2w3-regression-gradient-descent-numeric-05, c2w3-regression-gradient-descent-parametric-07]
+  - id: c2w3-f-regression-weight-gradients
+    topic: regression-gradient-descent
+    name: { vi: 'Gradient trọng số hồi quy perceptron', en: 'Regression perceptron weight gradients' }
+    tex: '\frac{\partial L}{\partial w_i}=(\hat y-y)x_i,\qquad \frac{\partial L}{\partial b}=\hat y-y'
+    where:
+      vi: 'Mỗi gradient trọng số bằng sai số nhân đặc trưng tương ứng; bias có đặc trưng $1$.'
+      en: 'Each weight gradient is the error times its feature; the bias has feature value $1$.'
+    numpy: 'dw = (yhat - y) * x; db = yhat - y'
+    exercises: [c2w3-regression-gradient-descent-matching-03, c2w3-regression-gradient-descent-multi-step-06, c2w3-regression-gradient-descent-parametric-07]
+  - id: c2w3-f-classification-score
+    topic: classification-perceptron
+    name: { vi: 'Điểm tuyến tính của perceptron phân loại', en: 'Classification perceptron linear score' }
+    tex: 'z=w\cdot x+b'
+    where:
+      vi: '$z$ là logit/thô trước sigmoid; chưa phải xác suất.'
+      en: '$z$ is the raw logit before sigmoid; it is not yet a probability.'
+    numpy: 'z = w @ x + b'
+    exercises: [c2w3-classification-perceptron-numeric-05, c2w3-classification-perceptron-construct-06, c2w3-classification-neural-network-matrix-05]
+  - id: c2w3-f-classification-probability
+    topic: classification-perceptron
+    name: { vi: 'Xác suất sigmoid của perceptron', en: 'Sigmoid probability for a perceptron' }
+    tex: '\hat y=\sigma(z)=\sigma(w\cdot x+b)'
+    where:
+      vi: 'Biến điểm tuyến tính thành xác suất lớp $1$ nằm trong khoảng $(0,1)$.'
+      en: 'Turns the linear score into a class-1 probability in $(0,1)$.'
+    numpy: 'yhat = 1 / (1 + np.exp(-(w @ x + b)))'
+    exercises: [c2w3-classification-perceptron-mcq-07, c2w3-sigmoid-function-numeric-05, c2w3-classification-gradient-descent-multi-step-06]
+  - id: c2w3-f-sigmoid
+    topic: sigmoid-function
+    name: { vi: 'Hàm sigmoid', en: 'Sigmoid function' }
+    tex: '\sigma(z)=\frac1{1+e^{-z}}'
+    where:
+      vi: 'Nén mọi $z\in\mathbb{R}$ thành giá trị trong $(0,1)$ cho phân loại nhị phân.'
+      en: 'Squashes any $z\in\mathbb{R}$ to a value in $(0,1)$ for binary classification.'
+    numpy: '1 / (1 + np.exp(-z))'
+    exercises: [c2w3-sigmoid-function-matching-03, c2w3-sigmoid-function-code-06, c2w3-sigmoid-function-predict-output-07]
+  - id: c2w3-f-sigmoid-derivative
+    topic: sigmoid-function
+    name: { vi: 'Đạo hàm sigmoid', en: 'Sigmoid derivative' }
+    tex: '\sigma''(z)=\sigma(z)(1-\sigma(z))'
+    where:
+      vi: 'Dùng giá trị sigmoid hiện có; slope lớn nhất tại $z=0$ và nhỏ khi bão hòa.'
+      en: 'Uses the current sigmoid value; the slope is largest at $z=0$ and small when saturated.'
+    numpy: 's * (1 - s)'
+    exercises: [c2w3-sigmoid-function-numeric-05, c2w3-sigmoid-function-find-error-04, c2w3-classification-derivatives-numeric-05]
+  - id: c2w3-f-classification-logloss-gradient
+    topic: classification-gradient-descent
+    name: { vi: 'Gradient log-loss với sigmoid', en: 'Log-loss gradient with sigmoid' }
+    tex: '\frac{\partial J}{\partial w_i}=(\hat y-y)x_i,\qquad \frac{\partial J}{\partial b}=\hat y-y'
+    where:
+      vi: 'Với sigmoid + binary log-loss chuẩn, các thừa số chain rule rút gọn thành $\hat y-y$.'
+      en: 'With sigmoid plus standard binary log-loss, chain-rule factors simplify to $\hat y-y$.'
+    numpy: 'dw = (yhat - y) * x; db = yhat - y'
+    exercises: [c2w3-classification-gradient-descent-numeric-05, c2w3-classification-gradient-descent-code-07, c2w3-classification-gradient-descent-multi-step-06]
+  - id: c2w3-f-backprop-chain
+    topic: classification-derivatives
+    name: { vi: 'Chuỗi đạo hàm backprop cho một trọng số', en: 'Backprop derivative chain for one weight' }
+    tex: '\frac{\partial L}{\partial w_i}=\frac{\partial L}{\partial\hat y}\frac{\partial\hat y}{\partial z}\frac{\partial z}{\partial w_i}'
+    where:
+      vi: 'Nhân các đạo hàm local dọc đường từ loss tới trọng số $w_i$.'
+      en: 'Multiply local derivatives along the path from the loss to weight $w_i$.'
+    exercises: [c2w3-classification-derivatives-matching-03, c2w3-classification-derivatives-parsons-07, c2w3-classification-derivatives-find-error-06]
+  - id: c2w3-f-score-weight-derivative
+    topic: classification-derivatives
+    name: { vi: 'Đạo hàm điểm số theo trọng số', en: 'Score derivative with respect to a weight' }
+    tex: '\frac{\partial z}{\partial w_i}=x_i'
+    where:
+      vi: 'Trong $z=w\cdot x+b$, đặc trưng tương ứng $x_i$ là đạo hàm local của trọng số $w_i$.'
+      en: 'In $z=w\cdot x+b$, the matching feature $x_i$ is the local derivative of weight $w_i$.'
+    exercises: [c2w3-classification-derivatives-numeric-05, c2w3-classification-derivatives-find-error-06, c2w3-classification-perceptron-numeric-05]
+  - id: c2w3-f-two-layer-forward
+    topic: classification-neural-network
+    name: { vi: 'Lan truyền tiến mạng 2 lớp', en: 'Two-layer network forward pass' }
+    tex: 'z^{[1]}=W^{[1]}x+b^{[1]},\quad a^{[1]}=\sigma(z^{[1]}),\quad \hat y=\sigma(W^{[2]}a^{[1]}+b^{[2]})'
+    where:
+      vi: 'Hidden activations $a^{[1]}$ trở thành đặc trưng đầu vào cho lớp output.'
+      en: 'Hidden activations $a^{[1]}$ become input features for the output layer.'
+    numpy: 'a1 = sigmoid(W1 @ x + b1); yhat = sigmoid(W2 @ a1 + b2)'
+    exercises: [c2w3-classification-neural-network-matrix-05, c2w3-classification-neural-network-code-07, c2w3-classification-neural-network-multi-step-06]
+  - id: c2w3-f-binary-log-loss
+    topic: nn-log-loss
+    name: { vi: 'Binary log-loss cho mạng neural', en: 'Binary log-loss for neural networks' }
+    tex: 'J(y,\hat y)=-y\log(\hat y)-(1-y)\log(1-\hat y)'
+    where:
+      vi: '$y\in\{0,1\}$ và $\hat y$ là xác suất dự đoán; dự đoán sai tự tin bị phạt mạnh.'
+      en: '$y\in\{0,1\}$ and $\hat y$ is the predicted probability; confidently wrong predictions are heavily penalized.'
+    numpy: '-(y*np.log(yhat) + (1-y)*np.log(1-yhat))'
+    exercises: [c2w3-nn-log-loss-numeric-05, c2w3-nn-log-loss-code-06, c2w3-nn-log-loss-predict-output-07]
+  - id: c2w3-f-output-error-logloss
+    topic: nn-log-loss
+    name: { vi: 'Sai số output của sigmoid + log-loss', en: 'Output error for sigmoid plus log-loss' }
+    tex: '\delta^{[2]}=\hat y-y'
+    where:
+      vi: 'Local error ở output layer khi dùng sigmoid cuối và binary log-loss.'
+      en: 'Local output-layer error when the final activation is sigmoid and the loss is binary log-loss.'
+    numpy: 'delta2 = yhat - y'
+    exercises: [c2w3-nn-log-loss-matching-03, c2w3-classification-gradient-descent-numeric-05, c2w3-conclusion-multi-step-06]

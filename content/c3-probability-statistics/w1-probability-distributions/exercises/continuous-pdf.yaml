@@ -1,0 +1,289 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-continuous-pdf-mcq-01",
+      "topic": "continuous-pdf",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề biến liên tục và pdf?",
+        "en": "Which statement best describes continuous variables and pdfs?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng nhấn mạnh diện tích dưới PDF. Các đáp án sai đọc chiều cao tại 2 phút là xác suất điểm, cộng các chiều cao rời rạc, hoặc yêu cầu biến liên tục chỉ nhận số nguyên.",
+        "en": "The correct answer emphasizes area under the PDF. The wrong choices read height at 2 minutes as point probability, add isolated heights, or require a continuous variable to take only integers."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là probability as area, not point height.",
+          "en": "The focus is probability as area, not point height."
+        },
+        {
+          "vi": "Nếu $f(2)=0.2$ thì $P(X=2)=0.2$.",
+          "en": "If $f(2)=0.2$, then $P(X=2)=0.2$."
+        },
+        {
+          "vi": "Xác suất từ 2 đến 3 phút được tính bằng $f(2)+f(3)$.",
+          "en": "The probability from 2 to 3 minutes is computed as $f(2)+f(3)$."
+        },
+        {
+          "vi": "Thời gian chờ liên tục chỉ có thể nhận 0, 1, 2, 3, 4, 5 phút.",
+          "en": "A continuous waiting time can only be 0, 1, 2, 3, 4, or 5 minutes."
+        }
+      ],
+      "answer": [
+        0
+      ],
+      "figure": {
+        "xRange": [
+          0,
+          5
+        ],
+        "yRange": [
+          0,
+          0.35
+        ],
+        "functions": [
+          {
+            "f": "0.2",
+            "label": "f(x)",
+            "domain": [
+              0,
+              5
+            ]
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.2",
+            "from": 2,
+            "to": 3,
+            "color": "#60a5fa"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      }
+    },
+    {
+      "id": "c3w1-continuous-pdf-truefalse-02",
+      "topic": "continuous-pdf",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong biến liên tục và pdf, chiều cao hoặc phép cộng thô luôn trực tiếp bằng xác suất cần tìm.",
+        "en": "In continuous variables and pdfs, raw height or raw addition is always directly the desired probability."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "For a continuous variable, an interval area matters; a single PDF height is not a probability."
+      },
+      "answer": false,
+      "reasons": [
+        {
+          "vi": "Đúng: với thời gian chờ liên tục, công thức tích phân chỉ áp dụng cho khoảng có độ rộng.",
+          "en": "True: for continuous waiting time, the integral formula applies to an interval with positive width."
+        },
+        {
+          "vi": "Sai: dùng PMF $P(X=x)$ như chiều cao cột sẽ nhầm mật độ với xác suất điểm.",
+          "en": "False: using a PMF-style $P(X=x)$ as a bar height confuses density with point probability."
+        },
+        {
+          "vi": "Sai: PDF hợp lệ không âm; xác suất khoảng là diện tích dưới đường cong.",
+          "en": "False: a valid PDF is nonnegative; interval probability is area under the curve."
+        }
+      ],
+      "reasonAnswer": 1
+    },
+    {
+      "id": "c3w1-continuous-pdf-construct-03",
+      "topic": "continuous-pdf",
+      "type": "construct",
+      "difficulty": 2,
+      "tags": [
+        "construct"
+      ],
+      "hints": [
+        {
+          "vi": "Các xác suất phải không âm và cộng bằng 1 nếu là PMF.",
+          "en": "Probabilities must be non-negative and sum to 1 for a PMF."
+        }
+      ],
+      "prompt": {
+        "vi": "Tạo dữ liệu 5 điểm có mean và median bằng 2 để mô phỏng mẫu từ phân phối đối xứng.",
+        "en": "Build 5 data points with mean and median 2 as a sample from a symmetric distribution."
+      },
+      "explanation": {
+        "vi": "Ví dụ thỏa ràng buộc; nhiều đáp án khác vẫn đúng.",
+        "en": "The five values are nonnegative and centered with both mean and median equal to 2."
+      },
+      "rows": 1,
+      "cols": 5,
+      "constraints": [
+        {
+          "kind": "mean",
+          "value": 2
+        },
+        {
+          "kind": "median",
+          "value": 2
+        },
+        {
+          "kind": "nonnegative"
+        }
+      ],
+      "example": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "c3w1-continuous-pdf-mcq-04",
+      "topic": "continuous-pdf",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "figure"
+      ],
+      "hints": [
+        {
+          "vi": "Khoảng tô bóng nằm giữa hai điểm.",
+          "en": "The shaded interval lies between two points."
+        }
+      ],
+      "prompt": {
+        "vi": "Hình tô bóng biểu diễn xác suất nào?",
+        "en": "Which interval probability is represented by the shaded density between -1 and 1?"
+      },
+      "explanation": {
+        "vi": "Với PDF, xác suất là diện tích dưới đường cong trên khoảng tô bóng.",
+        "en": "The green region spans a continuous interval, so it represents the area under the curve from -1 to 1."
+      },
+      "figure": {
+        "xRange": [
+          -4,
+          4
+        ],
+        "yRange": [
+          0,
+          0.5
+        ],
+        "functions": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "label": "standard normal"
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "from": -1,
+            "to": 1,
+            "color": "#a7f3d0"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      },
+      "options": [
+        {
+          "vi": "$P(-1<X<1)$",
+          "en": "$P(-1<X<1)$"
+        },
+        {
+          "vi": "$P(X=-1)$",
+          "en": "$P(X=-1)$"
+        },
+        {
+          "vi": "$f(1)-f(-1)$",
+          "en": "$f(1)-f(-1)$"
+        },
+        {
+          "vi": "$P(X>1)$",
+          "en": "$P(X>1)$"
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-continuous-pdf-matching-05",
+      "topic": "continuous-pdf",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong biến liên tục và pdf.",
+        "en": "Match key terms in continuous variables and pdfs."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches separate mass, density, cumulative probability, and evidence-updated probability."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    }
+  ]
+}

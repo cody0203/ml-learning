@@ -1,0 +1,161 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-sampling-distributions-mcq-01",
+      "topic": "sampling-distributions",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề lấy mẫu từ phân phối?",
+        "en": "Which statement best describes sampling from a distribution?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng dùng khoảng tích lũy trên $[0,1]$. Các đáp án sai chọn màu bằng nhãn chữ cái, dùng khoảng bằng nhau cho xác suất 0.3/0.5/0.2, hoặc để khoảng bị chồng lấn.",
+        "en": "The correct answer uses cumulative intervals on $[0,1]$. The wrong choices select colors alphabetically, use equal intervals for probabilities 0.3/0.5/0.2, or make intervals overlap."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là inverse-CDF style sampling from probabilities.",
+          "en": "The focus is inverse-CDF style sampling from probabilities."
+        },
+        {
+          "vi": "Với xác suất 0.3, 0.5, 0.2, nên chia $[0,1]$ thành ba khoảng bằng nhau.",
+          "en": "With probabilities 0.3, 0.5, 0.2, split $[0,1]$ into three equal intervals."
+        },
+        {
+          "vi": "Số ngẫu nhiên $u=0.62$ chọn màu đầu tiên theo thứ tự chữ cái.",
+          "en": "The random number $u=0.62$ chooses the first color alphabetically."
+        },
+        {
+          "vi": "Các khoảng lấy mẫu có thể chồng nhau miễn tổng xác suất bằng 1.",
+          "en": "Sampling intervals may overlap as long as probabilities sum to 1."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-sampling-distributions-construct-02",
+      "topic": "sampling-distributions",
+      "type": "construct",
+      "difficulty": 2,
+      "tags": [
+        "construct"
+      ],
+      "hints": [
+        {
+          "vi": "Các xác suất phải không âm và cộng bằng 1 nếu là PMF.",
+          "en": "Probabilities must be non-negative and sum to 1 for a PMF."
+        }
+      ],
+      "prompt": {
+        "vi": "Tạo phân phối để lấy mẫu trên {0,1,2} có kỳ vọng 0.9.",
+        "en": "Build a sampling distribution on {0,1,2} with expectation 0.9."
+      },
+      "explanation": {
+        "vi": "Ví dụ thỏa ràng buộc; nhiều đáp án khác vẫn đúng.",
+        "en": "The proposed sampling probabilities sum to 1 and give expected category value 0.9."
+      },
+      "rows": 1,
+      "cols": 3,
+      "constraints": [
+        {
+          "kind": "probabilityVector"
+        },
+        {
+          "kind": "expectation",
+          "values": [
+            0,
+            1,
+            2
+          ],
+          "value": 0.9
+        }
+      ],
+      "example": [
+        [
+          0.4,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "id": "c3w1-sampling-distributions-code-03",
+      "topic": "sampling-distributions",
+      "type": "code",
+      "difficulty": 3,
+      "tags": [
+        "python"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng dùng shortcut; hãy viết công thức.",
+          "en": "Do not use shortcuts; write the formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Lấy mẫu theo khoảng xác suất tích lũy.",
+        "en": "Sample by cumulative probability intervals."
+      },
+      "explanation": {
+        "vi": "Hàm đúng chuyển công thức xác suất thành mã trực tiếp.",
+        "en": "The sampler walks through cumulative cutoffs, so 0.5 lands in the second interval for the test case."
+      },
+      "starter": "def sample_category(u, probs):\n    return -1\n",
+      "solution": "def sample_category(u, probs):\n    total = 0.0\n    for i, p in enumerate(probs):\n        total += p\n        if u < total or (i == len(probs)-1 and u <= total):\n            return i\n    return len(probs) - 1\n",
+      "tests": "def test_intervals():\n    assert sample_category(0.1, [0.3, 0.5, 0.2]) == 0\n    assert sample_category(0.5, [0.3, 0.5, 0.2]) == 1\n    assert sample_category(0.9, [0.3, 0.5, 0.2]) == 2\n"
+    },
+    {
+      "id": "c3w1-sampling-distributions-predictoutput-04",
+      "topic": "sampling-distributions",
+      "type": "predict-output",
+      "difficulty": 2,
+      "tags": [
+        "numpy"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đoán output của đoạn NumPy.",
+        "en": "Predict which categories are chosen by comparing seed-0 draws with the first cutoff."
+      },
+      "explanation": {
+        "vi": "So sánh ngẫu nhiên sinh ra với ngưỡng tích lũy.",
+        "en": "The fixed random draws are interpreted as positions on [0,1), exactly as in inverse-CDF sampling."
+      },
+      "code": "import numpy as np\nrng = np.random.default_rng(0)\nu = rng.random(5)\nprint(np.round(u < 0.3, 2))\n",
+      "options": [
+        "[False  True  True  True False]",
+        "[ True False False False  True]",
+        "[0.3 0.3 0.3 0.3 0.3]",
+        "[False False False False False]"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "c3w1-sampling-distributions-parametric-05",
+      "topic": "sampling-distributions",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "confidence-interval",
+      "params": {}
+    }
+  ]
+}

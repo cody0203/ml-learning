@@ -1,0 +1,47 @@
+﻿id: w1
+order: 1
+title:
+  vi: 'Tuần 1: Hệ phương trình tuyến tính'
+  en: 'Week 1: Systems of linear equations'
+source: syllabus/c1-linear-algebra/W1.pdf
+topics:
+- id: ml-motivation
+  title:
+    vi: Động lực ML và phép toán ma trận
+    en: ML motivation and matrix operations
+- id: sentence-systems
+  title:
+    vi: 'Hệ thông tin: đủ, thừa, mâu thuẫn'
+    en: 'Information systems: complete, redundant, contradictory'
+- id: equation-systems
+  title:
+    vi: Từ câu chữ đến hệ phương trình
+    en: From sentences to systems of equations
+- id: lines-2d
+  title:
+    vi: Phương trình tuyến tính như đường thẳng
+    en: Linear equations as lines
+- id: matrices-singularity
+  title:
+    vi: Hệ dưới dạng ma trận và singularity
+    en: Systems as matrices and singularity
+- id: dependence
+  title:
+    vi: Phụ thuộc và độc lập tuyến tính
+    en: Linear dependence and independence
+- id: determinant-2x2
+  title:
+    vi: Định thức 2×2
+    en: The 2×2 determinant
+- id: systems-3x3
+  title:
+    vi: Hệ phương trình 3×3
+    en: Systems of equations in 3 variables
+- id: planes-3d
+  title:
+    vi: Mặt phẳng và hình học 3D
+    en: Planes and 3D geometry
+- id: determinant-3x3
+  title:
+    vi: Định thức 3×3
+    en: The 3×3 determinant

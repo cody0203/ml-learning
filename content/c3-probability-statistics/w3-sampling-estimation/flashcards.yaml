@@ -1,0 +1,370 @@
+'flashcards':
+- 'id': 'c3w3-fc-01'
+  'topic': 'population-sample'
+  'kind': 'concept'
+  'front':
+    'vi': 'Vì sao dataset ML thường là sample chứ không phải population?'
+    'en': 'Why is an ML dataset usually a sample rather than a population?'
+  'back':
+    'vi': 'Vì nó chỉ chứa các ví dụ quan sát được; population là toàn bộ trường hợp tương lai/khả dĩ.'
+    'en': 'Because it contains observed examples; the population is all future/possible cases.'
+- 'id': 'c3w3-fc-02'
+  'topic': 'population-sample'
+  'kind': 'formula'
+  'front':
+    'vi': 'Ký hiệu phổ biến cho population size và sample size là gì?'
+    'en': 'What are common symbols for population size and sample size?'
+  'back':
+    'vi': '$N$ cho population size, $n$ cho sample size.'
+    'en': '$N$ for population size, $n$ for sample size.'
+- 'id': 'c3w3-fc-03'
+  'topic': 'population-sample'
+  'kind': 'concept'
+  'front':
+    'vi': 'Independent sample khác identically distributed sample ở điểm nào?'
+    'en': 'How does independent differ from identically distributed?'
+  'back':
+    'vi': 'Independent nói các draws không quyết định nhau; identically distributed nói chúng có cùng phân phối.'
+    'en': 'Independent says draws do not determine one another; identically distributed says they share the same distribution.'
+- 'id': 'c3w3-fc-04'
+  'topic': 'population-sample'
+  'kind': 'compute'
+  'front':
+    'vi': 'Nếu population có 10,000 người và sample có 250 người, $n$ bằng bao nhiêu?'
+    'en': 'If a population has 10,000 people and a sample has 250, what is $n$?'
+  'back':
+    'vi': '$n=250$.'
+    'en': '$n=250$.'
+- 'id': 'c3w3-fc-05'
+  'topic': 'population-sample'
+  'kind': 'concept'
+  'front':
+    'vi': 'Mẫu chỉ lấy từ cửa hàng cao cấp gây vấn đề gì?'
+    'en': 'What problem arises if a sample only comes from luxury stores?'
+  'back':
+    'vi': 'Sampling bias: mẫu không đại diện cho toàn population mục tiêu.'
+    'en': 'Sampling bias: the sample is not representative of the target population.'
+- 'id': 'c3w3-fc-06'
+  'topic': 'sample-statistics'
+  'kind': 'formula'
+  'front':
+    'vi': 'Công thức sample mean $\bar x$ là gì?'
+    'en': 'What is the sample mean formula?'
+  'back':
+    'vi': '$\bar x=\frac1n\sum_i x_i$.'
+    'en': '$\bar x=\frac1n\sum_i x_i$.'
+- 'id': 'c3w3-fc-07'
+  'topic': 'sample-statistics'
+  'kind': 'formula'
+  'front':
+    'vi': 'Công thức sample proportion $\hat p$ là gì?'
+    'en': 'What is the sample proportion formula?'
+  'back':
+    'vi': '$\hat p=x/n$, với $x$ là số success trong sample.'
+    'en': '$\hat p=x/n$, where $x$ is the number of successes in the sample.'
+- 'id': 'c3w3-fc-08'
+  'topic': 'sample-statistics'
+  'kind': 'formula'
+  'front':
+    'vi': 'Công thức sample variance không chệch là gì?'
+    'en': 'What is the unbiased sample variance formula?'
+  'back':
+    'vi': '$s^2=\frac1{n-1}\sum_i(x_i-\bar x)^2$.'
+    'en': '$s^2=\frac1{n-1}\sum_i(x_i-\bar x)^2$.'
+- 'id': 'c3w3-fc-09'
+  'topic': 'sample-statistics'
+  'kind': 'compute'
+  'front':
+    'vi': 'Dữ liệu $2,3,4,5,6$ có sample mean bằng bao nhiêu?'
+    'en': 'Data $2,3,4,5,6$ has what sample mean?'
+  'back':
+    'vi': '$4$.'
+    'en': '$4$.'
+- 'id': 'c3w3-fc-10'
+  'topic': 'sample-statistics'
+  'kind': 'compute'
+  'front':
+    'vi': 'Với 2 bicycles trong 6 người, $\hat p$ bằng bao nhiêu?'
+    'en': 'With 2 bicycles among 6 people, what is $\hat p$?'
+  'back':
+    'vi': '$2/6=1/3\approx0.333$.'
+    'en': '$2/6=1/3\approx0.333$.'
+- 'id': 'c3w3-fc-11'
+  'topic': 'lln'
+  'kind': 'concept'
+  'front':
+    'vi': 'LLN nói điều gì về sample average khi $n$ tăng?'
+    'en': 'What does LLN say about the sample average as $n$ grows?'
+  'back':
+    'vi': 'Nó tiến gần mean population/kỳ vọng dưới điều kiện phù hợp.'
+    'en': 'It gets closer to the population mean/expectation under suitable conditions.'
+- 'id': 'c3w3-fc-12'
+  'topic': 'lln'
+  'kind': 'formula'
+  'front':
+    'vi': 'Công thức LLN cho $\bar X_n$ là gì?'
+    'en': 'What is the LLN formula for $\bar X_n$?'
+  'back':
+    'vi': '$\bar X_n=\frac1n\sum_iX_i\to\mathbb E[X]$.'
+    'en': '$\bar X_n=\frac1n\sum_iX_i\to\mathbb E[X]$.'
+- 'id': 'c3w3-fc-13'
+  'topic': 'lln'
+  'kind': 'compute'
+  'front':
+    'vi': 'Mean của xúc xắc 4 mặt công bằng $1,2,3,4$ là gì?'
+    'en': 'Mean of a fair 4-sided die $1,2,3,4$?'
+  'back':
+    'vi': '$2.5$.'
+    'en': '$2.5$.'
+- 'id': 'c3w3-fc-14'
+  'topic': 'lln'
+  'kind': 'concept'
+  'front':
+    'vi': 'LLN có nói quan sát tiếp theo phải bù lại quan sát trước không?'
+    'en': 'Does LLN say the next observations must compensate for earlier ones?'
+  'back':
+    'vi': 'Không; đó là gambler''s fallacy.'
+    'en': 'No; that is the gambler''s fallacy.'
+- 'id': 'c3w3-fc-15'
+  'topic': 'lln'
+  'kind': 'concept'
+  'front':
+    'vi': 'Ba điều kiện thực hành của LLN trong slides?'
+    'en': 'Three practical LLN conditions in the slides?'
+  'back':
+    'vi': 'Mẫu ngẫu nhiên, sample size đủ lớn, quan sát độc lập.'
+    'en': 'Random draw, sufficiently large sample size, independent observations.'
+- 'id': 'c3w3-fc-16'
+  'topic': 'clt'
+  'kind': 'concept'
+  'front':
+    'vi': 'CLT nói về raw data hay sampling distribution của mean/sum?'
+    'en': 'Is CLT about raw data or the sampling distribution of means/sums?'
+  'back':
+    'vi': 'Về sampling distribution của mean/sum.'
+    'en': 'About the sampling distribution of means/sums.'
+- 'id': 'c3w3-fc-17'
+  'topic': 'clt'
+  'kind': 'formula'
+  'front':
+    'vi': 'Nếu $X$ có variance $\sigma^2$, variance của $\bar X_n$ là gì?'
+    'en': 'If $X$ has variance $\sigma^2$, what is variance of $\bar X_n$?'
+  'back':
+    'vi': '$\sigma^2/n$.'
+    'en': '$\sigma^2/n$.'
+- 'id': 'c3w3-fc-18'
+  'topic': 'clt'
+  'kind': 'formula'
+  'front':
+    'vi': 'Chuẩn hóa $\bar X_n$ trong CLT bằng công thức nào?'
+    'en': 'How do you standardize $\bar X_n$ in CLT?'
+  'back':
+    'vi': '$(\bar X_n-\mu)/(\sigma/\sqrt n)$.'
+    'en': '$(\bar X_n-\mu)/(\sigma/\sqrt n)$.'
+- 'id': 'c3w3-fc-19'
+  'topic': 'clt'
+  'kind': 'compute'
+  'front':
+    'vi': 'Với coin fair và $n=10$, mean số heads là gì?'
+    'en': 'For a fair coin and $n=10$, mean heads?'
+  'back':
+    'vi': '$np=10(0.5)=5$.'
+    'en': '$np=10(0.5)=5$.'
+- 'id': 'c3w3-fc-20'
+  'topic': 'clt'
+  'kind': 'compute'
+  'front':
+    'vi': 'Uniform$(0,15)$ có mean bằng bao nhiêu?'
+    'en': 'What is the mean of Uniform$(0,15)$?'
+  'back':
+    'vi': '$7.5$.'
+    'en': '$7.5$.'
+- 'id': 'c3w3-fc-21'
+  'topic': 'point-estimation'
+  'kind': 'concept'
+  'front':
+    'vi': 'Estimator khác estimate như thế nào?'
+    'en': 'How does an estimator differ from an estimate?'
+  'back':
+    'vi': 'Estimator là quy tắc ngẫu nhiên; estimate là giá trị cụ thể sau khi thấy dữ liệu.'
+    'en': 'Estimator is the random rule; estimate is the realized value after seeing data.'
+- 'id': 'c3w3-fc-22'
+  'topic': 'point-estimation'
+  'kind': 'formula'
+  'front':
+    'vi': 'Ước lượng điểm cho Bernoulli $p$ thường là gì?'
+    'en': 'Common point estimate for Bernoulli $p$?'
+  'back':
+    'vi': '$\hat p=\frac1n\sum_i x_i$.'
+    'en': '$\hat p=\frac1n\sum_i x_i$.'
+- 'id': 'c3w3-fc-23'
+  'topic': 'point-estimation'
+  'kind': 'compute'
+  'front':
+    'vi': '10 tosses có 7 heads: point estimate của $P(H)$?'
+    'en': '10 tosses have 7 heads: point estimate of $P(H)$?'
+  'back':
+    'vi': '$0.7$.'
+    'en': '$0.7$.'
+- 'id': 'c3w3-fc-24'
+  'topic': 'point-estimation'
+  'kind': 'concept'
+  'front':
+    'vi': 'Vì sao một point estimate không đủ mô tả uncertainty?'
+    'en': 'Why is one point estimate insufficient for uncertainty?'
+  'back':
+    'vi': 'Nó không cho biết estimate thay đổi thế nào giữa các mẫu.'
+    'en': 'It does not show how the estimate varies across samples.'
+- 'id': 'c3w3-fc-25'
+  'topic': 'mle-bernoulli'
+  'kind': 'formula'
+  'front':
+    'vi': 'Likelihood Bernoulli với $k$ success trong $n$ trials là gì?'
+    'en': 'Bernoulli likelihood with $k$ successes in $n$ trials?'
+  'back':
+    'vi': '$L(p)=p^k(1-p)^{n-k}$.'
+    'en': '$L(p)=p^k(1-p)^{n-k}$.'
+- 'id': 'c3w3-fc-26'
+  'topic': 'mle-bernoulli'
+  'kind': 'formula'
+  'front':
+    'vi': 'Log-likelihood Bernoulli là gì?'
+    'en': 'What is Bernoulli log-likelihood?'
+  'back':
+    'vi': '$\ell(p)=k\log p+(n-k)\log(1-p)$.'
+    'en': '$\ell(p)=k\log p+(n-k)\log(1-p)$.'
+- 'id': 'c3w3-fc-27'
+  'topic': 'mle-bernoulli'
+  'kind': 'compute'
+  'front':
+    'vi': '8 heads, 2 tails: $\hat p_{MLE}$?'
+    'en': '8 heads, 2 tails: $\hat p_{MLE}$?'
+  'back':
+    'vi': '$8/10=0.8$.'
+    'en': '$8/10=0.8$.'
+- 'id': 'c3w3-fc-28'
+  'topic': 'mle-bernoulli'
+  'kind': 'concept'
+  'front':
+    'vi': 'Likelihood là xác suất của parameter đúng không?'
+    'en': 'Is likelihood the probability of the parameter?'
+  'back':
+    'vi': 'Không; nó là hàm của parameter với data cố định.'
+    'en': 'No; it is a function of the parameter with data fixed.'
+- 'id': 'c3w3-fc-29'
+  'topic': 'mle-bernoulli'
+  'kind': 'compute'
+  'front':
+    'vi': '$0.5^{10}$ xấp xỉ bằng bao nhiêu?'
+    'en': 'Approximately what is $0.5^{10}$?'
+  'back':
+    'vi': '$1/1024\approx0.00098$.'
+    'en': '$1/1024\approx0.00098$.'
+- 'id': 'c3w3-fc-30'
+  'topic': 'mle-gaussian-regression'
+  'kind': 'formula'
+  'front':
+    'vi': 'Gaussian MLE mean là gì?'
+    'en': 'What is the Gaussian MLE mean?'
+  'back':
+    'vi': '$\hat\mu=\bar x$.'
+    'en': '$\hat\mu=\bar x$.'
+- 'id': 'c3w3-fc-31'
+  'topic': 'mle-gaussian-regression'
+  'kind': 'formula'
+  'front':
+    'vi': 'Gaussian MLE variance chia cho gì?'
+    'en': 'Gaussian MLE variance divides by what?'
+  'back':
+    'vi': 'Chia cho $n$: $\hat\sigma^2=\frac1n\sum_i(x_i-\bar x)^2$.'
+    'en': 'Divide by $n$: $\hat\sigma^2=\frac1n\sum_i(x_i-\bar x)^2$.'
+- 'id': 'c3w3-fc-32'
+  'topic': 'mle-gaussian-regression'
+  'kind': 'concept'
+  'front':
+    'vi': 'Least squares là MLE khi residual có phân phối gì?'
+    'en': 'Least squares is MLE when residuals have what distribution?'
+  'back':
+    'vi': 'Gaussian/normal với variance cố định.'
+    'en': 'Gaussian/normal with fixed variance.'
+- 'id': 'c3w3-fc-33'
+  'topic': 'mle-gaussian-regression'
+  'kind': 'compute'
+  'front':
+    'vi': 'Residuals $1,-1$ có SSE bằng bao nhiêu?'
+    'en': 'Residuals $1,-1$ have what SSE?'
+  'back':
+    'vi': '$1^2+(-1)^2=2$.'
+    'en': '$1^2+(-1)^2=2$.'
+- 'id': 'c3w3-fc-34'
+  'topic': 'mle-gaussian-regression'
+  'kind': 'concept'
+  'front':
+    'vi': 'Vì sao dùng log-likelihood cho Gaussian product?'
+    'en': 'Why use log-likelihood for Gaussian products?'
+  'back':
+    'vi': 'Để biến tích thành tổng và tránh underflow.'
+    'en': 'To turn products into sums and avoid underflow.'
+- 'id': 'c3w3-fc-35'
+  'topic': 'bayesian-regularization'
+  'kind': 'formula'
+  'front':
+    'vi': 'Bayes cho posterior parameter viết thế nào?'
+    'en': 'Bayes formula for parameter posterior?'
+  'back':
+    'vi': '$p(\theta\mid x)=p(x\mid\theta)p(\theta)/p(x)$.'
+    'en': '$p(\theta\mid x)=p(x\mid\theta)p(\theta)/p(x)$.'
+- 'id': 'c3w3-fc-36'
+  'topic': 'bayesian-regularization'
+  'kind': 'formula'
+  'front':
+    'vi': 'MAP estimator là argmax của gì?'
+    'en': 'MAP estimator is argmax of what?'
+  'back':
+    'vi': '$\arg\max_\theta p(x\mid\theta)p(\theta)$.'
+    'en': '$\arg\max_\theta p(x\mid\theta)p(\theta)$.'
+- 'id': 'c3w3-fc-37'
+  'topic': 'bayesian-regularization'
+  'kind': 'concept'
+  'front':
+    'vi': 'Khi nào MAP trùng MLE?'
+    'en': 'When does MAP match MLE?'
+  'back':
+    'vi': 'Khi prior không thông tin/constant trên miền xét.'
+    'en': 'When the prior is non-informative/constant over the domain.'
+- 'id': 'c3w3-fc-38'
+  'topic': 'bayesian-regularization'
+  'kind': 'compute'
+  'front':
+    'vi': 'Beta$(2,2)$ prior, 8 heads/2 tails: posterior là gì?'
+    'en': 'Beta$(2,2)$ prior, 8 heads/2 tails: posterior?'
+  'back':
+    'vi': 'Beta$(10,4)$.'
+    'en': 'Beta$(10,4)$.'
+- 'id': 'c3w3-fc-39'
+  'topic': 'bayesian-regularization'
+  'kind': 'formula'
+  'front':
+    'vi': '$L_2$ regularization phạt đại lượng nào?'
+    'en': 'What quantity does $L_2$ regularization penalize?'
+  'back':
+    'vi': 'Tổng bình phương hệ số, ví dụ $\lambda\sum_j a_j^2$.'
+    'en': 'Sum of squared coefficients, e.g. $\lambda\sum_j a_j^2$.'
+- 'id': 'c3w3-fc-40'
+  'topic': 'bayesian-regularization'
+  'kind': 'concept'
+  'front':
+    'vi': 'Frequentist xem xác suất là gì?'
+    'en': 'How do frequentists interpret probability?'
+  'back':
+    'vi': 'Tần suất dài hạn của biến cố.'
+    'en': 'Long-run frequency of events.'
+- 'id': 'c3w3-fc-41'
+  'topic': 'bayesian-regularization'
+  'kind': 'concept'
+  'front':
+    'vi': 'Bayesian xem xác suất là gì?'
+    'en': 'How do Bayesians interpret probability?'
+  'back':
+    'vi': 'Mức độ tin tưởng/certainty được cập nhật bằng dữ liệu.'
+    'en': 'Degree of belief/certainty updated by data.'

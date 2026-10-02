@@ -1,0 +1,148 @@
+formulas:
+  - id: c1w2-f-system-matrix-form
+    topic: ml-motivation
+    name: { vi: 'Dạng chuẩn của hệ tuyến tính', en: 'Standard linear-system form' }
+    tex: 'Ax=b'
+    where:
+      vi: '$A$ chứa hệ số, $x$ chứa ẩn, $b$ chứa mục tiêu/vế phải.'
+      en: '$A$ stores coefficients, $x$ unknowns, and $b$ target/right-hand-side values.'
+    numpy: 'np.linalg.solve(A, b)'
+    exercises: [c1w2-nonsingular-systems-numeric-04, c1w2-matrix-row-reduction-matching-03, c1w1-eq-matrix-03]
+  - id: c1w2-f-unique-solution-pivots
+    topic: nonsingular-systems
+    name: { vi: 'Nghiệm duy nhất và pivot đầy đủ', en: 'Unique solution and full pivots' }
+    tex: '\text{pivot in every variable column}\Longrightarrow \text{unique solution}'
+    where:
+      vi: 'Áp dụng cho hệ vuông/đủ ràng buộc sau khử Gauss.'
+      en: 'Applies to square or fully constrained systems after elimination.'
+    exercises: [c1w2-nonsingular-systems-truefalse-02, c1w2-nonsingular-systems-mcq-01, c1w2-nonsingular-systems-code-08]
+  - id: c1w2-f-nonsingular-det-condition
+    topic: nonsingular-systems
+    name: { vi: 'Điều kiện không suy biến 2×2', en: '2×2 non-singularity condition' }
+    tex: '\det(A)\ne0\Longleftrightarrow A\text{ is non-singular}'
+    where:
+      vi: 'Với hệ vuông 2×2, điều này cho đúng một nghiệm.'
+      en: 'For a square 2×2 system, this gives exactly one solution.'
+    numpy: 'np.linalg.det(A)'
+    exercises: [c1w2-nonsingular-systems-construct-05, c1w1-det2-num-01, c1w4-02-tf]
+  - id: c1w2-f-singular-det-condition
+    topic: singular-systems
+    name: { vi: 'Điều kiện suy biến', en: 'Singularity condition' }
+    tex: '\det(A)=0\Longleftrightarrow A\text{ is singular}'
+    where:
+      vi: 'Ma trận hệ số suy biến có thể tạo hệ vô nghiệm hoặc vô số nghiệm.'
+      en: 'A singular coefficient matrix can produce no solution or infinitely many solutions.'
+    exercises: [c1w2-singular-systems-mcq-01, c1w2-singular-systems-construct-05, c1w1-mat-multi-06]
+  - id: c1w2-f-coincident-lines
+    topic: singular-systems
+    name: { vi: 'Hai đường trùng nhau', en: 'Coincident lines' }
+    tex: '(p_2,q_2,r_2)=k(p_1,q_1,r_1)\Longrightarrow \infty\text{ solutions}'
+    where:
+      vi: 'Cả hệ số và vế phải cùng tỉ lệ nên hai phương trình biểu diễn cùng đường.'
+      en: 'Coefficients and right-hand side scale together, so both equations describe the same line.'
+    exercises: [c1w2-singular-systems-mcq-04, c1w2-singular-systems-construct-05, c1w1-lines-construct-05]
+  - id: c1w2-f-inconsistent-row
+    topic: singular-systems
+    name: { vi: 'Dòng mâu thuẫn trong ma trận mở rộng', en: 'Inconsistent augmented row' }
+    tex: '[0\ 0\ \cdots\ 0\mid c],\quad c\ne0\Longrightarrow \text{no solution}'
+    where:
+      vi: 'Dòng này nói $0=c$, một mâu thuẫn.'
+      en: 'This row says $0=c$, which is a contradiction.'
+    exercises: [c1w2-singular-systems-mcq-01, c1w2-reduced-row-echelon-form-finderror-07, c1w1-3sys-error-07]
+  - id: c1w2-f-free-variables
+    topic: more-variables
+    name: { vi: 'Số biến tự do', en: 'Number of free variables' }
+    tex: '\#\text{free variables}=n-\operatorname{rank}(A)'
+    where:
+      vi: '$n$ là số biến; nếu hệ nhất quán và có biến tự do thì có vô số nghiệm.'
+      en: '$n$ is the number of variables; if the system is consistent and has free variables, it has infinitely many solutions.'
+    exercises: [c1w2-more-variables-truefalse-02, c1w2-rank-general-mcq-01, c1w2-row-echelon-general-mcq-01]
+  - id: c1w2-f-back-substitution
+    topic: more-variables
+    name: { vi: 'Thế ngược trong hệ tam giác', en: 'Back-substitution in triangular systems' }
+    tex: 'x_i=\frac{b_i-\sum_{j=i+1}^{n}u_{ij}x_j}{u_{ii}}'
+    where:
+      vi: 'Dùng cho hệ tam giác trên $Ux=b$ với $u_{ii}\ne0$, bắt đầu từ dòng cuối.'
+      en: 'Use for upper-triangular $Ux=b$ with $u_{ii}\ne0$, starting from the last row.'
+    exercises: [c1w2-more-variables-matrix-04, c1w2-nonsingular-systems-code-08, c1w2-more-variables-parsons-06]
+  - id: c1w2-f-augmented-matrix
+    topic: matrix-row-reduction
+    name: { vi: 'Ma trận mở rộng của hệ', en: 'Augmented matrix of a system' }
+    tex: '[A\mid b]'
+    where:
+      vi: 'Cột $b$ phải đi theo cùng phép biến đổi hàng như các cột của $A$.'
+      en: 'The $b$ column must undergo the same row operations as the columns of $A$.'
+    exercises: [c1w2-matrix-row-reduction-mcq-01, c1w2-matrix-row-reduction-truefalse-02, c1w2-matrix-row-reduction-matrix-04]
+  - id: c1w2-f-row-replacement
+    topic: matrix-row-reduction
+    name: { vi: 'Phép cộng bội của một hàng', en: 'Add a scaled row to another row' }
+    tex: 'R_i\leftarrow R_i+kR_j,\quad i\ne j'
+    where:
+      vi: 'Phép này giữ nguyên tập nghiệm của hệ nếu áp dụng cho toàn bộ hàng mở rộng.'
+      en: 'This preserves the solution set when applied to the entire augmented row.'
+    exercises: [c1w2-matrix-row-reduction-matrix-04, c1w2-matrix-row-reduction-code-08, c1w2-row-operations-singularity-code-08]
+  - id: c1w2-f-row-swap-det
+    topic: row-operations-singularity
+    name: { vi: 'Đổi chỗ hai hàng và định thức', en: 'Row swap and determinant' }
+    tex: '\det(A_{\text{swapped}})=-\det(A)'
+    where:
+      vi: 'Đổi hai hàng làm đổi dấu định thức nhưng không đổi trạng thái zero/nonzero.'
+      en: 'Swapping two rows flips determinant sign but preserves zero/nonzero status.'
+    exercises: [c1w2-row-operations-singularity-matching-03, c1w2-row-operations-singularity-parametric-11]
+  - id: c1w2-f-row-scale-det
+    topic: row-operations-singularity
+    name: { vi: 'Nhân một hàng với hằng số', en: 'Scaling one row and determinant' }
+    tex: 'R_i\leftarrow kR_i,\ k\ne0\quad\Longrightarrow\quad \det(A_{\text{new}})=k\det(A)'
+    where:
+      vi: 'Nhân một hàng với $k$ nhân định thức với $k$.'
+      en: 'Scaling one row by $k$ multiplies the determinant by $k$.'
+    exercises: [c1w2-row-operations-singularity-matching-03, c1w2-rank-multistep-10, c1w2-row-echelon-general-multistep-10]
+  - id: c1w2-f-row-add-det
+    topic: row-operations-singularity
+    name: { vi: 'Cộng bội hàng khác không đổi định thức', en: 'Row replacement preserves determinant' }
+    tex: 'R_i\leftarrow R_i+kR_j\quad\Longrightarrow\quad \det(A_{\text{new}})=\det(A)'
+    where:
+      vi: 'Phép thay hàng này giữ nguyên tính suy biến/không suy biến.'
+      en: 'This row replacement preserves singular/non-singular status.'
+    exercises: [c1w2-row-operations-singularity-mcq-01, c1w2-row-operations-singularity-truefalse-02, c1w2-row-operations-singularity-parametric-11]
+  - id: c1w2-f-rank-pivots
+    topic: rank
+    name: { vi: 'Rank bằng số pivot', en: 'Rank equals number of pivots' }
+    tex: '\operatorname{rank}(A)=\#\text{pivots}=\#\text{nonzero rows in REF}'
+    where:
+      vi: 'Sau khi đưa về REF, mỗi hàng khác 0 đóng góp một pivot.'
+      en: 'After reducing to REF, each nonzero row contributes one pivot.'
+    numpy: 'np.linalg.matrix_rank(A)'
+    exercises: [c1w2-rank-numeric-04, c1w2-rank-truefalse-02, c1w2-row-echelon-form-numeric-04]
+  - id: c1w2-f-max-rank
+    topic: rank-general
+    name: { vi: 'Rank tối đa của ma trận m×n', en: 'Maximum rank of an m×n matrix' }
+    tex: '\operatorname{rank}(A)\le \min(m,n)'
+    where:
+      vi: 'Không thể có nhiều pivot hơn số hàng hoặc số cột.'
+      en: 'There cannot be more pivots than rows or columns.'
+    exercises: [c1w2-rank-general-numeric-04, c1w2-rank-general-truefalse-02, c1w2-rank-general-construct-05]
+  - id: c1w2-f-ref-conditions
+    topic: row-echelon-form
+    name: { vi: 'Điều kiện dạng bậc thang hàng', en: 'Row echelon form conditions' }
+    tex: 'p_1<p_2<\cdots,\quad a_{ij}=0\text{ below each pivot},\quad \text{zero rows last}'
+    where:
+      vi: '$p_i$ là vị trí pivot của hàng khác 0 thứ $i$.'
+      en: '$p_i$ is the pivot position of the $i$-th nonzero row.'
+    exercises: [c1w2-row-echelon-form-mcq-01, c1w2-row-echelon-form-construct-05, c1w2-row-echelon-form-parametric-11]
+  - id: c1w2-f-general-ref-leading-columns
+    topic: row-echelon-general
+    name: { vi: 'Pivot dịch sang phải trong REF tổng quát', en: 'Pivots move right in general REF' }
+    tex: 'p_{i+1}>p_i'
+    where:
+      vi: 'Các cột toàn 0 ban đầu có thể bị bỏ qua; pivot của hàng dưới phải nằm bên phải pivot phía trên.'
+      en: 'Leading zero columns may be skipped; a lower row pivot must be right of the pivot above.'
+    exercises: [c1w2-row-echelon-general-mcq-01, c1w2-row-echelon-general-truefalse-02, c1w2-row-echelon-general-matrix-04]
+  - id: c1w2-f-rref-conditions
+    topic: reduced-row-echelon-form
+    name: { vi: 'Điều kiện RREF', en: 'Reduced row echelon form conditions' }
+    tex: '\text{pivot}=1,\quad \text{pivot columns have zeros above and below}'
+    where:
+      vi: 'RREF thêm pivot bằng 1 và cột pivot sạch vào các điều kiện REF.'
+      en: 'RREF adds unit pivots and clean pivot columns to the REF conditions.'
+    exercises: [c1w2-reduced-row-echelon-form-truefalse-02, c1w2-reduced-row-echelon-form-matrix-04, c1w2-reduced-row-echelon-form-construct-05]

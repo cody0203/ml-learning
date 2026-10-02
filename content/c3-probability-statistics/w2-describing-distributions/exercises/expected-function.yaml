@@ -1,0 +1,190 @@
+exercises:
+- id: c3w2-expected-function-mcq-01
+  topic: expected-function
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về expected-function.
+    en: Choose the best statement about expected-function.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: For a function of a random variable, transform each outcome first and only then take the probability-weighted average.
+  hints: []
+  options:
+  - vi: Với $E[g(X)]$, biến đổi từng giá trị rồi mới lấy trung bình có trọng số.
+    en: For $E[g(X)]$, transform each value first, then take the weighted average.
+  - vi: Luôn có $E[g(X)] = g(E[X])$ cho mọi hàm $g$.
+    en: $E[g(X)] = g(E[X])$ always holds for every function $g$.
+  - vi: Có thể bình phương xác suất thay vì bình phương giá trị.
+    en: You can square the probabilities instead of squaring the values.
+  - vi: Chỉ giá trị lớn nhất của $g(X)$ ảnh hưởng đến kỳ vọng.
+    en: Only the largest value of $g(X)$ affects the expectation.
+  answer:
+  - 0
+- id: c3w2-expected-function-tf-02
+  topic: expected-function
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: in general, $E[X^2]$ is not equal to $(E[X])^2$.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: for a fair die, $E[X^2]=91/6$ but $(E[X])^2=12.25$, so the two differ.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Bình phương là phi tuyến nên không được đưa kỳ vọng vào trong.
+    en: Squaring is nonlinear, so expectation cannot be moved inside it.
+  - vi: $E[X^2]$ luôn bằng $E[X]$ với xúc xắc công bằng.
+    en: $E[X^2]$ always equals $E[X]$ for a fair die.
+  - vi: Chỉ cần bình phương xác suất, không bình phương giá trị.
+    en: You only square probabilities, not values.
+  reasonAnswer: 0
+- id: c3w2-expected-function-matching-03
+  topic: expected-function
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho expected-function.
+    en: Match concepts for expected-function.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs contrast applying a function to outcomes with applying it after the average has been computed.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-expected-function-parsons-04
+  topic: expected-function
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho expected-function.
+    en: Order the solution workflow for expected-function.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: The procedure protects against the common shortcut error of squaring the mean instead of averaging squared outcomes.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-expected-function-numeric-05
+  topic: expected-function
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: 'Fair die: compute E[X^2].'
+    en: 'Fair die: compute E[X^2].'
+  explanation:
+    vi: 'Square first, then average: $(1+4+9+16+25+36)/6=91/6$.'
+    en: 'Square first, then average: $(1+4+9+16+25+36)/6=91/6$.'
+  hints: []
+  answers:
+  - value: 15.166666666666666
+  tolerance: 0.001
+- id: c3w2-expected-function-find-error-06
+  topic: expected-function
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải về expected-function.
+    en: Find the first error in this expected-function solution.
+  explanation:
+    vi: Bước sai áp dụng một điều kiện không được đảm bảo.
+    en: The first wrong step is the independence assumption; two named variables can still be coupled by the problem setup.
+  hints:
+  - vi: Độc lập phải được cho hoặc chứng minh.
+    en: Independence must be stated or proven.
+  steps:
+  - vi: Gọi dữ liệu/PMF đã cho là đối tượng cần phân tích.
+    en: Let the given data/PMF be the object to analyze.
+  - vi: Viết công thức tổng quát trước khi thay số.
+    en: Write the general formula before substituting.
+  - vi: Giả sử các biến độc lập chỉ vì chúng có hai tên khác nhau.
+    en: Assume the variables are independent just because they have two different names.
+  - vi: Tiếp tục dùng công thức tích để ra kết quả.
+    en: Continue using the product formula to get the result.
+  answer: 2
+- id: c3w2-expected-function-multi-07
+  topic: expected-function
+  type: multi-step
+  difficulty: 2
+  tags:
+  - word-problem
+  prompt:
+    vi: Bài nhiều bước về expected-function.
+    en: Multi-step problem about expected-function.
+  explanation:
+    vi: Giải từng phần giúp tách tâm, độ phân tán và diễn giải.
+    en: The three parts use the same tiny data set to show how mean, variance, and shape answer different questions.
+  hints:
+  - vi: Tính mean trước, rồi khoảng cách tới mean.
+    en: Compute mean first, then deviations from it.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Dữ liệu 2, 4, 6. Mean là bao nhiêu?
+      en: Data 2, 4, 6. What is the mean?
+    answers:
+    - value: 4
+  - type: numeric
+    prompt:
+      vi: Phương sai tổng thể của 2, 4, 6 là bao nhiêu?
+      en: What is the population variance of 2, 4, 6?
+    answers:
+    - value: 2.6666666666666665
+    tolerance: 0.001
+  - type: mcq
+    prompt:
+      vi: Dữ liệu có lệch phải mạnh không?
+      en: Is the data strongly right-skewed?
+    options:
+    - vi: Không, nó đối xứng quanh 4.
+      en: No; the values 2, 4, and 6 are evenly spaced around 4.
+    - vi: Có, vì mean lớn.
+      en: Yes; any data set with a positive mean is right-skewed.
+    answer:
+    - 0

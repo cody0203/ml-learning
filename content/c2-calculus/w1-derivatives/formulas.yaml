@@ -1,0 +1,244 @@
+formulas:
+  - id: c2w1-f-gd-one-param
+    topic: derivative-foundations
+    name: { vi: 'Cập nhật gradient descent một tham số', en: 'One-parameter gradient descent update' }
+    tex: 'w_{\text{new}}=w-\alpha\frac{dJ}{dw}'
+    where:
+      vi: '$J(w)$ là loss theo tham số $w$; dùng khi giảm loss với learning rate $\alpha>0$.'
+      en: '$J(w)$ is the loss as a function of parameter $w$; use it to reduce loss with learning rate $\alpha>0$.'
+    numpy: 'w = w - alpha * dJ_dw'
+    exercises: [c2w1-ml-motivation-numeric-03, c2w1-conclusion-matrix-03, c2w2-gd-one-variable-numeric-28]
+  - id: c2w1-f-average-slope
+    topic: derivative-foundations
+    name: { vi: 'Độ dốc trung bình', en: 'Average slope' }
+    tex: '\frac{x(b)-x(a)}{b-a}'
+    where:
+      vi: 'Đo tốc độ thay đổi trung bình của đại lượng $x(t)$ trên khoảng $[a,b]$.'
+      en: 'Measures the average rate of change of $x(t)$ over the interval $[a,b]$.'
+    numpy: '(x_b - x_a) / (b - a)'
+    exercises: [c2w1-intro-derivatives-mcq-01, c2w1-intro-derivatives-code-03]
+  - id: c2w1-f-derivative-definition
+    topic: derivative-foundations
+    name: { vi: 'Định nghĩa đạo hàm bằng giới hạn', en: 'Limit definition of the derivative' }
+    tex: 'f''(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}'
+    where:
+      vi: 'Đạo hàm tồn tại khi giới hạn của difference quotient tồn tại và hữu hạn.'
+      en: 'The derivative exists when this difference-quotient limit exists and is finite.'
+    exercises: [c2w1-intro-derivatives-truefalse-02, c2w1-intro-derivatives-parsons-04, c2w1-derivative-existence-code-03]
+  - id: c2w1-f-tangent-line
+    topic: derivative-foundations
+    name: { vi: 'Phương trình tiếp tuyến', en: 'Tangent-line equation' }
+    tex: 'y=f(a)+f''(a)(x-a)'
+    where:
+      vi: 'Xấp xỉ tuyến tính gần $x=a$ bằng giá trị và độ dốc tại cùng điểm.'
+      en: 'Local linear approximation near $x=a$ using the value and slope at the same point.'
+    numpy: 'f_a + fp_a * (x - a)'
+    exercises: [c2w1-derivatives-tangents-mcq-01, c2w1-derivatives-tangents-matching-03, c2w2-tangent-planes-multistep-41]
+  - id: c2w1-f-stationary-point-1d
+    topic: extrema-and-zero-slope
+    name: { vi: 'Điều kiện điểm dừng một biến', en: 'One-variable stationary condition' }
+    tex: 'f''(x^*)=0'
+    where:
+      vi: 'Ứng viên cực trị trong miền trong; vẫn cần kiểm tra lân cận hoặc đạo hàm bậc hai.'
+      en: 'Interior extremum candidate; still check nearby values or second derivative.'
+    exercises: [c2w1-slopes-maxima-minima-mcq-01, c2w1-slopes-maxima-minima-finderror-03, c2w2-maxima-minima-numeric-16]
+  - id: c2w1-f-derivative-notations
+    topic: derivative-foundations
+    name: { vi: 'Các ký hiệu đạo hàm', en: 'Derivative notations' }
+    tex: 'f''(x)=\frac{d}{dx}f(x)=\frac{dy}{dx}'
+    where:
+      vi: 'Dùng khi $y=f(x)$; các ký hiệu cùng chỉ độ dốc tức thời theo $x$.'
+      en: 'Use when $y=f(x)$; the notations all denote instantaneous slope with respect to $x$.'
+    exercises: [c2w1-derivative-notation-mcq-01, c2w1-derivative-notation-parsons-03]
+  - id: c2w1-f-constant-derivative
+    topic: common-derivatives
+    name: { vi: 'Đạo hàm của hằng số', en: 'Derivative of a constant' }
+    tex: '\frac{d}{dx}c=0'
+    where:
+      vi: '$c$ không phụ thuộc vào $x$, nên đồ thị ngang có độ dốc bằng $0$.'
+      en: '$c$ does not depend on $x$, so the horizontal graph has slope $0$.'
+    numpy: 'np.zeros_like(x)'
+    exercises: [c2w1-derivatives-lines-truefalse-02, c2w1-derivatives-lines-multistep-04]
+  - id: c2w1-f-line-derivative
+    topic: common-derivatives
+    name: { vi: 'Đạo hàm của đường thẳng', en: 'Derivative of a line' }
+    tex: '\frac{d}{dx}(ax+b)=a'
+    where:
+      vi: '$a$ là slope của đường thẳng; $b$ chỉ tịnh tiến đồ thị lên/xuống.'
+      en: '$a$ is the line slope; $b$ only shifts the graph up or down.'
+    numpy: 'np.full_like(x, a)'
+    exercises: [c2w1-derivatives-lines-mcq-01, c2w1-derivatives-lines-predictoutput-03, c2w1-derivatives-lines-multistep-04]
+  - id: c2w1-f-square-derivative
+    topic: common-derivatives
+    name: { vi: 'Đạo hàm của bình phương', en: 'Derivative of a square' }
+    tex: '\frac{d}{dx}x^2=2x'
+    where:
+      vi: 'Trường hợp cơ bản của power rule; độ dốc parabola tăng tuyến tính theo $x$.'
+      en: 'Basic power-rule case; the parabola slope grows linearly with $x$.'
+    numpy: '2 * x'
+    exercises: [c2w1-derivatives-quadratics-mcq-01, c2w1-derivatives-quadratics-multistep-03, c2w2-gd-one-variable-parametric-68]
+  - id: c2w1-f-quadratic-derivative
+    topic: common-derivatives
+    name: { vi: 'Đạo hàm hàm bậc hai tổng quát', en: 'General quadratic derivative' }
+    tex: '\frac{d}{dx}(ax^2+bx+c)=2ax+b'
+    where:
+      vi: '$a,b,c$ là hằng số; dùng để tìm slope hoặc nghiệm $f''(x)=0$.'
+      en: '$a,b,c$ are constants; use for slopes or solving $f''(x)=0$.'
+    numpy: '2 * a * x + b'
+    exercises: [c2w1-derivatives-quadratics-truefalse-02, c2w1-derivatives-quadratics-matrix-04, c2w1-slopes-maxima-minima-finderror-04]
+  - id: c2w1-f-power-rule
+    topic: common-derivatives
+    name: { vi: 'Power rule', en: 'Power rule' }
+    tex: '\frac{d}{dx}x^n=nx^{n-1}'
+    where:
+      vi: 'Áp dụng cho lũy thừa $x^n$ trong tuần này; nhân hệ số mũ cũ rồi giảm mũ đi $1$.'
+      en: 'Applies to powers $x^n$ in this week; multiply by the old exponent and lower it by $1$.'
+    numpy: 'n * x**(n - 1)'
+    exercises: [c2w1-higher-degree-polynomials-parametric-03, c2w1-higher-degree-polynomials-mcq-04, c2w1-sum-rule-parametric-03]
+  - id: c2w1-f-reciprocal-derivative
+    topic: common-derivatives
+    name: { vi: 'Đạo hàm của nghịch đảo', en: 'Derivative of a reciprocal' }
+    tex: '\frac{d}{dx}\left(\frac1x\right)=-\frac1{x^2}'
+    where:
+      vi: 'Viết $1/x=x^{-1}$; chỉ áp dụng khi $x\ne0$.'
+      en: 'Write $1/x=x^{-1}$; only applies when $x\ne0$.'
+    numpy: '-1 / x**2'
+    exercises: [c2w1-other-power-functions-mcq-01, c2w1-other-power-functions-parametric-03, c2w3-newtons-method-example-numeric-05]
+  - id: c2w1-f-inverse-derivative
+    topic: inverse-trig-exp-log
+    name: { vi: 'Đạo hàm hàm ngược', en: 'Inverse-function derivative' }
+    tex: '(f^{-1})''(y)=\frac1{f''(x)},\quad y=f(x)'
+    where:
+      vi: 'Cần $f$ khả nghịch cục bộ và $f''(x)\ne0$ tại cặp điểm tương ứng.'
+      en: 'Requires local invertibility and $f''(x)\ne0$ at the matching point.'
+    exercises: [c2w1-inverse-function-derivative-mcq-01, c2w1-inverse-function-derivative-parsons-04, c2w1-derivative-log-multistep-04]
+  - id: c2w1-f-sine-derivative
+    topic: inverse-trig-exp-log
+    name: { vi: 'Đạo hàm của sin', en: 'Derivative of sine' }
+    tex: '\frac{d}{dx}\sin x=\cos x'
+    where:
+      vi: '$x$ tính bằng radian; dùng cho thành phần sin trong hàm hợp hoặc tổng.'
+      en: '$x$ is in radians; use for sine terms inside sums or compositions.'
+    numpy: 'np.cos(x)'
+    exercises: [c2w1-trig-derivatives-mcq-01, c2w1-trig-derivatives-matching-03, c2w1-sum-rule-matching-04]
+  - id: c2w1-f-cosine-derivative
+    topic: inverse-trig-exp-log
+    name: { vi: 'Đạo hàm của cos', en: 'Derivative of cosine' }
+    tex: '\frac{d}{dx}\cos x=-\sin x'
+    where:
+      vi: '$x$ tính bằng radian; dấu âm là lỗi thường gặp cần nhớ.'
+      en: '$x$ is in radians; the negative sign is the common detail to remember.'
+    numpy: '-np.sin(x)'
+    exercises: [c2w1-trig-derivatives-truefalse-02, c2w1-trig-derivatives-predictoutput-04, c2w1-product-rule-matrix-03]
+  - id: c2w1-f-e-limit
+    topic: inverse-trig-exp-log
+    name: { vi: 'Định nghĩa giới hạn của e', en: 'Limit definition of e' }
+    tex: 'e=\lim_{n\to\infty}\left(1+\frac1n\right)^n'
+    where:
+      vi: 'Mô tả giới hạn của tăng trưởng ghép lãi càng lúc càng liên tục.'
+      en: 'Describes the limit of increasingly frequent compounding growth.'
+    numpy: '(1 + 1 / n)**n'
+    exercises: [c2w1-meaning-of-e-mcq-01, c2w1-meaning-of-e-finderror-03]
+  - id: c2w1-f-exp-derivative
+    topic: inverse-trig-exp-log
+    name: { vi: 'Đạo hàm của e mũ x', en: 'Derivative of e to the x' }
+    tex: '\frac{d}{dx}e^x=e^x'
+    where:
+      vi: 'Hàm mũ tự nhiên bằng chính tốc độ thay đổi của nó.'
+      en: 'The natural exponential equals its own rate of change.'
+    numpy: 'np.exp(x)'
+    exercises: [c2w1-derivative-ex-mcq-01, c2w1-derivative-ex-parametric-03, c2w3-newtons-method-example-code-07]
+  - id: c2w1-f-log-derivative
+    topic: inverse-trig-exp-log
+    name: { vi: 'Đạo hàm của log tự nhiên', en: 'Derivative of natural log' }
+    tex: '\frac{d}{dx}\log x=\frac1x'
+    where:
+      vi: 'Chỉ áp dụng trên miền $x>0$; là hệ quả của quy tắc hàm ngược.'
+      en: 'Only applies on $x>0$; follows from the inverse-function rule.'
+    numpy: '1 / x'
+    exercises: [c2w1-derivative-log-mcq-01, c2w1-derivative-log-parametric-03, c2w3-newtons-method-example-numeric-05]
+  - id: c2w1-f-differentiability-condition
+    topic: differentiability
+    name: { vi: 'Điều kiện tồn tại đạo hàm', en: 'Differentiability condition' }
+    tex: '\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}'
+    where:
+      vi: 'Đạo hàm tại $a$ tồn tại khi hai giới hạn một phía bằng nhau và hữu hạn.'
+      en: 'The derivative at $a$ exists when both one-sided limits agree and are finite.'
+    exercises: [c2w1-derivative-existence-mcq-01, c2w1-derivative-existence-truefalse-02, c2w1-derivative-existence-code-03]
+  - id: c2w1-f-scalar-multiple-rule
+    topic: derivative-rules
+    name: { vi: 'Quy tắc nhân với hằng số', en: 'Scalar-multiple rule' }
+    tex: '(cf)''=cf'''
+    where:
+      vi: '$c$ phải là hằng số theo $x$; kéo hệ số ra ngoài đạo hàm.'
+      en: '$c$ must be constant with respect to $x$; pull the factor outside the derivative.'
+    exercises: [c2w1-scalar-multiple-rule-mcq-01, c2w1-scalar-multiple-rule-parametric-03, c2w1-derivative-ex-truefalse-02]
+  - id: c2w1-f-sum-rule
+    topic: derivative-rules
+    name: { vi: 'Quy tắc tổng', en: 'Sum rule' }
+    tex: '(g+h)''=g''+h'''
+    where:
+      vi: 'Đạo hàm phân phối qua tổng/hệu của các hàm khả vi.'
+      en: 'Differentiation distributes over sums/differences of differentiable functions.'
+    exercises: [c2w1-sum-rule-mcq-01, c2w1-sum-rule-parametric-03, c2w1-higher-degree-polynomials-parametric-03]
+  - id: c2w1-f-product-rule
+    topic: derivative-rules
+    name: { vi: 'Quy tắc tích', en: 'Product rule' }
+    tex: '(gh)''=g''h+gh'''
+    where:
+      vi: 'Dùng khi hai hàm khả vi nhân nhau; không nhân hai đạo hàm với nhau.'
+      en: 'Use when two differentiable functions are multiplied; do not multiply the two derivatives.'
+    exercises: [c2w1-product-rule-mcq-01, c2w1-product-rule-parsons-04, c2w1-product-rule-finderror-05]
+  - id: c2w1-f-chain-rule
+    topic: derivative-rules
+    name: { vi: 'Quy tắc dây chuyền', en: 'Chain rule' }
+    tex: '\frac{d}{dx}g(h(x))=g''(h(x))h''(x)'
+    where:
+      vi: 'Dùng cho hàm hợp; nhân đạo hàm lớp ngoài tại $h(x)$ với đạo hàm lớp trong.'
+      en: 'Use for compositions; multiply the outside derivative at $h(x)$ by the inside derivative.'
+    exercises: [c2w1-chain-rule-mcq-01, c2w1-chain-rule-code-03, c2w3-classification-derivatives-parsons-07]
+  - id: c2w1-f-one-powerline-loss
+    topic: optimization-losses
+    name: { vi: 'Squared loss một điểm', en: 'One-point squared loss' }
+    tex: 'J(x)=(x-a)^2,\quad J''(x)=2(x-a)'
+    where:
+      vi: '$a$ là vị trí mục tiêu; nghiệm $J''(x)=0$ là $x=a$.'
+      en: '$a$ is the target position; solving $J''(x)=0$ gives $x=a$.'
+    numpy: '(x - a)**2'
+    exercises: [c2w1-squared-loss-one-powerline-mcq-01, c2w1-squared-loss-one-powerline-numeric-04, c2w3-regression-loss-numeric-05]
+  - id: c2w1-f-two-powerline-midpoint
+    topic: optimization-losses
+    name: { vi: 'Squared loss hai điểm và trung điểm', en: 'Two-point squared loss and midpoint' }
+    tex: 'J(x)=(x-a)^2+(x-b)^2,\quad x^*=\frac{a+b}{2}'
+    where:
+      vi: 'Bình phương khoảng cách tới hai vị trí $a,b$ được tối thiểu tại trung điểm.'
+      en: 'Squared distances to two positions $a,b$ are minimized at the midpoint.'
+    numpy: '(a + b) / 2'
+    exercises: [c2w1-squared-loss-two-powerlines-mcq-01, c2w1-squared-loss-two-powerlines-parametric-03, c2w1-squared-loss-two-powerlines-multistep-04]
+  - id: c2w1-f-n-powerline-mean
+    topic: optimization-losses
+    name: { vi: 'Squared loss nhiều điểm và trung bình', en: 'Many-point squared loss and mean' }
+    tex: 'J(x)=\sum_i(x-a_i)^2,\quad J''(x)=2\sum_i(x-a_i),\quad x^*=\frac1n\sum_i a_i'
+    where:
+      vi: 'Với squared loss một chiều, nghiệm tối ưu là trung bình các vị trí $a_i$.'
+      en: 'For one-dimensional squared loss, the optimum is the mean of the positions $a_i$.'
+    numpy: 'np.mean(a)'
+    exercises: [c2w1-squared-loss-three-powerlines-mcq-01, c2w1-squared-loss-three-powerlines-parametric-03, c2w1-squared-loss-three-powerlines-matrix-04]
+  - id: c2w1-f-bernoulli-likelihood
+    topic: optimization-losses
+    name: { vi: 'Likelihood Bernoulli cho đếm head/tail', en: 'Bernoulli likelihood for heads/tails counts' }
+    tex: 'L(p)=p^H(1-p)^T'
+    where:
+      vi: '$H$ là số head, $T$ là số tail; chọn $p$ làm dữ liệu quan sát có xác suất cao.'
+      en: '$H$ heads and $T$ tails; choose $p$ that assigns high probability to the observations.'
+    numpy: 'p**H * (1 - p)**T'
+    exercises: [c2w1-log-loss-part-1-mcq-01, c2w1-log-loss-part-1-multistep-05]
+  - id: c2w1-f-binary-log-loss
+    topic: optimization-losses
+    name: { vi: 'Binary log-loss', en: 'Binary log-loss' }
+    tex: '-\left[y\log p+(1-y)\log(1-p)\right]'
+    where:
+      vi: '$y\in\{0,1\}$ là nhãn thật và $p$ là xác suất dự đoán cho lớp $1$.'
+      en: '$y\in\{0,1\}$ is the true label and $p$ is the predicted probability of class $1$.'
+    numpy: '-(y*np.log(p) + (1-y)*np.log(1-p))'
+    exercises: [c2w1-log-loss-part-2-mcq-01, c2w1-log-loss-part-2-code-03, c2w3-nn-log-loss-code-06]

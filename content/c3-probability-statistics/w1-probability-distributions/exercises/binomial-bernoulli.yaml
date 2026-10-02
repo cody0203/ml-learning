@@ -1,0 +1,204 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-binomial-bernoulli-mcq-01",
+      "topic": "binomial-bernoulli",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề bernoulli và nhị thức?",
+        "en": "Which statement best describes bernoulli and binomial distributions?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng đếm số thành công trong các lần thử độc lập. Các đáp án sai bỏ hệ số nhị thức, dùng $p=1/2$ cho xúc xắc, hoặc cho phép xác suất thành công thay đổi theo lần thử.",
+        "en": "The correct answer counts successes in independent trials. The wrong choices omit the binomial coefficient, use $p=1/2$ for a die, or let the success probability change by trial."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là counting successes in independent trials.",
+          "en": "The focus is counting successes in independent trials."
+        },
+        {
+          "vi": "Xác suất đúng 2 mặt ngửa trong 5 lần tung chỉ là $(0.5)^5$.",
+          "en": "The probability of exactly 2 heads in 5 tosses is only $(0.5)^5$."
+        },
+        {
+          "vi": "Khi gieo xúc xắc và đếm số 1, xác suất thành công là $1/2$ vì chỉ có 'một' hoặc 'không một'.",
+          "en": "When rolling a die and counting ones, success probability is $1/2$ because outcomes are 'one' or 'not one'."
+        },
+        {
+          "vi": "Phân phối nhị thức vẫn áp dụng nếu mỗi lần tung có một xác suất ngửa khác nhau.",
+          "en": "A binomial distribution still applies if each toss has a different heads probability."
+        }
+      ],
+      "answer": [
+        0
+      ],
+      "figure": {
+        "xRange": [
+          -0.5,
+          5.5
+        ],
+        "yRange": [
+          0,
+          0.4
+        ],
+        "bars": [
+          {
+            "x": 0,
+            "h": 0.03125,
+            "width": 0.65,
+            "label": "0"
+          },
+          {
+            "x": 1,
+            "h": 0.15625,
+            "width": 0.65,
+            "label": "1"
+          },
+          {
+            "x": 2,
+            "h": 0.3125,
+            "width": 0.65,
+            "label": "2"
+          },
+          {
+            "x": 3,
+            "h": 0.3125,
+            "width": 0.65,
+            "label": "3"
+          },
+          {
+            "x": 4,
+            "h": 0.15625,
+            "width": 0.65,
+            "label": "4"
+          },
+          {
+            "x": 5,
+            "h": 0.03125,
+            "width": 0.65,
+            "label": "5"
+          }
+        ],
+        "xLabel": "k",
+        "yLabel": "P(X=k)"
+      }
+    },
+    {
+      "id": "c3w1-binomial-bernoulli-numeric-02",
+      "topic": "binomial-bernoulli",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "$X\\sim Binomial(5,0.5)$. Tính $P(X=2)$.",
+        "en": "$X\\sim Binomial(5,0.5)$. Compute $P(X=2)$."
+      },
+      "explanation": {
+        "vi": "10/32.",
+        "en": "10/32."
+      },
+      "answers": [
+        {
+          "value": 0.3125
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-binomial-bernoulli-code-03",
+      "topic": "binomial-bernoulli",
+      "type": "code",
+      "difficulty": 3,
+      "tags": [
+        "python"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng dùng shortcut; hãy viết công thức.",
+          "en": "Do not use shortcuts; write the formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Viết hàm PMF nhị thức từ công thức, không dùng scipy.",
+        "en": "Implement the binomial PMF from the formula, without scipy."
+      },
+      "explanation": {
+        "vi": "Hàm đúng chuyển công thức xác suất thành mã trực tiếp.",
+        "en": "The implementation must include both the binomial coefficient and the powers for successes and failures."
+      },
+      "starter": "def binom_pmf(n, k, p):\n    # return P(X=k) without scipy shortcuts\n    return 0.0\n",
+      "solution": "def binom_pmf(n, k, p):\n    from math import comb\n    return comb(n, k) * (p ** k) * ((1 - p) ** (n - k))\n",
+      "tests": "def test_fair_five():\n    assert abs(binom_pmf(5, 2, 0.5) - 0.3125) < 1e-9\n\ndef test_biased():\n    assert abs(binom_pmf(5, 3, 1/6) - 0.03215020576131687) < 1e-9\n"
+    },
+    {
+      "id": "c3w1-binomial-bernoulli-parsons-04",
+      "topic": "binomial-bernoulli",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài bernoulli và nhị thức.",
+        "en": "Order the workflow for a bernoulli and binomial distributions problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "A binomial calculation first identifies n, k, and p, then counts all orders of the successes."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    },
+    {
+      "id": "c3w1-binomial-bernoulli-parametric-05",
+      "topic": "binomial-bernoulli",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "binomial-prob",
+      "params": {}
+    }
+  ]
+}

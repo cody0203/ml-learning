@@ -1,0 +1,103 @@
+﻿exercises:
+- id: c2w3-regression-perceptron-matching-03
+  topic: regression-perceptron
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong perceptron hồi quy.
+    en: Match notation in a regression perceptron.
+  explanation:
+    vi: $x$ là feature nhà, $w$ là hệ số học được, và $b$ dịch đường dự đoán.
+    en: $x$ is the house feature vector, $w$ is learned, and $b$ shifts the prediction line.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-regression-perceptron-find-error-04
+  topic: regression-perceptron
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi trong công thức dự đoán hồi quy tuyến tính.
+    en: Find the error in the linear regression prediction formula.
+  explanation:
+    vi: Perceptron hồi quy phải cộng bias một lần, không nhân bias với mọi feature.
+    en: A regression perceptron adds the bias once; it does not multiply the bias by every feature.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-regression-perceptron-numeric-05
+  topic: regression-perceptron
+  type: numeric
+  difficulty: 1
+  tags:
+  - perceptron
+  prompt:
+    vi: Nhà có $x=(2,4)$, $w=(10,5)$, $b=3$. Tính $\hat y$.
+    en: A house has $x=(2,4)$, $w=(10,5)$, $b=3$. Compute $\hat y$.
+  explanation:
+    vi: $20+20+3=43$.
+    en: $20+20+3=43$.
+  hints: []
+  answers:
+  - value: 43
+  tolerance: 0
+- id: c2w3-regression-perceptron-matrix-06
+  topic: regression-perceptron
+  type: matrix
+  difficulty: 1
+  tags:
+  - batch
+  prompt:
+    vi: Tính $Xw+b$ với $X=[[1,2],[3,1]]$, $w=(2,5)$, $b=1$.
+    en: Compute $Xw+b$ with $X=[[1,2],[3,1]]$, $w=(2,5)$, $b=1$.
+  explanation:
+    vi: Kết quả là $(13,12)$.
+    en: Result is $(13,12)$.
+  hints: []
+  answer:
+  - - 13
+  - - 12
+  tolerance: 0
+- id: c2w3-regression-perceptron-code-07
+  topic: regression-perceptron
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài hàm dự đoán perceptron hồi quy batch.
+    en: Implement batch regression-perceptron prediction.
+  explanation:
+    vi: Dùng `X @ w + b`.
+    en: Use `X @ w + b`.
+  hints: []
+  starter: "import numpy as np\ndef predict_regression(X,w,b):\n    return np.zeros(len(X))\n"
+  solution: "import numpy as np\ndef predict_regression(X,w,b):\n    return np.asarray(X) @ np.asarray(w) + b\n"
+  tests: "import numpy as np\ndef test_batch():\n    assert np.allclose(predict_regression(np.array([[1,2],[3,1]]), np.array([2,5]), 1), [13,12])\ndef test_one():\n    assert predict_regression(np.array([[2,4]]), np.array([10,5]), 3)[0] == 43\n"

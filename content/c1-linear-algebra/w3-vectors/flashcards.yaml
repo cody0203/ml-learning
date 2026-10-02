@@ -1,0 +1,370 @@
+flashcards:
+- id: c1w3-fc-vector-coordinates-01
+  topic: vector-basics
+  kind: concept
+  front:
+    vi: 'Vector $(4,3)$ khác điểm $(4,3)$ ở ý nghĩa nào?'
+    en: 'How is vector $(4,3)$ different in meaning from point $(4,3)$?'
+  back:
+    vi: 'Vector là độ dịch chuyển; điểm là vị trí. Cùng tọa độ, nhưng vector nói “đi 4 sang phải, 3 lên”.'
+    en: 'A vector is a displacement; a point is a location. Same coordinates, but the vector says “move 4 right, 3 up”.'
+- id: c1w3-fc-vector-coordinates-02
+  topic: vector-basics
+  kind: formula
+  front:
+    vi: 'Vector từ $A=(a_1,a_2)$ đến $B=(b_1,b_2)$ có công thức gì?'
+    en: 'What is the formula for the vector from $A=(a_1,a_2)$ to $B=(b_1,b_2)$?'
+  back:
+    vi: '$B-A=(b_1-a_1,\;b_2-a_2)$. Lấy điểm cuối trừ điểm đầu theo từng tọa độ.'
+    en: '$B-A=(b_1-a_1,\;b_2-a_2)$. Subtract the start point from the endpoint component-wise.'
+- id: c1w3-fc-vector-coordinates-03
+  topic: vector-basics
+  kind: compute
+  front:
+    vi: 'Vector từ $(1,2)$ đến $(5,5)$ là gì?'
+    en: 'What is the vector from $(1,2)$ to $(5,5)$?'
+  back:
+    vi: '$(4,3)$. Tính $(5-1,\;5-2)$.'
+    en: '$(4,3)$. Compute $(5-1,\;5-2)$.'
+- id: c1w3-fc-norms-l1-01
+  topic: norms-distances
+  kind: formula
+  front:
+    vi: 'Công thức chuẩn $L_1$ của $u=(a,b)$ là gì?'
+    en: 'What is the $L_1$ norm formula for $u=(a,b)$?'
+  back:
+    vi: '$\|u\|_1=|a|+|b|$. Chuẩn $L_1$ cộng trị tuyệt đối của các thành phần.'
+    en: '$\|u\|_1=|a|+|b|$. The $L_1$ norm sums absolute entry sizes.'
+- id: c1w3-fc-norms-l2-02
+  topic: norms-distances
+  kind: formula
+  front:
+    vi: 'Công thức chuẩn $L_2$ của $u=(a,b)$ là gì?'
+    en: 'What is the $L_2$ norm formula for $u=(a,b)$?'
+  back:
+    vi: '$\|u\|_2=\sqrt{a^2+b^2}$. Đây là độ dài Euclidean theo Pythagoras.'
+    en: '$\|u\|_2=\sqrt{a^2+b^2}$. This is Euclidean length from Pythagoras.'
+- id: c1w3-fc-norms-distance-03
+  topic: norms-distances
+  kind: concept
+  front:
+    vi: 'Vì sao khoảng cách giữa $u$ và $v$ được tính bằng $\|u-v\|$?'
+    en: 'Why is the distance between $u$ and $v$ computed as $\|u-v\|$?'
+  back:
+    vi: '$u-v$ là vector dịch chuyển từ $v$ đến $u$. Đo chuẩn của dịch chuyển đó cho khoảng cách.'
+    en: '$u-v$ is the displacement from $v$ to $u$. Measuring that displacement gives the distance.'
+- id: c1w3-fc-norms-compute-04
+  topic: norms-distances
+  kind: compute
+  front:
+    vi: '$\|(3,-4)\|_2$ bằng bao nhiêu?'
+    en: 'What is $\|(3,-4)\|_2$?'
+  back:
+    vi: '$5$. Vì $\sqrt{3^2+(-4)^2}=\sqrt{25}=5$.'
+    en: '$5$. Because $\sqrt{3^2+(-4)^2}=\sqrt{25}=5$.'
+- id: c1w3-fc-direction-angle-01
+  topic: direction-scaling
+  kind: formula
+  front:
+    vi: 'Với $u=(a,b)$, công thức tangent của góc $\theta$ so với trục $x$ là gì?'
+    en: 'For $u=(a,b)$, what is the tangent formula for angle $\theta$ from the $x$ axis?'
+  back:
+    vi: '$\tan\theta=\frac{b}{a}$ khi $a\neq0$. Trong code nên dùng `np.arctan2(b, a)` để đúng góc phần tư.'
+    en: '$\tan\theta=\frac{b}{a}$ when $a\neq0$. In code, use `np.arctan2(b, a)` for the correct quadrant.'
+- id: c1w3-fc-direction-scalar-02
+  topic: direction-scaling
+  kind: formula
+  front:
+    vi: 'Nhân scalar $\lambda$ với vector $(a,b)$ cho kết quả nào?'
+    en: 'What is the result of multiplying vector $(a,b)$ by scalar $\lambda$?'
+  back:
+    vi: '$\lambda(a,b)=(\lambda a,\lambda b)$. Nhân từng thành phần với cùng scalar.'
+    en: '$\lambda(a,b)=(\lambda a,\lambda b)$. Multiply each entry by the same scalar.'
+- id: c1w3-fc-direction-negative-03
+  topic: direction-scaling
+  kind: concept
+  front:
+    vi: 'Scalar âm làm gì với hướng của một vector khác zero?'
+    en: 'What does a negative scalar do to the direction of a nonzero vector?'
+  back:
+    vi: 'Nó đảo hướng vector. Độ dài nhân với trị tuyệt đối của scalar.'
+    en: 'It reverses the vector direction. The length is multiplied by the scalar absolute value.'
+- id: c1w3-fc-direction-compute-04
+  topic: direction-scaling
+  kind: compute
+  front:
+    vi: '$-2(1,2)$ bằng vector nào?'
+    en: 'What vector is $-2(1,2)$?'
+  back:
+    vi: '$(-2,-4)$. Nhân từng thành phần với $-2$.'
+    en: '$(-2,-4)$. Multiply each entry by $-2$.'
+- id: c1w3-fc-vector-addition-formula-01
+  topic: vector-addition
+  kind: formula
+  front:
+    vi: 'Công thức $u+v$ và $u-v$ với $u=(a,b)$, $v=(c,d)$ là gì?'
+    en: 'What are $u+v$ and $u-v$ for $u=(a,b)$, $v=(c,d)$?'
+  back:
+    vi: '$u+v=(a+c,b+d)$ và $u-v=(a-c,b-d)$. Cộng/trừ theo từng component.'
+    en: '$u+v=(a+c,b+d)$ and $u-v=(a-c,b-d)$. Add/subtract component-wise.'
+- id: c1w3-fc-vector-addition-geometric-02
+  topic: vector-addition
+  kind: concept
+  front:
+    vi: 'Về hình học, $u-v$ biểu diễn dịch chuyển nào khi $u,v$ cùng gốc?'
+    en: 'Geometrically, what displacement does $u-v$ represent when $u,v$ share a tail?'
+  back:
+    vi: 'Từ đầu mũi tên $v$ đến đầu mũi tên $u$. Vì tọa độ đầu cuối trừ nhau theo thứ tự $u-v$.'
+    en: 'From the head of $v$ to the head of $u$. The endpoint coordinates are subtracted in the order $u-v$.'
+- id: c1w3-fc-vector-addition-compute-03
+  topic: vector-addition
+  kind: compute
+  front:
+    vi: 'Nếu $u=(4,1)$ và $v=(1,3)$, $u+v$ là gì?'
+    en: 'If $u=(4,1)$ and $v=(1,3)$, what is $u+v$?'
+  back:
+    vi: '$(5,4)$. Cộng từng component: $(4+1,\;1+3)$.'
+    en: '$(5,4)$. Add components: $(4+1,\;1+3)$.'
+- id: c1w3-fc-dot-product-formula-01
+  topic: dot-product
+  kind: formula
+  front:
+    vi: 'Công thức dot product của $u=(u_1,\dots,u_n)$ và $v=(v_1,\dots,v_n)$ là gì?'
+    en: 'What is the dot product formula for $u=(u_1,\dots,u_n)$ and $v=(v_1,\dots,v_n)$?'
+  back:
+    vi: '$u\cdot v=\sum_{i=1}^n u_i v_i$. Nhân component tương ứng rồi cộng.'
+    en: '$u\cdot v=\sum_{i=1}^n u_i v_i$. Multiply matching entries and sum.'
+- id: c1w3-fc-dot-product-norm-02
+  topic: dot-product
+  kind: formula
+  front:
+    vi: 'Chuẩn $L_2$ được viết bằng dot product như thế nào?'
+    en: 'How is the $L_2$ norm written using a dot product?'
+  back:
+    vi: '$\|u\|_2=\sqrt{u\cdot u}$. Dot vector với chính nó cho tổng bình phương.'
+    en: '$\|u\|_2=\sqrt{u\cdot u}$. Dotting a vector with itself gives the sum of squares.'
+- id: c1w3-fc-dot-product-ml-03
+  topic: dot-product
+  kind: concept
+  front:
+    vi: 'Trong linear model, $w\cdot x$ thường đại diện cho đại lượng gì?'
+    en: 'In a linear model, what does $w\cdot x$ usually represent?'
+  back:
+    vi: 'Một score tuyến tính. Mỗi feature của $x$ đóng góp theo weight tương ứng trong $w$.'
+    en: 'A linear score. Each feature in $x$ contributes according to the matching weight in $w$.'
+- id: c1w3-fc-dot-product-compute-04
+  topic: dot-product
+  kind: compute
+  front:
+    vi: '$(2,4,1)\cdot(3,5,2)$ bằng bao nhiêu?'
+    en: 'What is $(2,4,1)\cdot(3,5,2)$?'
+  back:
+    vi: '$28$. Tính $2\cdot3+4\cdot5+1\cdot2=6+20+2$.'
+    en: '$28$. Compute $2\cdot3+4\cdot5+1\cdot2=6+20+2$.'
+- id: c1w3-fc-geodot-formula-01
+  topic: geometric-dot-product
+  kind: formula
+  front:
+    vi: 'Công thức geometric dot product theo góc $\theta$ là gì?'
+    en: 'What is the geometric dot product formula using angle $\theta$?'
+  back:
+    vi: '$u\cdot v=\|u\|\|v\|\cos\theta$. Công thức này nối dot product với góc giữa hai vector.'
+    en: '$u\cdot v=\|u\|\|v\|\cos\theta$. This connects the dot product with the angle between vectors.'
+- id: c1w3-fc-geodot-sign-02
+  topic: geometric-dot-product
+  kind: concept
+  front:
+    vi: 'Dấu của $u\cdot v$ cho biết gì về góc giữa hai vector khác zero?'
+    en: 'What does the sign of $u\cdot v$ tell you about the angle between nonzero vectors?'
+  back:
+    vi: 'Dương: góc nhọn; bằng 0: vuông góc; âm: góc tù. Đây là dấu của $\cos\theta$.'
+    en: 'Positive: acute; zero: perpendicular; negative: obtuse. It is the sign of $\cos\theta$.'
+- id: c1w3-fc-geodot-compute-03
+  topic: geometric-dot-product
+  kind: compute
+  front:
+    vi: '$(6,2)\cdot(-1,3)$ bằng bao nhiêu, và quan hệ góc là gì?'
+    en: 'What is $(6,2)\cdot(-1,3)$, and what is the angle relationship?'
+  back:
+    vi: '$0$, nên trực giao. Vì $6(-1)+2(3)=-6+6=0$.'
+    en: '$0$, so they are orthogonal. Because $6(-1)+2(3)=-6+6=0$.'
+- id: c1w3-fc-matvec-formula-01
+  topic: matrix-vector
+  kind: formula
+  front:
+    vi: 'Nếu $A$ là $m\times n$ và $x\in\mathbb{R}^n$, công thức entry $(Ax)_i$ là gì?'
+    en: 'If $A$ is $m\times n$ and $x\in\mathbb{R}^n$, what is the formula for entry $(Ax)_i$?'
+  back:
+    vi: '$(Ax)_i=\sum_{j=1}^n A_{ij}x_j$. Đó là hàng $i$ của $A$ dot với $x$.'
+    en: '$(Ax)_i=\sum_{j=1}^n A_{ij}x_j$. It is row $i$ of $A$ dotted with $x$.'
+- id: c1w3-fc-matvec-shape-02
+  topic: matrix-vector
+  kind: concept
+  front:
+    vi: 'Vì sao ma trận $3\times2$ nhân vector dài 2 cho output dài 3?'
+    en: 'Why does a $3\times2$ matrix times a length-2 vector give a length-3 output?'
+  back:
+    vi: 'Mỗi trong 3 hàng tạo một dot product với vector dài 2. Vì vậy có 3 scalar output.'
+    en: 'Each of the 3 rows forms one dot product with the length-2 vector. So there are 3 scalar outputs.'
+- id: c1w3-fc-matvec-compute-03
+  topic: matrix-vector
+  kind: compute
+  front:
+    vi: '$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$ bằng gì?'
+    en: 'What is $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$?'
+  back:
+    vi: '$\begin{bmatrix}4\\10\end{bmatrix}$. Hai hàng cho $1\cdot2+2\cdot1=4$ và $3\cdot2+4\cdot1=10$.'
+    en: '$\begin{bmatrix}4\\10\end{bmatrix}$. The rows give $1\cdot2+2\cdot1=4$ and $3\cdot2+4\cdot1=10$.'
+- id: c1w3-fc-lintrans-columns-01
+  topic: linear-transformations
+  kind: formula
+  front:
+    vi: 'Trong ma trận biến đổi 2D, cột 1 và cột 2 lần lượt bằng gì?'
+    en: 'In a 2D transformation matrix, what are column 1 and column 2?'
+  back:
+    vi: 'Cột 1 là $Ae_1$, cột 2 là $Ae_2$. Chúng là ảnh của các basis vectors.'
+    en: 'Column 1 is $Ae_1$, column 2 is $Ae_2$. They are the images of the basis vectors.'
+- id: c1w3-fc-lintrans-unit-square-02
+  topic: linear-transformations
+  kind: concept
+  front:
+    vi: 'Vì sao hình vuông đơn vị dưới ma trận 2D thường thành hình bình hành?'
+    en: 'Why does the unit square under a 2D matrix usually become a parallelogram?'
+  back:
+    vi: 'Hai cạnh basis biến thành hai cột của ma trận. Tổng của chúng tạo đỉnh thứ tư của hình bình hành.'
+    en: 'The two basis edges become the two matrix columns. Their sum creates the fourth parallelogram vertex.'
+- id: c1w3-fc-lintrans-compute-03
+  topic: linear-transformations
+  kind: compute
+  front:
+    vi: 'Nếu $Ae_1=(3,-1)$ và $Ae_2=(2,3)$, ma trận $A$ là gì?'
+    en: 'If $Ae_1=(3,-1)$ and $Ae_2=(2,3)$, what is matrix $A$?'
+  back:
+    vi: '$\begin{bmatrix}3&2\\-1&3\end{bmatrix}$. Đặt ảnh của $e_1,e_2$ làm hai cột.'
+    en: '$\begin{bmatrix}3&2\\-1&3\end{bmatrix}$. Put the images of $e_1,e_2$ as columns.'
+- id: c1w3-fc-lintrans-code-04
+  topic: linear-transformations
+  kind: concept
+  front:
+    vi: 'Khi mỗi điểm là một hàng trong NumPy, vì sao thường dùng `P @ A.T` để biến đổi điểm bởi $A$?'
+    en: 'When each point is a row in NumPy, why is `P @ A.T` often used to transform points by $A$?'
+  back:
+    vi: 'Công thức toán học dùng vector cột $Ax$. Với điểm lưu theo hàng, nhân bên phải bởi $A^T$ cho cùng kết quả.'
+    en: 'The math formula uses column vectors $Ax$. With row-stored points, right-multiplying by $A^T$ gives the same result.'
+- id: c1w3-fc-matmul-entry-01
+  topic: matrix-multiplication
+  kind: formula
+  front:
+    vi: 'Công thức entry $(i,j)$ của tích $AB$ là gì?'
+    en: 'What is the formula for entry $(i,j)$ of the product $AB$?'
+  back:
+    vi: '$(AB)_{ij}=\text{row}_i(A)\cdot\text{col}_j(B)$. Lấy hàng dot cột.'
+    en: '$(AB)_{ij}=\text{row}_i(A)\cdot\text{col}_j(B)$. Dot a row with a column.'
+- id: c1w3-fc-matmul-composition-02
+  topic: matrix-multiplication
+  kind: concept
+  front:
+    vi: 'Nếu áp dụng $B$ trước rồi $A$, vì sao ma trận tổng hợp là $AB$?'
+    en: 'If $B$ is applied first and then $A$, why is the combined matrix $AB$?'
+  back:
+    vi: 'Vector đi thành $x\mapsto Bx\mapsto A(Bx)=(AB)x$. Biến đổi bên phải xảy ra trước.'
+    en: 'The vector goes $x\mapsto Bx\mapsto A(Bx)=(AB)x$. The rightmost transformation happens first.'
+- id: c1w3-fc-matmul-shape-03
+  topic: matrix-multiplication
+  kind: formula
+  front:
+    vi: 'Nếu $A$ là $m\times k$ và $B$ là $k\times n$, shape của $AB$ là gì?'
+    en: 'If $A$ is $m\times k$ and $B$ is $k\times n$, what is the shape of $AB$?'
+  back:
+    vi: '$m\times n$. Kích thước trong $k$ phải khớp và biến mất trong output.'
+    en: '$m\times n$. The inner dimension $k$ must match and disappears in the output.'
+- id: c1w3-fc-matmul-compute-04
+  topic: matrix-multiplication
+  kind: compute
+  front:
+    vi: 'Entry $(1,2)$ của $\begin{bmatrix}2&-1\\0&2\end{bmatrix}\begin{bmatrix}3&1\\1&2\end{bmatrix}$ là bao nhiêu?'
+    en: 'What is entry $(1,2)$ of $\begin{bmatrix}2&-1\\0&2\end{bmatrix}\begin{bmatrix}3&1\\1&2\end{bmatrix}$?'
+  back:
+    vi: '$0$. Hàng 1 dot cột 2: $2\cdot1+(-1)\cdot2=0$.'
+    en: '$0$. Row 1 dot column 2: $2\cdot1+(-1)\cdot2=0$.'
+- id: c1w3-fc-inverse-identity-01
+  topic: identity-inverse
+  kind: formula
+  front:
+    vi: 'Ma trận identity $I$ thỏa công thức nào với mọi ma trận tương thích $A$?'
+    en: 'What formula does identity matrix $I$ satisfy with any compatible matrix $A$?'
+  back:
+    vi: '$AI=IA=A$. Identity là biến đổi “không làm gì”.'
+    en: '$AI=IA=A$. The identity is the “do nothing” transformation.'
+- id: c1w3-fc-inverse-2x2-02
+  topic: identity-inverse
+  kind: formula
+  front:
+    vi: 'Công thức inverse của $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ khi $ad-bc\neq0$ là gì?'
+    en: 'What is the inverse formula for $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ when $ad-bc\neq0$?'
+  back:
+    vi: '$A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$. Determinant ở mẫu phải khác 0.'
+    en: '$A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$. The determinant in the denominator must be nonzero.'
+- id: c1w3-fc-inverse-singular-03
+  topic: identity-inverse
+  kind: concept
+  front:
+    vi: 'Vì sao ma trận determinant $0$ không có inverse?'
+    en: 'Why does a matrix with determinant $0$ have no inverse?'
+  back:
+    vi: 'Biến đổi làm mất thông tin, như ép mặt phẳng xuống một đường. Nhiều input có thể cho cùng output.'
+    en: 'The transformation loses information, like collapsing the plane to a line. Multiple inputs can give the same output.'
+- id: c1w3-fc-inverse-compute-04
+  topic: identity-inverse
+  kind: compute
+  front:
+    vi: '$\det\begin{bmatrix}5&2\\1&2\end{bmatrix}$ bằng bao nhiêu?'
+    en: 'What is $\det\begin{bmatrix}5&2\\1&2\end{bmatrix}$?'
+  back:
+    vi: '$8$. Tính $5\cdot2-2\cdot1=10-2$.'
+    en: '$8$. Compute $5\cdot2-2\cdot1=10-2$.'
+- id: c1w3-fc-nn-perceptron-01
+  topic: neural-networks-matrices
+  kind: formula
+  front:
+    vi: 'Công thức score của perceptron tuyến tính với bias là gì?'
+    en: 'What is the score formula for a linear perceptron with bias?'
+  back:
+    vi: '$s=w\cdot x+b$. Sau đó so sánh score với threshold hoặc với 0.'
+    en: '$s=w\cdot x+b$. Then compare the score with a threshold or with 0.'
+- id: c1w3-fc-nn-batch-02
+  topic: neural-networks-matrices
+  kind: formula
+  front:
+    vi: 'Nếu mỗi hàng của $X$ là một ví dụ, công thức batch score cho một weight vector $w$ là gì?'
+    en: 'If each row of $X$ is an example, what is the batch score formula for one weight vector $w$?'
+  back:
+    vi: '$Xw$. Mỗi hàng của $X$ dot với $w$ để tạo một score.'
+    en: '$Xw$. Each row of $X$ dots with $w$ to produce one score.'
+- id: c1w3-fc-nn-bias-03
+  topic: neural-networks-matrices
+  kind: concept
+  front:
+    vi: 'Bias trick biểu diễn bias bằng cách thêm feature nào?'
+    en: 'What feature does the bias trick add to represent bias?'
+  back:
+    vi: 'Thêm một feature luôn bằng $1$. Weight của feature đó chính là bias.'
+    en: 'Add a feature that is always $1$. The weight on that feature is the bias.'
+- id: c1w3-fc-nn-compute-04
+  topic: neural-networks-matrices
+  kind: compute
+  front:
+    vi: 'Với $w=(1,1)$, $b=-1.5$, score của $x=(2,1)$ là bao nhiêu?'
+    en: 'With $w=(1,1)$, $b=-1.5$, what is the score for $x=(2,1)$?'
+  back:
+    vi: '$1.5$. Tính $1\cdot2+1\cdot1-1.5=3-1.5$.'
+    en: '$1.5$. Compute $1\cdot2+1\cdot1-1.5=3-1.5$.'
+- id: c1w3-fc-nn-threshold-05
+  topic: neural-networks-matrices
+  kind: concept
+  front:
+    vi: 'Trong ví dụ spam, đường quyết định $Lottery+Win=1.5$ chia mặt phẳng feature như thế nào?'
+    en: 'In the spam example, how does the decision line $Lottery+Win=1.5$ split feature space?'
+  back:
+    vi: 'Phía có tổng lớn hơn $1.5$ là spam; phía nhỏ hơn là không spam. Đó là boundary tuyến tính.'
+    en: 'The side with sum greater than $1.5$ is spam; the smaller side is not spam. It is a linear boundary.'

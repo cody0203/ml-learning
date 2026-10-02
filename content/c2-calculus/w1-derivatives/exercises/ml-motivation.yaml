@@ -1,0 +1,103 @@
+exercises:
+- id: c2w1-ml-motivation-mcq-01
+  topic: derivative-foundations
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Động lực học máy'?
+    en: A linear-regression model overpredicts house price; which derivative fact explains how training chooses the next weight move?
+  explanation:
+    vi: 'Ý đúng: đạo hàm cho biết mô hình nên thay đổi tham số theo hướng nào để giảm loss.'
+    en: 'Correct: derivatives tell a model how to change parameters to reduce loss.'
+  hints: []
+  options:
+  - vi: đạo hàm cho biết mô hình nên thay đổi tham số theo hướng nào để giảm loss
+    en: derivatives tell a model how to change parameters to reduce loss
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Training should add the raw dollar error to every weight, regardless of the loss formula.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: A zero training gradient means the model code crashed before producing a prediction.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The number of bedrooms is the only quantity that matters; the loss curve is irrelevant.
+  answer:
+  - 0
+- id: c2w1-ml-motivation-truefalse-02
+  topic: derivative-foundations
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Động lực học máy', công thức $\frac{d}{dw}J(w)$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: For a one-weight house-price model, $\frac{dJ}{dw}$ is meaningful only after $J$ is chosen as a loss depending on $w$.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: In the ML setting, the derivative formula is useful only after the loss and parameter have been identified.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Loss phải phụ thuộc vào trọng số thì $\frac{dJ}{dw}$ mới chỉ hướng cập nhật.
+    en: The loss must depend on the weight before $\frac{dJ}{dw}$ can guide an update.
+  - vi: Chỉ nhìn giá nhà dự đoán là đủ, không cần hàm loss.
+    en: Looking only at the predicted house price is enough; no loss function is needed.
+  - vi: Gradient của mọi mô hình nhà đất luôn là số dương.
+    en: A housing model's gradient is always positive.
+  reasonAnswer: 0
+- id: c2w1-ml-motivation-numeric-03
+  topic: derivative-foundations
+  type: numeric
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Tính đạo hàm của $f(x)=2x^2+x$ tại $x=1$.
+    en: Compute the toy loss derivative used as an ML training signal.
+  explanation:
+    vi: Tính đạo hàm rồi thay điểm cần xét; không dùng giá trị hàm thay cho độ dốc.
+    en: The numeric answer reads the training signal after differentiating the toy loss, not from the raw loss value.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answers:
+  - value: 5
+  tolerance: 0.001
+- id: c2w1-ml-motivation-matching-04
+  topic: derivative-foundations
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match each ML training phrase with its derivative meaning.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The pairs link ML terms such as loss, gradient, and update direction to their calculus roles.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$

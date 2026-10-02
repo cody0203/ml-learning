@@ -1,0 +1,209 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-probability-in-ml-mcq-01",
+      "topic": "probability-in-ml",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề xác suất trong học máy?",
+        "en": "Which statement best describes probability in machine learning?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng đọc đầu ra mô hình như xác suất có điều kiện theo dữ liệu vào. Các đáp án sai xem điểm 0.9 là chứng minh tuyệt đối, biến nó thành tần suất của tập huấn luyện, hoặc bỏ qua đặc trưng đầu vào.",
+        "en": "The correct answer reads model output as a conditional probability given the input. The wrong choices treat 0.9 as proof, turn it into a training-set frequency, or ignore the features."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là predictions as uncertain class probabilities.",
+          "en": "The focus is predictions as uncertain class probabilities."
+        },
+        {
+          "vi": "Nếu mô hình trả $P(cat\\mid pixels)=0.9$ thì ảnh chắc chắn là mèo.",
+          "en": "If a model outputs $P(cat\\mid pixels)=0.9$, the image is certainly a cat."
+        },
+        {
+          "vi": "$P(y\\mid x)$ bỏ qua $x$ vì nhãn đã được học trong huấn luyện.",
+          "en": "$P(y\\mid x)$ ignores $x$ because the label was learned during training."
+        },
+        {
+          "vi": "Xác suất lớp không bao giờ cần hiệu chỉnh hoặc kiểm tra calibration.",
+          "en": "Class probabilities never need calibration checks."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-probability-in-ml-truefalse-02",
+      "topic": "probability-in-ml",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong xác suất trong học máy, công thức $P(y\\mid x)$ chỉ có ý nghĩa sau khi xác định đúng biến cố và giả định.",
+        "en": "In probability in machine learning, the formula $P(y\\mid x)$ is meaningful only after identifying the event and assumptions."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "A model score such as 0.9 is conditional on pixels and training assumptions, not a universal fact."
+      },
+      "answer": true,
+      "reasons": [
+        {
+          "vi": "Đúng: $P(y\\mid x)$ chỉ có nghĩa khi $x$ là đặc trưng đầu vào và $y$ là nhãn cần dự đoán.",
+          "en": "True: $P(y\\mid x)$ is meaningful only after $x$ is the input feature vector and $y$ is the target label."
+        },
+        {
+          "vi": "Sai: xác suất lớp ảnh không được tính bằng công thức xúc xắc hoặc công thức hợp Venn.",
+          "en": "False: an image-class probability is not computed with a dice-counting or Venn-union formula."
+        },
+        {
+          "vi": "Sai: điểm phân loại phải nằm từ 0 đến 1; vấn đề là điều kiện theo pixels, không phải PDF âm.",
+          "en": "False: a classifier score must stay between 0 and 1; the issue is conditioning on pixels, not negative PDFs."
+        }
+      ],
+      "reasonAnswer": 0
+    },
+    {
+      "id": "c3w1-probability-in-ml-matching-03",
+      "topic": "probability-in-ml",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong xác suất trong học máy.",
+        "en": "Match key terms in probability in machine learning."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches separate classifier outputs, labels, feature vectors, and the role of uncertainty."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3w1-probability-in-ml-parsons-04",
+      "topic": "probability-in-ml",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài xác suất trong học máy.",
+        "en": "Order the workflow for a probability in machine learning problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "An ML probability workflow starts with the target label, then the features, then a calibrated decision."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    },
+    {
+      "id": "c3w1-probability-in-ml-predictoutput-05",
+      "topic": "probability-in-ml",
+      "type": "predict-output",
+      "difficulty": 2,
+      "tags": [
+        "numpy"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đoán output của đoạn NumPy.",
+        "en": "Predict which simulated classifier flags exceed the 0.3 threshold."
+      },
+      "explanation": {
+        "vi": "So sánh ngẫu nhiên sinh ra với ngưỡng tích lũy.",
+        "en": "The displayed booleans are true exactly where the fixed random draws fall below 0.3."
+      },
+      "code": "import numpy as np\nrng = np.random.default_rng(0)\nu = rng.random(5)\nprint(np.round(u < 0.3, 2))\n",
+      "options": [
+        "[False  True  True  True False]",
+        "[ True False False False  True]",
+        "[0.3 0.3 0.3 0.3 0.3]",
+        "[False False False False False]"
+      ],
+      "answer": 0
+    }
+  ]
+}

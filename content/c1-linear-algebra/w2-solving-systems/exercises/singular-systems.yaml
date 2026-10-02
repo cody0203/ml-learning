@@ -1,0 +1,228 @@
+exercises:
+- id: c1w2-singular-systems-mcq-01
+  topic: singular-systems
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: After reducing $a+b=10$ and $2a+2b=24$, the second row becomes $0=4$. Which conclusion fits this exact row?
+    vi: Sau khi khử $a+b=10$ và $2a+2b=24$, hàng thứ hai trở thành $0=4$. Kết luận nào phù hợp với đúng hàng này?
+  explanation:
+    en: The row $0=4$ is impossible, so the system has no solution. Multiple coefficient rows would give infinitely many only if the right-hand side were compatible, such as $20$ instead of $24$; one remaining visible equation is not enough for uniqueness; and constants are not the variable values.
+    vi: Hàng $0=4$ là bất khả thi, nên hệ vô nghiệm. Hai hàng hệ số là bội chỉ cho vô số nghiệm nếu vế phải tương thích, ví dụ 20 thay vì 24; một phương trình còn lại không đủ để duy nhất; và hằng số không phải là giá trị biến.
+  hints: []
+  options:
+  - en: No solution, because the augmented row is a contradiction.
+    vi: Vô nghiệm, vì hàng mở rộng là một mâu thuẫn.
+  - en: Infinitely many solutions, because the coefficient rows are multiples.
+    vi: Vô số nghiệm, vì hai hàng hệ số là bội của nhau.
+  - en: Exactly one solution, because one equation remains visible.
+    vi: Đúng một nghiệm, vì vẫn còn nhìn thấy một phương trình.
+  - en: The solution is $a=10,b=24$ by reading the constants.
+    vi: Nghiệm là $a=10,b=24$ bằng cách đọc hai hằng số.
+  answer:
+  - 0
+- id: c1w2-singular-systems-truefalse-02
+  topic: singular-systems
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Cùng một ma trận hệ số singular có thể cho vô số nghiệm với vế phải này và vô nghiệm với vế phải khác.
+    en: The same singular coefficient matrix can produce infinitely many solutions for one right-hand side and no solution for another.
+  explanation:
+    vi: Với các hàng [1,1] và [2,2], b=[10,20] cho 0=0, còn b=[10,24] cho 0=4.
+    en: For rows [1,1] and [2,2], b=[10,20] reduces to 0=0, while b=[10,24] reduces to 0=4.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Tính nhất quán phụ thuộc vào cột vế phải.
+    en: Consistency depends on the augmented column.
+  - vi: Vì các hàng hệ số là bội nên mọi vế phải đều tự động tương thích.
+    en: Because the coefficient rows are multiples, every right-hand side is automatically compatible.
+  - vi: Hàng $0=4$ vẫn chấp nhận được nếu ma trận hệ số singular.
+    en: The row $0=4$ is still acceptable when the coefficient matrix is singular.
+  reasonAnswer: 0
+- id: c1w2-singular-systems-matching-03
+  topic: singular-systems
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến hệ tuyến tính suy biến.
+    en: Match concepts related to singular linear systems.
+  explanation:
+    vi: Các cặp tách hàng dư thừa khỏi hàng mở rộng mâu thuẫn, là điểm chính của hệ singular.
+    en: The matches separate redundant rows from contradictory augmented rows, which is the central singular-system distinction.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-singular-systems-mcq-04
+  topic: singular-systems
+  type: mcq
+  difficulty: 1
+  tags:
+  - classify
+  prompt:
+    vi: Hệ $a+b=10$, $2a+2b=20$ có bao nhiêu nghiệm?
+    en: How many solutions does $a+b=10$, $2a+2b=20$ have?
+  explanation:
+    vi: Phương trình hai là 2 lần phương trình một, nên vô số nghiệm.
+    en: The second equation is twice the first, so there are infinitely many solutions.
+  hints: []
+  options:
+  - vi: Đúng một nghiệm
+    en: Exactly one solution
+  - vi: Vô số nghiệm
+    en: Infinitely many solutions
+  - vi: Vô nghiệm
+    en: No solution
+  answer:
+  - 1
+- id: c1w2-singular-systems-construct-05
+  topic: singular-systems
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận hệ số singular sao cho với $b=[3,6]^T$ hệ có vô số nghiệm.
+    en: Construct a singular coefficient matrix so with $b=[3,6]^T$ the system has infinitely many solutions.
+  explanation:
+    vi: Với A=[[1,2],[2,4]] và b=[3,6], hàng 2 gấp đôi hàng 1 cả ở vế phải, nên hệ còn một phương trình và có vô số nghiệm.
+    en: With A=[[1,2],[2,4]] and b=[3,6], row 2 is twice row 1 including the right side, so the system reduces to one equation and has infinitely many solutions.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: singular
+  - kind: infiniteSolutionsWith
+    b:
+    - 3
+    - 6
+  example:
+  - - 1
+    - 2
+  - - 2
+    - 4
+- id: c1w2-singular-systems-parsons-06
+  topic: singular-systems
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho hệ tuyến tính suy biến.
+    en: Order the workflow for singular linear systems.
+  explanation:
+    vi: Với hệ singular, thứ tự khử vẫn như vậy, nhưng mẫu hàng cuối quyết định giữa biến tự do và mâu thuẫn.
+    en: For singular systems, the same reduction order is used, but the final row pattern decides between a free variable and a contradiction.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-singular-systems-finderror-07
+  topic: singular-systems
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về hệ tuyến tính suy biến.
+    en: Find the first error in the argument about singular linear systems.
+  explanation:
+    vi: Lỗi ở bước 3 vì REF cho phép pivot không bằng 1; singularity được quyết định bởi thiếu pivot hoặc mâu thuẫn, không bởi giá trị pivot 2.
+    en: The error is at step 3 because REF permits non-unit pivots; singularity would be decided by missing pivots or contradictions, not by pivot value 2.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-singular-systems-multistep-10
+  topic: singular-systems
+  type: multi-step
+  difficulty: 2
+  tags:
+  - multi-step
+  prompt:
+    vi: Giải bài nhiều bước về hệ suy biến với một phép nhân hàng cụ thể.
+    en: Solve a multi-step singular systems problem with a specific row scaling.
+  explanation:
+    vi: Nhân a+2b=5 với 2 cho 10, không phải 8; độ lệch này nghĩa là hai vế trái song song nhưng hằng số mở rộng mâu thuẫn.
+    en: Multiplying a+2b=5 by 2 gives 10, not 8; the mismatch means the two left sides are parallel but the augmented constants contradict.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: Nhân phương trình $a+2b=5$ với 2 thì vế phải là bao nhiêu?
+      en: Multiplying $a+2b=5$ by 2 gives what right-hand side?
+    answers:
+    - value: 10
+  - type: mcq
+    prompt:
+      vi: So với $2a+4b=8$, kết luận?
+      en: Compared with $2a+4b=8$, conclusion?
+    options:
+    - vi: Vô nghiệm
+      en: No solution
+    - vi: Vô số nghiệm
+      en: Infinitely many
+    - vi: Nghiệm duy nhất
+      en: Unique
+    answer:
+    - 0
+- id: c1w2-singular-systems-parametric-11
+  topic: singular-systems
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động phân loại nghiệm duy nhất, vô số, hoặc vô nghiệm.
+    en: Dynamic classification drill for deciding unique, infinite, or no solution.
+  explanation:
+    vi: So sánh bội của hàng và vế phải trong hệ được sinh để tách dư thừa khỏi mâu thuẫn.
+    en: Compare row multiples and the right-hand side in the generated system to separate redundancy from contradiction.
+  hints: []
+  generator: classify-system
+  params: {}

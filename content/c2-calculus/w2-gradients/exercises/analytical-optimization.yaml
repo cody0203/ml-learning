@@ -1,0 +1,133 @@
+exercises:
+- id: c2w2-analytical-optimization-mcq-17
+  topic: analytical-optimization
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Trong ví dụ $E(m,b)$ của slides, phương pháp giải tích làm gì sau khi tính $E_m$ và $E_b$?
+    en: In the slides' $E(m,b)$ example, what does the analytical method do after computing $E_m$ and $E_b$?
+  explanation:
+    vi: Phương pháp giải tích đặt cả hai đạo hàm riêng bằng 0, rồi giải hệ hai phương trình để lấy $m,b$.
+    en: The analytical method sets both partial derivatives to zero and solves the resulting two-equation system for $m,b$.
+  hints: []
+  options:
+  - vi: Đặt $E_m=0$, $E_b=0$ và giải đồng thời.
+    en: Set $E_m=0$, $E_b=0$ and solve them together.
+  - vi: Chọn learning rate rồi lặp 1000 bước.
+    en: Choose a learning rate and iterate 1000 times.
+  - vi: Chỉ cần kiểm tra dấu của $E_m$.
+    en: Only inspect the sign of $E_m$.
+  - vi: Bỏ qua $b$ vì nó là intercept.
+    en: Ignore $b$ because it is the intercept.
+  answer:
+  - 0
+- id: c2w2-analytical-optimization-truefalse-18
+  topic: analytical-optimization
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Với cost quadratic trong slides, hệ phương trình đạo hàm riêng là tuyến tính theo $m,b$.
+    en: For the quadratic cost in the slides, the partial-derivative equations are linear in $m,b$.
+  explanation:
+    vi: Đúng. $E_m=28m+12b-42$ và $E_b=12m+6b-20$ đều là phương trình bậc nhất theo hai tham số.
+    en: True. $E_m=28m+12b-42$ and $E_b=12m+6b-20$ are both first-degree equations in the two parameters.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Đạo hàm của quadratic theo tham số là biểu thức tuyến tính.
+    en: Differentiating a quadratic in the parameters gives linear expressions.
+  - vi: Vì mọi đạo hàm riêng đều là hằng số.
+    en: Because every partial derivative is a constant.
+  reasonAnswer: 0
+- id: c2w2-analytical-optimization-matching-19
+  topic: analytical-optimization
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép từng biểu thức trong lời giải giải tích của bài hồi quy.
+    en: Match each expression in the analytical regression solution.
+  explanation:
+    vi: Các cặp này là đúng chuỗi từ cost sang hai phương trình rồi tới nghiệm $m,b$.
+    en: These pairs trace the slide path from cost to two equations and finally the parameters.
+  hints: []
+  pairs:
+  - left:
+      vi: $E_m$
+      en: $E_m$
+    right:
+      vi: $28m+12b-42$
+      en: $28m+12b-42$
+  - left:
+      vi: $E_b$
+      en: $E_b$
+    right:
+      vi: $12m+6b-20$
+      en: $12m+6b-20$
+  - left:
+      vi: Nghiệm tối ưu
+      en: Optimal solution
+    right:
+      vi: $m=1/2,\ b=7/3$
+      en: $m=1/2,\ b=7/3$
+- id: c2w2-analytical-optimization-numeric-20
+  topic: analytical-optimization
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Với $E_m=28m+12b-42$ và $E_b=12m+6b-20$, tính hai giá trị tại $m=1/2,b=7/3$.
+    en: With $E_m=28m+12b-42$ and $E_b=12m+6b-20$, compute both values at $m=1/2,b=7/3$.
+  explanation:
+    vi: Thay vào được $28(1/2)+12(7/3)-42=0$ và $12(1/2)+6(7/3)-20=0$, xác nhận đây là điểm dừng.
+    en: Substitution gives $28(1/2)+12(7/3)-42=0$ and $12(1/2)+6(7/3)-20=0$, confirming the stationary point.
+  hints: []
+  answers:
+  - label: E_m
+    value: 0
+  - label: E_b
+    value: 0
+- id: c2w2-analytical-optimization-finderror-46
+  topic: analytical-optimization
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải tối ưu $E(m,b)$.
+    en: Find the first error in optimizing $E(m,b)$.
+  explanation:
+    vi: Cần đặt cả hai đạo hàm riêng bằng 0, không chỉ một.
+    en: Both partial derivatives must be set to zero, not only one.
+  hints: []
+  steps:
+  - vi: Tính $E_m=28m+12b-42$.
+    en: Compute $E_m=28m+12b-42$.
+  - vi: Đặt $E_m=0$ để có một đường ứng viên.
+    en: Set $E_m=0$ to get a candidate line.
+  - vi: Chọn bất kỳ điểm nào trên đường này làm minimum.
+    en: Choose any point on this line as the minimum.
+  - vi: Bỏ qua $E_b$.
+    en: Ignore $E_b$.
+  answer: 2
+- id: c2w2-analytical-optimization-parametric-70
+  topic: analytical-optimization
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh sẽ tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng công thức thay vì ghi nhớ đáp án.
+    en: Apply the formula rather than memorizing an answer.
+  hints: []
+  generator: newton-step
+  params: {}

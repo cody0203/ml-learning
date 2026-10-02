@@ -1,0 +1,35 @@
+id: w1
+order: 1
+title:
+  vi: 'Tuần 1: Đạo hàm và tối ưu hóa'
+  en: 'Week 1: Derivatives and optimization'
+source: syllabus/c2-calculus/W1.pdf
+topics:
+- id: derivative-foundations
+  title:
+    vi: Nền tảng đạo hàm
+    en: Derivative foundations
+- id: extrema-and-zero-slope
+  title:
+    vi: Cực trị và độ dốc bằng không
+    en: Extrema and zero slope
+- id: common-derivatives
+  title:
+    vi: Đạo hàm các hàm cơ bản
+    en: Derivatives of common functions
+- id: inverse-trig-exp-log
+  title:
+    vi: Hàm ngược, lượng giác, mũ và log
+    en: Inverse, trigonometric, exponential, and log functions
+- id: differentiability
+  title:
+    vi: Sự tồn tại của đạo hàm
+    en: Differentiability
+- id: derivative-rules
+  title:
+    vi: Các quy tắc đạo hàm
+    en: Derivative rules
+- id: optimization-losses
+  title:
+    vi: Tối ưu hóa và loss trong ML
+    en: Optimization and ML losses

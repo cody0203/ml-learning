@@ -1,0 +1,109 @@
+﻿exercises:
+- id: c2w3-regression-loss-matching-03
+  topic: regression-loss
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép thành phần của squared-error loss.
+    en: Match the pieces of squared-error loss.
+  explanation:
+    vi: $y$ là nhãn thật, $\hat y$ là dự đoán, và residual là khoảng cách có dấu.
+    en: $y$ is the true target, $\hat y$ is the prediction, and the residual is the signed gap.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-regression-loss-find-error-04
+  topic: regression-loss
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi tính loss bình phương cho một ví dụ.
+    en: Find the error when computing squared loss for one example.
+  explanation:
+    vi: Sai số phải được bình phương trước khi nhân $\frac12$; không lấy trị tuyệt đối thay cho bình phương.
+    en: The residual must be squared before multiplying by $\frac12$; absolute value is not the same loss.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-regression-loss-numeric-05
+  topic: regression-loss
+  type: numeric
+  difficulty: 1
+  tags:
+  - mse
+  prompt:
+    vi: Nếu $y=5$, $\hat y=3$, tính $\frac12(y-\hat y)^2$.
+    en: If $y=5$, $\hat y=3$, compute $\frac12(y-\hat y)^2$.
+  explanation:
+    vi: Sai số là 2, loss là 2.
+    en: Residual is 2, loss is 2.
+  hints: []
+  answers:
+  - value: 2
+  tolerance: 0
+- id: c2w3-regression-loss-predict-output-06
+  topic: regression-loss
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output MSE trung bình.
+    en: Predict the mean MSE output.
+  explanation:
+    vi: Loss trung bình của hai ví dụ là 1.
+    en: Mean loss of two examples is 1.
+  hints: []
+  code: 'import numpy as np
+
+    y=np.array([5.,3.]); yh=np.array([3.,3.])
+
+    print(np.mean(0.5*(y-yh)**2))'
+  options:
+  - '1.0'
+  - '2.0'
+  - '0.0'
+  answer: 0
+- id: c2w3-regression-loss-code-07
+  topic: regression-loss
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài `mse_half(y,yhat)` trả mean của $0.5(y-yhat)^2`.
+    en: Implement `mse_half(y,yhat)` returning the mean of $0.5(y-yhat)^2`.
+  explanation:
+    vi: Vector hóa rồi lấy mean.
+    en: Vectorize then average.
+  hints: []
+  starter: "import numpy as np\ndef mse_half(y,yhat):\n    return 0.0\n"
+  solution: "import numpy as np\ndef mse_half(y,yhat):\n    y=np.asarray(y,dtype=float); yhat=np.asarray(yhat,dtype=float)\n    return float(np.mean(0.5*(y-yhat)**2))\n"
+  tests: "def test_one():\n    assert abs(mse_half([5],[3])-2)<1e-9\ndef test_two():\n    assert abs(mse_half([5,3],[3,3])-1)<1e-9\n"

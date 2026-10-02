@@ -1,0 +1,206 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-normal-distribution-mcq-01",
+      "topic": "normal-distribution",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề phân phối chuẩn?",
+        "en": "Which statement best describes normal distribution?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng nhận diện đường chuông và chuẩn hóa bằng z-score. Các lựa chọn sai cho rằng mọi giá trị có xác suất bằng nhau, nhầm $\\sigma$ với tâm, hoặc tính xác suất bằng chiều cao PDF.",
+        "en": "The correct answer identifies the bell curve and z-score standardization. The wrong choices make all values equally likely, confuse $\\sigma$ with the center, or compute probability from PDF height."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là bell-shaped variables and z-scores.",
+          "en": "The focus is bell-shaped variables and z-scores."
+        },
+        {
+          "vi": "Trong phân phối chuẩn, mọi giá trị thực có xác suất điểm bằng nhau và khác 0.",
+          "en": "In a normal distribution, every real value has the same nonzero point probability."
+        },
+        {
+          "vi": "Tham số $\\sigma$ là vị trí tâm của đường chuông.",
+          "en": "The parameter $\\sigma$ is the center location of the bell curve."
+        },
+        {
+          "vi": "$P(10<X<12)$ bằng $f(10)+f(12)$.",
+          "en": "$P(10<X<12)$ equals $f(10)+f(12)$."
+        }
+      ],
+      "answer": [
+        0
+      ],
+      "figure": {
+        "xRange": [
+          -4,
+          4
+        ],
+        "yRange": [
+          0,
+          0.9
+        ],
+        "functions": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "label": "sigma=1"
+          },
+          {
+            "f": "0.7979*exp(-0.5*(x/0.5)^2)",
+            "label": "sigma=0.5",
+            "color": "#f97316"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      }
+    },
+    {
+      "id": "c3w1-normal-distribution-numeric-02",
+      "topic": "normal-distribution",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Với $X\\sim \\mathcal N(10,2^2)$, z-score của $x=14$ là bao nhiêu?",
+        "en": "For $X\\sim \\mathcal N(10,2^2)$, what is the z-score of $x=14$?"
+      },
+      "explanation": {
+        "vi": "(14-10)/2.",
+        "en": "(14-10)/2."
+      },
+      "answers": [
+        {
+          "value": 2
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-normal-distribution-code-03",
+      "topic": "normal-distribution",
+      "type": "code",
+      "difficulty": 3,
+      "tags": [
+        "python"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng dùng shortcut; hãy viết công thức.",
+          "en": "Do not use shortcuts; write the formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Cài đặt PDF chuẩn từ công thức.",
+        "en": "Implement the normal PDF from the formula."
+      },
+      "explanation": {
+        "vi": "Hàm đúng chuyển công thức xác suất thành mã trực tiếp.",
+        "en": "The solution computes the z-score inside the exponential and scales by sigma times root two pi."
+      },
+      "starter": "def normal_pdf(x, mu, sigma):\n    return 0.0\n",
+      "solution": "def normal_pdf(x, mu, sigma):\n    import math\n    z = (x - mu) / sigma\n    return (1 / (sigma * math.sqrt(2 * math.pi))) * math.exp(-0.5 * z * z)\n",
+      "tests": "def test_standard_center():\n    import math\n    assert abs(normal_pdf(0, 0, 1) - 1/math.sqrt(2*math.pi)) < 1e-9\n\ndef test_shift_scale():\n    assert abs(normal_pdf(2, 2, 0.5) - 0.7978845608028654) < 1e-9\n"
+    },
+    {
+      "id": "c3w1-normal-distribution-mcq-04",
+      "topic": "normal-distribution",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "figure"
+      ],
+      "hints": [
+        {
+          "vi": "Khoảng tô bóng nằm giữa hai điểm.",
+          "en": "The shaded interval lies between two points."
+        }
+      ],
+      "prompt": {
+        "vi": "Hình tô bóng biểu diễn xác suất nào?",
+        "en": "For this bell curve, which central normal probability is shaded?"
+      },
+      "explanation": {
+        "vi": "Với PDF, xác suất là diện tích dưới đường cong trên khoảng tô bóng.",
+        "en": "The shaded standard-normal area is the probability that the z-score lies between -1 and 1."
+      },
+      "figure": {
+        "xRange": [
+          -4,
+          4
+        ],
+        "yRange": [
+          0,
+          0.5
+        ],
+        "functions": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "label": "standard normal"
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "from": -1,
+            "to": 1,
+            "color": "#a7f3d0"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      },
+      "options": [
+        {
+          "vi": "$P(-1<X<1)$",
+          "en": "$P(-1<X<1)$"
+        },
+        {
+          "vi": "$P(X=-1)$",
+          "en": "$P(X=-1)$"
+        },
+        {
+          "vi": "$f(1)-f(-1)$",
+          "en": "$f(1)-f(-1)$"
+        },
+        {
+          "vi": "$P(X>1)$",
+          "en": "$P(X>1)$"
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-normal-distribution-parametric-05",
+      "topic": "normal-distribution",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "z-score",
+      "params": {}
+    }
+  ]
+}

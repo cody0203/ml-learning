@@ -1,0 +1,114 @@
+exercises:
+- id: c2w1-product-rule-mcq-01
+  topic: derivative-rules
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tính chất: quy tắc tích''?'
+    en: 'For $f(t)=g(t)h(t)$, why does the derivative need two terms?'
+  explanation:
+    vi: 'Ý đúng: khi hai thừa số cùng thay đổi, cần tính cả hai đóng góp.'
+    en: 'Correct: when two factors both change, both contributions matter.'
+  hints: []
+  options:
+  - vi: khi hai thừa số cùng thay đổi, cần tính cả hai đóng góp
+    en: when two factors both change, both contributions matter
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Only $g$ changes in a product; $h$ is treated as a permanent constant.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The correct derivative is $g'(t)h'(t)$ because both factors change.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Product derivatives can be replaced by the sum rule after expanding no terms.
+  answer:
+  - 0
+- id: c2w1-product-rule-truefalse-02
+  topic: derivative-rules
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tính chất: quy tắc tích'', có thể áp dụng quy tắc đạo hàm mà không cần kiểm tra điểm không trơn hoặc thừa số đang thay đổi.'
+    en: 'For $g(t)h(t)$, it is safe to differentiate by multiplying $g''(t)$ and $h''(t)$ only.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The product rule is needed because both factors can change at the same time.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Trong tích, mỗi thừa số có thể thay đổi nên cần hai hạng đóng góp.
+    en: In a product, each factor can change, so two contribution terms are needed.
+  - vi: Chỉ cần nhân hai đạo hàm $g'$ và $h'$.
+    en: It is enough to multiply the two derivatives $g'$ and $h'$.
+  - vi: Có thể dùng quy tắc tổng trực tiếp cho mọi tích.
+    en: The sum rule can be used directly for every product.
+  reasonAnswer: 0
+- id: c2w1-product-rule-matrix-03
+  topic: derivative-rules
+  type: matrix
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Nhập vector cột gồm $f'(1)$ và $f'(2)$ cho $f(x)=x^2+1$.
+    en: Enter the column vector for two product-rule slope components.
+  explanation:
+    vi: Vì $f'(x)=2x$, vector là $(2,4)^T$.
+    en: The column vector checks two derivative contributions, mirroring the two terms in the product rule.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answer:
+  - - 2
+  - - 4
+- id: c2w1-product-rule-parsons-04
+  topic: derivative-rules
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình tối ưu hóa bằng đạo hàm.
+    en: Order the product-rule differentiation workflow.
+  explanation:
+    vi: Ta lập loss, lấy đạo hàm, tìm điểm tới hạn, rồi kiểm tra cực trị.
+    en: The product-rule procedure must identify both factors before differentiating either one.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Viết hàm mục tiêu hoặc loss theo biến cần tối ưu.
+    en: Write the objective or loss in terms of the variable to optimize.
+  - vi: Tính đạo hàm của hàm mục tiêu.
+    en: Compute the derivative of the objective.
+  - vi: Giải phương trình đạo hàm bằng 0 hoặc xét dấu đạo hàm.
+    en: Solve derivative equals zero or inspect derivative signs.
+  - vi: Kiểm tra miền xác định, biên và ý nghĩa của nghiệm.
+    en: Check the domain, boundaries, and meaning of the candidate.
+- id: c2w1-product-rule-finderror-05
+  topic: derivative-rules
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên trong lời giải đạo hàm.
+    en: Find the first incorrect step in the product-rule solution.
+  explanation:
+    vi: Bước sai bỏ sót đóng góp của quy tắc tích hoặc quy tắc dây chuyền.
+    en: The first wrong step keeps only a partial product-rule term and loses the $x^2\cos x$ contribution.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Đặt $f(x)=x^2\sin x$.
+    en: Let $f(x)=x^2\sin x$.
+  - vi: Vì đây là tích, dùng $(gh)'=g'h+gh'$.
+    en: Because this is a product, use $(gh)'=g'h+gh'$.
+  - vi: Suy ra $f'(x)=2x\cos x$.
+    en: Therefore $f'(x)=2x\cos x$.
+  - vi: Kết luận tại $x=0$, $f'(0)=0$.
+    en: Conclude at $x=0$, $f'(0)=0$.
+  answer: 2

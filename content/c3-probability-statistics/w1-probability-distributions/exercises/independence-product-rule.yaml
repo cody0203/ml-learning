@@ -1,0 +1,229 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-independence-product-rule-mcq-01",
+      "topic": "independence-product-rule",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề độc lập và quy tắc nhân?",
+        "en": "Which statement best describes independence and product rule?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng kiểm tra việc biết một biến cố có đổi xác suất biến cố kia không. Các đáp án sai nhầm độc lập với rời nhau, với quan hệ nhân quả, hoặc với việc hai biến cố có cùng xác suất.",
+        "en": "The correct answer checks whether knowing one event changes the probability of the other. The distractors confuse independence with disjointness, causality, or having equal probabilities."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là whether knowing one event changes another.",
+          "en": "The focus is whether knowing one event changes another."
+        },
+        {
+          "vi": "Hai biến cố độc lập thì không bao giờ cùng xảy ra.",
+          "en": "Independent events can never happen together."
+        },
+        {
+          "vi": "Độc lập có nghĩa là $A$ gây ra $B$.",
+          "en": "Independence means $A$ causes $B$."
+        },
+        {
+          "vi": "Nếu $P(A)=P(B)$ thì chắc chắn độc lập.",
+          "en": "If $P(A)=P(B)$, the events must be independent."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-independence-product-rule-numeric-02",
+      "topic": "independence-product-rule",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Nếu $P(A)=0.4$ và $P(B)=0.3$ độc lập, tính $P(A\\cap B)$.",
+        "en": "If independent $P(A)=0.4$ and $P(B)=0.3$, compute $P(A\\cap B)$."
+      },
+      "explanation": {
+        "vi": "Multiply independent probabilities.",
+        "en": "Multiply independent probabilities."
+      },
+      "answers": [
+        {
+          "value": 0.12
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-independence-product-rule-construct-03",
+      "topic": "independence-product-rule",
+      "type": "construct",
+      "difficulty": 2,
+      "tags": [
+        "construct"
+      ],
+      "hints": [
+        {
+          "vi": "Các xác suất phải không âm và cộng bằng 1 nếu là PMF.",
+          "en": "Probabilities must be non-negative and sum to 1 for a PMF."
+        }
+      ],
+      "prompt": {
+        "vi": "Nhập bảng xác suất chung 2×2 đã trải phẳng cho hai biến cố độc lập với $P(A)=0.3$, $P(B)=0.4$.",
+        "en": "Enter a flattened 2×2 joint probability table for independent events with $P(A)=0.3$, $P(B)=0.4$."
+      },
+      "explanation": {
+        "vi": "Ví dụ thỏa ràng buộc; nhiều đáp án khác vẫn đúng.",
+        "en": "The table entries multiply the marginal probabilities, so the four cells behave like independent events."
+      },
+      "rows": 1,
+      "cols": 4,
+      "constraints": [
+        {
+          "kind": "probabilityVector"
+        }
+      ],
+      "example": [
+        [
+          0.12,
+          0.18,
+          0.28,
+          0.42
+        ]
+      ]
+    },
+    {
+      "id": "c3w1-independence-product-rule-finderror-04",
+      "topic": "independence-product-rule",
+      "type": "find-error",
+      "difficulty": 2,
+      "tags": [
+        "error-analysis"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy nhớ công thức hợp tổng quát.",
+          "en": "Remember the general union formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Tìm lỗi đầu tiên trong lời giải độc lập và quy tắc nhân.",
+        "en": "Find the first wrong step in the independence and product rule solution."
+      },
+      "explanation": {
+        "vi": "Lỗi là dùng quy tắc sai trước khi kiểm tra điều kiện áp dụng.",
+        "en": "The faulty line multiplies probabilities without first showing that room assignment and soccer are independent."
+      },
+      "steps": [
+        {
+          "vi": "Gọi $A$ và $B$ là hai biến cố cần xét.",
+          "en": "Let $A$ and $B$ be the events of interest."
+        },
+        {
+          "vi": "Nhìn thấy từ 'or' nên viết ngay $P(A\\cup B)=P(A)+P(B)$.",
+          "en": "Seeing the word 'or', immediately write $P(A\\cup B)=P(A)+P(B)$."
+        },
+        {
+          "vi": "Không cần biết $A$ và $B$ có giao nhau hay không.",
+          "en": "There is no need to know whether $A$ and $B$ overlap."
+        },
+        {
+          "vi": "Kết luận xác suất cuối cùng có thể lớn hơn 1.",
+          "en": "Conclude the final probability may be greater than 1."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "c3w1-independence-product-rule-multistep-05",
+      "topic": "independence-product-rule",
+      "type": "multi-step",
+      "difficulty": 3,
+      "tags": [
+        "word-problem"
+      ],
+      "hints": [
+        {
+          "vi": "Xác định mẫu số ở từng phần.",
+          "en": "Identify the denominator in each part."
+        }
+      ],
+      "prompt": {
+        "vi": "Bài nhiều bước kết nối độc lập và quy tắc nhân với ví dụ xúc xắc/email.",
+        "en": "Multi-step problem connecting independence and product rule to a dice/email example."
+      },
+      "explanation": {
+        "vi": "Mỗi phần kiểm tra một quyết định mô hình hóa khác nhau.",
+        "en": "This exercise links the product rule to dice rows and to the prior/likelihood vocabulary used later."
+      },
+      "parts": [
+        {
+          "type": "numeric",
+          "prompt": {
+            "vi": "Hai xúc xắc: xác suất tổng bằng 7 là bao nhiêu?",
+            "en": "Two dice: what is the probability the sum is 7?"
+          },
+          "answers": [
+            {
+              "value": 0.16666666666666666
+            }
+          ],
+          "tolerance": 0.001,
+          "explanation": {
+            "vi": "Có 6 kết quả trên 36.",
+            "en": "There are 6 outcomes out of 36."
+          }
+        },
+        {
+          "type": "true-false",
+          "prompt": {
+            "vi": "Biết xúc xắc đầu là 6 không đổi mẫu số.",
+            "en": "Knowing the first die is 6 does not change the denominator."
+          },
+          "answer": false,
+          "explanation": {
+            "vi": "Điều kiện làm mẫu số còn 6.",
+            "en": "The condition reduces the denominator to 6."
+          }
+        },
+        {
+          "type": "mcq",
+          "prompt": {
+            "vi": "Trong lọc spam, prior là gì?",
+            "en": "In spam filtering, what is the prior?"
+          },
+          "options": [
+            {
+              "vi": "Tỉ lệ nền của spam trước khi quan sát bất kỳ từ khóa nào.",
+              "en": "The baseline spam fraction before observing any keyword."
+            },
+            {
+              "vi": "$P(word\\mid spam)$.",
+              "en": "$P(word\\mid spam)$."
+            },
+            {
+              "vi": "Posterior đã cập nhật sau khi thấy từ trong email.",
+              "en": "The updated posterior after seeing a word in the email."
+            }
+          ],
+          "answer": [
+            0
+          ],
+          "explanation": {
+            "vi": "Prior là xác suất trước bằng chứng.",
+            "en": "The prior is probability before evidence."
+          }
+        }
+      ]
+    }
+  ]
+}

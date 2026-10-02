@@ -1,0 +1,217 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-cdf-mcq-01",
+      "topic": "cdf",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề hàm phân phối tích lũy cdf?",
+        "en": "Which statement best describes cumulative distribution functions?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng đọc CDF là xác suất tích lũy đến $x$. Các lựa chọn sai nhầm CDF với PDF, cho phép đồ thị giảm, hoặc dùng $F(b)+F(a)$ cho xác suất khoảng.",
+        "en": "The correct answer reads a CDF as accumulated probability up to $x$. The distractors confuse CDF with PDF, allow the graph to decrease, or use $F(b)+F(a)$ for an interval probability."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là accumulated probability up to a point.",
+          "en": "The focus is accumulated probability up to a point."
+        },
+        {
+          "vi": "$F_X(x)$ là chiều cao mật độ tại đúng điểm $x$.",
+          "en": "$F_X(x)$ is the density height exactly at $x$."
+        },
+        {
+          "vi": "Một CDF hợp lệ có thể giảm từ 0.8 xuống 0.6.",
+          "en": "A valid CDF may decrease from 0.8 to 0.6."
+        },
+        {
+          "vi": "$P(a<X\\le b)$ được tính bằng $F(b)+F(a)$.",
+          "en": "$P(a<X\\le b)$ is computed as $F(b)+F(a)$."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-cdf-truefalse-02",
+      "topic": "cdf",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong hàm phân phối tích lũy cdf, chiều cao hoặc phép cộng thô luôn trực tiếp bằng xác suất cần tìm.",
+        "en": "In cumulative distribution functions, raw height or raw addition is always directly the desired probability."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "A CDF value is accumulated probability up to x, so interval probabilities use differences of CDF values."
+      },
+      "answer": false,
+      "reasons": [
+        {
+          "vi": "Đúng: $F_X(x)$ là xác suất tích lũy đến ngưỡng $x$, nên phải biết ngưỡng đang xét.",
+          "en": "True: $F_X(x)$ is accumulated probability up to cutoff $x$, so the cutoff must be identified."
+        },
+        {
+          "vi": "Sai: với xác suất khoảng, CDF dùng hiệu $F(b)-F(a)$ chứ không dùng một công thức tùy ý.",
+          "en": "False: for interval probability, a CDF uses the difference $F(b)-F(a)$ rather than an arbitrary formula."
+        },
+        {
+          "vi": "Sai: CDF không giảm và nằm trong $[0,1]$; nó không mô tả PDF âm.",
+          "en": "False: a CDF is nondecreasing and lies in $[0,1]$; it is not describing a negative PDF."
+        }
+      ],
+      "reasonAnswer": 1
+    },
+    {
+      "id": "c3w1-cdf-numeric-03",
+      "topic": "cdf",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Tính giá trị xác suất mẫu $0.5$.",
+        "en": "Compute the reference probability $0.5$."
+      },
+      "explanation": {
+        "vi": "Reference calculation.",
+        "en": "Reference calculation."
+      },
+      "answers": [
+        {
+          "value": 0.5
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-cdf-mcq-04",
+      "topic": "cdf",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "figure"
+      ],
+      "hints": [
+        {
+          "vi": "Khoảng tô bóng nằm giữa hai điểm.",
+          "en": "The shaded interval lies between two points."
+        }
+      ],
+      "prompt": {
+        "vi": "Hình tô bóng biểu diễn xác suất nào?",
+        "en": "On the displayed normal curve, what does the shaded central region mean?"
+      },
+      "explanation": {
+        "vi": "Với PDF, xác suất là diện tích dưới đường cong trên khoảng tô bóng.",
+        "en": "The shaded area equals a difference of CDF values, namely F(1)-F(-1)."
+      },
+      "figure": {
+        "xRange": [
+          -4,
+          4
+        ],
+        "yRange": [
+          0,
+          0.5
+        ],
+        "functions": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "label": "standard normal"
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "from": -1,
+            "to": 1,
+            "color": "#a7f3d0"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      },
+      "options": [
+        {
+          "vi": "$P(-1<X<1)$",
+          "en": "$P(-1<X<1)$"
+        },
+        {
+          "vi": "$P(X=-1)$",
+          "en": "$P(X=-1)$"
+        },
+        {
+          "vi": "$f(1)-f(-1)$",
+          "en": "$f(1)-f(-1)$"
+        },
+        {
+          "vi": "$P(X>1)$",
+          "en": "$P(X>1)$"
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-cdf-parsons-05",
+      "topic": "cdf",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài hàm phân phối tích lũy cdf.",
+        "en": "Order the workflow for a cumulative distribution functions problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "For CDF work, identify the cutoff first, evaluate F at endpoints, then subtract if an interval is requested."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    }
+  ]
+}

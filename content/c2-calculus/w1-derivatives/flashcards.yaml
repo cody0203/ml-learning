@@ -1,0 +1,379 @@
+flashcards:
+- id: c2w1-fc-01
+  topic: derivative-foundations
+  kind: concept
+  front:
+    vi: 'Trong huấn luyện ML, dấu của $\frac{dJ}{dw}$ cho biết điều gì?'
+    en: 'In ML training, what does the sign of $\frac{dJ}{dw}$ tell you?'
+  back:
+    vi: 'Nó cho biết tăng $w$ làm loss tăng hay giảm. Gradient descent đi ngược dấu đó để giảm loss.'
+    en: 'It tells whether increasing $w$ raises or lowers the loss. Gradient descent moves against that sign.'
+- id: c2w1-fc-02
+  topic: derivative-foundations
+  kind: formula
+  front:
+    vi: 'Cập nhật gradient descent một tham số là gì?'
+    en: 'What is the one-parameter gradient descent update?'
+  back:
+    vi: '$w_{\text{new}}=w-\alpha \frac{dJ}{dw}$. $\alpha$ là learning rate.'
+    en: '$w_{\text{new}}=w-\alpha \frac{dJ}{dw}$. $\alpha$ is the learning rate.'
+- id: c2w1-fc-03
+  topic: derivative-foundations
+  kind: formula
+  front:
+    vi: 'Định nghĩa giới hạn của $f''(a)$ là gì?'
+    en: 'What is the limit definition of $f''(a)$?'
+  back:
+    vi: '$f''(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}$. Đây là độ dốc khi khoảng $h$ co về 0.'
+    en: '$f''(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}$. It is the slope as $h$ shrinks to 0.'
+- id: c2w1-fc-04
+  topic: derivative-foundations
+  kind: compute
+  front:
+    vi: 'Vị trí tăng từ 122m lên 202m trong 5s. Vận tốc trung bình là bao nhiêu?'
+    en: 'Position rises from 122m to 202m in 5s. What is the average velocity?'
+  back:
+    vi: '$16$ m/s. Tính $(202-122)/5=80/5$.'
+    en: '$16$ m/s. Compute $(202-122)/5=80/5$.'
+- id: c2w1-fc-05
+  topic: derivative-foundations
+  kind: formula
+  front:
+    vi: 'Phương trình tiếp tuyến của $f$ tại $x=a$ là gì?'
+    en: 'What is the tangent line to $f$ at $x=a$?'
+  back:
+    vi: '$y=f(a)+f''(a)(x-a)$. Nó dùng giá trị và độ dốc tại cùng điểm.'
+    en: '$y=f(a)+f''(a)(x-a)$. It uses the value and slope at the same point.'
+- id: c2w1-fc-06
+  topic: derivative-foundations
+  kind: concept
+  front:
+    vi: 'Vì sao tiếp tuyến chỉ là xấp xỉ cục bộ?'
+    en: 'Why is a tangent only a local approximation?'
+  back:
+    vi: 'Vì nó khớp giá trị và độ dốc tại một điểm; độ cong làm sai số tăng khi đi xa điểm đó.'
+    en: 'It matches value and slope at one point; curvature makes the error grow farther away.'
+- id: c2w1-fc-07
+  topic: extrema-and-zero-slope
+  kind: concept
+  front:
+    vi: 'Nếu $f''(a)=0$, vì sao chưa đủ để kết luận cực tiểu?'
+    en: 'If $f''(a)=0$, why is that not enough to claim a minimum?'
+  back:
+    vi: 'Đó chỉ là điểm tới hạn. Cần kiểm tra dấu đạo hàm, giá trị lân cận, hoặc biên.'
+    en: 'It is only a critical point. Check derivative signs, nearby values, or boundaries.'
+- id: c2w1-fc-08
+  topic: extrema-and-zero-slope
+  kind: compute
+  front:
+    vi: '$f(x)=(x-4)^2+7$ đạt cực tiểu tại $x=?$'
+    en: '$f(x)=(x-4)^2+7$ has its minimum at $x=?$'
+  back:
+    vi: '$x=4$. Bình phương nhỏ nhất bằng 0 khi $x-4=0$.'
+    en: '$x=4$. The square is smallest, 0, when $x-4=0$.'
+- id: c2w1-fc-09
+  topic: derivative-foundations
+  kind: formula
+  front:
+    vi: 'Ba cách viết đạo hàm của $y=f(x)$ trong tuần này là gì?'
+    en: 'What are three derivative notations for $y=f(x)$ this week?'
+  back:
+    vi: '$f''(x)$, $\frac{d}{dx}f(x)$, và $\frac{dy}{dx}$.'
+    en: '$f''(x)$, $\frac{d}{dx}f(x)$, and $\frac{dy}{dx}$.'
+- id: c2w1-fc-10
+  topic: common-derivatives
+  kind: formula
+  front:
+    vi: '$\frac{d}{dx}(ax+b)$ bằng gì?'
+    en: 'What is $\frac{d}{dx}(ax+b)$?'
+  back:
+    vi: '$a$. Hệ số chặn $b$ chỉ dịch đường thẳng nên đạo hàm bằng 0.'
+    en: '$a$. The intercept $b$ only shifts the line, so its derivative is 0.'
+- id: c2w1-fc-11
+  topic: common-derivatives
+  kind: compute
+  front:
+    vi: '$f(x)=7-3x$. $f''(10)=?$'
+    en: '$f(x)=7-3x$. $f''(10)=?$'
+  back:
+    vi: '$-3$. Đường thẳng có độ dốc không đổi.'
+    en: '$-3$. The line has constant slope.'
+- id: c2w1-fc-12
+  topic: common-derivatives
+  kind: formula
+  front:
+    vi: '$\frac{d}{dx}x^2$ là gì?'
+    en: 'What is $\frac{d}{dx}x^2$?'
+  back:
+    vi: '$2x$. Độ dốc của parabol tăng tuyến tính theo $x$.'
+    en: '$2x$. The parabola slope grows linearly with $x$.'
+- id: c2w1-fc-13
+  topic: common-derivatives
+  kind: compute
+  front:
+    vi: '$f(x)=2x^2-4x+1$. $f''(3)=?$'
+    en: '$f(x)=2x^2-4x+1$. $f''(3)=?$'
+  back:
+    vi: '$8$. Vì $f''(x)=4x-4$, thay $x=3$.'
+    en: '$8$. Since $f''(x)=4x-4$, substitute $x=3$.'
+- id: c2w1-fc-14
+  topic: common-derivatives
+  kind: formula
+  front:
+    vi: 'Quy tắc lũy thừa cho $x^n$ là gì?'
+    en: 'What is the power rule for $x^n$?'
+  back:
+    vi: '$\frac{d}{dx}x^n=nx^{n-1}$. Nhân với số mũ cũ rồi giảm số mũ đi 1.'
+    en: '$\frac{d}{dx}x^n=nx^{n-1}$. Multiply by the old power, then lower it by 1.'
+- id: c2w1-fc-15
+  topic: common-derivatives
+  kind: compute
+  front:
+    vi: '$\frac{d}{dx}(4x^5)$ bằng gì?'
+    en: 'What is $\frac{d}{dx}(4x^5)$?'
+  back:
+    vi: '$20x^4$. Hệ số 4 nhân với số mũ 5.'
+    en: '$20x^4$. The coefficient 4 multiplies the old power 5.'
+- id: c2w1-fc-16
+  topic: common-derivatives
+  kind: formula
+  front:
+    vi: '$\frac{d}{dx}(1/x)$ bằng gì?'
+    en: 'What is $\frac{d}{dx}(1/x)$?'
+  back:
+    vi: '$-1/x^2$. Viết $1/x=x^{-1}$ rồi dùng quy tắc lũy thừa.'
+    en: '$-1/x^2$. Write $1/x=x^{-1}$ and use the power rule.'
+- id: c2w1-fc-17
+  topic: common-derivatives
+  kind: compute
+  front:
+    vi: 'Đạo hàm của $1/x$ tại $x=2$ là bao nhiêu?'
+    en: 'What is the derivative of $1/x$ at $x=2$?'
+  back:
+    vi: '$-1/4$. Thay $x=2$ vào $-1/x^2$.'
+    en: '$-1/4$. Substitute $x=2$ into $-1/x^2$.'
+- id: c2w1-fc-18
+  topic: inverse-trig-exp-log
+  kind: formula
+  front:
+    vi: 'Công thức đạo hàm hàm ngược tại $y=f(x)$ là gì?'
+    en: 'What is the inverse derivative formula at $y=f(x)$?'
+  back:
+    vi: '$(f^{-1})''(y)=1/f''(x)$, nếu $f''(x)\ne0$.'
+    en: '$(f^{-1})''(y)=1/f''(x)$, if $f''(x)\ne0$.'
+- id: c2w1-fc-19
+  topic: inverse-trig-exp-log
+  kind: concept
+  front:
+    vi: 'Tại sao độ dốc hàm ngược là nghịch đảo?'
+    en: 'Why is the inverse-function slope reciprocal?'
+  back:
+    vi: 'Đồ thị phản chiếu qua $y=x$, nên tỉ số rise/run đổi vai trò thành run/rise.'
+    en: 'Reflection across $y=x$ swaps rise/run into run/rise.'
+- id: c2w1-fc-20
+  topic: inverse-trig-exp-log
+  kind: formula
+  front:
+    vi: 'Đạo hàm của $\sin x$ và $\cos x$ là gì?'
+    en: 'What are the derivatives of $\sin x$ and $\cos x$?'
+  back:
+    vi: '$(\sin x)''=\cos x$ và $(\cos x)''=-\sin x$, với $x$ tính bằng radian.'
+    en: '$(\sin x)''=\cos x$ and $(\cos x)''=-\sin x$, with $x$ in radians.'
+- id: c2w1-fc-21
+  topic: inverse-trig-exp-log
+  kind: compute
+  front:
+    vi: '$\frac{d}{dx}\sin x$ tại $x=\pi/2$ bằng gì?'
+    en: 'What is $\frac{d}{dx}\sin x$ at $x=\pi/2$?'
+  back:
+    vi: '$0$. Đạo hàm là $\cos x$, và $\cos(\pi/2)=0$.'
+    en: '$0$. The derivative is $\cos x$, and $\cos(\pi/2)=0$.'
+- id: c2w1-fc-22
+  topic: inverse-trig-exp-log
+  kind: concept
+  front:
+    vi: 'Giới hạn lãi kép tạo ra $e$ là gì?'
+    en: 'What compounding limit defines $e$?'
+  back:
+    vi: '$e=\lim_{n\to\infty}(1+\frac1n)^n$.'
+    en: '$e=\lim_{n\to\infty}(1+\frac1n)^n$.'
+- id: c2w1-fc-23
+  topic: inverse-trig-exp-log
+  kind: concept
+  front:
+    vi: 'Trong slide lãi kép, tăng số lần ghép lãi làm giá trị tiến tới số nào?'
+    en: 'In the compounding slide, increasing compounding frequency approaches what number?'
+  back:
+    vi: 'Nó tiến tới $e\approx2.71828$, cơ số tự nhiên của tăng trưởng liên tục.'
+    en: 'It approaches $e\approx2.71828$, the natural base for continuous growth.'
+- id: c2w1-fc-24
+  topic: inverse-trig-exp-log
+  kind: formula
+  front:
+    vi: 'Đạo hàm đặc biệt của $e^x$ là gì?'
+    en: 'What is the special derivative of $e^x$?'
+  back:
+    vi: '$\frac{d}{dx}e^x=e^x$. Hàm bằng chính tốc độ đổi của nó.'
+    en: '$\frac{d}{dx}e^x=e^x$. The function equals its own rate of change.'
+- id: c2w1-fc-25
+  topic: inverse-trig-exp-log
+  kind: compute
+  front:
+    vi: '$\frac{d}{dx}(5e^x)$ tại $x=0$ là gì?'
+    en: 'What is $\frac{d}{dx}(5e^x)$ at $x=0$?'
+  back:
+    vi: '$5$. Đạo hàm là $5e^x$, và $e^0=1$.'
+    en: '$5$. The derivative is $5e^x$, and $e^0=1$.'
+- id: c2w1-fc-26
+  topic: inverse-trig-exp-log
+  kind: formula
+  front:
+    vi: 'Đạo hàm của $\log x$ tự nhiên là gì?'
+    en: 'What is the derivative of the natural $\log x$?'
+  back:
+    vi: '$1/x$, với miền $x>0$.'
+    en: '$1/x$, on the domain $x>0$.'
+- id: c2w1-fc-27
+  topic: inverse-trig-exp-log
+  kind: compute
+  front:
+    vi: '$(\log x)''$ tại $x=5$ bằng gì?'
+    en: 'What is $(\log x)''$ at $x=5$?'
+  back:
+    vi: '$1/5=0.2$.'
+    en: '$1/5=0.2$.'
+- id: c2w1-fc-28
+  topic: differentiability
+  kind: concept
+  front:
+    vi: 'Vì sao $|x|$ không khả vi tại $0$?'
+    en: 'Why is $|x|$ not differentiable at $0$?'
+  back:
+    vi: 'Độ dốc trái là $-1$, độ dốc phải là $1$, nên giới hạn hai phía không khớp.'
+    en: 'The left slope is $-1$ and the right slope is $1$, so the two-sided limit fails.'
+- id: c2w1-fc-29
+  topic: differentiability
+  kind: concept
+  front:
+    vi: 'Một hàm liên tục tại một điểm có chắc khả vi tại đó không?'
+    en: 'If a function is continuous at a point, must it be differentiable there?'
+  back:
+    vi: 'Không. $|x|$ liên tục tại $0$ nhưng có góc nhọn nên không khả vi.'
+    en: 'No. $|x|$ is continuous at $0$ but has a corner, so it is not differentiable.'
+- id: c2w1-fc-30
+  topic: derivative-rules
+  kind: formula
+  front:
+    vi: 'Quy tắc nhân hằng số của đạo hàm là gì?'
+    en: 'What is the scalar-multiple derivative rule?'
+  back:
+    vi: '$(cf)''=c f''$ khi $c$ là hằng số.'
+    en: '$(cf)''=c f''$ when $c$ is constant.'
+- id: c2w1-fc-31
+  topic: derivative-rules
+  kind: formula
+  front:
+    vi: 'Quy tắc tổng cho đạo hàm là gì?'
+    en: 'What is the derivative sum rule?'
+  back:
+    vi: '$(g+h)''=g''+h''$. Lấy đạo hàm từng hạng tử rồi cộng.'
+    en: '$(g+h)''=g''+h''$. Differentiate each term, then add.'
+- id: c2w1-fc-32
+  topic: derivative-rules
+  kind: formula
+  front:
+    vi: 'Quy tắc tích đúng cho $(gh)''$ là gì?'
+    en: 'What is the correct product rule for $(gh)''$?'
+  back:
+    vi: '$(gh)''=g''h+gh''$. Không phải $g''h''$.'
+    en: '$(gh)''=g''h+gh''$. Not $g''h''$.'
+- id: c2w1-fc-33
+  topic: derivative-rules
+  kind: compute
+  front:
+    vi: '$\frac{d}{dx}[x^2\sin x]$ bằng gì?'
+    en: 'What is $\frac{d}{dx}[x^2\sin x]$?'
+  back:
+    vi: '$2x\sin x+x^2\cos x$. Cần cả hai hạng của quy tắc tích.'
+    en: '$2x\sin x+x^2\cos x$. Both product-rule terms are needed.'
+- id: c2w1-fc-34
+  topic: derivative-rules
+  kind: formula
+  front:
+    vi: 'Quy tắc dây chuyền cho $g(h(x))$ là gì?'
+    en: 'What is the chain rule for $g(h(x))$?'
+  back:
+    vi: '$\frac{d}{dx}g(h(x))=g''(h(x))h''(x)$.'
+    en: '$\frac{d}{dx}g(h(x))=g''(h(x))h''(x)$.'
+- id: c2w1-fc-35
+  topic: derivative-rules
+  kind: compute
+  front:
+    vi: '$\frac{d}{dx}(3x+1)^2$ bằng gì?'
+    en: 'What is $\frac{d}{dx}(3x+1)^2$?'
+  back:
+    vi: '$6(3x+1)$. Đạo hàm ngoài $2u$, đạo hàm trong $3$.'
+    en: '$6(3x+1)$. Outer derivative $2u$, inner derivative $3$.'
+- id: c2w1-fc-36
+  topic: optimization-losses
+  kind: concept
+  front:
+    vi: 'Khi tối thiểu hóa, vì sao cập nhật trừ gradient?'
+    en: 'When minimizing, why does the update subtract the gradient?'
+  back:
+    vi: 'Gradient chỉ hướng tăng nhanh của hàm; trừ nó đi hướng giảm loss.'
+    en: 'The gradient points toward fastest increase; subtracting it moves toward lower loss.'
+- id: c2w1-fc-37
+  topic: optimization-losses
+  kind: concept
+  front:
+    vi: 'Loss cho một đường điện tại $a$ là gì?'
+    en: 'What is the loss for one powerline at $a$?'
+  back:
+    vi: '$J(x)=(x-a)^2$, nhỏ nhất tại $x=a$.'
+    en: '$J(x)=(x-a)^2$, minimized at $x=a$.'
+- id: c2w1-fc-38
+  topic: optimization-losses
+  kind: compute
+  front:
+    vi: 'Tối ưu $(x-2)^2+(x-10)^2$ tại $x=?$'
+    en: 'Where is $(x-2)^2+(x-10)^2$ minimized?'
+  back:
+    vi: '$x=6$. Trung điểm của $2$ và $10$.'
+    en: '$x=6$. The midpoint of $2$ and $10$.'
+- id: c2w1-fc-39
+  topic: optimization-losses
+  kind: concept
+  front:
+    vi: 'Tổng squared loss $\sum_i(x-a_i)^2$ tối ưu tại đâu?'
+    en: 'Where is $\sum_i(x-a_i)^2$ minimized?'
+  back:
+    vi: 'Tại trung bình $\frac{1}{n}\sum_i a_i$.'
+    en: 'At the mean $\frac{1}{n}\sum_i a_i$.'
+- id: c2w1-fc-40
+  topic: optimization-losses
+  kind: concept
+  front:
+    vi: 'Trong ví dụ đồng xu, likelihood lớn nghĩa là gì?'
+    en: 'In the coin example, what does a larger likelihood mean?'
+  back:
+    vi: 'Mô hình gán xác suất cao hơn cho chính chuỗi kết quả đã quan sát.'
+    en: 'The model assigns higher probability to the observed sequence of outcomes.'
+- id: c2w1-fc-41
+  topic: optimization-losses
+  kind: formula
+  front:
+    vi: 'Binary log-loss cho một nhãn $y$ và xác suất $p$ là gì?'
+    en: 'What is binary log-loss for label $y$ and probability $p$?'
+  back:
+    vi: '$-[y\log p+(1-y)\log(1-p)]$.'
+    en: '$-[y\log p+(1-y)\log(1-p)]$.'
+- id: c2w1-fc-42
+  topic: optimization-losses
+  kind: concept
+  front:
+    vi: 'Chuỗi ý tưởng chính của tuần 1 là gì?'
+    en: 'What is the main idea chain of Week 1?'
+  back:
+    vi: 'Độ dốc → đạo hàm → quy tắc tính nhanh → tối ưu hóa loss.'
+    en: 'Slope → derivative → fast differentiation rules → loss optimization.'

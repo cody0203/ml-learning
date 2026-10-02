@@ -1,0 +1,202 @@
+﻿formulas:
+  - id: c3w1-f-classical-probability
+    topic: what-is-probability
+    name: { vi: 'Xác suất cổ điển', en: 'Classical probability' }
+    tex: 'P(A)=\frac{|A|}{|S|}'
+    where:
+      vi: '$S$ là không gian mẫu hữu hạn có các kết quả đồng khả năng; $A$ là biến cố cần đếm.'
+      en: '$S$ is a finite equally likely sample space; $A$ is the event being counted.'
+    exercises: [c3w1-what-is-probability-truefalse-02, c3w1-what-is-probability-numeric-03]
+  - id: c3w1-f-complement-rule
+    topic: complement-rule
+    name: { vi: 'Quy tắc bù', en: 'Complement rule' }
+    tex: 'P(A^c)=1-P(A)'
+    where:
+      vi: '$A^c$ là biến cố ngược với $A$; dùng khi biến cố ngược dễ đếm hơn.'
+      en: '$A^c$ is the opposite of $A$; use when the opposite event is easier to count.'
+    exercises: [c3w1-complement-rule-numeric-02, c3w1-complement-rule-finderror-03, c3w1-complement-rule-multistep-05]
+  - id: c3w1-f-general-sum-rule
+    topic: sum-rules
+    name: { vi: 'Quy tắc cộng tổng quát', en: 'General sum rule' }
+    tex: 'P(A\cup B)=P(A)+P(B)-P(A\cap B)'
+    where:
+      vi: 'Dùng cho biến cố “$A$ hoặc $B$”; trừ phần giao để không đếm hai lần.'
+      en: 'Use for “$A$ or $B$”; subtract the intersection to avoid double counting.'
+    exercises: [c3w1-sum-rules-numeric-03, c3w1-sum-rules-finderror-04, c3w1-sum-rules-matching-05]
+  - id: c3w1-f-disjoint-sum-rule
+    topic: sum-rules
+    name: { vi: 'Quy tắc cộng cho biến cố rời nhau', en: 'Disjoint-event sum rule' }
+    tex: 'A\cap B=\varnothing\;\Longrightarrow\;P(A\cup B)=P(A)+P(B)'
+    where:
+      vi: 'Chỉ dùng khi hai biến cố không thể xảy ra đồng thời.'
+      en: 'Use only when the two events cannot occur together.'
+    exercises: [c3w1-sum-rules-mcq-01, c3w1-sum-rules-truefalse-02]
+  - id: c3w1-f-independence-definition
+    topic: independence-product-rule
+    name: { vi: 'Định nghĩa độc lập', en: 'Independence definition' }
+    tex: 'P(B\mid A)=P(B)'
+    where:
+      vi: '$A$ không làm thay đổi xác suất của $B$; cần kiểm tra trước khi nhân xác suất.'
+      en: '$A$ does not change the probability of $B$; check this before multiplying probabilities.'
+    exercises: [c3w1-independence-product-rule-mcq-01, c3w1-independence-product-rule-finderror-04]
+  - id: c3w1-f-product-rule-independent
+    topic: independence-product-rule
+    name: { vi: 'Quy tắc nhân khi độc lập', en: 'Product rule for independent events' }
+    tex: 'P(A\cap B)=P(A)P(B)'
+    where:
+      vi: 'Chỉ đúng khi $A$ và $B$ độc lập; giao nghĩa là cả hai cùng xảy ra.'
+      en: 'Valid only when $A$ and $B$ are independent; the intersection means both occur.'
+    exercises: [c3w1-independence-product-rule-numeric-02, c3w1-independence-product-rule-construct-03, c3w1-independence-product-rule-multistep-05]
+  - id: c3w1-f-conditional-probability
+    topic: conditional-probability
+    name: { vi: 'Xác suất có điều kiện', en: 'Conditional probability' }
+    tex: 'P(B\mid A)=\frac{P(A\cap B)}{P(A)},\quad P(A)>0'
+    where:
+      vi: 'Mẫu số là xác suất của điều kiện $A$; thu hẹp không gian mẫu trước khi đếm.'
+      en: 'The denominator is the probability of the condition $A$; restrict the sample space first.'
+    exercises: [c3w1-conditional-probability-numeric-02, c3w1-conditional-probability-finderror-04, c3w2-marginal-conditional-numeric-05]
+  - id: c3w1-f-total-probability-binary
+    topic: bayes-theorem
+    name: { vi: 'Xác suất toàn phần hai trường hợp', en: 'Binary total probability' }
+    tex: 'P(B)=P(A)P(B\mid A)+P(A^c)P(B\mid A^c)'
+    where:
+      vi: '$A$ và $A^c$ chia không gian mẫu; dùng để tính xác suất bằng chứng $B$.'
+      en: '$A$ and $A^c$ partition the sample space; use this for the evidence probability $B$.'
+    exercises: [c3w1-bayes-theorem-numeric-02, c3w1-bayes-theorem-code-04, c3w1-bayes-theorem-parametric-05]
+  - id: c3w1-f-bayes-theorem-binary
+    topic: bayes-theorem
+    name: { vi: 'Định lý Bayes hai giả thuyết', en: 'Binary Bayes theorem' }
+    tex: 'P(A\mid B)=\frac{P(A)P(B\mid A)}{P(A)P(B\mid A)+P(A^c)P(B\mid A^c)}'
+    where:
+      vi: 'Kết hợp prior và likelihood để cập nhật posterior sau khi thấy bằng chứng $B$.'
+      en: 'Combines prior and likelihood to update the posterior after evidence $B$.'
+    numpy: 'posterior = prior*like / (prior*like + (1-prior)*false_like)'
+    exercises: [c3w1-bayes-theorem-numeric-02, c3w1-bayes-theorem-code-04, c3w1-bayes-theorem-parametric-05]
+  - id: c3w1-f-naive-bayes-score
+    topic: naive-bayes
+    name: { vi: 'Điểm Naive Bayes', en: 'Naive Bayes score' }
+    tex: 'P(C\mid w_1,\ldots,w_n)\propto P(C)\prod_i P(w_i\mid C)'
+    where:
+      vi: 'Giả sử các đặc trưng/từ độc lập có điều kiện theo lớp $C$; cần chuẩn hóa qua các lớp.'
+      en: 'Assumes features/words are conditionally independent given class $C$; normalize across classes.'
+    exercises: [c3w1-naive-bayes-numeric-02, c3w1-naive-bayes-code-04, c3w1-naive-bayes-multistep-05]
+  - id: c3w1-f-ml-conditional-output
+    topic: probability-in-ml
+    name: { vi: 'Xác suất nhãn có điều kiện', en: 'Conditional label probability' }
+    tex: 'P(y\mid x)'
+    where:
+      vi: '$x$ là đặc trưng đầu vào, $y$ là nhãn; thường là đầu ra đã hiệu chỉnh của bộ phân loại.'
+      en: '$x$ is the input feature vector and $y$ is the label; often a calibrated classifier output.'
+    exercises: [c3w1-probability-in-ml-truefalse-02, c3w1-probability-in-ml-matching-03]
+  - id: c3w1-f-random-variable-map
+    topic: random-variables
+    name: { vi: 'Biến ngẫu nhiên là ánh xạ', en: 'Random variable as a map' }
+    tex: 'X:S\to\mathbb{R}'
+    where:
+      vi: 'Mỗi kết quả thô trong $S$ được biến thành một số để lập phân phối.'
+      en: 'Each raw outcome in $S$ is mapped to a number so a distribution can be defined.'
+    exercises: [c3w1-random-variables-truefalse-02, c3w1-random-variables-matching-04, c3w1-random-variables-multistep-05]
+  - id: c3w1-f-pmf-definition
+    topic: discrete-pmf
+    name: { vi: 'Hàm khối xác suất rời rạc', en: 'Discrete PMF definition' }
+    tex: 'p_X(x)=P(X=x),\qquad p_X(x)\ge0,\quad \sum_x p_X(x)=1'
+    where:
+      vi: 'Dùng cho biến rời rạc; xác suất của một biến cố là tổng các khối tương ứng.'
+      en: 'Use for discrete variables; event probabilities are sums of the relevant masses.'
+    exercises: [c3w1-discrete-pmf-numeric-02, c3w1-discrete-pmf-construct-03, c3w2-joint-discrete-construct-06]
+  - id: c3w1-f-bernoulli-pmf
+    topic: binomial-bernoulli
+    name: { vi: 'PMF Bernoulli', en: 'Bernoulli PMF' }
+    tex: 'P(X=1)=p,\qquad P(X=0)=1-p'
+    where:
+      vi: 'Một phép thử thành công/thất bại với xác suất thành công không đổi $p$.'
+      en: 'One success/failure trial with constant success probability $p$.'
+    exercises: [c3w1-binomial-bernoulli-mcq-01, c3w3-bern-code-01]
+  - id: c3w1-f-binomial-pmf
+    topic: binomial-bernoulli
+    name: { vi: 'PMF nhị thức', en: 'Binomial PMF' }
+    tex: 'P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}'
+    where:
+      vi: '$X$ đếm số thành công trong $n$ phép thử Bernoulli độc lập cùng xác suất $p$.'
+      en: '$X$ counts successes in $n$ independent Bernoulli trials with common probability $p$.'
+    numpy: 'scipy.stats.binom.pmf(k, n, p)'
+    exercises: [c3w1-binomial-bernoulli-numeric-02, c3w1-binomial-bernoulli-code-03, c3w4-hypotheses-errors-numeric-01]
+  - id: c3w1-f-pdf-interval-probability
+    topic: continuous-pdf
+    name: { vi: 'Xác suất khoảng từ PDF', en: 'Interval probability from a PDF' }
+    tex: 'P(a<X<b)=\int_a^b f_X(x)\,dx,\qquad f_X(x)\ge0,\quad \int_{-\infty}^{\infty} f_X(x)\,dx=1'
+    where:
+      vi: 'Dùng cho biến liên tục; diện tích là xác suất, còn chiều cao tại điểm không phải xác suất.'
+      en: 'Use for continuous variables; area is probability, while point height is not probability.'
+    numpy: 'scipy.integrate.quad(f, a, b)'
+    exercises: [c3w1-continuous-pdf-truefalse-02, c3w1-continuous-pdf-mcq-04, c3w2-joint-continuous-find-error-06]
+  - id: c3w1-f-cdf-definition
+    topic: cdf
+    name: { vi: 'Hàm phân phối tích lũy', en: 'Cumulative distribution function' }
+    tex: 'F_X(x)=P(X\le x)'
+    where:
+      vi: '$F_X$ không giảm và nằm trong $[0,1]$; đọc xác suất tích lũy đến $x$.'
+      en: '$F_X$ is nondecreasing and lies in $[0,1]$; read accumulated probability up to $x$.'
+    numpy: 'scipy.stats.<dist>.cdf(x)'
+    exercises: [c3w1-cdf-mcq-01, c3w1-cdf-truefalse-02]
+  - id: c3w1-f-cdf-interval-difference
+    topic: cdf
+    name: { vi: 'Xác suất khoảng từ CDF', en: 'Interval probability from a CDF' }
+    tex: 'P(a<X\le b)=F_X(b)-F_X(a)'
+    where:
+      vi: 'Dùng khi đã có CDF ở hai đầu mút; cần lấy hiệu, không cộng hai giá trị CDF.'
+      en: 'Use when CDF values at endpoints are available; subtract them, do not add.'
+    exercises: [c3w1-cdf-mcq-04, c3w1-cdf-parsons-05]
+  - id: c3w1-f-uniform-pdf
+    topic: uniform-distribution
+    name: { vi: 'PDF phân phối đều liên tục', en: 'Continuous uniform PDF' }
+    tex: 'f_X(x)=\frac{1}{b-a}\mathbf{1}_{a<x<b}'
+    where:
+      vi: '$X\sim Uniform(a,b)$; mọi khoảng cùng độ dài trong $[a,b]$ có cùng xác suất.'
+      en: '$X\sim Uniform(a,b)$; equal-length intervals inside $[a,b]$ have equal probability.'
+    numpy: 'scipy.stats.uniform(loc=a, scale=b-a).pdf(x)'
+    exercises: [c3w1-uniform-distribution-numeric-02, c3w1-uniform-distribution-mcq-03, c3w2-joint-continuous-numeric-05]
+  - id: c3w1-f-uniform-interval-probability
+    topic: uniform-distribution
+    name: { vi: 'Xác suất khoảng Uniform', en: 'Uniform interval probability' }
+    tex: 'P(c<X<d)=\frac{d-c}{b-a}\quad (a\le c<d\le b)'
+    where:
+      vi: 'Với mật độ đều, xác suất là độ dài khoảng chia cho độ dài toàn miền.'
+      en: 'For a flat density, probability is interval length divided by total support length.'
+    exercises: [c3w1-uniform-distribution-numeric-02, c3w1-uniform-distribution-matching-05]
+  - id: c3w1-f-normal-pdf
+    topic: normal-distribution
+    name: { vi: 'PDF chuẩn tắc tổng quát', en: 'Normal PDF' }
+    tex: 'f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac12\left(\frac{x-\mu}{\sigma}\right)^2\right]'
+    where:
+      vi: '$X\sim\mathcal N(\mu,\sigma^2)$; $\mu$ là tâm, $\sigma$ là độ lệch chuẩn.'
+      en: '$X\sim\mathcal N(\mu,\sigma^2)$; $\mu$ is center and $\sigma$ is standard deviation.'
+    numpy: 'scipy.stats.norm.pdf(x, loc=mu, scale=sigma)'
+    exercises: [c3w1-normal-distribution-code-03, c3w1-normal-distribution-mcq-01]
+  - id: c3w1-f-z-standardization
+    topic: normal-distribution
+    name: { vi: 'Chuẩn hóa z-score', en: 'Z-score standardization' }
+    tex: 'Z=\frac{X-\mu}{\sigma}'
+    where:
+      vi: 'Đo một giá trị cách trung bình bao nhiêu độ lệch chuẩn; cần $\sigma>0$.'
+      en: 'Measures how many standard deviations a value is from the mean; requires $\sigma>0$.'
+    numpy: '(x - mu) / sigma'
+    exercises: [c3w1-normal-distribution-numeric-02, c3w1-normal-distribution-parametric-05, c3w2-standard-deviation-numeric-05]
+  - id: c3w1-f-chi-square-sum
+    topic: chi-squared-distribution
+    name: { vi: 'Tổng bình phương chuẩn', en: 'Chi-square as squared normals' }
+    tex: 'W=\sum_{i=1}^k Z_i^2\sim\chi^2_k'
+    where:
+      vi: '$Z_i$ độc lập chuẩn hóa $\mathcal N(0,1)$; $k$ là bậc tự do.'
+      en: '$Z_i$ are independent standard normals; $k$ is the degrees of freedom.'
+    numpy: 'scipy.stats.chi2.pdf(w, df=k)'
+    exercises: [c3w1-chi-squared-distribution-numeric-02, c3w1-chi-squared-distribution-truefalse-03, c3w1-chi-squared-distribution-matching-04]
+  - id: c3w1-f-inverse-cdf-sampling
+    topic: sampling-distributions
+    name: { vi: 'Lấy mẫu bằng xác suất tích lũy', en: 'Sampling by cumulative probabilities' }
+    tex: 'u\sim Uniform(0,1),\quad \text{return }j\text{ such that }\sum_{i<j}p_i\le u<\sum_{i\le j}p_i'
+    where:
+      vi: 'Chia đoạn $[0,1]$ theo các khối xác suất $p_i$ của PMF rời rạc.'
+      en: 'Partition $[0,1]$ by the discrete PMF masses $p_i$ and locate the random draw $u$.'
+    numpy: 'np.searchsorted(np.cumsum(p), u, side="right")'
+    exercises: [c3w1-sampling-distributions-code-03, c3w1-sampling-distributions-predictoutput-04, c3w1-sampling-distributions-mcq-01]

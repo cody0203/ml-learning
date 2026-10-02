@@ -1,0 +1,165 @@
+exercises:
+- id: c1w3-vector-basics-mcq-01
+  topic: vector-basics
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  - vector
+  prompt:
+    vi: Vector xanh từ gốc tới $(4,3)$ biểu diễn gì?
+    en: What does the blue vector from the origin to $(4,3)$ represent?
+  explanation:
+    vi: Nó biểu diễn dịch chuyển 4 theo $x$, 3 theo $y$.
+    en: It represents displacement 4 in $x$, 3 in $y$.
+  hints: []
+  figure:
+    xRange:
+    - -1
+    - 5
+    yRange:
+    - -1
+    - 4
+    vectors:
+    - to:
+      - 4
+      - 3
+      label: u
+      color: '#2563eb'
+  options:
+  - vi: Dịch chuyển $(4,3)$
+    en: Displacement $(4,3)$
+  - vi: Scalar 7
+    en: Scalar 7
+  - vi: 'Ma trận $4\times3$'
+    en: 'A $4\times3$ matrix'
+  answer:
+  - 0
+- id: c1w3-vector-basics-matrix-01
+  topic: vector-basics
+  type: matrix
+  difficulty: 1
+  tags:
+  - coordinates
+  prompt:
+    vi: Tìm vector từ $A=(2,-1)$ đến $B=(7,3)$.
+    en: Find the vector from $A=(2,-1)$ to $B=(7,3)$.
+  explanation:
+    vi: $B-A=(5,4)$.
+    en: $B-A=(5,4)$.
+  hints: []
+  answer:
+  - - 5
+  - - 4
+  tolerance: 0
+- id: c1w3-vector-basics-tf-01
+  topic: vector-basics
+  type: true-false
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Hai mũi tên cùng độ dịch chuyển biểu diễn cùng vector dù vẽ ở vị trí khác.
+    en: Two arrows with the same displacement represent the same vector even when drawn elsewhere.
+  explanation:
+    vi: Vector tự do phụ thuộc độ dịch chuyển.
+    en: A free vector depends on displacement.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Vector mô tả độ dịch chuyển.
+    en: A vector describes displacement.
+  - vi: Vector luôn phải bắt đầu ở gốc.
+    en: A vector must always start at the origin.
+  reasonAnswer: 0
+- id: c1w3-vector-basics-matching-01
+  topic: vector-basics
+  type: matching
+  difficulty: 1
+  tags:
+  - notation
+  prompt:
+    vi: Ghép ký hiệu với ý nghĩa.
+    en: Match notation with meaning.
+  explanation:
+    vi: Phân biệt điểm, vector và component.
+    en: Distinguish point, vector, and component.
+  hints: []
+  pairs:
+  - left:
+      vi: $(4,3)$ như điểm
+      en: $(4,3)$ as point
+    right:
+      vi: Vị trí
+      en: Location
+  - left:
+      vi: $(4,3)$ như vector
+      en: $(4,3)$ as vector
+    right:
+      vi: Dịch chuyển
+      en: Displacement
+  - left:
+      vi: $u_2$ với $u=(4,3)$
+      en: $u_2$ for $u=(4,3)$
+    right:
+      vi: Thành phần 3
+      en: Entry 3
+- id: c1w3-vector-basics-predict-01
+  topic: vector-basics
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output NumPy.
+    en: Predict the NumPy output.
+  explanation:
+    vi: Trừ mảng là theo component.
+    en: Array subtraction is component-wise.
+  hints: []
+  code: 'import numpy as np
+
+    A=np.array([2,-1]); B=np.array([7,3])
+
+    print(B-A)'
+  options:
+  - '[5 4]'
+  - '[9 2]'
+  - '[5 -4]'
+  answer: 0
+- id: c1w3-vector-basics-multi-01
+  topic: vector-basics
+  type: multi-step
+  difficulty: 2
+  tags:
+  - coordinates
+  prompt:
+    vi: Robot ở $(1,1)$ đi theo $u=(3,-2)$.
+    en: A robot at $(1,1)$ moves by $u=(3,-2)$.
+  explanation:
+    vi: Cộng tọa độ ban đầu với displacement.
+    en: Add starting coordinates and displacement.
+  hints: []
+  parts:
+  - type: matrix
+    prompt:
+      vi: Điểm cuối?
+      en: Endpoint?
+    answer:
+    - - 4
+    - - -1
+    tolerance: 0
+    explanation:
+      vi: $(1,1)+(3,-2)=(4,-1)$.
+      en: $(1,1)+(3,-2)=(4,-1)$.
+  - type: matrix
+    prompt:
+      vi: Vector quay lại điểm đầu?
+      en: Vector back to start?
+    answer:
+    - - -3
+    - - 2
+    tolerance: 0
+    explanation:
+      vi: Vector ngược là $-u$.
+      en: The reverse vector is $-u$.

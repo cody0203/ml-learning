@@ -1,0 +1,245 @@
+exercises:
+- id: c2w2-gd-two-variables-mcq-33
+  topic: gd-two-variables
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Trong cập nhật hai biến, vì sao phải dùng cùng gradient cũ cho cả $x$ và $y$?
+    en: In a two-variable update, why should both $x$ and $y$ use the same old gradient?
+  explanation:
+    vi: Một bước gradient descent là bước vector từ cùng một điểm cũ. Nếu cập nhật $x$ rồi tính lại $y$ ngay, bạn đang đổi thuật toán.
+    en: A gradient descent step is a vector step from one old point. If you update $x$ and then recompute for $y$, you are changing the algorithm.
+  hints: []
+  options:
+  - vi: Vì bước là phép trừ vector tại điểm hiện tại.
+    en: Because the step is a vector subtraction at the current point.
+  - vi: Vì $x$ và $y$ không bao giờ tương tác.
+    en: Because $x$ and $y$ never interact.
+  - vi: Vì gradient luôn bằng $[1,1]$.
+    en: Because the gradient is always $[1,1]$.
+  - vi: Vì learning rate phải khác nhau cho từng trục.
+    en: Because the learning rate must differ for each axis.
+  answer:
+  - 0
+- id: c2w2-gd-two-variables-truefalse-34
+  topic: gd-two-variables
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Hướng $-\nabla f$ là hướng giảm nhanh nhất cục bộ nếu dùng chuẩn Euclid.
+    en: The direction $-\nabla f$ is the steepest local descent direction under the Euclidean norm.
+  explanation:
+    vi: Đúng. Gradient cho hướng tăng nhanh nhất, nên vector đối hướng của nó cho mức giảm tuyến tính lớn nhất với bước nhỏ.
+    en: True. The gradient gives steepest ascent, so its opposite gives the largest first-order decrease for a small step.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Đổi dấu gradient đổi từ ascent sang descent.
+    en: Negating the gradient changes ascent into descent.
+  - vi: Vì mọi vector khác đều song song với gradient.
+    en: Because every other vector is parallel to the gradient.
+  reasonAnswer: 0
+- id: c2w2-gd-two-variables-matching-35
+  topic: gd-two-variables
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép các phần trong một bước descent từ $(3,1)$.
+    en: Match the pieces of one descent step from $(3,1)$.
+  explanation:
+    vi: Bài này theo dõi điểm cũ, gradient ở điểm cũ, và điểm mới sau khi trừ $0.1$ lần gradient.
+    en: This exercise tracks the old point, the gradient at that point, and the new point after subtracting $0.1$ times the gradient.
+  hints: []
+  pairs:
+  - left:
+      vi: Điểm cũ
+      en: Old point
+    right:
+      vi: $(3,1)$
+      en: $(3,1)$
+  - left:
+      vi: Gradient
+      en: Gradient
+    right:
+      vi: $(4,8)$
+      en: $(4,8)$
+  - left:
+      vi: Điểm mới khi $\alpha=0.1$
+      en: New point when $\alpha=0.1$
+    right:
+      vi: $(2.6,0.2)$
+      en: $(2.6,0.2)$
+- id: c2w2-gd-two-variables-numeric-36
+  topic: gd-two-variables
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Cho $f(x,y)=(x-1)^2+2(y+1)^2$. Tính gradient tại $(3,1)$.
+    en: Let $f(x,y)=(x-1)^2+2(y+1)^2$. Compute the gradient at $(3,1)$.
+  explanation:
+    vi: $f_x=2(x-1)$ cho $4$; $f_y=4(y+1)$ cho $8$. Đây là vector dùng để cập nhật điểm mới.
+    en: $f_x=2(x-1)$ gives $4$; $f_y=4(y+1)$ gives $8$. This is the vector used for the update.
+  hints: []
+  answers:
+  - label: f_x
+    value: 4
+  - label: f_y
+    value: 8
+- id: c2w2-gd-two-variables-matrix-53
+  topic: gd-two-variables
+  type: matrix
+  difficulty: 1
+  tags:
+  - step
+  prompt:
+    vi: Một bước từ $(3,1)$ cho $f=(x-1)^2+2(y+1)^2$, $\alpha=0.1$.
+    en: One step from $(3,1)$ for $f=(x-1)^2+2(y+1)^2$, $\alpha=0.1$.
+  explanation:
+    vi: Gradient tại $(3,1)$ là $(4,8)$, điểm mới $(2.6,0.2)$.
+    en: Gradient at $(3,1)$ is $(4,8)$, new point $(2.6,0.2)$.
+  hints: []
+  answer:
+  - - 2.6
+  - - 0.2
+  tolerance: 1.0e-06
+- id: c2w2-gd-two-variables-mcq-54
+  topic: gd-two-variables
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - gradient
+  prompt:
+    vi: Trong hình, vector nào là hướng descent nếu gradient là mũi tên đỏ?
+    en: In the figure, which vector is the descent direction if the red arrow is the gradient?
+  explanation:
+    vi: Descent direction là vector đối hướng với gradient.
+    en: The descent direction is opposite the gradient.
+  hints: []
+  figure:
+    xRange:
+    - -1
+    - 3
+    yRange:
+    - -1
+    - 3
+    vectors:
+    - to:
+      - 2
+      - 1
+      label: grad
+      color: red
+    - to:
+      - -2
+      - -1
+      label: -grad
+      color: blue
+    points:
+    - at:
+      - 0
+      - 0
+      label: p
+  options:
+  - vi: Mũi tên đỏ $(2,1)$
+    en: The red arrow $(2,1)$
+  - vi: Mũi tên xanh $(-2,-1)$
+    en: The blue arrow $(-2,-1)$
+  - vi: Bất kỳ hướng vuông góc
+    en: Any perpendicular direction
+  answer:
+  - 1
+- id: c2w2-gd-two-variables-code-60
+  topic: gd-two-variables
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt 2D gradient descent step; không dùng shortcut tối ưu hóa.
+    en: Implement 2D gradient descent step; do not use optimization shortcuts.
+  explanation:
+    vi: Hàm cần tạo gradient `[2*(x-1), 4*(y+1)]` từ điểm cũ rồi trả về `p - alpha*g`; starter thất bại vì trả lại nguyên điểm.
+    en: The function must form `[2*(x-1), 4*(y+1)]` from the old point and return `p - alpha*g`; the starter fails by returning the original point.
+  hints: []
+  starter: "import numpy as np\ndef step(p, alpha):\n    return np.array(p,dtype=float)\n"
+  solution: "import numpy as np\ndef step(p, alpha):\n    p=np.array(p,dtype=float)\n    g=np.array([2*(p[0]-1),4*(p[1]+1)])\n\
+    \    return p-alpha*g\n"
+  tests: "import numpy as np\ndef test_step():\n    assert np.allclose(step([3.,1.],0.1), [2.6,0.2])\n"
+- id: c2w2-gd-two-variables-predictoutput-65
+  topic: gd-two-variables
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Dự đoán vector sau khi trừ nửa gradient `[2,-4]` khỏi `[1,2]`.
+    en: Predict the vector after subtracting half of gradient `[2,-4]` from `[1,2]`.
+  explanation:
+    vi: Phép tính là `[1,2] - 0.5*[2,-4] = [1,2] - [1,-2] = [0,4]`, nên NumPy in `[0. 4.]`.
+    en: The computation is `[1,2] - 0.5*[2,-4] = [1,2] - [1,-2] = [0,4]`, so NumPy prints `[0. 4.]`.
+  hints: []
+  code: 'import numpy as np
+
+    p=np.array([1.,2.])
+
+    g=np.array([2.,-4.])
+
+    print(p-0.5*g)
+
+    '
+  options:
+  - '[0. 4.]'
+  - '[2. 0.]'
+  - '[1. 2.]'
+  - error
+  answer: 0
+- id: c2w2-gd-two-variables-parametric-69
+  topic: gd-two-variables
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh sẽ tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng công thức thay vì ghi nhớ đáp án.
+    en: Apply the formula rather than memorizing an answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w2-gd-two-variables-construct-72
+  topic: gd-two-variables
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo vector bước descent có norm 5 và song song với $(-3,-4)$.
+    en: Construct a descent step vector with norm 5 parallel to $(-3,-4)$.
+  explanation:
+    vi: Ví dụ $(-3,-4)$ có norm 5 và đúng hướng.
+    en: Example $(-3,-4)$ has norm 5 and the requested direction.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: parallelTo
+    of:
+    - -3
+    - -4
+  - kind: norm
+    p: 2
+    value: 5
+  example:
+  - - -3
+  - - -4

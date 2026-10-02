@@ -1,0 +1,144 @@
+exercises:
+- id: c1w1-eq-mcq-01
+  topic: equation-systems
+  type: mcq
+  difficulty: 1
+  tags:
+  - translation
+  prompt:
+    vi: 2 táo và 1 chuối giá 7. Phương trình?
+    en: 2 apples and 1 banana cost 7. Equation?
+  explanation:
+    vi: Hệ số là số lượng từng món.
+    en: Coefficients are item counts.
+  hints: []
+  options:
+  - vi: $a+2b=7$
+    en: $a+2b=7$
+  - vi: $2a+b=7$
+    en: $2a+b=7$
+  - vi: $ab=7$
+    en: $ab=7$
+  answer:
+  - 1
+- id: c1w1-eq-num-02
+  topic: equation-systems
+  type: numeric
+  difficulty: 1
+  tags:
+  - solve
+  prompt:
+    vi: Giải $a+b=11$, $a+3b=17$. Nhập $a,b$.
+    en: Solve $a+b=11$, $a+3b=17$. Enter $a,b$.
+  explanation:
+    vi: Trừ được $2b=6$, nên $b=3,a=8$.
+    en: Subtract to get $2b=6$, so $b=3,a=8$.
+  hints: []
+  answers:
+  - label: a
+    value: 8
+  - label: b
+    value: 3
+- id: c1w1-eq-matrix-03
+  topic: equation-systems
+  type: matrix
+  difficulty: 1
+  tags:
+  - matrix-form
+  prompt:
+    vi: Vector vế phải của $2a+b=7$, $a-b=1$?
+    en: Right-hand-side vector for $2a+b=7$, $a-b=1$?
+  explanation:
+    vi: Lấy các hằng số theo thứ tự phương trình.
+    en: Take constants in equation order.
+  hints: []
+  answer:
+  - - 7
+  - - 1
+- id: c1w1-eq-error-04
+  topic: equation-systems
+  type: find-error
+  difficulty: 2
+  tags:
+  - elimination
+  prompt:
+    vi: Tìm bước sai khi giải $a+b=10$, $a+2b=12$.
+    en: Find the wrong step solving $a+b=10$, $a+2b=12$.
+  explanation:
+    vi: $(a+2b)-(a+b)=b$, không phải $3b$.
+    en: $(a+2b)-(a+b)=b$, not $3b$.
+  hints: []
+  steps:
+  - vi: Lấy phương trình 2 trừ 1.
+    en: Subtract equation 1 from 2.
+  - vi: Vế trái thành $3b$.
+    en: Left side becomes $3b$.
+  - vi: Vế phải là 2.
+    en: Right side is 2.
+  answer: 1
+- id: c1w1-eq-code-05
+  topic: equation-systems
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài `coeff_matrix(rows)` trả về NumPy ndarray float.
+    en: Implement `coeff_matrix(rows)` returning a float NumPy ndarray.
+  explanation:
+    vi: Dùng `np.array(rows, dtype=float)`.
+    en: Use `np.array(rows, dtype=float)`.
+  hints: []
+  starter: "import numpy as np\n\ndef coeff_matrix(rows):\n    return rows"
+  solution: "import numpy as np\n\ndef coeff_matrix(rows):\n    return np.array(rows, dtype=float)"
+  tests: "import numpy as np\n\ndef test_array():\n    A=coeff_matrix([[1,1],[1,2]])\n    assert isinstance(A,np.ndarray),'must return ndarray'\n    assert A.shape==(2,2)\n    assert A.dtype.kind=='f'\n\ndef test_values():\n    assert np.allclose(coeff_matrix([[2,-1,0]]), np.array([[2,-1,0]], dtype=float))"
+- id: c1w1-eq-multi-06
+  topic: equation-systems
+  type: multi-step
+  difficulty: 2
+  tags:
+  - classification
+  prompt:
+    vi: Xét $a+b=10$, $2a+2b=24$.
+    en: Consider $a+b=10$, $2a+2b=24$.
+  explanation:
+    vi: Nhân phương trình đầu cho 2 được vế phải 20, mâu thuẫn 24.
+    en: Doubling the first equation gives right side 20, contradicting 24.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: Nhân phương trình đầu với 2, vế phải?
+      en: 'Double the first equation: right side?'
+    answers:
+    - value: 20
+  - type: mcq
+    prompt:
+      vi: Số nghiệm?
+      en: Number of solutions?
+    options:
+    - vi: Một
+      en: One
+    - vi: Vô số
+      en: Infinite
+    - vi: Không có
+      en: None
+    answer:
+    - 2
+- id: c1w1-eq-param-07
+  topic: equation-systems
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: 'Bài luyện sinh tự động: giải hệ 2×2.'
+    en: 'Generated drill: solve a 2×2 system.'
+  explanation:
+    vi: Bộ sinh tạo hệ có nghiệm nguyên duy nhất.
+    en: The generator creates a unique integer solution.
+  hints: []
+  generator: solve-system
+  params:
+    size: 2

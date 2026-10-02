@@ -1,0 +1,139 @@
+exercises:
+- id: c1w3-norms-numeric-01
+  topic: norms-distances
+  type: numeric
+  difficulty: 1
+  tags:
+  - norm
+  prompt:
+    vi: Tính $\|(3,-4)\|_1$ và $\|(3,-4)\|_2$.
+    en: Compute $\|(3,-4)\|_1$ and $\|(3,-4)\|_2$.
+  explanation:
+    vi: $L_1=7$, $L_2=5$.
+    en: $L_1=7$, $L_2=5$.
+  hints: []
+  answers:
+  - label: L1
+    value: 7
+  - label: L2
+    value: 5
+  tolerance: 0.001
+- id: c1w3-norms-construct-01
+  topic: norms-distances
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng vector 2D nguyên có $\|x\|_1=5$.
+    en: Construct an integer 2D vector with $\|x\|_1=5$.
+  explanation:
+    vi: $(2,-3)$ hợp lệ.
+    en: $(2,-3)$ works.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: norm
+    p: 1
+    value: 5
+  - kind: integerEntries
+  - kind: nonzero
+  example:
+  - - 2
+  - - -3
+- id: c1w3-norms-mcq-01
+  topic: norms-distances
+  type: mcq
+  difficulty: 1
+  tags:
+  - distance
+  prompt:
+    vi: Với $u=(6,2)$, $v=(1,5)$, chọn phát biểu đúng.
+    en: For $u=(6,2)$, $v=(1,5)$, choose true statements.
+  explanation:
+    vi: $u-v=(5,-3)$ nên $d_1=8$, $d_2=\sqrt{34}$.
+    en: $u-v=(5,-3)$ so $d_1=8$, $d_2=\sqrt{34}$.
+  hints: []
+  options:
+  - vi: $d_1=8$
+    en: $d_1=8$
+  - vi: $d_2=8$
+    en: $d_2=8$
+  - vi: $d_2=\sqrt{34}$
+    en: $d_2=\sqrt{34}$
+  answer:
+  - 0
+  - 2
+- id: c1w3-norms-tf-01
+  topic: norms-distances
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Chuẩn $L_1$ có thể âm nếu vector có thành phần âm.
+    en: $L_1$ norm can be negative if a vector has negative entries.
+  explanation:
+    vi: Sai vì dùng trị tuyệt đối.
+    en: False because absolute values are used.
+  hints: []
+  answer: false
+  reasons:
+  - vi: $L_1$ cộng trị tuyệt đối.
+    en: $L_1$ sums absolute values.
+  - vi: Thành phần âm giữ dấu âm.
+    en: Negative entries keep negative signs.
+  reasonAnswer: 0
+- id: c1w3-norms-find-error-01
+  topic: norms-distances
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên khi tính $\|(-3,4)\|_2$.
+    en: Find first wrong step computing $\|(-3,4)\|_2$.
+  explanation:
+    vi: Bước đầu sai do $(-3)^2=9$.
+    en: First step is wrong because $(-3)^2=9$.
+  hints: []
+  steps:
+  - vi: $\sqrt{-3^2+4^2}$
+    en: $\sqrt{-3^2+4^2}$
+  - vi: $=\sqrt{-9+16}$
+    en: $=\sqrt{-9+16}$
+  - vi: $=\sqrt7$
+    en: $=\sqrt7$
+  answer: 0
+- id: c1w3-norms-parametric-01
+  topic: norms-distances
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Tính chuẩn sinh ngẫu nhiên.
+    en: Compute a generated norm.
+  explanation:
+    vi: Generator tạo bài norm.
+    en: Generator creates a norm exercise.
+  hints: []
+  generator: norm
+  params: {}
+- id: c1w3-norms-code-01
+  topic: norms-distances
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài `l1_l2(v)` trả `(L1,L2)`, không dùng `np.linalg.norm`.
+    en: Implement `l1_l2(v)` returning `(L1,L2)`, without `np.linalg.norm`.
+  explanation:
+    vi: Dùng abs, bình phương, tổng, căn.
+    en: Use abs, squares, sum, sqrt.
+  hints: []
+  starter: "import numpy as np\ndef l1_l2(v):\n    return (0,0)\n"
+  solution: "import numpy as np\ndef l1_l2(v):\n    v=np.asarray(v,dtype=float)\n    return (float(np.sum(np.abs(v))), float(np.sqrt(np.sum(v*v))))\n"
+  tests: "import numpy as np\ndef test_basic():\n    a,b=l1_l2(np.array([3,-4])); assert abs(a-7)<1e-9; assert abs(b-5)<1e-9\ndef test_3d():\n    a,b=l1_l2(np.array([1,-2,2])); assert abs(a-5)<1e-9; assert abs(b-3)<1e-9\n"

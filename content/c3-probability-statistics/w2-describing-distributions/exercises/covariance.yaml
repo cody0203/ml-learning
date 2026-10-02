@@ -1,0 +1,186 @@
+exercises:
+- id: c3w2-covariance-mcq-01
+  topic: covariance
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về covariance.
+    en: Choose the best statement about covariance.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Covariance is positive when centered variables tend to share signs and negative when their signs tend to differ.
+  hints: []
+  options:
+  - vi: Các điểm cùng tăng so với mean tạo covariance dương.
+    en: Paired points that rise together above their means create positive covariance.
+  - vi: Covariance gần 0 chứng minh hai biến độc lập tuyệt đối.
+    en: Near-zero covariance proves the two variables are fully independent.
+  - vi: Correlation giữ nguyên đơn vị như covariance.
+    en: Correlation keeps the same units as covariance.
+  - vi: Ma trận covariance có covariance trên đường chéo chính.
+    en: A covariance matrix puts covariances on the main diagonal.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - 0
+    - 5
+    yRange:
+    - 0
+    - 5
+    points:
+    - at:
+      - 1
+      - 1
+    - at:
+      - 2
+      - 2
+    - at:
+      - 3
+      - 3
+    - at:
+      - 4
+      - 4
+    xLabel: X
+    yLabel: Y
+- id: c3w2-covariance-tf-02
+  topic: covariance
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: covariance depends on measurement units, but correlation rescales it to a unitless value.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: dividing by $\sigma_X\sigma_Y$ removes the units and bounds the result between $-1$ and $1$.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Correlation chia covariance cho tích hai độ lệch chuẩn.
+    en: Correlation divides covariance by the product of the two standard deviations.
+  - vi: Correlation vẫn đo bằng inch-năm nếu covariance dùng inch và năm.
+    en: Correlation is still measured in inch-years if covariance uses inches and years.
+  - vi: Covariance và correlation luôn bằng nhau về số trị.
+    en: Covariance and correlation are always numerically identical.
+  reasonAnswer: 0
+- id: c3w2-covariance-matching-03
+  topic: covariance
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho covariance.
+    en: Match concepts for covariance.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs distinguish raw co-movement, standardized co-movement, and the covariance-matrix placement.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-covariance-parsons-04
+  topic: covariance
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho covariance.
+    en: Order the solution workflow for covariance.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: The covariance procedure centers both columns before multiplying paired deviations and averaging them.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-covariance-numeric-05
+  topic: covariance
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Given Cov(X,Y)=-7.45, Var(X)=9.17, Var(Y)=7.57, compute correlation approximately.
+    en: Given Cov(X,Y)=-7.45, Var(X)=9.17, Var(Y)=7.57, compute correlation approximately.
+  explanation:
+    vi: Correlation divides covariance by the product of standard deviations.
+    en: Correlation divides covariance by the product of standard deviations.
+  hints: []
+  answers:
+  - value: -0.8941773508400722
+  tolerance: 0.001
+- id: c3w2-covariance-matrix-06
+  topic: covariance
+  type: matrix
+  difficulty: 2
+  tags:
+  - matrix
+  prompt:
+    vi: Nhập ma trận hiệp phương sai cho Var(X)=2, Var(Y)=5, Cov(X,Y)=-1.
+    en: Enter the covariance matrix for Var(X)=2, Var(Y)=5, Cov(X,Y)=-1.
+  explanation:
+    vi: Ma trận đối xứng, phương sai nằm trên đường chéo.
+    en: With two variables, the covariance matrix places Var(X)=2 and Var(Y)=5 on the diagonal and mirrors Cov(X,Y)=-1.
+  hints: []
+  answer:
+  - - 2
+    - -1
+  - - -1
+    - 5
+  tolerance: 1.0e-06
+- id: c3w2-covariance-code-07
+  topic: covariance
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài đặt `cov_corr` từ đầu; không dùng shortcut một dòng của thư viện.
+    en: Implement `cov_corr` from scratch; avoid one-line library shortcuts.
+  explanation:
+    vi: Lời giải duyệt dữ liệu rõ ràng và kiểm tra edge cases.
+    en: The code computes population covariance from centered pairs and then divides by the two population standard deviations.
+  hints:
+  - vi: Viết công thức trước rồi chuyển thành vòng lặp/NumPy cơ bản.
+    en: Write the formula first, then turn it into loops/basic NumPy.
+  starter: "def cov_corr(x,y):\n    return None\n"
+  solution: "def cov_corr(x,y):\n    n=len(x); mx=sum(x)/n; my=sum(y)/n\n    cov=sum((x[i]-mx)*(y[i]-my) for i in range(n))/n\n\
+    \    vx=sum((a-mx)**2 for a in x)/n; vy=sum((b-my)**2 for b in y)/n\n    return cov, cov/(vx**0.5*vy**0.5)\n"
+  tests: "def test_positive():\n    c,r=cov_corr([1,2,3],[2,4,6])\n    assert abs(c-4/3)<1e-9 and abs(r-1)<1e-9\ndef test_negative():\n\
+    \    c,r=cov_corr([1,2,3],[3,2,1])\n    assert c < 0 and abs(r+1)<1e-9\n"

@@ -1,0 +1,129 @@
+﻿exercises:
+- id: c2w3-hessians-concavity-matching-03
+  topic: hessians-concavity
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép dấu eigenvalue với loại critical point.
+    en: Match eigenvalue signs with critical-point type.
+  explanation:
+    vi: Dương hết cho bowl, âm hết cho cap, còn trái dấu cho saddle.
+    en: All positive gives a bowl, all negative gives a cap, and mixed signs give a saddle.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-hessians-concavity-find-error-04
+  topic: hessians-concavity
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi phân loại Hessian có dấu trái nhau.
+    en: Find the error when classifying a Hessian with mixed signs.
+  explanation:
+    vi: Nếu một hướng cong lên và một hướng cong xuống thì không thể là minimum hay maximum.
+    en: If one direction curves up and another curves down, the point cannot be a minimum or maximum.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-hessians-concavity-numeric-05
+  topic: hessians-concavity
+  type: numeric
+  difficulty: 2
+  tags:
+  - eigen
+  prompt:
+    vi: Với $H=\begin{bmatrix}4&-1\\-1&6\end{bmatrix}$, determinant bằng bao nhiêu?
+    en: For $H=\begin{bmatrix}4&-1\\-1&6\end{bmatrix}$, what is the determinant?
+  explanation:
+    vi: $4\cdot6-1=23$.
+    en: $4\cdot6-1=23$.
+  hints: []
+  answers:
+  - value: 23
+  tolerance: 0
+- id: c2w3-hessians-concavity-mcq-06
+  topic: hessians-concavity
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Hình $x^2-y^2$ tại gốc là loại điểm gì?
+    en: The surface $x^2-y^2$ at the origin is what type of point?
+  explanation:
+    vi: 'Curvature dương theo $x$, âm theo $y$: saddle.'
+    en: 'Positive curvature in $x$, negative in $y$: saddle.'
+  hints: []
+  figure:
+    xRange:
+    - -3
+    - 3
+    yRange:
+    - -4
+    - 4
+    functions:
+    - f: x^2
+      label: slice y=0
+    - f: -x^2
+      label: slice x=0
+      dashed: true
+  options:
+  - vi: Local minimum
+    en: Local minimum
+  - vi: Local maximum
+    en: Local maximum
+  - vi: Saddle point
+    en: Saddle point
+  answer:
+  - 2
+- id: c2w3-hessians-concavity-construct-07
+  topic: hessians-concavity
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng ma trận Hessian đường chéo có một curvature dương và một âm.
+    en: Construct a diagonal Hessian with one positive and one negative curvature.
+  explanation:
+    vi: $[[4,0],[0,-4]]$ là ví dụ saddle.
+    en: $[[4,0],[0,-4]]$ is a saddle example.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: det
+    value: -16
+  - kind: integerEntries
+  example:
+  - - 4
+    - 0
+  - - 0
+    - -4

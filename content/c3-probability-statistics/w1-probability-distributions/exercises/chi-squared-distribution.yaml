@@ -1,0 +1,192 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-chi-squared-distribution-mcq-01",
+      "topic": "chi-squared-distribution",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề phân phối chi-squared?",
+        "en": "Which statement best describes chi-squared distribution?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng liên hệ chi-squared với tổng bình phương nhiễu chuẩn. Các đáp án sai cho phép giá trị âm, cộng $Z_i$ thay vì $Z_i^2$, hoặc dùng bậc tự do không bằng số hạng bình phương.",
+        "en": "The correct answer connects chi-squared variables to sums of squared standard-normal noise. The wrong choices allow negative values, add $Z_i$ instead of $Z_i^2$, or use degrees of freedom unrelated to the number of squared terms."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là sums of squared standard normal noise powers.",
+          "en": "The focus is sums of squared standard normal noise powers."
+        },
+        {
+          "vi": "Nếu một $Z_i$ âm, tổng chi-squared có thể âm.",
+          "en": "If one $Z_i$ is negative, the chi-squared sum can be negative."
+        },
+        {
+          "vi": "Với hai lần truyền, công suất tích lũy là $Z_1+Z_2$.",
+          "en": "For two transmissions, accumulated power is $Z_1+Z_2$."
+        },
+        {
+          "vi": "Bậc tự do luôn bằng 1 dù cộng bao nhiêu bình phương.",
+          "en": "The degrees of freedom are always 1 no matter how many squares are added."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-chi-squared-distribution-numeric-02",
+      "topic": "chi-squared-distribution",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Nếu $Z_1=1$ và $Z_2=-2$, tính $W=Z_1^2+Z_2^2$.",
+        "en": "If $Z_1=1$ and $Z_2=-2$, compute $W=Z_1^2+Z_2^2$."
+      },
+      "explanation": {
+        "vi": "Square then add.",
+        "en": "Square then add."
+      },
+      "answers": [
+        {
+          "value": 5
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-chi-squared-distribution-truefalse-03",
+      "topic": "chi-squared-distribution",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong phân phối chi-squared, công thức $W=\\sum_{i=1}^k Z_i^2$ chỉ có ý nghĩa sau khi xác định đúng biến cố và giả định.",
+        "en": "In chi-squared distribution, the formula $W=\\sum_{i=1}^k Z_i^2$ is meaningful only after identifying the event and assumptions."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "Chi-squared variables are sums of squares, so checking nonnegativity is part of the model."
+      },
+      "answer": true,
+      "reasons": [
+        {
+          "vi": "Đúng: $\\chi^2_k$ chỉ xuất hiện khi cộng bình phương của $k$ biến chuẩn tắc độc lập.",
+          "en": "True: $\\chi^2_k$ arises only when summing squares of $k$ independent standard-normal variables."
+        },
+        {
+          "vi": "Sai: cộng trực tiếp các nhiễu $Z_i$ không tạo phân phối chi-squared.",
+          "en": "False: adding the noise values $Z_i$ directly does not create a chi-squared distribution."
+        },
+        {
+          "vi": "Sai: biến chi-squared không âm vì là tổng bình phương, không phải vì PDF được phép âm.",
+          "en": "False: a chi-squared variable is nonnegative because it is a sum of squares, not because PDFs may be negative."
+        }
+      ],
+      "reasonAnswer": 0
+    },
+    {
+      "id": "c3w1-chi-squared-distribution-matching-04",
+      "topic": "chi-squared-distribution",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong phân phối chi-squared.",
+        "en": "Match key terms in chi-squared distribution."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches link standard normal noise, squared power, degrees of freedom, and accumulated energy."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3w1-chi-squared-distribution-predictoutput-05",
+      "topic": "chi-squared-distribution",
+      "type": "predict-output",
+      "difficulty": 2,
+      "tags": [
+        "numpy"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đoán output của đoạn NumPy.",
+        "en": "Predict the boolean output from thresholding fixed random numbers in the chi-squared context."
+      },
+      "explanation": {
+        "vi": "So sánh ngẫu nhiên sinh ra với ngưỡng tích lũy.",
+        "en": "Although the code uses uniform draws, the prediction hinges on comparing each draw with 0.3."
+      },
+      "code": "import numpy as np\nrng = np.random.default_rng(0)\nu = rng.random(5)\nprint(np.round(u < 0.3, 2))\n",
+      "options": [
+        "[False  True  True  True False]",
+        "[ True False False False  True]",
+        "[0.3 0.3 0.3 0.3 0.3]",
+        "[False False False False False]"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+﻿exercises:
+- id: c2w3-classification-derivatives-matching-03
+  topic: classification-derivatives
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép các mắt xích trong đạo hàm phân loại.
+    en: Match the chain links in the classification derivative.
+  explanation:
+    vi: 'Mỗi local derivative chỉ nhìn vào một phép toán: loss, sigmoid, hoặc tổng tuyến tính.'
+    en: 'Each local derivative sees only one operation: loss, sigmoid, or the linear sum.'
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-classification-derivatives-find-error-04
+  topic: classification-derivatives
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi trong chuỗi đạo hàm của $z=w_1x_1+w_2x_2+b$.
+    en: Find the error in the derivative chain for $z=w_1x_1+w_2x_2+b$.
+  explanation:
+    vi: Đạo hàm của $z$ theo $w_1$ là input $x_1$, vì $w_1$ chỉ là hệ số nhân.
+    en: The derivative of $z$ with respect to $w_1$ is the input $x_1$, because $w_1$ is only the coefficient.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-classification-derivatives-numeric-05
+  topic: classification-derivatives
+  type: numeric
+  difficulty: 2
+  tags:
+  - chain-rule
+  prompt:
+    vi: Cho $dL/d\hat y=2$, $d\hat y/dz=0.25$, $dz/dw_1=3$. Tính $dL/dw_1$.
+    en: Given $dL/d\hat y=2$, $d\hat y/dz=0.25$, $dz/dw_1=3$. Compute $dL/dw_1$.
+  explanation:
+    vi: 'Nhân các mắt xích: $2\cdot0.25\cdot3=1.5$.'
+    en: 'Multiply the links: $2\cdot0.25\cdot3=1.5$.'
+  hints: []
+  answers:
+  - value: 1.5
+  tolerance: 1.0e-09
+- id: c2w3-classification-derivatives-find-error-06
+  topic: classification-derivatives
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi đầu tiên trong đạo hàm $z=w_1x_1+w_2x_2+b$.
+    en: Find first error in differentiating $z=w_1x_1+w_2x_2+b$.
+  explanation:
+    vi: $\partial z/\partial w_1=x_1$, không phải $w_1$.
+    en: $\partial z/\partial w_1=x_1$, not $w_1$.
+  hints: []
+  steps:
+  - vi: $\partial z/\partial w_1=w_1$
+    en: $\partial z/\partial w_1=w_1$
+  - vi: $\partial z/\partial w_2=x_2$
+    en: $\partial z/\partial w_2=x_2$
+  - vi: $\partial z/\partial b=1$
+    en: $\partial z/\partial b=1$
+  answer: 0
+- id: c2w3-classification-derivatives-parsons-07
+  topic: classification-derivatives
+  type: parsons
+  difficulty: 2
+  tags:
+  - chain-rule
+  prompt:
+    vi: Sắp xếp chuỗi để lấy $\partial L/\partial w_1$ trong hidden neuron.
+    en: Order the chain for $\partial L/\partial w_1$ through a hidden neuron.
+  explanation:
+    vi: Đi từ loss ngược về weight hidden.
+    en: Move from loss backward to the hidden weight.
+  hints: []
+  steps:
+  - vi: $\partial L/\partial \hat y$
+    en: $\partial L/\partial \hat y$
+  - vi: $\partial \hat y/\partial z$
+    en: $\partial \hat y/\partial z$
+  - vi: $\partial z/\partial a_1$
+    en: $\partial z/\partial a_1$
+  - vi: $\partial a_1/\partial z_1$
+    en: $\partial a_1/\partial z_1$
+  - vi: $\partial z_1/\partial w_{11}$
+    en: $\partial z_1/\partial w_{11}$

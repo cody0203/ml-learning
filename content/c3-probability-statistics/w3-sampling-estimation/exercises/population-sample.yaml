@@ -1,0 +1,261 @@
+'exercises':
+- 'id': 'c3w3-pop-mcq-01'
+  'topic': 'population-sample'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'Trong nghiên cứu giá bơ ở Hoa Kỳ, population là gì?'
+    'en': 'In a study of avocado prices in the United States, what is the population?'
+  'explanation':
+    'vi': 'Population là tất cả đối tượng mục tiêu: mọi quả bơ bán ở Hoa Kỳ.'
+    'en': 'The population is the whole target group: all avocados sold in the U.S.'
+  'hints': []
+  'options':
+  - 'vi': 'Tất cả quả bơ bán ở Hoa Kỳ'
+    'en': 'All avocados sold in the U.S.'
+  - 'vi': 'Bốn cửa hàng được chọn'
+    'en': 'The four selected stores'
+  - 'vi': 'Một hóa đơn mua bơ'
+    'en': 'One avocado receipt'
+  'answer':
+  - 0
+- 'id': 'c3w3-pop-tf-01'
+  'topic': 'population-sample'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'iid'
+  'prompt':
+    'vi': 'Mẫu independent luôn automatically identically distributed.'
+    'en': 'An independent sample is automatically identically distributed.'
+  'explanation':
+    'vi': 'Sai: independence không nói các quan sát có cùng phân phối.'
+    'en': 'False: independence does not say the observations share the same distribution.'
+  'hints': []
+  'answer': false
+  'reasons':
+  - 'vi': 'Hai điều kiện kiểm tra hai khía cạnh khác nhau.'
+    'en': 'The two conditions check different aspects.'
+  - 'vi': 'Independent luôn bao hàm cùng phân phối.'
+    'en': 'Independent always implies identical distribution.'
+  'reasonAnswer': 0
+- 'id': 'c3w3-pop-matching-01'
+  'topic': 'population-sample'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'definitions'
+  'prompt':
+    'vi': 'Ghép thuật ngữ lấy mẫu.'
+    'en': 'Match sampling terms.'
+  'explanation':
+    'vi': 'Các thuật ngữ này là nền của i.i.d.'
+    'en': 'These terms underlie i.i.d.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': 'Population'
+      'en': 'Population'
+    'right':
+      'vi': 'Toàn bộ nhóm mục tiêu'
+      'en': 'Entire target group'
+  - 'left':
+      'vi': 'Sample'
+      'en': 'Sample'
+    'right':
+      'vi': 'Tập con quan sát'
+      'en': 'Observed subset'
+  - 'left':
+      'vi': 'Independent'
+      'en': 'Independent'
+    'right':
+      'vi': 'Một draw không quyết định draw khác'
+      'en': 'One draw does not determine another'
+  - 'left':
+      'vi': 'Identically distributed'
+      'en': 'Identically distributed'
+    'right':
+      'vi': 'Các draw có cùng phân phối'
+      'en': 'Draws share one distribution'
+- 'id': 'c3w3-pop-numeric-01'
+  'topic': 'population-sample'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'sample-size'
+  'prompt':
+    'vi': 'Một island có $N=10000$ người. Bạn hỏi 4 cửa hàng, mỗi cửa hàng 25 người. Sample size $n$ là bao nhiêu?'
+    'en': 'An island has $N=10000$ people. You survey 4 stores, 25 people each. What is sample size $n$?'
+  'explanation':
+    'vi': 'Sample size là số quan sát: $4\cdot25=100$.'
+    'en': 'Sample size is observed count: $4\cdot25=100$.'
+  'hints': []
+  'answers':
+  - 'value': 100
+  'tolerance': 0
+- 'id': 'c3w3-pop-construct-01'
+  'topic': 'population-sample'
+  'type': 'construct'
+  'difficulty': 2
+  'tags':
+  - 'probability-vector'
+  'prompt':
+    'vi': 'Dựng PMF trên outcomes $0,1,2$ có kỳ vọng $1.3$.'
+    'en': 'Construct a PMF on outcomes $0,1,2$ with expectation $1.3$.'
+  'explanation':
+    'vi': 'Ví dụ $(0.2,0.3,0.5)$ có tổng 1 và expectation $1.3$.'
+    'en': 'For example $(0.2,0.3,0.5)$ sums to 1 and has expectation $1.3$.'
+  'hints':
+  - 'vi': 'Các xác suất không âm và cộng lại bằng 1.'
+    'en': 'Probabilities must be nonnegative and sum to 1.'
+  'rows': 1
+  'cols': 3
+  'constraints':
+  - 'kind': 'probabilityVector'
+  - 'kind': 'expectation'
+    'values':
+    - 0
+    - 1
+    - 2
+    'value': 1.3
+  'example':
+  - - 0.2
+    - 0.3
+    - 0.5
+- 'id': 'c3w3-pop-finderror-01'
+  'topic': 'population-sample'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'bias'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong lập luận lấy mẫu.'
+    'en': 'Find the first error in the sampling argument.'
+  'explanation':
+    'vi': 'Mẫu convenient không tự động đại diện population.'
+    'en': 'A convenient sample is not automatically representative.'
+  'hints': []
+  'steps':
+  - 'vi': 'Ta muốn giá bơ toàn Hoa Kỳ.'
+    'en': 'We want U.S. avocado prices.'
+  - 'vi': 'Ta lấy dữ liệu từ 4 cửa hàng sang trọng ở một thành phố.'
+    'en': 'We collect data from 4 luxury stores in one city.'
+  - 'vi': 'Vì mỗi quả bơ trong 4 cửa hàng được chọn ngẫu nhiên, mẫu chắc chắn đại diện toàn Hoa Kỳ.'
+    'en': 'Because each avocado in the 4 stores is randomly selected, the sample surely represents the whole U.S.'
+  'answer': 2
+- 'id': 'c3w3-pop-parsons-01'
+  'topic': 'population-sample'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'procedure'
+  'prompt':
+    'vi': 'Sắp xếp quy trình lấy mẫu hợp lý.'
+    'en': 'Order a reasonable sampling workflow.'
+  'explanation':
+    'vi': 'Bắt đầu từ population mục tiêu rồi mới chọn sampling frame.'
+    'en': 'Start from target population, then choose a sampling frame.'
+  'hints': []
+  'steps':
+  - 'vi': 'Xác định population mục tiêu.'
+    'en': 'Define the target population.'
+  - 'vi': 'Chọn sampling frame phù hợp.'
+    'en': 'Choose an appropriate sampling frame.'
+  - 'vi': 'Rút sample ngẫu nhiên hoặc theo thiết kế giảm bias.'
+    'en': 'Draw a random/design-based sample to reduce bias.'
+  - 'vi': 'Ghi lại $n$ và cách lấy mẫu khi diễn giải kết quả.'
+    'en': 'Report $n$ and sampling method when interpreting results.'
+- 'id': 'c3w3-pop-multi-01'
+  'topic': 'population-sample'
+  'type': 'multi-step'
+  'difficulty': 2
+  'tags':
+  - 'application'
+  'prompt':
+    'vi': 'Bạn xây model nhận diện mèo từ 12,000 ảnh web.'
+    'en': 'You build a cat classifier from 12,000 web images.'
+  'explanation':
+    'vi': 'Dataset là sample của thế giới ảnh mục tiêu.'
+    'en': 'The dataset is a sample of the target image world.'
+  'hints': []
+  'parts':
+  - 'type': 'mcq'
+    'prompt':
+      'vi': 'Population hợp lý nhất là gì?'
+      'en': 'What is the most reasonable population?'
+    'options':
+    - 'vi': 'Tất cả ảnh web tương lai model có thể gặp'
+      'en': 'All future web images the model may face'
+    - 'vi': '12,000 ảnh training'
+      'en': 'The 12,000 training images'
+    'answer':
+    - 0
+    'explanation':
+      'vi': 'Training data chỉ là sample.'
+      'en': 'Training data is only a sample.'
+  - 'type': 'true-false'
+    'prompt':
+      'vi': 'Nếu sample thiếu ảnh ban đêm, model có thể biased.'
+      'en': 'If the sample lacks night images, the model may be biased.'
+    'answer': true
+    'explanation':
+      'vi': 'Thiếu vùng dữ liệu làm generalization kém.'
+      'en': 'Missing a region hurts generalization.'
+- 'id': 'c3w3-pop-figure-01'
+  'topic': 'population-sample'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  'prompt':
+    'vi': 'Biểu đồ bars nào giống sample bị bias về chiều cao thấp?'
+    'en': 'Which bar chart looks like a sample biased toward shorter heights?'
+  'explanation':
+    'vi': 'Sample bias về thấp có nhiều mass ở vùng thấp hơn population.'
+    'en': 'Short-biased sample has more mass at lower values than the population.'
+  'hints': []
+  'options':
+  - 'vi': 'Nhiều bars ở 151-155, ít ở 165-169'
+    'en': 'Many bars at 151-155, few at 165-169'
+    'figure':
+      'xRange':
+      - 150
+      - 170
+      'yRange':
+      - 0
+      - 5
+      'bars':
+      - 'x': 151
+        'h': 4
+      - 'x': 153
+        'h': 4
+      - 'x': 155
+        'h': 3
+      - 'x': 165
+        'h': 1
+      - 'x': 169
+        'h': 0
+  - 'vi': 'Bars gần đều từ 151 đến 169'
+    'en': 'Bars nearly uniform from 151 to 169'
+    'figure':
+      'xRange':
+      - 150
+      - 170
+      'yRange':
+      - 0
+      - 5
+      'bars':
+      - 'x': 151
+        'h': 2
+      - 'x': 155
+        'h': 2
+      - 'x': 159
+        'h': 2
+      - 'x': 163
+        'h': 2
+      - 'x': 167
+        'h': 2
+  'answer':
+  - 0

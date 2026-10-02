@@ -1,0 +1,80 @@
+exercises:
+- id: c2w1-derivative-ex-mcq-01
+  topic: inverse-trig-exp-log
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm của $e^x$'?
+    en: On the $y=e^x$ slide, the height at $x=2$ is about $7.39$. What is the slope there?
+  explanation:
+    vi: 'Ý đúng: $e^x$ là hàm đặc biệt có đạo hàm bằng chính nó.'
+    en: 'Correct: $e^x$ is the special function whose derivative is itself.'
+  hints: []
+  options:
+  - vi: $e^x$ là hàm đặc biệt có đạo hàm bằng chính nó
+    en: $e^x$ is the special function whose derivative is itself
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The slope is always $1$ because $e$ is a constant base.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The slope is $2e$ because the input $x=2$ multiplies the base.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The derivative is $x e^{x-1}$ by the power rule for $x^n$.
+  answer:
+  - 0
+- id: c2w1-derivative-ex-truefalse-02
+  topic: inverse-trig-exp-log
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm của $e^x$', công thức $\frac{d}{dx}e^x=e^x$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: The natural exponential is the function whose derivative equals its own value at every $x$.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The natural exponential is special because its height and slope are the same.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Riêng hàm $e^x$ có độ dốc bằng chính giá trị $e^x$.
+    en: The function $e^x$ has slope equal to its own value $e^x$.
+  - vi: Vì $e$ là hằng số nên $e^x$ có đạo hàm bằng 0.
+    en: Since $e$ is constant, $e^x$ has derivative 0.
+  - vi: Phải dùng quy tắc lũy thừa $x^n$ cho $e^x$.
+    en: The power rule for $x^n$ must be used on $e^x$.
+  reasonAnswer: 0
+- id: c2w1-derivative-ex-parametric-03
+  topic: inverse-trig-exp-log
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-derivative-ex-numeric-04
+  topic: inverse-trig-exp-log
+  type: numeric
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Tính $\frac{d}{dx}e^x$ tại $x=1$.
+    en: Compute $\frac{d}{dx}e^x$ at $x=1$.
+  explanation:
+    vi: Tính đạo hàm rồi thay điểm cần xét; không dùng giá trị hàm thay cho độ dốc.
+    en: Because $e^x$ is self-derivative, substituting the point happens after recognizing the same function reappears.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answers:
+  - value: 2.718281828
+  tolerance: 0.001

@@ -1,0 +1,130 @@
+{
+  "id": "w1",
+  "order": 1,
+  "title": {
+    "vi": "Tuần 1: Xác suất và phân phối xác suất",
+    "en": "Week 1: Probability and probability distributions"
+  },
+  "source": "syllabus/c3-probability-statistics/W1.pdf",
+  "topics": [
+    {
+      "id": "what-is-probability",
+      "title": {
+        "vi": "Xác suất là gì?",
+        "en": "What is probability?"
+      }
+    },
+    {
+      "id": "complement-rule",
+      "title": {
+        "vi": "Quy tắc bù",
+        "en": "Complement rule"
+      }
+    },
+    {
+      "id": "sum-rules",
+      "title": {
+        "vi": "Quy tắc cộng cho biến cố rời nhau và giao nhau",
+        "en": "Sum rules for disjoint and joint events"
+      }
+    },
+    {
+      "id": "independence-product-rule",
+      "title": {
+        "vi": "Độc lập và quy tắc nhân",
+        "en": "Independence and product rule"
+      }
+    },
+    {
+      "id": "conditional-probability",
+      "title": {
+        "vi": "Xác suất có điều kiện",
+        "en": "Conditional probability"
+      }
+    },
+    {
+      "id": "bayes-theorem",
+      "title": {
+        "vi": "Định lý Bayes",
+        "en": "Bayes' theorem"
+      }
+    },
+    {
+      "id": "naive-bayes",
+      "title": {
+        "vi": "Naive Bayes",
+        "en": "Naive Bayes"
+      }
+    },
+    {
+      "id": "probability-in-ml",
+      "title": {
+        "vi": "Xác suất trong học máy",
+        "en": "Probability in machine learning"
+      }
+    },
+    {
+      "id": "random-variables",
+      "title": {
+        "vi": "Biến ngẫu nhiên",
+        "en": "Random variables"
+      }
+    },
+    {
+      "id": "discrete-pmf",
+      "title": {
+        "vi": "Phân phối rời rạc và PMF",
+        "en": "Discrete distributions and PMFs"
+      }
+    },
+    {
+      "id": "binomial-bernoulli",
+      "title": {
+        "vi": "Bernoulli và nhị thức",
+        "en": "Bernoulli and binomial distributions"
+      }
+    },
+    {
+      "id": "continuous-pdf",
+      "title": {
+        "vi": "Biến liên tục và PDF",
+        "en": "Continuous variables and PDFs"
+      }
+    },
+    {
+      "id": "cdf",
+      "title": {
+        "vi": "Hàm phân phối tích lũy CDF",
+        "en": "Cumulative distribution functions"
+      }
+    },
+    {
+      "id": "uniform-distribution",
+      "title": {
+        "vi": "Phân phối đều",
+        "en": "Uniform distribution"
+      }
+    },
+    {
+      "id": "normal-distribution",
+      "title": {
+        "vi": "Phân phối chuẩn",
+        "en": "Normal distribution"
+      }
+    },
+    {
+      "id": "chi-squared-distribution",
+      "title": {
+        "vi": "Phân phối Chi-squared",
+        "en": "Chi-squared distribution"
+      }
+    },
+    {
+      "id": "sampling-distributions",
+      "title": {
+        "vi": "Lấy mẫu từ phân phối",
+        "en": "Sampling from a distribution"
+      }
+    }
+  ]
+}

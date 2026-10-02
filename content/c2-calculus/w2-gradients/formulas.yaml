@@ -1,0 +1,132 @@
+formulas:
+  - id: c2w2-f-tangent-plane
+    topic: tangent-planes
+    name: { vi: 'Mặt phẳng tiếp tuyến', en: 'Tangent-plane formula' }
+    tex: 'L(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)'
+    where:
+      vi: 'Xấp xỉ tuyến tính của bề mặt $z=f(x,y)$ gần điểm $(a,b)$.'
+      en: 'Linear approximation to the surface $z=f(x,y)$ near $(a,b)$.'
+    numpy: 'f_ab + fx_ab*(x-a) + fy_ab*(y-b)'
+    exercises: [c2w2-tangent-planes-mcq-01, c2w2-tangent-planes-numeric-04, c2w2-tangent-planes-multistep-41]
+  - id: c2w2-f-partial-definition
+    topic: partial-derivatives
+    name: { vi: 'Định nghĩa đạo hàm riêng theo x', en: 'Partial derivative definition in x' }
+    tex: 'f_x(a,b)=\lim_{h\to0}\frac{f(a+h,b)-f(a,b)}{h}'
+    where:
+      vi: 'Giữ $y=b$ cố định và chỉ thay đổi tọa độ $x$ gần $(a,b)$.'
+      en: 'Hold $y=b$ fixed and vary only the $x$ coordinate near $(a,b)$.'
+    exercises: [c2w2-partial-derivatives-mcq-05, c2w2-partial-derivatives-truefalse-06, c2w2-partial-derivatives-finderror-42]
+  - id: c2w2-f-partial-monomial
+    topic: partial-derivatives
+    name: { vi: 'Đạo hàm riêng của đơn thức hai biến', en: 'Partial derivative of a two-variable monomial' }
+    tex: '\frac{\partial}{\partial x}(3x^2y^3)=6xy^3,\quad \frac{\partial}{\partial y}(3x^2y^3)=9x^2y^2'
+    where:
+      vi: 'Biến không được lấy đạo hàm được xem như hằng số trong bước đó.'
+      en: 'The variable not being differentiated is treated as a constant in that step.'
+    numpy: 'fx = 6*x*y**3; fy = 9*x**2*y**2'
+    exercises: [c2w2-partial-derivatives-numeric-08, c2w2-partial-derivatives-code-57, c2w2-partial-derivatives-parametric-66]
+  - id: c2w2-f-gradient-vector
+    topic: gradients
+    name: { vi: 'Vector gradient hai biến', en: 'Two-variable gradient vector' }
+    tex: '\nabla f(x,y)=\begin{bmatrix}f_x(x,y)\\ f_y(x,y)\end{bmatrix}'
+    where:
+      vi: 'Gom các đạo hàm riêng; hướng $\nabla f$ là hướng tăng nhanh nhất cục bộ.'
+      en: 'Collects partial derivatives; $\nabla f$ points in the local steepest-ascent direction.'
+    numpy: 'np.array([fx, fy])'
+    exercises: [c2w2-gradients-mcq-09, c2w2-gradients-matrix-43, c2w2-gradients-code-58]
+  - id: c2w2-f-directional-derivative
+    topic: gradients
+    name: { vi: 'Đạo hàm theo hướng', en: 'Directional derivative' }
+    tex: 'D_{\mathbf{u}}f=\nabla f\cdot\mathbf{u},\quad \|\mathbf{u}\|=1'
+    where:
+      vi: '$\mathbf{u}$ là hướng đơn vị; dot product lớn nhất khi cùng hướng gradient.'
+      en: '$\mathbf{u}$ is a unit direction; the dot product is largest along the gradient.'
+    numpy: 'grad @ u'
+    exercises: [c2w2-gradients-truefalse-10, c2w2-gradients-numeric-12, c2w2-gradients-construct-44]
+  - id: c2w2-f-stationary-gradient
+    topic: maxima-minima
+    name: { vi: 'Điều kiện cực trị nội điểm', en: 'Interior extremum condition' }
+    tex: '\nabla f(x^*,y^*)=\mathbf{0}\quad\Leftrightarrow\quad f_x(x^*,y^*)=0,\ f_y(x^*,y^*)=0'
+    where:
+      vi: 'Điều kiện cần cho cực trị nội điểm; saddle cũng có thể thỏa điều kiện này.'
+      en: 'Necessary condition for an interior extremum; a saddle can also satisfy it.'
+    exercises: [c2w2-maxima-minima-mcq-13, c2w2-maxima-minima-numeric-16, c2w2-analytical-optimization-numeric-20]
+  - id: c2w2-f-analytical-optimization-equations
+    topic: analytical-optimization
+    name: { vi: 'Phương trình tối ưu giải tích', en: 'Analytical optimization equations' }
+    tex: 'E_m(m,b)=0,\qquad E_b(m,b)=0'
+    where:
+      vi: 'Giải đồng thời các đạo hàm riêng bằng $0$ để tìm ứng viên tối ưu của $E(m,b)$.'
+      en: 'Solve the partial derivatives simultaneously at $0$ to find candidates for optimizing $E(m,b)$.'
+    exercises: [c2w2-analytical-optimization-mcq-17, c2w2-analytical-optimization-finderror-46, c2w2-analytical-optimization-parametric-70]
+  - id: c2w2-f-slide-cost-gradient
+    topic: analytical-optimization
+    name: { vi: 'Gradient của cost bậc hai trong slide', en: 'Gradient of the slide quadratic cost' }
+    tex: 'E=14m^2+3b^2+12mb-42m-20b+38,\quad E_m=28m+12b-42,\quad E_b=12m+6b-20'
+    where:
+      vi: 'Cost bậc hai theo tham số đường thẳng $m,b$ trong ví dụ hồi quy tuần 2.'
+      en: 'Quadratic cost in line parameters $m,b$ from the week 2 regression example.'
+    exercises: [c2w2-analytical-optimization-numeric-20, c2w2-analytical-optimization-matching-19, c2w2-linear-regression-numeric-48]
+  - id: c2w2-f-linear-prediction
+    topic: linear-regression
+    name: { vi: 'Dự đoán đường thẳng hồi quy', en: 'Linear regression prediction' }
+    tex: '\hat y_i=mx_i+b'
+    where:
+      vi: '$m$ là slope, $b$ là intercept; residual là $\hat y_i-y_i$.'
+      en: '$m$ is slope and $b$ is intercept; the residual is $\hat y_i-y_i$.'
+    numpy: 'yhat = m*x + b'
+    exercises: [c2w2-linear-regression-mcq-21, c2w2-linear-regression-multistep-47, c2w2-gd-least-squares-numeric-40]
+  - id: c2w2-f-sse-linear-regression
+    topic: linear-regression
+    name: { vi: 'SSE cho hồi quy tuyến tính', en: 'SSE for linear regression' }
+    tex: 'E(m,b)=\sum_i(mx_i+b-y_i)^2'
+    where:
+      vi: 'Tổng bình phương residual cho các điểm dữ liệu $(x_i,y_i)$.'
+      en: 'Sum of squared residuals over data points $(x_i,y_i)$.'
+    numpy: 'np.sum((m*x + b - y)**2)'
+    exercises: [c2w2-linear-regression-truefalse-22, c2w2-linear-regression-numeric-24, c2w2-gd-least-squares-matching-39]
+  - id: c2w2-f-gd-one-variable
+    topic: gd-one-variable
+    name: { vi: 'Gradient descent một biến', en: 'One-variable gradient descent' }
+    tex: 'x_{k+1}=x_k-\alpha f''(x_k)'
+    where:
+      vi: '$\alpha$ là learning rate; dấu trừ đi ngược hướng tăng của $f$.'
+      en: '$\alpha$ is the learning rate; the minus sign moves opposite the increase of $f$.'
+    numpy: 'x = x - alpha * fp(x)'
+    exercises: [c2w2-gd-one-variable-numeric-28, c2w2-gd-one-variable-multistep-50, c2w2-gd-one-variable-code-59]
+  - id: c2w2-f-gd-quadratic-factor
+    topic: learning-rate-local-minima
+    name: { vi: 'Hệ số lặp GD cho f(x)=x^2', en: 'GD iteration factor for f(x)=x^2' }
+    tex: 'x_{k+1}=x_k-2\alpha x_k=(1-2\alpha)x_k'
+    where:
+      vi: 'Cho thấy learning rate quyết định hội tụ chậm, dao động hay phân kỳ.'
+      en: 'Shows how the learning rate controls slow convergence, oscillation, or divergence.'
+    numpy: 'x = (1 - 2*alpha) * x'
+    exercises: [c2w2-learning-rate-local-minima-numeric-32, c2w2-learning-rate-local-minima-multistep-52, c2w2-gd-one-variable-predictoutput-63]
+  - id: c2w2-f-gd-vector-update
+    topic: gd-two-variables
+    name: { vi: 'Gradient descent vector nhiều biến', en: 'Multivariable gradient descent update' }
+    tex: '\mathbf{p}_{k+1}=\mathbf{p}_k-\alpha\nabla f(\mathbf{p}_k)'
+    where:
+      vi: 'Cập nhật mọi tọa độ từ cùng gradient cũ tại $\mathbf{p}_k$.'
+      en: 'Update all coordinates from the same old gradient at $\mathbf{p}_k$.'
+    numpy: 'p = p - alpha * grad(p)'
+    exercises: [c2w2-gd-two-variables-matrix-53, c2w2-gd-two-variables-code-60, c2w2-gd-two-variables-parametric-69]
+  - id: c2w2-f-least-squares-cost
+    topic: gd-least-squares
+    name: { vi: 'Cost least squares chuẩn hóa', en: 'Normalized least-squares cost' }
+    tex: 'J(m,b)=\frac1{2n}\sum_i(mx_i+b-y_i)^2'
+    where:
+      vi: 'Hệ số $1/(2n)$ làm gradient gọn hơn và lấy trung bình theo $n$ điểm.'
+      en: 'The $1/(2n)$ factor makes gradients cleaner and averages over $n$ points.'
+    numpy: '0.5 * np.mean((m*x + b - y)**2)'
+    exercises: [c2w2-gd-least-squares-mcq-37, c2w2-gd-least-squares-truefalse-38, c2w2-gd-least-squares-code-61]
+  - id: c2w2-f-least-squares-gradients
+    topic: gd-least-squares
+    name: { vi: 'Gradient least squares theo m và b', en: 'Least-squares gradients in m and b' }
+    tex: 'J_m=\frac1n\sum_i(mx_i+b-y_i)x_i,\qquad J_b=\frac1n\sum_i(mx_i+b-y_i)'
+    where:
+      vi: 'Residual $\hat y_i-y_i$ điều khiển hướng cập nhật của slope $m$ và intercept $b$.'
+      en: 'The residual $\hat y_i-y_i$ drives update directions for slope $m$ and intercept $b$.'
+    numpy: 'dm = np.mean((m*x + b - y)*x); db = np.mean(m*x + b - y)'
+    exercises: [c2w2-gd-least-squares-numeric-40, c2w2-gd-least-squares-parsons-55, c2w2-gd-least-squares-predictoutput-56, c2w3-regression-gradient-descent-numeric-05]

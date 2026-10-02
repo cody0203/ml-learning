@@ -1,0 +1,142 @@
+formulas:
+  - id: c1w1-f-system-matrix-form
+    topic: equation-systems
+    name: { vi: 'Dạng ma trận của hệ tuyến tính', en: 'Matrix form of a linear system' }
+    tex: 'Ax=b'
+    where:
+      vi: '$A$ là ma trận hệ số, $x$ là vector ẩn, $b$ là vector vế phải.'
+      en: '$A$ is the coefficient matrix, $x$ the unknown vector, and $b$ the right-hand side.'
+    numpy: 'np.linalg.solve(A, b)'
+    exercises: [c1w1-eq-matrix-03, c1w1-mat-matrix-03, c1w3-matvec-multi-01]
+  - id: c1w1-f-linear-layer
+    topic: ml-motivation
+    name: { vi: 'Lớp tuyến tính đơn giản', en: 'Simple linear layer' }
+    tex: 'y=Wx'
+    where:
+      vi: '$W$ là ma trận trọng số, $x$ là input, $y$ là output trước bias/activation.'
+      en: '$W$ is the weight matrix, $x$ the input, and $y$ the output before bias/activation.'
+    numpy: 'W @ x'
+    exercises: [c1w1-ml-predict-04, c1w1-ml-construct-07, c1w2-ml-motivation-predictoutput-09]
+  - id: c1w1-f-two-equation-system
+    topic: sentence-systems
+    name: { vi: 'Hệ hai phương trình hai ẩn', en: 'Two-equation system in two unknowns' }
+    tex: '\begin{cases}p_1a+q_1b=r_1\\p_2a+q_2b=r_2\end{cases}'
+    where:
+      vi: 'Mỗi dòng là một ràng buộc tuyến tính lên hai ẩn $a,b$.'
+      en: 'Each row is one linear constraint on the two unknowns $a,b$.'
+    exercises: [c1w1-eq-num-02, c1w1-lines-matrix-04, c1w1-ml-multi-06]
+  - id: c1w1-f-elimination-difference
+    topic: equation-systems
+    name: { vi: 'Khử bằng phép trừ phương trình', en: 'Elimination by subtracting equations' }
+    tex: '(E_2)-(E_1):\quad \text{left}_2-\text{left}_1=\text{right}_2-\text{right}_1'
+    where:
+      vi: 'Dùng khi hai phương trình có phần chung để loại một ẩn.'
+      en: 'Use when two equations share terms so subtracting eliminates one unknown.'
+    exercises: [c1w1-eq-error-04, c1w1-3sys-parsons-05, c1w1-3sys-matrix-01]
+  - id: c1w1-f-line-slope-intercept
+    topic: lines-2d
+    name: { vi: 'Đổi phương trình đường thẳng sang hệ số góc', en: 'Line in slope-intercept form' }
+    tex: 'pa+qb=r,\ q\ne0\quad\Longrightarrow\quad b=-\frac{p}{q}a+\frac{r}{q}'
+    where:
+      vi: 'Hệ số góc là $-p/q$ và tung độ gốc là $r/q$.'
+      en: 'The slope is $-p/q$ and the vertical intercept is $r/q$.'
+    exercises: [c1w1-lines-num-03, c1w1-lines-mcq-01, c1w1-lines-param-07]
+  - id: c1w1-f-two-line-solution-counts
+    topic: lines-2d
+    name: { vi: 'Số nghiệm của hai đường thẳng', en: 'Solution counts for two lines' }
+    tex: '\det\begin{bmatrix}p_1&q_1\\p_2&q_2\end{bmatrix}\ne0\Rightarrow 1\text{ solution}'
+    where:
+      vi: 'Hai đường cắt nhau khi ma trận hệ số 2×2 không suy biến; song song/trùng nhau khi suy biến.'
+      en: 'Two lines intersect when the 2×2 coefficient matrix is non-singular; singular cases are parallel or coincident.'
+    exercises: [c1w1-lines-mcq-01, c1w1-lines-error-06, c1w1-lines-param-07]
+  - id: c1w1-f-augmented-matrix
+    topic: matrices-singularity
+    name: { vi: 'Ma trận mở rộng', en: 'Augmented matrix' }
+    tex: '[A\mid b]'
+    where:
+      vi: 'Gắn cột vế phải $b$ vào ma trận hệ số $A$ để giải hệ.'
+      en: 'Append the right-hand side $b$ to the coefficient matrix $A$ when solving a system.'
+    exercises: [c1w1-mat-matrix-03, c1w2-matrix-row-reduction-matrix-04]
+  - id: c1w1-f-linear-dependence
+    topic: dependence
+    name: { vi: 'Phụ thuộc tuyến tính của các hàng', en: 'Linear dependence of rows' }
+    tex: 'c_1r_1+c_2r_2+\cdots+c_kr_k=0,\quad \text{not all }c_i=0'
+    where:
+      vi: 'Có một tổ hợp tuyến tính không tầm thường tạo vector 0.'
+      en: 'A nontrivial linear combination of the rows equals the zero vector.'
+    exercises: [c1w1-dep-mcq-01, c1w1-dep-error-03, c1w1-dep-construct-05]
+  - id: c1w1-f-nonsingular-equivalences
+    topic: dependence
+    name: { vi: 'Điều kiện tương đương không suy biến', en: 'Equivalent non-singularity conditions' }
+    tex: '\text{row independence}\Longleftrightarrow \text{non-singular}\Longleftrightarrow \det(A)\ne0'
+    where:
+      vi: 'Áp dụng cho ma trận vuông; khi đúng, hệ $Ax=b$ có nghiệm duy nhất cho mọi $b$.'
+      en: 'For square matrices; when true, $Ax=b$ has a unique solution for every $b$.'
+    exercises: [c1w1-det3-mcq-02, c1w1-mat-construct-04, c1w4-02-tf]
+  - id: c1w1-f-rank-independent-rows
+    topic: matrices-singularity
+    name: { vi: 'Rank là số hàng độc lập', en: 'Rank as number of independent rows' }
+    tex: '\operatorname{rank}(A)=\#\{\text{independent row directions}\}'
+    where:
+      vi: 'Rank thấp nghĩa là có thông tin lặp lại hoặc phụ thuộc tuyến tính.'
+      en: 'Low rank means some information is repeated or linearly dependent.'
+    numpy: 'np.linalg.matrix_rank(A)'
+    exercises: [c1w1-mat-param-07, c1w1-dep-construct-05, c1w2-rank-numeric-04]
+  - id: c1w1-f-det-2x2
+    topic: determinant-2x2
+    name: { vi: 'Định thức ma trận 2×2', en: 'Determinant of a 2×2 matrix' }
+    tex: '\det\begin{bmatrix}a&b\\c&d\end{bmatrix}=ad-bc'
+    where:
+      vi: '$\det=0$ ⇔ ma trận 2×2 suy biến; $\det\ne0$ ⇔ có inverse.'
+      en: '$\det=0$ ⇔ the 2×2 matrix is singular; $\det\ne0$ ⇔ it has an inverse.'
+    numpy: 'np.linalg.det(A)'
+    exercises: [c1w1-det2-num-01, c1w1-det2-code-06, c1w4-area-code-det2-01]
+  - id: c1w1-f-singular-2x2
+    topic: determinant-2x2
+    name: { vi: 'Điều kiện suy biến 2×2', en: '2×2 singularity condition' }
+    tex: 'ad-bc=0'
+    where:
+      vi: 'Hai hàng/cột phụ thuộc; hệ có thể vô nghiệm hoặc vô số nghiệm tùy $b$.'
+      en: 'Rows/columns are dependent; the system may have no or infinitely many solutions depending on $b$.'
+    exercises: [c1w1-det2-mcq-02, c1w1-mat-code-05, c1w2-singular-systems-mcq-01]
+  - id: c1w1-f-three-variable-system
+    topic: systems-3x3
+    name: { vi: 'Hệ ba phương trình ba ẩn', en: 'Three-equation system in three unknowns' }
+    tex: '\begin{cases}a_{11}x+a_{12}y+a_{13}z=b_1\\a_{21}x+a_{22}y+a_{23}z=b_2\\a_{31}x+a_{32}y+a_{33}z=b_3\end{cases}'
+    where:
+      vi: 'Ba phương trình tuyến tính tương ứng với ba mặt phẳng trong không gian.'
+      en: 'Three linear equations correspond to three planes in space.'
+    exercises: [c1w1-3sys-matrix-01, c1w1-3sys-num-04, c1w1-mat-mcq-01]
+  - id: c1w1-f-plane-equation
+    topic: planes-3d
+    name: { vi: 'Phương trình mặt phẳng', en: 'Plane equation' }
+    tex: 'pa+qb+rc=s'
+    where:
+      vi: 'Vector $(p,q,r)$ là pháp tuyến của mặt phẳng trong không gian 3D.'
+      en: 'The vector $(p,q,r)$ is the normal vector of the plane in 3D.'
+    exercises: [c1w1-plane-mcq-01, c1w1-plane-num-04, c1w1-plane-construct-05]
+  - id: c1w1-f-plane-point-test
+    topic: planes-3d
+    name: { vi: 'Kiểm tra điểm thuộc mặt phẳng', en: 'Point-on-plane test' }
+    tex: '(a_0,b_0,c_0)\in\Pi\Longleftrightarrow pa_0+qb_0+rc_0=s'
+    where:
+      vi: 'Thay tọa độ điểm vào phương trình mặt phẳng và so sánh hai vế.'
+      en: 'Substitute the point coordinates into the plane equation and compare both sides.'
+    exercises: [c1w1-plane-tf-02, c1w1-plane-parsons-07]
+  - id: c1w1-f-det-3x3-sarrus
+    topic: determinant-3x3
+    name: { vi: 'Quy tắc Sarrus cho định thức 3×3', en: 'Sarrus rule for a 3×3 determinant' }
+    tex: '\det\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}=aei+bfg+cdh-ceg-bdi-afh'
+    where:
+      vi: 'Cộng ba tích chéo xuống phải và trừ ba tích chéo xuống trái.'
+      en: 'Add the three down-right products and subtract the three down-left products.'
+    numpy: 'np.linalg.det(A)'
+    exercises: [c1w1-det3-num-01, c1w1-det3-code-04, c1w1-det3-param-07]
+  - id: c1w1-f-triangular-det
+    topic: determinant-3x3
+    name: { vi: 'Định thức ma trận tam giác', en: 'Determinant of a triangular matrix' }
+    tex: 'A\text{ triangular}\quad\Longrightarrow\quad \det(A)=\prod_i a_{ii}'
+    where:
+      vi: 'Dùng cho ma trận tam giác trên hoặc dưới; nhân các phần tử đường chéo.'
+      en: 'For upper or lower triangular matrices; multiply the diagonal entries.'
+    exercises: [c1w1-det3-construct-06, c1w1-det3-param-07, c1w4-09-multi]

@@ -1,0 +1,134 @@
+﻿exercises:
+- id: c2w3-classification-neural-network-matching-03
+  topic: classification-neural-network
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong mạng 2-2-1.
+    en: Match notation in the 2-2-1 network.
+  explanation:
+    vi: $W^{[1]}$ tạo hidden units, $a^{[1]}$ là feature mới, và $W^{[2]}$ tạo output.
+    en: $W^{[1]}$ creates hidden units, $a^{[1]}$ is the new feature vector, and $W^{[2]}$ creates the output.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-classification-neural-network-find-error-04
+  topic: classification-neural-network
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi shape trong forward pass của mạng 2-2-1.
+    en: Find the shape error in the 2-2-1 network forward pass.
+  explanation:
+    vi: Hidden activation phải có hai thành phần trước khi nhân với output weights.
+    en: The hidden activation must have two components before it is multiplied by the output weights.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-classification-neural-network-matrix-05
+  topic: classification-neural-network
+  type: matrix
+  difficulty: 2
+  tags:
+  - forward
+  prompt:
+    vi: Tính hidden pre-activation $z^{[1]}=W^{[1]}x+b^{[1]}$ với $W^{[1]}=[[1,0],[0,1]]$, $x=(2,3)$, $b=(1,-1)$.
+    en: Compute hidden pre-activation $z^{[1]}=W^{[1]}x+b^{[1]}$ with $W^{[1]}=[[1,0],[0,1]]$, $x=(2,3)$, $b=(1,-1)$.
+  explanation:
+    vi: Kết quả $(3,2)$.
+    en: Result $(3,2)$.
+  hints: []
+  answer:
+  - - 3
+  - - 2
+  tolerance: 0
+- id: c2w3-classification-neural-network-multi-step-06
+  topic: classification-neural-network
+  type: multi-step
+  difficulty: 3
+  tags:
+  - backprop
+  prompt:
+    vi: Mạng 2-2-1 có $a_1=0.6$, $a_2=0.4$, output weights $(2,-1)$, $b=0$, $y=1$.
+    en: A 2-2-1 net has $a_1=0.6$, $a_2=0.4$, output weights $(2,-1)$, $b=0$, $y=1$.
+  explanation:
+    vi: Tính output rồi gradient output-layer.
+    en: Compute output then output-layer gradient.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $z$ output?
+      en: Output $z$?
+    answers:
+    - value: 0.8
+    tolerance: 1.0e-09
+    explanation:
+      vi: $2(0.6)-1(0.4)=0.8$.
+      en: $2(0.6)-1(0.4)=0.8$.
+  - type: numeric
+    prompt:
+      vi: $\hat y=\sigma(0.8)$?
+      en: $\hat y=\sigma(0.8)$?
+    answers:
+    - value: 0.6899744811276125
+    tolerance: 0.001
+    explanation:
+      vi: Sigmoid của 0.8 khoảng 0.690.
+      en: Sigmoid of 0.8 is about 0.690.
+  - type: numeric
+    prompt:
+      vi: Gradient theo output weights?
+      en: Gradient wrt output weights?
+    answers:
+    - label: dw1
+      value: -0.1860153113234325
+    - label: dw2
+      value: -0.124010207548955
+    tolerance: 0.001
+    explanation:
+      vi: Dùng $(\hat y-y)a_j$.
+      en: Use $(\hat y-y)a_j$.
+- id: c2w3-classification-neural-network-code-07
+  topic: classification-neural-network
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài forward + gradients cho mạng sigmoid 2-2-1 và kiểm tra gần đúng số.
+    en: Implement forward + gradients for a sigmoid 2-2-1 network and support numerical checking.
+  explanation:
+    vi: 'Backprop: output delta $a_2-y$, hidden delta $(W2^T delta) a1(1-a1)$.'
+    en: 'Backprop: output delta $a_2-y$, hidden delta $(W2^T delta) a1(1-a1)$.'
+  hints: []
+  starter: "import numpy as np\ndef tiny_net_loss_grads(x,y,W1,b1,W2,b2):\n    return 0.0, {'W1':np.zeros_like(W1),'b1':np.zeros_like(b1),'W2':np.zeros_like(W2),'b2':np.zeros_like(b2)}\n"
+  solution: "import numpy as np\ndef _sig(z): return 1/(1+np.exp(-z))\ndef tiny_net_loss_grads(x,y,W1,b1,W2,b2):\n    z1=W1@x+b1; a1=_sig(z1)\n    z2=float((W2@a1+b2).reshape(-1)[0]); yhat=float(_sig(z2))\n    eps=1e-12\n    loss=-(y*np.log(yhat+eps)+(1-y)*np.log(1-yhat+eps))\n    dz2=yhat-y\n    gW2=dz2*a1.reshape(1,-1); gb2=np.array([dz2])\n    dz1=(W2.reshape(-1)*dz2)*a1*(1-a1)\n    gW1=dz1.reshape(-1,1)@x.reshape(1,-1); gb1=dz1\n    return float(loss), {'W1':gW1,'b1':gb1,'W2':gW2,'b2':gb2}\n"
+  tests: "import numpy as np\ndef test_shapes_and_numeric():\n    x=np.array([0.5,-1.0]); y=1.0\n    W1=np.array([[0.2,-0.3],[0.4,0.1]]); b1=np.array([0.0,0.2]); W2=np.array([[0.7,-0.5]]); b2=np.array([0.1])\n    loss,gr=tiny_net_loss_grads(x,y,W1,b1,W2,b2)\n    assert loss>0 and gr['W1'].shape==W1.shape and gr['W2'].shape==W2.shape\n    eps=1e-5; W1p=W1.copy(); W1p[0,0]+=eps; lp,_=tiny_net_loss_grads(x,y,W1p,b1,W2,b2)\n    W1m=W1.copy(); W1m[0,0]-=eps; lm,_=tiny_net_loss_grads(x,y,W1m,b1,W2,b2)\n    num=(lp-lm)/(2*eps)\n    assert abs(num-gr['W1'][0,0])<1e-5\n"

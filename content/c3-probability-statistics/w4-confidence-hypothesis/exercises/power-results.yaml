@@ -1,0 +1,261 @@
+exercises:
+- id: c3w4-power-results-mcq-07
+  topic: power-results
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Power của test tại một alternative cụ thể là gì?
+    en: What is the power of a test at a specific alternative?
+  explanation:
+    vi: Power là xác suất rơi vào rejection region khi alternative thật; nó bằng $1-\beta$.
+    en: Power is the probability of landing in the rejection region when the alternative is true; it equals $1-\beta$.
+  hints: []
+  options:
+  - vi: $P(\text{reject }H_0\mid H_1\text{ true})$.
+    en: $P(\text{reject }H_0\mid H_1\text{ true})$.
+  - vi: $P(H_0\text{ true}\mid data)$.
+    en: $P(H_0\text{ true}\mid data)$.
+  - vi: Độ rộng của confidence interval.
+    en: The width of a confidence interval.
+  answer:
+  - 0
+- id: c3w4-power-results-tf-07
+  topic: power-results
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Với $n$ cố định, giảm $\alpha$ thường làm rejection region nhỏ hơn.
+    en: With fixed $n$, lowering $\alpha$ usually makes the rejection region smaller.
+  explanation:
+    vi: Đúng. Critical value đi xa hơn vào tail, nên Type I error giảm nhưng power cũng thường giảm.
+    en: True. The critical value moves farther into the tail, reducing Type I error but usually also reducing power.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Rejection region nhỏ hơn khó lọt vào hơn.
+    en: A smaller rejection region is harder to hit.
+  - vi: Giảm $\alpha$ luôn tăng power.
+    en: Lowering $\alpha$ always increases power.
+  reasonAnswer: 0
+- id: c3w4-power-results-match-07
+  topic: power-results
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép đại lượng power với ý nghĩa trong rule $\bar X>68.26$.
+    en: Match each power quantity with its meaning for the rule $\bar X>68.26$.
+  explanation:
+    vi: Với true mean 70, $\beta$ là diện tích bên trái 68.26; power là phần bên phải.
+    en: With true mean 70, $\beta$ is the area left of 68.26; power is the area to the right.
+  hints: []
+  pairs:
+  - left:
+      vi: $\beta(70)$
+      en: $\beta(70)$
+    right:
+      vi: không reject khi $\mu=70$
+      en: do not reject when $\mu=70$
+  - left:
+      vi: power tại $\mu=70$
+      en: power at $\mu=70$
+    right:
+      vi: reject khi $\mu=70$
+      en: reject when $\mu=70$
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-power-results-parsons-07
+  topic: power-results
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp cách tính power cho rule $\bar X>k$.
+    en: Order the computation of power for the rule $\bar X>k$.
+  explanation:
+    vi: Power được tính dưới phân phối alternative, không dưới null, vì ta giả sử hiệu ứng thật tồn tại.
+    en: Power is computed under the alternative distribution, not under the null, because we assume the effect is real.
+  hints:
+  - vi: Critical boundary $k$ đến từ rule đã thiết kế.
+    en: The critical boundary $k$ comes from the designed rule.
+  steps:
+  - vi: Ghi decision rule, ví dụ reject nếu $\bar X>k$.
+    en: Write the decision rule, e.g. reject if $\bar X>k$.
+  - vi: Chọn true mean trong alternative, ví dụ $\mu=70$.
+    en: Choose the true mean under the alternative, e.g. $\mu=70$.
+  - vi: Chuẩn hóa $k$ dưới phân phối có mean 70.
+    en: Standardize $k$ under the distribution with mean 70.
+  - vi: Lấy tail probability nằm trong rejection region.
+    en: Take the tail probability inside the rejection region.
+- id: c3w4-power-results-numeric-01
+  topic: power-results
+  type: numeric
+  difficulty: 2
+  tags:
+  - power
+  prompt:
+    vi: Right-tail rule reject nếu $\bar X>68.26$, $\sigma=3$, $n=10$. Nếu true $\mu=70$, tính $\beta=P(\bar X\le68.26)$;
+      dùng z=-1.834 và $\Phi(-1.834)=0.0333$.
+    en: Right-tail rule rejects if $\bar X>68.26$, $\sigma=3$, $n=10$. If true $\mu=70$, compute $\beta=P(\bar X\le68.26)$;
+      use z=-1.834 and $\Phi(-1.834)=0.0333$.
+  explanation:
+    vi: Type II error là không reject khi alternative true, nên $\beta=0.0333$.
+    en: Type II error is failing to reject when the alternative is true, so $\beta=0.0333$.
+  hints: []
+  answers:
+  - label: beta
+    value: 0.0333
+  - label: power
+    value: 0.9667
+  tolerance: 0.0005
+- id: c3w4-power-results-mcq-figure-01
+  topic: power-results
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - power
+  prompt:
+    vi: Trong hình, vùng tô bên phải critical value dưới phân phối alternative biểu diễn gì?
+    en: In the figure, the shaded area to the right of the critical value under the alternative distribution represents what?
+  explanation:
+    vi: Dưới true alternative, xác suất rơi vào rejection region là power.
+    en: Under the true alternative, the probability of falling in the rejection region is power.
+  hints: []
+  figure:
+    xRange:
+    - 64
+    - 73
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.420*exp(-0.5*((x-66.7)/0.949)^2)
+      label: H0 mean 66.7
+      color: '#94a3b8'
+    - f: 0.420*exp(-0.5*((x-70)/0.949)^2)
+      label: true mean 70
+      color: '#2563eb'
+    areas:
+    - f: 0.420*exp(-0.5*((x-70)/0.949)^2)
+      from: 68.26
+      to: 73
+      color: '#bfdbfe'
+    xLabel: sample mean
+    yLabel: density
+  options:
+  - vi: Power
+    en: Power
+  - vi: Type I error
+    en: Type I error
+  - vi: Confidence level
+    en: Confidence level
+  answer:
+  - 0
+- id: c3w4-power-results-matching-02
+  topic: power-results
+  type: matching
+  difficulty: 1
+  tags:
+  - power
+  prompt:
+    vi: Ghép thay đổi với tác động power thường gặp.
+    en: Match changes with typical power effects.
+  explanation:
+    vi: Power tăng khi signal/noise tốt hơn hoặc rejection region dễ đạt hơn.
+    en: Power increases when signal/noise improves or the rejection region is easier to reach.
+  hints: []
+  pairs:
+  - left:
+      vi: Tăng $n$
+      en: Increase $n$
+    right:
+      vi: Power tăng
+      en: Power increases
+  - left:
+      vi: Giảm noise $\sigma$
+      en: Lower noise $\sigma$
+    right:
+      vi: Power tăng
+      en: Power increases
+  - left:
+      vi: Hiệu ứng thật gần null
+      en: True effect near null
+    right:
+      vi: Power thấp
+      en: Low power
+  - left:
+      vi: Giảm $\alpha$
+      en: Lower $\alpha$
+    right:
+      vi: Thường power giảm nếu giữ n
+      en: Usually lowers power if n fixed
+- id: c3w4-power-results-find-error-01
+  topic: power-results
+  type: find-error
+  difficulty: 2
+  tags:
+  - interpretation
+  prompt:
+    vi: Tìm lỗi diễn giải đầu tiên.
+    en: Find the first interpretation error.
+  explanation:
+    vi: 'Sai ở bước 2: p-value lớn không chứng minh không có hiệu ứng; cần xem power và effect size.'
+    en: 'Step 2 is wrong: a large p-value does not prove no effect; consider power and effect size.'
+  hints: []
+  steps:
+  - vi: A/B test cho p-value 0.18.
+    en: An A/B test returns p-value 0.18.
+  - vi: Do đó chắc chắn hai phiên bản giống hệt nhau.
+    en: Therefore the two versions are certainly identical.
+  - vi: Một diễn giải tốt hơn là chưa đủ bằng chứng khác biệt ở mức đã chọn.
+    en: A better interpretation is insufficient evidence of a difference at the chosen level.
+  - vi: Có thể cần kiểm tra power để biết test có đủ nhạy không.
+    en: We may need a power check to know whether the test is sensitive enough.
+  answer: 1
+- id: c3w4-power-results-code-01
+  topic: power-results
+  type: code
+  difficulty: 3
+  tags:
+  - python
+  - power
+  prompt:
+    vi: Viết hàm tính power cho right-tail z-test của mean known $\sigma$.
+    en: Write a function computing power for a right-tail z-test of a mean with known $\sigma$.
+  explanation:
+    vi: Critical mean là $\mu_0+z_{1-\alpha}\sigma/\sqrt n$. Power tại $\mu_1$ là $P_{\mu_1}(\bar X>crit)$.
+    en: The critical mean is $\mu_0+z_{1-\alpha}\sigma/\sqrt n$. Power at $\mu_1$ is $P_{\mu_1}(\bar X>crit)$.
+  hints: []
+  starter: "import math\nfrom scipy import stats\n\ndef right_tail_power(mu0, mu1, sigma, n, alpha):\n    return None\n"
+  solution: "import math\nfrom scipy import stats\n\ndef right_tail_power(mu0, mu1, sigma, n, alpha):\n    se = sigma / math.sqrt(n)\n\
+    \    crit = mu0 + stats.norm.ppf(1 - alpha) * se\n    return stats.norm.sf((crit - mu1) / se)\n"
+  tests: "def test_power_large_effect():\n    p = right_tail_power(66.7, 70, 3, 10, 0.05)\n    assert 0.95 < p < 0.98, f'expected\
+    \ about 0.967, got {p}'\n\ndef test_power_near_alpha_at_null():\n    p = right_tail_power(0, 0, 1, 25, 0.05)\n    assert\
+    \ abs(p - 0.05) < 1e-10\n"
+- id: c3w4-power-results-param-01
+  topic: power-results
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - z
+  prompt:
+    vi: Generator z-score hỗ trợ đọc power curves.
+    en: z-score generator supporting power-curve reading.
+  explanation:
+    vi: Power dùng chuẩn hóa critical boundary dưới alternative.
+    en: Power standardizes the critical boundary under the alternative.
+  hints: []
+  generator: z-score
+  params: {}

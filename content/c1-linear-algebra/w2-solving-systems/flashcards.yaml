@@ -1,0 +1,334 @@
+flashcards:
+- id: c1w2-fc-ml-motivation-01
+  topic: ml-motivation
+  kind: concept
+  front:
+    vi: 'Trong mạng nơ-ron, vì sao nhiều phép tính tuyến tính thường được gom thành phép nhân ma trận?'
+    en: 'In a neural network, why are many linear computations often grouped into matrix multiplication?'
+  back:
+    vi: 'Để tính nhiều tổ hợp tuyến tính cùng lúc. Mỗi hàng/cột trọng số biến đổi vector đầu vào thành đặc trưng mới hiệu quả hơn viết từng phương trình riêng.'
+    en: 'To compute many linear combinations at once. Each weight row/column transforms the input vector into new features more efficiently than writing separate equations.'
+- id: c1w2-fc-ml-motivation-02
+  topic: ml-motivation
+  kind: concept
+  front:
+    vi: 'Trong nhận dạng âm thanh, rank thấp của ma trận đặc trưng gợi ý điều gì?'
+    en: 'In sound recognition, what does low rank of a feature matrix suggest?'
+  back:
+    vi: 'Một số đặc trưng bị lặp hoặc phụ thuộc. Dữ liệu có ít hướng thông tin độc lập hơn số cột/hàng quan sát.'
+    en: 'Some features are repeated or dependent. The data has fewer independent information directions than the observed row/column count.'
+- id: c1w2-fc-ml-motivation-03
+  topic: ml-motivation
+  kind: formula
+  front:
+    vi: 'Dạng ma trận chuẩn của một hệ phương trình tuyến tính là gì?'
+    en: 'What is the standard matrix form of a linear system?'
+  back:
+    vi: '$Ax=b$. $A$ là ma trận hệ số, $x$ là vector ẩn, $b$ là vector vế phải.'
+    en: '$Ax=b$. $A$ is the coefficient matrix, $x$ is the unknown vector, and $b$ is the right-hand side vector.'
+- id: c1w2-fc-nonsingular-01
+  topic: nonsingular-systems
+  kind: formula
+  front:
+    vi: 'Điều kiện determinant nào cho hệ 2×2 có đúng một nghiệm?'
+    en: 'What determinant condition gives a 2×2 system exactly one solution?'
+  back:
+    vi: '$\det(A)\ne0$. Khi đó hai hàng độc lập và ma trận hệ số non-singular.'
+    en: '$\det(A)\ne0$. Then the two rows are independent and the coefficient matrix is non-singular.'
+- id: c1w2-fc-nonsingular-02
+  topic: nonsingular-systems
+  kind: compute
+  front:
+    vi: 'Giải nhanh: $a+b=5$, $a-b=1$. $a=?$, $b=?$'
+    en: 'Quick solve: $a+b=5$, $a-b=1$. $a=?$, $b=?$'
+  back:
+    vi: '$a=3$, $b=2$. Cộng hai phương trình được $2a=6$, rồi thế lại.'
+    en: '$a=3$, $b=2$. Add the equations to get $2a=6$, then substitute back.'
+- id: c1w2-fc-nonsingular-03
+  topic: nonsingular-systems
+  kind: concept
+  front:
+    vi: 'Nếu pivot đầu tiên bằng 0 khi khử hệ non-singular, thao tác an toàn nên làm là gì?'
+    en: 'If the first pivot is zero while eliminating a non-singular system, what safe operation should you try?'
+  back:
+    vi: 'Đổi hàng với một hàng có hệ số khác 0 trong cột đó. Không được chia cho 0.'
+    en: 'Swap with a row that has a non-zero entry in that column. Do not divide by zero.'
+- id: c1w2-fc-singular-01
+  topic: singular-systems
+  kind: concept
+  front:
+    vi: 'Sau khử, hàng $0=0$ nói gì về hệ phương trình?'
+    en: 'After elimination, what does the row $0=0$ say about a system?'
+  back:
+    vi: 'Đó là ràng buộc dư thừa. Nếu không có mâu thuẫn khác, hệ có biến tự do và vô số nghiệm.'
+    en: 'It is a redundant constraint. If there is no other contradiction, the system has a free variable and infinitely many solutions.'
+- id: c1w2-fc-singular-02
+  topic: singular-systems
+  kind: concept
+  front:
+    vi: 'Sau khử, hàng $0=3$ nói gì về hệ phương trình?'
+    en: 'After elimination, what does the row $0=3$ say about a system?'
+  back:
+    vi: 'Hệ vô nghiệm. Hàng đó là mâu thuẫn vì vế trái luôn bằng 0 nhưng vế phải khác 0.'
+    en: 'The system has no solution. That row is a contradiction because the left side is always 0 but the right side is non-zero.'
+- id: c1w2-fc-singular-03
+  topic: singular-systems
+  kind: formula
+  front:
+    vi: 'Với hai đường thẳng 2D, ba quan hệ hình học tương ứng với số nghiệm nào?'
+    en: 'For two 2D lines, which geometric relations correspond to the solution counts?'
+  back:
+    vi: 'Cắt nhau: 1 nghiệm; trùng nhau: vô số nghiệm; song song khác nhau: vô nghiệm.'
+    en: 'Intersecting: 1 solution; coincident: infinitely many; distinct parallel: no solution.'
+- id: c1w2-fc-singular-04
+  topic: singular-systems
+  kind: compute
+  front:
+    vi: 'Hệ $a+b=4$, $2a+2b=8$ có bao nhiêu nghiệm?'
+    en: 'How many solutions does $a+b=4$, $2a+2b=8$ have?'
+  back:
+    vi: 'Vô số nghiệm. Phương trình hai là 2 lần phương trình một, kể cả vế phải.'
+    en: 'Infinitely many. The second equation is 2 times the first, including the right-hand side.'
+- id: c1w2-fc-more-variables-01
+  topic: more-variables
+  kind: formula
+  front:
+    vi: 'Trong hệ tam giác trên, back substitution bắt đầu từ hàng nào?'
+    en: 'In an upper triangular system, which row starts back-substitution?'
+  back:
+    vi: 'Bắt đầu từ hàng cuối. Hàng cuối thường cho biến cuối, rồi thế ngược lên các hàng trên.'
+    en: 'Start from the last row. It usually gives the last variable, then you substitute upward.'
+- id: c1w2-fc-more-variables-02
+  topic: more-variables
+  kind: compute
+  front:
+    vi: 'Giải nhanh hệ tam giác: $c=3$, $b+c=5$, $a+b=6$. $a=?$'
+    en: 'Quickly solve the triangular system: $c=3$, $b+c=5$, $a+b=6$. $a=?$'
+  back:
+    vi: '$a=4$. Từ $c=3$ được $b=2$, rồi $a+2=6$.'
+    en: '$a=4$. From $c=3$ get $b=2$, then $a+2=6$.'
+- id: c1w2-fc-more-variables-03
+  topic: more-variables
+  kind: concept
+  front:
+    vi: 'Trong hệ 3 ẩn nhất quán, nếu chỉ có 2 pivot thì vì sao có vô số nghiệm?'
+    en: 'In a consistent 3-variable system, why do 2 pivots imply infinitely many solutions?'
+  back:
+    vi: 'Một biến không có pivot nên là biến tự do. Biến tự do tạo cả họ nghiệm.'
+    en: 'One variable has no pivot and is free. A free variable creates a family of solutions.'
+- id: c1w2-fc-matrix-row-reduction-01
+  topic: matrix-row-reduction
+  kind: formula
+  front:
+    vi: 'Ma trận mở rộng của hệ $Ax=b$ được viết như thế nào?'
+    en: 'How is the augmented matrix of $Ax=b$ written?'
+  back:
+    vi: '$[A\mid b]$. Cột $b$ phải đi cùng các phép dòng như các cột hệ số.'
+    en: '$[A\mid b]$. The $b$ column must undergo the same row operations as the coefficient columns.'
+- id: c1w2-fc-matrix-row-reduction-02
+  topic: matrix-row-reduction
+  kind: compute
+  front:
+    vi: 'Áp dụng $R_2\leftarrow R_2-2R_1$ cho $[1,2\mid5]$, $[2,5\mid12]$: hàng 2 mới là gì?'
+    en: 'Apply $R_2\leftarrow R_2-2R_1$ to $[1,2\mid5]$, $[2,5\mid12]$: what is the new row 2?'
+  back:
+    vi: '$[0,1\mid2]$. Tính từng phần tử: $[2,5,12]-2[1,2,5]$.'
+    en: '$[0,1\mid2]$. Compute entrywise: $[2,5,12]-2[1,2,5]$.'
+- id: c1w2-fc-matrix-row-reduction-03
+  topic: matrix-row-reduction
+  kind: concept
+  front:
+    vi: 'Vì sao không được chỉ khử ma trận $A$ rồi giữ nguyên $b$ khi giải $Ax=b$?'
+    en: 'Why must you not reduce only $A$ while leaving $b$ unchanged when solving $Ax=b$?'
+  back:
+    vi: 'Mỗi phép dòng biến đổi cả phương trình. Giữ nguyên $b$ sẽ tạo hệ khác với nghiệm sai.'
+    en: 'Each row operation transforms the whole equation. Leaving $b$ unchanged creates a different system with wrong solutions.'
+- id: c1w2-fc-row-ops-01
+  topic: row-operations-singularity
+  kind: formula
+  front:
+    vi: 'Đổi hai hàng làm determinant thay đổi như thế nào?'
+    en: 'How does swapping two rows change the determinant?'
+  back:
+    vi: 'Determinant đổi dấu: $\det(A_{\text{swapped}})=-\det(A)$. Vì thế zero/non-zero vẫn giữ nguyên.'
+    en: 'The determinant changes sign: $\det(A_{\text{swapped}})=-\det(A)$. So zero/non-zero status is preserved.'
+- id: c1w2-fc-row-ops-02
+  topic: row-operations-singularity
+  kind: formula
+  front:
+    vi: 'Nhân một hàng với $k\ne0$ làm determinant thay đổi như thế nào?'
+    en: 'How does multiplying one row by $k\ne0$ change the determinant?'
+  back:
+    vi: 'Determinant bị nhân với $k$. Vì $k\ne0$, tính singular/non-singular không đổi.'
+    en: 'The determinant is multiplied by $k$. Since $k\ne0$, singular/non-singular status does not change.'
+- id: c1w2-fc-row-ops-03
+  topic: row-operations-singularity
+  kind: formula
+  front:
+    vi: 'Cộng bội của một hàng vào hàng khác làm determinant thay đổi như thế nào?'
+    en: 'How does adding a multiple of one row to another change the determinant?'
+  back:
+    vi: 'Không đổi determinant. Đây là phép row replacement bảo toàn tính suy biến.'
+    en: 'It does not change the determinant. This row replacement operation preserves singularity.'
+- id: c1w2-fc-row-ops-04
+  topic: row-operations-singularity
+  kind: compute
+  front:
+    vi: 'Nếu $\det(A)=7$ và đổi hai hàng, determinant mới là bao nhiêu?'
+    en: 'If $\det(A)=7$ and two rows are swapped, what is the new determinant?'
+  back:
+    vi: '$-7$. Đổi hàng đổi dấu determinant.'
+    en: '$-7$. Swapping rows flips the determinant sign.'
+- id: c1w2-fc-rank-01
+  topic: rank
+  kind: formula
+  front:
+    vi: 'Rank của ma trận được tính từ row echelon form như thế nào?'
+    en: 'How is matrix rank computed from row echelon form?'
+  back:
+    vi: 'Rank = số pivot = số hàng khác 0 trong REF. Các hàng 0 không mang thông tin độc lập.'
+    en: 'Rank = number of pivots = number of non-zero rows in REF. Zero rows carry no independent information.'
+- id: c1w2-fc-rank-02
+  topic: rank
+  kind: concept
+  front:
+    vi: 'Vì sao ma trận vuông rank thiếu là singular?'
+    en: 'Why is a rank-deficient square matrix singular?'
+  back:
+    vi: 'Nó thiếu ít nhất một pivot, nên các hàng/cột phụ thuộc. Vì vậy không thể có nghiệm duy nhất cho mọi vế phải.'
+    en: 'It is missing at least one pivot, so rows/columns are dependent. Therefore it cannot give a unique solution for every right-hand side.'
+- id: c1w2-fc-rank-03
+  topic: rank
+  kind: compute
+  front:
+    vi: 'Rank của $\begin{bmatrix}1&2\\2&4\end{bmatrix}$ là bao nhiêu?'
+    en: 'What is the rank of $\begin{bmatrix}1&2\\2&4\end{bmatrix}$?'
+  back:
+    vi: '$1$. Hàng hai là 2 lần hàng một, nên chỉ có một hàng độc lập.'
+    en: '$1$. The second row is 2 times the first, so there is only one independent row.'
+- id: c1w2-fc-rank-04
+  topic: rank
+  kind: concept
+  front:
+    vi: 'Trong ví dụ câu mô tả ở slide, hai câu giống hệt nhau có rank mấy về mặt thông tin?'
+    en: 'In the slide sentence analogy, what information rank do two identical sentences have?'
+  back:
+    vi: 'Rank 1. Có hai câu nhưng chỉ một mẩu thông tin độc lập.'
+    en: 'Rank 1. There are two sentences but only one independent piece of information.'
+- id: c1w2-fc-rank-general-01
+  topic: rank-general
+  kind: formula
+  front:
+    vi: 'Rank tối đa của ma trận $m\times n$ là gì?'
+    en: 'What is the maximum rank of an $m\times n$ matrix?'
+  back:
+    vi: '$\min(m,n)$. Không thể có nhiều pivot hơn số hàng hoặc số cột.'
+    en: '$\min(m,n)$. You cannot have more pivots than rows or columns.'
+- id: c1w2-fc-rank-general-02
+  topic: rank-general
+  kind: compute
+  front:
+    vi: 'Rank tối đa của ma trận 4×3 là bao nhiêu?'
+    en: 'What is the maximum rank of a 4×3 matrix?'
+  back:
+    vi: '$3$. Rank tối đa là $\min(4,3)$.'
+    en: '$3$. Maximum rank is $\min(4,3)$.'
+- id: c1w2-fc-rank-general-03
+  topic: rank-general
+  kind: concept
+  front:
+    vi: 'Vì sao trong RREF tổng quát nên đếm pivot thay vì chỉ đếm số 1 trên đường chéo chính?'
+    en: 'Why should general RREF use pivot counting rather than only counting ones on the main diagonal?'
+  back:
+    vi: 'Ma trận có thể không vuông hoặc có cột bị bỏ qua. Pivot không nhất thiết nằm trên đường chéo chính.'
+    en: 'A matrix may be rectangular or skip columns. Pivots do not have to lie on the main diagonal.'
+- id: c1w2-fc-ref-01
+  topic: row-echelon-form
+  kind: formula
+  front:
+    vi: 'Ba điều kiện nhận diện row echelon form (REF) là gì?'
+    en: 'What are the three conditions for row echelon form (REF)?'
+  back:
+    vi: 'Hàng 0 ở dưới; pivot mỗi hàng nằm bên phải pivot hàng trên; các phần tử dưới pivot bằng 0.'
+    en: 'Zero rows at bottom; each pivot is right of the pivot above; entries below pivots are zero.'
+- id: c1w2-fc-ref-02
+  topic: row-echelon-form
+  kind: concept
+  front:
+    vi: 'Trong slide Week 2, pivot của REF có bắt buộc bằng 1 không?'
+    en: 'In the Week 2 slides, must REF pivots equal 1?'
+  back:
+    vi: 'Không. REF cho phép pivot khác 0 bất kỳ; pivot bằng 1 là yêu cầu của RREF.'
+    en: 'No. REF allows any non-zero pivot; unit pivots are required by RREF.'
+- id: c1w2-fc-ref-03
+  topic: row-echelon-form
+  kind: compute
+  front:
+    vi: 'REF $\begin{bmatrix}2&1&0\\0&-3&5\\0&0&0\end{bmatrix}$ có rank bao nhiêu?'
+    en: 'What is the rank of REF $\begin{bmatrix}2&1&0\\0&-3&5\\0&0&0\end{bmatrix}$?'
+  back:
+    vi: '$2$. Có hai hàng khác 0, tức hai pivot.'
+    en: '$2$. There are two non-zero rows, hence two pivots.'
+- id: c1w2-fc-ref-general-01
+  topic: row-echelon-general
+  kind: concept
+  front:
+    vi: 'Khi một cột không có pivot khả dụng trong khử Gauss, thuật toán nên làm gì?'
+    en: 'When a column has no available pivot in Gaussian elimination, what should the algorithm do?'
+  back:
+    vi: 'Bỏ qua cột đó và xét cột tiếp theo. Pivot hàng dưới chỉ cần nằm bên phải pivot hàng trên.'
+    en: 'Skip that column and check the next one. A lower pivot only needs to be to the right of the pivot above.'
+- id: c1w2-fc-ref-general-02
+  topic: row-echelon-general
+  kind: formula
+  front:
+    vi: 'Trong NumPy, hàm nào thường dùng để tìm rank trực tiếp?'
+    en: 'In NumPy, which function is commonly used to compute rank directly?'
+  back:
+    vi: '`np.linalg.matrix_rank(A)`. Khi học thuật toán, vẫn nên tự khử để hiểu pivot.'
+    en: '`np.linalg.matrix_rank(A)`. When learning the algorithm, still reduce by hand/code to understand pivots.'
+- id: c1w2-fc-ref-general-03
+  topic: row-echelon-general
+  kind: concept
+  front:
+    vi: 'Vì sao hai REF khác nhau của cùng một ma trận vẫn cho cùng rank?'
+    en: 'Why do two different REFs of the same matrix still give the same rank?'
+  back:
+    vi: 'Phép dòng hợp lệ bảo toàn quan hệ phụ thuộc tuyến tính. Số pivot độc lập không đổi dù số cụ thể có thể khác.'
+    en: 'Valid row operations preserve linear dependence relations. The independent pivot count is unchanged even if entries differ.'
+- id: c1w2-fc-rref-01
+  topic: reduced-row-echelon-form
+  kind: formula
+  front:
+    vi: 'RREF thêm hai yêu cầu nào so với REF?'
+    en: 'Which two requirements does RREF add beyond REF?'
+  back:
+    vi: 'Mỗi pivot bằng 1, và mọi phần tử trên pivot bằng 0. Kết hợp REF, cột pivot chỉ có một số 1.'
+    en: 'Each pivot is 1, and every entry above a pivot is 0. Together with REF, each pivot column contains only one 1.'
+- id: c1w2-fc-rref-02
+  topic: reduced-row-echelon-form
+  kind: compute
+  front:
+    vi: 'RREF của $\begin{bmatrix}1&2\\0&1\end{bmatrix}$ là gì?'
+    en: 'What is the RREF of $\begin{bmatrix}1&2\\0&1\end{bmatrix}$?'
+  back:
+    vi: '$\begin{bmatrix}1&0\\0&1\end{bmatrix}$. Lấy $R_1\leftarrow R_1-2R_2$ để xóa số 2 phía trên pivot.'
+    en: '$\begin{bmatrix}1&0\\0&1\end{bmatrix}$. Use $R_1\leftarrow R_1-2R_2$ to clear the 2 above the pivot.'
+- id: c1w2-fc-rref-03
+  topic: reduced-row-echelon-form
+  kind: concept
+  front:
+    vi: 'Vì sao RREF của ma trận mở rộng giúp đọc nghiệm trực tiếp hơn REF?'
+    en: 'Why does the RREF of an augmented matrix make solutions easier to read than REF?'
+  back:
+    vi: 'Cột pivot đã sạch trên/dưới nên biến pivot được cô lập. REF thường vẫn cần back substitution.'
+    en: 'Pivot columns are cleared above and below, so pivot variables are isolated. REF usually still needs back-substitution.'
+- id: c1w2-fc-rref-04
+  topic: reduced-row-echelon-form
+  kind: formula
+  front:
+    vi: 'Trong NumPy, hàm shortcut nào giải $Ax=b$ khi $A$ non-singular?'
+    en: 'In NumPy, which shortcut solves $Ax=b$ when $A$ is non-singular?'
+  back:
+    vi: '`np.linalg.solve(A, b)`. Khi mục tiêu là học khử Gauss, không dùng shortcut này trong bài thuật toán.'
+    en: '`np.linalg.solve(A, b)`. When the goal is learning Gaussian elimination, do not use this shortcut in algorithm exercises.'

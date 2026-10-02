@@ -1,0 +1,63 @@
+id: w2
+order: 2
+source: syllabus/c3-probability-statistics/W2.pdf
+title:
+  vi: 'Tuần 2: Mô tả phân phối và phân phối nhiều biến'
+  en: 'Week 2: Describing distributions and multivariable distributions'
+topics:
+- id: central-tendency
+  title:
+    vi: Các thước đo xu hướng trung tâm
+    en: Measures of central tendency
+- id: expected-value
+  title:
+    vi: Kỳ vọng
+    en: Expected value
+- id: expected-function
+  title:
+    vi: Kỳ vọng của hàm
+    en: Expected value of a function
+- id: sum-expectations
+  title:
+    vi: Tổng các kỳ vọng
+    en: Sum of expectations
+- id: variance
+  title:
+    vi: Phương sai
+    en: Variance
+- id: standard-deviation
+  title:
+    vi: Độ lệch chuẩn và chuẩn hóa
+    en: Standard deviation and standardizing
+- id: skewness-kurtosis
+  title:
+    vi: Độ lệch và độ nhọn
+    en: Skewness and kurtosis
+- id: quantiles-boxplots
+  title:
+    vi: Phân vị, box plot, KDE, violin, QQ
+    en: Quantiles, box plots, KDE, violin plots, QQ plots
+- id: joint-discrete
+  title:
+    vi: Phân phối đồng thời rời rạc
+    en: 'Joint distributions: discrete'
+- id: joint-continuous
+  title:
+    vi: Phân phối đồng thời liên tục
+    en: 'Joint distributions: continuous'
+- id: marginal-conditional
+  title:
+    vi: Biên và có điều kiện
+    en: Marginal and conditional distributions
+- id: covariance
+  title:
+    vi: Hiệp phương sai, ma trận hiệp phương sai, tương quan
+    en: Covariance, covariance matrix, and correlation
+- id: multivariate-gaussian
+  title:
+    vi: Gaussian đa biến
+    en: Multivariate Gaussian distribution
+- id: conclusion
+  title:
+    vi: Tổng kết tuần 2
+    en: Week 2 conclusion

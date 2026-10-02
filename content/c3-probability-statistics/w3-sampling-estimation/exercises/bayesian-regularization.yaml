@@ -1,0 +1,268 @@
+'exercises':
+- 'id': 'c3w3-bayes-mcq-01'
+  'topic': 'bayesian-regularization'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'Bayesian posterior tỉ lệ với gì?'
+    'en': 'Bayesian posterior is proportional to what?'
+  'explanation':
+    'vi': 'Posterior $\propto$ likelihood $\times$ prior.'
+    'en': 'Posterior $\propto$ likelihood $\times$ prior.'
+  'hints': []
+  'options':
+  - 'vi': 'Likelihood $\times$ prior'
+    'en': 'Likelihood $\times$ prior'
+  - 'vi': 'Likelihood $+$ sample mean'
+    'en': 'Likelihood $+$ sample mean'
+  - 'vi': 'Prior / likelihood'
+    'en': 'Prior / likelihood'
+  'answer':
+  - 0
+- 'id': 'c3w3-bayes-figure-01'
+  'topic': 'bayesian-regularization'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  - 'prior-posterior'
+  'prompt':
+    'vi': 'Hình nào hợp lý cho prior uniform và posterior sau 8 heads/2 tails?'
+    'en': 'Which plot is plausible for a uniform prior and posterior after 8 heads/2 tails?'
+  'explanation':
+    'vi': 'Posterior tập trung gần $p=0.8$ hơn prior phẳng.'
+    'en': 'Posterior concentrates near $p=0.8$ more than the flat prior.'
+  'hints': []
+  'figure':
+    'xRange':
+    - 0
+    - 1
+    'yRange':
+    - 0
+    - 4
+    'functions':
+    - 'f': '1'
+      'label': 'prior'
+      'color': '#94a3b8'
+      'dashed': true
+    - 'f': '3.5*x^8*(1-x)^2/0.006'
+      'label': 'posterior shape'
+      'color': '#2563eb'
+    'xLabel': 'p'
+    'yLabel': 'density (scaled)'
+  'options':
+  - 'vi': 'Posterior peaked near high $p$'
+    'en': 'Posterior peaked near high $p$'
+  - 'vi': 'Posterior flat exactly like prior'
+    'en': 'Posterior flat exactly like prior'
+  'answer':
+  - 0
+- 'id': 'c3w3-map-numeric-01'
+  'topic': 'bayesian-regularization'
+  'type': 'numeric'
+  'difficulty': 2
+  'tags':
+  - 'map'
+  'prompt':
+    'vi': 'Beta$(2,2)$ prior, 8 heads/2 tails. MAP nội điểm là bao nhiêu?'
+    'en': 'Beta$(2,2)$ prior, 8 heads/2 tails. What is the interior MAP?'
+  'explanation':
+    'vi': 'Posterior Beta$(10,4)$; MAP $(10-1)/(10+4-2)=9/12=0.75$.'
+    'en': 'Posterior Beta$(10,4)$; MAP $(10-1)/(10+4-2)=9/12=0.75$.'
+  'hints': []
+  'answers':
+  - 'value': 0.75
+  'tolerance': 1.0e-09
+- 'id': 'c3w3-map-code-01'
+  'topic': 'bayesian-regularization'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'map'
+  'prompt':
+    'vi': 'Cài `beta_bernoulli_map(alpha,beta,k,n)` cho interior MAP.'
+    'en': 'Implement `beta_bernoulli_map(alpha,beta,k,n)` for the interior MAP.'
+  'explanation':
+    'vi': 'Công thức $(alpha+k-1)/(alpha+beta+n-2)$.'
+    'en': 'Formula $(alpha+k-1)/(alpha+beta+n-2)$.'
+  'hints': []
+  'starter': "def beta_bernoulli_map(alpha,beta,k,n):\n    return 0.0\n"
+  'solution': "def beta_bernoulli_map(alpha,beta,k,n):\n    return (alpha+k-1)/(alpha+beta+n-2)\n"
+  'tests': "def test_beta_22():\n    assert abs(beta_bernoulli_map(2,2,8,10)-0.75)<1e-12\ndef test_uniform_matches_mle():\n    assert abs(beta_bernoulli_map(1,1,8,10)-0.8)<1e-12\n"
+- 'id': 'c3w3-bayes-finderror-01'
+  'topic': 'bayesian-regularization'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'common-mistake'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong Bayesian update.'
+    'en': 'Find first error in the Bayesian update.'
+  'explanation':
+    'vi': 'MAP bằng MLE chỉ khi prior constant/non-informative phù hợp.'
+    'en': 'MAP equals MLE only when the prior is suitably constant/non-informative.'
+  'hints': []
+  'steps':
+  - 'vi': 'Posterior tỉ lệ likelihood nhân prior.'
+    'en': 'Posterior is proportional to likelihood times prior.'
+  - 'vi': 'MAP maximize posterior.'
+    'en': 'MAP maximizes posterior.'
+  - 'vi': 'Vì vậy MAP luôn bằng MLE với mọi prior.'
+    'en': 'Therefore MAP always equals MLE for every prior.'
+  'answer': 2
+- 'id': 'c3w3-reg-numeric-01'
+  'topic': 'bayesian-regularization'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'regularization'
+  'prompt':
+    'vi': 'Model có coefficients $4,-9,-2,3,-6,-10$. $L_2$ penalty (không nhân $\lambda$) là bao nhiêu?'
+    'en': 'A model has coefficients $4,-9,-2,3,-6,-10$. What is the $L_2$ penalty (without $\lambda$)?'
+  'explanation':
+    'vi': 'Tổng bình phương: $16+81+4+9+36+100=246$.'
+    'en': 'Sum of squares: $16+81+4+9+36+100=246$.'
+  'hints': []
+  'answers':
+  - 'value': 246
+  'tolerance': 0
+- 'id': 'c3w3-bayes-matching-01'
+  'topic': 'bayesian-regularization'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'Ghép frequentist/Bayesian/regularization.'
+    'en': 'Match frequentist/Bayesian/regularization ideas.'
+  'explanation':
+    'vi': 'Các khái niệm này nối với nhau qua posterior.'
+    'en': 'These concepts connect through the posterior.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': 'Frequentist probability'
+      'en': 'Frequentist probability'
+    'right':
+      'vi': 'Tần suất dài hạn'
+      'en': 'Long-run frequency'
+  - 'left':
+      'vi': 'Bayesian probability'
+      'en': 'Bayesian probability'
+    'right':
+      'vi': 'Degree of belief'
+      'en': 'Degree of belief'
+  - 'left':
+      'vi': 'Prior'
+      'en': 'Prior'
+    'right':
+      'vi': 'Niềm tin trước dữ liệu'
+      'en': 'Belief before data'
+  - 'left':
+      'vi': '$L_2$ regularization'
+      'en': '$L_2$ regularization'
+    'right':
+      'vi': 'Gaussian prior on coefficients'
+      'en': 'Gaussian prior on coefficients'
+- 'id': 'c3w3-bayes-construct-01'
+  'topic': 'bayesian-regularization'
+  'type': 'construct'
+  'difficulty': 1
+  'tags':
+  - 'construct'
+  'prompt':
+    'vi': 'Dựng prior rời rạc trên ba model có tổng xác suất 1 và model giữa được ưu tiên nhất.'
+    'en': 'Construct a discrete prior over three models summing to 1 with the middle model most favored.'
+  'explanation':
+    'vi': '$[0.2,0.6,0.2]$ là probability vector hợp lệ.'
+    'en': '$[0.2,0.6,0.2]$ is a valid probability vector.'
+  'hints': []
+  'rows': 1
+  'cols': 3
+  'constraints':
+  - 'kind': 'probabilityVector'
+  'example':
+  - - 0.2
+    - 0.6
+    - 0.2
+- 'id': 'c3w3-bayes-parsons-01'
+  'topic': 'bayesian-regularization'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'procedure'
+  'prompt':
+    'vi': 'Sắp xếp Bayesian update.'
+    'en': 'Order the Bayesian update.'
+  'explanation':
+    'vi': 'Prior kết hợp likelihood rồi chuẩn hóa.'
+    'en': 'Prior combines with likelihood then normalizes.'
+  'hints': []
+  'steps':
+  - 'vi': 'Chọn prior $p(\theta)$.'
+    'en': 'Choose prior $p(\theta)$.'
+  - 'vi': 'Viết likelihood $p(x\mid\theta)$.'
+    'en': 'Write likelihood $p(x\mid\theta)$.'
+  - 'vi': 'Nhân likelihood với prior.'
+    'en': 'Multiply likelihood by prior.'
+  - 'vi': 'Chia normalizing constant nếu cần posterior chuẩn hóa.'
+    'en': 'Divide by normalizing constant if a normalized posterior is needed.'
+  - 'vi': 'MAP lấy argmax posterior.'
+    'en': 'MAP takes the posterior argmax.'
+- 'id': 'c3w3-bayes-multi-01'
+  'topic': 'bayesian-regularization'
+  'type': 'multi-step'
+  'difficulty': 3
+  'tags':
+  - 'regularization'
+  'prompt':
+    'vi': 'Polynomial models có data loss: model1=10, model2=2, model3=0.1; L2 penalties: 16,20,246; $\lambda=1$.'
+    'en': 'Polynomial models have data losses: model1=10, model2=2, model3=0.1; L2 penalties: 16,20,246; $\lambda=1$.'
+  'explanation':
+    'vi': 'Regularized loss = data loss + penalty.'
+    'en': 'Regularized loss = data loss + penalty.'
+  'hints': []
+  'parts':
+  - 'type': 'numeric'
+    'prompt':
+      'vi': 'Regularized loss của model2?'
+      'en': 'Regularized loss of model2?'
+    'answers':
+    - 'value': 22
+    'tolerance': 0
+    'explanation':
+      'vi': '$2+20=22$.'
+      'en': '$2+20=22$.'
+  - 'type': 'mcq'
+    'prompt':
+      'vi': 'Model nào có regularized loss nhỏ nhất?'
+      'en': 'Which model has smallest regularized loss?'
+    'options':
+    - 'vi': 'Model1: 26'
+      'en': 'Model1: 26'
+    - 'vi': 'Model2: 22'
+      'en': 'Model2: 22'
+    - 'vi': 'Model3: 246.1'
+      'en': 'Model3: 246.1'
+    'answer':
+    - 1
+    'explanation':
+      'vi': 'Model2 cân bằng fit và complexity tốt nhất.'
+      'en': 'Model2 best balances fit and complexity.'
+- 'id': 'c3w3-bayes-tf-01'
+  'topic': 'bayesian-regularization'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'regularization'
+  'prompt':
+    'vi': 'Gaussian prior tâm 0 trên coefficients dẫn đến penalty tổng bình phương coefficients trong negative log posterior.'
+    'en': 'A zero-centered Gaussian prior on coefficients leads to a sum-of-squares coefficient penalty in the negative log posterior.'
+  'explanation':
+    'vi': 'Log của Gaussian prior chứa $-a_j^2/2$, nên khi minimize negative log posterior sẽ có $+a_j^2$ penalty.'
+    'en': 'The log Gaussian prior contains $-a_j^2/2$, so minimizing negative log posterior adds a $+a_j^2$ penalty.'
+  'hints': []
+  'answer': true

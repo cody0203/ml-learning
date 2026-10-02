@@ -1,0 +1,39 @@
+id: w4
+order: 4
+title:
+  vi: 'Tuần 4: Khoảng tin cậy và kiểm định giả thuyết'
+  en: 'Week 4: Confidence intervals and hypothesis testing'
+source: syllabus/c3-probability-statistics/W4.pdf
+topics:
+- id: confidence-known-sigma
+  title:
+    vi: Khoảng tin cậy khi biết σ
+    en: Confidence intervals with known σ
+- id: margin-sample-size
+  title:
+    vi: Sai số biên, cỡ mẫu và mức tin cậy
+    en: Margin of error, sample size, and confidence level
+- id: interpreting-confidence
+  title:
+    vi: Diễn giải confidence interval
+    en: Interpreting confidence intervals
+- id: t-ci-proportions
+  title:
+    vi: Khoảng tin cậy t và tỷ lệ
+    en: t confidence intervals and proportions
+- id: hypotheses-errors
+  title:
+    vi: Giả thuyết, lỗi loại I/II và mức ý nghĩa
+    en: Hypotheses, Type I/II errors, and significance
+- id: tails-pvalues-critical
+  title:
+    vi: Kiểm định một/ hai phía, p-value và critical value
+    en: One/two-tailed tests, p-values, and critical values
+- id: power-results
+  title:
+    vi: Power và diễn giải kết quả kiểm định
+    en: Power and interpreting test results
+- id: t-tests-ab-testing
+  title:
+    vi: t-tests, kiểm định tỷ lệ và A/B testing
+    en: t-tests, proportion tests, and A/B testing

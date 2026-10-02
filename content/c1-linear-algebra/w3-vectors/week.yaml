@@ -1,0 +1,51 @@
+﻿id: w3
+order: 3
+title:
+  vi: 'Tuần 3: Vector, ma trận và biến đổi tuyến tính'
+  en: 'Week 3: Vectors, matrices, and linear transformations'
+source: syllabus/c1-linear-algebra/W3.pdf
+topics:
+- id: vector-basics
+  title:
+    vi: Vector và tọa độ
+    en: Vectors and coordinates
+- id: norms-distances
+  title:
+    vi: Chuẩn và khoảng cách
+    en: Norms and distances
+- id: direction-scaling
+  title:
+    vi: Hướng và nhân vô hướng
+    en: Direction and scalar multiplication
+- id: vector-addition
+  title:
+    vi: Cộng/trừ vector
+    en: Vector sums and differences
+- id: dot-product
+  title:
+    vi: Tích vô hướng
+    en: Dot product
+- id: geometric-dot-product
+  title:
+    vi: Hình học của tích vô hướng
+    en: Geometric dot product
+- id: matrix-vector
+  title:
+    vi: Ma trận nhân vector
+    en: Matrix-vector products
+- id: linear-transformations
+  title:
+    vi: Ma trận là biến đổi tuyến tính
+    en: Matrices as linear transformations
+- id: matrix-multiplication
+  title:
+    vi: Nhân ma trận
+    en: Matrix multiplication
+- id: identity-inverse
+  title:
+    vi: Ma trận đơn vị và nghịch đảo
+    en: Identity and inverse matrices
+- id: neural-networks-matrices
+  title:
+    vi: Mạng neural và ma trận
+    en: Neural networks with matrices

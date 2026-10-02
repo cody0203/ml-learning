@@ -1,0 +1,206 @@
+exercises:
+- id: c1w2-nonsingular-systems-mcq-01
+  topic: nonsingular-systems
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: For the slide system $2a+5b=46$, $8a+b=32$, why does elimination lead to one ordered pair?
+    vi: Với hệ trong slide $2a+5b=46$, $8a+b=32$, vì sao khử biến dẫn đến đúng một cặp nghiệm?
+  explanation:
+    en: Non-multiple coefficient rows give a pivot for each variable, and solving indeed gives $a=3$, $b=8$. Positive constants alone say nothing about uniqueness; coefficient 8 is not a variable value; and merely having four entries does not prevent row dependence.
+    vi: Hai hàng hệ số không là bội của nhau tạo pivot cho từng biến, và nghiệm là $a=3$, $b=8$. Hằng số dương không đảm bảo duy nhất; hệ số 8 không phải giá trị biến; và có bốn entry không ngăn được phụ thuộc hàng.
+  hints: []
+  options:
+  - en: The two coefficient rows are not multiples, so two pivots can determine $a$ and $b$.
+    vi: Hai hàng hệ số không là bội của nhau, nên hai pivot có thể xác định $a$ và $b$.
+  - en: The constants 46 and 32 are both positive, so uniqueness is guaranteed.
+    vi: Hai hằng số 46 và 32 đều dương nên chắc chắn có nghiệm duy nhất.
+  - en: The larger coefficient 8 must be the solution for $a$.
+    vi: Hệ số lớn hơn là 8 nên nó phải là nghiệm của $a$.
+  - en: Uniqueness follows because there are four coefficient numbers written down.
+    vi: Có nghiệm duy nhất vì ta viết ra bốn số hệ số.
+  answer:
+  - 0
+- id: c1w2-nonsingular-systems-truefalse-02
+  topic: nonsingular-systems
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Một hệ vuông có pivot trong mỗi cột biến thì có đúng một nghiệm.
+    en: A square system with a pivot in every variable column has exactly one solution.
+  explanation:
+    vi: Mỗi biến được cố định bởi một pivot; không có biến tự do hay hàng mâu thuẫn, nên thế ngược cho một vector nghiệm.
+    en: Every variable is fixed by a pivot; there is no free variable and no contradictory row, so back-substitution yields one vector.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Mỗi ẩn được kiểm soát bởi một pivot.
+    en: Each unknown is controlled by a pivot.
+  - vi: Một hệ vuông luôn có nghiệm duy nhất, kể cả khi thiếu pivot.
+    en: A square system always has a unique solution, even if a pivot is missing.
+  - vi: Có pivot trong mọi cột biến vẫn để lại một biến tự do.
+    en: Having a pivot in every variable column still leaves one free variable.
+  reasonAnswer: 0
+- id: c1w2-nonsingular-systems-matching-03
+  topic: nonsingular-systems
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến hệ tuyến tính không suy biến.
+    en: Match concepts related to non-singular linear systems.
+  explanation:
+    vi: Các cặp phân biệt pivot dùng được, full rank, và phép dòng hợp lệ bảo toàn nghiệm duy nhất.
+    en: The pairs distinguish a usable pivot, full rank, and legal row operations that preserve the unique solution.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-nonsingular-systems-numeric-04
+  topic: nonsingular-systems
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Giải $2a+5b=46$, $8a+b=32$.
+    en: Solve $2a+5b=46$, $8a+b=32$.
+  explanation:
+    vi: Thế $b=32-8a$ vào phương trình đầu được $a=3,b=8$.
+    en: Substitute $b=32-8a$ into the first equation to get $a=3,b=8$.
+  hints: []
+  answers:
+  - label: a
+    value: 3
+  - label: b
+    value: 8
+- id: c1w2-nonsingular-systems-construct-05
+  topic: nonsingular-systems
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận hệ số 2×2 nguyên có determinant khác 0.
+    en: Construct a 2×2 integer coefficient matrix with non-zero determinant.
+  explanation:
+    vi: Với [[1,2],[3,4]], determinant bằng 1*4-2*3=-2, nên ma trận non-singular và cho nghiệm duy nhất với mọi b.
+    en: For [[1,2],[3,4]], the determinant is 1*4-2*3=-2, so the matrix is non-singular and would give a unique solution for every b.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: nonsingular
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+  - - 3
+    - 4
+- id: c1w2-nonsingular-systems-parsons-06
+  topic: nonsingular-systems
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho hệ tuyến tính không suy biến.
+    en: Order the workflow for non-singular linear systems.
+  explanation:
+    vi: Chuỗi bước trước hết bảo đảm pivot khác 0, xóa phía dưới, lặp lại, rồi thế ngược vì mỗi biến có một pivot.
+    en: The sequence first secures a non-zero pivot, clears below it, repeats, and finally back-substitutes because every variable has a pivot.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-nonsingular-systems-finderror-07
+  topic: nonsingular-systems
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về hệ tuyến tính không suy biến.
+    en: Find the first error in the argument about non-singular linear systems.
+  explanation:
+    vi: 'Bước 3 sai đầu tiên: đường khử của hệ non-singular có thể có pivot 2 trong REF; chưa cần pivot bằng 1 để thế ngược.'
+    en: 'Step 3 is first wrong: a non-singular elimination path may have pivot 2 in REF; unit pivots are unnecessary before solving by back-substitution.'
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-nonsingular-systems-code-08
+  topic: nonsingular-systems
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt `back_substitute` bằng NumPy cơ bản; không dùng `np.linalg.*` shortcuts.
+    en: Implement `back_substitute` with basic NumPy; do not use `np.linalg.*` shortcuts.
+  explanation:
+    vi: Thế ngược tính biến cuối từ hàng cuối, rồi trừ đóng góp của các biến đã biết ở hàng trên; không cần shortcut np.linalg.
+    en: Back substitution computes the last variable from the last row, then subtracts already-known contributions above it; no np.linalg shortcut is needed.
+  hints: []
+  starter: "import numpy as np\n\ndef back_substitute(U, y):\n    return np.zeros_like(y, dtype=float)\n"
+  solution: "import numpy as np\n\ndef back_substitute(U, y):\n    U=np.array(U,dtype=float); y=np.array(y,dtype=float); n=U.shape[0]; x=np.zeros(n)\n    for i in range(n-1,-1,-1):\n        x[i]=(y[i]-np.dot(U[i,i+1:],x[i+1:]))/U[i,i]\n    return x\n"
+  tests: "import numpy as np\n\ndef test_triangular():\n    U=np.array([[2.,1.],[0.,3.]]); y=np.array([5.,6.])\n    assert np.allclose(back_substitute(U,y), [1.5,2.])\n\ndef test_three():\n    U=np.array([[1.,2.,-1.],[0.,-3.,6.],[0.,0.,2.]])\n    x=np.array([2.,-1.,4.]); assert np.allclose(back_substitute(U,U@x), x)\n"
+- id: c1w2-nonsingular-systems-parametric-11
+  topic: nonsingular-systems
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động giải một hệ 2 by 2 non-singular mới.
+    en: Dynamic solve drill for a fresh non-singular 2 by 2 system.
+  explanation:
+    vi: Dùng khử biến trên hệ số được sinh và kiểm tra cả hai phương trình; số thay đổi nhưng logic pivot giữ nguyên.
+    en: Use elimination on the generated coefficients and verify both equations; the numbers change but the pivot logic stays fixed.
+  hints: []
+  generator: solve-system
+  params:
+    size: 2

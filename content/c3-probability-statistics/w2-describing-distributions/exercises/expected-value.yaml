@@ -1,0 +1,171 @@
+exercises:
+- id: c3w2-expected-value-mcq-01
+  topic: expected-value
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về expected-value.
+    en: Choose the best statement about expected-value.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Expected value is the weighted balance point of outcomes, so every outcome must be multiplied by its probability.
+  hints: []
+  options:
+  - vi: Kỳ vọng là tổng các kết quả nhân với xác suất tương ứng.
+    en: Expected value is the sum of each outcome times its own probability.
+  - vi: Kỳ vọng phải là một kết quả có thể quan sát được.
+    en: The expected value must be one of the observable outcomes.
+  - vi: Chỉ cần lấy trung bình cộng các kết quả, bỏ qua xác suất.
+    en: It is enough to average the outcome labels and ignore probabilities.
+  - vi: Kết quả có xác suất cao nhất luôn là kỳ vọng.
+    en: The most likely outcome is always the expected value.
+  answer:
+  - 0
+- id: c3w2-expected-value-tf-02
+  topic: expected-value
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: an expected value does not have to be an outcome that can occur.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the fair coin game has expected payoff $5$ even though the payoff is only $0$ or $10$.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Trò chơi trả 0 hoặc 10 nhưng trung bình dài hạn là 5.
+    en: The game pays only 0 or 10, yet its long-run average is 5.
+  - vi: Kỳ vọng luôn phải là outcome có xác suất lớn nhất.
+    en: Expected value must always be the most likely outcome.
+  - vi: Nếu không quan sát được 5 thì kỳ vọng không tồn tại.
+    en: If 5 cannot be observed, the expectation does not exist.
+  reasonAnswer: 0
+- id: c3w2-expected-value-matching-03
+  topic: expected-value
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho expected-value.
+    en: Match concepts for expected-value.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: These pairs distinguish probability weights from possible values and from the long-run average.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-expected-value-parsons-04
+  topic: expected-value
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho expected-value.
+    en: Order the solution workflow for expected-value.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: A clean expectation calculation lists outcomes first, checks probabilities sum to one, then forms the weighted sum.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-expected-value-numeric-05
+  topic: expected-value
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: A PMF has values 0, 2, 5 with probabilities .2, .3, .5. Compute E[X].
+    en: A PMF has values 0, 2, 5 with probabilities .2, .3, .5. Compute E[X].
+  explanation:
+    vi: 'Weighted average: $0(.2)+2(.3)+5(.5)=3.1$.'
+    en: 'Weighted average: $0(.2)+2(.3)+5(.5)=3.1$.'
+  hints: []
+  answers:
+  - value: 3.1
+  tolerance: 0.001
+- id: c3w2-expected-value-construct-06
+  topic: expected-value
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Give a PMF on values 0,1,2,3 with expected value 1.5.
+    en: Give a PMF on values 0,1,2,3 with expected value 1.5.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: The uniform PMF gives $(0+1+2+3)/4=1.5$, satisfying both the probability and expectation constraints.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 4
+  constraints:
+  - kind: probabilityVector
+  - kind: expectation
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    value: 1.5
+  example:
+  - - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+- id: c3w2-expected-value-parametric-07
+  topic: expected-value
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: Bài sinh tự động từ generator.
+    en: Auto-generated drill from the generator.
+  explanation:
+    vi: Generator sẽ thay prompt bằng dữ liệu mới.
+    en: The generator replaces this prompt with fresh data.
+  hints: []
+  generator: expected-value
+  params: {}

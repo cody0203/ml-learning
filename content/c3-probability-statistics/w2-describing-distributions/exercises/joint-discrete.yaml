@@ -1,0 +1,164 @@
+exercises:
+- id: c3w2-joint-discrete-mcq-01
+  topic: joint-discrete
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về joint-discrete.
+    en: Choose the best statement about joint-discrete.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: A discrete joint distribution assigns probability to pairs such as age-height cells or die-result cells.
+  hints: []
+  options:
+  - vi: Mỗi ô trong bảng joint PMF là xác suất của một cặp $(x,y)$.
+    en: Each cell in a joint PMF table is the probability of one pair $(x,y)$.
+  - vi: Mỗi hàng của joint PMF phải tự cộng bằng 1.
+    en: Every row of a joint PMF must separately sum to 1.
+  - vi: Với xúc xắc độc lập, ô $(x,y)$ có xác suất $1/6$.
+    en: For independent dice, a single $(x,y)$ cell has probability $1/6$.
+  - vi: Xác suất đồng thời có thể âm nếu một ô khác lớn hơn 1.
+    en: A joint probability may be negative if another cell is greater than 1.
+  answer:
+  - 0
+- id: c3w2-joint-discrete-tf-02
+  topic: joint-discrete
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: every entry in a joint PMF must be nonnegative and all entries together must sum to one.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: a joint table is a probability distribution over pairs, so the whole table must carry total mass one.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Bảng joint là một PMF trên các cặp nên tổng mọi ô bằng 1.
+    en: A joint table is a PMF over pairs, so all cells together sum to 1.
+  - vi: Mỗi hàng trong bảng joint bắt buộc cộng bằng 1.
+    en: Every row in a joint table must sum to 1.
+  - vi: Một joint PMF hợp lệ có thể có một ô âm.
+    en: A valid joint PMF may contain one negative cell.
+  reasonAnswer: 0
+- id: c3w2-joint-discrete-matching-03
+  topic: joint-discrete
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho joint-discrete.
+    en: Match concepts for joint-discrete.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs separate a joint cell, a marginal row sum, and the independence product rule.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-joint-discrete-parsons-04
+  topic: joint-discrete
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho joint-discrete.
+    en: Order the solution workflow for joint-discrete.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: To build a joint table from counts, divide each count by the total number of observations, then check the sum.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-joint-discrete-numeric-05
+  topic: joint-discrete
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: 'Two independent fair dice: compute P(X=3,Y=7 for Y=sum of dice).'
+    en: 'Two independent fair dice: compute P(X=3,Y=7 for Y=sum of dice).'
+  explanation:
+    vi: Only outcome (3,4) works among 36 equally likely pairs.
+    en: Only outcome (3,4) works among 36 equally likely pairs.
+  hints: []
+  answers:
+  - value: 0.027777777777777776
+  tolerance: 0.001
+- id: c3w2-joint-discrete-construct-06
+  topic: joint-discrete
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Nhập một vector joint PMF gồm 4 phần tử hợp lệ và có tổng bằng 1.
+    en: Enter a valid 4-entry joint PMF vector that sums to 1.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: The vector 0.1,0.2,0.3,0.4 is a valid flattened joint PMF because all entries are nonnegative and sum to 1.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 4
+  constraints:
+  - kind: probabilityVector
+  example:
+  - - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+- id: c3w2-joint-discrete-parametric-07
+  topic: joint-discrete
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: Bài sinh tự động từ generator.
+    en: Auto-generated drill from the generator.
+  explanation:
+    vi: Generator sẽ thay prompt bằng dữ liệu mới.
+    en: The generator replaces this prompt with fresh data.
+  hints: []
+  generator: bayes
+  params: {}

@@ -1,0 +1,114 @@
+exercises:
+- id: c2w3-newtons-method-example-matching-03
+  topic: newtons-method-example
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép thành phần trong ví dụ $e^x-\log x$.
+    en: Match pieces in the $e^x-\log x$ example.
+  explanation:
+    vi: Hàm này cần $x>0$, đạo hàm thứ nhất cho điểm tới hạn, đạo hàm hai cho curvature.
+    en: This function needs $x>0$, its first derivative gives critical points, and the second gives curvature.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-newtons-method-example-find-error-04
+  topic: newtons-method-example
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi áp dụng Newton cho $e^x-\log x$.
+    en: Find the error when applying Newton to $e^x-\log x$.
+  explanation:
+    vi: Với hàm log, mọi bước phải giữ $x$ dương; công thức cũng phải dùng $g''=e^x+1/x^2$.
+    en: With the log term, every iterate must stay positive; the formula also needs $g''=e^x+1/x^2$.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-newtons-method-example-numeric-05
+  topic: newtons-method-example
+  type: numeric
+  difficulty: 2
+  tags:
+  - newton
+  prompt:
+    vi: Với $g(x)=e^x-\log x$, tại $x=1$, tính $g'(1)$ và $g''(1)$.
+    en: For $g(x)=e^x-\log x$, at $x=1$, compute $g'(1)$ and $g''(1)$.
+  explanation:
+    vi: $g'(1)=e-1$, $g''(1)=e+1$.
+    en: $g'(1)=e-1$, $g''(1)=e+1$.
+  hints: []
+  answers:
+  - label: g'(1)
+    value: 1.718281828459045
+  - label: g''(1)
+    value: 3.718281828459045
+  tolerance: 0.001
+- id: c2w3-newtons-method-example-predict-output-06
+  topic: newtons-method-example
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output được làm tròn.
+    en: Predict the rounded output.
+  explanation:
+    vi: Đây là một bước Newton optimization cho $e^x-\log x$.
+    en: This is one Newton optimization step for $e^x-\log x$.
+  hints: []
+  code: 'import numpy as np
+
+    x=0.05
+
+    x = x - (np.exp(x)-1/x)/(np.exp(x)+1/x**2)
+
+    print(round(x, 3))'
+  options:
+  - '0.097'
+  - '0.567'
+  - '-18.9'
+  answer: 0
+- id: c2w3-newtons-method-example-code-07
+  topic: newtons-method-example
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài một bước Newton tối ưu cho $g(x)=e^x-\log x$.
+    en: Implement one Newton optimization step for $g(x)=e^x-\log x$.
+  explanation:
+    vi: Dùng $g'=e^x-1/x$, $g''=e^x+1/x^2$.
+    en: Use $g'=e^x-1/x$, $g''=e^x+1/x^2$.
+  hints: []
+  starter: "import numpy as np\ndef newton_g_step(x):\n    return x\n"
+  solution: "import numpy as np\ndef newton_g_step(x):\n    return x - (np.exp(x)-1/x)/(np.exp(x)+1/x**2)\n"
+  tests: "def test_first():\n    assert abs(newton_g_step(0.05)-0.0974)<1e-3\ndef test_near():\n    y=newton_g_step(0.55)\n    assert 0.56 < y < 0.58\n"

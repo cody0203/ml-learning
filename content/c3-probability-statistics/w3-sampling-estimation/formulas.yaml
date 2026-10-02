@@ -1,0 +1,177 @@
+﻿formulas:
+  - id: c3w3-f-population-sample-size
+    topic: population-sample
+    name: { vi: 'Kích thước tổng thể và mẫu', en: 'Population and sample size' }
+    tex: 'N=\#\text{population},\qquad n=\#\text{sample}'
+    where:
+      vi: '$N$ đếm toàn bộ nhóm quan tâm; $n$ đếm số quan sát thực sự thu thập.'
+      en: '$N$ counts the whole target population; $n$ counts the observations actually collected.'
+    exercises: [c3w3-pop-numeric-01, c3w3-pop-matching-01]
+  - id: c3w3-f-iid-sample
+    topic: population-sample
+    name: { vi: 'Mẫu i.i.d.', en: 'I.i.d. sample' }
+    tex: 'X_1,\ldots,X_n\overset{iid}{\sim}F'
+    where:
+      vi: 'Các quan sát độc lập và cùng phân phối; là giả thiết nền cho LLN, CLT và MLE cơ bản.'
+      en: 'Observations are independent and identically distributed; the default condition for LLN, CLT, and basic MLE.'
+    exercises: [c3w3-pop-tf-01, c3w3-lln-tf-01]
+  - id: c3w3-f-sample-mean
+    topic: sample-statistics
+    name: { vi: 'Trung bình mẫu', en: 'Sample mean' }
+    tex: '\bar{x}=\frac1n\sum_{i=1}^n x_i'
+    where:
+      vi: 'Ước lượng trung bình tổng thể $\mu$ từ dữ liệu mẫu.'
+      en: 'Estimates the population mean $\mu$ from sample data.'
+    numpy: 'np.mean(x)'
+    exercises: [c3w3-stats-numeric-01, c3w3-stats-multi-01, c3w3-point-construct-01]
+  - id: c3w3-f-sample-proportion
+    topic: sample-statistics
+    name: { vi: 'Tỉ lệ mẫu', en: 'Sample proportion' }
+    tex: '\hat p=\frac{x}{n}=\frac1n\sum_{i=1}^n X_i'
+    where:
+      vi: '$x$ là số thành công trong $n$ quan sát 0/1; ước lượng xác suất thành công $p$.'
+      en: '$x$ is the number of successes among $n$ binary observations; estimates success probability $p$.'
+    numpy: 'np.mean(binary_x)'
+    exercises: [c3w3-stats-mcq-01, c3w3-point-numeric-01, c3w3-point-multi-01]
+  - id: c3w3-f-unbiased-sample-variance
+    topic: sample-statistics
+    name: { vi: 'Phương sai mẫu không chệch', en: 'Unbiased sample variance' }
+    tex: 's^2=\frac{1}{n-1}\sum_{i=1}^n (x_i-\bar{x})^2'
+    where:
+      vi: 'Dùng $n-1$ khi ước lượng phương sai tổng thể vì đã dùng dữ liệu để tính $\bar x$.'
+      en: 'Use $n-1$ when estimating population variance because $\bar x$ was fitted from the same data.'
+    numpy: 'np.var(x, ddof=1)'
+    exercises: [c3w3-stats-numeric-01, c3w3-stats-finderror-01, c3w3-stats-code-01]
+  - id: c3w3-f-lln
+    topic: lln
+    name: { vi: 'Luật số lớn', en: 'Law of large numbers' }
+    tex: '\bar X_n=\frac1n\sum_{i=1}^n X_i\to E[X]'
+    where:
+      vi: 'Với mẫu ngẫu nhiên độc lập đủ lớn và kỳ vọng hữu hạn, trung bình chạy tiến gần kỳ vọng.'
+      en: 'For large independent samples with finite mean, the running average approaches the expectation.'
+    exercises: [c3w3-lln-mcq-01, c3w3-lln-code-01, c3w3-lln-figure-01]
+  - id: c3w3-f-clt-mean-distribution
+    topic: clt
+    name: { vi: 'Phân phối xấp xỉ của trung bình mẫu', en: 'Approximate distribution of the sample mean' }
+    tex: '\bar X_n\approx \mathcal N\left(\mu,\frac{\sigma^2}{n}\right)'
+    where:
+      vi: 'CLT cho i.i.d. có trung bình $\mu$ và phương sai hữu hạn $\sigma^2$ khi $n$ đủ lớn.'
+      en: 'CLT for i.i.d. observations with mean $\mu$ and finite variance $\sigma^2$ when $n$ is large enough.'
+    exercises: [c3w3-clt-numeric-01, c3w3-clt-figure-01, c3w3-clt-matching-01]
+  - id: c3w3-f-standard-error-mean
+    topic: clt
+    name: { vi: 'Sai số chuẩn của trung bình', en: 'Standard error of the mean' }
+    tex: 'SE(\bar X)=\frac{\sigma}{\sqrt n}'
+    where:
+      vi: 'Độ lệch chuẩn của phân phối lấy mẫu của $\bar X$; giảm theo $1/\sqrt n$.'
+      en: 'Standard deviation of the sampling distribution of $\bar X$; decreases as $1/\sqrt n$.'
+    exercises: [c3w3-clt-tf-01, c3w3-clt-code-01, c3w4-confidence-known-sigma-match-01]
+  - id: c3w3-f-clt-standardization
+    topic: clt
+    name: { vi: 'Chuẩn hóa trong CLT', en: 'CLT standardization' }
+    tex: '\frac{\bar X_n-\mu}{\sigma/\sqrt n}\Rightarrow \mathcal N(0,1)'
+    where:
+      vi: 'Dùng để đổi trung bình mẫu sang z-score khi biết $\sigma$ hoặc dùng xấp xỉ lớn mẫu.'
+      en: 'Use to convert a sample mean to a z-score when $\sigma$ is known or a large-sample approximation is justified.'
+    exercises: [c3w3-clt-parsons-01, c3w3-clt-param-01, c3w4-tails-pvalues-critical-numeric-01]
+  - id: c3w3-f-binomial-moments
+    topic: clt
+    name: { vi: 'Trung bình và phương sai nhị thức', en: 'Binomial mean and variance' }
+    tex: 'X\sim Binomial(n,p)\Rightarrow E[X]=np,\quad \operatorname{Var}(X)=np(1-p)'
+    where:
+      vi: '$X$ đếm số thành công trong các phép thử Bernoulli độc lập cùng xác suất $p$.'
+      en: '$X$ counts successes in independent Bernoulli trials with common success probability $p$.'
+    exercises: [c3w3-clt-multi-01, c3w1-binomial-bernoulli-numeric-02, c3w4-hypotheses-errors-numeric-01]
+  - id: c3w3-f-estimator-examples
+    topic: point-estimation
+    name: { vi: 'Ước lượng điểm thường gặp', en: 'Common point estimators' }
+    tex: '\hat\mu=\bar X,\qquad \hat p=\frac1n\sum_i X_i,\qquad s^2=\frac1{n-1}\sum_i(X_i-\bar X)^2'
+    where:
+      vi: 'Estimator là quy tắc ngẫu nhiên trước khi quan sát dữ liệu; estimate là giá trị sau khi quan sát.'
+      en: 'An estimator is a random rule before data are observed; an estimate is its realized value after data.'
+    exercises: [c3w3-point-matching-01, c3w3-point-tf-01, c3w3-point-finderror-01]
+  - id: c3w3-f-bernoulli-likelihood
+    topic: mle-bernoulli
+    name: { vi: 'Likelihood Bernoulli', en: 'Bernoulli likelihood' }
+    tex: 'L(p;x)=\prod_{i=1}^n p^{x_i}(1-p)^{1-x_i}=p^k(1-p)^{n-k}'
+    where:
+      vi: '$x_i\in\{0,1\}$ và $k=\sum_i x_i$; xem là hàm của tham số $p$ sau khi dữ liệu cố định.'
+      en: '$x_i\in\{0,1\}$ and $k=\sum_i x_i$; view this as a function of $p$ after data are fixed.'
+    exercises: [c3w3-bern-mcq-figure-01, c3w3-bern-multi-01, c3w3-bern-matching-01]
+  - id: c3w3-f-bernoulli-loglikelihood
+    topic: mle-bernoulli
+    name: { vi: 'Log-likelihood Bernoulli', en: 'Bernoulli log-likelihood' }
+    tex: '\ell(p)=k\log p+(n-k)\log(1-p)'
+    where:
+      vi: 'Log biến tích thành tổng và có cùng điểm cực đại với likelihood khi $0<p<1$.'
+      en: 'The log turns products into sums and has the same maximizer as likelihood for $0<p<1$.'
+    numpy: 'np.sum(x*np.log(p) + (1-x)*np.log1p(-p))'
+    exercises: [c3w3-bern-code-ll-01, c3w3-bern-parsons-01]
+  - id: c3w3-f-bernoulli-mle
+    topic: mle-bernoulli
+    name: { vi: 'MLE Bernoulli', en: 'Bernoulli MLE' }
+    tex: '\hat p_{MLE}=\frac{k}{n}=\bar x'
+    where:
+      vi: 'Tỉ lệ thành công quan sát được tối đa hóa likelihood Bernoulli.'
+      en: 'The observed success proportion maximizes the Bernoulli likelihood.'
+    numpy: 'np.mean(x)'
+    exercises: [c3w3-bern-numeric-01, c3w3-bern-code-01, c3w3-bern-finderror-01]
+  - id: c3w3-f-gaussian-likelihood
+    topic: mle-gaussian-regression
+    name: { vi: 'Likelihood Gaussian i.i.d.', en: 'I.i.d. Gaussian likelihood' }
+    tex: 'L(\mu,\sigma)=\prod_i \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)'
+    where:
+      vi: 'Dùng khi $x_i\sim\mathcal N(\mu,\sigma^2)$ độc lập; thường tối ưu qua log-likelihood.'
+      en: 'Use when independent $x_i\sim\mathcal N(\mu,\sigma^2)$; usually optimize the log-likelihood.'
+    exercises: [c3w3-gauss-mcq-figure-01, c3w3-regression-parsons-01]
+  - id: c3w3-f-gaussian-mle
+    topic: mle-gaussian-regression
+    name: { vi: 'MLE Gaussian cho trung bình và phương sai', en: 'Gaussian MLE for mean and variance' }
+    tex: '\hat\mu=\bar x,\qquad \hat\sigma^2_{MLE}=\frac1n\sum_i(x_i-\bar x)^2'
+    where:
+      vi: 'Phương sai MLE chia cho $n$, khác với phương sai mẫu không chệch chia cho $n-1$.'
+      en: 'MLE variance divides by $n$, unlike unbiased sample variance which divides by $n-1$.'
+    numpy: '(np.mean(x), np.var(x, ddof=0))'
+    exercises: [c3w3-gauss-numeric-01, c3w3-gauss-code-01, c3w3-gauss-tf-01, c3w3-gauss-multi-01]
+  - id: c3w3-f-regression-sse
+    topic: mle-gaussian-regression
+    name: { vi: 'Tổng bình phương phần dư', en: 'Sum of squared errors' }
+    tex: 'SSE=\sum_i\left(y_i-(mx_i+b)\right)^2'
+    where:
+      vi: 'Với nhiễu Gaussian độc lập, MLE cho đường hồi quy tương đương tối thiểu hóa SSE.'
+      en: 'With independent Gaussian noise, regression MLE is equivalent to minimizing SSE.'
+    numpy: 'np.sum((y - y_hat)**2)'
+    exercises: [c3w3-regression-numeric-01, c3w3-regression-finderror-01, c3w3-regression-matching-01]
+  - id: c3w3-f-bayes-posterior
+    topic: bayesian-regularization
+    name: { vi: 'Posterior Bayes', en: 'Bayesian posterior' }
+    tex: 'p(\theta\mid x)=\frac{p(x\mid\theta)p(\theta)}{p(x)}\propto p(x\mid\theta)p(\theta)'
+    where:
+      vi: 'Posterior tỉ lệ với likelihood nhân prior; $p(x)$ là hằng số chuẩn hóa theo $\theta$.'
+      en: 'Posterior is proportional to likelihood times prior; $p(x)$ normalizes over $\theta$.'
+    exercises: [c3w3-bayes-mcq-01, c3w3-bayes-parsons-01, c3w3-bayes-matching-01]
+  - id: c3w3-f-map-estimator
+    topic: bayesian-regularization
+    name: { vi: 'Ước lượng MAP', en: 'MAP estimator' }
+    tex: '\hat\theta_{MAP}=\arg\max_\theta p(x\mid\theta)p(\theta)'
+    where:
+      vi: 'Chọn tham số có posterior lớn nhất; bỏ qua mẫu số vì không phụ thuộc $\theta$.'
+      en: 'Choose the parameter with largest posterior; the denominator can be ignored because it does not depend on $\theta$.'
+    exercises: [c3w3-map-numeric-01, c3w3-map-code-01, c3w3-bayes-finderror-01]
+  - id: c3w3-f-beta-bernoulli-map
+    topic: bayesian-regularization
+    name: { vi: 'MAP Beta-Bernoulli', en: 'Beta-Bernoulli MAP' }
+    tex: 'p\mid x\sim Beta(\alpha+k,\beta+n-k),\qquad \hat p_{MAP}=\frac{\alpha+k-1}{\alpha+\beta+n-2}'
+    where:
+      vi: 'Công thức MAP nội điểm khi các tham số posterior lớn hơn 1.'
+      en: 'Interior MAP formula when the posterior shape parameters are greater than 1.'
+    exercises: [c3w3-map-numeric-01, c3w3-map-code-01]
+  - id: c3w3-f-l2-regularization
+    topic: bayesian-regularization
+    name: { vi: 'Phạt L2', en: 'L2 regularization penalty' }
+    tex: '\lambda\sum_j a_j^2'
+    where:
+      vi: 'Phạt hệ số lớn; tương ứng với prior Gaussian tâm 0 trong cách nhìn MAP.'
+      en: 'Penalizes large coefficients; corresponds to a zero-centered Gaussian prior in the MAP view.'
+    numpy: 'lambda_ * np.sum(a**2)'
+    exercises: [c3w3-reg-numeric-01, c3w3-bayes-tf-01, c3w3-bayes-multi-01]

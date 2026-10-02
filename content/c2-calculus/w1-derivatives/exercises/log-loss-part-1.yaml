@@ -1,0 +1,205 @@
+exercises:
+- id: c2w1-log-loss-part-1-mcq-01
+  topic: optimization-losses
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tối ưu log-loss: phần 1''?'
+    en: A coin sequence has 7 heads and 3 tails. Which model idea is used to compare coins with $p=0.7$, $0.5$, and $0.3$?
+  explanation:
+    vi: 'Ý đúng: likelihood nhân xác suất của các quan sát, nên xác suất rất nhỏ làm mô hình bị phạt.'
+    en: 'Correct: likelihood multiplies probabilities of observations, so tiny probabilities are heavily penalized.'
+  hints: []
+  options:
+  - vi: likelihood nhân xác suất của các quan sát, nên xác suất rất nhỏ làm mô hình bị phạt
+    en: likelihood multiplies probabilities of observations, so tiny probabilities are heavily penalized
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Choose the coin with the largest tail probability because tails are rarer in the data.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: Add the head probabilities and tail probabilities instead of multiplying observation probabilities.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Ignore the order and counts; any coin with both outcomes possible is equally good.
+  answer:
+  - 0
+- id: c2w1-log-loss-part-1-truefalse-02
+  topic: optimization-losses
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tối ưu log-loss: phần 1'', công thức $L(p)=p^H(1-p)^T$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: For $H$ observed heads and $T$ observed tails, likelihood multiplies $p$ for heads and $1-p$ for tails.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: For likelihood, the probability of every observed toss contributes to the product.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Likelihood nhân xác suất của từng kết quả đã quan sát trong chuỗi tung.
+    en: Likelihood multiplies the probabilities of the outcomes actually observed in the toss sequence.
+  - vi: Chỉ cần chọn đồng xu có xác suất sấp lớn nhất.
+    en: You only choose the coin with the largest tail probability.
+  - vi: Các xác suất quan sát phải được cộng thay vì nhân.
+    en: The observation probabilities should be added rather than multiplied.
+  reasonAnswer: 0
+- id: c2w1-log-loss-part-1-mcq-03
+  topic: optimization-losses
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Chọn đồ thị phù hợp với đạo hàm của $f(x)=x^2$.
+    en: Choose the graph that best supports the coin-likelihood warm-up.
+  explanation:
+    vi: Đạo hàm là $2x$, một đường thẳng qua gốc tọa độ.
+    en: The first graph choice is correct because it shows the derivative curve requested by the likelihood warm-up.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  options:
+  - vi: $f'(x)=2x$
+    en: $f'(x)=2x$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -6
+      - 6
+      functions:
+      - f: 2*x
+        label: 2*x
+  - vi: $f'(x)=x^2$
+    en: $f'(x)=x^2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 9
+      functions:
+      - f: x^2
+        label: x^2
+  - vi: $f'(x)=2$
+    en: $f'(x)=2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 4
+      functions:
+      - f: '2'
+        label: '2'
+  answer:
+  - 0
+- id: c2w1-log-loss-part-1-mcq-04
+  topic: optimization-losses
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Chọn đồ thị phù hợp với đạo hàm của $f(x)=x^2$.
+    en: Choose the second graph that represents the derivative curve, not the original curve.
+  explanation:
+    vi: Đạo hàm là $2x$, một đường thẳng qua gốc tọa độ.
+    en: The second graph item reinforces that the correct derivative graph is linear, not another parabola.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  options:
+  - vi: $f'(x)=2x$
+    en: $f'(x)=2x$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -6
+      - 6
+      functions:
+      - f: 2*x
+        label: 2*x
+  - vi: $f'(x)=x^2$
+    en: $f'(x)=x^2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 9
+      functions:
+      - f: x^2
+        label: x^2
+  - vi: $f'(x)=2$
+    en: $f'(x)=2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 4
+      functions:
+      - f: '2'
+        label: '2'
+  answer:
+  - 0
+- id: c2w1-log-loss-part-1-multistep-05
+  topic: optimization-losses
+  type: multi-step
+  difficulty: 3
+  tags:
+  - application
+  prompt:
+    vi: 'Bài toán nhiều bước: tối ưu vị trí theo squared loss.'
+    en: 'Multi-step problem: compare likelihood reasoning with a squared-loss calculation.'
+  explanation:
+    vi: Đạo hàm của tổng bình phương cho nghiệm là trung bình các vị trí.
+    en: In the likelihood context, the multi-step calculation compares how all observed coin tosses affect the objective.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Với $J(x)=(x-2)^2+(x-8)^2$, tính $J'(x)$ tại $x=3$.
+      en: For $J(x)=(x-2)^2+(x-8)^2$, compute $J'(x)$ at $x=3$.
+    answers:
+    - value: -8
+    explanation:
+      vi: $J'(x)=2(x-2)+2(x-8)=4x-20$, tại $3$ là $-8$.
+      en: $J'(x)=2(x-2)+2(x-8)=4x-20$, at $3$ it is $-8$.
+  - type: numeric
+    prompt:
+      vi: Giải $J'(x)=0$ để tìm $x$ tối ưu.
+      en: Solve $J'(x)=0$ for the optimal $x$.
+    answers:
+    - value: 5
+    explanation:
+      vi: $4x-20=0$ nên $x=5$.
+      en: $4x-20=0$, so $x=5$.
+  - type: mcq
+    prompt:
+      vi: Tại $x=3$, đạo hàm âm gợi ý di chuyển hướng nào để giảm loss?
+      en: At $x=3$, a negative derivative suggests moving which way to reduce loss?
+    options:
+    - vi: Tăng $x$
+      en: Increase $x$
+    - vi: Giảm $x$
+      en: Decrease $x$
+    - vi: Không đổi
+      en: Do not move
+    answer:
+    - 0
+    explanation:
+      vi: Gradient descent dùng $x-\alpha J'(x)$; đạo hàm âm làm bước cập nhật tăng $x$.
+      en: Gradient descent uses $x-\alpha J'(x)$; a negative derivative increases $x$.

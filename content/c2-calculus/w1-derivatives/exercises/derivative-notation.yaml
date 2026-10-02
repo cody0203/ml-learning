@@ -1,0 +1,89 @@
+exercises:
+- id: c2w1-derivative-notation-mcq-01
+  topic: derivative-foundations
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Ký hiệu đạo hàm'?
+    en: You see both $f'(2)$ and $\left.\frac{dy}{dx}\right|_{x=2}$ in a solution. What should you infer?
+  explanation:
+    vi: 'Ý đúng: Leibniz nhấn mạnh tỉ số thay đổi, Lagrange nhấn mạnh hàm đạo hàm.'
+    en: 'Correct: Leibniz notation emphasizes a ratio of changes; Lagrange notation emphasizes the derivative function.'
+  hints: []
+  options:
+  - vi: Leibniz nhấn mạnh tỉ số thay đổi, Lagrange nhấn mạnh hàm đạo hàm
+    en: Leibniz notation emphasizes a ratio of changes; Lagrange notation emphasizes the derivative function
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Prime notation measures horizontal change while Leibniz notation measures vertical change.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: Leibniz notation can only be used for physics examples with time.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The two notations give unrelated numbers unless $y=x$.
+  answer:
+  - 0
+- id: c2w1-derivative-notation-truefalse-02
+  topic: derivative-foundations
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Ký hiệu đạo hàm', công thức $f'(x)=\frac{d}{dx}f(x)=\frac{dy}{dx}$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: For $y=f(x)$, prime notation and Leibniz notation name the same slope function.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The notation is interchangeable here because all symbols refer to the same changing variable.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Khi $y=f(x)$, các ký hiệu đều chỉ cùng độ dốc theo biến $x$.
+    en: When $y=f(x)$, the notations name the same slope with respect to $x$.
+  - vi: $f'(x)$ chỉ dùng cho hàm bậc hai, còn $\frac{dy}{dx}$ chỉ dùng cho vận tốc.
+    en: $f'(x)$ is only for quadratics, while $\frac{dy}{dx}$ is only for velocity.
+  - vi: Hai ký hiệu luôn cho hai đạo hàm khác nhau.
+    en: The two notations always produce different derivatives.
+  reasonAnswer: 0
+- id: c2w1-derivative-notation-parsons-03
+  topic: derivative-foundations
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình tối ưu hóa bằng đạo hàm.
+    en: Order the workflow for translating derivative notation.
+  explanation:
+    vi: Ta lập loss, lấy đạo hàm, tìm điểm tới hạn, rồi kiểm tra cực trị.
+    en: The procedure asks you to translate notation before doing any optimization-style derivative step.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Viết hàm mục tiêu hoặc loss theo biến cần tối ưu.
+    en: Write the objective or loss in terms of the variable to optimize.
+  - vi: Tính đạo hàm của hàm mục tiêu.
+    en: Compute the derivative of the objective.
+  - vi: Giải phương trình đạo hàm bằng 0 hoặc xét dấu đạo hàm.
+    en: Solve derivative equals zero or inspect derivative signs.
+  - vi: Kiểm tra miền xác định, biên và ý nghĩa của nghiệm.
+    en: Check the domain, boundaries, and meaning of the candidate.
+- id: c2w1-derivative-notation-numeric-04
+  topic: derivative-foundations
+  type: numeric
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Tính đạo hàm của $f(x)=2x^2+x$ tại $x=1$.
+    en: Compute $f'(1)$ in prime notation for $f(x)=2x^2+x$.
+  explanation:
+    vi: Tính đạo hàm rồi thay điểm cần xét; không dùng giá trị hàm thay cho độ dốc.
+    en: This numeric item separates the symbol $f'(a)$ from the function value $f(a)$ at the same input.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answers:
+  - value: 5
+  tolerance: 0.001

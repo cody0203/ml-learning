@@ -1,0 +1,169 @@
+exercises:
+- id: c3w2-multivariate-gaussian-mcq-01
+  topic: multivariate-gaussian
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về multivariate-gaussian.
+    en: Choose the best statement about multivariate-gaussian.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: A multivariate Gaussian is controlled by a mean vector for location and a covariance matrix for spread and tilt.
+  hints: []
+  options:
+  - vi: Gaussian đa biến dùng vector mean và ma trận covariance.
+    en: A multivariate Gaussian uses a mean vector and a covariance matrix.
+  - vi: Với nhiều biến, tham số spread vẫn chỉ là một số $\sigma$.
+    en: With many variables, the spread parameter is still just one scalar $\sigma$.
+  - vi: Off-diagonal của $\Sigma$ không ảnh hưởng hình ellipse.
+    en: The off-diagonal entries of $\Sigma$ do not affect the ellipse orientation.
+  - vi: Determinant của $\Sigma$ nằm trong tử số để tăng mật độ khi spread lớn.
+    en: The determinant of $\Sigma$ is in the numerator to raise density when spread is large.
+  answer:
+  - 0
+- id: c3w2-multivariate-gaussian-tf-02
+  topic: multivariate-gaussian
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: independent Gaussian coordinates have a diagonal covariance matrix.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: independence makes off-diagonal covariance terms zero, so the density factors into one-dimensional bells.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Gaussian độc lập theo tọa độ có covariance ngoài đường chéo bằng 0.
+    en: A coordinate-wise independent Gaussian has zero off-diagonal covariance.
+  - vi: Gaussian độc lập luôn có mọi variance bằng 1.
+    en: An independent Gaussian must have every variance equal to 1.
+  - vi: Off-diagonal khác 0 không làm đổi hình contour.
+    en: Nonzero off-diagonal entries do not change contour shape.
+  reasonAnswer: 0
+- id: c3w2-multivariate-gaussian-matching-03
+  topic: multivariate-gaussian
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho multivariate-gaussian.
+    en: Match concepts for multivariate-gaussian.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs connect $\mu$, $\Sigma$, determinant, and quadratic form to parts of the Gaussian density.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-multivariate-gaussian-parsons-04
+  topic: multivariate-gaussian
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho multivariate-gaussian.
+    en: Order the solution workflow for multivariate-gaussian.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: To evaluate the density, first subtract the mean vector, then use $\Sigma^{-1}$ in the Mahalanobis distance.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-multivariate-gaussian-matrix-05
+  topic: multivariate-gaussian
+  type: matrix
+  difficulty: 2
+  tags:
+  - matrix
+  prompt:
+    vi: Nhập ma trận hiệp phương sai cho Var(X)=2, Var(Y)=5, Cov(X,Y)=-1.
+    en: Enter the two-variable Gaussian covariance matrix for variances 2 and 5 with off-diagonal covariance -1.
+  explanation:
+    vi: Ma trận đối xứng, phương sai nằm trên đường chéo.
+    en: 'The covariance matrix is symmetric: the two diagonal entries are variances and both off-diagonal entries are -1.'
+  hints: []
+  answer:
+  - - 2
+    - -1
+  - - -1
+    - 5
+  tolerance: 1.0e-06
+- id: c3w2-multivariate-gaussian-numeric-06
+  topic: multivariate-gaussian
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: For a 2D independent Gaussian with variances 4 and 9, what is |Sigma|?
+    en: For a 2D independent Gaussian with variances 4 and 9, what is |Sigma|?
+  explanation:
+    vi: Diagonal determinant is product 4*9.
+    en: Diagonal determinant is product 4*9.
+  hints: []
+  answers:
+  - value: 36
+  tolerance: 0.001
+- id: c3w2-multivariate-gaussian-find-error-07
+  topic: multivariate-gaussian
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải về multivariate-gaussian.
+    en: Find the first error in this multivariate-gaussian solution.
+  explanation:
+    vi: Bước sai áp dụng một điều kiện không được đảm bảo.
+    en: The incorrect step factors the joint Gaussian as independent even though a nonzero covariance would tilt the ellipses.
+  hints:
+  - vi: Độc lập phải được cho hoặc chứng minh.
+    en: Independence must be stated or proven.
+  steps:
+  - vi: Gọi dữ liệu/PMF đã cho là đối tượng cần phân tích.
+    en: Let the given data/PMF be the object to analyze.
+  - vi: Viết công thức tổng quát trước khi thay số.
+    en: Write the general formula before substituting.
+  - vi: Giả sử các biến độc lập chỉ vì chúng có hai tên khác nhau.
+    en: Assume the variables are independent just because they have two different names.
+  - vi: Tiếp tục dùng công thức tích để ra kết quả.
+    en: Continue using the product formula to get the result.
+  answer: 2

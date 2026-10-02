@@ -1,0 +1,155 @@
+exercises:
+- id: c1w1-3sys-matrix-01
+  topic: systems-3x3
+  type: matrix
+  difficulty: 1
+  tags:
+  - solve
+  prompt:
+    vi: Giải $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$.
+    en: Solve $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$.
+  explanation:
+    vi: Trừ phương trình đầu khỏi hai phương trình sau được $b=5,c=2$, rồi $a=3$.
+    en: Subtract first equation from the next two to get $b=5,c=2$, then $a=3$.
+  hints: []
+  answer:
+  - - 3
+  - - 5
+  - - 2
+- id: c1w1-3sys-mcq-02
+  topic: systems-3x3
+  type: mcq
+  difficulty: 2
+  tags:
+  - classification
+  prompt:
+    vi: $a+b+c=10$, $a+b+2c=15$, $a+b+3c=20$ có gì?
+    en: What about $a+b+c=10$, $a+b+2c=15$, $a+b+3c=20$?
+  explanation:
+    vi: Suy ra $c=5$ và $a+b=5$, nên vô số nghiệm.
+    en: It gives $c=5$ and $a+b=5$, so infinitely many solutions.
+  hints: []
+  options:
+  - vi: Duy nhất
+    en: Unique
+  - vi: Vô số nghiệm
+    en: Infinitely many
+  - vi: Vô nghiệm
+    en: None
+  answer:
+  - 1
+- id: c1w1-3sys-tf-03
+  topic: systems-3x3
+  type: true-false
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Mọi hệ 3 phương trình 3 biến đều có nghiệm duy nhất.
+    en: Every 3-equation 3-variable system has a unique solution.
+  explanation:
+    vi: 'Sai: cần độc lập và nhất quán.'
+    en: 'False: independence and consistency are required.'
+  hints: []
+  answer: false
+  reasons:
+  - vi: Số lượng phương trình chưa đủ.
+    en: The count is not enough.
+  - vi: Ba biến luôn đủ.
+    en: Three variables are always enough.
+  reasonAnswer: 0
+- id: c1w1-3sys-num-04
+  topic: systems-3x3
+  type: numeric
+  difficulty: 2
+  tags:
+  - elimination
+  prompt:
+    vi: Trong hệ trái cây slide, $b,c$ bằng bao nhiêu?
+    en: In the slide fruit system, what are $b,c$?
+  explanation:
+    vi: Phương trình 2-1 cho $b=5$, 3-1 cho $c=2$.
+    en: Equation 2-1 gives $b=5$, 3-1 gives $c=2$.
+  hints: []
+  answers:
+  - label: b
+    value: 5
+  - label: c
+    value: 2
+- id: c1w1-3sys-parsons-05
+  topic: systems-3x3
+  type: parsons
+  difficulty: 2
+  tags:
+  - elimination
+  prompt:
+    vi: Sắp xếp bước giải hệ trái cây.
+    en: Order the fruit-system solution.
+  explanation:
+    vi: Khử bằng cách lấy hiệu với phương trình đầu.
+    en: Eliminate by subtracting the first equation.
+  hints: []
+  steps:
+  - vi: Viết 3 phương trình.
+    en: Write 3 equations.
+  - vi: Lấy phương trình 2 - 1 để được $b=5$.
+    en: Take equation 2 - 1 to get $b=5$.
+  - vi: Lấy phương trình 3 - 1 để được $c=2$.
+    en: Take equation 3 - 1 to get $c=2$.
+  - vi: Thay lại để được $a=3$.
+    en: Substitute back to get $a=3$.
+- id: c1w1-3sys-construct-06
+  topic: systems-3x3
+  type: construct
+  difficulty: 3
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 3×3 rank 1 để với $b=[10,20,30]^T$ có vô số nghiệm.
+    en: Construct a rank-1 3×3 matrix so with $b=[10,20,30]^T$ there are infinitely many solutions.
+  explanation:
+    vi: Các hàng và vế phải cùng tỉ lệ.
+    en: Rows and right side scale together.
+  hints: []
+  rows: 3
+  cols: 3
+  constraints:
+  - kind: infiniteSolutionsWith
+    b:
+    - 10
+    - 20
+    - 30
+  - kind: integerEntries
+  - kind: rank
+    value: 1
+  example:
+  - - 1
+    - 1
+    - 1
+  - - 2
+    - 2
+    - 2
+  - - 3
+    - 3
+    - 3
+- id: c1w1-3sys-error-07
+  topic: systems-3x3
+  type: find-error
+  difficulty: 2
+  tags:
+  - contradiction
+  prompt:
+    vi: Tìm bước sai với $a+b+c=10$, $a+b+2c=15$, $a+b+3c=18$.
+    en: Find wrong step for $a+b+c=10$, $a+b+2c=15$, $a+b+3c=18$.
+  explanation:
+    vi: Suy ra $c=5$ và $c=3$ là mâu thuẫn, không lấy trung bình.
+    en: Getting $c=5$ and $c=3$ is a contradiction, not an average.
+  hints: []
+  steps:
+  - vi: Phương trình 2-1 cho $c=5$.
+    en: Equation 2-1 gives $c=5$.
+  - vi: Phương trình 3-2 cho $c=3$.
+    en: Equation 3-2 gives $c=3$.
+  - vi: Lấy trung bình $c=4$.
+    en: Average to get $c=4$.
+  answer: 2

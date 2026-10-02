@@ -1,0 +1,433 @@
+flashcards:
+- id: c3w2-fc-central-tendency-01
+  topic: central-tendency
+  kind: concept
+  front:
+    vi: Vì sao các thước đo xu hướng trung tâm quan trọng khi ôn một phân phối?
+    en: Why does measures of central tendency matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: mean/median/mode summarize typical values; outliers move the mean more than the median; nhờ đó không phụ
+      thuộc vào một góc nhìn dễ gây nhầm.'
+    en: It captures mean/median/mode summarize typical values; outliers move the mean more than the median; it prevents relying
+      on a misleading single view of the data.
+- id: c3w2-fc-central-tendency-02
+  topic: central-tendency
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho các thước đo xu hướng trung tâm.
+    en: Recall a core formula for measures of central tendency.
+  back:
+    vi: $\bar x=\frac1n\sum_i x_i$, median = middle quantile, mode = most frequent value.
+    en: $\bar x=\frac1n\sum_i x_i$, median = middle quantile, mode = most frequent value.
+- id: c3w2-fc-central-tendency-03
+  topic: central-tendency
+  kind: compute
+  front:
+    vi: 'Data $1,2,9$: mean?'
+    en: 'Data $1,2,9$: mean?'
+  back:
+    vi: $4$
+    en: $4$
+- id: c3w2-fc-expected-value-01
+  topic: expected-value
+  kind: concept
+  front:
+    vi: Vì sao kỳ vọng quan trọng khi ôn một phân phối?
+    en: Why does expected value matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: expectation is a long-run weighted average, not necessarily a value that can occur; nhờ đó không phụ thuộc
+      vào một góc nhìn dễ gây nhầm.'
+    en: It captures expectation is a long-run weighted average, not necessarily a value that can occur; it prevents relying
+      on a misleading single view of the data.
+- id: c3w2-fc-expected-value-02
+  topic: expected-value
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho kỳ vọng.
+    en: Recall a core formula for expected value.
+  back:
+    vi: $E[X]=\sum_x x p(x)$ or $E[X]=\int x f(x)\,dx$
+    en: $E[X]=\sum_x x p(x)$ or $E[X]=\int x f(x)\,dx$
+- id: c3w2-fc-expected-value-03
+  topic: expected-value
+  kind: compute
+  front:
+    vi: 'Fair coin pays $8$ on heads, $0$ on tails: $E[X]$?'
+    en: 'Fair coin pays $8$ on heads, $0$ on tails: $E[X]$?'
+  back:
+    vi: $4$
+    en: $4$
+- id: c3w2-fc-expected-function-01
+  topic: expected-function
+  kind: concept
+  front:
+    vi: Vì sao kỳ vọng của hàm quan trọng khi ôn một phân phối?
+    en: Why does expected value of a function matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: compute the function first, then average: E[f(X)] is generally not f(E[X]); nhờ đó không phụ thuộc vào
+      một góc nhìn dễ gây nhầm.'
+    en: 'It captures compute the function first, then average: E[f(X)] is generally not f(E[X]); it prevents relying on a
+      misleading single view of the data.'
+- id: c3w2-fc-expected-function-02
+  topic: expected-function
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho kỳ vọng của hàm.
+    en: Recall a core formula for expected value of a function.
+  back:
+    vi: $E[g(X)]=\sum_x g(x)p(x)$ or $\int g(x)f(x)\,dx$
+    en: $E[g(X)]=\sum_x g(x)p(x)$ or $\int g(x)f(x)\,dx$
+- id: c3w2-fc-expected-function-03
+  topic: expected-function
+  kind: compute
+  front:
+    vi: 'Fair die: $E[2X-5]$?'
+    en: 'Fair die: $E[2X-5]$?'
+  back:
+    vi: $2$ because $2\cdot3.5-5=2$
+    en: $2$ because $2\cdot3.5-5=2$
+- id: c3w2-fc-sum-expectations-01
+  topic: sum-expectations
+  kind: concept
+  front:
+    vi: Vì sao tổng các kỳ vọng quan trọng khi ôn một phân phối?
+    en: Why does sum of expectations matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: linearity of expectation works without independence; nhờ đó không phụ thuộc vào một góc nhìn dễ gây nhầm.'
+    en: It captures linearity of expectation works without independence; it prevents relying on a misleading single view of
+      the data.
+- id: c3w2-fc-sum-expectations-02
+  topic: sum-expectations
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho tổng các kỳ vọng.
+    en: Recall a core formula for sum of expectations.
+  back:
+    vi: $E[X_1+\cdots+X_n]=E[X_1]+\cdots+E[X_n]$ even when variables are dependent.
+    en: $E[X_1+\cdots+X_n]=E[X_1]+\cdots+E[X_n]$ even when variables are dependent.
+- id: c3w2-fc-sum-expectations-03
+  topic: sum-expectations
+  kind: compute
+  front:
+    vi: Kỳ vọng số lần heads trong 10 lần tung đồng xu công bằng?
+    en: Expected coin head count in 10 fair flips?
+  back:
+    vi: $5$
+    en: $5$
+- id: c3w2-fc-variance-01
+  topic: variance
+  kind: concept
+  front:
+    vi: Vì sao phương sai quan trọng khi ôn một phân phối?
+    en: Why does variance matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: variance measures squared spread around the mean and equals E[X^2]-E[X]^2; nhờ đó không phụ thuộc vào một
+      góc nhìn dễ gây nhầm.'
+    en: It captures variance measures squared spread around the mean and equals E[X^2]-E[X]^2; it prevents relying on a misleading
+      single view of the data.
+- id: c3w2-fc-variance-02
+  topic: variance
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho phương sai.
+    en: Recall a core formula for variance.
+  back:
+    vi: $\mathrm{Var}(X)=E[(X-\mu)^2]=E[X^2]-E[X]^2$ and $\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$.
+    en: $\mathrm{Var}(X)=E[(X-\mu)^2]=E[X^2]-E[X]^2$ and $\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$.
+- id: c3w2-fc-variance-03
+  topic: variance
+  kind: compute
+  front:
+    vi: '$X=\pm2$ equally likely: $\mathrm{Var}(X)$?'
+    en: '$X=\pm2$ equally likely: $\mathrm{Var}(X)$?'
+  back:
+    vi: $4$
+    en: $4$
+- id: c3w2-fc-standard-deviation-01
+  topic: standard-deviation
+  kind: concept
+  front:
+    vi: Vì sao độ lệch chuẩn và chuẩn hóa quan trọng khi ôn một phân phối?
+    en: Why does standard deviation and standardizing matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: standard deviation returns spread to original units; z-scores center and scale; nhờ đó không phụ thuộc
+      vào một góc nhìn dễ gây nhầm.'
+    en: It captures standard deviation returns spread to original units; z-scores center and scale; it prevents relying on
+      a misleading single view of the data.
+- id: c3w2-fc-standard-deviation-02
+  topic: standard-deviation
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho độ lệch chuẩn và chuẩn hóa.
+    en: Recall a core formula for standard deviation and standardizing.
+  back:
+    vi: $\sigma=\sqrt{\mathrm{Var}(X)}$, $Z=(X-\mu)/\sigma$ has mean $0$ and standard deviation $1$.
+    en: $\sigma=\sqrt{\mathrm{Var}(X)}$, $Z=(X-\mu)/\sigma$ has mean $0$ and standard deviation $1$.
+- id: c3w2-fc-standard-deviation-03
+  topic: standard-deviation
+  kind: compute
+  front:
+    vi: '$x=14,\mu=10,\sigma=2$: z-score?'
+    en: '$x=14,\mu=10,\sigma=2$: z-score?'
+  back:
+    vi: $2$
+    en: $2$
+- id: c3w2-fc-skewness-kurtosis-01
+  topic: skewness-kurtosis
+  kind: concept
+  front:
+    vi: Vì sao độ lệch và độ nhọn quan trọng khi ôn một phân phối?
+    en: Why does skewness and kurtosis matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: third and fourth standardized moments describe tail direction and tail heaviness; nhờ đó không phụ thuộc
+      vào một góc nhìn dễ gây nhầm.'
+    en: It captures third and fourth standardized moments describe tail direction and tail heaviness; it prevents relying
+      on a misleading single view of the data.
+- id: c3w2-fc-skewness-kurtosis-02
+  topic: skewness-kurtosis
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho độ lệch và độ nhọn.
+    en: Recall a core formula for skewness and kurtosis.
+  back:
+    vi: $\mathrm{skew}=E[((X-\mu)/\sigma)^3]$, $\mathrm{kurt}=E[((X-\mu)/\sigma)^4]$.
+    en: $\mathrm{skew}=E[((X-\mu)/\sigma)^3]$, $\mathrm{kurt}=E[((X-\mu)/\sigma)^4]$.
+- id: c3w2-fc-skewness-kurtosis-03
+  topic: skewness-kurtosis
+  kind: compute
+  front:
+    vi: 'Long right tail: skew sign?'
+    en: 'Long right tail: skew sign?'
+  back:
+    vi: Positive
+    en: Positive
+- id: c3w2-fc-quantiles-boxplots-01
+  topic: quantiles-boxplots
+  kind: concept
+  front:
+    vi: Vì sao phân vị, box plot, kde, violin, qq quan trọng khi ôn một phân phối?
+    en: Why does quantiles, box plots, kde, violin plots, qq plots matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: quantiles and plots describe distribution shape without assuming a parametric family; nhờ đó không phụ
+      thuộc vào một góc nhìn dễ gây nhầm.'
+    en: It captures quantiles and plots describe distribution shape without assuming a parametric family; it prevents relying
+      on a misleading single view of the data.
+- id: c3w2-fc-quantiles-boxplots-02
+  topic: quantiles-boxplots
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho phân vị, box plot, kde, violin, qq.
+    en: Recall a core formula for quantiles, box plots, kde, violin plots, qq plots.
+  back:
+    vi: $q_p$ leaves proportion $p$ of mass to the left
+    en: $q_p$ leaves proportion $p$ of mass to the left
+- id: c3w2-fc-quantiles-boxplots-03
+  topic: quantiles-boxplots
+  kind: compute
+  front:
+    vi: '$Q_1=3,Q_3=11$: IQR?'
+    en: '$Q_1=3,Q_3=11$: IQR?'
+  back:
+    vi: $8$
+    en: $8$
+- id: c3w2-fc-joint-discrete-01
+  topic: joint-discrete
+  kind: concept
+  front:
+    vi: Vì sao phân phối đồng thời rời rạc quan trọng khi ôn một phân phối?
+    en: 'Why does joint distributions: discrete matter when reviewing a distribution?'
+  back:
+    vi: 'Nó nắm ý: a joint table assigns probability to pairs and must sum to one; nhờ đó không phụ thuộc vào một góc nhìn
+      dễ gây nhầm.'
+    en: It captures a joint table assigns probability to pairs and must sum to one; it prevents relying on a misleading single
+      view of the data.
+- id: c3w2-fc-joint-discrete-02
+  topic: joint-discrete
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho phân phối đồng thời rời rạc.
+    en: 'Recall a core formula for joint distributions: discrete.'
+  back:
+    vi: $p_{XY}(x,y)=P(X=x,Y=y)$ and $\sum_x\sum_y p_{XY}(x,y)=1$.
+    en: $p_{XY}(x,y)=P(X=x,Y=y)$ and $\sum_x\sum_y p_{XY}(x,y)=1$.
+- id: c3w2-fc-joint-discrete-03
+  topic: joint-discrete
+  kind: compute
+  front:
+    vi: 'Two fair dice: $P(X=2,Y=5)$?'
+    en: 'Two fair dice: $P(X=2,Y=5)$?'
+  back:
+    vi: $1/36$
+    en: $1/36$
+- id: c3w2-fc-joint-continuous-01
+  topic: joint-continuous
+  kind: concept
+  front:
+    vi: Vì sao phân phối đồng thời liên tục quan trọng khi ôn một phân phối?
+    en: 'Why does joint distributions: continuous matter when reviewing a distribution?'
+  back:
+    vi: 'Nó nắm ý: a joint density uses volume under a surface; probabilities are areas/volumes, not point heights; nhờ đó
+      không phụ thuộc vào một góc nhìn dễ gây nhầm.'
+    en: It captures a joint density uses volume under a surface; probabilities are areas/volumes, not point heights; it prevents
+      relying on a misleading single view of the data.
+- id: c3w2-fc-joint-continuous-02
+  topic: joint-continuous
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho phân phối đồng thời liên tục.
+    en: 'Recall a core formula for joint distributions: continuous.'
+  back:
+    vi: $P((X,Y)\in A)=\iint_A f_{XY}(x,y)\,dx\,dy$
+    en: $P((X,Y)\in A)=\iint_A f_{XY}(x,y)\,dx\,dy$
+- id: c3w2-fc-joint-continuous-03
+  topic: joint-continuous
+  kind: compute
+  front:
+    vi: 'Uniform density on unit square: $P(0<X<.5,0<Y<.5)$?'
+    en: 'Uniform density on unit square: $P(0<X<.5,0<Y<.5)$?'
+  back:
+    vi: $0.25$
+    en: $0.25$
+- id: c3w2-fc-marginal-conditional-01
+  topic: marginal-conditional
+  kind: concept
+  front:
+    vi: Vì sao biên và có điều kiện quan trọng khi ôn một phân phối?
+    en: Why does marginal and conditional distributions matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: marginals sum/integrate out variables; conditionals renormalize a slice; nhờ đó không phụ thuộc vào một
+      góc nhìn dễ gây nhầm.'
+    en: It captures marginals sum/integrate out variables; conditionals renormalize a slice; it prevents relying on a misleading
+      single view of the data.
+- id: c3w2-fc-marginal-conditional-02
+  topic: marginal-conditional
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho biên và có điều kiện.
+    en: Recall a core formula for marginal and conditional distributions.
+  back:
+    vi: $p_X(x)=\sum_y p_{XY}(x,y)$, $p_{Y|X=x}(y)=p_{XY}(x,y)/p_X(x)$.
+    en: $p_X(x)=\sum_y p_{XY}(x,y)$, $p_{Y|X=x}(y)=p_{XY}(x,y)/p_X(x)$.
+- id: c3w2-fc-marginal-conditional-03
+  topic: marginal-conditional
+  kind: compute
+  front:
+    vi: If $P(A,B)=0.12$ and $P(A)=0.3$, $P(B|A)$?
+    en: If $P(A,B)=0.12$ and $P(A)=0.3$, $P(B|A)$?
+  back:
+    vi: $0.4$
+    en: $0.4$
+- id: c3w2-fc-covariance-01
+  topic: covariance
+  kind: concept
+  front:
+    vi: Vì sao hiệp phương sai, ma trận hiệp phương sai, tương quan quan trọng khi ôn một phân phối?
+    en: Why does covariance, covariance matrix, and correlation matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: covariance signs show co-movement; correlation standardizes covariance to [-1,1]; nhờ đó không phụ thuộc
+      vào một góc nhìn dễ gây nhầm.'
+    en: It captures covariance signs show co-movement; correlation standardizes covariance to [-1,1]; it prevents relying
+      on a misleading single view of the data.
+- id: c3w2-fc-covariance-02
+  topic: covariance
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho hiệp phương sai, ma trận hiệp phương sai, tương quan.
+    en: Recall a core formula for covariance, covariance matrix, and correlation.
+  back:
+    vi: $\mathrm{Cov}(X,Y)=E[XY]-E[X]E[Y]$, $\rho=\frac{\mathrm{Cov}(X,Y)}{\sigma_X\sigma_Y}$.
+    en: $\mathrm{Cov}(X,Y)=E[XY]-E[X]E[Y]$, $\rho=\frac{\mathrm{Cov}(X,Y)}{\sigma_X\sigma_Y}$.
+- id: c3w2-fc-covariance-03
+  topic: covariance
+  kind: compute
+  front:
+    vi: '$\mathrm{Cov}=6,\sigma_X=2,\sigma_Y=3$: correlation?'
+    en: '$\mathrm{Cov}=6,\sigma_X=2,\sigma_Y=3$: correlation?'
+  back:
+    vi: $1$
+    en: $1$
+- id: c3w2-fc-multivariate-gaussian-01
+  topic: multivariate-gaussian
+  kind: concept
+  front:
+    vi: Vì sao gaussian đa biến quan trọng khi ôn một phân phối?
+    en: Why does multivariate gaussian distribution matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: a mean vector and covariance matrix determine the bell in many dimensions; nhờ đó không phụ thuộc vào một
+      góc nhìn dễ gây nhầm.'
+    en: It captures a mean vector and covariance matrix determine the bell in many dimensions; it prevents relying on a misleading
+      single view of the data.
+- id: c3w2-fc-multivariate-gaussian-02
+  topic: multivariate-gaussian
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho gaussian đa biến.
+    en: Recall a core formula for multivariate gaussian distribution.
+  back:
+    vi: $f(x)=\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp[-\tfrac12(x-\mu)^T\Sigma^{-1}(x-\mu)]$.
+    en: $f(x)=\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp[-\tfrac12(x-\mu)^T\Sigma^{-1}(x-\mu)]$.
+- id: c3w2-fc-multivariate-gaussian-03
+  topic: multivariate-gaussian
+  kind: compute
+  front:
+    vi: 'Diagonal $\Sigma=\mathrm{diag}(4,9)$: variances?'
+    en: 'Diagonal $\Sigma=\mathrm{diag}(4,9)$: variances?'
+  back:
+    vi: $4$ and $9$
+    en: $4$ and $9$
+- id: c3w2-fc-conclusion-01
+  topic: conclusion
+  kind: concept
+  front:
+    vi: Vì sao tổng kết tuần 2 quan trọng khi ôn một phân phối?
+    en: Why does week 2 conclusion matter when reviewing a distribution?
+  back:
+    vi: 'Nó nắm ý: distribution summaries, visualizations, joint probability, dependence, and Gaussian models connect into
+      a toolkit; nhờ đó không phụ thuộc vào một góc nhìn dễ gây nhầm.'
+    en: It captures distribution summaries, visualizations, joint probability, dependence, and Gaussian models connect into
+      a toolkit; it prevents relying on a misleading single view of the data.
+- id: c3w2-fc-conclusion-02
+  topic: conclusion
+  kind: formula
+  front:
+    vi: Nhắc lại một công thức lõi cho tổng kết tuần 2.
+    en: Recall a core formula for week 2 conclusion.
+  back:
+    vi: Kết hợp tóm tắt số, biểu đồ và thước đo phụ thuộc; mỗi loại trả lời một câu hỏi khác nhau.
+    en: Choose numerical summaries, visual summaries, and dependence summaries together
+- id: c3w2-fc-conclusion-03
+  topic: conclusion
+  kind: compute
+  front:
+    vi: 'Mean 0 and variance 1 after transforming: what transform?'
+    en: 'Mean 0 and variance 1 after transforming: what transform?'
+  back:
+    vi: Standardization / z-score
+    en: Standardization / z-score
+- id: c3w2-fc-extra-01
+  topic: central-tendency
+  kind: concept
+  front:
+    vi: Which statistic is more robust to Michael-Jordan-style salary outliers?
+    en: Which statistic is more robust to Michael-Jordan-style salary outliers?
+  back:
+    vi: Median, vì một giá trị cực đoan làm thay đổi thứ tự ít hơn nhiều so với trung bình cộng.
+    en: Median, because one extreme value changes order less than the arithmetic mean.
+- id: c3w2-fc-extra-02
+  topic: variance
+  kind: formula
+  front:
+    vi: What is the shortcut formula for variance?
+    en: What is the shortcut formula for variance?
+  back:
+    vi: $\mathrm{Var}(X)=E[X^2]-E[X]^2$.
+    en: $\mathrm{Var}(X)=E[X^2]-E[X]^2$.
+- id: c3w2-fc-extra-03
+  topic: covariance
+  kind: formula
+  front:
+    vi: What is the correlation coefficient formula?
+    en: What is the correlation coefficient formula?
+  back:
+    vi: $\rho=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)$.
+    en: $\rho=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)$.

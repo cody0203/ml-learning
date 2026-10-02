@@ -1,0 +1,223 @@
+'exercises':
+- 'id': 'c3w3-point-mcq-01'
+  'topic': 'point-estimation'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'Point estimate là gì?'
+    'en': 'What is a point estimate?'
+  'explanation':
+    'vi': 'Một giá trị số đơn lẻ từ sample để xấp xỉ parameter chưa biết.'
+    'en': 'A single numerical value from sample data approximating an unknown parameter.'
+  'hints': []
+  'options':
+  - 'vi': 'Một số duy nhất từ dữ liệu'
+    'en': 'A single number from data'
+  - 'vi': 'Toàn bộ distribution posterior'
+    'en': 'The full posterior distribution'
+  - 'vi': 'Một raw observation bất kỳ'
+    'en': 'Any raw observation'
+  'answer':
+  - 0
+- 'id': 'c3w3-point-numeric-01'
+  'topic': 'point-estimation'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'coin'
+  'prompt':
+    'vi': '10 tosses có 7 heads. Point estimate của $P(H)$ là bao nhiêu?'
+    'en': '10 tosses have 7 heads. What is the point estimate of $P(H)$?'
+  'explanation':
+    'vi': '$\hat p=7/10=0.7$.'
+    'en': '$\hat p=7/10=0.7$.'
+  'hints': []
+  'answers':
+  - 'value': 0.7
+  'tolerance': 1.0e-09
+- 'id': 'c3w3-point-matrix-01'
+  'topic': 'point-estimation'
+  'type': 'matrix'
+  'difficulty': 1
+  'tags':
+  - 'regression'
+  'prompt':
+    'vi': 'Với regression $y=\beta_0+\beta_1x$, vector tham số cột là gì nếu $\beta_0=3,\beta_1=4$?'
+    'en': 'For regression $y=\beta_0+\beta_1x$, what is the parameter column vector if $\beta_0=3,\beta_1=4$?'
+  'explanation':
+    'vi': 'Vector tham số là $[3,4]^T$.'
+    'en': 'The parameter vector is $[3,4]^T$.'
+  'hints': []
+  'answer':
+  - - 3
+  - - 4
+  'tolerance': 0
+- 'id': 'c3w3-point-tf-01'
+  'topic': 'point-estimation'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'estimator'
+  'prompt':
+    'vi': 'Estimator là quy tắc; estimate là giá trị sau khi quan sát dữ liệu.'
+    'en': 'An estimator is a rule; an estimate is the realized value after observing data.'
+  'explanation':
+    'vi': 'Đúng và rất quan trọng khi nói estimator có phân phối.'
+    'en': 'True, important because estimators have distributions.'
+  'hints': []
+  'answer': true
+- 'id': 'c3w3-point-matching-01'
+  'topic': 'point-estimation'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'notation'
+  'prompt':
+    'vi': 'Ghép parameter với estimator tự nhiên.'
+    'en': 'Match parameter with a natural estimator.'
+  'explanation':
+    'vi': 'Các point estimators thường là sample analogs.'
+    'en': 'Point estimators are often sample analogs.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$\mu$'
+      'en': '$\mu$'
+    'right':
+      'vi': '$\bar X$'
+      'en': '$\bar X$'
+  - 'left':
+      'vi': '$p$ Bernoulli'
+      'en': 'Bernoulli $p$'
+    'right':
+      'vi': '$\hat p=\bar X$'
+      'en': '$\hat p=\bar X$'
+  - 'left':
+      'vi': '$\sigma^2$ population'
+      'en': 'Population $\sigma^2$'
+    'right':
+      'vi': '$s^2$'
+      'en': '$s^2$'
+  - 'left':
+      'vi': 'Regression coefficients'
+      'en': 'Regression coefficients'
+    'right':
+      'vi': '$\hat\beta_0,\hat\beta_1$'
+      'en': '$\hat\beta_0,\hat\beta_1$'
+- 'id': 'c3w3-point-finderror-01'
+  'topic': 'point-estimation'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'uncertainty'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong kết luận point estimate.'
+    'en': 'Find the first error in the point-estimate conclusion.'
+  'explanation':
+    'vi': 'Estimate không chắc bằng parameter thật.'
+    'en': 'The estimate is not guaranteed to equal the true parameter.'
+  'hints': []
+  'steps':
+  - 'vi': 'Sample có 7 heads trên 10 tosses.'
+    'en': 'The sample has 7 heads in 10 tosses.'
+  - 'vi': '$\hat p=0.7$.'
+    'en': '$\hat p=0.7$.'
+  - 'vi': 'Vì vậy xác suất thật chắc chắn đúng bằng 0.7.'
+    'en': 'Therefore the true probability is certainly exactly 0.7.'
+  'answer': 2
+- 'id': 'c3w3-point-parsons-01'
+  'topic': 'point-estimation'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'workflow'
+  'prompt':
+    'vi': 'Sắp xếp workflow ước lượng điểm.'
+    'en': 'Order a point-estimation workflow.'
+  'explanation':
+    'vi': 'Cần parameter mục tiêu, estimator, data, rồi diễn giải.'
+    'en': 'Need target parameter, estimator, data, then interpretation.'
+  'hints': []
+  'steps':
+  - 'vi': 'Xác định parameter cần ước lượng.'
+    'en': 'Identify the target parameter.'
+  - 'vi': 'Chọn estimator từ sample.'
+    'en': 'Choose an estimator from the sample.'
+  - 'vi': 'Tính estimate trên dữ liệu quan sát.'
+    'en': 'Compute the estimate on observed data.'
+  - 'vi': 'Diễn giải kèm uncertainty/giả định.'
+    'en': 'Interpret with uncertainty/assumptions.'
+- 'id': 'c3w3-point-construct-01'
+  'topic': 'point-estimation'
+  'type': 'construct'
+  'difficulty': 2
+  'tags':
+  - 'construct'
+  'prompt':
+    'vi': 'Tạo dataset 4 số có point estimate mean bằng 10 và distinct values ít nhất 3.'
+    'en': 'Build 4 values whose point estimate of mean is 10 and at least 3 distinct values.'
+  'explanation':
+    'vi': '$[7,9,11,13]$ có mean 10 và 4 giá trị khác nhau.'
+    'en': '$[7,9,11,13]$ has mean 10 and 4 distinct values.'
+  'hints': []
+  'rows': 1
+  'cols': 4
+  'constraints':
+  - 'kind': 'mean'
+    'value': 10
+  - 'kind': 'distinctValues'
+    'min': 3
+  'example':
+  - - 7
+    - 9
+    - 11
+    - 13
+- 'id': 'c3w3-point-multi-01'
+  'topic': 'point-estimation'
+  'type': 'multi-step'
+  'difficulty': 2
+  'tags':
+  - 'application'
+  'prompt':
+    'vi': 'Một survey 200 người có 86 người thích app mới.'
+    'en': 'A survey of 200 people has 86 who like the new app.'
+  'explanation':
+    'vi': 'Point estimate là tỉ lệ sample.'
+    'en': 'Point estimate is sample proportion.'
+  'hints': []
+  'parts':
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\hat p$?'
+      'en': '$\hat p$?'
+    'answers':
+    - 'value': 0.43
+    'tolerance': 1.0e-09
+    'explanation':
+      'vi': '$86/200=0.43$.'
+      'en': '$86/200=0.43$.'
+  - 'type': 'true-false'
+    'prompt':
+      'vi': '$0.43$ là random trước khi lấy mẫu.'
+      'en': '$0.43$ is random before sampling.'
+    'answer': true
+    'explanation':
+      'vi': 'Estimator phụ thuộc sample ngẫu nhiên.'
+      'en': 'The estimator depends on the random sample.'
+- 'id': 'c3w3-point-param-01'
+  'topic': 'point-estimation'
+  'type': 'parametric'
+  'difficulty': 1
+  'tags':
+  - 'generator'
+  'prompt':
+    'vi': 'Tính khoảng tin cậy sinh ngẫu nhiên.'
+    'en': 'Compute a generated confidence interval.'
+  'explanation':
+    'vi': 'Dù tuần này là point estimate, CI giúp thấy uncertainty của estimate.'
+    'en': 'Although this week is point estimates, CIs show estimator uncertainty.'
+  'hints': []
+  'generator': 'confidence-interval'
+  'params': {}

@@ -1,0 +1,236 @@
+'exercises':
+- 'id': 'c3w3-stats-numeric-01'
+  'topic': 'sample-statistics'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'mean'
+  - 'variance'
+  'prompt':
+    'vi': 'Với dữ liệu $2,3,4,5,6$, tính $\bar x$ và $s^2$ (chia $n-1$).'
+    'en': 'For data $2,3,4,5,6$, compute $\bar x$ and $s^2$ (divide by $n-1$).'
+  'explanation':
+    'vi': 'Mean $4$; squared deviations sum $10$; $s^2=10/4=2.5$.'
+    'en': 'Mean $4$; squared deviations sum $10$; $s^2=10/4=2.5$.'
+  'hints': []
+  'answers':
+  - 'label': 'mean'
+    'value': 4
+  - 'label': 's^2'
+    'value': 2.5
+  'tolerance': 1.0e-06
+- 'id': 'c3w3-stats-construct-01'
+  'topic': 'sample-statistics'
+  'type': 'construct'
+  'difficulty': 2
+  'tags':
+  - 'construct'
+  'prompt':
+    'vi': 'Tạo dataset 5 số có mean 4 và sample variance 2.5.'
+    'en': 'Build a 5-value dataset with mean 4 and sample variance 2.5.'
+  'explanation':
+    'vi': '$[2,3,4,5,6]$ thỏa: tổng 20, SS 10, chia 4 được 2.5.'
+    'en': '$[2,3,4,5,6]$ works: sum 20, SS 10, divide by 4 gives 2.5.'
+  'hints': []
+  'rows': 1
+  'cols': 5
+  'constraints':
+  - 'kind': 'mean'
+    'value': 4
+  - 'kind': 'variance'
+    'value': 2.5
+    'sample': true
+  'example':
+  - - 2
+    - 3
+    - 4
+    - 5
+    - 6
+- 'id': 'c3w3-stats-finderror-01'
+  'topic': 'sample-statistics'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'common-mistake'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên khi ước lượng variance population từ sample $2,3,4,5,6$.'
+    'en': 'Find the first error estimating population variance from sample $2,3,4,5,6$.'
+  'explanation':
+    'vi': 'Khi dùng sample variance để estimate population variance, chia $n-1$, không chia $n$.'
+    'en': 'For sample variance estimating population variance, divide by $n-1$, not $n$.'
+  'hints': []
+  'steps':
+  - 'vi': '$\bar x=4$.'
+    'en': '$\bar x=4$.'
+  - 'vi': '$\sum(x_i-\bar x)^2=10$.'
+    'en': '$\sum(x_i-\bar x)^2=10$.'
+  - 'vi': '$s^2=10/5=2$.'
+    'en': '$s^2=10/5=2$.'
+  'answer': 2
+- 'id': 'c3w3-stats-code-01'
+  'topic': 'sample-statistics'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'variance'
+  'prompt':
+    'vi': 'Cài `sample_variance(x)` chia cho $n-1$, không dùng `np.var`.'
+    'en': 'Implement `sample_variance(x)` dividing by $n-1$, without `np.var`.'
+  'explanation':
+    'vi': 'Tính mean, bình phương độ lệch, rồi chia $n-1$.'
+    'en': 'Compute mean, squared deviations, then divide by $n-1$.'
+  'hints': []
+  'starter': "import numpy as np\ndef sample_variance(x):\n    return 0.0\n"
+  'solution': "import numpy as np\ndef sample_variance(x):\n    x=np.asarray(x,dtype=float)\n    m=x.mean()\n    return float(np.sum((x-m)**2)/(len(x)-1))\n"
+  'tests': "import numpy as np\ndef test_five_values():\n    assert abs(sample_variance(np.array([2,3,4,5,6]))-2.5)<1e-9\ndef test_two_values():\n    assert abs(sample_variance([1,3])-2.0)<1e-9\n"
+- 'id': 'c3w3-stats-mcq-01'
+  'topic': 'sample-statistics'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'proportion'
+  'prompt':
+    'vi': 'Trong sample 6 người có 2 người sở hữu xe đạp. $\hat p$ là gì?'
+    'en': 'In a sample of 6 people, 2 own a bicycle. What is $\hat p$?'
+  'explanation':
+    'vi': '$\hat p=2/6=0.333$.'
+    'en': '$\hat p=2/6=0.333$.'
+  'hints': []
+  'options':
+  - 'vi': '$2/6$'
+    'en': '$2/6$'
+  - 'vi': '$6/2$'
+    'en': '$6/2$'
+  - 'vi': '$2/10$'
+    'en': '$2/10$'
+  'answer':
+  - 0
+- 'id': 'c3w3-stats-tf-01'
+  'topic': 'sample-statistics'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'variance'
+  'prompt':
+    'vi': 'Công thức phương sai tổng thể dùng $\mu$ và chia cho $N$; công thức phương sai mẫu dùng $\bar x$ và chia cho $n-1$.'
+    'en': 'Population variance formula uses $\mu$ and divides by $N$; sample variance formula uses $\bar x$ and divides by $n-1$.'
+  'explanation':
+    'vi': 'Đúng: đây là hai công thức khác nhau trong slides.'
+    'en': 'True: these are distinct formulas in the slides.'
+  'hints': []
+  'answer': true
+- 'id': 'c3w3-stats-matching-01'
+  'topic': 'sample-statistics'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'notation'
+  'prompt':
+    'vi': 'Ghép notation thống kê.'
+    'en': 'Match statistical notation.'
+  'explanation':
+    'vi': 'Ký hiệu population và sample khác nhau.'
+    'en': 'Population and sample notation differ.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$\mu$'
+      'en': '$\mu$'
+    'right':
+      'vi': 'Population mean'
+      'en': 'Population mean'
+  - 'left':
+      'vi': '$\bar x$'
+      'en': '$\bar x$'
+    'right':
+      'vi': 'Sample mean'
+      'en': 'Sample mean'
+  - 'left':
+      'vi': '$p$'
+      'en': '$p$'
+    'right':
+      'vi': 'Population proportion'
+      'en': 'Population proportion'
+  - 'left':
+      'vi': '$\hat p$'
+      'en': '$\hat p$'
+    'right':
+      'vi': 'Sample proportion'
+      'en': 'Sample proportion'
+  - 'left':
+      'vi': '$s^2$'
+      'en': '$s^2$'
+    'right':
+      'vi': 'Sample variance'
+      'en': 'Sample variance'
+- 'id': 'c3w3-stats-predict-01'
+  'topic': 'sample-statistics'
+  'type': 'predict-output'
+  'difficulty': 1
+  'tags':
+  - 'numpy'
+  'prompt':
+    'vi': 'Đoán output NumPy.'
+    'en': 'Predict the NumPy output.'
+  'explanation':
+    'vi': '`ddof=1` chia $n-1$.'
+    'en': '`ddof=1` divides by $n-1`.'
+  'hints': []
+  'code': 'import numpy as np
+
+    x=np.array([2,3,4,5,6])
+
+    print(x.var(ddof=1))'
+  'options':
+  - '2.5'
+  - '2.0'
+  - '4.0'
+  'answer': 0
+- 'id': 'c3w3-stats-param-01'
+  'topic': 'sample-statistics'
+  'type': 'parametric'
+  'difficulty': 1
+  'tags':
+  - 'generator'
+  'prompt':
+    'vi': 'Tính thống kê mô tả sinh ngẫu nhiên.'
+    'en': 'Compute generated descriptive statistics.'
+  'explanation':
+    'vi': 'Generator thay prompt bằng dữ liệu mới.'
+    'en': 'The generator replaces this with fresh data.'
+  'hints': []
+  'generator': 'descriptive-stats'
+  'params': {}
+- 'id': 'c3w3-stats-multi-01'
+  'topic': 'sample-statistics'
+  'type': 'multi-step'
+  'difficulty': 2
+  'tags':
+  - 'sample-mean'
+  'prompt':
+    'vi': 'Sample heights: $153,155,159,163,165,169$.'
+    'en': 'Sample heights: $153,155,159,163,165,169$.'
+  'explanation':
+    'vi': 'Tổng là 964, chia 6.'
+    'en': 'Sum is 964, divide by 6.'
+  'hints': []
+  'parts':
+  - 'type': 'numeric'
+    'prompt':
+      'vi': 'Tính sample mean.'
+      'en': 'Compute sample mean.'
+    'answers':
+    - 'value': 160.6666667
+    'tolerance': 0.001
+    'explanation':
+      'vi': '$964/6=160.667$.'
+      'en': '$964/6=160.667$.'
+  - 'type': 'true-false'
+    'prompt':
+      'vi': 'Đây chắc chắn là population mean.'
+      'en': 'This is certainly the population mean.'
+    'answer': false
+    'explanation':
+      'vi': 'Nó chỉ là estimate từ sample.'
+      'en': 'It is only a sample estimate.'

@@ -1,0 +1,123 @@
+exercises:
+- id: c2w1-derivatives-lines-mcq-01
+  topic: common-derivatives
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm của hằng số và đường thẳng'?
+    en: 'For $f(x)=4x+9$, which idea explains why the derivative is $4$ at every $x$?'
+  explanation:
+    vi: 'Ý đúng: hằng số có độ dốc 0, đường thẳng có độ dốc không đổi.'
+    en: 'Correct: constants have slope 0 and lines have constant slope.'
+  hints: []
+  options:
+  - vi: hằng số có độ dốc 0, đường thẳng có độ dốc không đổi
+    en: constants have slope 0 and lines have constant slope
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative is $9$ because the graph crosses the y-axis at $9$.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative changes with $x$ because the line has many points.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The slope is $13$ because both coefficients must be added.
+  answer:
+  - 0
+- id: c2w1-derivatives-lines-truefalse-02
+  topic: common-derivatives
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm của hằng số và đường thẳng', công thức $\frac{d}{dx}c=0,\quad \frac{d}{dx}(ax+b)=a$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: 'In $ax+b$, the intercept shifts the graph vertically while the coefficient $a$ gives the slope.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: For constants and lines, checking the coefficient of x is enough to read the slope.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Với đường thẳng, hệ số của $x$ là độ dốc còn hằng số có đạo hàm 0.
+    en: For a line, the coefficient of $x$ is the slope and the constant differentiates to 0.
+  - vi: Hệ số chặn quyết định độ dốc vì nó là giá trị khi $x=0$.
+    en: The intercept determines slope because it is the value at $x=0$.
+  - vi: Đường thẳng có đạo hàm thay đổi theo từng điểm.
+    en: A line has a derivative that changes from point to point.
+  reasonAnswer: 0
+- id: c2w1-derivatives-lines-predictoutput-03
+  topic: common-derivatives
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output của NumPy.
+    en: Predict the NumPy output for constant-slope line data.
+  explanation:
+    vi: Gradient của $x^2$ tại các điểm là $2x$.
+    en: The output is read by applying the constant slope of the displayed linear transformation to each entry.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  code: 'import numpy as np
+
+    x = np.array([-1., 0., 2.])
+
+    print(2*x)'
+  options:
+  - '[-2.  0.  4.]'
+  - '[-1.  0.  2.]'
+  - '[1. 0. 4.]'
+  - shape error
+  answer: 0
+- id: c2w1-derivatives-lines-multistep-04
+  topic: common-derivatives
+  type: multi-step
+  difficulty: 3
+  tags:
+  - application
+  prompt:
+    vi: 'Bài toán nhiều bước: tối ưu vị trí theo squared loss.'
+    en: 'Multi-step problem: use a line slope before optimizing a squared distance.'
+  explanation:
+    vi: Đạo hàm của tổng bình phương cho nghiệm là trung bình các vị trí.
+    en: In this line-focused multi-step task, the derivative confirms that a constant slope does not depend on the evaluation point.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Với $J(x)=(x-2)^2+(x-8)^2$, tính $J'(x)$ tại $x=3$.
+      en: For $J(x)=(x-2)^2+(x-8)^2$, compute $J'(x)$ at $x=3$.
+    answers:
+    - value: -8
+    explanation:
+      vi: $J'(x)=2(x-2)+2(x-8)=4x-20$, tại $3$ là $-8$.
+      en: $J'(x)=2(x-2)+2(x-8)=4x-20$, at $3$ it is $-8$.
+  - type: numeric
+    prompt:
+      vi: Giải $J'(x)=0$ để tìm $x$ tối ưu.
+      en: Solve $J'(x)=0$ for the optimal $x$.
+    answers:
+    - value: 5
+    explanation:
+      vi: $4x-20=0$ nên $x=5$.
+      en: $4x-20=0$, so $x=5$.
+  - type: mcq
+    prompt:
+      vi: Tại $x=3$, đạo hàm âm gợi ý di chuyển hướng nào để giảm loss?
+      en: At $x=3$, a negative derivative suggests moving which way to reduce loss?
+    options:
+    - vi: Tăng $x$
+      en: Increase $x$
+    - vi: Giảm $x$
+      en: Decrease $x$
+    - vi: Không đổi
+      en: Do not move
+    answer:
+    - 0
+    explanation:
+      vi: Gradient descent dùng $x-\alpha J'(x)$; đạo hàm âm làm bước cập nhật tăng $x$.
+      en: Gradient descent uses $x-\alpha J'(x)$; a negative derivative increases $x$.

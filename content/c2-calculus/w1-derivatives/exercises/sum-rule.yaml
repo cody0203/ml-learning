@@ -1,0 +1,100 @@
+exercises:
+- id: c2w1-sum-rule-mcq-01
+  topic: derivative-rules
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tính chất: quy tắc tổng''?'
+    en: 'A boat and a child move in the same direction in the slide analogy. Which derivative rule has the same add-the-rates flavor?'
+  explanation:
+    vi: 'Ý đúng: độ dốc tổng bằng tổng các độ dốc.'
+    en: 'Correct: the slope of a sum is the sum of slopes.'
+  hints: []
+  options:
+  - vi: độ dốc tổng bằng tổng các độ dốc
+    en: the slope of a sum is the sum of slopes
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative of a sum is found by multiplying the two separate derivatives.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: Only the faster component contributes to the derivative of the total.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The sum rule works only when both functions are straight lines.
+  answer:
+  - 0
+- id: c2w1-sum-rule-truefalse-02
+  topic: derivative-rules
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tính chất: quy tắc tổng'', công thức $(g+h)''=g''+h''$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'When two changing quantities are added, their small changes add, so their derivatives add.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The sum rule works by adding the separate small changes from each term.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Thay đổi nhỏ của tổng bằng tổng các thay đổi nhỏ.
+    en: The small change of a sum is the sum of the small changes.
+  - vi: Đạo hàm của tổng bằng tích các đạo hàm thành phần.
+    en: The derivative of a sum is the product of the component derivatives.
+  - vi: Quy tắc tổng chỉ áp dụng cho hai vận tốc vật lý.
+    en: The sum rule applies only to two physical velocities.
+  reasonAnswer: 0
+- id: c2w1-sum-rule-parametric-03
+  topic: derivative-rules
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-sum-rule-matching-04
+  topic: derivative-rules
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match each sum-rule component with its derivative contribution.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The matches show how each addend contributes its own derivative before the pieces are summed.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$

@@ -1,0 +1,188 @@
+exercises:
+- id: c1w1-ml-mcq-01
+  topic: ml-motivation
+  type: mcq
+  difficulty: 1
+  tags:
+  - ml
+  prompt:
+    vi: Điều nào đúng về ma trận trong nhận dạng ảnh?
+    en: Which statement about matrices in image recognition is correct?
+  explanation:
+    vi: Ảnh và trọng số đều là mảng số; phép nhân ma trận biến đổi biểu diễn.
+    en: Images and weights are numeric arrays; matrix products transform representations.
+  hints: []
+  options:
+  - vi: Chỉ dùng để vẽ.
+    en: Only used for plotting.
+  - vi: Ảnh có thể là ma trận pixel; lớp học máy dùng phép toán ma trận.
+    en: An image can be a pixel matrix; ML layers use matrix operations.
+  - vi: Chỉ dùng cho 2 biến.
+    en: Only for 2 variables.
+  answer:
+  - 1
+- id: c1w1-ml-tf-02
+  topic: ml-motivation
+  type: true-false
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Hệ tuyến tính giúp mô tả nhiều ràng buộc lên biến.
+    en: Linear systems help describe multiple constraints on variables.
+  explanation:
+    vi: 'Đúng: mỗi phương trình là một ràng buộc.'
+    en: 'True: each equation is a constraint.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Mỗi phương trình ràng buộc các biến.
+    en: Each equation constrains variables.
+  - vi: Vì mọi ML là tuyến tính.
+    en: Because all ML is linear.
+  reasonAnswer: 0
+- id: c1w1-ml-match-03
+  topic: ml-motivation
+  type: matching
+  difficulty: 1
+  tags:
+  - representation
+  prompt:
+    vi: Ghép khái niệm ML với biểu diễn.
+    en: Match ML ideas to representations.
+  explanation:
+    vi: Các đối tượng nhiều số được đóng gói thành vector/ma trận.
+    en: Multi-number objects are packaged as vectors/matrices.
+  hints: []
+  pairs:
+  - left:
+      vi: Ảnh xám
+      en: Grayscale image
+    right:
+      vi: Ma trận pixel
+      en: Pixel matrix
+  - left:
+      vi: Một mẫu dữ liệu
+      en: One data example
+    right:
+      vi: Vector đặc trưng
+      en: Feature vector
+  - left:
+      vi: Lớp tuyến tính
+      en: Linear layer
+    right:
+      vi: Ma trận trọng số
+      en: Weight matrix
+- id: c1w1-ml-predict-04
+  topic: ml-motivation
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Dự đoán output NumPy.
+    en: Predict the NumPy output.
+  explanation:
+    vi: 'Từng hàng của W dot với x: 12 và 34.'
+    en: 'Each row of W dots x: 12 and 34.'
+  hints: []
+  code: 'import numpy as np
+
+    W=np.array([[1,2],[3,4]])
+
+    x=np.array([10,1])
+
+    print(W @ x)'
+  options:
+  - '[12 34]'
+  - '[12 31]'
+  - '[11 43]'
+  answer: 0
+- id: c1w1-ml-parsons-05
+  topic: ml-motivation
+  type: parsons
+  difficulty: 2
+  tags:
+  - workflow
+  prompt:
+    vi: Sắp xếp pipeline ML toy.
+    en: Order a toy ML pipeline.
+  explanation:
+    vi: Dữ liệu thành số, rồi nhân ma trận, rồi diễn giải điểm số.
+    en: Data becomes numbers, then matrix products, then scores are interpreted.
+  hints: []
+  steps:
+  - vi: Biểu diễn ảnh thành vector pixel.
+    en: Represent image as a pixel vector.
+  - vi: Nhân với ma trận trọng số.
+    en: Multiply by a weight matrix.
+  - vi: Thu vector điểm số.
+    en: Obtain a score vector.
+  - vi: Chọn nhãn có điểm tốt nhất.
+    en: Choose the best-scoring label.
+- id: c1w1-ml-multi-06
+  topic: ml-motivation
+  type: multi-step
+  difficulty: 2
+  tags:
+  - systems
+  prompt:
+    vi: Mô hình toy có $s_1=a+b=10$, $s_2=a+2b=12$.
+    en: A toy model has $s_1=a+b=10$, $s_2=a+2b=12$.
+  explanation:
+    vi: Hai ràng buộc độc lập cho nghiệm duy nhất.
+    en: Two independent constraints give a unique solution.
+  hints: []
+  parts:
+  - type: matrix
+    prompt:
+      vi: Ma trận hệ số là gì?
+      en: What is the coefficient matrix?
+    answer:
+    - - 1
+      - 1
+    - - 1
+      - 2
+    explanation:
+      vi: Hàng là hệ số của $a,b$.
+      en: Rows are coefficients of $a,b$.
+  - type: matrix
+    prompt:
+      vi: Nghiệm cột $(a,b)$?
+      en: Column solution $(a,b)$?
+    answer:
+    - - 8
+    - - 2
+    explanation:
+      vi: Trừ hai phương trình được $b=2$.
+      en: Subtract equations to get $b=2$.
+- id: c1w1-ml-construct-07
+  topic: ml-motivation
+  type: construct
+  difficulty: 3
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 2×2 nguyên, không số 0, biến $[1,1]^T$ thành $[3,7]^T$.
+    en: Construct a 2×2 integer matrix, no zero entries, mapping $[1,1]^T$ to $[3,7]^T$.
+  explanation:
+    vi: Tổng từng hàng phải là 3 và 7.
+    en: Each row sum must be 3 and 7.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: integerEntries
+  - kind: noZeroEntries
+  - kind: mapsTo
+    x:
+    - 1
+    - 1
+    b:
+    - 3
+    - 7
+  example:
+  - - 1
+    - 2
+  - - 3
+    - 4

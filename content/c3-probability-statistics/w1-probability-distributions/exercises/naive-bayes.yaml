@@ -1,0 +1,235 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-naive-bayes-mcq-01",
+      "topic": "naive-bayes",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề naive bayes?",
+        "en": "Which statement best describes naive bayes?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng là nhân likelihood của từng từ trong mỗi lớp rồi chuẩn hóa. Các lựa chọn sai cộng likelihood, giả sử các từ độc lập vô điều kiện, hoặc bỏ prior lớp spam/ham.",
+        "en": "The correct answer multiplies word likelihoods within each class and then normalizes. The wrong choices add likelihoods, assume unconditional word independence, or drop the spam/ham prior."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là multiplying feature likelihoods under a conditional independence assumption.",
+          "en": "The focus is multiplying feature likelihoods under a conditional independence assumption."
+        },
+        {
+          "vi": "Với hai từ, Naive Bayes cộng $P(lottery\\mid spam)+P(winning\\mid spam)$.",
+          "en": "With two words, Naive Bayes adds $P(lottery\\mid spam)+P(winning\\mid spam)$."
+        },
+        {
+          "vi": "Mô hình không cần prior $P(spam)$ vì chỉ dùng tần suất từ.",
+          "en": "The model does not need the prior $P(spam)$ because it only uses word frequencies."
+        },
+        {
+          "vi": "Giả định naive nói rằng các từ độc lập ngay cả khi không biết lớp.",
+          "en": "The naive assumption says words are independent even without conditioning on the class."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-naive-bayes-numeric-02",
+      "topic": "naive-bayes",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Tính $0.2\\cdot0.7\\cdot0.75 / (0.2\\cdot0.7\\cdot0.75 + 0.8\\cdot0.125\\cdot0.1)$.",
+        "en": "Compute $0.2\\cdot0.7\\cdot0.75 / (0.2\\cdot0.7\\cdot0.75 + 0.8\\cdot0.125\\cdot0.1)$."
+      },
+      "explanation": {
+        "vi": "Naive Bayes posterior for two words.",
+        "en": "Naive Bayes posterior for two words."
+      },
+      "answers": [
+        {
+          "value": 0.913043
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-naive-bayes-matching-03",
+      "topic": "naive-bayes",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong naive bayes.",
+        "en": "Match key terms in naive bayes."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches connect prior class probabilities, word likelihoods, class scores, and normalized posteriors."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3w1-naive-bayes-code-04",
+      "topic": "naive-bayes",
+      "type": "code",
+      "difficulty": 3,
+      "tags": [
+        "python"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng dùng shortcut; hãy viết công thức.",
+          "en": "Do not use shortcuts; write the formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Cài đặt Naive Bayes toy cho spam/ham.",
+        "en": "Implement a toy Naive Bayes spam/ham posterior."
+      },
+      "explanation": {
+        "vi": "Hàm đúng chuyển công thức xác suất thành mã trực tiếp.",
+        "en": "The code multiplies the lottery and winning likelihoods inside each class before normalizing scores."
+      },
+      "starter": "def spam_posterior(prior_spam, spam_liks, ham_liks):\n    return prior_spam\n",
+      "solution": "def spam_posterior(prior_spam, spam_liks, ham_liks):\n    ps = prior_spam\n    ph = 1 - prior_spam\n    for v in spam_liks:\n        ps *= v\n    for v in ham_liks:\n        ph *= v\n    return ps / (ps + ph)\n",
+      "tests": "def test_two_words():\n    ans = spam_posterior(0.2, [0.7, 0.75], [0.125, 0.1])\n    assert abs(ans - 0.9130434782608695) < 1e-9\n\ndef test_one_word():\n    ans = spam_posterior(0.2, [0.7], [0.125])\n    assert abs(ans - 0.5833333333333334) < 1e-9\n"
+    },
+    {
+      "id": "c3w1-naive-bayes-multistep-05",
+      "topic": "naive-bayes",
+      "type": "multi-step",
+      "difficulty": 3,
+      "tags": [
+        "word-problem"
+      ],
+      "hints": [
+        {
+          "vi": "Xác định mẫu số ở từng phần.",
+          "en": "Identify the denominator in each part."
+        }
+      ],
+      "prompt": {
+        "vi": "Bài nhiều bước kết nối naive bayes với ví dụ xúc xắc/email.",
+        "en": "Multi-step problem connecting naive bayes to a dice/email example."
+      },
+      "explanation": {
+        "vi": "Mỗi phần kiểm tra một quyết định mô hình hóa khác nhau.",
+        "en": "This chain compares the one-word spam posterior with the stronger two-word Naive Bayes posterior."
+      },
+      "parts": [
+        {
+          "type": "numeric",
+          "prompt": {
+            "vi": "Hai xúc xắc: xác suất tổng bằng 7 là bao nhiêu?",
+            "en": "Two dice: what is the probability the sum is 7?"
+          },
+          "answers": [
+            {
+              "value": 0.16666666666666666
+            }
+          ],
+          "tolerance": 0.001,
+          "explanation": {
+            "vi": "Có 6 kết quả trên 36.",
+            "en": "There are 6 outcomes out of 36."
+          }
+        },
+        {
+          "type": "true-false",
+          "prompt": {
+            "vi": "Biết xúc xắc đầu là 6 không đổi mẫu số.",
+            "en": "Knowing the first die is 6 does not change the denominator."
+          },
+          "answer": false,
+          "explanation": {
+            "vi": "Điều kiện làm mẫu số còn 6.",
+            "en": "The condition reduces the denominator to 6."
+          }
+        },
+        {
+          "type": "mcq",
+          "prompt": {
+            "vi": "Trong lọc spam, prior là gì?",
+            "en": "In spam filtering, what is the prior?"
+          },
+          "options": [
+            {
+              "vi": "Xác suất lớp spam dùng làm trọng số ban đầu.",
+              "en": "The spam class probability used as the initial weight."
+            },
+            {
+              "vi": "$P(word\\mid spam)$.",
+              "en": "$P(word\\mid spam)$."
+            },
+            {
+              "vi": "Xác suất spam đã chuẩn hóa sau khi nhân likelihood của từ.",
+              "en": "The normalized spam probability after multiplying word likelihoods."
+            }
+          ],
+          "answer": [
+            0
+          ],
+          "explanation": {
+            "vi": "Prior là xác suất trước bằng chứng.",
+            "en": "The prior is probability before evidence."
+          }
+        }
+      ]
+    }
+  ]
+}

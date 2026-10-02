@@ -1,0 +1,112 @@
+﻿exercises:
+- id: c2w3-hessian-matching-03
+  topic: hessian
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép các entry trong Hessian hai biến.
+    en: Match the entries in a two-variable Hessian.
+  explanation:
+    vi: Các entry $f_{xx},f_{xy},f_{yx},f_{yy}$ cho curvature theo từng trục và hướng trộn.
+    en: The entries $f_{xx},f_{xy},f_{yx},f_{yy}$ encode axis and mixed curvature.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-hessian-find-error-04
+  topic: hessian
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi lập Hessian từ gradient.
+    en: Find the error when building a Hessian from a gradient.
+  explanation:
+    vi: Sai lầm thường là chép lại gradient; Hessian cần đạo hàm thêm từng thành phần gradient.
+    en: A common mistake is copying the gradient; the Hessian differentiates each gradient component again.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-hessian-matrix-05
+  topic: hessian
+  type: matrix
+  difficulty: 2
+  tags:
+  - hessian
+  prompt:
+    vi: Tìm Hessian của $f(x,y)=2x^2+3y^2-xy$.
+    en: Find the Hessian of $f(x,y)=2x^2+3y^2-xy$.
+  explanation:
+    vi: $f_{xx}=4$, $f_{xy}=f_{yx}=-1$, $f_{yy}=6$.
+    en: $f_{xx}=4$, $f_{xy}=f_{yx}=-1$, $f_{yy}=6$.
+  hints: []
+  answer:
+  - - 4
+    - -1
+  - - -1
+    - 6
+  tolerance: 0
+- id: c2w3-hessian-construct-06
+  topic: hessian
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng Hessian $2\times2$ nguyên, đối xứng, determinant dương, đường chéo dương.
+    en: Construct an integer $2\times2$ symmetric Hessian with positive determinant and positive diagonal.
+  explanation:
+    vi: Ví dụ $[[4,-1],[-1,6]]$ có determinant 23.
+    en: Example $[[4,-1],[-1,6]]$ has determinant 23.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: det
+    value: 23
+  - kind: integerEntries
+  example:
+  - - 4
+    - -1
+  - - -1
+    - 6
+- id: c2w3-hessian-parametric-07
+  topic: hessian
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Đạo hàm riêng sinh ngẫu nhiên.
+    en: Generated partial derivative.
+  explanation:
+    vi: Generator tạo bài đạo hàm riêng.
+    en: Generator creates partial derivative exercise.
+  hints: []
+  generator: partial-derivative
+  params: {}

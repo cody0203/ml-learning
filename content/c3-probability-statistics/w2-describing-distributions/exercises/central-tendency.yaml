@@ -1,0 +1,220 @@
+exercises:
+- id: c3w2-central-tendency-mcq-01
+  topic: central-tendency
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về central-tendency.
+    en: Choose the statement that best explains mean, median, and mode for the shown PMF.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: The histogram is right-skewed, so center must be described with the actual PMF and not with a generic symmetry rule.
+  hints: []
+  options:
+  - vi: PMF có đỉnh gần 3; mean có thể bị kéo theo đuôi phải.
+    en: The PMF peaks near 3; the mean can be pulled by the right tail.
+  - vi: Mode luôn là giá trị lớn nhất trên trục ngang.
+    en: The mode is always the largest value on the horizontal axis.
+  - vi: Median của PMF này phải bằng trung bình của 0 và 5.
+    en: The median of this PMF must be the average of 0 and 5.
+  - vi: Mean không dùng xác suất của từng cột.
+    en: The mean does not use the probability of each bar.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - 0
+    - 6
+    yRange:
+    - 0
+    - 0.45
+    bars:
+    - x: 0
+      h: 0.03
+    - x: 1
+      h: 0.16
+    - x: 2
+      h: 0.31
+    - x: 3
+      h: 0.36
+    - x: 4
+      h: 0.13
+    - x: 5
+      h: 0.03
+    xLabel: k
+    yLabel: P(X=k)
+- id: c3w2-central-tendency-tf-02
+  topic: central-tendency
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: the median can stay stable when one salary is replaced by a huge outlier.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the median depends on order, while the arithmetic mean absorbs the magnitude of the outlier.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Median chỉ nhìn thứ tự nên một lương cực lớn không đổi vị trí giữa.
+    en: The median uses order, so one enormous salary does not move the middle position.
+  - vi: Median cộng trực tiếp mọi độ lớn như mean.
+    en: The median directly adds all magnitudes just like the mean.
+  - vi: Một ngoại lệ luôn làm median lớn hơn mean.
+    en: One outlier always makes the median larger than the mean.
+  reasonAnswer: 0
+- id: c3w2-central-tendency-matching-03
+  topic: central-tendency
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho central-tendency.
+    en: Match each measure of center with what it reports.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The matching separates the average balance point, the middle ordered value, and the most frequent value.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-central-tendency-parsons-04
+  topic: central-tendency
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho central-tendency.
+    en: Order the steps for computing center from a small data set.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: Sorting is needed for the median, counting is needed for the mode, and the mean uses the raw sum.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-central-tendency-numeric-05
+  topic: central-tendency
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: 'Data $1,1,2,10$: compute the median.'
+    en: 'Data $1,1,2,10$: compute the median.'
+  explanation:
+    vi: Sorted data gives middle average $(1+2)/2=1.5$; the outlier 10 does not dominate median.
+    en: Sorted data gives middle average $(1+2)/2=1.5$; the outlier 10 does not dominate median.
+  hints: []
+  answers:
+  - value: 1.5
+  tolerance: 0.001
+- id: c3w2-central-tendency-construct-06
+  topic: central-tendency
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo 5 giá trị dữ liệu có mean 4 và median 3, với mean lớn hơn median.
+    en: Build 5 data values with mean 4 and median 3, with mean greater than median.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: The example sums to 20, so the mean is 4; the middle value is 3, and the large 8 pulls the mean above it.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 5
+  constraints:
+  - kind: mean
+    value: 4
+  - kind: median
+    value: 3
+  - kind: meanGreaterThanMedian
+  example:
+  - - 1
+    - 3
+    - 3
+    - 5
+    - 8
+- id: c3w2-central-tendency-predict-07
+  topic: central-tendency
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output NumPy cho central-tendency.
+    en: Predict the NumPy output for central-tendency.
+  explanation:
+    vi: Theo dõi axis, ddof và phép chuẩn hóa.
+    en: NumPy averages all four entries for the mean and sorts them internally to average the two middle values for the median.
+  hints: []
+  code: 'import numpy as np
+
+    x=np.array([1,1,2,10])
+
+    print(np.mean(x), np.median(x))'
+  options:
+  - 3.5 1.5
+  - 1.5 3.5
+  - 3.5 2.0
+  answer: 0
+- id: c3w2-central-tendency-code-08
+  topic: central-tendency
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài đặt `mean_median_mode` từ đầu; không dùng shortcut một dòng của thư viện.
+    en: Implement `mean_median_mode` from scratch; avoid one-line library shortcuts.
+  explanation:
+    vi: Lời giải duyệt dữ liệu rõ ràng và kiểm tra edge cases.
+    en: The implementation sorts once for the median and builds a frequency table so repeated values determine the mode.
+  hints:
+  - vi: Viết công thức trước rồi chuyển thành vòng lặp/NumPy cơ bản.
+    en: Write the formula first, then turn it into loops/basic NumPy.
+  starter: "def mean_median_mode(x):\n    return None\n"
+  solution: "def mean_median_mode(x):\n    xs=sorted(x); n=len(xs); mean=sum(xs)/n\n    median=xs[n//2] if n%2 else (xs[n//2-1]+xs[n//2])/2\n\
+    \    counts={}\n    for v in xs: counts[v]=counts.get(v,0)+1\n    mode=max(counts, key=lambda k:(counts[k],-xs.index(k)))\n\
+    \    return mean, median, mode\n"
+  tests: "def test_basic():\n    assert mean_median_mode([1,1,2,10]) == (3.5,1.5,1)\ndef test_odd():\n    assert mean_median_mode([3,2,3])\
+    \ == (8/3,3,3)\n"

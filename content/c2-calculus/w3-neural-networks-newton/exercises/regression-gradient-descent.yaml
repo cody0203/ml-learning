@@ -1,0 +1,144 @@
+﻿exercises:
+- id: c2w3-regression-gradient-descent-matching-03
+  topic: regression-gradient-descent
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong gradient MSE của perceptron.
+    en: Match notation in the perceptron MSE gradient.
+  explanation:
+    vi: Residual quyết định dấu, còn từng $x_i$ quyết định độ lớn gradient của weight đó.
+    en: The residual sets the sign, while each $x_i$ sets the magnitude for that weight's gradient.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-regression-gradient-descent-find-error-04
+  topic: regression-gradient-descent
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi dấu trong gradient hồi quy perceptron.
+    en: Find the sign error in a regression-perceptron gradient.
+  explanation:
+    vi: Nếu tính gradient là $(\hat y-y)x$, update phải trừ nó; đổi sang $(y-\hat y)x$ thì dấu update phải đổi.
+    en: If the gradient is $(\hat y-y)x$, the update subtracts it; using $(y-\hat y)x$ requires changing the sign convention.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-regression-gradient-descent-numeric-05
+  topic: regression-gradient-descent
+  type: numeric
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Với $x=(2,1)$, $y=5$, $\hat y=3$, tính gradient MSE theo $(w_1,w_2,b)$.
+    en: With $x=(2,1)$, $y=5$, $\hat y=3$, compute MSE gradient wrt $(w_1,w_2,b)$.
+  explanation:
+    vi: $(\hat y-y)=-2$, nên gradient $(-4,-2,-2)$.
+    en: $(\hat y-y)=-2$, so gradient is $(-4,-2,-2)$.
+  hints: []
+  answers:
+  - label: dw1
+    value: -4
+  - label: dw2
+    value: -2
+  - label: db
+    value: -2
+  tolerance: 0
+- id: c2w3-regression-gradient-descent-multi-step-06
+  topic: regression-gradient-descent
+  type: multi-step
+  difficulty: 2
+  tags:
+  - trace
+  prompt:
+    vi: Một perceptron hồi quy có $w=(0,0)$, $b=0$, $x=(2,1)$, $y=5$, $\alpha=0.1$.
+    en: A regression perceptron has $w=(0,0)$, $b=0$, $x=(2,1)$, $y=5$, $\alpha=0.1$.
+  explanation:
+    vi: Tính dự đoán, gradient, rồi cập nhật.
+    en: Compute prediction, gradient, then update.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $\hat y$ ban đầu?
+      en: Initial $\hat y$?
+    answers:
+    - value: 0
+    tolerance: 0
+    explanation:
+      vi: Tổng tuyến tính bằng 0.
+      en: Linear sum is 0.
+  - type: numeric
+    prompt:
+      vi: Gradient theo $w_1,w_2,b$?
+      en: Gradient wrt $w_1,w_2,b$?
+    answers:
+    - label: dw1
+      value: -10
+    - label: dw2
+      value: -5
+    - label: db
+      value: -5
+    tolerance: 0
+    explanation:
+      vi: $(\hat y-y)=-5$ nhân với $(2,1,1)$.
+      en: $(\hat y-y)=-5$ times $(2,1,1)$.
+  - type: numeric
+    prompt:
+      vi: $(w_1,w_2,b)$ mới?
+      en: New $(w_1,w_2,b)$?
+    answers:
+    - label: w1
+      value: 1
+    - label: w2
+      value: 0.5
+    - label: b
+      value: 0.5
+    tolerance: 1.0e-09
+    explanation:
+      vi: Trừ $0.1$ lần gradient.
+      en: Subtract $0.1$ times gradient.
+- id: c2w3-regression-gradient-descent-parametric-07
+  topic: regression-gradient-descent
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Một bước gradient descent sinh ngẫu nhiên.
+    en: Generated one gradient step.
+  explanation:
+    vi: Generator tạo bài quadratic 2D.
+    en: Generator creates 2D quadratic problem.
+  hints: []
+  generator: gradient-step
+  params: {}

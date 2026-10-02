@@ -1,0 +1,111 @@
+exercises:
+- id: c2w1-trig-derivatives-mcq-01
+  topic: inverse-trig-exp-log
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm lượng giác'?
+    en: The sine curve is flat at $x=\pi/2$. Which derivative value explains that?
+  explanation:
+    vi: 'Ý đúng: đồ thị sin có độ dốc được mô tả bởi cos.'
+    en: 'Correct: the slope pattern of sine is cosine.'
+  hints: []
+  options:
+  - vi: đồ thị sin có độ dốc được mô tả bởi cos
+    en: the slope pattern of sine is cosine
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative of sine is sine again, so the slope there is $1$.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The slope is undefined at a sine peak because the curve turns around.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Degrees and radians give the same derivative values without conversion.
+  answer:
+  - 0
+- id: c2w1-trig-derivatives-truefalse-02
+  topic: inverse-trig-exp-log
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm lượng giác', công thức $\frac{d}{dx}\sin x=\cos x,\quad \frac{d}{dx}\cos x=-\sin x$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: The identities $(\sin x)'=\cos x$ and $(\cos x)'=-\sin x$ assume the input angle is in radians.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The trigonometric derivative table assumes angles are measured in radians.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Công thức đạo hàm lượng giác chuẩn dùng góc radian.
+    en: The standard trigonometric derivative formulas use radian measure.
+  - vi: Đạo hàm của $\sin x$ bằng $\sin x$ nên đỉnh có độ dốc 1.
+    en: The derivative of $\sin x$ is $\sin x$, so the peak has slope 1.
+  - vi: Tại cực đại của sin, đạo hàm không tồn tại.
+    en: At a sine maximum, the derivative does not exist.
+  reasonAnswer: 0
+- id: c2w1-trig-derivatives-matching-03
+  topic: inverse-trig-exp-log
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match each trigonometric function with its derivative.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The pairs focus on sine and cosine identities, including the negative sign in the cosine derivative.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$
+- id: c2w1-trig-derivatives-predictoutput-04
+  topic: inverse-trig-exp-log
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output của NumPy.
+    en: Predict the NumPy output before comparing with trig slopes.
+  explanation:
+    vi: Gradient của $x^2$ tại các điểm là $2x$.
+    en: The array output is a quick check of slopes, while the topic reminder is that trig slopes cycle.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  code: 'import numpy as np
+
+    x = np.array([-1., 0., 2.])
+
+    print(2*x)'
+  options:
+  - '[-2.  0.  4.]'
+  - '[-1.  0.  2.]'
+  - '[1. 0. 4.]'
+  - shape error
+  answer: 0

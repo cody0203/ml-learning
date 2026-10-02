@@ -1,0 +1,177 @@
+exercises:
+- id: c1w1-sent-mcq-01
+  topic: sentence-systems
+  type: mcq
+  difficulty: 1
+  tags:
+  - classification
+  prompt:
+    vi: Hệ câu nào mâu thuẫn?
+    en: Which sentence system is contradictory?
+  explanation:
+    vi: Một đối tượng không thể cùng lúc bị buộc hai màu khác nhau.
+    en: One object cannot be forced to have two different colors.
+  hints: []
+  options:
+  - vi: Chó đen; mèo cam.
+    en: Dog black; cat orange.
+  - vi: Chó đen; chó đen.
+    en: Dog black; dog black.
+  - vi: Chó đen; chó trắng.
+    en: Dog black; dog white.
+  answer:
+  - 2
+- id: c1w1-sent-tf-02
+  topic: sentence-systems
+  type: true-false
+  difficulty: 2
+  tags:
+  - redundant
+  prompt:
+    vi: Hệ redundant có thể nhất quán.
+    en: A redundant system can be consistent.
+  explanation:
+    vi: Lặp lại một câu đúng không tạo mâu thuẫn.
+    en: Repeating a true statement does not create contradiction.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Thừa không đồng nghĩa mâu thuẫn.
+    en: Redundant does not mean contradictory.
+  - vi: Redundant luôn vô nghiệm.
+    en: Redundant always has no solution.
+  reasonAnswer: 0
+- id: c1w1-sent-match-03
+  topic: sentence-systems
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép loại hệ với mô tả.
+    en: Match system type to description.
+  explanation:
+    vi: Ba nhãn dự báo ba kiểu nghiệm sau này.
+    en: The labels preview later solution counts.
+  hints: []
+  pairs:
+  - left:
+      vi: Complete
+      en: Complete
+    right:
+      vi: Một đáp án
+      en: One answer
+  - left:
+      vi: Redundant
+      en: Redundant
+    right:
+      vi: Thông tin thừa
+      en: Repeated/implied information
+  - left:
+      vi: Contradictory
+      en: Contradictory
+    right:
+      vi: Không thể cùng đúng
+      en: Cannot all be true
+- id: c1w1-sent-parsons-04
+  topic: sentence-systems
+  type: parsons
+  difficulty: 2
+  tags:
+  - quiz
+  prompt:
+    vi: 'Sắp xếp lập luận: một trong chó/mèo/chim đỏ; một trong chó/mèo cam; chó đen.'
+    en: 'Order reasoning: one of dog/cat/bird red; one of dog/cat orange; dog black.'
+  explanation:
+    vi: Loại chó khỏi đỏ/cam, suy ra mèo cam và chim đỏ.
+    en: Eliminate dog from red/orange, infer cat orange and bird red.
+  hints: []
+  steps:
+  - vi: Chó đã đen.
+    en: Dog is black.
+  - vi: Vậy chó không là con cam trong cặp chó/mèo.
+    en: So dog is not the orange one among dog/cat.
+  - vi: Mèo là cam.
+    en: Cat is orange.
+  - vi: Chim là đỏ.
+    en: Bird is red.
+- id: c1w1-sent-error-05
+  topic: sentence-systems
+  type: find-error
+  difficulty: 2
+  tags:
+  - misconception
+  prompt:
+    vi: Tìm bước sai đầu tiên.
+    en: Find the first wrong step.
+  explanation:
+    vi: Lặp lại thông tin là thừa, không mâu thuẫn.
+    en: Repeating information is redundant, not contradictory.
+  hints: []
+  steps:
+  - vi: Hệ gồm 'chó đen' và 'chó đen'.
+    en: System has 'dog black' and 'dog black'.
+  - vi: Hai câu giống nhau nên mâu thuẫn.
+    en: Identical statements contradict.
+  - vi: Hệ vô nghiệm.
+    en: System has no solution.
+  answer: 1
+- id: c1w1-sent-multi-06
+  topic: sentence-systems
+  type: multi-step
+  difficulty: 2
+  tags:
+  - reasoning
+  prompt:
+    vi: A,B,C có đúng một đối tượng đỏ; A không đỏ; B không đỏ.
+    en: A,B,C have exactly one red object; A not red; B not red.
+  explanation:
+    vi: A và B bị loại nên C đỏ.
+    en: A and B are eliminated, so C is red.
+  hints: []
+  parts:
+  - type: mcq
+    prompt:
+      vi: Ai đỏ?
+      en: Who is red?
+    options:
+    - vi: A
+      en: A
+    - vi: B
+      en: B
+    - vi: C
+      en: C
+    answer:
+    - 2
+    explanation:
+      vi: Chỉ còn C.
+      en: Only C remains.
+  - type: true-false
+    prompt:
+      vi: Hệ complete cho câu hỏi này.
+      en: The system is complete for this question.
+    answer: true
+- id: c1w1-sent-construct-07
+  topic: sentence-systems
+  type: construct
+  difficulty: 3
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 2×2 singular, không số 0, biểu diễn thông tin lặp.
+    en: Construct a singular 2×2 matrix with no zeros, representing repeated information.
+  explanation:
+    vi: Một hàng là bội của hàng kia.
+    en: One row is a multiple of the other.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: singular
+  - kind: noZeroEntries
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+  - - 2
+    - 4

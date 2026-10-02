@@ -1,0 +1,75 @@
+id: w3
+order: 3
+title:
+  vi: 'Tuần 3: Tối ưu hóa mạng neural và phương pháp Newton'
+  en: 'Week 3: Optimization in neural networks and Newton''s method'
+source: syllabus/c2-calculus/W3-part-1.pdf, W3-part-2.pdf
+topics:
+- id: gradient-descent-backprop
+  title:
+    vi: Gradient descent và backpropagation
+    en: Gradient descent and backpropagation
+- id: newtons-method
+  title:
+    vi: Phương pháp Newton
+    en: Newton's method
+- id: newtons-method-example
+  title:
+    vi: Ví dụ phương pháp Newton
+    en: 'Newton''s method: an example'
+- id: second-derivative
+  title:
+    vi: Đạo hàm bậc hai
+    en: The second derivative
+- id: hessian
+  title:
+    vi: Ma trận Hessian
+    en: The Hessian
+- id: hessians-concavity
+  title:
+    vi: Hessian và độ lõm/lồi
+    en: Hessians and concavity
+- id: newton-two-variables
+  title:
+    vi: Newton cho hai biến
+    en: Newton's method for two variables
+- id: regression-perceptron
+  title:
+    vi: Hồi quy với perceptron
+    en: Regression with a perceptron
+- id: regression-loss
+  title:
+    vi: Hàm mất mát hồi quy
+    en: 'Regression with a perceptron: loss function'
+- id: regression-gradient-descent
+  title:
+    vi: Gradient descent cho hồi quy perceptron
+    en: 'Regression with a perceptron: gradient descent'
+- id: classification-perceptron
+  title:
+    vi: Phân loại với perceptron
+    en: Classification with a perceptron
+- id: sigmoid-function
+  title:
+    vi: Hàm sigmoid
+    en: 'Classification with a perceptron: the sigmoid function'
+- id: classification-gradient-descent
+  title:
+    vi: Gradient descent cho phân loại perceptron
+    en: 'Classification with a perceptron: gradient descent'
+- id: classification-derivatives
+  title:
+    vi: Tính đạo hàm cho phân loại
+    en: 'Classification with a perceptron: calculating the derivatives'
+- id: classification-neural-network
+  title:
+    vi: Phân loại với mạng neural
+    en: Classification with a neural network
+- id: nn-log-loss
+  title:
+    vi: Tối thiểu log-loss trong mạng neural
+    en: 'Classification with a neural network: minimizing log-loss'
+- id: conclusion
+  title:
+    vi: Tổng kết tối ưu hóa
+    en: Conclusion

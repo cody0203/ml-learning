@@ -1,0 +1,141 @@
+exercises:
+- id: c1w1-det3-num-01
+  topic: determinant-3x3
+  type: numeric
+  difficulty: 2
+  tags:
+  - determinant
+  prompt:
+    vi: Tính det $\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$.
+    en: Compute det $\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$.
+  explanation:
+    vi: 'Sarrus: $4+1+1-2-1-2=1$.'
+    en: 'Sarrus: $4+1+1-2-1-2=1$.'
+  hints: []
+  answers:
+  - value: 1
+- id: c1w1-det3-mcq-02
+  topic: determinant-3x3
+  type: mcq
+  difficulty: 1
+  tags:
+  - singular
+  prompt:
+    vi: Determinant 3×3 bằng 0 nghĩa là gì?
+    en: What does 3×3 determinant 0 mean?
+  explanation:
+    vi: Ma trận singular, hàng/cột phụ thuộc.
+    en: The matrix is singular; rows/columns dependent.
+  hints: []
+  options:
+  - vi: Non-singular
+    en: Non-singular
+  - vi: Hàng/cột phụ thuộc
+    en: Rows/columns dependent
+  - vi: Bắt buộc toàn 0
+    en: Must be all zeros
+  answer:
+  - 1
+- id: c1w1-det3-tf-03
+  topic: determinant-3x3
+  type: true-false
+  difficulty: 2
+  tags:
+  - sarrus
+  prompt:
+    vi: Sarrus có ba tích cộng và ba tích trừ.
+    en: Sarrus has three positive and three negative products.
+  explanation:
+    vi: Đúng theo các đường chéo trong slide.
+    en: True by the diagonals in the slides.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Ba đường xuống phải cộng, ba đường xuống trái trừ.
+    en: Three down-right added, three down-left subtracted.
+  - vi: Tất cả đều cộng.
+    en: All are added.
+  reasonAnswer: 0
+- id: c1w1-det3-code-04
+  topic: determinant-3x3
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài `det3(A)` bằng Sarrus, không dùng `np.linalg.det`.
+    en: Implement `det3(A)` by Sarrus, no `np.linalg.det`.
+  explanation:
+    vi: Cộng ba tích và trừ ba tích.
+    en: Add three products and subtract three products.
+  hints: []
+  starter: "def det3(A):\n    return 0"
+  solution: "def det3(A):\n    a,b,c=A[0]; d,e,f=A[1]; g,h,i=A[2]\n    return a*e*i + b*f*g + c*d*h - c*e*g - b*d*i - a*f*h"
+  tests: "def test_det3():\n    assert det3([[1,1,1],[1,2,1],[1,1,2]])==1\n    assert det3([[1,1,1],[1,1,2],[1,1,3]])==0\n    assert det3([[1,2,0],[0,2,2],[0,0,3]])==6"
+- id: c1w1-det3-error-05
+  topic: determinant-3x3
+  type: find-error
+  difficulty: 2
+  tags:
+  - signs
+  prompt:
+    vi: Tìm bước sai khi dùng Sarrus.
+    en: Find wrong step using Sarrus.
+  explanation:
+    vi: Ba tích cuối phải trừ, không cộng.
+    en: The last three products are subtracted, not added.
+  hints: []
+  steps:
+  - vi: 'Ba tích cộng: 4,1,1.'
+    en: 'Positive products: 4,1,1.'
+  - vi: 'Ba tích còn lại: 2,1,2.'
+    en: 'Remaining products: 2,1,2.'
+  - vi: Cộng cả sáu được 11.
+    en: Add all six to get 11.
+  answer: 2
+- id: c1w1-det3-construct-06
+  topic: determinant-3x3
+  type: construct
+  difficulty: 3
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 3×3 nguyên, không đường chéo, det=6.
+    en: Construct an integer non-diagonal 3×3 matrix with det=6.
+  explanation:
+    vi: Ma trận tam giác có det là tích đường chéo.
+    en: A triangular matrix has determinant equal to product of diagonal.
+  hints: []
+  rows: 3
+  cols: 3
+  constraints:
+  - kind: det
+    value: 6
+  - kind: integerEntries
+  - kind: notDiagonal
+  example:
+  - - 1
+    - 2
+    - 0
+  - - 0
+    - 2
+    - 2
+  - - 0
+    - 0
+    - 3
+- id: c1w1-det3-param-07
+  topic: determinant-3x3
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: 'Bài luyện: determinant 3×3.'
+    en: 'Drill: 3×3 determinant.'
+  explanation:
+    vi: Dùng Sarrus hoặc khử tam giác.
+    en: Use Sarrus or triangular elimination.
+  hints: []
+  generator: determinant
+  params:
+    size: 3

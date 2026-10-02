@@ -1,0 +1,245 @@
+exercises:
+- id: c1w4-02-mcq-fig
+  topic: singularity-rank-transformations
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  - concept
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: chọn đáp án đúng dựa trên dữ kiện, hình vẽ hoặc tính chất đã học.'
+    en: 'Singularity and rank of linear transformations: what is the area of the parallelogram from columns $(3,1)$ and $(1,2)$?'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: A nonzero area of 5 shows the transformation keeps two independent output directions, so the rank is 2.
+  hints: []
+  figure:
+    xRange:
+    - -1
+    - 5
+    yRange:
+    - -1
+    - 4
+    vectors:
+    - to:
+      - 3
+      - 1
+      label: Ae1
+      color: '#2563eb'
+    - to:
+      - 1
+      - 2
+      label: Ae2
+      color: '#16a34a'
+    - from:
+      - 3
+      - 1
+      to:
+      - 4
+      - 3
+      color: '#16a34a'
+    - from:
+      - 1
+      - 2
+      to:
+      - 4
+      - 3
+      color: '#2563eb'
+  options:
+  - vi: '5'
+    en: '5'
+  - vi: '0'
+    en: '0'
+  - vi: -5 as geometric area
+    en: -5 as geometric area
+  answer:
+  - 0
+- id: c1w4-02-tf
+  topic: singularity-rank-transformations
+  type: true-false
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: quyết định mệnh đề đúng hay sai và chọn lý do phù hợp nếu có.'
+    en: 'Singularity and rank of linear transformations: determinant zero always signals loss of at least one independent direction for a square matrix.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: For a square linear map, determinant zero means the image has smaller dimension than the input space.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Ảnh của phép biến đổi có dimension nhỏ hơn 2.
+    en: The transformation image has dimension less than 2.
+  - vi: Hình vuông đơn vị chắc chắn giữ nguyên diện tích.
+    en: The unit square must keep exactly the same area.
+  reasonAnswer: 0
+- id: c1w4-02-numeric
+  topic: singularity-rank-transformations
+  type: numeric
+  difficulty: 1
+  tags:
+  - determinant
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: tính giá trị số được yêu cầu; chú ý determinant, rank hoặc eigenvalue.'
+    en: 'Singularity and rank of linear transformations: compute $det([[1,3],[2,1]])$.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The signed determinant is $-5$; because it is nonzero, this particular map is not rank-deficient.
+  hints: []
+  answers:
+  - value: -5
+  tolerance: 0
+- id: c1w4-02-construct
+  topic: singularity-rank-transformations
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: dựng một ví dụ thỏa tất cả ràng buộc; đáp án mẫu chỉ là một khả năng.'
+    en: Construct a rank-1 2×2 matrix.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The example has row two equal to twice row one, so all outputs lie along one direction and the rank is exactly 1.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: rank
+    value: 1
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+  - - 2
+    - 4
+- id: c1w4-02-matching
+  topic: singularity-rank-transformations
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: ghép mỗi khái niệm với công thức hoặc diễn giải đúng.'
+    en: Match terms in Singularity and rank of linear transformations.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: 'The matches separate three ideas: determinant tests collapse, rank measures image dimension, and eigenvectors mark fixed directions.'
+  hints: []
+  pairs:
+  - left:
+      vi: determinant
+      en: determinant
+    right:
+      vi: oriented area scale
+      en: oriented area scale
+  - left:
+      vi: rank
+      en: rank
+    right:
+      vi: dimension of image
+      en: dimension of image
+  - left:
+      vi: eigenvector
+      en: eigenvector
+    right:
+      vi: direction preserved
+      en: direction preserved
+  - left:
+      vi: PCA
+      en: PCA
+    right:
+      vi: keeps high-variance directions
+      en: keeps high-variance directions
+- id: c1w4-02-find-error
+  topic: singularity-rank-transformations
+  type: find-error
+  difficulty: 2
+  tags:
+  - misconception
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: tìm bước sai đầu tiên trong lời giải.'
+    en: Find the first error in the solution about Singularity and rank of linear transformations.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The faulty step would misclassify rank because determinant has no general addition law for $A+B$.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  steps:
+  - vi: Know $\det(A)=1$ and $\det(B)=1$.
+    en: Know $\det(A)=1$ and $\det(B)=1$.
+  - vi: Suy ra $\det(A+B)=2$.
+    en: Infer $\det(A+B)=2$.
+  - vi: Conclude $A+B$ is non-singular.
+    en: Conclude $A+B$ is non-singular.
+  answer: 1
+- id: c1w4-02-multi
+  topic: singularity-rank-transformations
+  type: multi-step
+  difficulty: 2
+  tags:
+  - worked
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: giải từng phần theo thứ tự; kết quả trước giúp kiểm tra phần sau.'
+    en: 'Multi-step task for Singularity and rank of linear transformations: $A=[[2,1],[0,3]]$.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The matrix sends two independent axes to nonzero directions because the triangular determinant is 6, so it is rank 2.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Compute determinant.
+      en: Compute determinant.
+    answers:
+    - value: 6
+    tolerance: 0
+    explanation:
+      vi: $2\cdot3-1\cdot0=6$.
+      en: $2\cdot3-1\cdot0=6$.
+  - type: mcq
+    prompt:
+      vi: What are the eigenvalues?
+      en: What are the eigenvalues?
+    options:
+    - vi: $2,3$
+      en: $2,3$
+    - vi: $1,0$
+      en: $1,0$
+    - vi: $6,0$
+      en: $6,0$
+    answer:
+    - 0
+    explanation:
+      vi: 'Triangular matrix: eigenvalues are diagonal entries.'
+      en: 'Triangular matrix: eigenvalues are diagonal entries.'
+- id: c1w4-parsons-01
+  topic: singularity-rank-transformations
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: 'Suy biến và hạng của phép biến đổi tuyến tính: sắp xếp các bước theo đúng quy trình.'
+    en: Order the steps that connect rank loss to eigenvector computation.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: For this rank topic, the ordered steps show that eigenvectors come from the null space after each eigenvalue is found.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  steps:
+  - vi: Compute $A-\lambda I$.
+    en: Compute $A-\lambda I$.
+  - vi: Solve $\det(A-\lambda I)=0$.
+    en: Solve $\det(A-\lambda I)=0$.
+  - vi: For each $\lambda$, solve $(A-\lambda I)v=0$.
+    en: For each $\lambda$, solve $(A-\lambda I)v=0$.
+  - vi: Choose a nonzero vector.
+    en: Choose a nonzero vector.

@@ -1,0 +1,103 @@
+exercises:
+- id: c2w1-log-loss-part-2-mcq-01
+  topic: optimization-losses
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tối ưu log-loss: phần 2''?'
+    en: Why do the slides take logarithms of long probability products in the coin example?
+  explanation:
+    vi: 'Ý đúng: log biến tích thành tổng và dẫn tới log-loss dễ tối ưu hơn.'
+    en: 'Correct: logs turn products into sums, making log-loss easier to optimize.'
+  hints: []
+  options:
+  - vi: log biến tích thành tổng và dẫn tới log-loss dễ tối ưu hơn
+    en: logs turn products into sums, making log-loss easier to optimize
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Logs make every probability product equal to zero, which is easy to minimize.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: Logs remove the need to know whether an outcome was head or tail.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Logs turn sums into products, making derivatives of sums harder.
+  answer:
+  - 0
+- id: c2w1-log-loss-part-2-truefalse-02
+  topic: optimization-losses
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tối ưu log-loss: phần 2'', công thức $-\sum_i[y_i\log p_i+(1-y_i)\log(1-p_i)]$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: Binary log-loss sums negative log probabilities assigned to the labels that actually occurred.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: For log-loss, the log is applied after choosing the probability assigned to the true label.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Log biến tích likelihood thành tổng, rồi dấu âm tạo loss cần tối thiểu.
+    en: Logs turn the likelihood product into a sum, then the negative sign makes a loss to minimize.
+  - vi: Log làm mọi xác suất sai trở thành 0 nên không cần tối ưu.
+    en: Logs turn every wrong probability into 0, so no optimization is needed.
+  - vi: Log-loss bỏ qua nhãn thật và chỉ dùng xác suất lớn nhất.
+    en: Log-loss ignores the true label and uses only the largest probability.
+  reasonAnswer: 0
+- id: c2w1-log-loss-part-2-code-03
+  topic: optimization-losses
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Hoàn thiện hàm `binary_log_loss` bằng NumPy/Python.
+    en: Complete the `binary_log_loss` function with NumPy/Python.
+  explanation:
+    vi: Lời giải dùng công thức đạo hàm tương ứng và được kiểm tra trên nhiều trường hợp.
+    en: The implementation clips probabilities, then averages negative log probabilities for the true labels.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  starter: "import numpy as np\ndef binary_log_loss(y, p):\n    return 0.0\n"
+  solution: "import numpy as np\ndef binary_log_loss(y, p):\n    p = np.clip(p, 1e-12, 1-1e-12)\n    return float(-np.mean(y*np.log(p)+(1-y)*np.log(1-p)))\n"
+  tests: "import numpy as np\ndef test_perfectish():\n    y=np.array([1,0]); p=np.array([0.9,0.1])\n    assert abs(binary_log_loss(y,p) - 0.1053605) < 1e-5, 'log-loss should average negative log probabilities'\ndef test_bad_bigger():\n    y=np.array([1,0]); good=np.array([0.9,0.1]); bad=np.array([0.1,0.9])\n    assert binary_log_loss(y,bad) > binary_log_loss(y,good), 'wrong confident probabilities should be penalized more'"
+- id: c2w1-log-loss-part-2-matching-04
+  topic: optimization-losses
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match each log-loss expression with its calculus role.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The matching pairs connect log-loss pieces to likelihood, logs, and the penalty for confident mistakes.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$

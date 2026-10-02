@@ -1,0 +1,124 @@
+exercises:
+- id: c2w2-maxima-minima-mcq-13
+  topic: maxima-minima
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Điều kiện nào tạo ứng viên cực trị bên trong cho hàm trơn $f(x,y)$?
+    en: Which condition creates an interior extremum candidate for a smooth $f(x,y)$?
+  explanation:
+    vi: Ở cực trị bên trong, cả hai slope bậc nhất phải bằng 0. Nhưng đây chỉ là ứng viên; cần phân loại tiếp.
+    en: At an interior extremum, both first-order slopes must be zero. This only gives a candidate; classification is still required.
+  hints: []
+  options:
+  - vi: $f_x=0$ và $f_y=0$ tại điểm đó.
+    en: $f_x=0$ and $f_y=0$ at that point.
+  - vi: Chỉ cần $f_x=0$; $f_y$ không cần xét.
+    en: Only $f_x=0$ is needed; $f_y$ can be ignored.
+  - vi: Gradient phải có norm lớn nhất.
+    en: The gradient must have maximum norm.
+  - vi: Learning rate phải bằng 1.
+    en: The learning rate must equal 1.
+  answer:
+  - 0
+- id: c2w2-maxima-minima-truefalse-14
+  topic: maxima-minima
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Mọi điểm có gradient bằng 0 đều là cực tiểu.
+    en: Every point with zero gradient is a minimum.
+  explanation:
+    vi: Sai. $x^2-y^2$ có gradient bằng 0 tại gốc, nhưng quanh đó có hướng tăng và hướng giảm, nên là saddle.
+    en: False. $x^2-y^2$ has zero gradient at the origin, but nearby directions both increase and decrease, so it is a saddle.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Điểm dừng có thể là cực tiểu, cực đại hoặc saddle.
+    en: A stationary point can be a minimum, maximum, or saddle.
+  - vi: Vì mọi hàm bậc hai đều có minimum tại gốc.
+    en: Because every quadratic has a minimum at the origin.
+  reasonAnswer: 0
+- id: c2w2-maxima-minima-matching-15
+  topic: maxima-minima
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép tình huống cực trị với kết luận phù hợp.
+    en: Match each extremum situation to the right conclusion.
+  explanation:
+    vi: Điều kiện gradient bằng 0 chỉ là bước lọc ứng viên; dấu và hình dạng quanh điểm mới quyết định loại cực trị.
+    en: The zero-gradient condition only filters candidates; nearby shape and signs determine the extremum type.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2+y^2$ tại $(0,0)$
+      en: $x^2+y^2$ at $(0,0)$
+    right:
+      vi: Cực tiểu toàn cục
+      en: Global minimum
+  - left:
+      vi: $-x^2-y^2$ tại $(0,0)$
+      en: $-x^2-y^2$ at $(0,0)$
+    right:
+      vi: Cực đại toàn cục
+      en: Global maximum
+  - left:
+      vi: $x^2-y^2$ tại $(0,0)$
+      en: $x^2-y^2$ at $(0,0)$
+    right:
+      vi: Điểm yên ngựa
+      en: Saddle point
+- id: c2w2-maxima-minima-numeric-16
+  topic: maxima-minima
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Với $f(x,y)=x^2+y^2$, tại điểm ứng viên cực tiểu $(0,0)$, $f_x$ và $f_y$ bằng bao nhiêu?
+    en: For $f(x,y)=x^2+y^2$ at the minimum candidate $(0,0)$, what are $f_x$ and $f_y$?
+  explanation:
+    vi: $f_x=2x$ và $f_y=2y$. Thay $(0,0)$ cho cả hai thành phần bằng 0, đúng điều kiện điểm dừng.
+    en: $f_x=2x$ and $f_y=2y$. Substituting $(0,0)$ makes both components zero, matching the stationary condition.
+  hints: []
+  answers:
+  - label: f_x
+    value: 0
+  - label: f_y
+    value: 0
+- id: c2w2-maxima-minima-construct-45
+  topic: maxima-minima
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo vector gradient bằng 0 tại một điểm ứng viên cực trị.
+    en: Construct a zero gradient vector at a stationary-point candidate.
+  explanation:
+    vi: Vector không thỏa điều kiện nonzero; ở điểm dừng gradient phải bằng 0.
+    en: A stationary point has zero gradient.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: dot
+    with:
+    - 1
+    - 0
+    value: 0
+  - kind: dot
+    with:
+    - 0
+    - 1
+    value: 0
+  example:
+  - - 0
+  - - 0

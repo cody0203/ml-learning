@@ -1,0 +1,223 @@
+'exercises':
+- 'id': 'c3w3-bern-mcq-figure-01'
+  'topic': 'mle-bernoulli'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  - 'likelihood'
+  'prompt':
+    'vi': 'Với 8 heads và 2 tails, curve likelihood nào tối đa gần $p=0.8$?'
+    'en': 'With 8 heads and 2 tails, which likelihood curve maximizes near $p=0.8$?'
+  'explanation':
+    'vi': '$p^8(1-p)^2$ đạt cực đại tại $0.8$.'
+    'en': '$p^8(1-p)^2$ maximizes at $0.8$.'
+  'hints': []
+  'figure':
+    'xRange':
+    - 0
+    - 1
+    'yRange':
+    - 0
+    - 0.006
+    'functions':
+    - 'f': 'x^8*(1-x)^2'
+      'label': '8H2T'
+      'color': '#2563eb'
+    - 'f': 'x^2*(1-x)^8'
+      'label': '2H8T'
+      'color': '#dc2626'
+      'dashed': true
+    'xLabel': 'p'
+    'yLabel': 'likelihood'
+  'options':
+  - 'vi': 'Blue curve near $0.8$'
+    'en': 'Blue curve near $0.8$'
+  - 'vi': 'Red curve near $0.2$'
+    'en': 'Red curve near $0.2$'
+  'answer':
+  - 0
+- 'id': 'c3w3-bern-numeric-01'
+  'topic': 'mle-bernoulli'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'mle'
+  'prompt':
+    'vi': '8 heads, 2 tails. Tính $\hat p_{MLE}$.'
+    'en': '8 heads, 2 tails. Compute $\hat p_{MLE}$.'
+  'explanation':
+    'vi': '$\hat p=k/n=8/10=0.8$.'
+    'en': '$\hat p=k/n=8/10=0.8$.'
+  'hints': []
+  'answers':
+  - 'value': 0.8
+  'tolerance': 1.0e-09
+- 'id': 'c3w3-bern-code-01'
+  'topic': 'mle-bernoulli'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'mle'
+  'prompt':
+    'vi': 'Cài `mle_bernoulli(x)` trả sample mean của mảng 0/1.'
+    'en': 'Implement `mle_bernoulli(x)` returning the sample mean of a 0/1 array.'
+  'explanation':
+    'vi': 'Bernoulli MLE là proportion of ones.'
+    'en': 'Bernoulli MLE is the proportion of ones.'
+  'hints': []
+  'starter': "import numpy as np\ndef mle_bernoulli(x):\n    return 0.0\n"
+  'solution': "import numpy as np\ndef mle_bernoulli(x):\n    x=np.asarray(x,dtype=float)\n    return float(x.mean())\n"
+  'tests': "import numpy as np\ndef test_8_heads():\n    assert abs(mle_bernoulli(np.array([1,1,1,1,1,1,1,1,0,0]))-0.8)<1e-12\ndef test_balanced():\n    assert abs(mle_bernoulli([1,0,1,0])-0.5)<1e-12\n"
+- 'id': 'c3w3-bern-finderror-01'
+  'topic': 'mle-bernoulli'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'likelihood-vs-probability'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong lời giải MLE.'
+    'en': 'Find the first error in the MLE solution.'
+  'explanation':
+    'vi': 'Likelihood không phải probability distribution của $p$.'
+    'en': 'Likelihood is not a probability distribution for $p$.'
+  'hints': []
+  'steps':
+  - 'vi': 'Dữ liệu cố định: 8 heads, 2 tails.'
+    'en': 'Data fixed: 8 heads, 2 tails.'
+  - 'vi': 'Likelihood là $L(p)=p^8(1-p)^2$.'
+    'en': 'Likelihood is $L(p)=p^8(1-p)^2$.'
+  - 'vi': 'Vì vậy $L(p)$ là xác suất $p$ đúng.'
+    'en': 'Therefore $L(p)$ is the probability that $p$ is true.'
+  'answer': 2
+- 'id': 'c3w3-bern-parsons-01'
+  'topic': 'mle-bernoulli'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'derivation'
+  'prompt':
+    'vi': 'Sắp xếp derivation MLE Bernoulli.'
+    'en': 'Order the Bernoulli MLE derivation.'
+  'explanation':
+    'vi': 'Log rồi đạo hàm để tìm maximum.'
+    'en': 'Take logs then derivative to find maximum.'
+  'hints': []
+  'steps':
+  - 'vi': 'Viết $L(p)=p^k(1-p)^{n-k}$.'
+    'en': 'Write $L(p)=p^k(1-p)^{n-k}$.'
+  - 'vi': 'Lấy log: $\ell(p)=k\log p+(n-k)\log(1-p)$.'
+    'en': 'Take log: $\ell(p)=k\log p+(n-k)\log(1-p)$.'
+  - 'vi': 'Giải $k/p-(n-k)/(1-p)=0$.'
+    'en': 'Solve $k/p-(n-k)/(1-p)=0$.'
+  - 'vi': 'Kết luận $\hat p=k/n$.'
+    'en': 'Conclude $\hat p=k/n$.'
+- 'id': 'c3w3-bern-code-ll-01'
+  'topic': 'mle-bernoulli'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'log-likelihood'
+  'prompt':
+    'vi': 'Cài `bernoulli_loglik(x,p)` trả log-likelihood, dùng log và kiểm tra $0<p<1$.'
+    'en': 'Implement `bernoulli_loglik(x,p)` returning log-likelihood, using logs and checking $0<p<1$.'
+  'explanation':
+    'vi': 'Cộng log tránh underflow.'
+    'en': 'Sum logs to avoid underflow.'
+  'hints': []
+  'starter': "import numpy as np\ndef bernoulli_loglik(x,p):\n    return 0.0\n"
+  'solution': "import numpy as np\ndef bernoulli_loglik(x,p):\n    if not (0 < p < 1):\n        return -np.inf\n    x=np.asarray(x,dtype=float)\n    return float(np.sum(x*np.log(p)+(1-x)*np.log(1-p)))\n"
+  'tests': "import numpy as np\ndef test_loglik_value():\n    x=np.array([1,1,0])\n    expected=2*np.log(0.7)+np.log(0.3)\n    assert abs(bernoulli_loglik(x,0.7)-expected)<1e-12\ndef test_bad_p():\n    assert bernoulli_loglik([1,0],1.0)==-np.inf\n"
+- 'id': 'c3w3-bern-matching-01'
+  'topic': 'mle-bernoulli'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'notation'
+  'prompt':
+    'vi': 'Ghép Bernoulli MLE symbols.'
+    'en': 'Match Bernoulli MLE symbols.'
+  'explanation':
+    'vi': 'Ký hiệu giúp đọc derivation.'
+    'en': 'Notation helps read the derivation.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$x_i=1$'
+      'en': '$x_i=1$'
+    'right':
+      'vi': 'Head/success'
+      'en': 'Head/success'
+  - 'left':
+      'vi': '$k=\sum x_i$'
+      'en': '$k=\sum x_i$'
+    'right':
+      'vi': 'Số successes'
+      'en': 'Number of successes'
+  - 'left':
+      'vi': '$L(p)$'
+      'en': '$L(p)$'
+    'right':
+      'vi': 'Likelihood as a function of $p$'
+      'en': 'Likelihood as a function of $p$'
+  - 'left':
+      'vi': '$\hat p$'
+      'en': '$\hat p$'
+    'right':
+      'vi': '$k/n$'
+      'en': '$k/n$'
+- 'id': 'c3w3-bern-multi-01'
+  'topic': 'mle-bernoulli'
+  'type': 'multi-step'
+  'difficulty': 3
+  'tags':
+  - 'derivation'
+  'prompt':
+    'vi': 'Dữ liệu Bernoulli có $n=12$, $k=9$.'
+    'en': 'Bernoulli data have $n=12$, $k=9$.'
+  'explanation':
+    'vi': 'Dùng likelihood và derivative.'
+    'en': 'Use likelihood and derivative.'
+  'hints': []
+  'parts':
+  - 'type': 'mcq'
+    'prompt':
+      'vi': 'Likelihood đúng?'
+      'en': 'Correct likelihood?'
+    'options':
+    - 'vi': '$p^9(1-p)^3$'
+      'en': '$p^9(1-p)^3$'
+    - 'vi': '$p^3(1-p)^9$'
+      'en': '$p^3(1-p)^9$'
+    'answer':
+    - 0
+    'explanation':
+      'vi': '9 successes, 3 failures.'
+      'en': '9 successes, 3 failures.'
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\hat p$?'
+      'en': '$\hat p$?'
+    'answers':
+    - 'value': 0.75
+    'tolerance': 1.0e-09
+    'explanation':
+      'vi': '$9/12=0.75$.'
+      'en': '$9/12=0.75$.'
+- 'id': 'c3w3-bern-param-01'
+  'topic': 'mle-bernoulli'
+  'type': 'parametric'
+  'difficulty': 1
+  'tags':
+  - 'generator'
+  'prompt':
+    'vi': 'Tính xác suất binomial sinh ngẫu nhiên.'
+    'en': 'Compute generated binomial probability.'
+  'explanation':
+    'vi': 'Liên hệ Bernoulli trials với counts.'
+    'en': 'Connect Bernoulli trials to counts.'
+  'hints': []
+  'generator': 'binomial-prob'
+  'params': {}

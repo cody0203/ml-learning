@@ -1,0 +1,116 @@
+exercises:
+- id: c2w1-scalar-multiple-rule-mcq-01
+  topic: derivative-rules
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tính chất: nhân với hằng số''?'
+    en: 'If the graph of $x^2$ is stretched to $5x^2$, what happens to its derivative?'
+  explanation:
+    vi: 'Ý đúng: nhân hàm với hằng số sẽ nhân mọi độ dốc với hằng số đó.'
+    en: 'Correct: scaling a function scales every slope by the same constant.'
+  hints: []
+  options:
+  - vi: nhân hàm với hằng số sẽ nhân mọi độ dốc với hằng số đó
+    en: scaling a function scales every slope by the same constant
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative stays $2x$ because vertical stretching changes only y-values, not slopes.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative becomes $5$ because the scalar alone is the slope.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The derivative becomes $10$ for every $x$ because $5\cdot2=10$.
+  answer:
+  - 0
+- id: c2w1-scalar-multiple-rule-truefalse-02
+  topic: derivative-rules
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tính chất: nhân với hằng số'', công thức $(cf)''=cf''$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'A fixed vertical scaling $c$ multiplies every tangent slope by the same $c$.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The scalar rule applies because the multiplier is fixed and does not change with x.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Nhân hàm với hằng số cố định làm mọi độ dốc bị nhân cùng hằng số.
+    en: Multiplying a function by a fixed constant multiplies every slope by that constant.
+  - vi: Hệ số đứng trước hàm biến mất khi lấy đạo hàm.
+    en: The scalar in front of the function disappears when differentiating.
+  - vi: Quy tắc này vẫn đúng nếu hệ số là một hàm của $x$.
+    en: This rule is still valid when the multiplier is itself a function of $x$.
+  reasonAnswer: 0
+- id: c2w1-scalar-multiple-rule-parametric-03
+  topic: derivative-rules
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-scalar-multiple-rule-mcq-04
+  topic: derivative-rules
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Chọn đồ thị phù hợp với đạo hàm của $f(x)=x^2$.
+    en: Choose the graph after applying the scalar-multiple rule.
+  explanation:
+    vi: Đạo hàm là $2x$, một đường thẳng qua gốc tọa độ.
+    en: The graph answer reflects that scaling a base curve also scales its derivative curve.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  options:
+  - vi: $f'(x)=2x$
+    en: $f'(x)=2x$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -6
+      - 6
+      functions:
+      - f: 2*x
+        label: 2*x
+  - vi: $f'(x)=x^2$
+    en: $f'(x)=x^2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 9
+      functions:
+      - f: x^2
+        label: x^2
+  - vi: $f'(x)=2$
+    en: $f'(x)=2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 4
+      functions:
+      - f: '2'
+        label: '2'
+  answer:
+  - 0

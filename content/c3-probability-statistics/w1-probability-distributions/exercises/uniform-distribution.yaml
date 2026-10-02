@@ -1,0 +1,247 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-uniform-distribution-mcq-01",
+      "topic": "uniform-distribution",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề phân phối đều?",
+        "en": "Which statement best describes uniform distribution?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng nói mật độ hằng trên khoảng. Các đáp án sai làm đầu mút có xác suất điểm, làm khoảng dài hơn không tăng xác suất, hoặc đặt mật độ bằng $b-a$ thay vì nghịch đảo.",
+        "en": "The correct answer says the density is constant over the interval. The wrong choices give endpoints point mass, deny that longer intervals have more probability, or set density to $b-a$ instead of its reciprocal."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là equal density over an interval.",
+          "en": "The focus is equal density over an interval."
+        },
+        {
+          "vi": "Trong $Uniform(0,15)$, $P(T=6)=1/15$ vì mật độ là $1/15$.",
+          "en": "For $Uniform(0,15)$, $P(T=6)=1/15$ because the density is $1/15$."
+        },
+        {
+          "vi": "Khoảng dài 3 phút và khoảng dài 6 phút có cùng xác suất trong phân phối đều.",
+          "en": "A 3-minute interval and a 6-minute interval have the same probability in a uniform distribution."
+        },
+        {
+          "vi": "Mật độ đều trên $(a,b)$ là $b-a$ để diện tích bằng 1.",
+          "en": "The uniform density on $(a,b)$ is $b-a$ so that the area equals 1."
+        }
+      ],
+      "answer": [
+        0
+      ],
+      "figure": {
+        "xRange": [
+          0,
+          5
+        ],
+        "yRange": [
+          0,
+          0.35
+        ],
+        "functions": [
+          {
+            "f": "0.2",
+            "label": "f(x)",
+            "domain": [
+              0,
+              5
+            ]
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.2",
+            "from": 2,
+            "to": 3,
+            "color": "#60a5fa"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      }
+    },
+    {
+      "id": "c3w1-uniform-distribution-numeric-02",
+      "topic": "uniform-distribution",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "$X\\sim Uniform(0,5)$. Tính $P(2<X<3)$.",
+        "en": "$X\\sim Uniform(0,5)$. Compute $P(2<X<3)$."
+      },
+      "explanation": {
+        "vi": "Interval length 1 divided by total length 5.",
+        "en": "Interval length 1 divided by total length 5."
+      },
+      "answers": [
+        {
+          "value": 0.2
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-uniform-distribution-mcq-03",
+      "topic": "uniform-distribution",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "figure"
+      ],
+      "hints": [
+        {
+          "vi": "Khoảng tô bóng nằm giữa hai điểm.",
+          "en": "The shaded interval lies between two points."
+        }
+      ],
+      "prompt": {
+        "vi": "Hình tô bóng biểu diễn xác suất nào?",
+        "en": "For the flat uniform density, which interval does the blue rectangle encode?"
+      },
+      "explanation": {
+        "vi": "Với PDF, xác suất là diện tích dưới đường cong trên khoảng tô bóng.",
+        "en": "Because the density is constant, the shaded rectangle has area equal to interval length times height."
+      },
+      "figure": {
+        "xRange": [
+          -4,
+          4
+        ],
+        "yRange": [
+          0,
+          0.5
+        ],
+        "functions": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "label": "standard normal"
+          }
+        ],
+        "areas": [
+          {
+            "f": "0.3989*exp(-0.5*x^2)",
+            "from": -1,
+            "to": 1,
+            "color": "#a7f3d0"
+          }
+        ],
+        "xLabel": "x",
+        "yLabel": "density"
+      },
+      "options": [
+        {
+          "vi": "$P(-1<X<1)$",
+          "en": "$P(-1<X<1)$"
+        },
+        {
+          "vi": "$P(X=-1)$",
+          "en": "$P(X=-1)$"
+        },
+        {
+          "vi": "$f(1)-f(-1)$",
+          "en": "$f(1)-f(-1)$"
+        },
+        {
+          "vi": "$P(X>1)$",
+          "en": "$P(X>1)$"
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-uniform-distribution-parametric-04",
+      "topic": "uniform-distribution",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "descriptive-stats",
+      "params": {}
+    },
+    {
+      "id": "c3w1-uniform-distribution-matching-05",
+      "topic": "uniform-distribution",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong phân phối đều.",
+        "en": "Match key terms in uniform distribution."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matching items contrast endpoints, density height, CDF slope, and equal-length intervals."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    }
+  ]
+}

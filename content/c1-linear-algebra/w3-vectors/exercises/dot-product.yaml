@@ -1,0 +1,151 @@
+exercises:
+- id: c1w3-dot-product-numeric-01
+  topic: dot-product
+  type: numeric
+  difficulty: 1
+  tags:
+  - dot
+  prompt:
+    vi: Tính $(2,4,1)\cdot(3,5,2)$.
+    en: Compute $(2,4,1)\cdot(3,5,2)$.
+  explanation:
+    vi: Bằng $6+20+2=28$.
+    en: Equals $6+20+2=28$.
+  hints: []
+  answers:
+  - value: 28
+  tolerance: 0
+- id: c1w3-dot-product-mcq-01
+  topic: dot-product
+  type: mcq
+  difficulty: 1
+  tags:
+  - interpretation
+  prompt:
+    vi: Dot product quantities với prices cho gìo
+    en: Dotting quantities with prices gives whato
+  explanation:
+    vi: Nó là tổng tiền.
+    en: It is total cost.
+  hints: []
+  options:
+  - vi: Tổng tiền
+    en: Total cost
+  - vi: Vector giá
+    en: Price vector
+  - vi: Khoảng cách
+    en: Distance
+  answer:
+  - 0
+- id: c1w3-dot-product-matching-01
+  topic: dot-product
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép biểu thức với kết quả.
+    en: Match expression with result.
+  explanation:
+    vi: Tính dot và chuẩn qua dot.
+    en: Compute dots and norm via dot.
+  hints: []
+  pairs:
+  - left:
+      vi: $(1,2)\cdot(3,4)$
+      en: $(1,2)\cdot(3,4)$
+    right:
+      vi: $11$
+      en: $11$
+  - left:
+      vi: $(2,-1)\cdot(1,2)$
+      en: $(2,-1)\cdot(1,2)$
+    right:
+      vi: $0$
+      en: $0$
+  - left:
+      vi: $\sqrt{(3,4)\cdot(3,4)}$
+      en: $\sqrt{(3,4)\cdot(3,4)}$
+    right:
+      vi: $5$
+      en: $5$
+- id: c1w3-dot-product-code-01
+  topic: dot-product
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài `dot_manual(u,v)` không dùng `np.dot`, `@`, `np.vdot`.
+    en: Implement `dot_manual(u,v)` without `np.dot`, `@`, `np.vdot`.
+  explanation:
+    vi: Nhân từng thành phần rồi cộng.
+    en: Multiply components and sum.
+  hints: []
+  starter: "def dot_manual(u,v):\n    return 0\n"
+  solution: "def dot_manual(u,v):\n    total=0\n    for i in range(len(u)):\n        total += u[i]*v[i]\n    return total\n"
+  tests: "def test_price():\n    assert dot_manual([2,4,1],[3,5,2])==28\ndef test_ortho():\n    assert dot_manual([6,2],[-1,3])==0\n"
+- id: c1w3-dot-product-predict-01
+  topic: dot-product
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output NumPy của tích vô hướng hai vector ngắn.
+    en: Predict the NumPy dot-product output for two short vectors.
+  explanation:
+    vi: '`u*v` nhân component, `sum` cộng.'
+    en: '`u*v` multiplies components, `sum` adds.'
+  hints: []
+  code: 'import numpy as np
+
+    u=np.array([2,4,1]); v=np.array([3,5,2])
+
+    print(np.sum(u*v))'
+  options:
+  - '28'
+  - '[ 6 20  2]'
+  - Error
+  answer: 0
+- id: c1w3-dot-product-parametric-01
+  topic: dot-product
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Tính dot product sinh ngẫu nhiên.
+    en: Compute a generated dot product.
+  explanation:
+    vi: Generator tạo dot product.
+    en: Generator creates dot product.
+  hints: []
+  generator: dot-product
+  params:
+    size: 3
+- id: c1w3-dot-product-construct-01
+  topic: dot-product
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng $x$ sao cho $x\cdot(2,3)=12$.
+    en: Construct $x$ such that $x\cdot(2,3)=12$.
+  explanation:
+    vi: $(3,2)$ hợp lệ.
+    en: $(3,2)$ works.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: dot
+    with:
+    - 2
+    - 3
+    value: 12
+  - kind: integerEntries
+  example:
+  - - 3
+  - - 2

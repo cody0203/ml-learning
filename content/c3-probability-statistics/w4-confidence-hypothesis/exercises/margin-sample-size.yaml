@@ -1,0 +1,240 @@
+exercises:
+- id: c3w4-margin-sample-size-mcq-02
+  topic: margin-sample-size
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Nếu giữ $\sigma$ và confidence cố định, tăng $n$ ảnh hưởng MOE thế nào?
+    en: Holding $\sigma$ and confidence fixed, how does increasing $n$ affect MOE?
+  explanation:
+    vi: MOE tỉ lệ nghịch với $\sqrt n$, nên nhiều dữ liệu làm khoảng hẹp lại nhưng hiệu quả giảm dần.
+    en: MOE is inversely proportional to $\sqrt n$, so more data narrows the interval with diminishing returns.
+  hints: []
+  options:
+  - vi: MOE giảm theo $1/\sqrt n$.
+    en: MOE decreases like $1/\sqrt n$.
+  - vi: MOE giảm theo $1/n$.
+    en: MOE decreases like $1/n$.
+  - vi: MOE tăng khi $n$ tăng.
+    en: MOE increases as $n$ grows.
+  answer:
+  - 0
+- id: c3w4-margin-sample-size-tf-02
+  topic: margin-sample-size
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Để giảm MOE từ 6 xuống 3, chỉ cần tăng gấp đôi cỡ mẫu.
+    en: To reduce MOE from 6 to 3, it is enough to double the sample size.
+  explanation:
+    vi: Sai. Vì MOE tỉ lệ $1/\sqrt n$, muốn giảm một nửa thì cần khoảng bốn lần số quan sát.
+    en: False. Since MOE scales as $1/\sqrt n$, halving it requires about four times as many observations.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Sai số biên phụ thuộc vào căn bậc hai của cỡ mẫu, không phụ thuộc tuyến tính.
+    en: The margin of error depends on the square root of sample size, not linearly on sample size.
+  - vi: Vì $6/3=2$, chỉ cần nhân $n$ với 2 là đủ trong mọi trường hợp.
+    en: Because $6/3=2$, multiplying $n$ by 2 is always enough.
+  reasonAnswer: 0
+- id: c3w4-margin-sample-size-match-02
+  topic: margin-sample-size
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép đại lượng trong công thức cỡ mẫu với ý nghĩa.
+    en: Match each sample-size formula quantity with its meaning.
+  explanation:
+    vi: Công thức $n\ge(z\sigma/m)^2$ tách riêng confidence, variability và margin mong muốn.
+    en: The formula $n\ge(z\sigma/m)^2$ separates confidence, variability, and the target margin.
+  hints: []
+  pairs:
+  - left:
+      vi: $m$
+      en: $m$
+    right:
+      vi: MOE mục tiêu
+      en: target MOE
+  - left:
+      vi: $\sigma$
+      en: $\sigma$
+    right:
+      vi: variability tổng thể
+      en: population variability
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-margin-sample-size-parsons-02
+  topic: margin-sample-size
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp các bước lập kế hoạch cỡ mẫu cho MOE.
+    en: Order the steps for planning sample size from a target MOE.
+  explanation:
+    vi: Muốn đảm bảo margin, chọn confidence và $\sigma$, giải bất đẳng thức theo $n$, rồi làm tròn lên.
+    en: To guarantee the margin, choose confidence and $\sigma$, solve the inequality for $n$, then round up.
+  hints:
+  - vi: Bước cuối phải là ceiling, không làm tròn gần nhất.
+    en: The last step is a ceiling, not ordinary rounding.
+  steps:
+  - vi: Chọn margin tối đa $m$ và confidence level.
+    en: Choose the maximum margin $m$ and confidence level.
+  - vi: Lấy critical value $z_{\alpha/2}$.
+    en: Get the critical value $z_{\alpha/2}$.
+  - vi: Tính $(z_{\alpha/2}\sigma/m)^2$.
+    en: Compute $(z_{\alpha/2}\sigma/m)^2$.
+  - vi: Làm tròn lên để có cỡ mẫu nguyên.
+    en: Round up to obtain an integer sample size.
+- id: c3w4-margin-sample-size-numeric-01
+  topic: margin-sample-size
+  type: numeric
+  difficulty: 2
+  tags:
+  - sample-size
+  prompt:
+    vi: Cần MOE không quá 3 cm, $\sigma=25$, confidence 95% với $z=1.96$. Cỡ mẫu nhỏ nhất?
+    en: Need MOE at most 3 cm, $\sigma=25$, 95% confidence with $z=1.96$. Smallest sample size?
+  explanation:
+    vi: $n\ge(1.96\cdot25/3)^2=266.78$, làm tròn lên 267.
+    en: $n\ge(1.96\cdot25/3)^2=266.78$, round up to 267.
+  hints: []
+  answers:
+  - value: 267
+  tolerance: 0
+- id: c3w4-margin-sample-size-mcq-figure-01
+  topic: margin-sample-size
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - sample-size
+  prompt:
+    vi: Biểu đồ cột nào đúng với MOE khi $n$ tăng, giữ $z,\sigma$ cố định?
+    en: Which bar pattern is correct for MOE as $n$ grows, holding $z,\sigma$ fixed?
+  explanation:
+    vi: MOE tỉ lệ $1/\sqrt n$, nên giảm nhanh lúc đầu rồi chậm dần.
+    en: MOE is proportional to $1/\sqrt n$, so it decreases quickly at first then more slowly.
+  hints: []
+  figure:
+    xRange:
+    - 0
+    - 5
+    yRange:
+    - 0
+    - 1.2
+    bars:
+    - x: 1
+      h: 1
+      label: n=25
+      color: '#60a5fa'
+    - x: 2
+      h: 0.71
+      label: n=50
+      color: '#60a5fa'
+    - x: 3
+      h: 0.5
+      label: n=100
+      color: '#60a5fa'
+    xLabel: sample size
+    yLabel: relative MOE
+  options:
+  - vi: MOE giảm theo $1/\sqrt n$
+    en: MOE decreases like $1/\sqrt n$
+  - vi: MOE tăng tuyến tính với $n$
+    en: MOE increases linearly with $n$
+  - vi: MOE không đổi khi $n$ đổi
+    en: MOE is unchanged by $n$
+  answer:
+  - 0
+- id: c3w4-margin-sample-size-find-error-01
+  topic: margin-sample-size
+  type: find-error
+  difficulty: 2
+  tags:
+  - find-error
+  prompt:
+    vi: Tìm bước sai đầu tiên khi tính cỡ mẫu.
+    en: Find the first wrong step in computing sample size.
+  explanation:
+    vi: 'Sai ở bước 3: phải bình phương toàn bộ $(z\sigma/MOE)$, không chỉ bình phương $z$.'
+    en: 'The error is step 3: square the entire $(z\sigma/MOE)$, not only $z$.'
+  hints: []
+  steps:
+  - vi: MOE = $z\sigma/\sqrt n$.
+    en: MOE = $z\sigma/\sqrt n$.
+  - vi: $3 = 1.96\cdot25/\sqrt n$.
+    en: $3 = 1.96\cdot25/\sqrt n$.
+  - vi: $n = 1.96^2\cdot25/3 = 32.0$.
+    en: $n = 1.96^2\cdot25/3 = 32.0$.
+  - vi: Chọn $n=32$.
+    en: Choose $n=32$.
+  answer: 2
+- id: c3w4-margin-sample-size-multi-01
+  topic: margin-sample-size
+  type: multi-step
+  difficulty: 2
+  tags:
+  - moe
+  - planning
+  prompt:
+    vi: Một nhóm ML muốn ước lượng latency trung bình với $\sigma=12$ ms, confidence 95% ($z=1.96$), MOE tối đa 2 ms.
+    en: An ML team wants to estimate mean latency with $\sigma=12$ ms, 95% confidence ($z=1.96$), maximum MOE 2 ms.
+  explanation:
+    vi: Bài toán lập kế hoạch cỡ mẫu dùng công thức $n\ge(z\sigma/MOE)^2$.
+    en: Sample-size planning uses $n\ge(z\sigma/MOE)^2$.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: Tính $n$ tối thiểu.
+      en: Compute the minimum $n$.
+    answers:
+    - value: 139
+    tolerance: 0
+    explanation:
+      vi: $(1.96\cdot12/2)^2=138.30$, làm tròn lên 139.
+      en: $(1.96\cdot12/2)^2=138.30$, round up to 139.
+  - type: mcq
+    prompt:
+      vi: Nếu đổi sang confidence 99%, $n$ sẽ thế nào?
+      en: If confidence changes to 99%, what happens to $n$?
+    options:
+    - vi: Tăng
+      en: Increase
+    - vi: Giảm
+      en: Decrease
+    - vi: Không đổi
+      en: No change
+    answer:
+    - 0
+    explanation:
+      vi: Critical value lớn hơn nên cần nhiều mẫu hơn.
+      en: The critical value is larger, so more samples are needed.
+- id: c3w4-margin-sample-size-param-01
+  topic: margin-sample-size
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - ci
+  prompt:
+    vi: Generator luyện confidence interval.
+    en: Generator confidence interval drill.
+  explanation:
+    vi: Generator thay đổi $n,\sigma,\bar x,z$.
+    en: The generator varies $n,\sigma,\bar x,z$.
+  hints: []
+  generator: confidence-interval
+  params: {}

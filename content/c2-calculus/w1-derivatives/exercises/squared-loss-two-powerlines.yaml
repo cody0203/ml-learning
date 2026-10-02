@@ -1,0 +1,112 @@
+exercises:
+- id: c2w1-squared-loss-two-powerlines-mcq-01
+  topic: optimization-losses
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Ý nào mô tả đúng nhất phần ''Tối ưu squared loss: hai đường điện''?'
+    en: 'Powerlines are at $a=2$ and $b=10$. Which location balances the two squared costs?'
+  explanation:
+    vi: 'Ý đúng: tổng bình phương khoảng cách tới hai điểm được tối thiểu tại trung điểm.'
+    en: 'Correct: the sum of squared distances to two points is minimized at the midpoint.'
+  hints: []
+  options:
+  - vi: tổng bình phương khoảng cách tới hai điểm được tối thiểu tại trung điểm
+    en: the sum of squared distances to two points is minimized at the midpoint
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: $x=2$, because standing on one line makes one of the two costs zero.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: $x=10$, because the farther-right line contributes the larger coordinate.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: $x=12$, because adding the two line positions gives the minimum.
+  answer:
+  - 0
+- id: c2w1-squared-loss-two-powerlines-truefalse-02
+  topic: optimization-losses
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trong ''Tối ưu squared loss: hai đường điện'', công thức $J(x)=(x-a)^2+(x-b)^2$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.'
+    en: 'The two-powerline objective adds the squared distances to both line positions before differentiating.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: With two powerlines, the derivative balances the pull from both squared distances.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Đạo hàm cộng lực kéo từ hai bình phương và cân bằng tại trung điểm.
+    en: The derivative adds the pull from two squares and balances at the midpoint.
+  - vi: Nên đặt nhà ngay trên một đường để một chi phí bằng 0.
+    en: The house should sit on one line so that one cost is 0.
+  - vi: Cộng hai vị trí đường điện trực tiếp cho nghiệm tối ưu.
+    en: Directly adding the two powerline locations gives the optimum.
+  reasonAnswer: 0
+- id: c2w1-squared-loss-two-powerlines-parametric-03
+  topic: optimization-losses
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-squared-loss-two-powerlines-multistep-04
+  topic: optimization-losses
+  type: multi-step
+  difficulty: 3
+  tags:
+  - application
+  prompt:
+    vi: 'Bài toán nhiều bước: tối ưu vị trí theo squared loss.'
+    en: 'Multi-step problem: optimize the midpoint for two squared powerline distances.'
+  explanation:
+    vi: Đạo hàm của tổng bình phương cho nghiệm là trung bình các vị trí.
+    en: For two powerlines, differentiating the two squared distances gives a midpoint condition.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Với $J(x)=(x-2)^2+(x-8)^2$, tính $J'(x)$ tại $x=3$.
+      en: For $J(x)=(x-2)^2+(x-8)^2$, compute $J'(x)$ at $x=3$.
+    answers:
+    - value: -8
+    explanation:
+      vi: $J'(x)=2(x-2)+2(x-8)=4x-20$, tại $3$ là $-8$.
+      en: $J'(x)=2(x-2)+2(x-8)=4x-20$, at $3$ it is $-8$.
+  - type: numeric
+    prompt:
+      vi: Giải $J'(x)=0$ để tìm $x$ tối ưu.
+      en: Solve $J'(x)=0$ for the optimal $x$.
+    answers:
+    - value: 5
+    explanation:
+      vi: $4x-20=0$ nên $x=5$.
+      en: $4x-20=0$, so $x=5$.
+  - type: mcq
+    prompt:
+      vi: Tại $x=3$, đạo hàm âm gợi ý di chuyển hướng nào để giảm loss?
+      en: At $x=3$, a negative derivative suggests moving which way to reduce loss?
+    options:
+    - vi: Tăng $x$
+      en: Increase $x$
+    - vi: Giảm $x$
+      en: Decrease $x$
+    - vi: Không đổi
+      en: Do not move
+    answer:
+    - 0
+    explanation:
+      vi: Gradient descent dùng $x-\alpha J'(x)$; đạo hàm âm làm bước cập nhật tăng $x$.
+      en: Gradient descent uses $x-\alpha J'(x)$; a negative derivative increases $x$.

@@ -1,0 +1,169 @@
+exercises:
+- id: c1w3-geodot-mcq-01
+  topic: geometric-dot-product
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  prompt:
+    vi: Vector nào trực giao với $u=(6,2)$?
+    en: Which vector is orthogonal to $u=(6,2)$?
+  explanation:
+    vi: $(-1,3)$ cho dot bằng 0.
+    en: $(-1,3)$ gives dot zero.
+  hints: []
+  figure:
+    xRange:
+    - -5
+    - 7
+    yRange:
+    - -1
+    - 5
+    vectors:
+    - to:
+      - 6
+      - 2
+      label: u
+      color: '#2563eb'
+    - to:
+      - -1
+      - 3
+      label: a
+      color: '#16a34a'
+    - to:
+      - 2
+      - 4
+      label: b
+      color: '#dc2626'
+  options:
+  - vi: $(-1,3)$
+    en: $(-1,3)$
+  - vi: $(2,4)$
+    en: $(2,4)$
+  - vi: $(6,2)$
+    en: $(6,2)$
+  answer:
+  - 0
+- id: c1w3-geodot-numeric-01
+  topic: geometric-dot-product
+  type: numeric
+  difficulty: 2
+  tags:
+  - angle
+  prompt:
+    vi: Góc giữa $(1,0)$ và $(1,1)$ là bao nhiêu độ?
+    en: Angle between $(1,0)$ and $(1,1)$ in degrees?
+  explanation:
+    vi: '$\cos\theta=1/\sqrt2$, nên $45^\circ$.'
+    en: '$\cos\theta=1/\sqrt2$, so $45^\circ$.'
+  hints: []
+  answers:
+  - value: 45
+  tolerance: 0.01
+- id: c1w3-geodot-tf-01
+  topic: geometric-dot-product
+  type: true-false
+  difficulty: 2
+  tags:
+  - angle
+  prompt:
+    vi: Nếu $u\cdot v<0$, góc giữa hai vector khác zero là góc tù.
+    en: If $u\cdot v<0$, the angle between nonzero vectors is obtuse.
+  explanation:
+    vi: Cosine âm ứng với góc tù.
+    en: Negative cosine corresponds to obtuse angle.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Dot âm nghĩa cosine âm.
+    en: Negative dot means negative cosine.
+  - vi: Dot âm nghĩa góc nhọn.
+    en: Negative dot means acute angle.
+  reasonAnswer: 0
+- id: c1w3-geodot-construct-01
+  topic: geometric-dot-product
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng vector nguyên khác zero trực giao với $(6,2)$.
+    en: Construct a nonzero integer vector orthogonal to $(6,2)$.
+  explanation:
+    vi: $(-1,3)$ hợp lệ.
+    en: $(-1,3)$ works.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: dot
+    with:
+    - 6
+    - 2
+    value: 0
+  - kind: integerEntries
+  - kind: nonzero
+  example:
+  - - -1
+  - - 3
+- id: c1w3-geodot-find-error-01
+  topic: geometric-dot-product
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi đầu tiên khi tính góc giữa $(1,0)$ và $(1,1)$.
+    en: Find first error computing angle between $(1,0)$ and $(1,1)$.
+  explanation:
+    vi: $\|(1,1)\|=\sqrt2$, không phải 2.
+    en: $\|(1,1)\|=\sqrt2$, not 2.
+  hints: []
+  steps:
+  - vi: $\|u\|=1,\|v\|=2$
+    en: $\|u\|=1,\|v\|=2$
+  - vi: $u\cdot v=1$
+    en: $u\cdot v=1$
+  - vi: '$\theta=60^\circ$'
+    en: '$\theta=60^\circ$'
+  answer: 0
+- id: c1w3-geodot-multi-01
+  topic: geometric-dot-product
+  type: multi-step
+  difficulty: 3
+  tags:
+  - orthogonal
+  prompt:
+    vi: Cho $u=(3,4)$, $v=(4,-3)$.
+    en: Given $u=(3,4)$, $v=(4,-3)$.
+  explanation:
+    vi: Dot bằng 0 nên vuông góc.
+    en: Dot is zero, so perpendicular.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $u\cdot v$?
+      en: $u\cdot v$?
+    answers:
+    - value: 0
+    tolerance: 0
+    explanation:
+      vi: $12-12=0$.
+      en: $12-12=0$.
+  - type: mcq
+    prompt:
+      vi: Góc giữa chúng?
+      en: Angle between them?
+    options:
+    - vi: $0^\circ$
+      en: $0^\circ$
+    - vi: $90^\circ$
+      en: $90^\circ$
+    - vi: $180^\circ$
+      en: $180^\circ$
+    answer:
+    - 1
+    explanation:
+      vi: Dot 0 nghĩa $90^\circ$.
+      en: Dot 0 means $90^\circ$.

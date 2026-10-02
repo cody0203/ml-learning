@@ -1,0 +1,145 @@
+﻿exercises:
+- id: c2w3-classification-gradient-descent-matching-03
+  topic: classification-gradient-descent
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong logistic-gradient update.
+    en: Match notation in the logistic-gradient update.
+  explanation:
+    vi: $\hat y-y$ là error ở output, $x_i$ đưa error đó về từng weight.
+    en: $\hat y-y$ is the output error, and $x_i$ routes that error to each weight.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-classification-gradient-descent-find-error-04
+  topic: classification-gradient-descent
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi nếu nhân thêm sigmoid derivative trong log-loss.
+    en: Find the error if an extra sigmoid derivative is multiplied into log-loss.
+  explanation:
+    vi: Sau khi dùng binary log-loss với sigmoid, gradient score đã là $\hat y-y$.
+    en: After combining binary log-loss with sigmoid, the score gradient is already $\hat y-y$.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-classification-gradient-descent-numeric-05
+  topic: classification-gradient-descent
+  type: numeric
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Nếu $\hat y=0.8$, $y=1$, $x=(3,1)$, tính gradient log-loss theo $w_1,w_2,b$.
+    en: If $\hat y=0.8$, $y=1$, $x=(3,1)$, compute log-loss gradient wrt $w_1,w_2,b$.
+  explanation:
+    vi: $\hat y-y=-0.2$, nhân $(3,1,1)$ được $(-0.6,-0.2,-0.2)$.
+    en: $\hat y-y=-0.2$, times $(3,1,1)$ gives $(-0.6,-0.2,-0.2)$.
+  hints: []
+  answers:
+  - label: dw1
+    value: -0.6
+  - label: dw2
+    value: -0.2
+  - label: db
+    value: -0.2
+  tolerance: 1.0e-09
+- id: c2w3-classification-gradient-descent-multi-step-06
+  topic: classification-gradient-descent
+  type: multi-step
+  difficulty: 2
+  tags:
+  - trace
+  prompt:
+    vi: Perceptron có $x=(1,2)$, $w=(0,0)$, $b=0$, $y=1$, $\alpha=0.5$.
+    en: Perceptron has $x=(1,2)$, $w=(0,0)$, $b=0$, $y=1$, $\alpha=0.5$.
+  explanation:
+    vi: Từ $z=0$ có $\hat y=0.5$.
+    en: From $z=0$, $\hat y=0.5$.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $\hat y$?
+      en: $\hat y$?
+    answers:
+    - value: 0.5
+    tolerance: 1.0e-09
+    explanation:
+      vi: $\sigma(0)=0.5$.
+      en: $\sigma(0)=0.5$.
+  - type: numeric
+    prompt:
+      vi: Gradient $(dw_1,dw_2,db)$?
+      en: Gradient $(dw_1,dw_2,db)$?
+    answers:
+    - label: dw1
+      value: -0.5
+    - label: dw2
+      value: -1.0
+    - label: db
+      value: -0.5
+    tolerance: 1.0e-09
+    explanation:
+      vi: $(0.5-1)(1,2,1)$.
+      en: $(0.5-1)(1,2,1)$.
+  - type: numeric
+    prompt:
+      vi: Tham số mới?
+      en: New parameters?
+    answers:
+    - label: w1
+      value: 0.25
+    - label: w2
+      value: 0.5
+    - label: b
+      value: 0.25
+    tolerance: 1.0e-09
+    explanation:
+      vi: Trừ $0.5$ lần gradient.
+      en: Subtract $0.5$ times gradient.
+- id: c2w3-classification-gradient-descent-code-07
+  topic: classification-gradient-descent
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài một bước gradient cho logistic perceptron.
+    en: Implement one gradient step for a logistic perceptron.
+  explanation:
+    vi: Gradient chuẩn là $(\hat y-y)x$ và $(\hat y-y)$.
+    en: Standard gradient is $(\hat y-y)x$ and $(\hat y-y)$.
+  hints: []
+  starter: "import numpy as np\ndef logistic_step(w,b,x,y,alpha):\n    return w,b\n"
+  solution: "import numpy as np\ndef logistic_step(w,b,x,y,alpha):\n    w=np.asarray(w,dtype=float); x=np.asarray(x,dtype=float)\n    z=float(w@x + b)\n    yhat=1/(1+np.exp(-z))\n    err=yhat-y\n    return w-alpha*err*x, b-alpha*err\n"
+  tests: "import numpy as np\ndef test_step():\n    w,b=logistic_step(np.array([0.,0.]),0.,np.array([1.,2.]),1.,0.5)\n    assert np.allclose(w,[0.25,0.5]); assert abs(b-0.25)<1e-9\n"

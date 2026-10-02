@@ -1,0 +1,117 @@
+﻿exercises:
+- id: c2w3-second-derivative-matching-03
+  topic: second-derivative
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu của đạo hàm bậc hai.
+    en: Match notation for second derivatives.
+  explanation:
+    vi: Ký hiệu $f''$ và $d^2f/dx^2$ nói về curvature, không phải gradient đa biến.
+    en: The notations $f''$ and $d^2f/dx^2$ refer to curvature, not a multivariable gradient.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-second-derivative-find-error-04
+  topic: second-derivative
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi diễn giải đạo hàm bậc hai bằng update.
+    en: Find the error when interpreting a second derivative as an update.
+  explanation:
+    vi: Đạo hàm bậc hai đo curvature; bản thân nó không phải quy tắc cập nhật tham số.
+    en: A second derivative measures curvature; by itself it is not a parameter update rule.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-second-derivative-numeric-05
+  topic: second-derivative
+  type: numeric
+  difficulty: 1
+  tags:
+  - curvature
+  prompt:
+    vi: Nếu $f(x)=x^3-3x$, tính $f''(1)$.
+    en: If $f(x)=x^3-3x$, compute $f''(1)$.
+  explanation:
+    vi: $f''(x)=6x$, nên $f''(1)=6$.
+    en: $f''(x)=6x$, so $f''(1)=6$.
+  hints: []
+  answers:
+  - value: 6
+  tolerance: 0
+- id: c2w3-second-derivative-mcq-06
+  topic: second-derivative
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  prompt:
+    vi: Đồ thị $x^2$ thể hiện curvature nào?
+    en: The graph of $x^2$ shows what curvature?
+  explanation:
+    vi: $f''=2>0$, concave up.
+    en: $f''=2>0$, concave up.
+  hints: []
+  figure:
+    xRange:
+    - -3
+    - 3
+    yRange:
+    - -1
+    - 9
+    functions:
+    - f: x^2
+      label: x^2
+  options:
+  - vi: Concave up/convex
+    en: Concave up/convex
+  - vi: Concave down
+    en: Concave down
+  - vi: Không có đạo hàm bậc hai
+    en: No second derivative
+  answer:
+  - 0
+- id: c2w3-second-derivative-parametric-07
+  topic: second-derivative
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Đạo hàm đa thức sinh ngẫu nhiên.
+    en: Generated polynomial derivative.
+  explanation:
+    vi: Generator tạo bài đạo hàm.
+    en: Generator creates derivative exercise.
+  hints: []
+  generator: derivative-poly
+  params: {}

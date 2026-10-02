@@ -1,0 +1,139 @@
+exercises:
+- id: c1w3-inverse-mcq-01
+  topic: identity-inverse
+  type: mcq
+  difficulty: 1
+  tags:
+  - identity
+  prompt:
+    vi: $I_3x$ bằng gì?
+    en: What is $I_3x$?
+  explanation:
+    vi: Identity giữ nguyên vector.
+    en: Identity leaves vector unchanged.
+  hints: []
+  options:
+  - vi: $x$
+    en: $x$
+  - vi: $0$
+    en: $0$
+  - vi: $-x$
+    en: $-x$
+  answer:
+  - 0
+- id: c1w3-inverse-numeric-01
+  topic: identity-inverse
+  type: numeric
+  difficulty: 1
+  tags:
+  - determinant
+  prompt:
+    vi: 'Tính determinant của $\begin{bmatrix}5&2\\1&2\end{bmatrix}$.'
+    en: 'Compute determinant of $\begin{bmatrix}5&2\\1&2\end{bmatrix}$.'
+  explanation:
+    vi: $5\cdot2-2\cdot1=8$.
+    en: $5\cdot2-2\cdot1=8$.
+  hints: []
+  answers:
+  - value: 8
+  tolerance: 0
+- id: c1w3-inverse-matrix-01
+  topic: identity-inverse
+  type: matrix
+  difficulty: 2
+  tags:
+  - inverse
+  prompt:
+    vi: 'Tìm inverse của $\begin{bmatrix}5&2\\1&2\end{bmatrix}$.'
+    en: 'Find inverse of $\begin{bmatrix}5&2\\1&2\end{bmatrix}$.'
+  explanation:
+    vi: '$\frac18\begin{bmatrix}2&-2\\-1&5\end{bmatrix}$.'
+    en: '$\frac18\begin{bmatrix}2&-2\\-1&5\end{bmatrix}$.'
+  hints: []
+  answer:
+  - - 0.25
+    - -0.25
+  - - -0.125
+    - 0.625
+  tolerance: 1.0e-06
+- id: c1w3-inverse-tf-01
+  topic: identity-inverse
+  type: true-false
+  difficulty: 2
+  tags:
+  - singular
+  prompt:
+    vi: '$\begin{bmatrix}1&1\\2&2\end{bmatrix}$ không có inverse.'
+    en: '$\begin{bmatrix}1&1\\2&2\end{bmatrix}$ has no inverse.'
+  explanation:
+    vi: Determinant bằng 0.
+    en: Determinant is 0.
+  hints: []
+  answer: true
+- id: c1w3-inverse-construct-01
+  topic: identity-inverse
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: 'Dựng ma trận $2\times2$ khả nghịch, nguyên, không đường chéo.'
+    en: 'Construct an invertible integer non-diagonal $2\times2$ matrix.'
+  explanation:
+    vi: $[[1,1],[0,1]]$ có determinant 1.
+    en: $[[1,1],[0,1]]$ has determinant 1.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: nonsingular
+  - kind: integerEntries
+  - kind: notDiagonal
+  example:
+  - - 1
+    - 1
+  - - 0
+    - 1
+- id: c1w3-inverse-find-error-01
+  topic: identity-inverse
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: 'Tìm lỗi khi invert $\begin{bmatrix}1&1\\2&2\end{bmatrix}$.'
+    en: 'Find error inverting $\begin{bmatrix}1&1\\2&2\end{bmatrix}$.'
+  explanation:
+    vi: Determinant là 0, không phải 1.
+    en: Determinant is 0, not 1.
+  hints: []
+  steps:
+  - vi: $\det=1\cdot2-1\cdot2=1$
+    en: $\det=1\cdot2-1\cdot2=1$
+  - vi: Determinant khác 0 nên invert được.
+    en: Nonzero determinant means invertible.
+  - vi: Dùng công thức inverse.
+    en: Use inverse formula.
+  answer: 0
+- id: c1w3-inverse-parsons-01
+  topic: identity-inverse
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: 'Sắp xếp bước kiểm tra inverse $2\times2$.'
+    en: 'Order steps to check $2\times2$ inverse.'
+  explanation:
+    vi: Determinant quyết định.
+    en: Determinant decides.
+  hints: []
+  steps:
+  - vi: Kiểm tra ma trận vuông.
+    en: Check square.
+  - vi: Tính $ad-bc$.
+    en: Compute $ad-bc$.
+  - vi: 'Nếu bằng 0: không inverse.'
+    en: 'If zero: no inverse.'
+  - vi: 'Nếu khác 0: áp dụng công thức.'
+    en: 'If nonzero: apply formula.'

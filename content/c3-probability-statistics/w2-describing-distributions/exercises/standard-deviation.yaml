@@ -1,0 +1,185 @@
+exercises:
+- id: c3w2-standard-deviation-mcq-01
+  topic: standard-deviation
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về standard-deviation.
+    en: Choose the best statement about standard-deviation.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Standard deviation is the square root of variance, restoring the original measurement units before z-scoring.
+  hints: []
+  options:
+  - vi: Z-score trừ mean rồi chia cho độ lệch chuẩn.
+    en: A z-score subtracts the mean and then divides by the standard deviation.
+  - vi: Chuẩn hóa chỉ chia cho mean, không cần trừ gì.
+    en: Standardizing only divides by the mean and subtracts nothing.
+  - vi: Độ lệch chuẩn bằng phương sai bình phương.
+    en: Standard deviation is the square of the variance.
+  - vi: Sau chuẩn hóa, mọi điểm dữ liệu đều nằm giữa -1 và 1.
+    en: After standardizing, every data point must lie between -1 and 1.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.3989*exp(-x^2/2)
+      label: standard normal
+    areas:
+    - f: 0.3989*exp(-x^2/2)
+      from: -1
+      to: 1
+      color: '#bfdbfe'
+    xLabel: z
+    yLabel: density
+- id: c3w2-standard-deviation-tf-02
+  topic: standard-deviation
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: a z-score of $2$ means the observation is two standard deviations above the mean.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: $z=(x-\mu)/\sigma$, so positive values are above the center and the magnitude counts standard deviations.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: $z=(x-\mu)/\sigma$ đo khoảng cách theo đơn vị độ lệch chuẩn.
+    en: $z=(x-\mu)/\sigma$ measures distance in standard-deviation units.
+  - vi: Z-score dương nghĩa là điểm nằm dưới mean.
+    en: A positive z-score means the point is below the mean.
+  - vi: Z-score luôn có cùng đơn vị với dữ liệu gốc.
+    en: A z-score always keeps the original data units.
+  reasonAnswer: 0
+- id: c3w2-standard-deviation-matching-03
+  topic: standard-deviation
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho standard-deviation.
+    en: Match concepts for standard-deviation.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs distinguish variance units, standard deviation units, and the centering-scaling step.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-standard-deviation-parsons-04
+  topic: standard-deviation
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho standard-deviation.
+    en: Order the solution workflow for standard-deviation.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: Standardizing must subtract the mean before dividing by the standard deviation; reversing the order changes the result.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-standard-deviation-numeric-05
+  topic: standard-deviation
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: If x=74, mu=70, sigma=8, compute z.
+    en: If x=74, mu=70, sigma=8, compute z.
+  explanation:
+    vi: $z=(74-70)/8=0.5$.
+    en: $z=(74-70)/8=0.5$.
+  hints: []
+  answers:
+  - value: 0.5
+  tolerance: 0.001
+- id: c3w2-standard-deviation-construct-06
+  topic: standard-deviation
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo bốn giá trị có mean 2 và độ lệch chuẩn tổng thể 2.
+    en: Build four values with mean 2 and population standard deviation 2.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: The data 0,0,4,4 has mean 2 and deviations -2,-2,2,2, so the population standard deviation is 2.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 4
+  constraints:
+  - kind: mean
+    value: 2
+  - kind: std
+    value: 2
+    sample: false
+  example:
+  - - 0
+    - 0
+    - 4
+    - 4
+- id: c3w2-standard-deviation-parametric-07
+  topic: standard-deviation
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: Bài sinh tự động từ generator.
+    en: Auto-generated drill from the generator.
+  explanation:
+    vi: Generator sẽ thay prompt bằng dữ liệu mới.
+    en: The generator replaces this prompt with fresh data.
+  hints: []
+  generator: z-score
+  params: {}

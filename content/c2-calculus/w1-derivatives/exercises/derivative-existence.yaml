@@ -1,0 +1,101 @@
+exercises:
+- id: c2w1-derivative-existence-mcq-01
+  topic: differentiability
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Sự tồn tại của đạo hàm'?
+    en: For $f(x)=|x|$ at $x=0$, the left slope is $-1$ and the right slope is $1$. What follows?
+  explanation:
+    vi: 'Ý đúng: đạo hàm không tồn tại tại góc nhọn, nhảy, hoặc tiếp tuyến thẳng đứng.'
+    en: 'Correct: derivatives fail at corners, jumps, or vertical tangents.'
+  hints: []
+  options:
+  - vi: đạo hàm không tồn tại tại góc nhọn, nhảy, hoặc tiếp tuyến thẳng đứng
+    en: derivatives fail at corners, jumps, or vertical tangents
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative is $0$ because the point $(0,0)$ lies on the graph.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative exists because the function is continuous at the corner.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The right-hand slope alone is enough to define the ordinary derivative.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - -2
+    - 6
+    functions:
+    - f: x^2
+      label: f(x)=x^2
+      color: '#2563eb'
+    points:
+    - at:
+      - 0
+      - 0
+      label: flat
+    xLabel: x
+    yLabel: y
+- id: c2w1-derivative-existence-truefalse-02
+  topic: differentiability
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Sự tồn tại của đạo hàm', có thể áp dụng quy tắc đạo hàm mà không cần kiểm tra điểm không trơn hoặc thừa số đang thay đổi.
+    en: At a corner such as $|x|$ at zero, continuity alone guarantees differentiability.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: Differentiability must be checked from both sides at a corner or cusp.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Ở góc nhọn, độ dốc trái và phải phải khớp thì đạo hàm mới tồn tại.
+    en: At a corner, left and right slopes must agree for the derivative to exist.
+  - vi: Hàm liên tục tại điểm nào thì luôn khả vi tại điểm đó.
+    en: If a function is continuous at a point, it is always differentiable there.
+  - vi: Chỉ cần đạo hàm bên phải tồn tại là đủ cho đạo hàm thường.
+    en: A right-hand derivative alone is enough for the ordinary derivative.
+  reasonAnswer: 0
+- id: c2w1-derivative-existence-code-03
+  topic: differentiability
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Hoàn thiện hàm `abs_symmetric_slope` bằng NumPy/Python.
+    en: Complete the `abs_symmetric_slope` function with NumPy/Python.
+  explanation:
+    vi: Lời giải dùng công thức đạo hàm tương ứng và được kiểm tra trên nhiều trường hợp.
+    en: The code exercise shows that a symmetric slope can be misleading for $|x|$ at the corner.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  starter: "def abs_symmetric_slope(h):\n    return 1.0\n"
+  solution: "def abs_symmetric_slope(h):\n    return (abs(h)-abs(-h))/(2*h)\n"
+  tests: "def test_abs():\n    assert abs(abs_symmetric_slope(1e-4)) < 1e-12, 'symmetric slope of |x| at 0 is 0 but does not prove differentiability'\ndef test_nonzero():\n    assert abs(abs_symmetric_slope(0.5)) < 1e-12, 'formula should work for positive h'"
+- id: c2w1-derivative-existence-matrix-04
+  topic: differentiability
+  type: matrix
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Nhập vector cột gồm $f'(1)$ và $f'(2)$ cho $f(x)=x^2+1$.
+    en: Enter the column vector for the two smooth comparison slopes $f'(1)$ and $f'(2)$.
+  explanation:
+    vi: Vì $f'(x)=2x$, vector là $(2,4)^T$.
+    en: For this vector answer, evaluating the two one-sided-style slope checks gives the requested column entries.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answer:
+  - - 2
+  - - 4

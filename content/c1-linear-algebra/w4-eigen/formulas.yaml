@@ -1,0 +1,205 @@
+formulas:
+  - id: c1w4-f-center-data
+    topic: ml-motivation-pca
+    name: { vi: 'Căn giữa dữ liệu cho PCA', en: 'Center data for PCA' }
+    tex: 'X_c=X-\mathbf{1}\mu^\top'
+    where:
+      vi: '$\mu$ là vector trung bình cột; PCA dùng dữ liệu đã trừ trung bình.'
+      en: '$\mu$ is the column-mean vector; PCA uses mean-centered data.'
+    numpy: 'Xc = X - X.mean(axis=0)'
+    exercises: [c1w4-pca-code-01]
+  - id: c1w4-f-covariance-matrix
+    topic: ml-motivation-pca
+    name: { vi: 'Ma trận hiệp phương sai từ dữ liệu căn giữa', en: 'Covariance matrix from centered data' }
+    tex: 'C=\frac{1}{n-1}X_c^\top X_c'
+    where:
+      vi: '$X_c$ có các hàng là ví dụ đã căn giữa; $C$ là ma trận đối xứng.'
+      en: '$X_c$ has centered examples as rows; $C$ is symmetric.'
+    numpy: 'np.cov(Xc, rowvar=False)'
+    exercises: [c1w4-01-matching, c1w4-pca-code-01]
+  - id: c1w4-f-pca-projection
+    topic: ml-motivation-pca
+    name: { vi: 'Chiếu PCA lên một PC đơn vị', en: 'PCA projection onto a unit PC' }
+    tex: 'z=X_cu'
+    where:
+      vi: '$u$ là principal component có chuẩn 1; mỗi hàng cho một tọa độ 1D.'
+      en: '$u$ is a unit principal component; each row gives one 1D coordinate.'
+    numpy: 'Xc @ u'
+    exercises: [c1w4-pca-code-01, c1w4-01-construct]
+  - id: c1w4-f-explained-variance-ratio
+    topic: ml-motivation-pca
+    name: { vi: 'Tỉ lệ phương sai giữ lại', en: 'Explained variance ratio' }
+    tex: '\text{ratio}_k=\frac{\lambda_1+\cdots+\lambda_k}{\lambda_1+\cdots+\lambda_d}'
+    where:
+      vi: 'Sắp xếp eigenvalues của covariance giảm dần; lấy $k$ PC đầu.'
+      en: 'Sort covariance eigenvalues descending and keep the first $k$ PCs.'
+    exercises: [c1w4-01-multi, c1w4-10-matching]
+  - id: c1w4-f-full-rank-det
+    topic: singularity-rank-transformations
+    name: { vi: 'Full rank và định thức khác 0', en: 'Full rank and nonzero determinant' }
+    tex: '\det(A)\ne0\Longleftrightarrow \operatorname{rank}(A)=n'
+    where:
+      vi: 'Áp dụng cho ma trận vuông $n\times n$; không có hướng nào bị sụp.'
+      en: 'For square $n\times n$ matrices; no direction collapses.'
+    numpy: 'np.linalg.det(A); np.linalg.matrix_rank(A)'
+    exercises: [c1w4-02-tf, c1w4-02-construct, c1w4-02-multi]
+  - id: c1w4-f-rank-image-dimension
+    topic: singularity-rank-transformations
+    name: { vi: 'Rank là số chiều ảnh', en: 'Rank as image dimension' }
+    tex: '\operatorname{rank}(A)=\dim(\operatorname{im}A)'
+    where:
+      vi: 'Rank đếm số hướng độc lập còn lại sau biến đổi tuyến tính.'
+      en: 'Rank counts the independent directions that survive a linear transformation.'
+    numpy: 'np.linalg.matrix_rank(A)'
+    exercises: [c1w4-02-matching, c1w4-02-construct, c1w4-02-tf]
+  - id: c1w4-f-det-2x2-area
+    topic: determinant-area
+    name: { vi: 'Định thức 2×2 là diện tích có hướng', en: '2×2 determinant as oriented area' }
+    tex: '\det\begin{bmatrix}a&b\\c&d\end{bmatrix}=ad-bc'
+    where:
+      vi: 'Độ lớn $|\det(A)|$ là hệ số co giãn diện tích; dấu cho biết hướng bị đảo hay không.'
+      en: 'The magnitude $|\det(A)|$ is area scaling; the sign records orientation.'
+    numpy: 'np.linalg.det(A)'
+    exercises: [c1w4-03-numeric, c1w4-area-code-det2-01, c1w4-03-mcq-fig]
+  - id: c1w4-f-area-scaling
+    topic: determinant-area
+    name: { vi: 'Hệ số co giãn diện tích', en: 'Area scaling factor' }
+    tex: '\operatorname{area}(A S)=|\det(A)|\,\operatorname{area}(S)'
+    where:
+      vi: 'Trong 2D, mọi miền $S$ bị biến đổi diện tích theo $|\det(A)|$.'
+      en: 'In 2D, any region $S$ has its area scaled by $|\det(A)|$.'
+    exercises: [c1w4-03-mcq-fig, c1w4-06-mcq-fig, c1w4-01-mcq-fig]
+  - id: c1w4-f-det-product
+    topic: determinant-product
+    name: { vi: 'Định thức của tích', en: 'Determinant of a product' }
+    tex: '\det(AB)=\det(A)\det(B)'
+    where:
+      vi: 'Áp dụng cho ma trận vuông cùng kích thước; diện tích/thể tích co giãn nhân nhau.'
+      en: 'For square matrices of the same size; area/volume scalings multiply.'
+    exercises: [c1w4-04-multi, c1w4-04-find-error, c1w4-param-01]
+  - id: c1w4-f-det-not-additive
+    topic: determinant-product
+    name: { vi: 'Định thức không cộng tính', en: 'Determinant is not additive' }
+    tex: '\det(A+B)\ne \det(A)+\det(B)\quad\text{in general}'
+    where:
+      vi: 'Đừng dùng quy tắc cộng giả; chỉ có quy tắc nhân cho tích ma trận.'
+      en: 'Do not use a fake addition rule; the reliable rule here is multiplicative for products.'
+    exercises: [c1w4-04-find-error, c1w4-10-find-error, c1w4-01-find-error]
+  - id: c1w4-f-det-inverse
+    topic: determinant-inverse
+    name: { vi: 'Định thức của nghịch đảo', en: 'Determinant of the inverse' }
+    tex: '\det(A^{-1})=\frac{1}{\det(A)}'
+    where:
+      vi: 'Chỉ áp dụng khi $A$ khả nghịch, tức $\det(A)\ne0$.'
+      en: 'Only applies when $A$ is invertible, i.e. $\det(A)\ne0$.'
+    numpy: '1 / np.linalg.det(A)'
+    exercises: [c1w4-05-multi, c1w4-predict-02, c1w4-05-construct]
+  - id: c1w4-f-basis-conditions
+    topic: bases
+    name: { vi: 'Điều kiện là cơ sở', en: 'Basis conditions' }
+    tex: '\mathcal{B}\text{ is a basis}\Longleftrightarrow \operatorname{span}(\mathcal{B})=V\ \text{and}\ \mathcal{B}\text{ is linearly independent}'
+    where:
+      vi: 'Một cơ sở vừa phủ toàn bộ không gian vừa không có vector dư thừa.'
+      en: 'A basis both spans the whole space and has no redundant vector.'
+    exercises: [c1w4-06-matching, c1w4-06-construct, c1w4-06-tf]
+  - id: c1w4-f-standard-basis
+    topic: bases
+    name: { vi: 'Cơ sở chuẩn của R2', en: 'Standard basis of R2' }
+    tex: 'e_1=\begin{bmatrix}1\\0\end{bmatrix},\quad e_2=\begin{bmatrix}0\\1\end{bmatrix}'
+    where:
+      vi: 'Các vector cơ sở chuẩn tạo ma trận đơn vị khi đặt làm cột.'
+      en: 'The standard basis vectors form the identity matrix when used as columns.'
+    numpy: 'np.eye(2)'
+    exercises: [c1w4-06-construct, c1w3-lintrans-matching-01]
+  - id: c1w4-f-span-set
+    topic: span
+    name: { vi: 'Span của các vector', en: 'Span of vectors' }
+    tex: '\operatorname{span}(v_1,\ldots,v_k)=\{c_1v_1+\cdots+c_kv_k:\ c_i\in\mathbb{R}\}'
+    where:
+      vi: 'Tập mọi tổ hợp tuyến tính của các vector đã cho.'
+      en: 'The set of all linear combinations of the given vectors.'
+    exercises: [c1w4-07-matching, c1w4-07-construct, c1w4-span-code-01]
+  - id: c1w4-f-one-vector-span-test
+    topic: span
+    name: { vi: 'Kiểm tra thuộc span của một vector', en: 'One-vector span test' }
+    tex: 'w\in\operatorname{span}(v)\Longleftrightarrow \exists c\in\mathbb{R}:w=cv'
+    where:
+      vi: 'Trong 2D, hai vector phải song song và cùng tỉ lệ tọa độ.'
+      en: 'In 2D, the two vectors must be parallel with matching coordinate ratios.'
+    exercises: [c1w4-07-construct, c1w4-span-code-01]
+  - id: c1w4-f-eigendecomposition
+    topic: eigenbasis
+    name: { vi: 'Phân rã theo cơ sở riêng', en: 'Eigenbasis decomposition' }
+    tex: 'A=PDP^{-1}'
+    where:
+      vi: 'Các cột của $P$ là eigenvectors độc lập; $D$ là ma trận đường chéo eigenvalues.'
+      en: 'Columns of $P$ are independent eigenvectors; $D$ is the diagonal matrix of eigenvalues.'
+    exercises: [c1w4-08-multi, c1w4-08-matching, c1w4-predict-03]
+  - id: c1w4-f-diagonal-action
+    topic: eigenbasis
+    name: { vi: 'Tác động của ma trận đường chéo', en: 'Action of a diagonal matrix' }
+    tex: '\operatorname{diag}(\lambda_1,\ldots,\lambda_n)x=(\lambda_1x_1,\ldots,\lambda_nx_n)'
+    where:
+      vi: 'Trong eigenbasis, mỗi tọa độ chỉ bị nhân bởi eigenvalue tương ứng.'
+      en: 'In an eigenbasis, each coordinate is scaled by its corresponding eigenvalue.'
+    numpy: 'np.diag(lam) @ x'
+    exercises: [c1w4-08-construct, c1w4-08-multi]
+  - id: c1w4-f-eigen-equation
+    topic: eigenvalues-eigenvectors
+    name: { vi: 'Phương trình eigenvector', en: 'Eigenvector equation' }
+    tex: 'Av=\lambda v,\quad v\ne0'
+    where:
+      vi: '$v$ giữ hướng sau biến đổi; $\lambda$ là hệ số co giãn trên hướng đó.'
+      en: '$v$ keeps its direction after transformation; $\lambda$ is the scale on that direction.'
+    numpy: 'np.linalg.eig(A)'
+    exercises: [c1w4-09-construct, c1w4-09-matching, c1w4-parsons-04]
+  - id: c1w4-f-eigen-nullspace
+    topic: eigenvalues-eigenvectors
+    name: { vi: 'Tìm eigenvector từ không gian nghiệm', en: 'Find eigenvectors from a null space' }
+    tex: '(A-\lambda I)v=0,\quad v\ne0'
+    where:
+      vi: 'Sau khi tìm $\lambda$, giải hệ thuần nhất để lấy eigenvector khác 0.'
+      en: 'After finding $\lambda$, solve the homogeneous system for a nonzero eigenvector.'
+    exercises: [c1w4-parsons-04, c1w4-eig-code-charpoly-01, c1w4-09-find-error]
+  - id: c1w4-f-diagonal-eigenvalues
+    topic: eigenvalues-eigenvectors
+    name: { vi: 'Eigenvalues của ma trận tam giác/đường chéo', en: 'Eigenvalues of triangular/diagonal matrices' }
+    tex: 'A\text{ triangular}\Longrightarrow \lambda_i=a_{ii}'
+    where:
+      vi: 'Với ma trận tam giác hoặc đường chéo, eigenvalues là các phần tử đường chéo.'
+      en: 'For triangular or diagonal matrices, eigenvalues are the diagonal entries.'
+    exercises: [c1w4-09-multi, c1w4-10-multi, c1w4-01-multi]
+  - id: c1w4-f-characteristic-equation
+    topic: characteristic-polynomial-pca
+    name: { vi: 'Phương trình đặc trưng', en: 'Characteristic equation' }
+    tex: '\det(A-\lambda I)=0'
+    where:
+      vi: 'Nghiệm của phương trình này là eigenvalues của $A$.'
+      en: 'The roots of this equation are the eigenvalues of $A$.'
+    exercises: [c1w4-parsons-04, c1w4-10-find-error, c1w4-eig-code-charpoly-01]
+  - id: c1w4-f-charpoly-2x2
+    topic: characteristic-polynomial-pca
+    name: { vi: 'Đa thức đặc trưng 2×2', en: '2×2 characteristic polynomial' }
+    tex: 'p(\lambda)=\lambda^2-\operatorname{tr}(A)\lambda+\det(A)'
+    where:
+      vi: 'Dùng cho ma trận 2×2; roots là eigenvalues.'
+      en: 'Use for a 2×2 matrix; its roots are the eigenvalues.'
+    exercises: [c1w4-eig-code-charpoly-01, c1w4-10-multi, c1w4-predict-04]
+  - id: c1w4-f-trace-det-2x2
+    topic: characteristic-polynomial-pca
+    name: { vi: 'Trace và determinant trong 2D', en: 'Trace and determinant in 2D' }
+    tex: '\operatorname{tr}(A)=a+d,\quad \det(A)=ad-bc'
+    where:
+      vi: 'Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, hai số này xác định đa thức đặc trưng 2D.'
+      en: 'For $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, these determine the 2D characteristic polynomial.'
+    numpy: 'np.trace(A); np.linalg.det(A)'
+    exercises: [c1w4-eig-code-charpoly-01, c1w4-10-multi, c1w4-predict-04]
+  - id: c1w4-f-symmetric-pca-eigh
+    topic: characteristic-polynomial-pca
+    name: { vi: 'Eigen của covariance đối xứng trong PCA', en: 'Eigen of a symmetric covariance matrix in PCA' }
+    tex: 'Cu_i=\lambda_i u_i,\quad C=C^\top'
+    where:
+      vi: 'Covariance $C$ đối xứng; eigenvectors trực giao và eigenvalues cho phương sai theo PC.'
+      en: 'Covariance $C$ is symmetric; eigenvectors are orthogonal and eigenvalues give variance along PCs.'
+    numpy: 'np.linalg.eigh(C)'
+    exercises: [c1w4-10-matching, c1w4-pca-code-01]

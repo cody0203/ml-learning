@@ -1,0 +1,47 @@
+id: w4
+order: 4
+title:
+  vi: 'Tuần 4: Định thức và vector riêng'
+  en: 'Week 4: Determinants and Eigenvectors'
+source: syllabus/c1-linear-algebra/W4.pdf
+topics:
+- id: ml-motivation-pca
+  title:
+    vi: 'Động lực ML: PCA'
+    en: 'ML motivation: PCA'
+- id: singularity-rank-transformations
+  title:
+    vi: Suy biến và hạng của phép biến đổi tuyến tính
+    en: Singularity and rank of linear transformations
+- id: determinant-area
+  title:
+    vi: Định thức như diện tích có hướng
+    en: Determinant as oriented area
+- id: determinant-product
+  title:
+    vi: Định thức của tích
+    en: Determinant of a product
+- id: determinant-inverse
+  title:
+    vi: Định thức của ma trận nghịch đảo
+    en: Determinant of the inverse
+- id: bases
+  title:
+    vi: Cơ sở
+    en: Bases
+- id: span
+  title:
+    vi: Bao tuyến tính
+    en: Span
+- id: eigenbasis
+  title:
+    vi: Cơ sở riêng
+    en: Eigenbasis
+- id: eigenvalues-eigenvectors
+  title:
+    vi: Trị riêng và vector riêng
+    en: Eigenvalues and eigenvectors
+- id: characteristic-polynomial-pca
+  title:
+    vi: Đa thức đặc trưng và PCA
+    en: Characteristic polynomial and PCA

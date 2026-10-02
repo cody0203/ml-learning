@@ -1,0 +1,112 @@
+exercises:
+- id: c2w1-derivative-log-mcq-01
+  topic: inverse-trig-exp-log
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm của $\log(x)$'?
+    en: The log slide uses the inverse of $e^x$. Which slope formula follows for positive $x$?
+  explanation:
+    vi: 'Ý đúng: log tự nhiên là hàm ngược của $e^x$ nên đạo hàm là nghịch đảo của đầu vào.'
+    en: 'Correct: the natural log is the inverse of $e^x$, so its derivative is reciprocal in the input.'
+  hints: []
+  options:
+  - vi: log tự nhiên là hàm ngược của $e^x$ nên đạo hàm là nghịch đảo của đầu vào
+    en: the natural log is the inverse of $e^x$, so its derivative is reciprocal in the input
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The derivative is $\log x$ because inverse functions keep the same formula.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative is $e^x$ because log and exponential are inverse functions.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The same formula works for negative $x$ if absolute values are not drawn.
+  answer:
+  - 0
+- id: c2w1-derivative-log-truefalse-02
+  topic: inverse-trig-exp-log
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm của $\log(x)$', công thức $\frac{d}{dx}\log x=\frac1x$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: The derivative $(\log x)'=1/x$ is valid on the positive domain of the natural logarithm.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The logarithm derivative requires a positive input before the reciprocal slope is valid.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Log tự nhiên chỉ xét $x>0$ và có độ dốc $1/x$.
+    en: The natural log is considered for $x>0$ and has slope $1/x$.
+  - vi: Log là hàm ngược nên đạo hàm của nó bằng $e^x$.
+    en: Because log is an inverse, its derivative is $e^x$.
+  - vi: Công thức $1/x$ dùng được cả khi $x$ âm trong log tự nhiên.
+    en: The formula $1/x$ applies to negative inputs of the natural log.
+  reasonAnswer: 0
+- id: c2w1-derivative-log-parametric-03
+  topic: inverse-trig-exp-log
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-derivative-log-multistep-04
+  topic: inverse-trig-exp-log
+  type: multi-step
+  difficulty: 3
+  tags:
+  - application
+  prompt:
+    vi: 'Bài toán nhiều bước: tối ưu vị trí theo squared loss.'
+    en: 'Multi-step problem: contrast a log slope with a squared-loss optimum.'
+  explanation:
+    vi: Đạo hàm của tổng bình phương cho nghiệm là trung bình các vị trí.
+    en: This multi-step item contrasts log's reciprocal slope with the squared-loss derivative used in the application.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Với $J(x)=(x-2)^2+(x-8)^2$, tính $J'(x)$ tại $x=3$.
+      en: For $J(x)=(x-2)^2+(x-8)^2$, compute $J'(x)$ at $x=3$.
+    answers:
+    - value: -8
+    explanation:
+      vi: $J'(x)=2(x-2)+2(x-8)=4x-20$, tại $3$ là $-8$.
+      en: $J'(x)=2(x-2)+2(x-8)=4x-20$, at $3$ it is $-8$.
+  - type: numeric
+    prompt:
+      vi: Giải $J'(x)=0$ để tìm $x$ tối ưu.
+      en: Solve $J'(x)=0$ for the optimal $x$.
+    answers:
+    - value: 5
+    explanation:
+      vi: $4x-20=0$ nên $x=5$.
+      en: $4x-20=0$, so $x=5$.
+  - type: mcq
+    prompt:
+      vi: Tại $x=3$, đạo hàm âm gợi ý di chuyển hướng nào để giảm loss?
+      en: At $x=3$, a negative derivative suggests moving which way to reduce loss?
+    options:
+    - vi: Tăng $x$
+      en: Increase $x$
+    - vi: Giảm $x$
+      en: Decrease $x$
+    - vi: Không đổi
+      en: Do not move
+    answer:
+    - 0
+    explanation:
+      vi: Gradient descent dùng $x-\alpha J'(x)$; đạo hàm âm làm bước cập nhật tăng $x$.
+      en: Gradient descent uses $x-\alpha J'(x)$; a negative derivative increases $x$.

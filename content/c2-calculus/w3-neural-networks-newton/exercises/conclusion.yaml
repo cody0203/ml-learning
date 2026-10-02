@@ -1,0 +1,147 @@
+﻿exercises:
+- id: c2w3-conclusion-matching-03
+  topic: conclusion
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép công cụ tối ưu với vai trò cuối tuần 3.
+    en: Match each optimization tool with its Week 3 role.
+  explanation:
+    vi: Gradient descent là bước học, Newton giải thích curvature, còn backprop cung cấp gradient.
+    en: Gradient descent supplies the learning step, Newton explains curvature, and backprop supplies gradients.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-conclusion-find-error-04
+  topic: conclusion
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi trong pipeline huấn luyện tóm tắt.
+    en: Find the error in the summarized training pipeline.
+  explanation:
+    vi: Không thể update trước backprop, vì chưa có gradient cho các tham số.
+    en: You cannot update before backprop, because the parameter gradients are not available yet.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-conclusion-parsons-05
+  topic: conclusion
+  type: parsons
+  difficulty: 1
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp pipeline tối ưu hóa neural network.
+    en: Order the neural-network optimization pipeline.
+  explanation:
+    vi: Đây là vòng lặp training chuẩn.
+    en: This is the standard training loop.
+  hints: []
+  steps:
+  - vi: Forward pass
+    en: Forward pass
+  - vi: Tính loss
+    en: Compute loss
+  - vi: Backprop gradients
+    en: Backprop gradients
+  - vi: Update parameters
+    en: Update parameters
+- id: c2w3-conclusion-multi-step-06
+  topic: conclusion
+  type: multi-step
+  difficulty: 2
+  tags:
+  - synthesis
+  prompt:
+    vi: Chọn công cụ cho từng tình huống.
+    en: Choose the tool for each situation.
+  explanation:
+    vi: Gradient descent và Newton khác nhau ở thông tin sử dụng.
+    en: Gradient descent and Newton differ in the information they use.
+  hints: []
+  parts:
+  - type: mcq
+    prompt:
+      vi: Mạng lớn hàng triệu tham số thường dùng gì?
+      en: A huge network with millions of parameters usually uses what?
+    options:
+    - vi: Gradient-based first-order methods
+      en: Gradient-based first-order methods
+    - vi: Full Hessian Newton
+      en: Full Hessian Newton
+    answer:
+    - 0
+    explanation:
+      vi: Full Hessian quá đắt.
+      en: Full Hessian is too expensive.
+  - type: mcq
+    prompt:
+      vi: Bài nhỏ cần hiểu curvature dùng gì?
+      en: A small problem where curvature matters uses what?
+    options:
+    - vi: Newton/Hessian
+      en: Newton/Hessian
+    - vi: Bỏ qua đạo hàm
+      en: Ignore derivatives
+    answer:
+    - 0
+    explanation:
+      vi: Newton dùng curvature.
+      en: Newton uses curvature.
+- id: c2w3-conclusion-construct-07
+  topic: conclusion
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng vector gradient 2D sao cho bước với $\alpha=0.1$ từ $(1,1)$ đến $(0.8,1.3)$.
+    en: Construct a 2D gradient so a step with $\alpha=0.1$ moves from $(1,1)$ to $(0.8,1.3)$.
+  explanation:
+    vi: Cần $g=(2,-3)$ vì $x_{new}=x-0.1g$.
+    en: Need $g=(2,-3)$ because $x_{new}=x-0.1g$.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: dot
+    with:
+    - 1
+    - 0
+    value: 2
+  - kind: dot
+    with:
+    - 0
+    - 1
+    value: -3
+  example:
+  - - 2
+  - - -3

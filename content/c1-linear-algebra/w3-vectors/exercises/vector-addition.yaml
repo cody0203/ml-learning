@@ -1,0 +1,166 @@
+exercises:
+- id: c1w3-vector-addition-matrix-01
+  topic: vector-addition
+  type: matrix
+  difficulty: 1
+  tags:
+  - addition
+  prompt:
+    vi: Tính $(4,1)+(1,3)$.
+    en: Compute $(4,1)+(1,3)$.
+  explanation:
+    vi: Cộng component được $(5,4)$.
+    en: Add components to get $(5,4)$.
+  hints: []
+  answer:
+  - - 5
+  - - 4
+  tolerance: 0
+- id: c1w3-vector-addition-mcq-01
+  topic: vector-addition
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  prompt:
+    vi: Trong hình, vector nào là $u+v$ với $u=(4,1)$, $v=(1,3)$?
+    en: In the figure, which vector is $u+v$ for $u=(4,1)$, $v=(1,3)$?
+  explanation:
+    vi: $u+v=(5,4)$.
+    en: $u+v=(5,4)$.
+  hints: []
+  figure:
+    xRange:
+    - 0
+    - 6
+    yRange:
+    - 0
+    - 5
+    vectors:
+    - to:
+      - 4
+      - 1
+      label: u
+      color: '#2563eb'
+    - to:
+      - 1
+      - 3
+      label: v
+      color: '#16a34a'
+    - to:
+      - 5
+      - 4
+      label: u+v
+      color: '#dc2626'
+  options:
+  - vi: $(5,4)$
+    en: $(5,4)$
+  - vi: $(3,-2)$
+    en: $(3,-2)$
+  - vi: $(4,3)$
+    en: $(4,3)$
+  answer:
+  - 0
+- id: c1w3-vector-addition-find-error-01
+  topic: vector-addition
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên khi tính $(4,1)-(1,3)$.
+    en: Find first wrong step computing $(4,1)-(1,3)$.
+  explanation:
+    vi: Phải là $(4-1,1-3)$, không phải đổi thứ tự tọa độ.
+    en: It should be $(4-1,1-3)$, not swapping coordinate order.
+  hints: []
+  steps:
+  - vi: $(4,1)-(1,3)=(4-1,3-1)$
+    en: $(4,1)-(1,3)=(4-1,3-1)$
+  - vi: $=(3,2)$
+    en: $=(3,2)$
+  - vi: Kết quả là $(3,2)$.
+    en: Result is $(3,2)$.
+  answer: 0
+- id: c1w3-vector-addition-matching-01
+  topic: vector-addition
+  type: matching
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ghép phép toán với ý nghĩa.
+    en: Match operation with meaning.
+  explanation:
+    vi: Mỗi phép toán có ý nghĩa hình học riêng.
+    en: Each operation has its own geometric meaning.
+  hints: []
+  pairs:
+  - left:
+      vi: $u+v$
+      en: $u+v$
+    right:
+      vi: Ghép hai dịch chuyển
+      en: Chain two displacements
+  - left:
+      vi: $u-v$
+      en: $u-v$
+    right:
+      vi: Độ lệch từ $v$ đến $u$
+      en: Displacement from $v$ to $u$
+  - left:
+      vi: $u+0$
+      en: $u+0$
+    right:
+      vi: Giữ nguyên $u$
+      en: Leaves $u$ unchanged
+- id: c1w3-vector-addition-multi-01
+  topic: vector-addition
+  type: multi-step
+  difficulty: 2
+  tags:
+  - distance
+  prompt:
+    vi: Cho $u=(2,-1)$, $v=(-3,4)$, $w=(1,2)$.
+    en: Given $u=(2,-1)$, $v=(-3,4)$, $w=(1,2)$.
+  explanation:
+    vi: Tính từng thành phần.
+    en: Compute component-wise.
+  hints: []
+  parts:
+  - type: matrix
+    prompt:
+      vi: $u+v+w$?
+      en: $u+v+w$?
+    answer:
+    - - 0
+    - - 5
+    tolerance: 0
+    explanation:
+      vi: $(0,5)$.
+      en: $(0,5)$.
+  - type: numeric
+    prompt:
+      vi: $\|u-v\|_1$?
+      en: $\|u-v\|_1$?
+    answers:
+    - value: 10
+    tolerance: 0
+    explanation:
+      vi: $u-v=(5,-5)$.
+      en: $u-v=(5,-5)$.
+- id: c1w3-vector-addition-parametric-01
+  topic: vector-addition
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Tính tổ hợp vector sinh ngẫu nhiên.
+    en: Compute a generated vector combination.
+  explanation:
+    vi: Generator tạo tổ hợp tuyến tính.
+    en: Generator creates a linear combination.
+  hints: []
+  generator: vector-combination
+  params: {}

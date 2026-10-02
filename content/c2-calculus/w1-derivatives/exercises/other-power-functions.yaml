@@ -1,0 +1,100 @@
+exercises:
+- id: c2w1-other-power-functions-mcq-01
+  topic: common-derivatives
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm các lũy thừa khác'?
+    en: 'At $x=1$, the graph $y=1/x$ is decreasing. Which derivative fact matches that picture?'
+  explanation:
+    vi: 'Ý đúng: quy tắc lũy thừa cũng áp dụng cho số mũ âm như $x^{-1}$.'
+    en: 'Correct: the power rule also applies to negative powers such as $x^{-1}$.'
+  hints: []
+  options:
+  - vi: quy tắc lũy thừa cũng áp dụng cho số mũ âm như $x^{-1}$
+    en: the power rule also applies to negative powers such as $x^{-1}$
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The slope is positive because $1/x$ is positive when $x$ is positive.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative is $-x$ because the reciprocal swaps numerator and denominator.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The curve may be differentiated at $x=0$ if the graph is extended by drawing through the gap.
+  answer:
+  - 0
+- id: c2w1-other-power-functions-truefalse-02
+  topic: common-derivatives
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm các lũy thừa khác', công thức $\frac{d}{dx}x^{-1}=-x^{-2}$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: 'Rewriting $1/x$ as $x^{-1}$ gives a negative-power derivative, with $x=0$ excluded.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: Negative powers follow the power rule, but the reciprocal function still excludes zero.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Viết $1/x$ thành $x^{-1}$ rồi áp dụng quy tắc lũy thừa, đồng thời loại $x=0$.
+    en: Write $1/x$ as $x^{-1}$, apply the power rule, and exclude $x=0$.
+  - vi: Hàm nghịch đảo dương nên đạo hàm của nó cũng luôn dương.
+    en: The reciprocal is positive, so its derivative is always positive too.
+  - vi: Có thể lấy đạo hàm tại $x=0$ nếu chỉ xét giới hạn bên phải.
+    en: It is differentiable at $x=0$ if only the right-hand limit is considered.
+  reasonAnswer: 0
+- id: c2w1-other-power-functions-parametric-03
+  topic: common-derivatives
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-other-power-functions-matching-04
+  topic: common-derivatives
+  type: matching
+  difficulty: 1
+  tags:
+  - formula
+  prompt:
+    vi: Ghép hàm với đạo hàm tương ứng.
+    en: Match reciprocal and negative-power functions with their derivatives.
+  explanation:
+    vi: Các cặp dùng bảng đạo hàm cơ bản và quy tắc lũy thừa.
+    en: The matching choices emphasize negative exponents, reciprocal notation, and the sign of the derivative.
+  hints: []
+  pairs:
+  - left:
+      vi: $x^2$
+      en: $x^2$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $e^x$
+      en: $e^x$
+    right:
+      vi: $e^x$
+      en: $e^x$
+  - left:
+      vi: $\log x$
+      en: $\log x$
+    right:
+      vi: $1/x$
+      en: $1/x$
+  - left:
+      vi: $\sin x$
+      en: $\sin x$
+    right:
+      vi: $\cos x$
+      en: $\cos x$

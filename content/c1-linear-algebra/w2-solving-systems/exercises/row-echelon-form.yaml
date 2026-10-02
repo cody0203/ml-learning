@@ -1,0 +1,192 @@
+exercises:
+- id: c1w2-row-echelon-form-mcq-01
+  topic: row-echelon-form
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: Which matrix is in REF but not necessarily RREF?
+    vi: Ma trận nào ở dạng REF nhưng chưa nhất thiết là RREF?
+  explanation:
+    en: The first matrix has zero rows at the bottom, pivots stepping right, and zeros below pivots; pivot $-2$ is allowed in REF. The second has a zero row above a non-zero row; the third has a nonzero entry below the first pivot; the fourth moves the lower pivot left, breaking the staircase.
+    vi: Ma trận đầu có hàng 0 ở dưới, pivot dịch sang phải, và số 0 dưới pivot; pivot $-2$ vẫn được phép trong REF. Ma trận hai đặt hàng 0 trên hàng khác 0; ma trận ba có phần tử khác 0 dưới pivot đầu; ma trận bốn có pivot hàng dưới đi sang trái, phá dạng cầu thang.
+  hints: []
+  options:
+  - en: $\begin{bmatrix}1&3&5\\0&-2&-4\\0&0&0\end{bmatrix}$
+    vi: $\begin{bmatrix}1&3&5\\0&-2&-4\\0&0&0\end{bmatrix}$
+  - en: $\begin{bmatrix}0&0&0\\1&2&3\end{bmatrix}$
+    vi: $\begin{bmatrix}0&0&0\\1&2&3\end{bmatrix}$
+  - en: $\begin{bmatrix}1&0\\2&1\end{bmatrix}$
+    vi: $\begin{bmatrix}1&0\\2&1\end{bmatrix}$
+  - en: $\begin{bmatrix}0&1\\1&0\end{bmatrix}$
+    vi: $\begin{bmatrix}0&1\\1&0\end{bmatrix}$
+  answer:
+  - 0
+- id: c1w2-row-echelon-form-truefalse-02
+  topic: row-echelon-form
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Pivot trong REF có thể là 2 hoặc -5; nó không bắt buộc bằng 1.
+    en: A pivot in REF may be 2 or -5; it does not have to be 1.
+  explanation:
+    vi: REF chỉ yêu cầu leading entry khác 0 và phía dưới bằng 0; pivot bằng 1 là điều kiện thêm của RREF.
+    en: REF only requires a non-zero leading entry with zeros below it; unit pivots are an additional RREF condition.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Pivot REF chỉ cần khác 0.
+    en: Non-zero is sufficient for REF pivots.
+  - vi: Mọi pivot trong REF phải được chuẩn hóa thành 1 trước khi tính.
+    en: Every REF pivot must be normalized to 1 before it counts.
+  - vi: Pivot âm làm hỏng dạng cầu thang dù các phần tử dưới nó bằng 0.
+    en: A negative pivot breaks echelon form even if entries below it are zero.
+  reasonAnswer: 0
+- id: c1w2-row-echelon-form-matching-03
+  topic: row-echelon-form
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến dạng bậc thang dòng.
+    en: Match concepts related to row echelon form.
+  explanation:
+    vi: 'Các cặp tập trung vào điều kiện REF: hàng 0 ở dưới, pivot dịch phải, và số 0 bên dưới pivot.'
+    en: 'The pairs focus on REF conditions: zero rows below, pivots stepping right, and zeros beneath pivots.'
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-row-echelon-form-numeric-04
+  topic: row-echelon-form
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: REF có hai hàng khác 0 và một hàng 0. Rank là bao nhiêu?
+    en: An REF has two non-zero rows and one zero row. What is the rank?
+  explanation:
+    vi: Rank là số hàng khác 0/pivot.
+    en: Rank is the number of non-zero rows/pivots.
+  hints: []
+  answers:
+  - value: 2
+- id: c1w2-row-echelon-form-construct-05
+  topic: row-echelon-form
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận REF rank 2 nhưng pivot không nhất thiết bằng 1.
+    en: Construct a rank-2 REF matrix whose pivots need not be 1.
+  explanation:
+    vi: Mẫu đã có pivot dịch sang phải và số 0 phía dưới; pivot không bằng 1 vẫn hợp lệ vì đây là REF, không phải RREF.
+    en: The sample already has pivots stepping right and zeros below them; the non-unit pivot is allowed because this asks for REF, not RREF.
+  hints: []
+  rows: 3
+  cols: 3
+  constraints:
+  - kind: rowEchelon
+  - kind: rank
+    value: 2
+  example:
+  - - 2
+    - 1
+    - 0
+  - - 0
+    - 3
+    - 4
+  - - 0
+    - 0
+    - 0
+- id: c1w2-row-echelon-form-parsons-06
+  topic: row-echelon-form
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho dạng bậc thang dòng.
+    en: Order the workflow for row echelon form.
+  explanation:
+    vi: Thứ tự đúng tạo số 0 dưới mỗi leading entry trước khi đi xuống, đúng với dạng cầu thang của REF.
+    en: The correct order creates zeros below each leading entry before moving down, which is precisely the staircase required for REF.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-row-echelon-form-finderror-07
+  topic: row-echelon-form
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về dạng bậc thang dòng.
+    en: Find the first error in the argument about row echelon form.
+  explanation:
+    vi: Ma trận thỏa quy tắc kích thước pivot của REF; bước 3 nhầm điều kiện pivot bằng 1 của RREF.
+    en: The matrix meets the REF pivot-size rule; step 3 incorrectly imports the stricter RREF unit-pivot rule.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-row-echelon-form-parametric-11
+  topic: row-echelon-form
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động tạo dạng REF bằng khử dòng.
+    en: Dynamic REF drill that asks for a row echelon reduction.
+  explanation:
+    vi: Tạo số 0 dưới pivot trong ma trận được sinh; pivot chỉ cần khác 0, không nhất thiết bằng 1.
+    en: Create zeros below pivots in the generated matrix; pivots need only be non-zero, not necessarily 1.
+  hints: []
+  generator: rref
+  params:
+    size: 3

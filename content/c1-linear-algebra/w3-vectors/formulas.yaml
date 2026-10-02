@@ -1,0 +1,203 @@
+formulas:
+  - id: c1w3-f-vector-from-points
+    topic: vector-basics
+    name: { vi: 'Vector từ điểm A đến B', en: 'Vector from point A to point B' }
+    tex: 'B-A=(b_1-a_1,\ b_2-a_2)'
+    where:
+      vi: '$A=(a_1,a_2)$ là điểm đầu, $B=(b_1,b_2)$ là điểm cuối.'
+      en: '$A=(a_1,a_2)$ is the start point and $B=(b_1,b_2)$ the end point.'
+    numpy: 'B - A'
+    exercises: [c1w3-vector-basics-matrix-01, c1w3-vector-basics-predict-01, c1w3-vector-basics-multi-01]
+  - id: c1w3-f-l1-norm
+    topic: norms-distances
+    name: { vi: 'Chuẩn L1', en: 'L1 norm' }
+    tex: '\|u\|_1=\sum_i |u_i|'
+    where:
+      vi: 'Trong 2D, $\|(a,b)\|_1=|a|+|b|$; giống khoảng cách taxi.'
+      en: 'In 2D, $\|(a,b)\|_1=|a|+|b|$; like taxicab distance.'
+    numpy: 'np.linalg.norm(u, 1)'
+    exercises: [c1w3-norms-numeric-01, c1w3-norms-construct-01, c1w3-norms-code-01]
+  - id: c1w3-f-l2-norm
+    topic: norms-distances
+    name: { vi: 'Chuẩn L2', en: 'L2 norm' }
+    tex: '\|u\|_2=\sqrt{\sum_i u_i^2}'
+    where:
+      vi: 'Trong 2D, $\|(a,b)\|_2=\sqrt{a^2+b^2}$; đây là độ dài Euclid.'
+      en: 'In 2D, $\|(a,b)\|_2=\sqrt{a^2+b^2}$; this is Euclidean length.'
+    numpy: 'np.linalg.norm(u)'
+    exercises: [c1w3-norms-numeric-01, c1w3-norms-find-error-01, c1w3-norms-code-01]
+  - id: c1w3-f-distance-by-norm
+    topic: norms-distances
+    name: { vi: 'Khoảng cách bằng chuẩn của hiệu', en: 'Distance as norm of a difference' }
+    tex: 'd(u,v)=\|u-v\|'
+    where:
+      vi: 'Trừ vector trước, rồi lấy chuẩn thích hợp.'
+      en: 'Subtract the vectors first, then take the chosen norm.'
+    numpy: 'np.linalg.norm(u - v)'
+    exercises: [c1w3-norms-mcq-01, c1w3-vector-addition-multi-01]
+  - id: c1w3-f-vector-angle-atan2
+    topic: direction-scaling
+    name: { vi: 'Góc của vector 2D', en: 'Angle of a 2D vector' }
+    tex: '\tan\theta=\frac{b}{a}'
+    where:
+      vi: 'Với $u=(a,b)$ và $a\ne0$; trong code nên dùng `arctan2` để đúng góc phần tư.'
+      en: 'For $u=(a,b)$ and $a\ne0$; in code prefer `arctan2` for the correct quadrant.'
+    numpy: 'np.arctan2(b, a)'
+    exercises: [c1w3-direction-numeric-01, c1w3-direction-parsons-01, c1w3-direction-parametric-01]
+  - id: c1w3-f-scalar-multiplication
+    topic: direction-scaling
+    name: { vi: 'Nhân vector với vô hướng', en: 'Scalar multiplication of a vector' }
+    tex: '\lambda(a,b)=(\lambda a,\lambda b)'
+    where:
+      vi: '$|\lambda|$ đổi độ dài; $\lambda<0$ đảo hướng.'
+      en: '$|\lambda|$ changes length; $\lambda<0$ reverses direction.'
+    numpy: 'lambda_ * u'
+    exercises: [c1w3-direction-matrix-01, c1w3-direction-mcq-01, c1w3-direction-tf-01]
+  - id: c1w3-f-vector-add-sub
+    topic: vector-addition
+    name: { vi: 'Cộng và trừ vector', en: 'Vector addition and subtraction' }
+    tex: 'u+v=(u_1+v_1,\ldots,u_n+v_n),\quad u-v=(u_1-v_1,\ldots,u_n-v_n)'
+    where:
+      vi: 'Thực hiện theo từng tọa độ tương ứng.'
+      en: 'Operate component by component.'
+    numpy: 'u + v; u - v'
+    exercises: [c1w3-vector-addition-matrix-01, c1w3-vector-addition-find-error-01, c1w3-vector-addition-parametric-01]
+  - id: c1w3-f-dot-product
+    topic: dot-product
+    name: { vi: 'Tích vô hướng đại số', en: 'Algebraic dot product' }
+    tex: 'u\cdot v=\sum_{i=1}^{n}u_iv_i'
+    where:
+      vi: 'Nhân các tọa độ tương ứng rồi cộng; hai vector phải cùng chiều dài.'
+      en: 'Multiply corresponding entries and sum; the two vectors must have the same length.'
+    numpy: 'np.dot(u, v)'
+    exercises: [c1w3-dot-product-numeric-01, c1w3-dot-product-code-01, c1w3-dot-product-parametric-01]
+  - id: c1w3-f-norm-from-dot
+    topic: dot-product
+    name: { vi: 'Chuẩn L2 từ tích vô hướng', en: 'L2 norm from dot product' }
+    tex: '\|u\|_2=\sqrt{u\cdot u}'
+    where:
+      vi: 'Dot một vector với chính nó cho tổng bình phương tọa độ.'
+      en: 'Dotting a vector with itself gives the sum of squared entries.'
+    numpy: 'np.sqrt(np.dot(u, u))'
+    exercises: [c1w3-dot-product-matching-01, c1w3-norms-code-01, c1w3-geodot-multi-01]
+  - id: c1w3-f-geometric-dot-product
+    topic: geometric-dot-product
+    name: { vi: 'Tích vô hướng hình học', en: 'Geometric dot product' }
+    tex: 'u\cdot v=\|u\|\,\|v\|\cos\theta'
+    where:
+      vi: '$\theta$ là góc giữa hai vector khác 0.'
+      en: '$\theta$ is the angle between two nonzero vectors.'
+    exercises: [c1w3-geodot-numeric-01, c1w3-geodot-find-error-01, c1w3-geodot-multi-01]
+  - id: c1w3-f-angle-from-dot
+    topic: geometric-dot-product
+    name: { vi: 'Tính góc từ tích vô hướng', en: 'Angle from dot product' }
+    tex: '\cos\theta=\frac{u\cdot v}{\|u\|\,\|v\|}'
+    where:
+      vi: 'Dùng khi cần góc giữa hai vector khác 0.'
+      en: 'Use when finding the angle between two nonzero vectors.'
+    numpy: 'np.arccos(np.dot(u, v)/(np.linalg.norm(u)*np.linalg.norm(v)))'
+    exercises: [c1w3-geodot-numeric-01, c1w3-geodot-find-error-01, c1w3-direction-parametric-01]
+  - id: c1w3-f-orthogonal-dot-zero
+    topic: geometric-dot-product
+    name: { vi: 'Điều kiện vuông góc', en: 'Orthogonality condition' }
+    tex: 'u\perp v\Longleftrightarrow u\cdot v=0'
+    where:
+      vi: 'Áp dụng cho hai vector khác 0; dot bằng 0 nghĩa là góc 90°.'
+      en: 'For nonzero vectors; zero dot product means a 90° angle.'
+    exercises: [c1w3-geodot-mcq-01, c1w3-geodot-construct-01, c1w3-geodot-multi-01]
+  - id: c1w3-f-matrix-vector-entry
+    topic: matrix-vector
+    name: { vi: 'Công thức từng phần tử của Ax', en: 'Entry formula for Ax' }
+    tex: '(Ax)_i=\sum_{j=1}^{n}A_{ij}x_j'
+    where:
+      vi: '$A$ là $m\times n$, $x\in\mathbb{R}^n$; kết quả nằm trong $\mathbb{R}^m$.'
+      en: '$A$ is $m\times n$, $x\in\mathbb{R}^n$; the result is in $\mathbb{R}^m$.'
+    numpy: 'A @ x'
+    exercises: [c1w3-matvec-matrix-01, c1w3-matvec-parsons-01, c1w3-matvec-parametric-01]
+  - id: c1w3-f-transformation-columns
+    topic: linear-transformations
+    name: { vi: 'Cột của ma trận biến đổi', en: 'Columns of a transformation matrix' }
+    tex: 'A=\begin{bmatrix}Ae_1&Ae_2&\cdots&Ae_n\end{bmatrix}'
+    where:
+      vi: 'Mỗi cột là ảnh của một vector cơ sở chuẩn.'
+      en: 'Each column is the image of a standard basis vector.'
+    exercises: [c1w3-lintrans-mcq-01, c1w3-lintrans-matching-01, c1w3-lintrans-find-error-01]
+  - id: c1w3-f-linearity
+    topic: linear-transformations
+    name: { vi: 'Tính tuyến tính của phép biến đổi', en: 'Linearity of a transformation' }
+    tex: 'T(u+v)=T(u)+T(v),\quad T(\lambda u)=\lambda T(u)'
+    where:
+      vi: 'Một biến đổi tuyến tính giữ cộng vector và nhân vô hướng.'
+      en: 'A linear transformation preserves vector addition and scalar multiplication.'
+    exercises: [c1w3-lintrans-tf-01, c1w3-lintrans-code-01]
+  - id: c1w3-f-matrix-multiply-entry
+    topic: matrix-multiplication
+    name: { vi: 'Phần tử của tích ma trận', en: 'Entry of a matrix product' }
+    tex: '(AB)_{ij}=\sum_{k=1}^{r}A_{ik}B_{kj}'
+    where:
+      vi: 'Lấy hàng $i$ của $A$ dot với cột $j$ của $B$.'
+      en: 'Dot row $i$ of $A$ with column $j$ of $B$.'
+    numpy: 'A @ B'
+    exercises: [c1w3-matmul-matrix-01, c1w3-matmul-find-error-01, c1w3-matmul-code-01]
+  - id: c1w3-f-matrix-multiply-shape
+    topic: matrix-multiplication
+    name: { vi: 'Kích thước của tích AB', en: 'Shape of the product AB' }
+    tex: 'A\in\mathbb{R}^{m\times r},\ B\in\mathbb{R}^{r\times n}\Longrightarrow AB\in\mathbb{R}^{m\times n}'
+    where:
+      vi: 'Kích thước trong $r$ phải khớp; kích thước ngoài là kết quả.'
+      en: 'The inner dimension $r$ must match; the outer dimensions form the result.'
+    exercises: [c1w3-matmul-mcq-01, c1w3-matmul-parsons-01, c1w3-matmul-parametric-01]
+  - id: c1w3-f-identity-matrix
+    topic: identity-inverse
+    name: { vi: 'Ma trận đơn vị', en: 'Identity matrix' }
+    tex: 'AI=IA=A'
+    where:
+      vi: '$I$ là phép biến đổi “không làm gì” với kích thước tương thích.'
+      en: '$I$ is the “do nothing” transformation with compatible shape.'
+    numpy: 'np.eye(n)'
+    exercises: [c1w3-inverse-mcq-01, c1w3-inverse-parsons-01]
+  - id: c1w3-f-inverse-2x2
+    topic: identity-inverse
+    name: { vi: 'Nghịch đảo ma trận 2×2', en: 'Inverse of a 2×2 matrix' }
+    tex: 'A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}'
+    where:
+      vi: 'Với $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ và $ad-bc\ne0$.'
+      en: 'For $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ with $ad-bc\ne0$.'
+    numpy: 'np.linalg.inv(A)'
+    exercises: [c1w3-inverse-matrix-01, c1w3-inverse-parsons-01, c1w3-inverse-find-error-01]
+  - id: c1w3-f-invertibility-det
+    topic: identity-inverse
+    name: { vi: 'Khả nghịch và định thức', en: 'Invertibility and determinant' }
+    tex: 'A^{-1}\text{ exists}\Longleftrightarrow \det(A)\ne0'
+    where:
+      vi: 'Với ma trận vuông; định thức bằng 0 thì không có nghịch đảo.'
+      en: 'For square matrices; determinant zero means no inverse.'
+    numpy: 'np.linalg.det(A)'
+    exercises: [c1w3-inverse-numeric-01, c1w3-inverse-tf-01, c1w3-inverse-construct-01]
+  - id: c1w3-f-perceptron-score
+    topic: neural-networks-matrices
+    name: { vi: 'Điểm perceptron tuyến tính', en: 'Linear perceptron score' }
+    tex: 's=w\cdot x+b'
+    where:
+      vi: '$w$ là trọng số, $x$ là vector đặc trưng, $b$ là bias.'
+      en: '$w$ is the weight vector, $x$ the feature vector, and $b$ the bias.'
+    numpy: 'np.dot(w, x) + b'
+    exercises: [c1w3-nn-numeric-01, c1w3-nn-multi-01, c1w3-nn-matching-01]
+  - id: c1w3-f-batch-scores
+    topic: neural-networks-matrices
+    name: { vi: 'Điểm batch khi ví dụ là các hàng', en: 'Batch scores with examples as rows' }
+    tex: 'Xw=\begin{bmatrix}x_1\cdot w\\x_2\cdot w\\\vdots\\x_m\cdot w\end{bmatrix}'
+    where:
+      vi: 'Mỗi hàng của $X$ là một ví dụ; kết quả có một điểm cho mỗi ví dụ.'
+      en: 'Each row of $X$ is one example; the result has one score per example.'
+    numpy: 'X @ w'
+    exercises: [c1w3-nn-matrix-01, c1w3-nn-code-01, c1w3-nn-predict-01]
+  - id: c1w3-f-linear-layer-batch
+    topic: neural-networks-matrices
+    name: { vi: 'Lớp tuyến tính theo batch', en: 'Batch linear layer' }
+    tex: 'Y=XW+b'
+    where:
+      vi: '$X$ chứa batch dữ liệu, $W$ chứa trọng số, $b$ được broadcast theo hàng.'
+      en: '$X$ stores the data batch, $W$ the weights, and $b$ broadcasts across rows.'
+    numpy: 'X @ W + b'
+    exercises: [c1w3-nn-code-01, c1w3-nn-predict-01]

@@ -1,0 +1,370 @@
+flashcards:
+- id: c2w3-fc-01
+  topic: gradient-descent-backprop
+  kind: concept
+  front:
+    vi: Vì sao gradient descent đi theo $-\nabla L$?
+    en: Why does gradient descent move along $-\nabla L$?
+  back:
+    vi: Vì $\nabla L$ chỉ hướng tăng nhanh nhất của loss; hướng âm làm loss giảm nhanh nhất cục bộ.
+    en: Because $\nabla L$ points toward fastest loss increase; the negative direction gives fastest local decrease.
+- id: c2w3-fc-02
+  topic: gradient-descent-backprop
+  kind: formula
+  front:
+    vi: Công thức update gradient descent cho tham số $\theta$?
+    en: Gradient descent update for parameter $\theta$?
+  back:
+    vi: "$\\theta_{k+1}=\\theta_k-\\alpha\\nabla_\theta L$."
+    en: "$\\theta_{k+1}=\\theta_k-\\alpha\\nabla_\theta L$."
+- id: c2w3-fc-03
+  topic: gradient-descent-backprop
+  kind: compute
+  front:
+    vi: Nếu $w=2$, gradient $=5$, $\alpha=0.1$, $w_{new}=?$
+    en: If $w=2$, gradient $=5$, $\alpha=0.1$, $w_{new}=?$
+  back:
+    vi: $1.5$. Trừ $0.1\cdot5$.
+    en: $1.5$. Subtract $0.1\cdot5$.
+- id: c2w3-fc-04
+  topic: newtons-method
+  kind: formula
+  front:
+    vi: Newton tìm nghiệm 1D dùng công thức nào?
+    en: What 1D Newton root-finding formula is used?
+  back:
+    vi: $x_{k+1}=x_k-f(x_k)/f'(x_k)$.
+    en: $x_{k+1}=x_k-f(x_k)/f'(x_k)$.
+- id: c2w3-fc-05
+  topic: newtons-method
+  kind: concept
+  front:
+    vi: Khi nào Newton có thể thất bại?
+    en: When can Newton fail?
+  back:
+    vi: Khi $f'(x_k)$ gần 0, điểm đầu xấu, hoặc tiếp tuyến đi ra ngoài miền hợp lệ.
+    en: When $f'(x_k)$ is near 0, the start is poor, or the tangent leaves the valid domain.
+- id: c2w3-fc-06
+  topic: newtons-method
+  kind: compute
+  front:
+    vi: Với $f(x)=x^2-2$, $x_0=1$, Newton cho $x_1$?
+    en: For $f(x)=x^2-2$, $x_0=1$, Newton gives $x_1$?
+  back:
+    vi: $1.5$. $1-(-1)/2=1.5$.
+    en: $1.5$. $1-(-1)/2=1.5$.
+- id: c2w3-fc-07
+  topic: newtons-method-example
+  kind: formula
+  front:
+    vi: Newton tối ưu $g(x)$ dùng gradient/curvature thế nào?
+    en: How does Newton optimize $g(x)$ using gradient/curvature?
+  back:
+    vi: $x_{k+1}=x_k-g'(x_k)/g''(x_k)$.
+    en: $x_{k+1}=x_k-g'(x_k)/g''(x_k)$.
+- id: c2w3-fc-08
+  topic: newtons-method-example
+  kind: compute
+  front:
+    vi: Với $g=e^x-\log x$, $g'(x)$ là gì?
+    en: For $g=e^x-\log x$, what is $g'(x)$?
+  back:
+    vi: $e^x-1/x$.
+    en: $e^x-1/x$.
+- id: c2w3-fc-09
+  topic: second-derivative
+  kind: concept
+  front:
+    vi: $f''(x)>0$ gợi ý hình dạng nào?
+    en: What shape does $f''(x)>0$ suggest?
+  back:
+    vi: Concave up/convex cục bộ; điểm tới hạn có thể là local minimum.
+    en: Locally concave up/convex; a critical point may be a local minimum.
+- id: c2w3-fc-10
+  topic: second-derivative
+  kind: formula
+  front:
+    vi: Ký hiệu Leibniz cho đạo hàm bậc hai?
+    en: Leibniz notation for the second derivative?
+  back:
+    vi: $d^2f/dx^2$.
+    en: $d^2f/dx^2$.
+- id: c2w3-fc-11
+  topic: second-derivative
+  kind: compute
+  front:
+    vi: Nếu $f(x)=x^3$, $f''(2)=?$
+    en: If $f(x)=x^3$, $f''(2)=?$
+  back:
+    vi: $12$. $f''(x)=6x$.
+    en: $12$. $f''(x)=6x$.
+- id: c2w3-fc-12
+  topic: hessian
+  kind: formula
+  front:
+    vi: Hessian 2 biến có dạng nào?
+    en: What is the 2-variable Hessian?
+  back:
+    vi: $\begin{bmatrix}f_{xx}&f_{xy}\\f_{yx}&f_{yy}\end{bmatrix}$.
+    en: $\begin{bmatrix}f_{xx}&f_{xy}\\f_{yx}&f_{yy}\end{bmatrix}$.
+- id: c2w3-fc-13
+  topic: hessian
+  kind: compute
+  front:
+    vi: Với $f=2x^2+3y^2-xy$, $H=?$
+    en: For $f=2x^2+3y^2-xy$, $H=?$
+  back:
+    vi: $\begin{bmatrix}4&-1\\-1&6\end{bmatrix}$.
+    en: $\begin{bmatrix}4&-1\\-1&6\end{bmatrix}$.
+- id: c2w3-fc-14
+  topic: hessian
+  kind: concept
+  front:
+    vi: Vì sao $f_{xy}$ và $f_{yx}$ thường bằng nhau?
+    en: Why are $f_{xy}$ and $f_{yx}$ often equal?
+  back:
+    vi: Nếu các đạo hàm riêng bậc hai liên tục, định lý Clairaut cho phép đổi thứ tự.
+    en: If second partials are continuous, Clairaut's theorem lets us swap order.
+- id: c2w3-fc-15
+  topic: hessians-concavity
+  kind: concept
+  front:
+    vi: Hessian có eigenvalue trái dấu nghĩa là gì?
+    en: What do mixed-sign Hessian eigenvalues mean?
+  back:
+    vi: Saddle point/curvature lên theo một hướng và xuống theo hướng khác.
+    en: A saddle point/curving up in one direction and down in another.
+- id: c2w3-fc-16
+  topic: hessians-concavity
+  kind: formula
+  front:
+    vi: Điều kiện Hessian positive definite cho local min?
+    en: Hessian positive definite condition for local min?
+  back:
+    vi: Tất cả eigenvalue dương tại critical point.
+    en: All eigenvalues are positive at the critical point.
+- id: c2w3-fc-17
+  topic: hessians-concavity
+  kind: compute
+  front:
+    vi: $H=\begin{bmatrix}4&0\\0&-4\end{bmatrix}$ là min, max hay saddle?
+    en: $H=\begin{bmatrix}4&0\\0&-4\end{bmatrix}$ is min, max, or saddle?
+  back:
+    vi: Saddle, vì eigenvalue $4$ và $-4$ trái dấu.
+    en: Saddle, because eigenvalues $4$ and $-4$ have opposite signs.
+- id: c2w3-fc-18
+  topic: newton-two-variables
+  kind: formula
+  front:
+    vi: Newton đa biến update vector là gì?
+    en: What is the multivariable Newton vector update?
+  back:
+    vi: $x_{k+1}=x_k-H(x_k)^{-1}\nabla f(x_k)$.
+    en: $x_{k+1}=x_k-H(x_k)^{-1}\nabla f(x_k)$.
+- id: c2w3-fc-19
+  topic: newton-two-variables
+  kind: concept
+  front:
+    vi: Vì sao không nên tính inverse Hessian trực tiếp trong code?
+    en: Why avoid explicitly computing the Hessian inverse in code?
+  back:
+    vi: Giải hệ $H\Delta=\nabla f$ ổn định và hiệu quả hơn.
+    en: Solving $H\Delta=\nabla f$ is more stable and efficient.
+- id: c2w3-fc-20
+  topic: regression-perceptron
+  kind: formula
+  front:
+    vi: Perceptron hồi quy 2 input dự đoán gì?
+    en: What does a 2-input regression perceptron predict?
+  back:
+    vi: $\hat y=w_1x_1+w_2x_2+b$.
+    en: $\hat y=w_1x_1+w_2x_2+b$.
+- id: c2w3-fc-21
+  topic: regression-perceptron
+  kind: compute
+  front:
+    vi: '$w=(2,-1)$, $x=(3,4)$, $b=5$: $\hat y=?$'
+    en: '$w=(2,-1)$, $x=(3,4)$, $b=5$: $\hat y=?$'
+  back:
+    vi: $7$. $6-4+5=7$.
+    en: $7$. $6-4+5=7$.
+- id: c2w3-fc-22
+  topic: regression-loss
+  kind: formula
+  front:
+    vi: MSE single-example loss trong slides dùng dạng nào?
+    en: What single-example MSE loss form is used?
+  back:
+    vi: $L=\frac12(y-\hat y)^2$.
+    en: $L=\frac12(y-\hat y)^2$.
+- id: c2w3-fc-23
+  topic: regression-loss
+  kind: compute
+  front:
+    vi: Nếu $y=10$, $\hat y=6$, MSE loss $\frac12(y-\hat y)^2$ bằng?
+    en: If $y=10$, $\hat y=6$, MSE loss $\frac12(y-\hat y)^2$ equals?
+  back:
+    vi: $8$. $\frac12\cdot16=8$.
+    en: $8$. $\frac12\cdot16=8$.
+- id: c2w3-fc-24
+  topic: regression-gradient-descent
+  kind: formula
+  front:
+    vi: Với MSE chuẩn, $\partial L/\partial w_i$ là gì?
+    en: For standard MSE, what is $\partial L/\partial w_i$?
+  back:
+    vi: $-(y-\hat y)x_i=(\hat y-y)x_i$.
+    en: $-(y-\hat y)x_i=(\hat y-y)x_i$.
+- id: c2w3-fc-25
+  topic: regression-gradient-descent
+  kind: compute
+  front:
+    vi: '$x_1=2$, $y=5$, $\hat y=3$: $\partial L/\partial w_1=?$'
+    en: '$x_1=2$, $y=5$, $\hat y=3$: $\partial L/\partial w_1=?$'
+  back:
+    vi: $-4$.
+    en: $-4$.
+- id: c2w3-fc-26
+  topic: classification-perceptron
+  kind: concept
+  front:
+    vi: Vì sao classification cần activation?
+    en: Why does classification need an activation?
+  back:
+    vi: Để biến score tuyến tính thành xác suất/nhãn có miền phù hợp.
+    en: To map a linear score into a probability/label with the right range.
+- id: c2w3-fc-27
+  topic: classification-perceptron
+  kind: formula
+  front:
+    vi: Score phân loại trước sigmoid là gì?
+    en: What is the classification score before sigmoid?
+  back:
+    vi: $z=w\cdot x+b$.
+    en: $z=w\cdot x+b$.
+- id: c2w3-fc-28
+  topic: sigmoid-function
+  kind: formula
+  front:
+    vi: Công thức sigmoid?
+    en: Sigmoid formula?
+  back:
+    vi: $\sigma(z)=1/(1+e^{-z})$.
+    en: $\sigma(z)=1/(1+e^{-z})$.
+- id: c2w3-fc-29
+  topic: sigmoid-function
+  kind: formula
+  front:
+    vi: Đạo hàm sigmoid theo chính sigmoid?
+    en: Sigmoid derivative in terms of sigmoid?
+  back:
+    vi: $\sigma'(z)=\sigma(z)(1-\sigma(z))$.
+    en: $\sigma'(z)=\sigma(z)(1-\sigma(z))$.
+- id: c2w3-fc-30
+  topic: sigmoid-function
+  kind: compute
+  front:
+    vi: $\sigma(0)$ và $\sigma'(0)$?
+    en: $\sigma(0)$ and $\sigma'(0)$?
+  back:
+    vi: $0.5$ và $0.25$.
+    en: $0.5$ and $0.25$.
+- id: c2w3-fc-31
+  topic: classification-gradient-descent
+  kind: formula
+  front:
+    vi: Với sigmoid + log-loss chuẩn, gradient theo $w_i$?
+    en: With sigmoid + standard log-loss, gradient wrt $w_i$?
+  back:
+    vi: $(\hat y-y)x_i$.
+    en: $(\hat y-y)x_i$.
+- id: c2w3-fc-32
+  topic: classification-gradient-descent
+  kind: compute
+  front:
+    vi: Nếu $\hat y=0.8$, $y=1$, $x_1=3$, gradient $w_1$?
+    en: If $\hat y=0.8$, $y=1$, $x_1=3$, gradient for $w_1$?
+  back:
+    vi: $-0.6$.
+    en: $-0.6$.
+- id: c2w3-fc-33
+  topic: classification-derivatives
+  kind: formula
+  front:
+    vi: Chuỗi đạo hàm cho $w_i$ trong classification perceptron?
+    en: Derivative chain for $w_i$ in a classification perceptron?
+  back:
+    vi: $\frac{\partial L}{\partial\hat y}\frac{\partial\hat y}{\partial z}\frac{\partial z}{\partial w_i}$.
+    en: $\frac{\partial L}{\partial\hat y}\frac{\partial\hat y}{\partial z}\frac{\partial z}{\partial w_i}$.
+- id: c2w3-fc-34
+  topic: classification-derivatives
+  kind: concept
+  front:
+    vi: Mắt xích $\partial z/\partial b$ bằng gì và vì sao?
+    en: What is $\partial z/\partial b$ and why?
+  back:
+    vi: Bằng 1 vì $z=w\cdot x+b$.
+    en: It is 1 because $z=w\cdot x+b$.
+- id: c2w3-fc-35
+  topic: classification-neural-network
+  kind: concept
+  front:
+    vi: Mạng 2-2-1 có những layer nào?
+    en: What layers does a 2-2-1 network have?
+  back:
+    vi: 2 input, 2 hidden neurons, 1 output neuron.
+    en: 2 inputs, 2 hidden neurons, 1 output neuron.
+- id: c2w3-fc-36
+  topic: classification-neural-network
+  kind: concept
+  front:
+    vi: Forward pass hidden layer sigmoid là gì?
+    en: What is the sigmoid hidden-layer forward pass?
+  back:
+    vi: $z^{[1]}=W^{[1]}x+b^{[1]}$, $a^{[1]}=\sigma(z^{[1]})$.
+    en: $z^{[1]}=W^{[1]}x+b^{[1]}$, $a^{[1]}=\sigma(z^{[1]})$.
+- id: c2w3-fc-37
+  topic: nn-log-loss
+  kind: formula
+  front:
+    vi: Binary log-loss chuẩn là gì?
+    en: What is standard binary log-loss?
+  back:
+    vi: $-[y\log\hat y+(1-y)\log(1-\hat y)]$.
+    en: $-[y\log\hat y+(1-y)\log(1-\hat y)]$.
+- id: c2w3-fc-38
+  topic: nn-log-loss
+  kind: compute
+  front:
+    vi: Nếu $y=1$, $\hat y=0.9$, log-loss xấp xỉ?
+    en: If $y=1$, $\hat y=0.9$, approximate log-loss?
+  back:
+    vi: $-\log(0.9)\approx0.105$.
+    en: $-\log(0.9)\approx0.105$.
+- id: c2w3-fc-39
+  topic: conclusion
+  kind: concept
+  front:
+    vi: Gradient descent, Newton và backprop liên hệ thế nào?
+    en: How are gradient descent, Newton, and backprop related?
+  back:
+    vi: Backprop tính gradient; gradient descent dùng gradient; Newton thêm curvature/Hessian.
+    en: Backprop computes gradients; gradient descent uses gradients; Newton adds curvature/Hessians.
+- id: c2w3-fc-40
+  topic: conclusion
+  kind: concept
+  front:
+    vi: Pipeline training một batch có bốn bước nào?
+    en: What four steps are in a batch training pipeline?
+  back:
+    vi: Forward, loss, backprop, update.
+    en: Forward, loss, backprop, update.
+- id: c2w3-fc-41
+  topic: conclusion
+  kind: concept
+  front:
+    vi: Vì sao deep learning thường không dùng Newton đầy đủ?
+    en: Why does deep learning rarely use full Newton?
+  back:
+    vi: Hessian rất lớn/tốn kém và có thể không positive definite.
+    en: The Hessian is huge/expensive and may not be positive definite.

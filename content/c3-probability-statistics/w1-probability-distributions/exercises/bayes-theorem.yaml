@@ -1,0 +1,154 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-bayes-theorem-mcq-01",
+      "topic": "bayes-theorem",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề định lý bayes?",
+        "en": "Which statement best describes bayes' theorem?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng nói về việc kết hợp prior với likelihood để ra posterior. Các lựa chọn sai bỏ qua base rate, lấy độ nhạy làm đáp án cuối, hoặc quên false positive trong mẫu số.",
+        "en": "The correct answer combines a prior with likelihoods to produce a posterior. The wrong choices ignore the base rate, use sensitivity as the final answer, or omit false positives from the denominator."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là turning likelihoods and priors into a posterior.",
+          "en": "The focus is turning likelihoods and priors into a posterior."
+        },
+        {
+          "vi": "Trong xét nghiệm hiếm, kết quả dương tính luôn có nghĩa là xác suất bệnh bằng 99%.",
+          "en": "In a rare-disease test, a positive result always means the disease probability is 99%."
+        },
+        {
+          "vi": "Có thể bỏ nhóm khỏe bị dương tính giả khi tính mẫu số.",
+          "en": "Healthy people with false positives can be omitted from the denominator."
+        },
+        {
+          "vi": "Prior bệnh hiếm không ảnh hưởng nếu test có độ nhạy cao.",
+          "en": "A rare-disease prior has no effect when the test has high sensitivity."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-bayes-theorem-numeric-02",
+      "topic": "bayes-theorem",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Bệnh hiếm $P(D)=0.0001$, độ nhạy 0.99, false positive 0.01. Tính $P(D|+)$.",
+        "en": "Rare disease $P(D)=0.0001$, sensitivity 0.99, false positive 0.01. Compute $P(D|+)$."
+      },
+      "explanation": {
+        "vi": "Use Bayes with total positive probability.",
+        "en": "Use Bayes with total positive probability."
+      },
+      "answers": [
+        {
+          "value": 0.009803
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-bayes-theorem-parsons-03",
+      "topic": "bayes-theorem",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài định lý bayes.",
+        "en": "Order the workflow for a bayes' theorem problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "Bayes problems are safest when you compute the true-positive path and all-positive path separately."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    },
+    {
+      "id": "c3w1-bayes-theorem-code-04",
+      "topic": "bayes-theorem",
+      "type": "code",
+      "difficulty": 3,
+      "tags": [
+        "python"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng dùng shortcut; hãy viết công thức.",
+          "en": "Do not use shortcuts; write the formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Viết hàm posterior Bayes cho một xét nghiệm.",
+        "en": "Write a Bayes posterior function for one test."
+      },
+      "explanation": {
+        "vi": "Hàm đúng chuyển công thức xác suất thành mã trực tiếp.",
+        "en": "The function must divide true positives by all positives, so rare false positives affect the result."
+      },
+      "starter": "def posterior(prior, likelihood, false_positive):\n    return prior\n",
+      "solution": "def posterior(prior, likelihood, false_positive):\n    return prior * likelihood / (prior * likelihood + (1 - prior) * false_positive)\n",
+      "tests": "def test_rare():\n    assert abs(posterior(0.0001, 0.99, 0.01) - 0.00980392156862745) < 1e-9\n\ndef test_common():\n    assert abs(posterior(0.2, 0.8, 0.1) - 0.6666666666666666) < 1e-9\n"
+    },
+    {
+      "id": "c3w1-bayes-theorem-parametric-05",
+      "topic": "bayes-theorem",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "bayes",
+      "params": {}
+    }
+  ]
+}

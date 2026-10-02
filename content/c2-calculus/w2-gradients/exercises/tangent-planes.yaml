@@ -1,0 +1,143 @@
+exercises:
+- id: c2w2-tangent-planes-mcq-01
+  topic: tangent-planes
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Trong ví dụ $f(x,y)=x^2+y^2$ tại $(2,4)$, mặt phẳng tiếp tuyến cần thông tin nào?
+    en: For $f(x,y)=x^2+y^2$ at $(2,4)$, what information determines the tangent plane?
+  explanation:
+    vi: Mặt phẳng tiếp tuyến dùng độ cao $f(2,4)$ và hai slope lát cắt $f_x(2,4), f_y(2,4)$. Các lựa chọn về ma trận hay điểm bắt đầu không đủ để dựng mặt phẳng.
+    en: The tangent plane uses the height $f(2,4)$ plus the two slice slopes $f_x(2,4)$ and $f_y(2,4)$. Matrix invertibility or an arbitrary start point does not specify the local plane.
+  hints: []
+  options:
+  - vi: Giá trị hàm tại điểm và hai đạo hàm riêng tại điểm đó.
+    en: The function value at the point and the two partial derivatives there.
+  - vi: Chỉ cần biết giá trị $x=2$; $y$ không ảnh hưởng.
+    en: Only the value $x=2$ is needed; $y$ has no role.
+  - vi: Chỉ cần biết điểm cực tiểu toàn cục.
+    en: Only the global minimum is needed.
+  - vi: Cần giải least-squares cho $m,b$ trước.
+    en: A least-squares fit for $m,b$ must be solved first.
+  answer:
+  - 0
+- id: c2w2-tangent-planes-truefalse-02
+  topic: tangent-planes
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Mặt phẳng tiếp tuyến của một surface trơn là xấp xỉ tuyến tính tốt nhất gần điểm tiếp xúc.
+    en: The tangent plane of a smooth surface is the best local linear approximation near the contact point.
+  explanation:
+    vi: Đúng. Công thức $f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$ khớp giá trị và hai độ dốc bậc nhất tại $(a,b)$.
+    en: True. The formula $f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$ matches the value and both first-order slopes at $(a,b)$.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Nó khớp giá trị và đạo hàm riêng tại điểm.
+    en: It matches the value and partial derivatives at the point.
+  - vi: Vì mọi surface hai biến đều thật sự là mặt phẳng.
+    en: Because every two-variable surface is actually a plane.
+  reasonAnswer: 0
+- id: c2w2-tangent-planes-matching-03
+  topic: tangent-planes
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép các thành phần trong công thức mặt phẳng tiếp tuyến.
+    en: Match the pieces of the tangent-plane formula.
+  explanation:
+    vi: $f(a,b)$ đặt độ cao ban đầu, còn $f_x$ và $f_y$ nhân với độ lệch theo từng trục để tạo xấp xỉ phẳng.
+    en: $f(a,b)$ sets the starting height, while $f_x$ and $f_y$ multiply the coordinate offsets to build the local plane.
+  hints: []
+  pairs:
+  - left:
+      vi: $f(a,b)$
+      en: $f(a,b)$
+    right:
+      vi: Độ cao tại điểm tiếp xúc
+      en: Height at the contact point
+  - left:
+      vi: $f_x(a,b)(x-a)$
+      en: $f_x(a,b)(x-a)$
+    right:
+      vi: Phần thay đổi do dịch theo trục $x$
+      en: Change contributed by the $x$ offset
+  - left:
+      vi: $f_y(a,b)(y-b)$
+      en: $f_y(a,b)(y-b)$
+    right:
+      vi: Phần thay đổi do dịch theo trục $y$
+      en: Change contributed by the $y$ offset
+- id: c2w2-tangent-planes-numeric-04
+  topic: tangent-planes
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Cho $f(x,y)=x^2+y^2$. Tính $f_x(2,4)$ và $f_y(2,4)$ để dựng mặt phẳng tiếp tuyến.
+    en: Let $f(x,y)=x^2+y^2$. Compute $f_x(2,4)$ and $f_y(2,4)$ for the tangent plane.
+  explanation:
+    vi: Đạo hàm riêng là $f_x=2x$ và $f_y=2y$. Thay $(2,4)$ được hai slope $4$ và $8$.
+    en: The partial derivatives are $f_x=2x$ and $f_y=2y$. Substituting $(2,4)$ gives slopes $4$ and $8$.
+  hints: []
+  answers:
+  - label: f_x
+    value: 4
+  - label: f_y
+    value: 8
+- id: c2w2-tangent-planes-multistep-41
+  topic: tangent-planes
+  type: multi-step
+  difficulty: 2
+  tags:
+  - tangent-plane
+  prompt:
+    vi: Xét $f(x,y)=x^2+y^2$ tại $(2,4)$.
+    en: Consider $f(x,y)=x^2+y^2$ at $(2,4)$.
+  explanation:
+    vi: Tangent plane dùng giá trị hàm và hai đạo hàm riêng tại điểm.
+    en: The tangent plane uses function value and both partials at the point.
+  hints:
+  - vi: Tính $f(2,4)$, $f_x(2,4)$, $f_y(2,4)$.
+    en: Compute $f(2,4)$, $f_x(2,4)$, $f_y(2,4)$.
+  parts:
+  - type: numeric
+    prompt:
+      vi: $f(2,4)=?$
+      en: $f(2,4)=?$
+    answers:
+    - value: 20
+    explanation:
+      vi: $4+16=20$.
+      en: $4+16=20$.
+  - type: numeric
+    prompt:
+      vi: $f_x(2,4)$ và $f_y(2,4)$?
+      en: $f_x(2,4)$ and $f_y(2,4)$?
+    answers:
+    - label: f_x
+      value: 4
+    - label: f_y
+      value: 8
+    explanation:
+      vi: Gradient là $[2x,2y]$.
+      en: Gradient is $[2x,2y]$.
+  - type: mcq
+    prompt:
+      vi: Mặt phẳng tiếp tuyến đúng là?
+      en: Which tangent plane is correct?
+    options:
+    - vi: $z=20+4(x-2)+8(y-4)$
+      en: $z=20+4(x-2)+8(y-4)$
+    - vi: $z=4x+8y$
+      en: $z=4x+8y$
+    answer:
+    - 0

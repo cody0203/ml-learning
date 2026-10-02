@@ -1,0 +1,361 @@
+flashcards:
+- id: c1w1-fc-ml-concept-01
+  topic: ml-motivation
+  kind: concept
+  front:
+    vi: 'Vì sao ảnh đầu vào của image recognition thường được xem như matrix hoặc vector?'
+    en: 'Why is an image input in image recognition often treated as a matrix or vector?'
+  back:
+    vi: 'Vì ảnh là lưới pixel có thể lưu bằng số. Matrix/vector cho phép mô hình nhân trọng số và xử lý nhiều pixel cùng lúc.'
+    en: 'Because an image is a grid of numeric pixels. Matrix/vector form lets a model multiply weights and process many pixels at once.'
+- id: c1w1-fc-ml-formula-02
+  topic: ml-motivation
+  kind: formula
+  front:
+    vi: 'Trong một lớp tuyến tính đơn giản, công thức matrix-vector cho output là gì?'
+    en: 'In a simple linear layer, what matrix-vector formula gives the output?'
+  back:
+    vi: '$y=Wx$. Ở đây $W$ là weight matrix, $x$ là input vector, $y$ là output vector.'
+    en: '$y=Wx$. Here $W$ is the weight matrix, $x$ is the input vector, and $y$ is the output vector.'
+- id: c1w1-fc-ml-compute-03
+  topic: ml-motivation
+  kind: compute
+  front:
+    vi: 'Nếu $W=\begin{bmatrix}1&2\\0&3\end{bmatrix}$ và $x=\begin{bmatrix}2\\1\end{bmatrix}$, $Wx$ bằng gì?'
+    en: 'If $W=\begin{bmatrix}1&2\\0&3\end{bmatrix}$ and $x=\begin{bmatrix}2\\1\end{bmatrix}$, what is $Wx$?'
+  back:
+    vi: '$\begin{bmatrix}4\\3\end{bmatrix}$. Hàng 1: $1\cdot2+2\cdot1=4$; hàng 2: $0\cdot2+3\cdot1=3$.'
+    en: '$\begin{bmatrix}4\\3\end{bmatrix}$. Row 1: $1\cdot2+2\cdot1=4$; row 2: $0\cdot2+3\cdot1=3$.'
+- id: c1w1-fc-ml-concept-04
+  topic: ml-motivation
+  kind: concept
+  front:
+    vi: 'Trong Week 1, câu hỏi “ràng buộc có đủ độc lập không?” liên hệ gì với ML?'
+    en: 'In Week 1, how does the question “are the constraints independent enough?” connect to ML?'
+  back:
+    vi: 'Nó hỏi dữ liệu/ràng buộc có đủ thông tin để xác định unknowns hay không. Đây là trực giác nền cho fitting và identifiability.'
+    en: 'It asks whether data/constraints contain enough information to determine unknowns. This is core intuition for fitting and identifiability.'
+- id: c1w1-fc-sent-concept-01
+  topic: sentence-systems
+  kind: concept
+  front:
+    vi: 'Trong hệ câu, “redundant” khác “contradictory” như thế nào?'
+    en: 'In a sentence system, how is “redundant” different from “contradictory”?'
+  back:
+    vi: 'Redundant là thừa nhưng có thể nhất quán; contradictory là mâu thuẫn nên không có khả năng nào thỏa tất cả.'
+    en: 'Redundant means extra but possibly consistent; contradictory means inconsistent, so no possibility satisfies everything.'
+- id: c1w1-fc-sent-formula-02
+  topic: sentence-systems
+  kind: formula
+  front:
+    vi: 'Ba nhãn của hệ thông tin trong slide tương ứng với ba kiểu nghiệm nào?'
+    en: 'Which three solution types correspond to the slide labels for information systems?'
+  back:
+    vi: 'Complete $\to$ unique; redundant $\to$ infinitely many; contradictory $\to$ no solution. Đây là cầu nối sang hệ phương trình.'
+    en: 'Complete $\to$ unique; redundant $\to$ infinitely many; contradictory $\to$ no solution. This bridges to equation systems.'
+- id: c1w1-fc-sent-compute-03
+  topic: sentence-systems
+  kind: compute
+  front:
+    vi: 'Nếu chó không đỏ và mèo không đỏ, trong {chó, mèo, chim} đúng một con đỏ: còn mấy khả năng cho con đỏ?'
+    en: 'If the dog is not red and the cat is not red, and exactly one of {dog, cat, bird} is red, how many possibilities remain?'
+  back:
+    vi: '1 khả năng: chim đỏ. Hai lựa chọn đầu bị loại nên chỉ còn chim.'
+    en: '1 possibility: the bird is red. The first two choices are eliminated, leaving only the bird.'
+- id: c1w1-fc-sent-concept-04
+  topic: sentence-systems
+  kind: concept
+  front:
+    vi: 'Vì sao lặp lại câu “the dog is black” không làm hệ mạnh hơn?'
+    en: 'Why does repeating “the dog is black” not make the system stronger?'
+  back:
+    vi: 'Vì câu lặp không loại thêm khả năng nào. Nó là redundant information, giống một phương trình là bội của phương trình khác.'
+    en: 'Because the repeated statement eliminates no new possibilities. It is redundant information, like one equation being a multiple of another.'
+- id: c1w1-fc-eq-formula-01
+  topic: equation-systems
+  kind: formula
+  front:
+    vi: 'Dạng matrix của hệ phương trình tuyến tính được viết như thế nào?'
+    en: 'What is the matrix form of a linear system?'
+  back:
+    vi: '$Ax=b$. $A$ chứa coefficients, $x$ chứa unknowns, $b$ chứa constants.'
+    en: '$Ax=b$. $A$ holds coefficients, $x$ holds unknowns, and $b$ holds constants.'
+- id: c1w1-fc-eq-compute-02
+  topic: equation-systems
+  kind: compute
+  front:
+    vi: 'Giải nhẩm: $a+b=7$ và $a+2b=9$. $b$ bằng bao nhiêu?'
+    en: 'Mental solve: $a+b=7$ and $a+2b=9$. What is $b$?'
+  back:
+    vi: '$b=2$. Lấy phương trình hai trừ phương trình một: $b=9-7=2$.'
+    en: '$b=2$. Subtract equation one from equation two: $b=9-7=2$.'
+- id: c1w1-fc-eq-concept-03
+  topic: equation-systems
+  kind: concept
+  front:
+    vi: 'Khi nào hai phương trình mua hàng cho vô số nghiệm thay vì giá duy nhất?'
+    en: 'When do two shopping equations give infinitely many solutions instead of unique prices?'
+  back:
+    vi: 'Khi phương trình thứ hai chỉ là bội của phương trình thứ nhất. Khi đó nó không thêm thông tin mới về giá.'
+    en: 'When the second equation is only a multiple of the first. Then it adds no new price information.'
+- id: c1w1-fc-eq-formula-04
+  topic: equation-systems
+  kind: formula
+  front:
+    vi: 'Phép elimination hợp lệ có thể làm gì với một phương trình?'
+    en: 'What is a valid elimination operation on an equation?'
+  back:
+    vi: 'Có thể cộng/trừ bội của phương trình khác, hoặc nhân cả hai vế với hằng số khác 0. Các thao tác này giữ nguyên tập nghiệm.'
+    en: 'You may add/subtract a multiple of another equation, or scale both sides by a nonzero constant. These preserve the solution set.'
+- id: c1w1-fc-lines-formula-01
+  topic: lines-2d
+  kind: formula
+  front:
+    vi: 'Với $pa+qb=r$ và $q\ne0$, slope của đường thẳng là gì?'
+    en: 'For $pa+qb=r$ with $q\ne0$, what is the line slope?'
+  back:
+    vi: '$-\frac{p}{q}$. Viết lại $b=-\frac{p}{q}a+\frac{r}{q}$.'
+    en: '$-\frac{p}{q}$. Rewrite as $b=-\frac{p}{q}a+\frac{r}{q}$.'
+- id: c1w1-fc-lines-compute-02
+  topic: lines-2d
+  kind: compute
+  front:
+    vi: 'Đường $2a+b=6$ có tung độ gốc bằng bao nhiêu?'
+    en: 'What is the vertical intercept of the line $2a+b=6$?'
+  back:
+    vi: '$6$. Đặt $a=0$ thì $b=6$.'
+    en: '$6$. Set $a=0$, so $b=6$.'
+- id: c1w1-fc-lines-concept-03
+  topic: lines-2d
+  kind: concept
+  front:
+    vi: 'Hai đường thẳng song song khác nhau nói gì về nghiệm của hệ?'
+    en: 'What do distinct parallel lines say about the system solutions?'
+  back:
+    vi: 'Hệ vô nghiệm. Hai đường không có điểm chung nên không có cặp $(a,b)$ thỏa cả hai.'
+    en: 'The system has no solution. The lines share no point, so no pair $(a,b)$ satisfies both.'
+- id: c1w1-fc-lines-formula-04
+  topic: lines-2d
+  kind: formula
+  front:
+    vi: 'Ba hình học của hai đường tương ứng với số nghiệm nào?'
+    en: 'Which solution counts correspond to the three geometries of two lines?'
+  back:
+    vi: 'Cắt nhau $\to$ 1 nghiệm; trùng nhau $\to$ vô số; song song khác nhau $\to$ vô nghiệm.'
+    en: 'Intersecting $\to$ 1 solution; coincident $\to$ infinitely many; distinct parallel $\to$ no solution.'
+- id: c1w1-fc-mat-formula-01
+  topic: matrices-singularity
+  kind: formula
+  front:
+    vi: 'Trong $Ax=b$, ba ký hiệu $A$, $x$, $b$ lần lượt là gì?'
+    en: 'In $Ax=b$, what are $A$, $x$, and $b$ respectively?'
+  back:
+    vi: '$A$: coefficient matrix; $x$: vector ẩn; $b$: right-hand side vector. Đây là cách gom hệ phương trình.'
+    en: '$A$: coefficient matrix; $x$: unknown vector; $b$: right-hand-side vector. This packages the system.'
+- id: c1w1-fc-mat-concept-02
+  topic: matrices-singularity
+  kind: concept
+  front:
+    vi: 'Vì sao đổi $b$ không thể biến coefficient matrix singular thành non-singular?'
+    en: 'Why can changing $b$ not turn a singular coefficient matrix into a non-singular one?'
+  back:
+    vi: 'Vì singularity là thuộc tính của $A$, không phải của constants. $b$ chỉ quyết định nghiệm cụ thể hoặc tính nhất quán.'
+    en: 'Because singularity is a property of $A$, not the constants. $b$ only affects the actual solution or consistency.'
+- id: c1w1-fc-mat-formula-03
+  topic: matrices-singularity
+  kind: formula
+  front:
+    vi: 'NumPy function nào giải hệ vuông non-singular $Ax=b$?'
+    en: 'Which NumPy function solves a square non-singular system $Ax=b$?'
+  back:
+    vi: '`np.linalg.solve(A, b)`. Nó trả về vector $x$ sao cho $Ax=b$.'
+    en: '`np.linalg.solve(A, b)`. It returns the vector $x$ such that $Ax=b$.'
+- id: c1w1-fc-mat-compute-04
+  topic: matrices-singularity
+  kind: compute
+  front:
+    vi: 'Với $A=\begin{bmatrix}1&1\\2&2\end{bmatrix}$, rank là bao nhiêu?'
+    en: 'For $A=\begin{bmatrix}1&1\\2&2\end{bmatrix}$, what is the rank?'
+  back:
+    vi: '$1$. Hàng 2 bằng $2$ lần hàng 1, nên chỉ có một hàng độc lập.'
+    en: '$1$. Row 2 is $2$ times row 1, so there is only one independent row.'
+- id: c1w1-fc-dep-formula-01
+  topic: dependence
+  kind: formula
+  front:
+    vi: 'Định nghĩa hàng linearly dependent bằng công thức là gì?'
+    en: 'What is the formula definition of linearly dependent rows?'
+  back:
+    vi: 'Tồn tại $c_i$ không phải tất cả 0 sao cho $c_1r_1+\cdots+c_kr_k=0$. Đó là một quan hệ tuyến tính không tầm thường.'
+    en: 'There exist $c_i$, not all 0, such that $c_1r_1+\cdots+c_kr_k=0$. That is a nontrivial linear relation.'
+- id: c1w1-fc-dep-compute-02
+  topic: dependence
+  kind: compute
+  front:
+    vi: 'Nếu $r_1=(1,0,0)$ và $r_2=(0,1,0)$, $r_1+r_2$ bằng gì?'
+    en: 'If $r_1=(1,0,0)$ and $r_2=(0,1,0)$, what is $r_1+r_2$?'
+  back:
+    vi: '$(1,1,0)$. Cộng theo từng thành phần.'
+    en: '$(1,1,0)$. Add component by component.'
+- id: c1w1-fc-dep-concept-03
+  topic: dependence
+  kind: concept
+  front:
+    vi: 'Vì sao $r_3=r_1+r_2$ làm các hàng phụ thuộc tuyến tính?'
+    en: 'Why does $r_3=r_1+r_2$ make the rows linearly dependent?'
+  back:
+    vi: 'Vì $r_3$ không thêm hướng thông tin mới. Ta có quan hệ $r_1+r_2-r_3=0$.'
+    en: 'Because $r_3$ adds no new information direction. There is a relation $r_1+r_2-r_3=0$.'
+- id: c1w1-fc-dep-formula-04
+  topic: dependence
+  kind: formula
+  front:
+    vi: 'NumPy function nào tính rank của matrix?'
+    en: 'Which NumPy function computes the rank of a matrix?'
+  back:
+    vi: '`np.linalg.matrix_rank(A)`. Rank là số hướng hàng/cột độc lập.'
+    en: '`np.linalg.matrix_rank(A)`. Rank is the number of independent row/column directions.'
+- id: c1w1-fc-det2-formula-01
+  topic: determinant-2x2
+  kind: formula
+  front:
+    vi: '$\det\begin{bmatrix}a&b\\c&d\end{bmatrix}$ bằng gì?'
+    en: 'What is $\det\begin{bmatrix}a&b\\c&d\end{bmatrix}$?'
+  back:
+    vi: '$ad-bc$. Đường chéo chính trừ đường chéo phụ.'
+    en: '$ad-bc$. Main diagonal minus off diagonal.'
+- id: c1w1-fc-det2-compute-02
+  topic: determinant-2x2
+  kind: compute
+  front:
+    vi: 'Tính nhẩm $\det\begin{bmatrix}2&1\\3&4\end{bmatrix}$.'
+    en: 'Mentally compute $\det\begin{bmatrix}2&1\\3&4\end{bmatrix}$.'
+  back:
+    vi: '$5$. $2\cdot4-1\cdot3=8-3=5$.'
+    en: '$5$. $2\cdot4-1\cdot3=8-3=5$.'
+- id: c1w1-fc-det2-concept-03
+  topic: determinant-2x2
+  kind: concept
+  front:
+    vi: 'Vì sao determinant 2×2 bằng 0 báo hiệu singular?'
+    en: 'Why does a zero 2×2 determinant signal singularity?'
+  back:
+    vi: 'Vì hai hàng/cột không tạo diện tích khác 0; chúng phụ thuộc tuyến tính. Do đó không có inverse và không có nghiệm duy nhất cho mọi $b$.'
+    en: 'Because the rows/columns create zero area; they are linearly dependent. Thus there is no inverse and no unique solution for every $b$.'
+- id: c1w1-fc-det2-formula-04
+  topic: determinant-2x2
+  kind: formula
+  front:
+    vi: 'NumPy function nào tính determinant của matrix?'
+    en: 'Which NumPy function computes a matrix determinant?'
+  back:
+    vi: '`np.linalg.det(A)`. Với 2×2, kết quả nên khớp công thức $ad-bc$ (có thể có sai số float nhỏ).'
+    en: '`np.linalg.det(A)`. For 2×2, it should match $ad-bc$ (up to small floating-point error).'
+- id: c1w1-fc-3sys-concept-01
+  topic: systems-3x3
+  kind: concept
+  front:
+    vi: 'Vì sao ba phương trình với ba biến vẫn có thể không cho nghiệm duy nhất?'
+    en: 'Why can three equations in three variables still fail to give a unique solution?'
+  back:
+    vi: 'Vì các phương trình có thể phụ thuộc hoặc mâu thuẫn. Cần independent constraints và consistency, không chỉ cần đúng số lượng.'
+    en: 'Because equations may be dependent or contradictory. You need independent constraints and consistency, not just the right count.'
+- id: c1w1-fc-3sys-compute-02
+  topic: systems-3x3
+  kind: compute
+  front:
+    vi: 'Trong hệ trái cây, nếu phương trình 2 trừ phương trình 1 cho $b=5$ và phương trình 3 trừ phương trình 1 cho $c=2$, từ $a+b+c=10$ thì $a$ bằng bao nhiêu?'
+    en: 'In the fruit system, if equation 2 minus equation 1 gives $b=5$ and equation 3 minus equation 1 gives $c=2$, what is $a$ from $a+b+c=10$?'
+  back:
+    vi: '$a=3$. Thay vào: $a+5+2=10$.'
+    en: '$a=3$. Substitute: $a+5+2=10$.'
+- id: c1w1-fc-3sys-formula-03
+  topic: systems-3x3
+  kind: formula
+  front:
+    vi: 'Hệ trái cây slide có coefficient matrix nào?'
+    en: 'What coefficient matrix does the slide fruit system have?'
+  back:
+    vi: '$\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$. Mỗi hàng chứa coefficients của $a,b,c$.'
+    en: '$\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$. Each row contains coefficients of $a,b,c$.'
+- id: c1w1-fc-3sys-concept-04
+  topic: systems-3x3
+  kind: concept
+  front:
+    vi: 'Trong hệ $a+b+c=10$, $a+b+2c=15$, $a+b+3c=20$, vì sao có vô số nghiệm?'
+    en: 'Why does $a+b+c=10$, $a+b+2c=15$, $a+b+3c=20$ have infinitely many solutions?'
+  back:
+    vi: 'Các hiệu cho $c=5$, rồi chỉ còn $a+b=5$. Một biến tự do nên có vô số cặp $(a,b)$.'
+    en: 'Differences give $c=5$, leaving only $a+b=5$. One variable is free, so there are infinitely many $(a,b)$ pairs.'
+- id: c1w1-fc-plane-formula-01
+  topic: planes-3d
+  kind: formula
+  front:
+    vi: 'Dạng tổng quát của một plane tuyến tính trong ba biến là gì?'
+    en: 'What is the general form of a linear plane in three variables?'
+  back:
+    vi: '$pa+qb+rc=s$. Vector $(p,q,r)$ là normal vector của plane.'
+    en: '$pa+qb+rc=s$. The vector $(p,q,r)$ is the plane normal vector.'
+- id: c1w1-fc-plane-compute-02
+  topic: planes-3d
+  kind: compute
+  front:
+    vi: 'Điểm $(1,0,0)$ có nằm trên plane $a+b+c=1$ không?'
+    en: 'Does the point $(1,0,0)$ lie on the plane $a+b+c=1$?'
+  back:
+    vi: 'Có. Thay vào được $1+0+0=1$.'
+    en: 'Yes. Substitution gives $1+0+0=1$.'
+- id: c1w1-fc-plane-concept-03
+  topic: planes-3d
+  kind: concept
+  front:
+    vi: 'Trong 3D, ba planes giao theo một đường nghĩa là hệ có bao nhiêu nghiệm?'
+    en: 'In 3D, if three planes intersect along a line, how many solutions does the system have?'
+  back:
+    vi: 'Vô số nghiệm. Mỗi điểm trên đường giao đều thỏa cả ba phương trình.'
+    en: 'Infinitely many solutions. Every point on the intersection line satisfies all three equations.'
+- id: c1w1-fc-plane-formula-04
+  topic: planes-3d
+  kind: formula
+  front:
+    vi: 'Điều kiện thay tọa độ để kiểm tra $(a_0,b_0,c_0)$ nằm trên $pa+qb+rc=s$ là gì?'
+    en: 'What substitution test checks whether $(a_0,b_0,c_0)$ lies on $pa+qb+rc=s$?'
+  back:
+    vi: 'Kiểm tra $pa_0+qb_0+rc_0=s$. Nếu đúng, điểm nằm trên plane.'
+    en: 'Check $pa_0+qb_0+rc_0=s$. If true, the point lies on the plane.'
+- id: c1w1-fc-det3-formula-01
+  topic: determinant-3x3
+  kind: formula
+  front:
+    vi: 'Quy tắc Sarrus cho $\det\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$ là gì?'
+    en: 'What is Sarrus'' rule for $\det\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$?'
+  back:
+    vi: '$aei+bfg+cdh-ceg-bdi-afh$. Ba tích xuống phải cộng, ba tích xuống trái trừ.'
+    en: '$aei+bfg+cdh-ceg-bdi-afh$. Add three down-right products and subtract three down-left products.'
+- id: c1w1-fc-det3-compute-02
+  topic: determinant-3x3
+  kind: compute
+  front:
+    vi: 'Ma trận tam giác $\begin{bmatrix}1&2&0\\0&2&1\\0&0&3\end{bmatrix}$ có determinant bằng bao nhiêu?'
+    en: 'What is the determinant of triangular matrix $\begin{bmatrix}1&2&0\\0&2&1\\0&0&3\end{bmatrix}$?'
+  back:
+    vi: '$6$. Với triangular matrix, determinant là tích đường chéo: $1\cdot2\cdot3=6$.'
+    en: '$6$. For a triangular matrix, determinant is the diagonal product: $1\cdot2\cdot3=6$.'
+- id: c1w1-fc-det3-concept-03
+  topic: determinant-3x3
+  kind: concept
+  front:
+    vi: 'Determinant 3×3 khác 0 nói gì về ba planes của hệ vuông?'
+    en: 'What does a nonzero 3×3 determinant say about the three planes of a square system?'
+  back:
+    vi: 'Ba planes giao tại đúng một điểm. Algebraically, coefficient matrix non-singular nên nghiệm là duy nhất.'
+    en: 'The three planes meet at exactly one point. Algebraically, the coefficient matrix is non-singular, so the solution is unique.'
+- id: c1w1-fc-det3-formula-04
+  topic: determinant-3x3
+  kind: formula
+  front:
+    vi: 'Trong Week 1, các điều kiện tương đương nào đi với $\det(A)\ne0$ cho matrix vuông?'
+    en: 'In Week 1, which equivalent conditions go with $\det(A)\ne0$ for a square matrix?'
+  back:
+    vi: 'Non-singular, hàng độc lập tuyến tính, và $Ax=b$ có nghiệm duy nhất cho mọi $b$.'
+    en: 'Non-singular, linearly independent rows, and $Ax=b$ has a unique solution for every $b$.'

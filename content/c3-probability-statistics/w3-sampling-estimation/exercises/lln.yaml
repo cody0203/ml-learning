@@ -1,0 +1,229 @@
+'exercises':
+- 'id': 'c3w3-lln-mcq-01'
+  'topic': 'lln'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'LLN giải thích hiện tượng nào?'
+    'en': 'Which phenomenon does LLN explain?'
+  'explanation':
+    'vi': 'Trung bình mẫu tiến gần kỳ vọng khi $n$ lớn.'
+    'en': 'The sample average approaches expectation as $n$ grows.'
+  'hints': []
+  'options':
+  - 'vi': 'Sample average ổn định gần mean'
+    'en': 'Sample average stabilizes near the mean'
+  - 'vi': 'Raw data trở thành normal'
+    'en': 'Raw data become normal'
+  - 'vi': 'Parameter trở thành random trong frequentist'
+    'en': 'The parameter becomes random in frequentism'
+  'answer':
+  - 0
+- 'id': 'c3w3-lln-numeric-01'
+  'topic': 'lln'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'expectation'
+  'prompt':
+    'vi': 'Mean của die công bằng có mặt $1,2,3,4$ là bao nhiêu?'
+    'en': 'What is the mean of a fair die with faces $1,2,3,4$?'
+  'explanation':
+    'vi': '$(1+2+3+4)/4=2.5$.'
+    'en': '$(1+2+3+4)/4=2.5$.'
+  'hints': []
+  'answers':
+  - 'value': 2.5
+  'tolerance': 0
+- 'id': 'c3w3-lln-code-01'
+  'topic': 'lln'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'simulation'
+  'prompt':
+    'vi': 'Cài `lln_final_mean(seed,n)` mô phỏng $n$ lần gieo die 4 mặt và trả mean cuối.'
+    'en': 'Implement `lln_final_mean(seed,n)` simulating $n$ rolls of a 4-sided die and returning final mean.'
+  'explanation':
+    'vi': 'Seed cố định làm test ổn định; tolerance rộng vì mô phỏng.'
+    'en': 'Fixed seed stabilizes tests; tolerance is loose because this is simulation.'
+  'hints': []
+  'starter': "import numpy as np\ndef lln_final_mean(seed=0,n=5000):\n    return 0.0\n"
+  'solution': "import numpy as np\ndef lln_final_mean(seed=0,n=5000):\n    rng=np.random.default_rng(seed)\n    rolls=rng.integers(1,5,size=n)\n    return float(rolls.mean())\n"
+  'tests': "def test_close_to_mean():\n    assert abs(lln_final_mean(11,5000)-2.5)<0.05\ndef test_more_rolls_stable():\n    assert abs(lln_final_mean(12,20000)-2.5)<0.03\n"
+- 'id': 'c3w3-lln-finderror-01'
+  'topic': 'lln'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'misconception'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong diễn giải LLN.'
+    'en': 'Find the first error in the LLN interpretation.'
+  'explanation':
+    'vi': 'LLN không nói các lần gieo tiếp theo phải bù lại.'
+    'en': 'LLN does not say future rolls must compensate.'
+  'hints': []
+  'steps':
+  - 'vi': 'Sau 10 lần gieo die 4 mặt, mean đang là 3.2.'
+    'en': 'After 10 rolls of a 4-sided die, the mean is 3.2.'
+  - 'vi': 'Với rất nhiều lần gieo, running mean có xu hướng gần 2.5.'
+    'en': 'With many rolls, the running mean tends to be near 2.5.'
+  - 'vi': 'Vì vậy vài lần gieo tiếp theo phải chủ yếu là 1 để bù lại.'
+    'en': 'Therefore the next few rolls must mostly be 1 to compensate.'
+  'answer': 2
+- 'id': 'c3w3-lln-figure-01'
+  'topic': 'lln'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  'prompt':
+    'vi': 'Đường nào mô tả tốt nhất running mean theo LLN?'
+    'en': 'Which curve best describes a running mean under LLN?'
+  'explanation':
+    'vi': 'Running mean dao động nhưng thu hẹp quanh mean thật.'
+    'en': 'The running mean fluctuates but narrows around the true mean.'
+  'hints': []
+  'figure':
+    'xRange':
+    - 1
+    - 100
+    'yRange':
+    - 1.5
+    - 3.5
+    'functions':
+    - 'f': '2.5+0.8*sin(x/3)/sqrt(x)'
+      'label': 'A'
+      'color': '#2563eb'
+    - 'f': '1.5+0.02*x'
+      'label': 'B'
+      'color': '#dc2626'
+      'dashed': true
+    'xLabel': 'n'
+    'yLabel': 'running mean'
+  'options':
+  - 'vi': 'A: dao động giảm quanh 2.5'
+    'en': 'A: shrinking fluctuation around 2.5'
+  - 'vi': 'B: tăng tuyến tính mãi'
+    'en': 'B: increasing linearly forever'
+  'answer':
+  - 0
+- 'id': 'c3w3-lln-parsons-01'
+  'topic': 'lln'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'procedure'
+  'prompt':
+    'vi': 'Sắp xếp cách kiểm tra LLN bằng mô phỏng.'
+    'en': 'Order a simulation check of LLN.'
+  'explanation':
+    'vi': 'Ta cần nhiều trials và running mean.'
+    'en': 'We need many trials and a running mean.'
+  'hints': []
+  'steps':
+  - 'vi': 'Chọn distribution có mean biết trước.'
+    'en': 'Choose a distribution with known mean.'
+  - 'vi': 'Sinh nhiều quan sát độc lập.'
+    'en': 'Generate many independent observations.'
+  - 'vi': 'Tính cumulative mean theo $n$.'
+    'en': 'Compute cumulative mean over $n$.'
+  - 'vi': 'So sánh running mean với mean thật.'
+    'en': 'Compare running mean with the true mean.'
+- 'id': 'c3w3-lln-construct-01'
+  'topic': 'lln'
+  'type': 'construct'
+  'difficulty': 1
+  'tags':
+  - 'construct'
+  'prompt':
+    'vi': 'Tạo dataset 4 giá trị không âm có mean 2.5 và range 3.'
+    'en': 'Build 4 nonnegative values with mean 2.5 and range 3.'
+  'explanation':
+    'vi': '$[1,2,3,4]$ có mean 2.5 và range 3.'
+    'en': '$[1,2,3,4]$ has mean 2.5 and range 3.'
+  'hints': []
+  'rows': 1
+  'cols': 4
+  'constraints':
+  - 'kind': 'mean'
+    'value': 2.5
+  - 'kind': 'range'
+    'value': 3
+  - 'kind': 'nonnegative'
+  'example':
+  - - 1
+    - 2
+    - 3
+    - 4
+- 'id': 'c3w3-lln-tf-01'
+  'topic': 'lln'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'conditions'
+  'prompt':
+    'vi': 'LLN cần điều kiện; slides nêu sample ngẫu nhiên, đủ lớn và independent observations.'
+    'en': 'LLN needs conditions; the slides list random sample, sufficiently large sample, and independent observations.'
+  'explanation':
+    'vi': 'Đúng theo phần recap điều kiện.'
+    'en': 'True according to the conditions recap.'
+  'hints': []
+  'answer': true
+- 'id': 'c3w3-lln-matching-01'
+  'topic': 'lln'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'connections'
+  'prompt':
+    'vi': 'Ghép khái niệm LLN.'
+    'en': 'Match LLN concepts.'
+  'explanation':
+    'vi': 'LLN liên kết sample average và expectation.'
+    'en': 'LLN links sample average and expectation.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$X_i$'
+      'en': '$X_i$'
+    'right':
+      'vi': 'Quan sát thứ $i$'
+      'en': 'Observation $i$'
+  - 'left':
+      'vi': '$\bar X_n$'
+      'en': '$\bar X_n$'
+    'right':
+      'vi': 'Trung bình mẫu'
+      'en': 'Sample average'
+  - 'left':
+      'vi': '$\mathbb E[X]$'
+      'en': '$\mathbb E[X]$'
+    'right':
+      'vi': 'Mean population/kỳ vọng'
+      'en': 'Population mean/expectation'
+  - 'left':
+      'vi': '$n\to\infty$'
+      'en': '$n\to\infty$'
+    'right':
+      'vi': 'Cỡ mẫu tăng rất lớn'
+      'en': 'Sample size grows large'
+- 'id': 'c3w3-lln-param-01'
+  'topic': 'lln'
+  'type': 'parametric'
+  'difficulty': 1
+  'tags':
+  - 'generator'
+  'prompt':
+    'vi': 'Tính expected value sinh ngẫu nhiên.'
+    'en': 'Compute generated expected value.'
+  'explanation':
+    'vi': 'Generator tạo PMF mới.'
+    'en': 'Generator creates a fresh PMF.'
+  'hints': []
+  'generator': 'expected-value'
+  'params': {}

@@ -1,0 +1,207 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-what-is-probability-mcq-01",
+      "topic": "what-is-probability",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề xác suất là gì??",
+        "en": "Which statement best describes what is probability??"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng bắt đầu từ không gian mẫu và biến cố. Cộng xác suất là quy tắc cho hợp, PDF thuộc biến liên tục, còn prior/posterior là ngôn ngữ Bayes nên không trả lời câu hỏi đếm 3 trên 10.",
+        "en": "The correct answer starts with the sample space and event. Adding probabilities is a union rule, PDF height belongs to continuous variables, and prior/posterior language is Bayes rather than the 3-out-of-10 counting question."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là sample space, event, relative frequency.",
+          "en": "The focus is sample space, event, relative frequency."
+        },
+        {
+          "vi": "Vì có 3 trẻ chơi bóng đá nên xác suất phải là 3, không phải 0.3.",
+          "en": "Because 3 children play soccer, the probability must be 3 rather than 0.3."
+        },
+        {
+          "vi": "Không gian mẫu chỉ gồm 3 trẻ chơi bóng đá.",
+          "en": "The sample space contains only the 3 children who play soccer."
+        },
+        {
+          "vi": "Không cần xác định thí nghiệm trước khi tính xác suất.",
+          "en": "There is no need to identify the experiment before computing probability."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-what-is-probability-truefalse-02",
+      "topic": "what-is-probability",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong xác suất là gì?, công thức $P(A)=|A|/|S| for equally likely outcomes$ chỉ có ý nghĩa sau khi xác định đúng biến cố và giả định.",
+        "en": "In what is probability?, the formula $P(A)=|A|/|S| for equally likely outcomes$ is meaningful only after identifying the event and assumptions."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "For the soccer example, the denominator is all 10 children; changing it would change the event."
+      },
+      "answer": true,
+      "reasons": [
+        {
+          "vi": "Đúng: trong ví dụ bóng đá, phải biết tổng là 10 trẻ và biến cố là 3 trẻ chơi bóng đá.",
+          "en": "True: in the soccer example, you must know the total is 10 children and the event is the 3 soccer players."
+        },
+        {
+          "vi": "Sai: dùng mẫu số 3 sẽ trả lời một câu hỏi khác, không phải xác suất chọn trẻ chơi bóng đá.",
+          "en": "False: using denominator 3 would answer a different question, not the chance of selecting a soccer player."
+        },
+        {
+          "vi": "Sai: đây là bài đếm rời rạc, không liên quan đến mật độ PDF hay xác suất âm.",
+          "en": "False: this is a discrete counting problem, not a PDF-density or negative-probability issue."
+        }
+      ],
+      "reasonAnswer": 0
+    },
+    {
+      "id": "c3w1-what-is-probability-numeric-03",
+      "topic": "what-is-probability",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Trong 10 trẻ có 3 trẻ chơi bóng đá. Tính $P(S)$.",
+        "en": "Among 10 children, 3 play soccer. Compute $P(S)$."
+      },
+      "explanation": {
+        "vi": "3/10=0.3.",
+        "en": "3/10=0.3."
+      },
+      "answers": [
+        {
+          "value": 0.3
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-what-is-probability-matching-04",
+      "topic": "what-is-probability",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong xác suất là gì?.",
+        "en": "Match key terms in what is probability?."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "These pairs contrast raw outcomes, numeric summaries, accumulated probability, and updated belief."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3w1-what-is-probability-parsons-05",
+      "topic": "what-is-probability",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài xác suất là gì?.",
+        "en": "Order the workflow for a what is probability? problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "A basic probability problem is solved by naming the experiment first, then counting favorable cases."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    }
+  ]
+}

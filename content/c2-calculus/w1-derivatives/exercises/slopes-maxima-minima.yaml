@@ -1,0 +1,169 @@
+exercises:
+- id: c2w1-slopes-maxima-minima-mcq-01
+  topic: extrema-and-zero-slope
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Độ dốc, cực đại và cực tiểu'?
+    en: A smooth distance graph flattens at the farthest point from the start. What derivative clue should you look for?
+  explanation:
+    vi: 'Ý đúng: điểm cực trị trơn thường có tiếp tuyến nằm ngang.'
+    en: 'Correct: smooth extrema usually have a horizontal tangent.'
+  hints: []
+  options:
+  - vi: điểm cực trị trơn thường có tiếp tuyến nằm ngang
+    en: smooth extrema usually have a horizontal tangent
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The largest height is always where the graph first crosses the vertical axis.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: A horizontal tangent means the distance function stops existing at that time.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Endpoints and nearby values are unnecessary once any flat point is seen.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - -2
+    - 6
+    functions:
+    - f: x^2
+      label: f(x)=x^2
+      color: '#2563eb'
+    points:
+    - at:
+      - 0
+      - 0
+      label: flat
+    xLabel: x
+    yLabel: y
+- id: c2w1-slopes-maxima-minima-truefalse-02
+  topic: extrema-and-zero-slope
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Độ dốc, cực đại và cực tiểu', công thức $f'(a)=0$ at an interior smooth optimum có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: A zero slope inside a smooth interval is a candidate for a maximum or minimum, but nearby values still decide which.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: A zero derivative marks a smooth critical point, but maxima and minima still need classification.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Độ dốc bằng 0 chỉ tạo ứng viên; cần xét lân cận hoặc biên.
+    en: Zero slope only creates a candidate; nearby values or endpoints must be checked.
+  - vi: Mỗi tiếp tuyến ngang đều chắc chắn là cực tiểu.
+    en: Every horizontal tangent is definitely a minimum.
+  - vi: Cực đại luôn xảy ra ở thời điểm đầu tiên của đồ thị.
+    en: A maximum always occurs at the first time shown on the graph.
+  reasonAnswer: 0
+- id: c2w1-slopes-maxima-minima-finderror-03
+  topic: extrema-and-zero-slope
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên trong lời giải đạo hàm.
+    en: Find the first incorrect step about zero slope and extrema.
+  explanation:
+    vi: Bước sai bỏ sót đóng góp của quy tắc tích hoặc quy tắc dây chuyền.
+    en: The error is claiming a maximum or minimum from zero slope without checking nearby behavior.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Đặt $f(x)=x^2\sin x$.
+    en: Let $f(x)=x^2\sin x$.
+  - vi: Vì đây là tích, dùng $(gh)'=g'h+gh'$.
+    en: Because this is a product, use $(gh)'=g'h+gh'$.
+  - vi: Suy ra $f'(x)=2x\cos x$.
+    en: Therefore $f'(x)=2x\cos x$.
+  - vi: Kết luận tại $x=0$, $f'(0)=0$.
+    en: Conclude at $x=0$, $f'(0)=0$.
+  answer: 2
+- id: c2w1-slopes-maxima-minima-finderror-04
+  topic: extrema-and-zero-slope
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm bước sai đầu tiên trong lời giải đạo hàm.
+    en: Find the first incorrect step about a flat point on a curve.
+  explanation:
+    vi: Bước sai bỏ sót đóng góp của quy tắc tích hoặc quy tắc dây chuyền.
+    en: The repeated zero-slope check fails because a flat tangent can also occur at a non-extreme point.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Đặt $f(x)=x^2\sin x$.
+    en: Let $f(x)=x^2\sin x$.
+  - vi: Vì đây là tích, dùng $(gh)'=g'h+gh'$.
+    en: Because this is a product, use $(gh)'=g'h+gh'$.
+  - vi: Suy ra $f'(x)=2x\cos x$.
+    en: Therefore $f'(x)=2x\cos x$.
+  - vi: Kết luận tại $x=0$, $f'(0)=0$.
+    en: Conclude at $x=0$, $f'(0)=0$.
+  answer: 2
+- id: c2w1-slopes-maxima-minima-mcq-05
+  topic: extrema-and-zero-slope
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Chọn đồ thị phù hợp với đạo hàm của $f(x)=x^2$.
+    en: Choose the graph whose zero marks the vertex slope of $f(x)=x^2$.
+  explanation:
+    vi: Đạo hàm là $2x$, một đường thẳng qua gốc tọa độ.
+    en: The graph choice is correct because the derivative of the parabola crosses zero at the vertex.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  options:
+  - vi: $f'(x)=2x$
+    en: $f'(x)=2x$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -6
+      - 6
+      functions:
+      - f: 2*x
+        label: 2*x
+  - vi: $f'(x)=x^2$
+    en: $f'(x)=x^2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 9
+      functions:
+      - f: x^2
+        label: x^2
+  - vi: $f'(x)=2$
+    en: $f'(x)=2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 4
+      functions:
+      - f: '2'
+        label: '2'
+  answer:
+  - 0

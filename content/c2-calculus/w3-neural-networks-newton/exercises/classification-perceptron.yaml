@@ -1,0 +1,127 @@
+﻿exercises:
+- id: c2w3-classification-perceptron-matching-03
+  topic: classification-perceptron
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong perceptron phân loại.
+    en: Match notation in a classification perceptron.
+  explanation:
+    vi: $z$ là logit, sigmoid đổi logit thành xác suất, và threshold đổi xác suất thành nhãn.
+    en: $z$ is the logit, sigmoid turns it into a probability, and a threshold turns probability into a label.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-classification-perceptron-find-error-04
+  topic: classification-perceptron
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi xem score phân loại là xác suất.
+    en: Find the error when treating a classification score as a probability.
+  explanation:
+    vi: Score $z$ chưa bị chặn trong $(0,1)$; phải qua sigmoid trước khi dùng như xác suất.
+    en: The score $z$ is not restricted to $(0,1)$; it must pass through sigmoid before being used as a probability.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-classification-perceptron-numeric-05
+  topic: classification-perceptron
+  type: numeric
+  difficulty: 1
+  tags:
+  - score
+  prompt:
+    vi: Với $x=(1,3)$, $w=(4.5,1.5)$, $b=2$, tính $z$.
+    en: With $x=(1,3)$, $w=(4.5,1.5)$, $b=2$, compute $z$.
+  explanation:
+    vi: $4.5+4.5+2=11$.
+    en: $4.5+4.5+2=11$.
+  hints: []
+  answers:
+  - value: 11
+  tolerance: 0
+- id: c2w3-classification-perceptron-construct-06
+  topic: classification-perceptron
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng vector trọng số $w$ sao cho $w\cdot(1,3)=7$.
+    en: Construct weight vector $w$ such that $w\cdot(1,3)=7$.
+  explanation:
+    vi: $(1,2)$ hợp lệ vì $1+6=7$.
+    en: $(1,2)$ works because $1+6=7$.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: dot
+    with:
+    - 1
+    - 3
+    value: 7
+  - kind: integerEntries
+  example:
+  - - 1
+  - - 2
+- id: c2w3-classification-perceptron-mcq-07
+  topic: classification-perceptron
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  prompt:
+    vi: Đồ thị nào giống activation sigmoid cho classification?
+    en: Which curve looks like sigmoid activation for classification?
+  explanation:
+    vi: Sigmoid tăng trơn từ 0 lên 1.
+    en: Sigmoid smoothly increases from 0 to 1.
+  hints: []
+  figure:
+    xRange:
+    - -6
+    - 6
+    yRange:
+    - -0.1
+    - 1.1
+    functions:
+    - f: sigmoid(x)
+      label: sigmoid
+  options:
+  - vi: Đường cong chữ S nằm trong $(0,1)$
+    en: S-shaped curve in $(0,1)$
+  - vi: Đường thẳng không chặn
+    en: Unbounded line
+  - vi: Parabol mở lên
+    en: Upward parabola
+  answer:
+  - 0

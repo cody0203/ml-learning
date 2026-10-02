@@ -1,0 +1,210 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-conditional-probability-mcq-01",
+      "topic": "conditional-probability",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề xác suất có điều kiện?",
+        "en": "Which statement best describes conditional probability?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng thu hẹp mẫu số theo điều kiện. Các đáp án sai giữ nguyên 36 kết quả xúc xắc, đảo chiều điều kiện, hoặc xem điều kiện như một biến cố cần cộng thêm.",
+        "en": "The correct answer restricts the denominator according to the condition. The wrong choices keep all 36 dice outcomes, reverse the condition, or treat the condition as an event to add."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là restricting the sample space after evidence arrives.",
+          "en": "The focus is restricting the sample space after evidence arrives."
+        },
+        {
+          "vi": "Biết xúc xắc đầu là 6 nhưng mẫu số vẫn là 36.",
+          "en": "Even after knowing the first die is 6, the denominator remains 36."
+        },
+        {
+          "vi": "$P(\\text{sum}=10\\mid \\text{first}=6)$ giống $P(\\text{first}=6\\mid \\text{sum}=10)$.",
+          "en": "$P(\\text{sum}=10\\mid \\text{first}=6)$ is the same as $P(\\text{first}=6\\mid \\text{sum}=10)$."
+        },
+        {
+          "vi": "Điều kiện được xử lý bằng cách cộng thêm $P(A)$ vào tử số.",
+          "en": "A condition is handled by adding $P(A)$ to the numerator."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-conditional-probability-numeric-02",
+      "topic": "conditional-probability",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Hai xúc xắc: biết xúc xắc đầu là 6. Xác suất tổng bằng 10 là bao nhiêu?",
+        "en": "Two dice: given the first die is 6. What is the probability the sum is 10?"
+      },
+      "explanation": {
+        "vi": "Only second die 4 works among six possibilities.",
+        "en": "Only second die 4 works among six possibilities."
+      },
+      "answers": [
+        {
+          "value": 0.16666666666666666
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-conditional-probability-parsons-03",
+      "topic": "conditional-probability",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài xác suất có điều kiện.",
+        "en": "Order the workflow for a conditional probability problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "For conditional dice questions, reduce the sample space to the given row before counting successes."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    },
+    {
+      "id": "c3w1-conditional-probability-finderror-04",
+      "topic": "conditional-probability",
+      "type": "find-error",
+      "difficulty": 2,
+      "tags": [
+        "error-analysis"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy nhớ công thức hợp tổng quát.",
+          "en": "Remember the general union formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Tìm lỗi đầu tiên trong lời giải xác suất có điều kiện.",
+        "en": "Find the first wrong step in the conditional probability solution."
+      },
+      "explanation": {
+        "vi": "Lỗi là dùng quy tắc sai trước khi kiểm tra điều kiện áp dụng.",
+        "en": "The first invalid step keeps 36 outcomes even after the condition says the first die is fixed."
+      },
+      "steps": [
+        {
+          "vi": "Gọi $A$ và $B$ là hai biến cố cần xét.",
+          "en": "Let $A$ and $B$ be the events of interest."
+        },
+        {
+          "vi": "Nhìn thấy từ 'or' nên viết ngay $P(A\\cup B)=P(A)+P(B)$.",
+          "en": "Seeing the word 'or', immediately write $P(A\\cup B)=P(A)+P(B)$."
+        },
+        {
+          "vi": "Không cần biết $A$ và $B$ có giao nhau hay không.",
+          "en": "There is no need to know whether $A$ and $B$ overlap."
+        },
+        {
+          "vi": "Kết luận xác suất cuối cùng có thể lớn hơn 1.",
+          "en": "Conclude the final probability may be greater than 1."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "c3w1-conditional-probability-matching-05",
+      "topic": "conditional-probability",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong xác suất có điều kiện.",
+        "en": "Match key terms in conditional probability."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The pairs emphasize condition, intersection, restricted denominator, and the meaning of the vertical bar."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    }
+  ]
+}

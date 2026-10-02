@@ -1,0 +1,51 @@
+﻿id: w2
+order: 2
+title:
+  vi: 'Tuần 2: Giải hệ phương trình tuyến tính'
+  en: 'Week 2: Solving systems of linear equations'
+source: syllabus/c1-linear-algebra/W2.pdf
+topics:
+- id: ml-motivation
+  title:
+    vi: Động lực ML
+    en: ML motivation
+- id: nonsingular-systems
+  title:
+    vi: Hệ tuyến tính không suy biến
+    en: Non-singular linear systems
+- id: singular-systems
+  title:
+    vi: Hệ tuyến tính suy biến
+    en: Singular linear systems
+- id: more-variables
+  title:
+    vi: Hệ có nhiều biến
+    en: Systems with more variables
+- id: matrix-row-reduction
+  title:
+    vi: Khử dòng bằng ma trận
+    en: Matrix row reduction
+- id: row-operations-singularity
+  title:
+    vi: Phép dòng và tính suy biến
+    en: Row operations and singularity
+- id: rank
+  title:
+    vi: Hạng của ma trận
+    en: Rank of a matrix
+- id: rank-general
+  title:
+    vi: Hạng trong trường hợp tổng quát
+    en: Rank in the general case
+- id: row-echelon-form
+  title:
+    vi: Dạng bậc thang dòng
+    en: Row echelon form
+- id: row-echelon-general
+  title:
+    vi: Dạng bậc thang tổng quát
+    en: General row echelon form
+- id: reduced-row-echelon-form
+  title:
+    vi: Dạng bậc thang rút gọn
+    en: Reduced row echelon form

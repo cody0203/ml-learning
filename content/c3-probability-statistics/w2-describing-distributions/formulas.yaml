@@ -1,0 +1,226 @@
+﻿formulas:
+  - id: c3w2-f-sample-mean
+    topic: central-tendency
+    name: { vi: 'Trung bình mẫu', en: 'Sample mean' }
+    tex: '\bar{x}=\frac{1}{n}\sum_{i=1}^n x_i'
+    where:
+      vi: 'Tổng các giá trị chia cho số quan sát; nhạy với ngoại lệ.'
+      en: 'Sum of observations divided by their count; sensitive to outliers.'
+    numpy: 'np.mean(x)'
+    exercises: [c3w2-central-tendency-parsons-04, c3w2-central-tendency-code-08, c3w3-stats-numeric-01]
+  - id: c3w2-f-median-quantile
+    topic: central-tendency
+    name: { vi: 'Trung vị', en: 'Median' }
+    tex: '\operatorname{median}(x)=q_{0.5}'
+    where:
+      vi: 'Giá trị giữa sau khi sắp xếp; bền vững hơn trung bình khi có ngoại lệ.'
+      en: 'The middle value after sorting; more robust than the mean under outliers.'
+    numpy: 'np.median(x)'
+    exercises: [c3w2-central-tendency-numeric-05, c3w2-central-tendency-tf-02, c3w2-quantiles-boxplots-numeric-05]
+  - id: c3w2-f-mode
+    topic: central-tendency
+    name: { vi: 'Mốt', en: 'Mode' }
+    tex: '\operatorname{mode}(x)=\arg\max_v \#\{i:x_i=v\}'
+    where:
+      vi: 'Giá trị xuất hiện nhiều nhất; hữu ích cho dữ liệu rời rạc hoặc phân loại.'
+      en: 'The most frequent value; useful for discrete or categorical data.'
+    numpy: 'scipy.stats.mode(x, keepdims=False)'
+    exercises: [c3w2-central-tendency-matching-03, c3w2-central-tendency-code-08]
+  - id: c3w2-f-expected-value-discrete
+    topic: expected-value
+    name: { vi: 'Kỳ vọng rời rạc', en: 'Discrete expected value' }
+    tex: 'E[X]=\sum_x x\,p(x)'
+    where:
+      vi: 'Trung bình có trọng số theo PMF; xác suất phải không âm và tổng bằng 1.'
+      en: 'Probability-weighted average under a PMF; probabilities must be nonnegative and sum to 1.'
+    numpy: 'np.sum(values * probs)'
+    exercises: [c3w2-expected-value-numeric-05, c3w2-expected-value-construct-06, c3w3-lln-param-01]
+  - id: c3w2-f-expected-value-continuous
+    topic: expected-value
+    name: { vi: 'Kỳ vọng liên tục', en: 'Continuous expected value' }
+    tex: 'E[X]=\int_{-\infty}^{\infty} x f(x)\,dx'
+    where:
+      vi: 'Dùng với PDF liên tục $f$; thay tổng bằng tích phân theo mật độ.'
+      en: 'Use with continuous PDF $f$; replace sums by integrals over density.'
+    numpy: 'scipy.integrate.quad(lambda x: x*f(x), -np.inf, np.inf)'
+    exercises: [c3w2-expected-value-mcq-01, c3w2-joint-continuous-multi-07]
+  - id: c3w2-f-expected-function
+    topic: expected-function
+    name: { vi: 'Kỳ vọng của hàm biến ngẫu nhiên', en: 'Expected value of a function' }
+    tex: 'E[g(X)]=\sum_x g(x)p(x)\quad\text{or}\quad E[g(X)]=\int g(x)f(x)\,dx'
+    where:
+      vi: 'Biến đổi từng giá trị bằng $g$ trước, rồi mới lấy trung bình có trọng số.'
+      en: 'Transform each value by $g$ first, then take the weighted average.'
+    exercises: [c3w2-expected-function-numeric-05, c3w2-expected-function-tf-02, c3w2-expected-function-parsons-04]
+  - id: c3w2-f-affine-expectation
+    topic: expected-function
+    name: { vi: 'Tuyến tính của kỳ vọng affine', en: 'Affine expectation rule' }
+    tex: 'E[aX+b]=aE[X]+b'
+    where:
+      vi: 'Đúng cho hằng số $a,b$ khi kỳ vọng tồn tại; không cần giả thiết độc lập.'
+      en: 'Valid for constants $a,b$ when the expectation exists; no independence assumption is needed.'
+    exercises: [c3w2-expected-function-mcq-01, c3w2-sum-expectations-numeric-05]
+  - id: c3w2-f-linearity-expectation
+    topic: sum-expectations
+    name: { vi: 'Tuyến tính của kỳ vọng', en: 'Linearity of expectation' }
+    tex: 'E[X_1+\cdots+X_n]=E[X_1]+\cdots+E[X_n]'
+    where:
+      vi: 'Đúng cả khi các biến phụ thuộc; rất hữu ích để tính tổng hoặc số đếm kỳ vọng.'
+      en: 'Holds even for dependent variables; useful for totals and expected counts.'
+    exercises: [c3w2-sum-expectations-numeric-05, c3w2-sum-expectations-tf-02, c3w2-sum-expectations-find-error-06]
+  - id: c3w2-f-variance-definition
+    topic: variance
+    name: { vi: 'Phương sai', en: 'Variance' }
+    tex: '\operatorname{Var}(X)=E[(X-\mu)^2]'
+    where:
+      vi: '$\mu=E[X]$; đo độ phân tán bình phương quanh trung tâm.'
+      en: '$\mu=E[X]$; measures squared spread around the center.'
+    numpy: 'np.var(x)'
+    exercises: [c3w2-variance-numeric-05, c3w2-variance-construct-06, c3w2-conclusion-multi-05]
+  - id: c3w2-f-variance-shortcut
+    topic: variance
+    name: { vi: 'Công thức tắt phương sai', en: 'Variance shortcut' }
+    tex: '\operatorname{Var}(X)=E[X^2]-E[X]^2'
+    where:
+      vi: 'Tính $E[X^2]$ và $E[X]$ riêng; không được thay $E[X^2]$ bằng $E[X]^2$.'
+      en: 'Compute $E[X^2]$ and $E[X]$ separately; do not replace $E[X^2]$ by $E[X]^2$.'
+    exercises: [c3w2-variance-matching-03, c3w2-expected-function-tf-02, c3w2-variance-numeric-05]
+  - id: c3w2-f-variance-affine
+    topic: variance
+    name: { vi: 'Phương sai khi biến đổi affine', en: 'Affine variance rule' }
+    tex: '\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)'
+    where:
+      vi: 'Cộng hằng số không đổi độ phân tán; nhân hệ số làm phương sai nhân với bình phương hệ số.'
+      en: 'Adding a constant does not change spread; scaling multiplies variance by the squared scale.'
+    exercises: [c3w2-variance-tf-02, c3w2-variance-matching-03]
+  - id: c3w2-f-standard-deviation
+    topic: standard-deviation
+    name: { vi: 'Độ lệch chuẩn', en: 'Standard deviation' }
+    tex: '\sigma=\sqrt{\operatorname{Var}(X)}'
+    where:
+      vi: 'Đưa đơn vị đo trở lại cùng đơn vị với $X$ sau khi tính phương sai.'
+      en: 'Returns the spread measure to the same units as $X$ after computing variance.'
+    numpy: 'np.std(x)'
+    exercises: [c3w2-standard-deviation-mcq-01, c3w2-standard-deviation-construct-06]
+  - id: c3w2-f-standard-score
+    topic: standard-deviation
+    name: { vi: 'Chuẩn hóa z-score', en: 'Standard score' }
+    tex: 'Z=\frac{X-\mu}{\sigma}'
+    where:
+      vi: 'Sau chuẩn hóa, biến có trung bình 0 và độ lệch chuẩn 1 nếu $\sigma>0$.'
+      en: 'After standardization, the variable has mean 0 and standard deviation 1 when $\sigma>0$.'
+    numpy: '(x - np.mean(x)) / np.std(x)'
+    exercises: [c3w2-standard-deviation-numeric-05, c3w2-conclusion-code-07, c3w1-normal-distribution-numeric-02]
+  - id: c3w2-f-sum-independent-gaussians
+    topic: standard-deviation
+    name: { vi: 'Tổng các Gaussian độc lập', en: 'Sum of independent Gaussians' }
+    tex: 'X\sim\mathcal N(\mu_X,\sigma_X^2),\;Y\sim\mathcal N(\mu_Y,\sigma_Y^2)\Rightarrow X+Y\sim\mathcal N(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)'
+    where:
+      vi: 'Cần độc lập; trung bình cộng lại và phương sai cộng lại.'
+      en: 'Requires independence; means add and variances add.'
+    exercises: [c3w2-standard-deviation-matching-03, c3w2-multivariate-gaussian-tf-02]
+  - id: c3w2-f-skewness
+    topic: skewness-kurtosis
+    name: { vi: 'Độ lệch', en: 'Skewness' }
+    tex: '\operatorname{skew}=E\left[\left(\frac{X-\mu}{\sigma}\right)^3\right]'
+    where:
+      vi: 'Moment chuẩn hóa bậc ba; dấu dương thường chỉ đuôi phải dài hơn.'
+      en: 'Third standardized moment; positive values usually indicate a longer right tail.'
+    numpy: 'scipy.stats.skew(x, bias=False)'
+    exercises: [c3w2-skewness-kurtosis-numeric-05, c3w2-skewness-kurtosis-tf-02, c3w2-skewness-kurtosis-matching-03]
+  - id: c3w2-f-kurtosis
+    topic: skewness-kurtosis
+    name: { vi: 'Độ nhọn', en: 'Kurtosis' }
+    tex: '\operatorname{kurt}=E\left[\left(\frac{X-\mu}{\sigma}\right)^4\right]'
+    where:
+      vi: 'Moment chuẩn hóa bậc bốn; dùng để mô tả đuôi nặng/nhẹ.'
+      en: 'Fourth standardized moment; used to describe tail heaviness.'
+    numpy: 'scipy.stats.kurtosis(x, fisher=False, bias=False)'
+    exercises: [c3w2-skewness-kurtosis-mcq-01, c3w2-skewness-kurtosis-find-error-07]
+  - id: c3w2-f-quantile-definition
+    topic: quantiles-boxplots
+    name: { vi: 'Phân vị', en: 'Quantile' }
+    tex: 'P(X\le q_p)=p'
+    where:
+      vi: '$q_p$ để lại tỉ lệ $p$ khối xác suất ở bên trái; với dữ liệu cần sắp xếp trước.'
+      en: '$q_p$ leaves proportion $p$ of mass to the left; for data, sort first.'
+    numpy: 'np.quantile(x, p)'
+    exercises: [c3w2-quantiles-boxplots-numeric-05, c3w2-quantiles-boxplots-predict-07, c3w2-quantiles-boxplots-code-08]
+  - id: c3w2-f-iqr-fences
+    topic: quantiles-boxplots
+    name: { vi: 'IQR và hàng rào ngoại lệ', en: 'IQR and outlier fences' }
+    tex: 'IQR=Q_3-Q_1,\qquad [Q_1-1.5IQR,\;Q_3+1.5IQR]'
+    where:
+      vi: 'Box plot dùng IQR cho nửa giữa của dữ liệu và hàng rào để gợi ý ngoại lệ.'
+      en: 'Box plots use IQR for the middle half and fences to flag possible outliers.'
+    numpy: 'q1, q3 = np.quantile(x, [0.25, 0.75])'
+    exercises: [c3w2-quantiles-boxplots-tf-02, c3w2-quantiles-boxplots-matching-03]
+  - id: c3w2-f-joint-pmf
+    topic: joint-discrete
+    name: { vi: 'PMF chung rời rạc', en: 'Discrete joint PMF' }
+    tex: 'p_{XY}(x,y)=P(X=x,Y=y),\qquad \sum_x\sum_y p_{XY}(x,y)=1'
+    where:
+      vi: 'Bảng xác suất cho các cặp giá trị; mọi ô không âm và tổng toàn bảng bằng 1.'
+      en: 'Probability table for pairs of values; all cells are nonnegative and the whole table sums to 1.'
+    exercises: [c3w2-joint-discrete-tf-02, c3w2-joint-discrete-construct-06, c3w2-joint-discrete-numeric-05]
+  - id: c3w2-f-joint-continuous-probability
+    topic: joint-continuous
+    name: { vi: 'Xác suất chung liên tục', en: 'Continuous joint probability' }
+    tex: 'P((X,Y)\in A)=\iint_A f_{XY}(x,y)\,dx\,dy'
+    where:
+      vi: 'Xác suất là thể tích dưới mật độ trên vùng $A$, không phải chiều cao tại một điểm.'
+      en: 'Probability is volume under the density over region $A$, not the height at one point.'
+    exercises: [c3w2-joint-continuous-tf-02, c3w2-joint-continuous-numeric-05, c3w2-joint-continuous-find-error-06]
+  - id: c3w2-f-marginal-discrete
+    topic: marginal-conditional
+    name: { vi: 'Biên rời rạc', en: 'Discrete marginal' }
+    tex: 'p_X(x)=\sum_y p_{XY}(x,y)'
+    where:
+      vi: 'Cộng qua biến $Y$ để bỏ qua $Y$ và giữ phân phối của $X$.'
+      en: 'Sum over $Y$ to ignore $Y$ and keep the distribution of $X$.'
+    numpy: 'joint.sum(axis=1)'
+    exercises: [c3w2-marginal-conditional-mcq-01, c3w2-marginal-conditional-predict-06, c3w2-marginal-conditional-code-07]
+  - id: c3w2-f-conditional-discrete
+    topic: marginal-conditional
+    name: { vi: 'Điều kiện rời rạc từ bảng chung', en: 'Discrete conditional from a joint table' }
+    tex: 'p_{Y\mid X=x}(y)=\frac{p_{XY}(x,y)}{p_X(x)}'
+    where:
+      vi: 'Chia một lát của bảng chung cho biên tương ứng; cần $p_X(x)>0$.'
+      en: 'Divide a slice of the joint table by the matching marginal; requires $p_X(x)>0$.'
+    exercises: [c3w2-marginal-conditional-tf-02, c3w2-marginal-conditional-numeric-05, c3w1-conditional-probability-numeric-02]
+  - id: c3w2-f-covariance
+    topic: covariance
+    name: { vi: 'Hiệp phương sai', en: 'Covariance' }
+    tex: '\operatorname{Cov}(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-E[X]E[Y]'
+    where:
+      vi: 'Dương khi hai biến thường lệch cùng chiều, âm khi lệch ngược chiều; phụ thuộc đơn vị đo.'
+      en: 'Positive when variables tend to move together, negative when they move oppositely; unit-dependent.'
+    numpy: 'np.cov(x, y, bias=True)[0, 1]'
+    exercises: [c3w2-covariance-mcq-01, c3w2-covariance-parsons-04, c3w2-covariance-code-07]
+  - id: c3w2-f-correlation
+    topic: covariance
+    name: { vi: 'Hệ số tương quan', en: 'Correlation coefficient' }
+    tex: '\rho=\frac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}'
+    where:
+      vi: 'Chuẩn hóa hiệp phương sai để không còn đơn vị và nằm trong khoảng $[-1,1]$.'
+      en: 'Standardizes covariance to be unitless and lie in $[-1,1]$.'
+    numpy: 'np.corrcoef(x, y)[0, 1]'
+    exercises: [c3w2-covariance-numeric-05, c3w2-covariance-tf-02, c3w2-covariance-code-07]
+  - id: c3w2-f-covariance-matrix
+    topic: covariance
+    name: { vi: 'Ma trận hiệp phương sai', en: 'Covariance matrix' }
+    tex: '\Sigma=\begin{bmatrix}\operatorname{Var}(X)&\operatorname{Cov}(X,Y)\\\operatorname{Cov}(X,Y)&\operatorname{Var}(Y)\end{bmatrix}'
+    where:
+      vi: 'Đường chéo là phương sai, ngoài đường chéo là hiệp phương sai; ma trận đối xứng.'
+      en: 'Diagonal entries are variances and off-diagonal entries are covariances; the matrix is symmetric.'
+    numpy: 'np.cov(np.vstack([x, y]), bias=True)'
+    exercises: [c3w2-covariance-matrix-06, c3w2-multivariate-gaussian-matrix-05, c3w2-multivariate-gaussian-tf-02]
+  - id: c3w2-f-multivariate-gaussian
+    topic: multivariate-gaussian
+    name: { vi: 'Mật độ Gaussian đa biến', en: 'Multivariate Gaussian density' }
+    tex: 'f(x)=\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left[-\frac12(x-\mu)^T\Sigma^{-1}(x-\mu)\right]'
+    where:
+      vi: '$\mu$ là vector trung bình, $\Sigma$ là ma trận hiệp phương sai xác định dương.'
+      en: '$\mu$ is the mean vector and $\Sigma$ is a positive-definite covariance matrix.'
+    numpy: 'scipy.stats.multivariate_normal.pdf(x, mean=mu, cov=Sigma)'
+    exercises: [c3w2-multivariate-gaussian-matching-03, c3w2-multivariate-gaussian-parsons-04, c3w2-multivariate-gaussian-numeric-06]

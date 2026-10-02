@@ -1,0 +1,208 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-sum-rules-mcq-01",
+      "topic": "sum-rules",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề quy tắc cộng cho biến cố rời nhau và giao nhau?",
+        "en": "Which statement best describes sum rules for disjoint and joint events?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng nêu vấn đề đếm trùng trong hợp. Các lựa chọn sai lần lượt bỏ phần giao, trừ cả hai xác suất, hoặc dùng phép nhân độc lập cho một câu hỏi 'or'.",
+        "en": "The correct answer names double counting in the union. The wrong choices ignore the overlap, subtract both probabilities, or use an independence product for an 'or' question."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là union, overlap, and double counting.",
+          "en": "The focus is union, overlap, and double counting."
+        },
+        {
+          "vi": "Với $P(S)=0.6$ và $P(B)=0.5$, hợp luôn bằng $1.1$.",
+          "en": "With $P(S)=0.6$ and $P(B)=0.5$, the union is always $1.1$."
+        },
+        {
+          "vi": "Nếu có giao 0.3 thì phải tính $0.6-0.5-0.3$.",
+          "en": "If the overlap is 0.3, compute $0.6-0.5-0.3$."
+        },
+        {
+          "vi": "Từ 'or' luôn yêu cầu nhân $P(S)P(B)$.",
+          "en": "The word 'or' always requires multiplying $P(S)P(B)$."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-sum-rules-truefalse-02",
+      "topic": "sum-rules",
+      "type": "true-false",
+      "difficulty": 2,
+      "tags": [
+        "misconception"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy hỏi: mẫu số là gì?",
+          "en": "Ask: what is the denominator?"
+        }
+      ],
+      "prompt": {
+        "vi": "Trong quy tắc cộng cho biến cố rời nhau và giao nhau, chiều cao hoặc phép cộng thô luôn trực tiếp bằng xác suất cần tìm.",
+        "en": "In sum rules for disjoint and joint events, raw height or raw addition is always directly the desired probability."
+      },
+      "explanation": {
+        "vi": "Luôn kiểm tra mẫu số, phần giao, hoặc diện tích trước khi tính.",
+        "en": "Here the key question is whether the two sports overlap; the union formula subtracts that overlap."
+      },
+      "answer": false,
+      "reasons": [
+        {
+          "vi": "Đúng: nếu hai môn thể thao có học sinh chơi cả hai, công thức hợp phải trừ phần giao.",
+          "en": "True: if some students play both sports, the union formula must subtract the overlap."
+        },
+        {
+          "vi": "Sai: công thức cộng đơn giản chỉ đúng khi hai biến cố rời nhau.",
+          "en": "False: the simple addition rule is valid only when the two events are disjoint."
+        },
+        {
+          "vi": "Sai: lỗi trong bài này là đếm trùng vùng giao, không phải dấu của PDF.",
+          "en": "False: the issue here is double-counting the intersection, not the sign of a PDF."
+        }
+      ],
+      "reasonAnswer": 1
+    },
+    {
+      "id": "c3w1-sum-rules-numeric-03",
+      "topic": "sum-rules",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "$P(A)=0.6$, $P(B)=0.5$, $P(A\\cap B)=0.3$. Tính $P(A\\cup B)$.",
+        "en": "$P(A)=0.6$, $P(B)=0.5$, $P(A\\cap B)=0.3$. Compute $P(A\\cup B)$."
+      },
+      "explanation": {
+        "vi": "0.6+0.5-0.3=0.8.",
+        "en": "0.6+0.5-0.3=0.8."
+      },
+      "answers": [
+        {
+          "value": 0.8
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-sum-rules-finderror-04",
+      "topic": "sum-rules",
+      "type": "find-error",
+      "difficulty": 2,
+      "tags": [
+        "error-analysis"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy nhớ công thức hợp tổng quát.",
+          "en": "Remember the general union formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Tìm lỗi đầu tiên trong lời giải quy tắc cộng cho biến cố rời nhau và giao nhau.",
+        "en": "Find the first wrong step in the sum rules for disjoint and joint events solution."
+      },
+      "explanation": {
+        "vi": "Lỗi là dùng quy tắc sai trước khi kiểm tra điều kiện áp dụng.",
+        "en": "The solution first goes wrong when it treats overlapping dice events as if they were disjoint."
+      },
+      "steps": [
+        {
+          "vi": "Gọi $A$ và $B$ là hai biến cố cần xét.",
+          "en": "Let $A$ and $B$ be the events of interest."
+        },
+        {
+          "vi": "Nhìn thấy từ 'or' nên viết ngay $P(A\\cup B)=P(A)+P(B)$.",
+          "en": "Seeing the word 'or', immediately write $P(A\\cup B)=P(A)+P(B)$."
+        },
+        {
+          "vi": "Không cần biết $A$ và $B$ có giao nhau hay không.",
+          "en": "There is no need to know whether $A$ and $B$ overlap."
+        },
+        {
+          "vi": "Kết luận xác suất cuối cùng có thể lớn hơn 1.",
+          "en": "Conclude the final probability may be greater than 1."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "c3w1-sum-rules-matching-05",
+      "topic": "sum-rules",
+      "type": "matching",
+      "difficulty": 1,
+      "tags": [
+        "vocabulary"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Ghép thuật ngữ quan trọng trong quy tắc cộng cho biến cố rời nhau và giao nhau.",
+        "en": "Match key terms in sum rules for disjoint and joint events."
+      },
+      "explanation": {
+        "vi": "Các cặp phân biệt ký hiệu, ý nghĩa và cách tính.",
+        "en": "The matches distinguish union, intersection, mutually exclusive events, and double counting."
+      },
+      "pairs": [
+        {
+          "left": {
+            "vi": "PMF",
+            "en": "PMF"
+          },
+          "right": {
+            "vi": "Xác suất tại từng giá trị rời rạc",
+            "en": "Probability at each discrete value"
+          }
+        },
+        {
+          "left": {
+            "vi": "PDF",
+            "en": "PDF"
+          },
+          "right": {
+            "vi": "Mật độ; xác suất là diện tích",
+            "en": "Density; probability is area"
+          }
+        },
+        {
+          "left": {
+            "vi": "CDF",
+            "en": "CDF"
+          },
+          "right": {
+            "vi": "$P(X\\le x)$",
+            "en": "$P(X\\le x)$"
+          }
+        },
+        {
+          "left": {
+            "vi": "Posterior",
+            "en": "Posterior"
+          },
+          "right": {
+            "vi": "Xác suất sau khi thấy bằng chứng",
+            "en": "Probability after seeing evidence"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+exercises:
+- id: c1w2-ml-motivation-mcq-01
+  topic: ml-motivation
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: A bird-call classifier stores 120 time-window features, but 40 columns are copied from earlier filters. What does row-reduction intuition suggest?
+    vi: Một bộ phân loại tiếng chim có 120 đặc trưng theo cửa sổ thời gian, nhưng 40 cột là bản sao của các bộ lọc trước. Trực giác khử dòng gợi ý điều gì?
+  explanation:
+    en: The copied columns cannot add independent directions, so row reduction may expose fewer pivots than columns. The nonlinear option confuses dependence with model architecture; the right-hand side does not disappear; and copied columns usually fail to create new pivots because they repeat existing information.
+    vi: Các cột sao chép không thêm hướng độc lập, nên khử dòng có thể cho ít pivot hơn số cột. Lựa chọn phi tuyến nhầm phụ thuộc tuyến tính với kiến trúc mô hình; vế phải không biến mất; và cột sao chép thường không tạo pivot mới vì chỉ lặp thông tin cũ.
+  hints: []
+  options:
+  - en: The feature matrix may have fewer than 120 independent directions.
+    vi: Ma trận đặc trưng có thể có ít hơn 120 hướng độc lập.
+  - en: Copied columns make the model nonlinear automatically.
+    vi: Các cột sao chép tự động làm mô hình trở thành phi tuyến.
+  - en: The right-hand side vector disappears when features repeat.
+    vi: Vector vế phải biến mất khi đặc trưng bị lặp.
+  - en: Every copied column creates a new pivot during elimination.
+    vi: Mỗi cột sao chép tạo một pivot mới khi khử.
+  answer:
+  - 0
+- id: c1w2-ml-motivation-truefalse-02
+  topic: ml-motivation
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Nếu hai cột đặc trưng giống hệt nhau, ta có hai cột nhưng chỉ một hướng thông tin độc lập.
+    en: If two feature columns are exact copies, they add two columns but only one independent direction.
+  explanation:
+    vi: 'Hai cột sao chép làm giảm số thông tin hữu ích: khi khử sẽ xuất hiện hiệu bằng 0, nên rank không tăng.'
+    en: 'Copied columns reduce the useful information count: row reduction would create a zero difference, so rank does not increase.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Rank đếm hướng độc lập, không đếm số cột thô.
+    en: Rank counts independent directions, not raw column count.
+  - vi: Hai cột giống hệt nhau luôn tạo hai hướng độc lập vì có hai tên cột.
+    en: Two identical columns always create two independent directions because there are two column names.
+  - vi: Cột sao chép làm rank tăng thêm một chỉ khi dùng trong mô hình ML.
+    en: A copied column increases rank by one specifically when it is used in an ML model.
+  reasonAnswer: 0
+- id: c1w2-ml-motivation-matching-03
+  topic: ml-motivation
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến động lực ml.
+    en: Match concepts related to ml motivation.
+  explanation:
+    vi: Các cặp nối hàng ma trận với hướng đặc trưng, rank với nén, và mâu thuẫn với ràng buộc huấn luyện bất khả thi.
+    en: These matches connect matrix rows to feature directions, rank to compression, and contradictions to impossible training constraints.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-ml-motivation-construct-05
+  topic: ml-motivation
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 2×2 biểu diễn thông tin lặp lại, không có phần tử 0.
+    en: Construct a 2×2 matrix representing repeated information with no zero entries.
+  explanation:
+    vi: Hai hàng mẫu [1,2] và [2,4] là bội của nhau với hệ số 2, nên bảng đặc trưng này có rank 1 thay vì 2.
+    en: The sample rows [1,2] and [2,4] are copies up to a factor of 2, so a feature table with these rows has rank 1 rather than 2.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: rank
+    value: 1
+  - kind: noZeroEntries
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+  - - 2
+    - 4
+- id: c1w2-ml-motivation-parsons-06
+  topic: ml-motivation
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho động lực ml.
+    en: Order the workflow for ml motivation.
+  explanation:
+    vi: Bắt đầu bằng nhận diện hàng đặc trưng độc lập, khử thông tin lặp, rồi mới diễn giải pivot còn lại như các hướng tín hiệu hữu ích.
+    en: Start by identifying independent feature rows, then eliminate repeated information, and only then interpret the remaining pivots as usable signal directions.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-ml-motivation-finderror-07
+  topic: ml-motivation
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về động lực ml.
+    en: Find the first error in the argument about ml motivation.
+  explanation:
+    vi: Bước sai đầu tiên loại ma trận chỉ vì pivot bằng 2. Với rank đặc trưng ML, pivot khác 0 vẫn là một hướng độc lập.
+    en: The first wrong step dismisses a matrix because a pivot is 2. For ML feature rank, any non-zero pivot is still an independent direction.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-ml-motivation-predictoutput-09
+  topic: ml-motivation
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán vector đặc trưng neural do phép nhân ma trận-vector này tạo ra.
+    en: Predict the neural-feature vector produced by this matrix-vector product.
+  explanation:
+    vi: Hàng đầu cho 1*1+2*0+3*2=7 và hàng hai cho 0, nên mảng in ra là [7 0]; các lựa chọn khác giữ nguyên x hoặc thêm đóng góp hàng hai không có.
+    en: The first row gives 1*1+2*0+3*2=7 and the second row gives 0, so the printed array is [7 0]; the other choices either keep x unchanged or add a nonexistent second-row contribution.
+  hints: []
+  code: 'import numpy as np
+
+    A=np.array([[1,2,3],[0,1,0]])
+
+    x=np.array([1,0,2])
+
+    print(A @ x)
+
+    '
+  options:
+  - '[7 0]'
+  - '[7 1]'
+  - '[1 0 2]'
+  - shape error
+  answer: 0
+- id: c1w2-ml-motivation-parametric-11
+  topic: ml-motivation
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động về matrix-vector để hiểu phép tính đặc trưng theo lô.
+    en: Dynamic matrix-vector drill for interpreting batched feature computations.
+  explanation:
+    vi: Mỗi bài sinh ra yêu cầu nhân từng hàng với vector đầu vào, đúng như phép tính của một lớp tuyến tính trong ML.
+    en: Each generated item asks you to multiply rows by an input vector, the same operation used by a linear ML layer.
+  hints: []
+  generator: matrix-vector
+  params: {}

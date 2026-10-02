@@ -1,0 +1,205 @@
+exercises:
+- id: c1w2-reduced-row-echelon-form-mcq-01
+  topic: reduced-row-echelon-form
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: After reducing $\left[\begin{array}{cc|c}1&2&7\\0&3&6\end{array}\right]$, which final augmented matrix is RREF?
+    vi: Sau khi khử $\left[\begin{array}{cc|c}1&2&7\\0&3&6\end{array}\right]$, ma trận mở rộng cuối nào là RREF?
+  explanation:
+    en: RREF needs unit pivots and zeros above and below pivot positions, so the identity coefficient side with constants 3 and 2 is correct. The second option has a 2 above the second pivot, the third has pivot 3 not scaled, and the fourth has pivot columns ordered incorrectly for REF.
+    vi: RREF cần pivot bằng 1 và số 0 cả trên lẫn dưới vị trí pivot, nên vế hệ số là ma trận đơn vị với hằng số 3 và 2 là đúng. Lựa chọn hai còn số 2 phía trên pivot thứ hai, lựa chọn ba chưa chuẩn hóa pivot 3, và lựa chọn bốn sắp thứ tự cột pivot sai với REF.
+  hints: []
+  options:
+  - en: $\left[\begin{array}{cc|c}1&0&3\\0&1&2\end{array}\right]$
+    vi: $\left[\begin{array}{cc|c}1&0&3\\0&1&2\end{array}\right]$
+  - en: $\left[\begin{array}{cc|c}1&2&7\\0&1&2\end{array}\right]$
+    vi: $\left[\begin{array}{cc|c}1&2&7\\0&1&2\end{array}\right]$
+  - en: $\left[\begin{array}{cc|c}1&2&7\\0&3&6\end{array}\right]$
+    vi: $\left[\begin{array}{cc|c}1&2&7\\0&3&6\end{array}\right]$
+  - en: $\left[\begin{array}{cc|c}0&1&2\\1&0&3\end{array}\right]$
+    vi: $\left[\begin{array}{cc|c}0&1&2\\1&0&3\end{array}\right]$
+  answer:
+  - 0
+- id: c1w2-reduced-row-echelon-form-truefalse-02
+  topic: reduced-row-echelon-form
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Trong RREF, mỗi cột pivot có số 0 cả phía trên và phía dưới pivot.
+    en: In RREF, each pivot column has zeros above and below its pivot.
+  explanation:
+    vi: Việc dọn sạch này giúp ma trận mở rộng RREF hiển thị biến đã giải trực tiếp, khác với REF chỉ tam giác trên.
+    en: That cleaning is what lets an augmented RREF display solved variables directly, unlike a merely upper-triangular REF.
+  hints: []
+  answer: true
+  reasons:
+  - vi: RREF dọn toàn bộ cột pivot.
+    en: RREF cleans the entire pivot column.
+  - vi: RREF chỉ yêu cầu các phần tử dưới pivot bằng 0, còn phía trên có thể khác 0.
+    en: RREF only requires zeros below pivots; entries above them may be non-zero.
+  - vi: Chỉ cần pivot bằng 1 là đủ, dù cột pivot vẫn còn số khác 0.
+    en: Unit pivots are enough even if their columns still contain other non-zero entries.
+  reasonAnswer: 0
+- id: c1w2-reduced-row-echelon-form-matching-03
+  topic: reduced-row-echelon-form
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến dạng bậc thang rút gọn.
+    en: Match concepts related to reduced row echelon form.
+  explanation:
+    vi: 'Các cặp nhấn mạnh phần dọn thêm của RREF: pivot bằng 1 và số 0 cả trên lẫn dưới.'
+    en: 'The pairs highlight the extra RREF cleanup: unit pivots and zeros above as well as below.'
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-reduced-row-echelon-form-matrix-04
+  topic: reduced-row-echelon-form
+  type: matrix
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Tìm RREF của $[[1,2,3],[0,1,4],[0,0,1]]$.
+    en: Find the RREF of $[[1,2,3],[0,1,4],[0,0,1]]$.
+  explanation:
+    vi: Ma trận tam giác này full rank nên RREF là $I$.
+    en: This triangular matrix is full rank, so its RREF is $I$.
+  hints: []
+  answer:
+  - - 1
+    - 0
+    - 0
+  - - 0
+    - 1
+    - 0
+  - - 0
+    - 0
+    - 1
+  tolerance: 0.001
+- id: c1w2-reduced-row-echelon-form-construct-05
+  topic: reduced-row-echelon-form
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận RREF 3×4 rank 2.
+    en: Construct a 3×4 RREF matrix of rank 2.
+  explanation:
+    vi: Mẫu có pivot bằng 1 và mỗi cột pivot sạch cả trên lẫn dưới, nên thỏa các điều kiện RREF chặt hơn.
+    en: The sample has unit pivots and each pivot column is clean above and below, so it satisfies the stricter RREF constraints.
+  hints: []
+  rows: 3
+  cols: 4
+  constraints:
+  - kind: reducedRowEchelon
+  - kind: rank
+    value: 2
+  example:
+  - - 1
+    - 0
+    - 2
+    - 0
+  - - 0
+    - 1
+    - -1
+    - 0
+  - - 0
+    - 0
+    - 0
+    - 0
+- id: c1w2-reduced-row-echelon-form-parsons-06
+  topic: reduced-row-echelon-form
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho dạng bậc thang rút gọn.
+    en: Order the workflow for reduced row echelon form.
+  explanation:
+    vi: Sau các bước REF, RREF tiếp tục chuẩn hóa pivot về 1 và xóa phía trên; bỏ qua phần dọn này thì mới chỉ là REF.
+    en: After the REF steps, RREF continues by scaling pivots to one and clearing above them; skipping that cleanup leaves only REF.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-reduced-row-echelon-form-finderror-07
+  topic: reduced-row-echelon-form
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về dạng bậc thang rút gọn.
+    en: Find the first error in the argument about reduced row echelon form.
+  explanation:
+    vi: Nếu mục tiêu là RREF thì pivot 2 có vấn đề, nhưng các bước trước chỉ kết luận REF; vì vậy bước 3 là sai đầu tiên.
+    en: If the target were RREF, pivot 2 would be a problem, but the earlier steps only claimed REF; therefore step 3 is the first mismatch.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-reduced-row-echelon-form-code-08
+  topic: reduced-row-echelon-form
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt `forward_elimination` bằng NumPy cơ bản; không dùng `np.linalg.*` shortcuts.
+    en: Implement `forward_elimination` with basic NumPy; do not use `np.linalg.*` shortcuts.
+  explanation:
+    vi: Mã tạo pivot, chuẩn hóa mỗi hàng pivot về 1, rồi xóa cả trên lẫn dưới để tạo RREF một cách tường minh.
+    en: The code first creates pivots, scales each pivot row to one, then clears both above and below to produce RREF explicitly.
+  hints: []
+  starter: "import numpy as np\n\ndef forward_elimination(A):\n    return np.array(A, dtype=float)\n"
+  solution: "import numpy as np\n\ndef forward_elimination(A):\n    M=np.array(A,dtype=float).copy(); m,n=M.shape; r=0\n    for c in range(n):\n        p=None\n        for i in range(r,m):\n            if abs(M[i,c])>1e-12: p=i; break\n        if p is None: continue\n        if p!=r: M[[r,p]]=M[[p,r]]\n        for i in range(r+1,m): M[i,c:]-=(M[i,c]/M[r,c])*M[r,c:]\n        r+=1\n        if r==m: break\n    M[abs(M)<1e-10]=0; return M\n"
+  tests: "import numpy as np\n\ndef _rank_rows(M): return int(np.sum(np.any(np.abs(M)>1e-8, axis=1)))\ndef test_rank_one_ref():\n    R=forward_elimination(np.array([[1.,1.,1.],[2.,2.,2.],[3.,3.,3.]]))\n    assert _rank_rows(R)==1 and np.allclose(R[1:],0)\n\ndef test_full_rank_ref():\n    R=forward_elimination(np.array([[1.,1.,2.],[3.,-3.,-1.],[2.,-1.,6.]]))\n    assert _rank_rows(R)==3 and abs(R[1,0])<1e-8 and abs(R[2,0])<1e-8 and abs(R[2,1])<1e-8\n"

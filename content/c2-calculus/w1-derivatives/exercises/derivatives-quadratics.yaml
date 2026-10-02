@@ -1,0 +1,133 @@
+exercises:
+- id: c2w1-derivatives-quadratics-mcq-01
+  topic: common-derivatives
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm của hàm bậc hai'?
+    en: 'On the graph of $y=x^2$, why is the tangent steeper at $x=3$ than at $x=1$?'
+  explanation:
+    vi: 'Ý đúng: độ dốc của $x^2$ tăng tuyến tính theo vị trí.'
+    en: 'Correct: the slope of $x^2$ grows linearly with position.'
+  hints: []
+  options:
+  - vi: độ dốc của $x^2$ tăng tuyến tính theo vị trí
+    en: the slope of $x^2$ grows linearly with position
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The slope is the same everywhere because the curve is symmetric.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative at $x=3$ is $9$ because $f(3)=9$.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The tangent at $x=3$ should have slope $3$ because the input is $3$.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - -2
+    - 6
+    functions:
+    - f: x^2
+      label: f(x)=x^2
+      color: '#2563eb'
+    points:
+    - at:
+      - 0
+      - 0
+      label: flat
+    xLabel: x
+    yLabel: y
+- id: c2w1-derivatives-quadratics-truefalse-02
+  topic: common-derivatives
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm của hàm bậc hai', công thức $\frac{d}{dx}x^2=2x$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: 'For a quadratic term $x^2$, the local slope is $2x$, so the evaluation point directly changes the answer.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: The quadratic rule turns curvature into a linear slope, so the evaluation point matters.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Với $x^2$, độ dốc tại điểm cụ thể là $2x$ nên phụ thuộc vị trí.
+    en: For $x^2$, the slope at a point is $2x$, so it depends on location.
+  - vi: Parabol đối xứng nên mọi độ dốc hai bên đều bằng nhau.
+    en: A parabola is symmetric, so all slopes on both sides are equal.
+  - vi: Đạo hàm của $x^2$ bằng chính $x^2$.
+    en: The derivative of $x^2$ is $x^2$ itself.
+  reasonAnswer: 0
+- id: c2w1-derivatives-quadratics-multistep-03
+  topic: common-derivatives
+  type: multi-step
+  difficulty: 3
+  tags:
+  - application
+  prompt:
+    vi: 'Bài toán nhiều bước: tối ưu vị trí theo squared loss.'
+    en: 'Multi-step problem: use a quadratic derivative to locate a squared-loss minimum.'
+  explanation:
+    vi: Đạo hàm của tổng bình phương cho nghiệm là trung bình các vị trí.
+    en: The multi-step quadratic loss expands to a linear derivative, so setting it to zero gives the balancing point.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Với $J(x)=(x-2)^2+(x-8)^2$, tính $J'(x)$ tại $x=3$.
+      en: For $J(x)=(x-2)^2+(x-8)^2$, compute $J'(x)$ at $x=3$.
+    answers:
+    - value: -8
+    explanation:
+      vi: $J'(x)=2(x-2)+2(x-8)=4x-20$, tại $3$ là $-8$.
+      en: $J'(x)=2(x-2)+2(x-8)=4x-20$, at $3$ it is $-8$.
+  - type: numeric
+    prompt:
+      vi: Giải $J'(x)=0$ để tìm $x$ tối ưu.
+      en: Solve $J'(x)=0$ for the optimal $x$.
+    answers:
+    - value: 5
+    explanation:
+      vi: $4x-20=0$ nên $x=5$.
+      en: $4x-20=0$, so $x=5$.
+  - type: mcq
+    prompt:
+      vi: Tại $x=3$, đạo hàm âm gợi ý di chuyển hướng nào để giảm loss?
+      en: At $x=3$, a negative derivative suggests moving which way to reduce loss?
+    options:
+    - vi: Tăng $x$
+      en: Increase $x$
+    - vi: Giảm $x$
+      en: Decrease $x$
+    - vi: Không đổi
+      en: Do not move
+    answer:
+    - 0
+    explanation:
+      vi: Gradient descent dùng $x-\alpha J'(x)$; đạo hàm âm làm bước cập nhật tăng $x$.
+      en: Gradient descent uses $x-\alpha J'(x)$; a negative derivative increases $x$.
+- id: c2w1-derivatives-quadratics-matrix-04
+  topic: common-derivatives
+  type: matrix
+  difficulty: 2
+  tags:
+  - gradient
+  prompt:
+    vi: Nhập vector cột gồm $f'(1)$ và $f'(2)$ cho $f(x)=x^2+1$.
+    en: Enter the column vector of quadratic slopes $f'(1)$ and $f'(2)$ for $f(x)=x^2+1$.
+  explanation:
+    vi: Vì $f'(x)=2x$, vector là $(2,4)^T$.
+    en: The vector entries come from the quadratic derivative at $x=1$ and $x=2$, namely $2$ and $4$.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  answer:
+  - - 2
+  - - 4

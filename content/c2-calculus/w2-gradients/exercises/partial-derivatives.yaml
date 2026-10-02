@@ -1,0 +1,174 @@
+exercises:
+- id: c2w2-partial-derivatives-mcq-05
+  topic: partial-derivatives
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Khi tính $\partial(3x^2y^3)/\partial x$, ta xử lý $y^3$ như thế nào?
+    en: When computing $\partial(3x^2y^3)/\partial x$, how should $y^3$ be handled?
+  explanation:
+    vi: Vì đạo hàm theo $x$, mọi biểu thức chỉ phụ thuộc $y$ được giữ như một hệ số hằng. Thay $y=1$ hoặc bỏ $y^3$ đều làm mất phụ thuộc của lát cắt.
+    en: Because the derivative is with respect to $x$, any expression depending only on $y$ is kept as a constant coefficient. Replacing it by $1$ or dropping it loses the slice dependence.
+  hints: []
+  options:
+  - vi: Giữ $y^3$ như hệ số hằng khi đạo hàm theo $x$.
+    en: Keep $y^3$ as a constant coefficient while differentiating in $x$.
+  - vi: Thay $y^3$ bằng 1 trong mọi bài.
+    en: Replace $y^3$ by 1 in every problem.
+  - vi: Đạo hàm $y^3$ thành $3y^2$ dù đang theo $x$.
+    en: Differentiate $y^3$ to $3y^2$ even though the variable is $x$.
+  - vi: Bỏ hẳn thừa số $y^3$.
+    en: Drop the factor $y^3$ entirely.
+  answer:
+  - 0
+- id: c2w2-partial-derivatives-truefalse-06
+  topic: partial-derivatives
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Khi tính $f_y$ của $x^2+y^2$, hạng $x^2$ có đạo hàm bằng 0.
+    en: When computing $f_y$ for $x^2+y^2$, the term $x^2$ has derivative zero.
+  explanation:
+    vi: Đúng, vì theo biến $y$ thì $x^2$ là hằng số. Hạng $y^2$ mới tạo ra $2y$.
+    en: True, because with respect to $y$, $x^2$ is constant. The $y^2$ term contributes $2y$.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Biến không được đạo hàm được xem như hằng số.
+    en: The variable not being differentiated is treated as constant.
+  - vi: Vì $x$ và $y$ luôn có cùng giá trị.
+    en: Because $x$ and $y$ always have the same value.
+  reasonAnswer: 0
+- id: c2w2-partial-derivatives-matching-07
+  topic: partial-derivatives
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép thao tác đạo hàm riêng với kết quả đúng.
+    en: Match each partial-derivative operation to its correct result.
+  explanation:
+    vi: Mỗi cặp nhấn mạnh biến nào đang hoạt động và biến nào được giữ cố định.
+    en: Each pair emphasizes which variable is active and which one is held fixed.
+  hints: []
+  pairs:
+  - left:
+      vi: $\partial(x^2+y^2)/\partial x$
+      en: $\partial(x^2+y^2)/\partial x$
+    right:
+      vi: $2x$
+      en: $2x$
+  - left:
+      vi: $\partial(3x^2y^3)/\partial x$
+      en: $\partial(3x^2y^3)/\partial x$
+    right:
+      vi: $6xy^3$
+      en: $6xy^3$
+  - left:
+      vi: $\partial(3x^2y^3)/\partial y$
+      en: $\partial(3x^2y^3)/\partial y$
+    right:
+      vi: $9x^2y^2$
+      en: $9x^2y^2$
+- id: c2w2-partial-derivatives-numeric-08
+  topic: partial-derivatives
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Với $f(x,y)=3x^2y^3$, tính $f_x(1,2)$ và $f_y(1,2)$.
+    en: For $f(x,y)=3x^2y^3$, compute $f_x(1,2)$ and $f_y(1,2)$.
+  explanation:
+    vi: $f_x=6xy^3$ cho $48$ tại $(1,2)$; $f_y=9x^2y^2$ cho $36$.
+    en: $f_x=6xy^3$ gives $48$ at $(1,2)$; $f_y=9x^2y^2$ gives $36$.
+  hints: []
+  answers:
+  - label: f_x
+    value: 48
+  - label: f_y
+    value: 36
+- id: c2w2-partial-derivatives-finderror-42
+  topic: partial-derivatives
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên khi tính $\partial(3x^2y^3)/\partial x$.
+    en: Find the first error when computing $\partial(3x^2y^3)/\partial x$.
+  explanation:
+    vi: Sai ở bước đặt $y=1$; biến còn lại phải giữ như hằng số ký hiệu.
+    en: The error is setting $y=1$; the other variable should remain a symbolic constant.
+  hints: []
+  steps:
+  - vi: Giữ $y$ cố định khi đạo hàm theo $x$.
+    en: Hold $y$ fixed when differentiating with respect to $x$.
+  - vi: Thay $y=1$ vì nó là hằng số.
+    en: Substitute $y=1$ because it is constant.
+  - vi: Đạo hàm còn lại là $6x$.
+    en: The remaining derivative is $6x$.
+  - vi: Kết luận $f_x=6x$.
+    en: Conclude $f_x=6x$.
+  answer: 1
+- id: c2w2-partial-derivatives-code-57
+  topic: partial-derivatives
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt numerical partial derivative; không dùng shortcut tối ưu hóa.
+    en: Implement numerical partial derivative; do not use optimization shortcuts.
+  explanation:
+    vi: Hàm cần lấy hai giá trị đối xứng quanh $x$ trong khi giữ nguyên $y$, rồi chia cho $2h$ để có sai phân trung tâm.
+    en: The function must sample symmetrically around $x$ while keeping $y$ fixed, then divide by $2h$ for a centered difference.
+  hints: []
+  starter: "def partial_x(f,x,y,h=1e-5):\n    return 0.0\n"
+  solution: "def partial_x(f,x,y,h=1e-5):\n    return (f(x+h,y)-f(x-h,y))/(2*h)\n"
+  tests: "def test_quad():\n    f=lambda x,y:x*x+3*y*y\n    assert abs(partial_x(f,2.,1.)-4.)<1e-3\n"
+- id: c2w2-partial-derivatives-predictoutput-62
+  topic: partial-derivatives
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Dự đoán hiệu sai phân của $f(3,4)-f(2,4)$.
+    en: Predict the finite difference value printed for $f(3,4)-f(2,4)$.
+  explanation:
+    vi: Với cùng $y=4$, giá trị đổi từ $2^2+16=20$ lên $3^2+16=25$, nên hiệu được in là $5$.
+    en: With the same $y=4$, the value changes from $2^2+16=20$ to $3^2+16=25$, so the printed difference is $5$.
+  hints: []
+  code: 'def f(x,y): return x*x+y*y
+
+    print(f(3,4)-f(2,4))
+
+    '
+  options:
+  - '5'
+  - '9'
+  - '7'
+  - error
+  answer: 0
+- id: c2w2-partial-derivatives-parametric-66
+  topic: partial-derivatives
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh sẽ tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng công thức thay vì ghi nhớ đáp án.
+    en: Apply the formula rather than memorizing an answer.
+  hints: []
+  generator: partial-derivative
+  params: {}

@@ -1,0 +1,107 @@
+﻿exercises:
+- id: c2w3-nn-log-loss-matching-03
+  topic: nn-log-loss
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép thành phần trong binary log-loss.
+    en: Match the pieces of binary log-loss.
+  explanation:
+    vi: $y$ chọn nhánh đúng, $\hat y$ là xác suất class 1, và clipping tránh $\log(0)$.
+    en: $y$ selects the correct branch, $\hat y$ is the class-1 probability, and clipping avoids $\log(0)$.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-nn-log-loss-find-error-04
+  topic: nn-log-loss
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi khi viết binary log-loss.
+    en: Find the error when writing binary log-loss.
+  explanation:
+    vi: Thiếu dấu trừ sẽ làm loss âm cho dự đoán đúng, không phù hợp mục tiêu minimize.
+    en: Omitting the minus sign makes the loss negative for good predictions, which is not the intended minimization objective.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-nn-log-loss-numeric-05
+  topic: nn-log-loss
+  type: numeric
+  difficulty: 1
+  tags:
+  - log-loss
+  prompt:
+    vi: Nếu $y=1$, $\hat y=0.9$, tính binary log-loss.
+    en: If $y=1$, $\hat y=0.9$, compute binary log-loss.
+  explanation:
+    vi: $-\log(0.9)\approx0.10536$.
+    en: $-\log(0.9)\approx0.10536$.
+  hints: []
+  answers:
+  - value: 0.10536051565782628
+  tolerance: 0.001
+- id: c2w3-nn-log-loss-code-06
+  topic: nn-log-loss
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài binary log-loss ổn định bằng clipping.
+    en: Implement numerically stable binary log-loss with clipping.
+  explanation:
+    vi: Clip xác suất để tránh $\log(0)$.
+    en: Clip probabilities to avoid $\log(0)$.
+  hints: []
+  starter: "import numpy as np\ndef binary_log_loss(y,p):\n    return 0.0\n"
+  solution: "import numpy as np\ndef binary_log_loss(y,p):\n    y=np.asarray(y,dtype=float); p=np.asarray(p,dtype=float)\n    p=np.clip(p,1e-12,1-1e-12)\n    return float(np.mean(-(y*np.log(p)+(1-y)*np.log(1-p))))\n"
+  tests: "import math\ndef test_good():\n    assert abs(binary_log_loss([1],[0.9]) + math.log(0.9)) < 1e-9\ndef test_clip():\n    assert binary_log_loss([1,0],[1,0]) < 1e-6\n"
+- id: c2w3-nn-log-loss-predict-output-07
+  topic: nn-log-loss
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output được làm tròn.
+    en: Predict rounded output.
+  explanation:
+    vi: $-\log(0.5)=0.693...$
+    en: $-\log(0.5)=0.693...$
+  hints: []
+  code: 'import numpy as np
+
+    print(round(float(-np.log(0.5)),3))'
+  options:
+  - '0.693'
+  - '0.500'
+  - '1.386'
+  answer: 0

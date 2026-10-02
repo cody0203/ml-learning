@@ -1,0 +1,116 @@
+exercises:
+- id: c2w1-higher-degree-polynomials-mcq-01
+  topic: common-derivatives
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Đạo hàm đa thức bậc cao'?
+    en: 'A slide derives the slope of $x^3$ by shrinking $\Delta x$. What pattern does it reveal?'
+  explanation:
+    vi: 'Ý đúng: quy tắc lũy thừa biến đa thức thành đa thức bậc thấp hơn.'
+    en: 'Correct: the power rule turns a polynomial into a lower-degree polynomial.'
+  hints: []
+  options:
+  - vi: quy tắc lũy thừa biến đa thức thành đa thức bậc thấp hơn
+    en: the power rule turns a polynomial into a lower-degree polynomial
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: Cubic functions have constant slope because the exponent is fixed.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: The derivative of $x^3$ is $x^2$ because only the exponent drops.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: The derivative of a sum of polynomial terms must be found by multiplying all terms together.
+  answer:
+  - 0
+- id: c2w1-higher-degree-polynomials-truefalse-02
+  topic: common-derivatives
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Đạo hàm đa thức bậc cao', công thức $\frac{d}{dx}x^n=nx^{n-1}$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: 'The power rule for $x^n$ multiplies by the old exponent and then lowers that exponent by one.'
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: Each polynomial term is checked separately, then the derivative terms are added.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Quy tắc lũy thừa nhân với số mũ cũ rồi giảm số mũ đi 1.
+    en: The power rule multiplies by the old exponent and lowers the exponent by 1.
+  - vi: Chỉ cần giảm số mũ, không cần nhân hệ số nào.
+    en: You only lower the exponent and never multiply by any coefficient.
+  - vi: Đa thức bậc cao không thể lấy đạo hàm bằng quy tắc từng hạng.
+    en: Higher-degree polynomials cannot be differentiated term by term.
+  reasonAnswer: 0
+- id: c2w1-higher-degree-polynomials-parametric-03
+  topic: common-derivatives
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng quy tắc đạo hàm hoặc bước tối ưu hóa, không ghi nhớ đáp án cụ thể.
+    en: Apply the derivative rule or optimization step rather than memorizing one answer.
+  hints: []
+  generator: gradient-step
+  params: {}
+- id: c2w1-higher-degree-polynomials-mcq-04
+  topic: common-derivatives
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  prompt:
+    vi: Chọn đồ thị phù hợp với đạo hàm của $f(x)=x^2$.
+    en: Choose the graph matching the power-rule derivative shape.
+  explanation:
+    vi: Đạo hàm là $2x$, một đường thẳng qua gốc tọa độ.
+    en: The correct derivative graph is chosen by applying the power rule to the displayed polynomial shape.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  options:
+  - vi: $f'(x)=2x$
+    en: $f'(x)=2x$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -6
+      - 6
+      functions:
+      - f: 2*x
+        label: 2*x
+  - vi: $f'(x)=x^2$
+    en: $f'(x)=x^2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 9
+      functions:
+      - f: x^2
+        label: x^2
+  - vi: $f'(x)=2$
+    en: $f'(x)=2$
+    figure:
+      xRange:
+      - -3
+      - 3
+      yRange:
+      - -1
+      - 4
+      functions:
+      - f: '2'
+        label: '2'
+  answer:
+  - 0

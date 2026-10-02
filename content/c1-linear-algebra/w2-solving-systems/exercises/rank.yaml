@@ -1,0 +1,244 @@
+exercises:
+- id: c1w2-rank-mcq-01
+  topic: rank
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: The matrix $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ reduces to one non-zero row. What rank should be recorded?
+    vi: Ma trận $\begin{bmatrix}1&1\\2&2\end{bmatrix}$ khử còn một hàng khác 0. Ta ghi rank bao nhiêu?
+  explanation:
+    en: Rank counts pivots after reduction, so one non-zero row gives rank 1. The original row count overcounts dependent rows; entry count is not rank; and determinant notation is unnecessary once the pivot count is known.
+    vi: Rank đếm pivot sau khi khử, nên một hàng khác 0 cho rank 1. Số hàng ban đầu đếm thừa hàng phụ thuộc; số phần tử không phải rank; và không cần ghi determinant khi đã biết số pivot.
+  hints: []
+  options:
+  - en: Rank 1, because only one pivot row remains.
+    vi: Rank 1, vì chỉ còn một hàng pivot.
+  - en: Rank 2, because the original matrix has two rows.
+    vi: Rank 2, vì ma trận ban đầu có hai hàng.
+  - en: Rank 4, because there are four entries in the matrix.
+    vi: Rank 4, vì ma trận có bốn phần tử.
+  - en: Rank 0, because the determinant is not shown in the question.
+    vi: Rank 0, vì đề bài không ghi determinant.
+  answer:
+  - 0
+- id: c1w2-rank-truefalse-02
+  topic: rank
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Rank của một ma trận ở REF là số hàng khác 0, tương đương số pivot.
+    en: The rank of a REF matrix is the number of non-zero rows, equivalently the number of pivots.
+  explanation:
+    vi: Trong REF, mỗi hàng khác 0 bắt đầu bằng một pivot, còn hàng 0 không mang phương trình độc lập để đếm.
+    en: In REF each non-zero row begins with one pivot, while zero rows carry no independent equation to count.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Đếm các hàng pivot sau khử.
+    en: Count pivot rows after reduction.
+  - vi: Rank của REF phải bằng tổng số hàng ban đầu, kể cả hàng 0.
+    en: The rank of a REF must equal the original row count, including zero rows.
+  - vi: Rank của REF là số phần tử khác 0 trong toàn ma trận.
+    en: The rank of a REF is the number of non-zero entries in the whole matrix.
+  reasonAnswer: 0
+- id: c1w2-rank-matching-03
+  topic: rank
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến hạng của ma trận.
+    en: Match concepts related to rank of a matrix.
+  explanation:
+    vi: Các cặp nối rank với pivot và hàng 0, để con số phản ánh thông tin độc lập thay vì kích thước ma trận.
+    en: The pairs link rank to pivots and zero rows, so the count reflects independent information instead of matrix size.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-rank-numeric-04
+  topic: rank
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Rank của $[[1,1],[2,2]]$ là bao nhiêu?
+    en: What is the rank of $[[1,1],[2,2]]$?
+  explanation:
+    vi: Hàng hai là bội của hàng một.
+    en: The second row is a multiple of the first.
+  hints: []
+  answers:
+  - value: 1
+- id: c1w2-rank-construct-05
+  topic: rank
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 3×3 rank 1 khác 0.
+    en: Construct a non-zero 3×3 rank-1 matrix.
+  explanation:
+    vi: Hai hàng [1,0,1] và [0,1,1] độc lập, còn [1,1,2] là tổng của chúng, nên có đúng hai pivot.
+    en: Rows [1,0,1] and [0,1,1] are independent, while [1,1,2] is their sum, giving exactly two pivots.
+  hints: []
+  rows: 3
+  cols: 3
+  constraints:
+  - kind: rank
+    value: 1
+  - kind: nonzero
+  - kind: integerEntries
+  example:
+  - - 1
+    - 2
+    - 3
+  - - 2
+    - 4
+    - 6
+  - - -1
+    - -2
+    - -3
+- id: c1w2-rank-parsons-06
+  topic: rank
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho hạng của ma trận.
+    en: Order the workflow for rank of a matrix.
+  explanation:
+    vi: 'Rank được đọc sau khi tạo cầu thang: mỗi pivot thành công trong quy trình đóng góp một hàng độc lập.'
+    en: 'Rank is read after the staircase is formed: each successful pivot in the ordered process contributes one independent row.'
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-rank-finderror-07
+  topic: rank
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về hạng của ma trận.
+    en: Find the first error in the argument about rank of a matrix.
+  explanation:
+    vi: Rank có thể đếm từ pivot khác 0 với mọi độ lớn, nên câu cho rằng pivot 2 làm hỏng REF là lỗi đầu tiên.
+    en: Rank can be counted from non-zero pivots of any size, so the claim that a pivot 2 invalidates REF is the first error.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-rank-predictoutput-09
+  topic: rank
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán rank được NumPy báo cho mảng nhỏ này.
+    en: Predict the rank reported for this small NumPy array.
+  explanation:
+    vi: Một hàng là bội của hàng khác, nên matrix_rank chỉ đếm các hàng pivot độc lập chứ không đếm mọi hàng nhìn thấy.
+    en: One row is a scalar multiple of another, so matrix_rank counts only the independent pivot rows rather than all visible rows.
+  hints: []
+  code: 'import numpy as np
+
+    A=np.array([[1,2,3],[2,4,6]])
+
+    print(A[1] - 2*A[0])
+
+    '
+  options:
+  - '[0 0 0]'
+  - '[1 2 3]'
+  - '[2 4 6]'
+  - '[-1 -2 -3]'
+  answer: 0
+- id: c1w2-rank-multistep-10
+  topic: rank
+  type: multi-step
+  difficulty: 2
+  tags:
+  - multi-step
+  prompt:
+    vi: Giải bài nhiều bước về rank với một phép nhân hàng cụ thể.
+    en: Solve a multi-step rank problem with a specific row scaling.
+  explanation:
+    vi: Phần một nhân vế phải thành 10; so với vế phải 8 sẽ tạo 0=2 sau khi trừ, nên phần hai là vô nghiệm.
+    en: Part one rescales the equation to 10; comparing with right-hand side 8 creates 0=2 after subtraction, so the second part is no solution.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: REF có 2 pivot. Rank là bao nhiêu?
+      en: An REF has 2 pivots. What is the rank?
+    answers:
+    - value: 2
+  - type: true-false
+    prompt:
+      vi: Ma trận vuông 3×3 với rank 2 là non-singular.
+      en: A 3×3 square matrix with rank 2 is non-singular.
+    answer: false
+- id: c1w2-rank-parametric-11
+  topic: rank
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động về rank với ma trận hệ số mới.
+    en: Dynamic rank drill with newly generated coefficient matrices.
+  explanation:
+    vi: Khử ma trận được sinh và đếm pivot; đừng đếm hàng lặp hoặc hàng 0 như thông tin độc lập.
+    en: Reduce the generated matrix and count pivots; do not count repeated or zero rows as independent information.
+  hints: []
+  generator: rank
+  params:
+    size: 3

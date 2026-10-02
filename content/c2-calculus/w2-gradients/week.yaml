@@ -1,0 +1,47 @@
+id: w2
+order: 2
+source: syllabus/c2-calculus/W2.pdf
+title:
+  vi: 'Tuần 2: Gradient và Gradient Descent'
+  en: 'Week 2: Gradients and Gradient Descent'
+topics:
+- id: tangent-planes
+  title:
+    vi: Mặt phẳng tiếp tuyến
+    en: Tangent planes
+- id: partial-derivatives
+  title:
+    vi: Đạo hàm riêng
+    en: Partial derivatives
+- id: gradients
+  title:
+    vi: Gradient
+    en: Gradients
+- id: maxima-minima
+  title:
+    vi: Gradient và cực trị
+    en: Gradients and maxima/minima
+- id: analytical-optimization
+  title:
+    vi: Tối ưu giải tích
+    en: Analytical optimization
+- id: linear-regression
+  title:
+    vi: Động lực hồi quy tuyến tính
+    en: Linear regression motivation
+- id: gd-one-variable
+  title:
+    vi: Gradient descent một biến
+    en: Gradient descent in one variable
+- id: learning-rate-local-minima
+  title:
+    vi: Learning rate và cực tiểu cục bộ
+    en: Learning rate and local minima
+- id: gd-two-variables
+  title:
+    vi: Gradient descent hai biến
+    en: Gradient descent in two variables
+- id: gd-least-squares
+  title:
+    vi: Gradient descent cho least squares
+    en: Gradient descent for least squares

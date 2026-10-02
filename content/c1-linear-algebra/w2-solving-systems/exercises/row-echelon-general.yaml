@@ -1,0 +1,222 @@
+exercises:
+- id: c1w2-row-echelon-general-mcq-01
+  topic: row-echelon-general
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: For $\begin{bmatrix}0&2&4&1\\0&0&3&6\\0&0&0&0\end{bmatrix}$, which interpretation of the skipped first column is correct?
+    vi: Với $\begin{bmatrix}0&2&4&1\\0&0&3&6\\0&0&0&0\end{bmatrix}$, cách hiểu nào đúng về cột đầu bị bỏ qua?
+  explanation:
+    en: General REF allows leading zero columns; the first pivot may start in column 2 and the next in column 3. Column 1 need not contain a pivot, the rank is 2 here rather than zero, and zero rows belong at the bottom.
+    vi: REF tổng quát cho phép cột đầu toàn 0; pivot đầu có thể bắt đầu ở cột 2 và pivot sau ở cột 3. Cột 1 không bắt buộc có pivot, rank ở đây là 2 chứ không phải 0, và hàng 0 phải nằm dưới cùng.
+  hints: []
+  options:
+  - en: The matrix can still be in REF; the first pivot simply starts in column 2.
+    vi: Ma trận vẫn có thể ở REF; pivot đầu chỉ bắt đầu ở cột 2.
+  - en: REF is impossible unless column 1 contains the first pivot.
+    vi: REF là bất khả thi nếu cột 1 không chứa pivot đầu.
+  - en: The skipped column forces the rank to be zero.
+    vi: Cột bị bỏ qua buộc rank bằng 0.
+  - en: A skipped column means the zero row should move to the top.
+    vi: Cột bị bỏ qua nghĩa là hàng 0 nên chuyển lên trên cùng.
+  answer:
+  - 0
+- id: c1w2-row-echelon-general-truefalse-02
+  topic: row-echelon-general
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Một cột đầu toàn 0 có thể bị bỏ qua trong dạng bậc thang dòng.
+    en: A leading zero column may be skipped in row echelon form.
+  explanation:
+    vi: Pivot đầu tiên chỉ xuất hiện ở cột sau; cột bị bỏ qua là cột không pivot chứ không phải lỗi.
+    en: The first pivot simply appears in a later column; skipped columns become non-pivot columns rather than violations.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Pivot dịch sang phải; không nhất thiết bắt đầu ở cột một.
+    en: Pivots move right; they need not start in column one.
+  - vi: Cột đầu toàn 0 buộc toàn bộ ma trận có rank 0.
+    en: A leading all-zero column forces the whole matrix to have rank 0.
+  - vi: Hàng 0 phải được đưa lên trên để bù cho cột không pivot.
+    en: A zero row must be moved to the top to compensate for a non-pivot column.
+  reasonAnswer: 0
+- id: c1w2-row-echelon-general-matching-03
+  topic: row-echelon-general
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến dạng bậc thang tổng quát.
+    en: Match concepts related to general row echelon form.
+  explanation:
+    vi: Các cặp giải thích cách cột bị bỏ qua và pivot xuất hiện muộn vẫn phù hợp cầu thang echelon tổng quát.
+    en: The pairs explain how skipped columns and later pivots still fit the general echelon staircase.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-row-echelon-general-matrix-04
+  topic: row-echelon-general
+  type: matrix
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Đưa $[[1,1,1],[2,2,2],[3,3,3]]$ về một REF.
+    en: Reduce $[[1,1,1],[2,2,2],[3,3,3]]$ to an REF.
+  explanation:
+    vi: Mọi hàng là bội của hàng đầu.
+    en: Every row is a multiple of the first.
+  hints: []
+  answer:
+  - - 1
+    - 1
+    - 1
+  - - 0
+    - 0
+    - 0
+  - - 0
+    - 0
+    - 0
+  tolerance: 0.001
+- id: c1w2-row-echelon-general-construct-05
+  topic: row-echelon-general
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 4×5 ở REF có rank 3.
+    en: Construct a 4×5 REF matrix with rank 3.
+  explanation:
+    vi: Pivot đầu ở cột 2 và pivot sau ở cột 4, cho thấy REF tổng quát có thể bỏ qua cột mà vẫn giữ dạng cầu thang.
+    en: The first pivot starts in column 2 and the next in column 4, showing that general REF may skip columns while keeping the staircase order.
+  hints: []
+  rows: 4
+  cols: 5
+  constraints:
+  - kind: rowEchelon
+  - kind: rank
+    value: 3
+  example:
+  - - 2
+    - 1
+    - 0
+    - 0
+    - 5
+  - - 0
+    - 0
+    - 3
+    - 1
+    - 4
+  - - 0
+    - 0
+    - 0
+    - -1
+    - 2
+  - - 0
+    - 0
+    - 0
+    - 0
+    - 0
+- id: c1w2-row-echelon-general-parsons-06
+  topic: row-echelon-general
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho dạng bậc thang tổng quát.
+    en: Order the workflow for general row echelon form.
+  explanation:
+    vi: Trường hợp tổng quát vẫn tìm pivot như cũ nhưng cho phép cột trống, nên thứ tự hàng quan trọng hơn việc lấp mọi cột.
+    en: The general case follows the same pivot search while allowing empty columns, so the row order matters more than filling every column.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-row-echelon-general-finderror-07
+  topic: row-echelon-general
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về dạng bậc thang tổng quát.
+    en: Find the first error in the argument about general row echelon form.
+  explanation:
+    vi: REF tổng quát cũng chấp nhận leading entry không bằng 1, nên dòng sai đầu tiên là câu pivot 2 không thể xuất hiện.
+    en: General REF also accepts non-unit leading entries, so the first wrong line is the claim that pivot 2 is impossible.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-row-echelon-general-multistep-10
+  topic: row-echelon-general
+  type: multi-step
+  difficulty: 2
+  tags:
+  - multi-step
+  prompt:
+    vi: Giải bài nhiều bước về REF tổng quát với một phép nhân hàng cụ thể.
+    en: Solve a multi-step general echelon form problem with a specific row scaling.
+  explanation:
+    vi: Phần số tạo hàng đã nhân, còn phần phân loại đọc hàng mở rộng mâu thuẫn trong bối cảnh echelon tổng quát.
+    en: The numeric part builds the scaled row, and the classification part reads the resulting inconsistent augmented row in the general echelon setting.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: Ma trận 4×5 có tối đa rank bao nhiêu?
+      en: What is the maximum rank of a 4×5 matrix?
+    answers:
+    - value: 4
+  - type: numeric
+    prompt:
+      vi: Nếu có 3 pivot thì rank bằng bao nhiêu?
+      en: If it has 3 pivots, what is the rank?
+    answers:
+    - value: 3

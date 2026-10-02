@@ -1,0 +1,89 @@
+exercises:
+- id: c2w1-intro-derivatives-mcq-01
+  topic: derivative-foundations
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ý nào mô tả đúng nhất phần 'Nhập môn đạo hàm'?
+    en: The car travels 80 meters from 10s to 15s, then a different distance on the next interval. What does this show?
+  explanation:
+    vi: 'Ý đúng: vận tốc tức thời là giới hạn của vận tốc trung bình trên khoảng rất nhỏ.'
+    en: 'Correct: instantaneous velocity is the limit of average velocity over a tiny interval.'
+  hints: []
+  options:
+  - vi: vận tốc tức thời là giới hạn của vận tốc trung bình trên khoảng rất nhỏ
+    en: instantaneous velocity is the limit of average velocity over a tiny interval
+  - vi: Đạo hàm luôn bằng giá trị của hàm.
+    en: The car must have the same velocity on every 5-second interval because time steps are equal.
+  - vi: Nếu đạo hàm bằng 0 thì hàm không xác định.
+    en: Velocity at 12.5s can be read exactly from a table with only 5-second samples.
+  - vi: Có thể bỏ qua miền xác định khi lấy đạo hàm.
+    en: Distance values alone are enough; the time gaps do not affect slope.
+  answer:
+  - 0
+- id: c2w1-intro-derivatives-truefalse-02
+  topic: derivative-foundations
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 'Nhập môn đạo hàm', công thức $f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$ có thể được dùng sau khi kiểm tra điều kiện áp dụng.
+    en: Estimating velocity at 12.5 seconds improves when the position table changes from 5-second spacing to 1-second spacing.
+  explanation:
+    vi: Điểm mấu chốt là luôn kiểm tra giả thiết trước khi dùng công thức.
+    en: For the car table, the assumption to check is which time interval the slope is measuring.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Khoảng thời gian nhỏ hơn cho độ dốc trung bình gần vận tốc tức thời hơn.
+    en: A shorter time interval gives an average slope closer to instantaneous velocity.
+  - vi: Bảng càng thưa thì vận tốc tại $12.5$s càng chính xác.
+    en: A coarser table makes the velocity at $12.5$s more exact.
+  - vi: Chỉ cần lấy trung bình tất cả vị trí trong bảng.
+    en: You only need to average all listed positions.
+  reasonAnswer: 0
+- id: c2w1-intro-derivatives-code-03
+  topic: derivative-foundations
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Hoàn thiện hàm `finite_diff` bằng NumPy/Python.
+    en: Complete the `finite_diff` function with NumPy/Python.
+  explanation:
+    vi: Lời giải dùng công thức đạo hàm tương ứng và được kiểm tra trên nhiều trường hợp.
+    en: The central-difference code is checked on a square curve and a straight line, so both curved and constant-slope behavior are covered.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  starter: "def finite_diff(f, x, h=1e-5):\n    return 0.0\n"
+  solution: "def finite_diff(f, x, h=1e-5):\n    return (f(x+h)-f(x-h))/(2*h)\n"
+  tests: "def test_square():\n    assert abs(finite_diff(lambda z: z*z, 3.0) - 6.0) < 1e-3, 'central difference should approximate derivative of x^2'\ndef test_line():\n    assert abs(finite_diff(lambda z: 5*z-1, -2.0) - 5.0) < 1e-6, 'line slope should be exact'"
+- id: c2w1-intro-derivatives-parsons-04
+  topic: derivative-foundations
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình tối ưu hóa bằng đạo hàm.
+    en: Order the workflow for estimating instantaneous velocity.
+  explanation:
+    vi: Ta lập loss, lấy đạo hàm, tìm điểm tới hạn, rồi kiểm tra cực trị.
+    en: The ordered steps move from a distance table to a shrinking interval, which is the logic behind instantaneous velocity.
+  hints:
+  - vi: Hãy xác định đại lượng thay đổi trước, rồi chọn quy tắc đạo hàm phù hợp.
+    en: Identify the changing quantity first, then choose the matching derivative rule.
+  steps:
+  - vi: Viết hàm mục tiêu hoặc loss theo biến cần tối ưu.
+    en: Write the objective or loss in terms of the variable to optimize.
+  - vi: Tính đạo hàm của hàm mục tiêu.
+    en: Compute the derivative of the objective.
+  - vi: Giải phương trình đạo hàm bằng 0 hoặc xét dấu đạo hàm.
+    en: Solve derivative equals zero or inspect derivative signs.
+  - vi: Kiểm tra miền xác định, biên và ý nghĩa của nghiệm.
+    en: Check the domain, boundaries, and meaning of the candidate.

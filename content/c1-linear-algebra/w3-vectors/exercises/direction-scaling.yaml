@@ -1,0 +1,148 @@
+exercises:
+- id: c1w3-direction-numeric-01
+  topic: direction-scaling
+  type: numeric
+  difficulty: 1
+  tags:
+  - angle
+  prompt:
+    vi: Góc của vector $(0,5)$ so với trục $x$ dương?
+    en: Angle of vector $(0,5)$ from positive $x$-axis?
+  explanation:
+    vi: Vector hướng lên nên $90^\circ$.
+    en: It points up, so $90^\circ$.
+  hints: []
+  answers:
+  - value: 90
+  tolerance: 0.001
+- id: c1w3-direction-matrix-01
+  topic: direction-scaling
+  type: matrix
+  difficulty: 1
+  tags:
+  - scalar
+  prompt:
+    vi: Tính $-3(2,-1)$.
+    en: Compute $-3(2,-1)$.
+  explanation:
+    vi: Nhân từng thành phần.
+    en: Scale each entry.
+  hints: []
+  answer:
+  - - -6
+  - - 3
+  tolerance: 0
+- id: c1w3-direction-construct-01
+  topic: direction-scaling
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Dựng vector nguyên khác zero song song với $(2,-1)$.
+    en: Construct a nonzero integer vector parallel to $(2,-1)$.
+  explanation:
+    vi: $(-4,2)=-2(2,-1)$.
+    en: $(-4,2)=-2(2,-1)$.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: parallelTo
+    of:
+    - 2
+    - -1
+  - kind: integerEntries
+  - kind: nonzero
+  example:
+  - - -4
+  - - 2
+- id: c1w3-direction-mcq-01
+  topic: direction-scaling
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  prompt:
+    vi: Vector đỏ $(-2,-4)$ là bội nào của vector xanh $(1,2)$?
+    en: Red vector $(-2,-4)$ is what multiple of blue vector $(1,2)$?
+  explanation:
+    vi: Nó bằng $-2u$.
+    en: It equals $-2u$.
+  hints: []
+  figure:
+    xRange:
+    - -3
+    - 2
+    yRange:
+    - -5
+    - 3
+    vectors:
+    - to:
+      - 1
+      - 2
+      label: u
+      color: '#2563eb'
+    - to:
+      - -2
+      - -4
+      label: red
+      color: '#dc2626'
+  options:
+  - vi: $2u$
+    en: $2u$
+  - vi: $-2u$
+    en: $-2u$
+  - vi: $u/2$
+    en: $u/2$
+  answer:
+  - 1
+- id: c1w3-direction-tf-01
+  topic: direction-scaling
+  type: true-false
+  difficulty: 1
+  tags:
+  - scalar
+  prompt:
+    vi: Nhân với $-1$ giữ độ dài và đảo hướng.
+    en: Multiplying by $-1$ preserves length and reverses direction.
+  explanation:
+    vi: Độ dài nhân $|-1|=1$.
+    en: Length is multiplied by $|-1|=1$.
+  hints: []
+  answer: true
+- id: c1w3-direction-parsons-01
+  topic: direction-scaling
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp bước tìm góc của $(-1,1)$.
+    en: Order steps to find angle of $(-1,1)$.
+  explanation:
+    vi: Vector ở góc phần tư II.
+    en: The vector lies in quadrant II.
+  hints: []
+  steps:
+  - vi: 'Nhận ra $x<0,y>0$: góc phần tư II.'
+    en: 'See $x<0,y>0$: quadrant II.'
+  - vi: Góc tham chiếu là $45^\circ$.
+    en: Reference angle is $45^\circ$.
+  - vi: Góc là $180^\circ-45^\circ=135^\circ$.
+    en: Angle is $180^\circ-45^\circ=135^\circ$.
+- id: c1w3-direction-parametric-01
+  topic: direction-scaling
+  type: parametric
+  difficulty: 2
+  tags:
+  - generator
+  prompt:
+    vi: Tìm góc giữa hai vector sinh ngẫu nhiên.
+    en: Find angle between generated vectors.
+  explanation:
+    vi: Generator tạo bài vector-angle.
+    en: Generator creates vector-angle exercise.
+  hints: []
+  generator: vector-angle
+  params: {}

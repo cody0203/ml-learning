@@ -1,0 +1,109 @@
+﻿exercises:
+- id: c2w3-newton-two-variables-matching-03
+  topic: newton-two-variables
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong Newton hai biến.
+    en: Match notation in two-variable Newton.
+  explanation:
+    vi: $H$ mã hóa curvature, gradient chỉ hướng tăng, còn $\Delta$ là bước phải trừ.
+    en: $H$ encodes curvature, the gradient points uphill, and $\Delta$ is the step to subtract.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-newton-two-variables-find-error-04
+  topic: newton-two-variables
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi nếu Newton hai biến nhân trực tiếp với Hessian.
+    en: Find the error if two-variable Newton multiplies directly by the Hessian.
+  explanation:
+    vi: Ta phải giải $H\Delta=g$; nhân $Hg$ sẽ làm sai cả đơn vị lẫn hướng bước.
+    en: We must solve $H\Delta=g$; multiplying $Hg$ gives the wrong scale and direction.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-newton-two-variables-matrix-05
+  topic: newton-two-variables
+  type: matrix
+  difficulty: 2
+  tags:
+  - newton
+  prompt:
+    vi: Cho $x_0=(0,0)$, $\nabla f=(-2,-8)$, $H=\begin{bmatrix}2&0\\0&4\end{bmatrix}$. Tính $x_1=x_0-H^{-1}\nabla f$.
+    en: Given $x_0=(0,0)$, $\nabla f=(-2,-8)$, $H=\begin{bmatrix}2&0\\0&4\end{bmatrix}$. Compute $x_1=x_0-H^{-1}\nabla f$.
+  explanation:
+    vi: $H^{-1}\nabla f=(-1,-2)$ nên $x_1=(1,2)$.
+    en: $H^{-1}\nabla f=(-1,-2)$ so $x_1=(1,2)$.
+  hints: []
+  answer:
+  - - 1
+  - - 2
+  tolerance: 0
+- id: c2w3-newton-two-variables-parsons-06
+  topic: newton-two-variables
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp bước Newton hai biến.
+    en: Order two-variable Newton steps.
+  explanation:
+    vi: Không cần tính inverse tường minh.
+    en: No explicit inverse is needed.
+  hints: []
+  steps:
+  - vi: Tính gradient $g=\nabla f(x_k)$.
+    en: Compute gradient $g=\nabla f(x_k)$.
+  - vi: Tính Hessian $H(x_k)$.
+    en: Compute Hessian $H(x_k)$.
+  - vi: Giải $H\Delta=g$.
+    en: Solve $H\Delta=g$.
+  - vi: Cập nhật $x_{k+1}=x_k-\Delta$.
+    en: Update $x_{k+1}=x_k-\Delta$.
+- id: c2w3-newton-two-variables-code-07
+  topic: newton-two-variables
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài `newton2_step(x, grad, H)` dùng `np.linalg.solve`, không dùng inverse trực tiếp.
+    en: Implement `newton2_step(x, grad, H)` using `np.linalg.solve`, not explicit inverse.
+  explanation:
+    vi: Giải $H\Delta=grad$ rồi trừ.
+    en: Solve $H\Delta=grad$ then subtract.
+  hints: []
+  starter: "import numpy as np\ndef newton2_step(x, grad, H):\n    return x\n"
+  solution: "import numpy as np\ndef newton2_step(x, grad, H):\n    delta = np.linalg.solve(H, grad)\n    return np.asarray(x, dtype=float) - delta\n"
+  tests: "import numpy as np\ndef test_diag():\n    x=np.array([0.,0.]); g=np.array([-2.,-8.]); H=np.array([[2.,0.],[0.,4.]])\n    assert np.allclose(newton2_step(x,g,H), [1.,2.])\ndef test_dense():\n    x=np.array([4.,4.]); g=np.array([277.6,213.6]); H=np.array([[198.4,-2.6],[-2.6,157.6]])\n    y=newton2_step(x,g,H)\n    assert np.allclose(y, [2.58,2.62], atol=0.02)\n"

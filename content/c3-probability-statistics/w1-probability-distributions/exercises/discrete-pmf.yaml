@@ -1,0 +1,201 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-discrete-pmf-mcq-01",
+      "topic": "discrete-pmf",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề phân phối rời rạc và pmf?",
+        "en": "Which statement best describes discrete distributions and pmfs?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng là đặt khối xác suất lên các giá trị đếm được. Các đáp án sai đọc diện tích như PDF, cho tổng khối khác 1, hoặc gán xác suất âm cho một cột.",
+        "en": "The correct answer assigns probability mass to countable values. The wrong choices read area as for a PDF, allow total mass other than 1, or give a bar negative probability."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là probability mass on countable values.",
+          "en": "The focus is probability mass on countable values."
+        },
+        {
+          "vi": "PMF của số mặt ngửa có thể có một cột âm nếu các cột khác đủ lớn.",
+          "en": "A heads-count PMF may have one negative bar if the other bars are large enough."
+        },
+        {
+          "vi": "Tổng các cột PMF cho ba lần tung đồng xu có thể bằng 1.2.",
+          "en": "The PMF bars for three coin tosses may sum to 1.2."
+        },
+        {
+          "vi": "Với PMF rời rạc, xác suất là diện tích giữa các giá trị nguyên.",
+          "en": "For a discrete PMF, probability is the area between integer values."
+        }
+      ],
+      "answer": [
+        0
+      ],
+      "figure": {
+        "xRange": [
+          -0.5,
+          5.5
+        ],
+        "yRange": [
+          0,
+          0.4
+        ],
+        "bars": [
+          {
+            "x": 0,
+            "h": 0.03125,
+            "width": 0.65,
+            "label": "0"
+          },
+          {
+            "x": 1,
+            "h": 0.15625,
+            "width": 0.65,
+            "label": "1"
+          },
+          {
+            "x": 2,
+            "h": 0.3125,
+            "width": 0.65,
+            "label": "2"
+          },
+          {
+            "x": 3,
+            "h": 0.3125,
+            "width": 0.65,
+            "label": "3"
+          },
+          {
+            "x": 4,
+            "h": 0.15625,
+            "width": 0.65,
+            "label": "4"
+          },
+          {
+            "x": 5,
+            "h": 0.03125,
+            "width": 0.65,
+            "label": "5"
+          }
+        ],
+        "xLabel": "k",
+        "yLabel": "P(X=k)"
+      }
+    },
+    {
+      "id": "c3w1-discrete-pmf-numeric-02",
+      "topic": "discrete-pmf",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "PMF $p(0)=1/8,p(1)=3/8,p(2)=3/8,p(3)=1/8$. Tính $P(X\\ge2)$.",
+        "en": "PMF $p(0)=1/8,p(1)=3/8,p(2)=3/8,p(3)=1/8$. Compute $P(X\\ge2)$."
+      },
+      "explanation": {
+        "vi": "Add masses at 2 and 3.",
+        "en": "Add masses at 2 and 3."
+      },
+      "answers": [
+        {
+          "value": 0.5
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-discrete-pmf-construct-03",
+      "topic": "discrete-pmf",
+      "type": "construct",
+      "difficulty": 2,
+      "tags": [
+        "construct"
+      ],
+      "hints": [
+        {
+          "vi": "Các xác suất phải không âm và cộng bằng 1 nếu là PMF.",
+          "en": "Probabilities must be non-negative and sum to 1 for a PMF."
+        }
+      ],
+      "prompt": {
+        "vi": "Tạo PMF hợp lệ trên bốn giá trị.",
+        "en": "Build a valid PMF on four values."
+      },
+      "explanation": {
+        "vi": "Ví dụ thỏa ràng buộc; nhiều đáp án khác vẫn đúng.",
+        "en": "The sample PMF has four nonnegative masses adding to 1, so it is valid for a discrete variable."
+      },
+      "rows": 1,
+      "cols": 4,
+      "constraints": [
+        {
+          "kind": "probabilityVector"
+        }
+      ],
+      "example": [
+        [
+          0.1,
+          0.2,
+          0.3,
+          0.4
+        ]
+      ]
+    },
+    {
+      "id": "c3w1-discrete-pmf-predictoutput-04",
+      "topic": "discrete-pmf",
+      "type": "predict-output",
+      "difficulty": 2,
+      "tags": [
+        "numpy"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đoán output của đoạn NumPy.",
+        "en": "Predict which entries are selected by the PMF threshold code."
+      },
+      "explanation": {
+        "vi": "So sánh ngẫu nhiên sinh ra với ngưỡng tích lũy.",
+        "en": "With seed 0, the five random values are compared to the first PMF cutoff at 0.3."
+      },
+      "code": "import numpy as np\nrng = np.random.default_rng(0)\nu = rng.random(5)\nprint(np.round(u < 0.3, 2))\n",
+      "options": [
+        "[False  True  True  True False]",
+        "[ True False False False  True]",
+        "[0.3 0.3 0.3 0.3 0.3]",
+        "[False False False False False]"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "c3w1-discrete-pmf-parametric-05",
+      "topic": "discrete-pmf",
+      "type": "parametric",
+      "difficulty": 1,
+      "tags": [
+        "drill"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Đề được sinh tự động.",
+        "en": "Generated automatically."
+      },
+      "explanation": {
+        "vi": "Lời giải do bộ sinh tạo.",
+        "en": "The generator provides the solution."
+      },
+      "generator": "expected-value",
+      "params": {}
+    }
+  ]
+}

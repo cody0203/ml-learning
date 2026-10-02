@@ -1,0 +1,226 @@
+exercises:
+- id: c2w2-gd-one-variable-mcq-25
+  topic: gd-one-variable
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Với $f(x)=(x-4)^2$ và $x_0=1$, vì sao bước descent đầu tiên đi sang phải?
+    en: For $f(x)=(x-4)^2$ and $x_0=1$, why does the first descent step move right?
+  explanation:
+    vi: Tại $x_0=1$, $f'(x)=2(x-4)$ bằng $-6$. Cập nhật $x-\alpha f'(x)$ trừ một số âm, nên $x$ tăng.
+    en: At $x_0=1$, $f'(x)=2(x-4)$ equals $-6$. The update $x-\alpha f'(x)$ subtracts a negative number, so $x$ increases.
+  hints: []
+  options:
+  - vi: Đạo hàm ở $x=1$ âm, nên trừ đạo hàm làm $x$ tăng.
+    en: The derivative at $x=1$ is negative, so subtracting it increases $x$.
+  - vi: Vì mọi bước gradient descent luôn đi sang phải.
+    en: Because every gradient descent step always moves right.
+  - vi: Vì learning rate âm.
+    en: Because the learning rate is negative.
+  - vi: Vì điểm minimum nằm tại $x=-4$.
+    en: Because the minimum is at $x=-4$.
+  answer:
+  - 0
+- id: c2w2-gd-one-variable-truefalse-26
+  topic: gd-one-variable
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Nếu $f'(x_k)>0$ trong bài một biến, cập nhật descent làm $x_{k+1}<x_k$ khi $\alpha>0$.
+    en: If $f'(x_k)>0$ in one variable, the descent update gives $x_{k+1}<x_k$ when $\alpha>0$.
+  explanation:
+    vi: Đúng. Công thức $x_{k+1}=x_k-\alpha f'(x_k)$ trừ một số dương, nên điểm mới nằm bên trái điểm cũ.
+    en: True. The update $x_{k+1}=x_k-\alpha f'(x_k)$ subtracts a positive number, placing the new point to the left.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Trừ một derivative dương làm giảm tọa độ $x$.
+    en: Subtracting a positive derivative decreases the coordinate $x$.
+  - vi: Vì $\alpha$ luôn lớn hơn 1.
+    en: Because $\alpha$ is always larger than 1.
+  reasonAnswer: 0
+- id: c2w2-gd-one-variable-matching-27
+  topic: gd-one-variable
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép các ký hiệu trong cập nhật một biến.
+    en: Match symbols in the one-variable update.
+  explanation:
+    vi: Công thức cập nhật tách điểm hiện tại, độ dốc tại điểm đó, và hệ số điều khiển độ dài bước.
+    en: The update formula separates the current point, the slope at that point, and the factor controlling step length.
+  hints: []
+  pairs:
+  - left:
+      vi: $x_k$
+      en: $x_k$
+    right:
+      vi: Điểm hiện tại
+      en: Current point
+  - left:
+      vi: $f'(x_k)$
+      en: $f'(x_k)$
+    right:
+      vi: Độ dốc tại điểm hiện tại
+      en: Slope at the current point
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: Learning rate
+      en: Learning rate
+- id: c2w2-gd-one-variable-numeric-28
+  topic: gd-one-variable
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Với $f(x)=(x-3)^2$, $x_0=0$, $\alpha=0.1$, tính $x_1$.
+    en: For $f(x)=(x-3)^2$, $x_0=0$, $\alpha=0.1$, compute $x_1$.
+  explanation:
+    vi: $f'(0)=2(0-3)=-6$. Do đó $x_1=0-0.1(-6)=0.6$.
+    en: $f'(0)=2(0-3)=-6$. Therefore $x_1=0-0.1(-6)=0.6$.
+  hints: []
+  answers:
+  - label: x_1
+    value: 0.6
+- id: c2w2-gd-one-variable-parsons-49
+  topic: gd-one-variable
+  type: parsons
+  difficulty: 2
+  tags:
+  - algorithm
+  prompt:
+    vi: Sắp xếp thuật toán gradient descent một biến.
+    en: Order the one-variable gradient descent algorithm.
+  explanation:
+    vi: Chọn điểm, chọn learning rate, tính gradient, cập nhật, lặp/kiểm tra.
+    en: Choose point, choose learning rate, compute gradient, update, repeat/check.
+  hints: []
+  steps:
+  - vi: Chọn điểm bắt đầu $x_0$.
+    en: Choose a starting point $x_0$.
+  - vi: Chọn learning rate $\alpha$.
+    en: Choose learning rate $\alpha$.
+  - vi: Tính $f'(x_k)$.
+    en: Compute $f'(x_k)$.
+  - vi: Cập nhật $x_{k+1}=x_k-\alpha f'(x_k)$.
+    en: Update $x_{k+1}=x_k-\alpha f'(x_k)$.
+  - vi: Lặp cho đến khi đủ gần hoặc cost không giảm thêm.
+    en: Repeat until close enough or cost no longer improves.
+- id: c2w2-gd-one-variable-multistep-50
+  topic: gd-one-variable
+  type: multi-step
+  difficulty: 2
+  tags:
+  - iterations
+  prompt:
+    vi: Chạy 3 bước cho $f(x)=(x-4)^2$, $x_0=1$, $\alpha=0.25$.
+    en: Run 3 steps for $f(x)=(x-4)^2$, $x_0=1$, $\alpha=0.25$.
+  explanation:
+    vi: Mỗi bước đi nửa khoảng cách còn lại tới 4.
+    en: Each step moves halfway toward 4.
+  hints: []
+  parts:
+  - type: numeric
+    prompt:
+      vi: $x_1=?$
+      en: $x_1=?$
+    answers:
+    - value: 2.5
+  - type: numeric
+    prompt:
+      vi: $x_2=?$
+      en: $x_2=?$
+    answers:
+    - value: 3.25
+  - type: numeric
+    prompt:
+      vi: $x_3=?$
+      en: $x_3=?$
+    answers:
+    - value: 3.625
+- id: c2w2-gd-one-variable-code-59
+  topic: gd-one-variable
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt gradient descent loop; không dùng shortcut tối ưu hóa.
+    en: Implement gradient descent loop; do not use optimization shortcuts.
+  explanation:
+    vi: Vòng lặp phải cập nhật lại $x$ sau mỗi lần tính $2(x-3)$; nếu trả về $x_0$ thì không có bước học nào xảy ra.
+    en: The loop must update $x$ after each evaluation of $2(x-3)$; returning $x_0$ means no learning step was applied.
+  hints: []
+  starter: "def gd1(x0, alpha, steps):\n    return x0\n"
+  solution: "def gd1(x0, alpha, steps):\n    x=float(x0)\n    for _ in range(steps):\n        x -= alpha*2*(x-3)\n    return\
+    \ x\n"
+  tests: "def test_moves():\n    assert abs(gd1(0,0.1,1)-0.6)<1e-9\n    assert abs(gd1(0,0.1,3)-1.464)<1e-9\n"
+- id: c2w2-gd-one-variable-predictoutput-63
+  topic: gd-one-variable
+  type: predict-output
+  difficulty: 1
+  tags:
+  - numpy
+  prompt:
+    vi: Dự đoán giá trị $x$ sau một bước cho hàm $(x-1)^2$.
+    en: Predict $x$ after one step for the function $(x-1)^2$.
+  explanation:
+    vi: Ban đầu $x=0$ và gradient $2(x-1)=-2$. Cập nhật với $\alpha=0.5$ cho $x=0-0.5(-2)=1.0$.
+    en: Initially $x=0$ and the gradient $2(x-1)=-2$. With $\alpha=0.5$, the update gives $x=0-0.5(-2)=1.0$.
+  hints: []
+  code: 'x=0.0
+
+    alpha=0.5
+
+    x=x-alpha*2*(x-1)
+
+    print(x)
+
+    '
+  options:
+  - '1.0'
+  - '0.0'
+  - '-1.0'
+  - '2.0'
+  answer: 0
+- id: c2w2-gd-one-variable-parametric-68
+  topic: gd-one-variable
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh sẽ tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng công thức thay vì ghi nhớ đáp án.
+    en: Apply the formula rather than memorizing an answer.
+  hints: []
+  generator: derivative-poly
+  params: {}
+- id: c2w2-gd-one-variable-numeric-73
+  topic: gd-one-variable
+  type: numeric
+  difficulty: 1
+  tags:
+  - derivative
+  prompt:
+    vi: Với $f(x)=e^x-\log x$, đạo hàm tại $x=1$ là bao nhiêu?
+    en: For $f(x)=e^x-\log x$, what is the derivative at $x=1$?
+  explanation:
+    vi: $f'(x)=e^x-1/x$, nên $f'(1)=e-1$.
+    en: $f'(x)=e^x-1/x$, so $f'(1)=e-1$.
+  hints: []
+  answers:
+  - value: 1.718281828
+  tolerance: 0.001

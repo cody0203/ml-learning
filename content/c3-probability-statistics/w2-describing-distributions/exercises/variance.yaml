@@ -1,0 +1,178 @@
+exercises:
+- id: c3w2-variance-mcq-01
+  topic: variance
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về variance.
+    en: Choose the best statement about variance.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Variance is about squared distance from the mean, so two zero-mean games can have very different risk.
+  hints: []
+  options:
+  - vi: Phương sai đo trung bình bình phương khoảng cách tới mean.
+    en: Variance averages squared distances from the mean.
+  - vi: Hai trò chơi có mean 0 thì chắc chắn có cùng rủi ro.
+    en: Two games with mean 0 must have the same risk.
+  - vi: Phương sai của $aX+b$ luôn bằng $a\,\mathrm{Var}(X)+b$.
+    en: The variance of $aX+b$ is always $a\,\mathrm{Var}(X)+b$.
+  - vi: Phương sai có cùng đơn vị đo với biến ban đầu.
+    en: Variance has the same measurement units as the original variable.
+  answer:
+  - 0
+- id: c3w2-variance-tf-02
+  topic: variance
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: adding a constant to every outcome changes the mean but leaves the variance unchanged.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the spread around the shifted mean is identical, so only scaling changes variance magnitude.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Dịch toàn bộ dữ liệu giữ nguyên khoảng cách tới mean mới.
+    en: Shifting all outcomes preserves distances from the new mean.
+  - vi: Cộng 5 vào dữ liệu làm variance tăng thêm 5.
+    en: Adding 5 to the data increases variance by 5.
+  - vi: Variance chỉ phụ thuộc vào giá trị lớn nhất.
+    en: Variance only depends on the largest value.
+  reasonAnswer: 0
+- id: c3w2-variance-matching-03
+  topic: variance
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho variance.
+    en: Match concepts for variance.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The pairs connect variance to risk, squared deviations, and the shortcut $E[X^2]-E[X]^2$.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-variance-parsons-04
+  topic: variance
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho variance.
+    en: Order the solution workflow for variance.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: The variance workflow must compute the mean first; otherwise the deviations are measured from the wrong center.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-variance-numeric-05
+  topic: variance
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: For X=-1 or 1 with probability 1/2 each, compute Var(X).
+    en: For X=-1 or 1 with probability 1/2 each, compute Var(X).
+  explanation:
+    vi: Mean is 0 and $E[X^2]=1$.
+    en: Mean is 0 and $E[X^2]=1$.
+  hints: []
+  answers:
+  - value: 1
+  tolerance: 0.001
+- id: c3w2-variance-construct-06
+  topic: variance
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo bốn giá trị có mean tổng thể 3 và phương sai tổng thể 2.
+    en: Build four values with population mean 3 and population variance 2.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: Values 1,3,5,3 have mean 3, squared deviations 4,0,4,0, and population variance 8/4=2.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 4
+  constraints:
+  - kind: mean
+    value: 3
+  - kind: variance
+    value: 2
+    sample: false
+  example:
+  - - 1
+    - 3
+    - 5
+    - 3
+- id: c3w2-variance-find-error-07
+  topic: variance
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải về variance.
+    en: Find the first error in this variance solution.
+  explanation:
+    vi: Bước sai áp dụng một điều kiện không được đảm bảo.
+    en: The first wrong step is using an independence shortcut; variance of a sum also needs the covariance term.
+  hints:
+  - vi: Độc lập phải được cho hoặc chứng minh.
+    en: Independence must be stated or proven.
+  steps:
+  - vi: Gọi dữ liệu/PMF đã cho là đối tượng cần phân tích.
+    en: Let the given data/PMF be the object to analyze.
+  - vi: Viết công thức tổng quát trước khi thay số.
+    en: Write the general formula before substituting.
+  - vi: Giả sử các biến độc lập chỉ vì chúng có hai tên khác nhau.
+    en: Assume the variables are independent just because they have two different names.
+  - vi: Tiếp tục dùng công thức tích để ra kết quả.
+    en: Continue using the product formula to get the result.
+  answer: 2

@@ -1,0 +1,171 @@
+exercises:
+- id: c2w2-gradients-mcq-09
+  topic: gradients
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Với $f(x,y)=x^2+y^2$ tại $(2,3)$, vector nào là gradient?
+    en: For $f(x,y)=x^2+y^2$ at $(2,3)$, which vector is the gradient?
+  explanation:
+    vi: Gradient gom hai đạo hàm riêng $[2x,2y]$. Tại $(2,3)$ nó là $[4,6]$, không phải tọa độ điểm hay hướng âm.
+    en: The gradient collects the two partial derivatives $[2x,2y]$. At $(2,3)$ it is $[4,6]$, not the point itself or the negative direction.
+  hints: []
+  options:
+  - vi: $[4,6]$
+    en: $[4,6]$
+  - vi: $[2,3]$
+    en: $[2,3]$
+  - vi: $[-4,-6]$
+    en: $[-4,-6]$
+  - vi: $10$
+    en: $10$
+  answer:
+  - 0
+- id: c2w2-gradients-truefalse-10
+  topic: gradients
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Đạo hàm theo hướng đơn vị $u$ có thể tính bằng $\nabla f\cdot u$.
+    en: A directional derivative in a unit direction $u$ can be computed as $\nabla f\cdot u$.
+  explanation:
+    vi: Đúng. Dot product đo phần của gradient theo hướng $u$; giá trị lớn nhất xảy ra khi $u$ cùng hướng gradient.
+    en: True. The dot product measures the component of the gradient in direction $u$; it is largest when $u$ aligns with the gradient.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Dot product chiếu gradient lên hướng đang xét.
+    en: The dot product projects the gradient onto the chosen direction.
+  - vi: Dot product luôn bằng độ cao của surface.
+    en: The dot product is always the height of the surface.
+  reasonAnswer: 0
+- id: c2w2-gradients-matching-11
+  topic: gradients
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép vector gradient với cách diễn giải hình học.
+    en: Match gradient vectors to their geometric interpretation.
+  explanation:
+    vi: Vector gradient cho biết hướng tăng; đổi dấu nó cho hướng giảm; vector 0 là điểm dừng.
+    en: A gradient vector gives ascent; negating it gives descent; the zero vector indicates stationarity.
+  hints: []
+  pairs:
+  - left:
+      vi: $[4,6]$ tại $(2,3)$
+      en: $[4,6]$ at $(2,3)$
+    right:
+      vi: Hướng tăng nhanh nhất của $x^2+y^2$
+      en: Steepest ascent for $x^2+y^2$
+  - left:
+      vi: $[-4,-6]$
+      en: $[-4,-6]$
+    right:
+      vi: Hướng giảm nhanh nhất tại cùng điểm
+      en: Steepest descent at the same point
+  - left:
+      vi: $[0,0]$
+      en: $[0,0]$
+    right:
+      vi: Gradient ở một điểm dừng
+      en: Gradient at a stationary point
+- id: c2w2-gradients-numeric-12
+  topic: gradients
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Cho $f(x,y)=x^2+3y^2$. Tính hai thành phần gradient tại $(2,-1)$.
+    en: Let $f(x,y)=x^2+3y^2$. Compute the two gradient components at $(2,-1)$.
+  explanation:
+    vi: $f_x=2x$ nên bằng $4$; $f_y=6y$ nên bằng $-6$. Đây là cùng vector với bài nhập ma trận.
+    en: $f_x=2x$ gives $4$; $f_y=6y$ gives $-6$. This is the same vector used in the matrix-entry exercise.
+  hints: []
+  answers:
+  - label: f_x
+    value: 4
+  - label: f_y
+    value: -6
+- id: c2w2-gradients-matrix-43
+  topic: gradients
+  type: matrix
+  difficulty: 1
+  tags:
+  - gradient
+  prompt:
+    vi: Nhập gradient cột của $f(x,y)=x^2+3y^2$ tại $(2,-1)$.
+    en: Enter the column gradient of $f(x,y)=x^2+3y^2$ at $(2,-1)$.
+  explanation:
+    vi: Gradient là $[2x,6y]=[4,-6]$.
+    en: Gradient is $[2x,6y]=[4,-6]$.
+  hints: []
+  answer:
+  - - 4
+  - - -6
+- id: c2w2-gradients-construct-44
+  topic: gradients
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo một vector gradient 2D song song với $(2,1)$ và có chuẩn L2 bằng $\sqrt{20}$.
+    en: Construct a 2D gradient vector parallel to $(2,1)$ with L2 norm $\sqrt{20}$.
+  explanation:
+    vi: $(4,2)$ song song $(2,1)$ và có norm $\sqrt{16+4}=\sqrt{20}$.
+    en: $(4,2)$ is parallel to $(2,1)$ and has norm $\sqrt{16+4}=\sqrt{20}$.
+  hints: []
+  rows: 2
+  cols: 1
+  constraints:
+  - kind: parallelTo
+    of:
+    - 2
+    - 1
+  - kind: norm
+    p: 2
+    value: 4.47213595499958
+  example:
+  - - 4
+  - - 2
+- id: c2w2-gradients-code-58
+  topic: gradients
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt numerical gradient; không dùng shortcut tối ưu hóa.
+    en: Implement numerical gradient; do not use optimization shortcuts.
+  explanation:
+    vi: Hàm cần dịch từng tọa độ một lượng $h$, tính sai phân trung tâm, rồi khôi phục tọa độ trước khi sang chiều tiếp theo.
+    en: The function must perturb one coordinate by $h$, compute a centered difference, and then move to the next coordinate without mixing directions.
+  hints: []
+  starter: "import numpy as np\ndef numerical_grad(f,p,h=1e-5):\n    return np.zeros_like(p,dtype=float)\n"
+  solution: "import numpy as np\ndef numerical_grad(f,p,h=1e-5):\n    p=np.array(p,dtype=float); g=np.zeros_like(p)\n    for\
+    \ i in range(len(p)):\n        e=np.zeros_like(p); e[i]=h\n        g[i]=(f(p+e)-f(p-e))/(2*h)\n    return g\n"
+  tests: "import numpy as np\ndef test_grad():\n    f=lambda p:(p[0]-1)**2+2*(p[1]+1)**2\n    assert np.allclose(numerical_grad(f,np.array([3.,1.])),\
+    \ [4.,8.], atol=1e-3)\n"
+- id: c2w2-gradients-parametric-67
+  topic: gradients
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: 'Bài luyện động: trình sinh sẽ tạo số liệu mới mỗi lần.'
+    en: 'Dynamic drill: the generator creates fresh numbers each time.'
+  explanation:
+    vi: Áp dụng công thức thay vì ghi nhớ đáp án.
+    en: Apply the formula rather than memorizing an answer.
+  hints: []
+  generator: gradient-step
+  params: {}

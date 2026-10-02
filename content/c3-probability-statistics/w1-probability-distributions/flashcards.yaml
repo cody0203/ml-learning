@@ -1,0 +1,406 @@
+flashcards:
+- id: c3w1-fc-prob-01
+  topic: what-is-probability
+  kind: concept
+  front:
+    vi: 'Trong ví dụ 3/10 trẻ chơi bóng đá, không gian mẫu là gì?'
+    en: 'In the 3-out-of-10 soccer example, what is the sample space?'
+  back:
+    vi: 'Tất cả 10 trẻ có thể được chọn. Biến cố là nhóm 3 trẻ chơi bóng đá.'
+    en: 'All 10 children that could be selected. The event is the 3 children who play soccer.'
+- id: c3w1-fc-prob-02
+  topic: what-is-probability
+  kind: formula
+  front:
+    vi: 'Với kết quả đồng khả năng, công thức $P(A)$ là gì?'
+    en: 'For equally likely outcomes, what is the formula for $P(A)$?'
+  back:
+    vi: '$P(A)=|A|/|S|$. Đếm kết quả thuận lợi chia cho tổng kết quả.'
+    en: '$P(A)=|A|/|S|$. Count favorable outcomes divided by all outcomes.'
+- id: c3w1-fc-prob-03
+  topic: what-is-probability
+  kind: compute
+  front:
+    vi: 'Một xúc xắc công bằng: $P(6)=?$'
+    en: 'For one fair die, $P(6)=?$'
+  back:
+    vi: '$1/6$. Chỉ một mặt trong sáu mặt là số 6.'
+    en: '$1/6$. Exactly one of the six faces is a 6.'
+- id: c3w1-fc-comp-01
+  topic: complement-rule
+  kind: formula
+  front:
+    vi: 'Công thức biến cố bù của $A$ là gì?'
+    en: 'What is the complement formula for event $A$?'
+  back:
+    vi: '$P(A^c)=1-P(A)$. Hai phần cộng lại bằng toàn bộ không gian mẫu.'
+    en: '$P(A^c)=1-P(A)$. The two parts add to the whole sample space.'
+- id: c3w1-fc-comp-02
+  topic: complement-rule
+  kind: compute
+  front:
+    vi: 'Ba lần tung đồng xu: $P(\text{not }HHH)=?$'
+    en: 'Three coin tosses: $P(\text{not }HHH)=?$'
+  back:
+    vi: '$7/8$. Vì $P(HHH)=1/8$, lấy $1-1/8$.'
+    en: '$7/8$. Since $P(HHH)=1/8$, compute $1-1/8$.'
+- id: c3w1-fc-comp-03
+  topic: complement-rule
+  kind: concept
+  front:
+    vi: 'Vì sao "không phải HHH" không đồng nghĩa với TTT?'
+    en: 'Why is "not HHH" not the same as TTT?'
+  back:
+    vi: 'Nó gồm mọi chuỗi trừ HHH, ví dụ HHT và THT cũng được tính.'
+    en: 'It includes every sequence except HHH, including HHT and THT.'
+- id: c3w1-fc-sum-01
+  topic: sum-rules
+  kind: formula
+  front:
+    vi: 'Công thức tổng quát cho $P(A\cup B)$ là gì?'
+    en: 'What is the general formula for $P(A\cup B)$?'
+  back:
+    vi: '$P(A)+P(B)-P(A\cap B)$. Trừ phần giao để tránh đếm trùng.'
+    en: '$P(A)+P(B)-P(A\cap B)$. Subtract the overlap to avoid double counting.'
+- id: c3w1-fc-sum-02
+  topic: sum-rules
+  kind: compute
+  front:
+    vi: '$P(S)=0.6$, $P(B)=0.5$, $P(S\cap B)=0.3$. $P(S\cup B)=?$'
+    en: '$P(S)=0.6$, $P(B)=0.5$, $P(S\cap B)=0.3$. $P(S\cup B)=?$'
+  back:
+    vi: '$0.8$. Tính $0.6+0.5-0.3$.'
+    en: '$0.8$. Compute $0.6+0.5-0.3$.'
+- id: c3w1-fc-sum-03
+  topic: sum-rules
+  kind: concept
+  front:
+    vi: 'Khi nào được dùng shortcut $P(A\cup B)=P(A)+P(B)$?'
+    en: 'When may we use the shortcut $P(A\cup B)=P(A)+P(B)$?'
+  back:
+    vi: 'Khi $A$ và $B$ rời nhau, tức $P(A\cap B)=0$.'
+    en: 'When $A$ and $B$ are disjoint, so $P(A\cap B)=0$.'
+- id: c3w1-fc-ind-01
+  topic: independence-product-rule
+  kind: concept
+  front:
+    vi: 'Độc lập nghĩa là gì theo xác suất có điều kiện?'
+    en: 'What does independence mean in conditional-probability language?'
+  back:
+    vi: '$P(B\mid A)=P(B)$. Biết $A$ không đổi xác suất của $B$.'
+    en: '$P(B\mid A)=P(B)$. Knowing $A$ does not change the probability of $B$.'
+- id: c3w1-fc-ind-02
+  topic: independence-product-rule
+  kind: formula
+  front:
+    vi: 'Nếu $A,B$ độc lập, $P(A\cap B)$ bằng gì?'
+    en: 'If $A,B$ are independent, what is $P(A\cap B)$?'
+  back:
+    vi: '$P(A)P(B)$. Không dùng nếu chưa kiểm tra độc lập.'
+    en: '$P(A)P(B)$. Do not use it before checking independence.'
+- id: c3w1-fc-ind-03
+  topic: independence-product-rule
+  kind: compute
+  front:
+    vi: '$P(S)=0.4$, $P(R_1)=0.3$ độc lập. Xác suất giao là?'
+    en: '$P(S)=0.4$, $P(R_1)=0.3$ independent. What is the intersection?'
+  back:
+    vi: '$0.12$. Nhân $0.4\cdot0.3$.'
+    en: '$0.12$. Multiply $0.4\cdot0.3$.'
+- id: c3w1-fc-cond-01
+  topic: conditional-probability
+  kind: formula
+  front:
+    vi: 'Định nghĩa $P(B\mid A)$ là gì?'
+    en: 'What is the definition of $P(B\mid A)$?'
+  back:
+    vi: '$P(B\mid A)=P(A\cap B)/P(A)$, với $P(A)>0$.'
+    en: '$P(B\mid A)=P(A\cap B)/P(A)$, for $P(A)>0$.'
+- id: c3w1-fc-cond-02
+  topic: conditional-probability
+  kind: compute
+  front:
+    vi: 'Hai xúc xắc: biết xúc xắc đầu là 6, $P(\text{sum}=10)=?$'
+    en: 'Two dice: given the first die is 6, $P(\text{sum}=10)=?$'
+  back:
+    vi: '$1/6$. Chỉ kết quả thứ hai bằng 4 là thỏa.'
+    en: '$1/6$. Only a second die of 4 works.'
+- id: c3w1-fc-cond-03
+  topic: conditional-probability
+  kind: concept
+  front:
+    vi: 'Dấu gạch dọc trong $P(B\mid A)$ thay đổi điều gì?'
+    en: 'What does the vertical bar in $P(B\mid A)$ change?'
+  back:
+    vi: 'Nó đổi mẫu số sang thế giới mà $A$ đã xảy ra.'
+    en: 'It changes the denominator to the world where $A$ has occurred.'
+- id: c3w1-fc-bayes-01
+  topic: bayes-theorem
+  kind: formula
+  front:
+    vi: 'Công thức Bayes nhị phân với bằng chứng $B$ là gì?'
+    en: 'What is the binary Bayes formula with evidence $B$?'
+  back:
+    vi: '$\frac{P(A)P(B\mid A)}{P(A)P(B\mid A)+P(A^c)P(B\mid A^c)}$.'
+    en: '$\frac{P(A)P(B\mid A)}{P(A)P(B\mid A)+P(A^c)P(B\mid A^c)}$.'
+- id: c3w1-fc-bayes-02
+  topic: bayes-theorem
+  kind: concept
+  front:
+    vi: 'Trong ví dụ xét nghiệm hiếm, vì sao posterior thấp dù test 99%?'
+    en: 'In the rare-test example, why is the posterior low despite a 99% test?'
+  back:
+    vi: 'Bệnh quá hiếm nên false positive từ nhóm khỏe áp đảo true positive.'
+    en: 'The disease is so rare that false positives among healthy people dominate true positives.'
+- id: c3w1-fc-bayes-03
+  topic: bayes-theorem
+  kind: compute
+  front:
+    vi: '$0.0001\cdot0.99$ bằng bao nhiêu?'
+    en: 'What is $0.0001\cdot0.99$?'
+  back:
+    vi: '$0.000099$. Đây là xác suất vừa bệnh vừa dương tính.'
+    en: '$0.000099$. This is the probability of being sick and testing positive.'
+- id: c3w1-fc-nb-01
+  topic: naive-bayes
+  kind: formula
+  front:
+    vi: 'Naive Bayes xấp xỉ $P(C\mid w_1,\ldots,w_n)$ bằng tích nào?'
+    en: 'Which product approximates $P(C\mid w_1,\ldots,w_n)$ in Naive Bayes?'
+  back:
+    vi: '$P(C)\prod_i P(w_i\mid C)$ trước khi chuẩn hóa.'
+    en: '$P(C)\prod_i P(w_i\mid C)$ before normalization.'
+- id: c3w1-fc-nb-02
+  topic: naive-bayes
+  kind: compute
+  front:
+    vi: 'Điểm spam $0.2\cdot0.7\cdot0.75$ bằng bao nhiêu?'
+    en: 'What is the spam score $0.2\cdot0.7\cdot0.75$?'
+  back:
+    vi: '$0.105$. Đây là tử số trước khi chuẩn hóa.'
+    en: '$0.105$. It is the unnormalized numerator.'
+- id: c3w1-fc-nb-03
+  topic: naive-bayes
+  kind: concept
+  front:
+    vi: 'Từ "naive" trong Naive Bayes nói về giả định nào?'
+    en: 'What assumption does "naive" refer to in Naive Bayes?'
+  back:
+    vi: 'Các đặc trưng độc lập có điều kiện khi biết lớp.'
+    en: 'Features are conditionally independent given the class.'
+- id: c3w1-fc-ml-01
+  topic: probability-in-ml
+  kind: concept
+  front:
+    vi: '$P(cat\mid pixels)=0.9$ nên được hiểu thế nào?'
+    en: 'How should $P(cat\mid pixels)=0.9$ be interpreted?'
+  back:
+    vi: 'Mô hình cho 90% xác suất lớp cat với ảnh đầu vào, không phải chứng minh tuyệt đối.'
+    en: 'The model assigns 90% probability to cat for the input image, not absolute proof.'
+- id: c3w1-fc-ml-02
+  topic: probability-in-ml
+  kind: formula
+  front:
+    vi: 'Dạng xác suất thường học trong phân loại có giám sát là gì?'
+    en: 'What probability form is often learned in supervised classification?'
+  back:
+    vi: '$P(y\mid x)$: xác suất nhãn khi biết đặc trưng.'
+    en: '$P(y\mid x)$: the probability of a label given features.'
+- id: c3w1-fc-rv-01
+  topic: random-variables
+  kind: concept
+  front:
+    vi: 'Biến ngẫu nhiên $X$ làm gì với kết quả thô?'
+    en: 'What does a random variable $X$ do to raw outcomes?'
+  back:
+    vi: 'Nó ánh xạ mỗi kết quả sang một con số để dễ mô hình hóa.'
+    en: 'It maps each outcome to a number for easier modeling.'
+- id: c3w1-fc-rv-02
+  topic: random-variables
+  kind: formula
+  front:
+    vi: 'Ký hiệu hàm cho biến ngẫu nhiên từ không gian mẫu là gì?'
+    en: 'What function notation describes a random variable from a sample space?'
+  back:
+    vi: '$X:S\to\mathbb R$. Kết quả được biến thành số thực.'
+    en: '$X:S\to\mathbb R$. Outcomes are mapped to real numbers.'
+- id: c3w1-fc-rv-03
+  topic: random-variables
+  kind: compute
+  front:
+    vi: 'Một đồng xu: nếu ngửa mã hóa 1, sấp mã hóa 0, $P(X=1)=?$'
+    en: 'One fair coin: if heads is 1 and tails is 0, what is $P(X=1)$?'
+  back:
+    vi: '$0.5$. Đồng xu công bằng có hai mặt đồng khả năng.'
+    en: '$0.5$. The fair coin has two equally likely sides.'
+- id: c3w1-fc-pmf-01
+  topic: discrete-pmf
+  kind: formula
+  front:
+    vi: 'Hai điều kiện của PMF rời rạc là gì?'
+    en: 'What are the two requirements for a discrete PMF?'
+  back:
+    vi: '$p_X(x)\ge0$ và $\sum_x p_X(x)=1$.'
+    en: '$p_X(x)\ge0$ and $\sum_x p_X(x)=1$.'
+- id: c3w1-fc-pmf-02
+  topic: discrete-pmf
+  kind: compute
+  front:
+    vi: 'PMF ba đồng xu: $P(X\ge2)=3/8+1/8=?$'
+    en: 'Three-coin PMF: $P(X\ge2)=3/8+1/8=?$'
+  back:
+    vi: '$1/2$. Cộng khối tại 2 và 3 mặt ngửa.'
+    en: '$1/2$. Add the masses at 2 and 3 heads.'
+- id: c3w1-fc-bin-01
+  topic: binomial-bernoulli
+  kind: formula
+  front:
+    vi: 'PMF của $X\sim Binomial(n,p)$ là gì?'
+    en: 'What is the PMF of $X\sim Binomial(n,p)$?'
+  back:
+    vi: '$P(X=k)=\binom nkp^k(1-p)^{n-k}$.'
+    en: '$P(X=k)=\binom nkp^k(1-p)^{n-k}$.'
+- id: c3w1-fc-bin-02
+  topic: binomial-bernoulli
+  kind: compute
+  front:
+    vi: '$\binom52$ bằng bao nhiêu?'
+    en: 'What is $\binom52$?'
+  back:
+    vi: '$10$. Có 10 cách đặt 2 mặt ngửa trong 5 lần tung.'
+    en: '$10$. There are 10 ways to place 2 heads among 5 tosses.'
+- id: c3w1-fc-bin-03
+  topic: binomial-bernoulli
+  kind: concept
+  front:
+    vi: 'Vì sao gieo "ra số 1" là một Bernoulli lệch?'
+    en: 'Why is rolling "a one" a biased Bernoulli trial?'
+  back:
+    vi: 'Chỉ có thành công/thất bại, với xác suất thành công $1/6$ chứ không phải $1/2$.'
+    en: 'There is success/failure, with success probability $1/6$ rather than $1/2$.'
+- id: c3w1-fc-pdf-01
+  topic: continuous-pdf
+  kind: concept
+  front:
+    vi: 'Với biến liên tục, vì sao $P(X=2)=0$?'
+    en: 'For a continuous variable, why is $P(X=2)=0$?'
+  back:
+    vi: 'Một điểm đơn lẻ có độ rộng bằng 0 nên diện tích bằng 0.'
+    en: 'A single point has zero width, so its area is zero.'
+- id: c3w1-fc-pdf-02
+  topic: continuous-pdf
+  kind: formula
+  front:
+    vi: 'Xác suất khoảng theo PDF được viết thế nào?'
+    en: 'How is an interval probability written using a PDF?'
+  back:
+    vi: '$P(a<X<b)=\int_a^b f_X(x)\,dx$.'
+    en: '$P(a<X<b)=\int_a^b f_X(x)\,dx$.'
+- id: c3w1-fc-cdf-01
+  topic: cdf
+  kind: formula
+  front:
+    vi: 'Định nghĩa CDF $F_X(x)$ là gì?'
+    en: 'What is the definition of the CDF $F_X(x)$?'
+  back:
+    vi: '$F_X(x)=P(X\le x)$. Nó là xác suất tích lũy.'
+    en: '$F_X(x)=P(X\le x)$. It is accumulated probability.'
+- id: c3w1-fc-cdf-02
+  topic: cdf
+  kind: compute
+  front:
+    vi: 'Nếu $X\sim Uniform(0,4)$, $F(2)=?$'
+    en: 'If $X\sim Uniform(0,4)$, what is $F(2)$?'
+  back:
+    vi: '$0.5$. Nửa đoạn $[0,4]$ nằm bên trái 2.'
+    en: '$0.5$. Half of $[0,4]$ lies to the left of 2.'
+- id: c3w1-fc-unif-01
+  topic: uniform-distribution
+  kind: formula
+  front:
+    vi: 'PDF của $Uniform(a,b)$ trong khoảng là gì?'
+    en: 'What is the PDF of $Uniform(a,b)$ inside the interval?'
+  back:
+    vi: '$1/(b-a)$. Ngoài khoảng thì bằng 0.'
+    en: '$1/(b-a)$. Outside the interval it is 0.'
+- id: c3w1-fc-unif-02
+  topic: uniform-distribution
+  kind: compute
+  front:
+    vi: '$T\sim Uniform(0,15)$. $P(6<T<9)=?$'
+    en: '$T\sim Uniform(0,15)$. What is $P(6<T<9)$?'
+  back:
+    vi: '$3/15=0.2$. Độ dài khoảng chia tổng độ dài.'
+    en: '$3/15=0.2$. Interval length divided by total length.'
+- id: c3w1-fc-normal-01
+  topic: normal-distribution
+  kind: formula
+  front:
+    vi: 'Công thức z-score của phân phối chuẩn là gì?'
+    en: 'What is the z-score formula for a normal variable?'
+  back:
+    vi: '$Z=(X-\mu)/\sigma$. Nó chuẩn hóa về tâm 0, độ lệch chuẩn 1.'
+    en: '$Z=(X-\mu)/\sigma$. It standardizes to center 0 and standard deviation 1.'
+- id: c3w1-fc-normal-02
+  topic: normal-distribution
+  kind: compute
+  front:
+    vi: '$X\sim\mathcal N(10,2^2)$, $x=14$. z-score là?'
+    en: '$X\sim\mathcal N(10,2^2)$, $x=14$. What is the z-score?'
+  back:
+    vi: '$2$. Tính $(14-10)/2$.'
+    en: '$2$. Compute $(14-10)/2$.'
+- id: c3w1-fc-normal-03
+  topic: normal-distribution
+  kind: concept
+  front:
+    vi: 'Tham số $\sigma$ làm gì với đường chuông?'
+    en: 'What does $\sigma$ do to the bell curve?'
+  back:
+    vi: 'Nó điều khiển độ rộng; $\sigma$ lớn làm đường chuông trải rộng hơn.'
+    en: 'It controls spread; a larger $\sigma$ makes the bell wider.'
+- id: c3w1-fc-chi-01
+  topic: chi-squared-distribution
+  kind: formula
+  front:
+    vi: 'Công thức tạo $\chi^2_k$ từ các $Z_i$ chuẩn tắc là gì?'
+    en: 'How do standard normal $Z_i$ variables form $\chi^2_k$?'
+  back:
+    vi: '$W=\sum_{i=1}^k Z_i^2$. Có $k$ bậc tự do.'
+    en: '$W=\sum_{i=1}^k Z_i^2$. It has $k$ degrees of freedom.'
+- id: c3w1-fc-chi-02
+  topic: chi-squared-distribution
+  kind: compute
+  front:
+    vi: 'Nếu $Z_1=1$, $Z_2=-2$, $Z_1^2+Z_2^2=?$'
+    en: 'If $Z_1=1$, $Z_2=-2$, what is $Z_1^2+Z_2^2$?'
+  back:
+    vi: '$5$. Bình phương rồi cộng: $1+4$.'
+    en: '$5$. Square and add: $1+4$.'
+- id: c3w1-fc-chi-03
+  topic: chi-squared-distribution
+  kind: concept
+  front:
+    vi: 'Vì sao phân phối chi-squared không nhận giá trị âm?'
+    en: 'Why can a chi-squared variable not be negative?'
+  back:
+    vi: 'Nó là tổng các bình phương, mà mỗi bình phương không âm.'
+    en: 'It is a sum of squares, and each square is nonnegative.'
+- id: c3w1-fc-sample-01
+  topic: sampling-distributions
+  kind: concept
+  front:
+    vi: 'Trong lấy mẫu bằng CDF, số $u=0.62$ dùng để làm gì?'
+    en: 'In CDF sampling, what is the role of $u=0.62$?'
+  back:
+    vi: 'Nó chọn khoảng tích lũy chứa 0.62, từ đó chọn hạng mục.'
+    en: 'It selects the cumulative interval containing 0.62, hence the category.'
+- id: c3w1-fc-sample-02
+  topic: sampling-distributions
+  kind: compute
+  front:
+    vi: 'Xác suất [0.3,0.8) có độ dài bao nhiêu?'
+    en: 'What is the length of the probability interval [0.3,0.8)?'
+  back:
+    vi: '$0.5$. Đây là xác suất của hạng mục thứ hai.'
+    en: '$0.5$. This is the probability of the second category.'

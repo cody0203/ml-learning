@@ -1,0 +1,325 @@
+flashcards:
+- id: c2w2-fc-01
+  topic: tangent-planes
+  kind: concept
+  front:
+    vi: Mặt phẳng tiếp tuyến tại $(a,b)$ khớp những gì của surface?
+    en: What does a tangent plane at $(a,b)$ match on the surface?
+  back:
+    vi: Nó khớp độ cao $f(a,b)$ và hai đạo hàm riêng $f_x(a,b),f_y(a,b)$.
+    en: It matches the height $f(a,b)$ and the two partial derivatives $f_x(a,b),f_y(a,b)$.
+- id: c2w2-fc-02
+  topic: tangent-planes
+  kind: formula
+  front:
+    vi: Công thức mặt phẳng tiếp tuyến của $f(x,y)$ tại $(a,b)$?
+    en: What is the tangent-plane formula for $f(x,y)$ at $(a,b)$?
+  back:
+    vi: $z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$.
+    en: $z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$.
+- id: c2w2-fc-03
+  topic: tangent-planes
+  kind: compute
+  front:
+    vi: Với $f=x^2+y^2$, $f_x(2,4)$ và $f_y(2,4)$ là gì?
+    en: For $f=x^2+y^2$, what are $f_x(2,4)$ and $f_y(2,4)$?
+  back:
+    vi: $4$ và $8$. Vì $f_x=2x$, $f_y=2y$.
+    en: $4$ and $8$. Since $f_x=2x$, $f_y=2y$.
+- id: c2w2-fc-04
+  topic: partial-derivatives
+  kind: concept
+  front:
+    vi: Khi lấy đạo hàm riêng theo $x$, biến $y$ được xử lý thế nào?
+    en: When taking a partial derivative with respect to $x$, how is $y$ treated?
+  back:
+    vi: Giữ $y$ cố định như hằng số ký hiệu; không đặt nó bằng 0 hoặc 1.
+    en: Hold $y$ fixed as a symbolic constant; do not set it to 0 or 1.
+- id: c2w2-fc-05
+  topic: partial-derivatives
+  kind: formula
+  front:
+    vi: $\partial(3x^2y^3)/\partial x=?$
+    en: $\partial(3x^2y^3)/\partial x=?$
+  back:
+    vi: $6xy^3$. Hệ số $3y^3$ giữ nguyên khi đạo hàm $x^2$.
+    en: $6xy^3$. The factor $3y^3$ stays fixed while differentiating $x^2$.
+- id: c2w2-fc-06
+  topic: partial-derivatives
+  kind: compute
+  front:
+    vi: Tại $(1,2)$, $\partial(3x^2y^3)/\partial y=?$
+    en: At $(1,2)$, what is $\partial(3x^2y^3)/\partial y$?
+  back:
+    vi: $36$. Công thức là $9x^2y^2$, rồi thay $x=1,y=2$.
+    en: $36$. The formula is $9x^2y^2$, then plug in $x=1,y=2$.
+- id: c2w2-fc-07
+  topic: gradients
+  kind: concept
+  front:
+    vi: Gradient chỉ hướng nào trên contour map?
+    en: Which direction does the gradient indicate on a contour map?
+  back:
+    vi: Hướng tăng nhanh nhất, vuông góc với contour tại điểm đó.
+    en: The steepest ascent direction, perpendicular to the contour at that point.
+- id: c2w2-fc-08
+  topic: gradients
+  kind: formula
+  front:
+    vi: Với $f(x,y)$, vector $\nabla f$ được viết thế nào?
+    en: For $f(x,y)$, how is the vector $\nabla f$ written?
+  back:
+    vi: $\nabla f=[f_x,f_y]^T$ hoặc $\begin{bmatrix}f_x\\f_y\end{bmatrix}$.
+    en: $\nabla f=[f_x,f_y]^T$ or $\begin{bmatrix}f_x\\f_y\end{bmatrix}$.
+- id: c2w2-fc-09
+  topic: gradients
+  kind: compute
+  front:
+    vi: Nếu $\nabla f(2,3)=[4,6]$, hướng descent dốc nhất là gì?
+    en: If $\nabla f(2,3)=[4,6]$, what is the steepest descent direction?
+  back:
+    vi: $[-4,-6]$. Descent dùng hướng âm của gradient.
+    en: $[-4,-6]$. Descent uses the negative of the gradient.
+- id: c2w2-fc-10
+  topic: maxima-minima
+  kind: concept
+  front:
+    vi: Vì sao $\nabla f=0$ chỉ là điều kiện ứng viên cực trị?
+    en: Why is $\nabla f=0$ only a candidate condition for extrema?
+  back:
+    vi: Điểm dừng có thể là minimum, maximum hoặc saddle; cần phân loại thêm.
+    en: A stationary point can be a minimum, maximum, or saddle; more classification is needed.
+- id: c2w2-fc-11
+  topic: maxima-minima
+  kind: formula
+  front:
+    vi: Điều kiện bậc nhất cho cực trị nội của $f(x,y)$ là gì?
+    en: What is the first-order condition for an interior extremum of $f(x,y)$?
+  back:
+    vi: $f_x(x,y)=0$ và $f_y(x,y)=0$, tức $\nabla f=0$.
+    en: $f_x(x,y)=0$ and $f_y(x,y)=0$, equivalently $\nabla f=0$.
+- id: c2w2-fc-12
+  topic: maxima-minima
+  kind: compute
+  front:
+    vi: $f(x,y)=x^2+y^2$ có điểm dừng nào?
+    en: What stationary point does $f(x,y)=x^2+y^2$ have?
+  back:
+    vi: $(0,0)$. Giải $2x=0$ và $2y=0$.
+    en: $(0,0)$. Solve $2x=0$ and $2y=0$.
+- id: c2w2-fc-13
+  topic: analytical-optimization
+  kind: concept
+  front:
+    vi: Tối ưu giải tích khác gradient descent ở điểm nào?
+    en: How does analytical optimization differ from gradient descent?
+  back:
+    vi: Nó giải chính xác hệ $\nabla E=0$ thay vì lặp bước nhỏ.
+    en: It exactly solves the system $\nabla E=0$ instead of iterating small steps.
+- id: c2w2-fc-14
+  topic: analytical-optimization
+  kind: formula
+  front:
+    vi: Với $E=14m^2+3b^2+38+12mb-42m-20b$, $E_m=?$
+    en: For $E=14m^2+3b^2+38+12mb-42m-20b$, what is $E_m$?
+  back:
+    vi: $28m+12b-42$.
+    en: $28m+12b-42$.
+- id: c2w2-fc-15
+  topic: analytical-optimization
+  kind: compute
+  front:
+    vi: Nghiệm slide của hệ $28m+12b-42=0$, $12m+6b-20=0$ là gì?
+    en: What is the slide solution of $28m+12b-42=0$, $12m+6b-20=0$?
+  back:
+    vi: $m=\frac12$, $b=\frac73$.
+    en: $m=\frac12$, $b=\frac73$.
+- id: c2w2-fc-16
+  topic: linear-regression
+  kind: concept
+  front:
+    vi: Trong hồi quy tuyến tính, residual $mx_i+b-y_i$ đo gì?
+    en: In linear regression, what does residual $mx_i+b-y_i$ measure?
+  back:
+    vi: Sai lệch dọc giữa dự đoán của đường thẳng và nhãn quan sát.
+    en: The vertical difference between the line prediction and observed target.
+- id: c2w2-fc-17
+  topic: linear-regression
+  kind: formula
+  front:
+    vi: Cost SSE cho các điểm $(x_i,y_i)$ và đường $mx+b$ là gì?
+    en: What is the SSE cost for points $(x_i,y_i)$ and line $mx+b$?
+  back:
+    vi: $E(m,b)=\sum_i(mx_i+b-y_i)^2$.
+    en: $E(m,b)=\sum_i(mx_i+b-y_i)^2$.
+- id: c2w2-fc-18
+  topic: linear-regression
+  kind: compute
+  front:
+    vi: Với $(1,2)$ và đường $y=x+1$, residual là bao nhiêu?
+    en: For point $(1,2)$ and line $y=x+1$, what is the residual?
+  back:
+    vi: $0$. Dự đoán $1+1=2$, trừ nhãn $2$.
+    en: $0$. Prediction is $1+1=2$, minus target $2$.
+- id: c2w2-fc-19
+  topic: gd-one-variable
+  kind: concept
+  front:
+    vi: Nếu $f'(x_k)<0$, gradient descent một biến di chuyển sang trái hay phải?
+    en: If $f'(x_k)<0$, does one-variable gradient descent move left or right?
+  back:
+    vi: Sang phải, vì $x_{k+1}=x_k-\alpha f'(x_k)$ trừ một số âm.
+    en: Right, because $x_{k+1}=x_k-\alpha f'(x_k)$ subtracts a negative number.
+- id: c2w2-fc-20
+  topic: gd-one-variable
+  kind: formula
+  front:
+    vi: Công thức cập nhật gradient descent một biến?
+    en: What is the one-variable gradient descent update?
+  back:
+    vi: $x_{k+1}=x_k-\alpha f'(x_k)$.
+    en: $x_{k+1}=x_k-\alpha f'(x_k)$.
+- id: c2w2-fc-21
+  topic: gd-one-variable
+  kind: compute
+  front:
+    vi: Với $f'(0)=-6$ và $\alpha=0.1$, bước từ $x_0=0$ cho $x_1=?$
+    en: With $f'(0)=-6$ and $\alpha=0.1$, stepping from $x_0=0$ gives $x_1=?$
+  back:
+    vi: $0.6$, vì $0-0.1(-6)=0.6$.
+    en: $0.6$, because $0-0.1(-6)=0.6$.
+- id: c2w2-fc-22
+  topic: learning-rate-local-minima
+  kind: concept
+  front:
+    vi: Tại sao nên thử nhiều điểm khởi tạo cho hàm không lồi?
+    en: Why try multiple starting points for a non-convex function?
+  back:
+    vi: Các điểm bắt đầu khác nhau có thể rơi vào các cực tiểu cục bộ khác nhau.
+    en: Different starts can fall into different local minima.
+- id: c2w2-fc-23
+  topic: learning-rate-local-minima
+  kind: formula
+  front:
+    vi: Với $f(x)=x^2$, cập nhật GD rút gọn thành gì?
+    en: For $f(x)=x^2$, what does the GD update simplify to?
+  back:
+    vi: $x_{k+1}=(1-2\alpha)x_k$.
+    en: $x_{k+1}=(1-2\alpha)x_k$.
+- id: c2w2-fc-24
+  topic: learning-rate-local-minima
+  kind: compute
+  front:
+    vi: Nếu $\alpha=1.1$ cho $f(x)=x^2$, hệ số $(1-2\alpha)$ là gì?
+    en: If $\alpha=1.1$ for $f(x)=x^2$, what is the factor $(1-2\alpha)$?
+  back:
+    vi: $-1.2$. Trị tuyệt đối lớn hơn 1 nên có nguy cơ phân kỳ.
+    en: $-1.2$. Its magnitude exceeds 1, so divergence is likely.
+- id: c2w2-fc-25
+  topic: gd-two-variables
+  kind: concept
+  front:
+    vi: Trong GD hai biến, tại sao $x$ và $y$ phải cập nhật cùng lúc?
+    en: In two-variable GD, why should $x$ and $y$ be updated together?
+  back:
+    vi: Một bước là phép trừ vector từ cùng điểm cũ bằng cùng gradient cũ.
+    en: One step is a vector subtraction from the same old point using the same old gradient.
+- id: c2w2-fc-26
+  topic: gd-two-variables
+  kind: formula
+  front:
+    vi: Công thức vector cho gradient descent hai biến?
+    en: What is the vector update for two-variable gradient descent?
+  back:
+    vi: $\begin{bmatrix}x_{k+1}\\y_{k+1}\end{bmatrix}=\begin{bmatrix}x_k\\y_k\end{bmatrix}-\alpha\nabla f(x_k,y_k)$.
+    en: $\begin{bmatrix}x_{k+1}\\y_{k+1}\end{bmatrix}=\begin{bmatrix}x_k\\y_k\end{bmatrix}-\alpha\nabla f(x_k,y_k)$.
+- id: c2w2-fc-27
+  topic: gd-two-variables
+  kind: compute
+  front:
+    vi: Từ $(3,1)$ với gradient $(4,8)$ và $\alpha=0.1$, điểm mới là gì?
+    en: From $(3,1)$ with gradient $(4,8)$ and $\alpha=0.1$, what is the new point?
+  back:
+    vi: $(2.6,0.2)$. Tính $(3,1)-0.1(4,8)$.
+    en: $(2.6,0.2)$. Compute $(3,1)-0.1(4,8)$.
+- id: c2w2-fc-28
+  topic: gd-least-squares
+  kind: concept
+  front:
+    vi: Trong least squares GD, $db$ là trung bình của đại lượng nào?
+    en: In least-squares GD, $db$ is the mean of which quantity?
+  back:
+    vi: Trung bình residual $mx_i+b-y_i$.
+    en: The mean residual $mx_i+b-y_i$.
+- id: c2w2-fc-29
+  topic: gd-least-squares
+  kind: formula
+  front:
+    vi: Gradient theo $m$ của $J=\frac1{2n}\sum(mx_i+b-y_i)^2$?
+    en: Gradient with respect to $m$ for $J=\frac1{2n}\sum(mx_i+b-y_i)^2$?
+  back:
+    vi: $\frac1n\sum_i(mx_i+b-y_i)x_i$.
+    en: $\frac1n\sum_i(mx_i+b-y_i)x_i$.
+- id: c2w2-fc-30
+  topic: gd-least-squares
+  kind: compute
+  front:
+    vi: Với residual $[-1,-3,-5]$, $db$ bằng bao nhiêu?
+    en: With residuals $[-1,-3,-5]$, what is $db$?
+  back:
+    vi: $-3$, là trung bình của ba residual.
+    en: $-3$, the average of the three residuals.
+- id: c2w2-fc-31
+  topic: partial-derivatives
+  kind: formula
+  front:
+    vi: $\partial(x^2+y^2)/\partial y=?$
+    en: $\partial(x^2+y^2)/\partial y=?$
+  back:
+    vi: $2y$. Hạng $x^2$ là hằng số theo $y$.
+    en: $2y$. The $x^2$ term is constant with respect to $y$.
+- id: c2w2-fc-32
+  topic: tangent-planes
+  kind: compute
+  front:
+    vi: Với $z=20+4(x-2)+8(y-4)$, dự đoán tại $(2.1,3.9)$?
+    en: For $z=20+4(x-2)+8(y-4)$, what is the prediction at $(2.1,3.9)$?
+  back:
+    vi: $19.6$. Tính $20+0.4-0.8$.
+    en: $19.6$. Compute $20+0.4-0.8$.
+- id: c2w2-fc-33
+  topic: analytical-optimization
+  kind: compute
+  front:
+    vi: Nếu $m=\frac12,b=\frac73$, giá trị $28m+12b-42$ là gì?
+    en: If $m=\frac12,b=\frac73$, what is $28m+12b-42$?
+  back:
+    vi: $0$. Đây là phương trình $E_m=0$ tại nghiệm.
+    en: $0$. This is the equation $E_m=0$ at the solution.
+- id: c2w2-fc-34
+  topic: learning-rate-local-minima
+  kind: concept
+  front:
+    vi: '"Too small" learning rate gây triệu chứng gì trong slides?'
+    en: 'What symptom does a "too small" learning rate cause in the slides?'
+  back:
+    vi: Di chuyển rất chậm, cần nhiều bước để thấy cost giảm rõ.
+    en: Very slow movement, requiring many steps to see clear cost reduction.
+- id: c2w2-fc-35
+  topic: gd-two-variables
+  kind: compute
+  front:
+    vi: Nếu $p=[1,2]$ và $g=[2,-4]$, $p-0.5g=?$
+    en: If $p=[1,2]$ and $g=[2,-4]$, what is $p-0.5g$?
+  back:
+    vi: $[0,4]$. Nửa gradient là $[1,-2]$.
+    en: $[0,4]$. Half the gradient is $[1,-2]$.
+- id: c2w2-fc-36
+  topic: linear-regression
+  kind: compute
+  front:
+    vi: Với đường $y=x+1$, SSE trên $(1,2),(2,5)$ là bao nhiêu?
+    en: For line $y=x+1$, what is the SSE on $(1,2),(2,5)$?
+  back:
+    vi: $4$. Residuals là $0$ và $-2$, bình phương cộng lại $4$.
+    en: $4$. Residuals are $0$ and $-2$, whose squares sum to $4$.

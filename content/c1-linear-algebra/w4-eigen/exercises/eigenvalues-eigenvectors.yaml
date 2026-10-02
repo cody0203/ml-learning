@@ -1,0 +1,269 @@
+exercises:
+- id: c1w4-09-mcq-fig
+  topic: eigenvalues-eigenvectors
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  - concept
+  prompt:
+    vi: 'Trị riêng và vector riêng: chọn đáp án đúng dựa trên dữ kiện, hình vẽ hoặc tính chất đã học.'
+    en: 'Eigenvalues and eigenvectors: what is the area of the parallelogram from columns $(3,1)$ and $(1,2)$?'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: This nonzero determinant means the column directions are not eigenvalue-zero collapse directions.
+  hints: []
+  figure:
+    xRange:
+    - -1
+    - 5
+    yRange:
+    - -1
+    - 4
+    vectors:
+    - to:
+      - 3
+      - 1
+      label: Ae1
+      color: '#2563eb'
+    - to:
+      - 1
+      - 2
+      label: Ae2
+      color: '#16a34a'
+    - from:
+      - 3
+      - 1
+      to:
+      - 4
+      - 3
+      color: '#16a34a'
+    - from:
+      - 1
+      - 2
+      to:
+      - 4
+      - 3
+      color: '#2563eb'
+  options:
+  - vi: '5'
+    en: '5'
+  - vi: '0'
+    en: '0'
+  - vi: -5 as geometric area
+    en: -5 as geometric area
+  answer:
+  - 0
+- id: c1w4-09-tf
+  topic: eigenvalues-eigenvectors
+  type: true-false
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: 'Trị riêng và vector riêng: quyết định mệnh đề đúng hay sai và chọn lý do phù hợp nếu có.'
+    en: 'Eigenvalues and eigenvectors: determinant zero always signals loss of at least one independent direction for a square matrix.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: A determinant of zero would make 0 an eigenvalue for a square matrix, signaling a collapsed direction.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Số 0 là một eigenvalue nên có hướng bị gửi về gốc.
+    en: Zero is an eigenvalue, so some direction is sent to the origin.
+  - vi: Không có eigenvalue nào có thể bằng 0.
+    en: No eigenvalue can be zero.
+  reasonAnswer: 0
+- id: c1w4-09-numeric
+  topic: eigenvalues-eigenvectors
+  type: numeric
+  difficulty: 1
+  tags:
+  - determinant
+  prompt:
+    vi: 'Trị riêng và vector riêng: tính giá trị số được yêu cầu; chú ý determinant, rank hoặc eigenvalue.'
+    en: 'Eigenvalues and eigenvectors: compute $det([[1,3],[2,1]])$.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The determinant is the product of the two eigenvalues in 2D, so here their product would be -5.
+  hints: []
+  answers:
+  - value: -5
+  tolerance: 0
+- id: c1w4-09-construct
+  topic: eigenvalues-eigenvectors
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: 'Trị riêng và vector riêng: dựng một ví dụ thỏa tất cả ràng buộc; đáp án mẫu chỉ là một khả năng.'
+    en: Construct a matrix mapping $(1,0)$ to $(4,0)$.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The first column is $(4,0)$, so multiplying by $(1,0)$ gives $4(1,0)$ as required.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: mapsTo
+    x:
+    - 1
+    - 0
+    b:
+    - 4
+    - 0
+  - kind: integerEntries
+  example:
+  - - 4
+    - 2
+  - - 0
+    - 3
+- id: c1w4-09-matching
+  topic: eigenvalues-eigenvectors
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: 'Trị riêng và vector riêng: ghép mỗi khái niệm với công thức hoặc diễn giải đúng.'
+    en: Match terms in Eigenvalues and eigenvectors.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The matches distinguish the eigenvector equation, the characteristic equation, and the nonzero-vector condition.
+  hints: []
+  pairs:
+  - left:
+      vi: determinant
+      en: determinant
+    right:
+      vi: oriented area scale
+      en: oriented area scale
+  - left:
+      vi: rank
+      en: rank
+    right:
+      vi: dimension of image
+      en: dimension of image
+  - left:
+      vi: eigenvector
+      en: eigenvector
+    right:
+      vi: direction preserved
+      en: direction preserved
+  - left:
+      vi: PCA
+      en: PCA
+    right:
+      vi: keeps high-variance directions
+      en: keeps high-variance directions
+- id: c1w4-09-find-error
+  topic: eigenvalues-eigenvectors
+  type: find-error
+  difficulty: 2
+  tags:
+  - misconception
+  prompt:
+    vi: 'Trị riêng và vector riêng: tìm bước sai đầu tiên trong lời giải.'
+    en: Find the first error in the solution about Eigenvalues and eigenvectors.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: The wrong determinant rule would lead to false eigenvalues; eigenvalues come from $\det(A-\lambda I)$.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  steps:
+  - vi: Know $\det(A)=1$ and $\det(B)=1$.
+    en: Know $\det(A)=1$ and $\det(B)=1$.
+  - vi: Suy ra $\det(A+B)=2$.
+    en: Infer $\det(A+B)=2$.
+  - vi: Conclude $A+B$ is non-singular.
+    en: Conclude $A+B$ is non-singular.
+  answer: 1
+- id: c1w4-09-multi
+  topic: eigenvalues-eigenvectors
+  type: multi-step
+  difficulty: 2
+  tags:
+  - worked
+  prompt:
+    vi: 'Trị riêng và vector riêng: giải từng phần theo thứ tự; kết quả trước giúp kiểm tra phần sau.'
+    en: 'Multi-step task for Eigenvalues and eigenvectors: $A=[[2,1],[0,3]]$.'
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: For $[[2,1],[0,3]]$, the eigenvalues are 2 and 3 and their product matches the determinant 6.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Compute determinant.
+      en: Compute determinant.
+    answers:
+    - value: 6
+    tolerance: 0
+    explanation:
+      vi: $2\cdot3-1\cdot0=6$.
+      en: $2\cdot3-1\cdot0=6$.
+  - type: mcq
+    prompt:
+      vi: What are the eigenvalues?
+      en: What are the eigenvalues?
+    options:
+    - vi: $2,3$
+      en: $2,3$
+    - vi: $1,0$
+      en: $1,0$
+    - vi: $6,0$
+      en: $6,0$
+    answer:
+    - 0
+    explanation:
+      vi: 'Triangular matrix: eigenvalues are diagonal entries.'
+      en: 'Triangular matrix: eigenvalues are diagonal entries.'
+- id: c1w4-eig-code-charpoly-01
+  topic: eigenvalues-eigenvectors
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  - characteristic-polynomial
+  prompt:
+    vi: 'Trị riêng và vector riêng: hoàn thành hàm Python/NumPy theo yêu cầu và tránh shortcut bị cấm.'
+    en: Implement `charpoly2(A)` returning `(trace, det)` for $\lambda^2-trace\lambda+det$; do not use eig.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: For 2×2, trace and determinant determine the characteristic polynomial.
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  starter: "def charpoly2(A):\n    return (0,0)\n"
+  solution: "def charpoly2(A):\n    tr=A[0][0]+A[1][1]\n    det=A[0][0]*A[1][1]-A[0][1]*A[1][0]\n    return (tr,det)\n"
+  tests: "def test_triangular():\n    assert charpoly2([[2,1],[0,3]]) == (5,6)\ndef test_quiz():\n    assert charpoly2([[9,4],[4,3]]) == (12,11)\n"
+- id: c1w4-parsons-04
+  topic: eigenvalues-eigenvectors
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: 'Trị riêng và vector riêng: sắp xếp các bước theo đúng quy trình.'
+    en: Order the standard workflow for extracting eigenvalues and eigenvectors.
+  explanation:
+    vi: 'Lời giải dùng công thức cốt lõi của tuần 4: determinant đo diện tích, rank đo số chiều còn lại, và eigenvectors thỏa $Av=\lambda v$. Kiểm tra lại bằng phép tính nhỏ để tránh nhầm dấu hoặc nhầm hàng/cột.'
+    en: 'This is the standard eigenvector workflow: roots first, then a nonzero vector in each null space.'
+  hints:
+  - vi: 'Bắt đầu từ định nghĩa: determinant, rank, span hoặc phương trình eigenvector phù hợp với bài.'
+    en: Start from the relevant definition.
+  steps:
+  - vi: Compute $A-\lambda I$.
+    en: Compute $A-\lambda I$.
+  - vi: Solve $\det(A-\lambda I)=0$.
+    en: Solve $\det(A-\lambda I)=0$.
+  - vi: For each $\lambda$, solve $(A-\lambda I)v=0$.
+    en: For each $\lambda$, solve $(A-\lambda I)v=0$.
+  - vi: Choose a nonzero vector.
+    en: Choose a nonzero vector.

@@ -1,0 +1,159 @@
+exercises:
+- id: c1w1-dep-mcq-01
+  topic: dependence
+  type: mcq
+  difficulty: 1
+  tags:
+  - dependence
+  prompt:
+    vi: Ma trận nào có hàng phụ thuộc?
+    en: Which matrix has dependent rows?
+  explanation:
+    vi: Hàng 2 gấp đôi hàng 1.
+    en: Row 2 doubles row 1.
+  hints: []
+  options:
+  - vi: $[[1,0],[0,1]]$
+    en: $[[1,0],[0,1]]$
+  - vi: $[[1,2],[2,4]]$
+    en: $[[1,2],[2,4]]$
+  - vi: $[[1,1],[1,2]]$
+    en: $[[1,1],[1,2]]$
+  answer:
+  - 1
+- id: c1w1-dep-tf-02
+  topic: dependence
+  type: true-false
+  difficulty: 2
+  tags:
+  - misconception
+  prompt:
+    vi: Trong 3×3, phụ thuộc chỉ khi một hàng là bội của hàng khác.
+    en: In 3×3, dependence only occurs when one row is a multiple of another.
+  explanation:
+    vi: 'Sai: có thể là tổng/tổ hợp của nhiều hàng.'
+    en: 'False: it can be a sum/combination of several rows.'
+  hints: []
+  answer: false
+  reasons:
+  - vi: Tổ hợp tuyến tính có thể dùng nhiều hàng.
+    en: A linear combination can use many rows.
+  - vi: Chỉ bội số mới được phép.
+    en: Only multiples are allowed.
+  reasonAnswer: 0
+- id: c1w1-dep-error-03
+  topic: dependence
+  type: find-error
+  difficulty: 2
+  tags:
+  - combination
+  prompt:
+    vi: Tìm bước sai với $r_1=(1,0,0)$, $r_2=(0,1,0)$, $r_3=(1,1,0)$.
+    en: Find the wrong step with $r_1=(1,0,0)$, $r_2=(0,1,0)$, $r_3=(1,1,0)$.
+  explanation:
+    vi: $r_3=r_1+r_2$ nên phụ thuộc.
+    en: $r_3=r_1+r_2$, so dependent.
+  hints: []
+  steps:
+  - vi: $r_1+r_2=(1,1,0)$.
+    en: $r_1+r_2=(1,1,0)$.
+  - vi: Kết quả bằng $r_3$.
+    en: This equals $r_3$.
+  - vi: Vậy các hàng độc lập.
+    en: Thus rows are independent.
+  answer: 2
+- id: c1w1-dep-matrix-04
+  topic: dependence
+  type: matrix
+  difficulty: 2
+  tags:
+  - combination
+  prompt:
+    vi: Tính $(r_1+r_3)/2$ với $r_1=(1,1,1)$, $r_3=(1,1,3)$.
+    en: Compute $(r_1+r_3)/2$ with $r_1=(1,1,1)$, $r_3=(1,1,3)$.
+  explanation:
+    vi: 'Trung bình từng thành phần: $(1,1,2)$.'
+    en: 'Average component-wise: $(1,1,2)$.'
+  hints: []
+  answer:
+  - - 1
+    - 1
+    - 2
+- id: c1w1-dep-construct-05
+  topic: dependence
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 3×3 nguyên, không đường chéo, rank 2.
+    en: Construct an integer non-diagonal 3×3 matrix with rank 2.
+  explanation:
+    vi: Cho hàng 3 = hàng 1 + hàng 2.
+    en: Let row 3 = row 1 + row 2.
+  hints: []
+  rows: 3
+  cols: 3
+  constraints:
+  - kind: rank
+    value: 2
+  - kind: integerEntries
+  - kind: notDiagonal
+  example:
+  - - 1
+    - 0
+    - 1
+  - - 0
+    - 1
+    - 1
+  - - 1
+    - 1
+    - 2
+- id: c1w1-dep-match-06
+  topic: dependence
+  type: matching
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Ghép quan hệ hàng với kết luận.
+    en: Match row relation to conclusion.
+  explanation:
+    vi: Quan hệ tuyến tính không tầm thường tạo phụ thuộc.
+    en: A nontrivial linear relation creates dependence.
+  hints: []
+  pairs:
+  - left:
+      vi: $r_2=2r_1$
+      en: $r_2=2r_1$
+    right:
+      vi: Phụ thuộc
+      en: Dependent
+  - left:
+      vi: Không quan hệ không tầm thường
+      en: No nontrivial relation
+    right:
+      vi: Độc lập
+      en: Independent
+  - left:
+      vi: Hàng phụ thuộc trong ma trận vuông
+      en: Dependent rows in square matrix
+    right:
+      vi: Singular
+      en: Singular
+- id: c1w1-dep-param-07
+  topic: dependence
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: 'Bài luyện: RREF để thấy pivot.'
+    en: 'Drill: RREF to see pivots.'
+  explanation:
+    vi: RREF làm lộ số pivot.
+    en: RREF reveals pivots.
+  hints: []
+  generator: rref
+  params:
+    size: 3

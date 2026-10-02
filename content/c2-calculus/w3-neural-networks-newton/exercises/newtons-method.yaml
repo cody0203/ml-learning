@@ -1,0 +1,126 @@
+exercises:
+- id: c2w3-newtons-method-matching-03
+  topic: newtons-method
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép ký hiệu trong công thức Newton 1D.
+    en: Match notation in the 1D Newton formula.
+  explanation:
+    vi: Ở đây gradient và learning rate không phải phần chính; $f'$ mới là slope của tiếp tuyến.
+    en: Here gradient and learning rate are not the main pieces; $f'$ is the tangent slope.
+  hints: []
+  pairs:
+  - left:
+      vi: $\alpha$
+      en: $\alpha$
+    right:
+      vi: learning rate
+      en: learning rate
+  - left:
+      vi: $\nabla L$
+      en: $\nabla L$
+    right:
+      vi: gradient của loss
+      en: loss gradient
+  - left:
+      vi: $b$
+      en: $b$
+    right:
+      vi: bias
+      en: bias
+- id: c2w3-newtons-method-find-error-04
+  topic: newtons-method
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi nếu một lời giải Newton cộng bước tiếp tuyến.
+    en: Find the error when a Newton solution adds the tangent step.
+  explanation:
+    vi: Newton root-finding phải trừ $f/f'$; cộng sẽ đi sang phía đối diện của giao điểm tiếp tuyến.
+    en: Newton root-finding subtracts $f/f'$; adding moves to the opposite side of the tangent intercept.
+  hints: []
+  steps:
+  - vi: Tính gradient hiện tại $g$.
+    en: Compute the current gradient $g$.
+  - vi: Cập nhật $\theta\leftarrow\theta+\alpha g$.
+    en: Update $\theta\leftarrow\theta+\alpha g$.
+  - vi: Lặp đến khi loss nhỏ.
+    en: Repeat until the loss is small.
+  answer: 1
+- id: c2w3-newtons-method-numeric-05
+  topic: newtons-method
+  type: numeric
+  difficulty: 1
+  tags:
+  - newton
+  prompt:
+    vi: Với $f(x)=x^2-9$, $x_0=2$, tính $x_1$ Newton.
+    en: For $f(x)=x^2-9$, $x_0=2$, compute Newton $x_1$.
+  explanation:
+    vi: $f(2)=-5$, $f'(2)=4$, $x_1=2-(-5/4)=3.25$.
+    en: $f(2)=-5$, $f'(2)=4$, $x_1=2-(-5/4)=3.25$.
+  hints: []
+  answers:
+  - value: 3.25
+  tolerance: 1.0e-06
+  figure:
+    xRange:
+    - 0
+    - 4
+    yRange:
+    - -10
+    - 8
+    functions:
+    - f: x^2 - 9
+      label: f(x)
+    points:
+    - at:
+      - 2
+      - -5
+      label: x0
+    - at:
+      - 3.25
+      - 0
+      label: x1
+- id: c2w3-newtons-method-parsons-06
+  topic: newtons-method
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp bước Newton tìm nghiệm.
+    en: Order Newton root-finding steps.
+  explanation:
+    vi: Mỗi bước dùng tiếp tuyến hiện tại.
+    en: Each step uses the current tangent.
+  hints: []
+  steps:
+  - vi: Chọn $x_k$ trong miền hợp lệ.
+    en: Choose $x_k$ in the valid domain.
+  - vi: Tính $f(x_k)$ và $f'(x_k)$.
+    en: Compute $f(x_k)$ and $f'(x_k)$.
+  - vi: Đặt $x_{k+1}=x_k-f(x_k)/f'(x_k)$.
+    en: Set $x_{k+1}=x_k-f(x_k)/f'(x_k)$.
+  - vi: Dừng khi $|f(x_k)|$ đủ nhỏ.
+    en: Stop when $|f(x_k)|$ is small enough.
+- id: c2w3-newtons-method-parametric-07
+  topic: newtons-method
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  prompt:
+    vi: Một bước Newton sinh ngẫu nhiên.
+    en: Generated one-step Newton.
+  explanation:
+    vi: Generator thay bằng bài cụ thể.
+    en: The generator supplies a concrete problem.
+  hints: []
+  generator: newton-step
+  params: {}

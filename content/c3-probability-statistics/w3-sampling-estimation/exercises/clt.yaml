@@ -1,0 +1,235 @@
+'exercises':
+- 'id': 'c3w3-clt-mcq-01'
+  'topic': 'clt'
+  'type': 'mcq'
+  'difficulty': 1
+  'tags':
+  - 'concept'
+  'prompt':
+    'vi': 'Phát biểu nào đúng về CLT?'
+    'en': 'Which statement about CLT is correct?'
+  'explanation':
+    'vi': 'CLT nói về mean/sum sau chuẩn hóa, không phải raw observations.'
+    'en': 'CLT concerns standardized means/sums, not raw observations.'
+  'hints': []
+  'options':
+  - 'vi': 'Sampling distribution của mean xấp xỉ normal khi $n$ lớn'
+    'en': 'The sampling distribution of the mean is approximately normal for large $n$'
+  - 'vi': 'Mọi raw data trở thành normal'
+    'en': 'All raw data become normal'
+  - 'vi': 'Variance của mean tăng theo $n$'
+    'en': 'Variance of the mean increases with $n$'
+  'answer':
+  - 0
+- 'id': 'c3w3-clt-numeric-01'
+  'topic': 'clt'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'standard-error'
+  'prompt':
+    'vi': 'Nếu $X$ có $\sigma^2=18.75$ và $n=25$, variance của $\bar X$ là bao nhiêu?'
+    'en': 'If $X$ has $\sigma^2=18.75$ and $n=25$, what is variance of $\bar X$?'
+  'explanation':
+    'vi': '$\sigma^2/n=18.75/25=0.75$.'
+    'en': '$\sigma^2/n=18.75/25=0.75$.'
+  'hints': []
+  'answers':
+  - 'value': 0.75
+  'tolerance': 1.0e-09
+- 'id': 'c3w3-clt-code-01'
+  'topic': 'clt'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'simulation'
+  'prompt':
+    'vi': 'Cài `uniform_mean_stats(seed,reps,n)` trả mean và std của các sample means Uniform(0,15).'
+    'en': 'Implement `uniform_mean_stats(seed,reps,n)` returning mean and std of Uniform(0,15) sample means.'
+  'explanation':
+    'vi': 'Kỳ vọng khoảng 7.5; std khoảng $\sqrt{18.75/n}$.'
+    'en': 'Expected around 7.5; std around $\sqrt{18.75/n}$.'
+  'hints': []
+  'starter': "import numpy as np\ndef uniform_mean_stats(seed=0,reps=4000,n=25):\n    return (0.0,0.0)\n"
+  'solution': "import numpy as np\ndef uniform_mean_stats(seed=0,reps=4000,n=25):\n    rng=np.random.default_rng(seed)\n    means=rng.uniform(0,15,size=(reps,n)).mean(axis=1)\n    return (float(means.mean()), float(means.std()))\n"
+  'tests': "import math\ndef test_clt_uniform():\n    m,s=uniform_mean_stats(5,5000,25)\n    assert abs(m-7.5)<0.15\n    assert abs(s-math.sqrt(18.75/25))<0.08\n"
+- 'id': 'c3w3-clt-figure-01'
+  'topic': 'clt'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  - 'sampling-distribution'
+  'prompt':
+    'vi': 'Hình nào biểu diễn sampling distributions hẹp dần khi $n$ tăng?'
+    'en': 'Which plot shows sampling distributions narrowing as $n$ grows?'
+  'explanation':
+    'vi': 'Variance của $\bar X$ là $\sigma^2/n$, nên curves hẹp hơn.'
+    'en': 'Variance of $\bar X$ is $\sigma^2/n$, so curves get narrower.'
+  'hints': []
+  'figure':
+    'xRange':
+    - 3
+    - 12
+    'yRange':
+    - 0
+    - 0.9
+    'functions':
+    - 'f': '0.18*exp(-0.5*((x-7.5)/2.2)^2)'
+      'label': 'n=1'
+      'color': '#94a3b8'
+    - 'f': '0.45*exp(-0.5*((x-7.5)/0.9)^2)'
+      'label': 'n=25'
+      'color': '#2563eb'
+    'xLabel': 'sample mean'
+    'yLabel': 'density'
+  'options':
+  - 'vi': 'Curve $n=25$ hẹp hơn quanh 7.5'
+    'en': 'Curve $n=25$ is narrower around 7.5'
+  - 'vi': 'Curve $n=25$ rộng hơn vì có nhiều dữ liệu'
+    'en': 'Curve $n=25$ is wider because there is more data'
+  'answer':
+  - 0
+- 'id': 'c3w3-clt-finderror-01'
+  'topic': 'clt'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'misconception'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên trong diễn giải CLT.'
+    'en': 'Find the first error in the CLT interpretation.'
+  'explanation':
+    'vi': 'CLT không nói raw wait times trở thành normal.'
+    'en': 'CLT does not say raw wait times become normal.'
+  'hints': []
+  'steps':
+  - 'vi': '$X_i\sim U(0,15)$ không normal.'
+    'en': '$X_i\sim U(0,15)$ is not normal.'
+  - 'vi': 'Với $n$ lớn, $\bar X_n$ xấp xỉ normal.'
+    'en': 'For large $n$, $\bar X_n$ is approximately normal.'
+  - 'vi': 'Vì vậy các giá trị $X_i$ riêng lẻ cũng trở thành normal.'
+    'en': 'Therefore the individual $X_i$ values also become normal.'
+  'answer': 2
+- 'id': 'c3w3-clt-matching-01'
+  'topic': 'clt'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'formula'
+  'prompt':
+    'vi': 'Ghép công thức CLT.'
+    'en': 'Match CLT formulas.'
+  'explanation':
+    'vi': 'Mean giữ nguyên, variance giảm theo $n$.'
+    'en': 'Mean stays, variance shrinks by $n$.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$\mathbb E[\bar X_n]$'
+      'en': '$\mathbb E[\bar X_n]$'
+    'right':
+      'vi': '$\mu$'
+      'en': '$\mu$'
+  - 'left':
+      'vi': '$\mathrm{Var}(\bar X_n)$'
+      'en': '$\mathrm{Var}(\bar X_n)$'
+    'right':
+      'vi': '$\sigma^2/n$'
+      'en': '$\sigma^2/n$'
+  - 'left':
+      'vi': 'Binomial mean'
+      'en': 'Binomial mean'
+    'right':
+      'vi': '$np$'
+      'en': '$np$'
+  - 'left':
+      'vi': 'Binomial variance'
+      'en': 'Binomial variance'
+    'right':
+      'vi': '$np(1-p)$'
+      'en': '$np(1-p)$'
+- 'id': 'c3w3-clt-tf-01'
+  'topic': 'clt'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'standardization'
+  'prompt':
+    'vi': 'Standard error của sample mean là $\sigma/\sqrt n$.'
+    'en': 'The standard error of the sample mean is $\sigma/\sqrt n$.'
+  'explanation':
+    'vi': 'Đúng vì variance là $\sigma^2/n$.'
+    'en': 'True because variance is $\sigma^2/n$.'
+  'hints': []
+  'answer': true
+- 'id': 'c3w3-clt-multi-01'
+  'topic': 'clt'
+  'type': 'multi-step'
+  'difficulty': 2
+  'tags':
+  - 'binomial'
+  'prompt':
+    'vi': 'Số heads $X$ trong 10 lần tung coin fair.'
+    'en': 'Number of heads $X$ in 10 fair coin flips.'
+  'explanation':
+    'vi': 'Dùng Binomial$(10,0.5)$.'
+    'en': 'Use Binomial$(10,0.5)$.'
+  'hints': []
+  'parts':
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\mathbb E[X]$?'
+      'en': '$\mathbb E[X]$?'
+    'answers':
+    - 'value': 5
+    'tolerance': 0
+    'explanation':
+      'vi': '$np=5$.'
+      'en': '$np=5$.'
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\mathrm{Var}(X)$?'
+      'en': '$\mathrm{Var}(X)$?'
+    'answers':
+    - 'value': 2.5
+    'tolerance': 0
+    'explanation':
+      'vi': '$np(1-p)=2.5$.'
+      'en': '$np(1-p)=2.5$.'
+- 'id': 'c3w3-clt-parsons-01'
+  'topic': 'clt'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'procedure'
+  'prompt':
+    'vi': 'Sắp xếp cách dùng CLT cho sample mean.'
+    'en': 'Order how to use CLT for a sample mean.'
+  'explanation':
+    'vi': 'Cần mean, variance, standard error rồi chuẩn hóa.'
+    'en': 'Need mean, variance, standard error, then standardize.'
+  'hints': []
+  'steps':
+  - 'vi': 'Xác định $\mu$ và $\sigma^2$ của một quan sát.'
+    'en': 'Identify $\mu$ and $\sigma^2$ of one observation.'
+  - 'vi': 'Tính $\mathrm{Var}(\bar X)=\sigma^2/n$.'
+    'en': 'Compute $\mathrm{Var}(\bar X)=\sigma^2/n$.'
+  - 'vi': 'Chuẩn hóa bằng $(\bar X-\mu)/(\sigma/\sqrt n)$.'
+    'en': 'Standardize with $(\bar X-\mu)/(\sigma/\sqrt n)$.'
+- 'id': 'c3w3-clt-param-01'
+  'topic': 'clt'
+  'type': 'parametric'
+  'difficulty': 1
+  'tags':
+  - 'generator'
+  'prompt':
+    'vi': 'Tính z-score sinh ngẫu nhiên.'
+    'en': 'Compute a generated z-score.'
+  'explanation':
+    'vi': 'Z-score là chuẩn hóa một giá trị.'
+    'en': 'A z-score standardizes a value.'
+  'hints': []
+  'generator': 'z-score'
+  'params': {}

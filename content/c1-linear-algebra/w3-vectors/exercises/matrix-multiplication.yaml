@@ -1,0 +1,156 @@
+exercises:
+- id: c1w3-matmul-matrix-01
+  topic: matrix-multiplication
+  type: matrix
+  difficulty: 1
+  tags:
+  - matmul
+  prompt:
+    vi: 'Tính $\begin{bmatrix}2&-1\\0&2\end{bmatrix}\begin{bmatrix}3&1\\1&2\end{bmatrix}$.'
+    en: 'Compute $\begin{bmatrix}2&-1\\0&2\end{bmatrix}\begin{bmatrix}3&1\\1&2\end{bmatrix}$.'
+  explanation:
+    vi: Hàng dot cột cho $[[5,0],[2,4]]$.
+    en: Row dot column gives $[[5,0],[2,4]]$.
+  hints: []
+  answer:
+  - - 5
+    - 0
+  - - 2
+    - 4
+  tolerance: 0
+- id: c1w3-matmul-mcq-01
+  topic: matrix-multiplication
+  type: mcq
+  difficulty: 1
+  tags:
+  - shape
+  prompt:
+    vi: '$A$ là $2\times3$, $B$ là $3\times4$. Shape của $AB$?'
+    en: '$A$ is $2\times3$, $B$ is $3\times4$. Shape of $AB$?'
+  explanation:
+    vi: 'Kích thước ngoài là $2\times4$.'
+    en: 'Outer dimensions are $2\times4$.'
+  hints: []
+  options:
+  - vi: '$2\times4$'
+    en: '$2\times4$'
+  - vi: '$3\times3$'
+    en: '$3\times3$'
+  - vi: Không xác định
+    en: Undefined
+  answer:
+  - 0
+- id: c1w3-matmul-find-error-01
+  topic: matrix-multiplication
+  type: find-error
+  difficulty: 2
+  tags:
+  - debugging
+  prompt:
+    vi: Tìm lỗi đầu tiên khi tính entry $(1,2)$ của $AB$.
+    en: Find first error computing entry $(1,2)$ of $AB$.
+  explanation:
+    vi: Entry $(1,2)$ dùng hàng 1, cột 2.
+    en: Entry $(1,2)$ uses row 1, column 2.
+  hints: []
+  steps:
+  - vi: Lấy hàng 2 của $A$ và cột 2 của $B$.
+    en: Take row 2 of $A$ and column 2 of $B$.
+  - vi: Tính được 4.
+    en: Compute 4.
+  - vi: Gán vào entry $(1,2)$.
+    en: Assign to entry $(1,2)$.
+  answer: 0
+- id: c1w3-matmul-parsons-01
+  topic: matrix-multiplication
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình nhân ma trận.
+    en: Order matrix multiplication procedure.
+  explanation:
+    vi: Kiểm tra shape rồi tính từng ô.
+    en: Check shape, then compute entries.
+  hints: []
+  steps:
+  - vi: Kiểm tra số cột $A$ bằng số hàng $B$.
+    en: Check columns of $A$ equal rows of $B$.
+  - vi: Chọn ô $(i,j)$.
+    en: Choose entry $(i,j)$.
+  - vi: Dot hàng $i$ của $A$ với cột $j$ của $B$.
+    en: Dot row $i$ of $A$ with column $j$ of $B$.
+  - vi: Lặp lại cho mọi ô.
+    en: Repeat for all entries.
+- id: c1w3-matmul-code-01
+  topic: matrix-multiplication
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài `matmul_loops(A,B)` bằng vòng lặp; không dùng `np.dot`, `np.matmul`, `@`.
+    en: Implement `matmul_loops(A,B)` with loops; no `np.dot`, `np.matmul`, `@`.
+  explanation:
+    vi: Dùng ba vòng lặp i,j,k.
+    en: Use three loops i,j,k.
+  hints: []
+  starter: "import numpy as np\ndef matmul_loops(A,B):\n    A=np.asarray(A); B=np.asarray(B)\n    return np.zeros((A.shape[0],B.shape[1]))\n"
+  solution: "import numpy as np\ndef matmul_loops(A,B):\n    A=np.asarray(A); B=np.asarray(B)\n    m,k=A.shape; k2,n=B.shape\n    if k!=k2: raise ValueError(\"shape\")\n    C=np.zeros((m,n),dtype=np.result_type(A,B))\n    for i in range(m):\n        for j in range(n):\n            s=0\n            for t in range(k): s += A[i,t]*B[t,j]\n            C[i,j]=s\n    return C\n"
+  tests: "import numpy as np\ndef test_2x2():\n    A=np.array([[2,-1],[0,2]]); B=np.array([[3,1],[1,2]])\n    assert np.array_equal(matmul_loops(A,B), np.array([[5,0],[2,4]]))\ndef test_rect():\n    A=np.array([[1,2,3],[4,5,6]]); B=np.array([[1,0],[0,1],[1,1]])\n    assert np.array_equal(matmul_loops(A,B), np.array([[4,5],[10,11]]))\n"
+- id: c1w3-matmul-parametric-01
+  topic: matrix-multiplication
+  type: parametric
+  difficulty: 2
+  tags:
+  - generator
+  prompt:
+    vi: Tính tích ma trận sinh ngẫu nhiên.
+    en: Compute generated matrix product.
+  explanation:
+    vi: Generator tạo hai ma trận compatible.
+    en: Generator creates compatible matrices.
+  hints: []
+  generator: matrix-multiply
+  params: {}
+- id: c1w3-matmul-multi-01
+  topic: matrix-multiplication
+  type: multi-step
+  difficulty: 3
+  tags:
+  - composition
+  prompt:
+    vi: 'Cho $A=\begin{bmatrix}2&0\\0&3\end{bmatrix}$, $B=\begin{bmatrix}1&1\\0&1\end{bmatrix}$.'
+    en: 'Given $A=\begin{bmatrix}2&0\\0&3\end{bmatrix}$, $B=\begin{bmatrix}1&1\\0&1\end{bmatrix}$.'
+  explanation:
+    vi: Thứ tự nhân quan trọng.
+    en: Multiplication order matters.
+  hints: []
+  parts:
+  - type: matrix
+    prompt:
+      vi: $AB$?
+      en: $AB$?
+    answer:
+    - - 2
+      - 2
+    - - 0
+      - 3
+    tolerance: 0
+    explanation:
+      vi: Áp dụng $B$ trước rồi $A$.
+      en: Apply $B$ then $A$.
+  - type: matrix
+    prompt:
+      vi: $BA$?
+      en: $BA$?
+    answer:
+    - - 2
+      - 3
+    - - 0
+      - 3
+    tolerance: 0
+    explanation:
+      vi: '$BA \neq AB$.'
+      en: '$BA \neq AB$.'

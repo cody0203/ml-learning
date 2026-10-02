@@ -1,0 +1,242 @@
+exercises:
+- id: c3w4-interpreting-confidence-mcq-03
+  topic: interpreting-confidence
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Câu nào diễn giải đúng một CI 95% đã quan sát?
+    en: Which sentence correctly interprets an observed 95% CI?
+  explanation:
+    vi: Confidence 95% mô tả long-run coverage của phương pháp; một khoảng cụ thể không biến $\mu$ thành ngẫu nhiên.
+    en: 95% confidence describes the method's long-run coverage; one fixed interval does not make $\mu$ random.
+  hints: []
+  options:
+  - vi: Quy trình tạo khoảng sẽ cover $\mu$ khoảng 95% trong lặp lại.
+    en: The interval procedure covers $\mu$ about 95% of the time in repeated sampling.
+  - vi: Xác suất $\mu$ nằm trong khoảng này là đúng 95%.
+    en: The probability that $\mu$ lies in this specific interval is exactly 95%.
+  - vi: 95% cá thể trong population nằm trong khoảng.
+    en: 95% of population individuals lie in the interval.
+  answer:
+  - 0
+- id: c3w4-interpreting-confidence-tf-03
+  topic: interpreting-confidence
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: CI 95% cho mean cũng là khoảng chứa 95% quan sát cá nhân.
+    en: A 95% CI for a mean is also an interval containing 95% of individual observations.
+  explanation:
+    vi: Sai. CI cho mean nhắm tới parameter $\mu$; khoảng cho cá nhân là prediction interval và thường rộng hơn.
+    en: False. A CI for a mean targets the parameter $\mu$; an interval for individuals is a prediction interval and is usually wider.
+  hints: []
+  answer: false
+  reasons:
+  - vi: Khoảng tin cậy cho mean mô tả độ bất định của parameter trung bình.
+    en: A confidence interval for a mean describes uncertainty about the average parameter.
+  - vi: Mọi khoảng 95% cho mean cũng chứa đúng 95% dữ liệu thô.
+    en: Every 95% interval for a mean also contains exactly 95% of the raw data.
+  reasonAnswer: 0
+- id: c3w4-interpreting-confidence-match-03
+  topic: interpreting-confidence
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép cách nói CI với đánh giá đúng/sai.
+    en: Match each CI statement with its status.
+  explanation:
+    vi: Các phát biểu đúng nhấn mạnh quy trình lặp lại; các phát biểu sai gán xác suất cho parameter cố định.
+    en: Correct statements emphasize repeated procedures; incorrect ones assign probability to a fixed parameter.
+  hints: []
+  pairs:
+  - left:
+      vi: long-run coverage
+      en: long-run coverage
+    right:
+      vi: diễn giải đúng
+      en: correct interpretation
+  - left:
+      vi: $P(\mu\in[L,U])=0.95$ sau khi thấy dữ liệu
+      en: $P(\mu\in[L,U])=0.95$ after seeing data
+    right:
+      vi: diễn giải sai
+      en: incorrect interpretation
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-interpreting-confidence-parsons-03
+  topic: interpreting-confidence
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình mô phỏng coverage 95%.
+    en: Order the steps for simulating 95% coverage.
+  explanation:
+    vi: Coverage được kiểm tra bằng cách lặp lại lấy mẫu, xây CI, rồi đếm tỷ lệ chứa true mean.
+    en: Coverage is checked by repeatedly sampling, building CIs, and counting the fraction containing the true mean.
+  hints:
+  - vi: True mean được biết trong simulation.
+    en: The true mean is known in the simulation.
+  steps:
+  - vi: Cố định true $\mu$, $\sigma$, $n$ và seed.
+    en: Fix the true $\mu$, $\sigma$, $n$, and seed.
+  - vi: Lấy một mẫu ngẫu nhiên và tính $\bar x$.
+    en: Draw one random sample and compute $\bar x$.
+  - vi: Tạo CI 95% quanh $\bar x$.
+    en: Build a 95% CI around $\bar x$.
+  - vi: Lặp lại và tính tỷ lệ khoảng chứa $\mu$.
+    en: Repeat and compute the fraction of intervals containing $\mu$.
+- id: c3w4-interpreting-confidence-find-error-01
+  topic: interpreting-confidence
+  type: find-error
+  difficulty: 2
+  tags:
+  - interpretation
+  prompt:
+    vi: Tìm câu diễn giải sai đầu tiên.
+    en: Find the first incorrect interpretation.
+  explanation:
+    vi: 'Sai ở bước 2: một khoảng đã tính không gán xác suất 95% cho $\mu$ trong frequentist interpretation.'
+    en: 'Step 2 is wrong: a fixed interval does not assign 95% probability to $\mu$ in a frequentist interpretation.'
+  hints: []
+  steps:
+  - vi: Ta tính được CI 95% là $(163,177)$ cm.
+    en: We computed a 95% CI of $(163,177)$ cm.
+  - vi: Vậy xác suất $\mu$ nằm trong $(163,177)$ là 95%.
+    en: Therefore the probability that $\mu$ lies in $(163,177)$ is 95%.
+  - vi: Nếu lặp lại quy trình nhiều lần, khoảng 95% các khoảng sẽ chứa $\mu$.
+    en: If the procedure is repeated many times, about 95% of intervals contain $\mu$.
+  - vi: Khoảng cụ thể này hoặc chứa $\mu$, hoặc không.
+    en: This specific interval either contains $\mu$ or it does not.
+  answer: 1
+- id: c3w4-interpreting-confidence-numeric-01
+  topic: interpreting-confidence
+  type: numeric
+  difficulty: 1
+  tags:
+  - coverage
+  prompt:
+    vi: Nếu tạo 80 CI 95% độc lập, số khoảng kỳ vọng chứa $\mu$ là bao nhiêu?
+    en: If 80 independent 95% CIs are created, how many are expected to contain $\mu$?
+  explanation:
+    vi: $0.95\cdot80=76$. Đây là kỳ vọng, không phải bảo đảm.
+    en: $0.95\cdot80=76$. This is an expectation, not a guarantee.
+  hints: []
+  answers:
+  - value: 76
+  tolerance: 0
+- id: c3w4-interpreting-confidence-code-01
+  topic: interpreting-confidence
+  type: code
+  difficulty: 3
+  tags:
+  - simulation
+  - coverage
+  prompt:
+    vi: Viết hàm mô phỏng coverage của CI 95% known $\sigma$ với seed cố định.
+    en: Write a function simulating 95% known-$\sigma$ CI coverage with a fixed seed.
+  explanation:
+    vi: Mỗi lần lấy mẫu, tạo CI quanh sample mean rồi kiểm tra có chứa true mean không. Với seed và nhiều repetitions, coverage
+      gần 0.95.
+    en: Each repetition samples data, builds a CI around the sample mean, and checks whether it contains the true mean. With
+      a fixed seed and many repetitions, coverage is near 0.95.
+  hints: []
+  starter: "import numpy as np\n\ndef coverage(seed=0, reps=2000, n=30, mu=5.0, sigma=2.0):\n    rng = np.random.default_rng(seed)\n\
+    \    # return simulated coverage of 95% z interval\n    return 0.0\n"
+  solution: "import numpy as np\n\ndef coverage(seed=0, reps=2000, n=30, mu=5.0, sigma=2.0):\n    rng = np.random.default_rng(seed)\n\
+    \    hits = 0\n    z = 1.96\n    for _ in range(reps):\n        sample = rng.normal(mu, sigma, size=n)\n        xbar =\
+    \ float(np.mean(sample))\n        me = z * sigma / np.sqrt(n)\n        if xbar - me <= mu <= xbar + me:\n            hits\
+    \ += 1\n    return hits / reps\n"
+  tests: "def test_coverage_near_95():\n    c = coverage(seed=123, reps=3000, n=40, mu=2.0, sigma=3.0)\n    assert 0.93 <=\
+    \ c <= 0.97, f'coverage should be near 0.95, got {c}'\n\ndef test_not_constant():\n    assert coverage(seed=1, reps=200,\
+    \ n=20) != 0.0, 'starter must not return constant zero'\n"
+- id: c3w4-interpreting-confidence-construct-01
+  topic: interpreting-confidence
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  - data
+  prompt:
+    vi: Tạo dataset 5 giá trị không âm có mean 10 và median 8.
+    en: Construct a 5-value nonnegative dataset with mean 10 and median 8.
+  explanation:
+    vi: Ví dụ $[4,6,8,12,20]$ có tổng 50, median 8 và không âm.
+    en: Example $[4,6,8,12,20]$ has sum 50, median 8, and nonnegative entries.
+  hints: []
+  rows: 1
+  cols: 5
+  constraints:
+  - kind: mean
+    value: 10
+  - kind: median
+    value: 8
+  - kind: nonnegative
+  example:
+  - - 4
+    - 6
+    - 8
+    - 12
+    - 20
+- id: c3w4-interpreting-confidence-multi-01
+  topic: interpreting-confidence
+  type: multi-step
+  difficulty: 2
+  tags:
+  - interpretation
+  prompt:
+    vi: 'Một báo cáo viết: ''CI 95% cho accuracy là 0.81 đến 0.87''.'
+    en: 'A report says: ''A 95% CI for accuracy is 0.81 to 0.87''.'
+  explanation:
+    vi: Diễn giải đúng phải nói về parameter dài hạn và quy trình tạo khoảng.
+    en: Correct interpretation refers to the parameter and long-run procedure.
+  hints: []
+  parts:
+  - type: mcq
+    prompt:
+      vi: Câu nào đúng nhất?
+      en: Which sentence is best?
+    options:
+    - vi: Quy trình tạo khoảng như vậy cover true accuracy khoảng 95% trong lặp lại.
+      en: This interval-making procedure covers true accuracy about 95% in repeated use.
+    - vi: 95% từng dự đoán có accuracy trong khoảng này.
+      en: 95% of individual predictions have accuracy in this interval.
+    - vi: Xác suất model đúng là 95%.
+      en: The probability the model is correct is 95%.
+    answer:
+    - 0
+  - type: true-false
+    prompt:
+      vi: Khoảng này tự động chứng minh model tốt hơn baseline 0.80.
+      en: This interval automatically proves the model beats a 0.80 baseline.
+    answer: false
+    explanation:
+      vi: Nó gợi ý cao hơn 0.80, nhưng claim kiểm định phụ thuộc giả thuyết và quy trình cụ thể.
+      en: It suggests above 0.80, but a formal claim depends on hypotheses and the testing procedure.
+- id: c3w4-interpreting-confidence-param-01
+  topic: interpreting-confidence
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - ci
+  prompt:
+    vi: Generator luyện tính CI.
+    en: Generator CI calculation practice.
+  explanation:
+    vi: Generator cung cấp prompt cụ thể khi chạy.
+    en: The generator supplies a concrete prompt when run.
+  hints: []
+  generator: confidence-interval
+  params: {}

@@ -1,0 +1,196 @@
+exercises:
+- id: c1w2-row-operations-singularity-mcq-01
+  topic: row-operations-singularity
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: Matrix $A=\begin{bmatrix}5&1\\4&3\end{bmatrix}$ has determinant 11. If row 2 is replaced by row 2 minus row 1, what happens to singularity?
+    vi: Ma trận $A=\begin{bmatrix}5&1\\4&3\end{bmatrix}$ có định thức (determinant) 11. Nếu thay hàng 2 bằng hàng 2 trừ hàng 1, tính suy biến thay đổi thế nào?
+  explanation:
+    en: Adding or subtracting a multiple of one row to another preserves the determinant, so determinant 11 stays non-zero. Subtracting a row is not automatically singular; sign changes are specific to row swaps; and negative entries do not imply determinant zero.
+    vi: Cộng hoặc trừ bội của một hàng vào hàng khác bảo toàn determinant, nên determinant 11 vẫn khác 0. Trừ hàng không tự động làm singular; đổi dấu là hiệu ứng của đổi hai hàng; và phần tử âm không làm determinant bằng 0.
+  hints: []
+  options:
+  - en: It stays non-singular; row replacement leaves the determinant 11.
+    vi: Ma trận vẫn non-singular; row replacement giữ determinant bằng 11.
+  - en: It becomes singular because one row was subtracted.
+    vi: Ma trận trở thành singular vì đã trừ một hàng.
+  - en: The determinant must change sign after any row operation.
+    vi: Determinant phải đổi dấu sau mọi phép dòng.
+  - en: The determinant becomes zero because the new row contains a negative entry.
+    vi: Determinant thành 0 vì hàng mới có phần tử âm.
+  answer:
+  - 0
+- id: c1w2-row-operations-singularity-truefalse-02
+  topic: row-operations-singularity
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Cộng bội của một hàng vào hàng khác bảo toàn việc ma trận vuông có singular hay không.
+    en: Adding a multiple of one row to another preserves whether a square matrix is singular.
+  explanation:
+    vi: Row replacement đảo được bằng cách trừ lại bội đó, và determinant không đổi, nên giá trị 0 vẫn là 0.
+    en: Row replacement is reversible by subtracting the same multiple, and it leaves the determinant unchanged, so zero stays zero.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Phép này đảo được và bảo toàn determinant.
+    en: The operation is reversible and determinant-preserving.
+  - vi: Trừ một hàng luôn làm mất một pivot nên determinant phải thành 0.
+    en: Subtracting a row always removes a pivot, so the determinant must become 0.
+  - vi: Row replacement đổi dấu determinant giống như đổi chỗ hai hàng.
+    en: Row replacement flips the determinant sign just like swapping two rows.
+  reasonAnswer: 0
+- id: c1w2-row-operations-singularity-matching-03
+  topic: row-operations-singularity
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến phép dòng và tính suy biến.
+    en: Match concepts related to row operations and singularity.
+  explanation:
+    vi: Các cặp nhận diện phép nào đổi dấu, nhân hệ số, hoặc giữ determinant trong khi bảo toàn trạng thái singularity.
+    en: The matches identify which operations flip, scale, or preserve determinant while keeping singularity status intact.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-row-operations-singularity-construct-05
+  topic: row-operations-singularity
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 2×2 non-singular, nguyên, không chéo.
+    en: Construct a non-singular integer 2×2 matrix that is not diagonal.
+  explanation:
+    vi: Mẫu singular vì hàng 2 gấp đôi hàng 1; phép dòng có thể làm lộ hàng 0 nhưng không biến nó thành full rank.
+    en: The sample is singular because row 2 is twice row 1; row operations may expose a zero row but cannot make it full rank.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: nonsingular
+  - kind: integerEntries
+  - kind: notDiagonal
+  example:
+  - - 1
+    - 2
+  - - 3
+    - 1
+- id: c1w2-row-operations-singularity-parsons-06
+  topic: row-operations-singularity
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho phép dòng và tính suy biến.
+    en: Order the workflow for row operations and singularity.
+  explanation:
+    vi: Các bước này chỉ dùng phép dòng đảo được, nên trạng thái determinant bằng 0 hay khác 0 được giữ cho đến khi pivot làm lộ singularity.
+    en: These steps use only reversible row moves, so the zero/non-zero determinant status survives until pivots reveal singularity.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-row-operations-singularity-finderror-07
+  topic: row-operations-singularity
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về phép dòng và tính suy biến.
+    en: Find the first error in the argument about row operations and singularity.
+  explanation:
+    vi: Trạng thái determinant không bị đe dọa bởi pivot bằng 2; bước sai đầu tiên là bác bỏ một pivot khác 0 hợp lệ.
+    en: The determinant status is not threatened by a pivot equal to 2; the first wrong step is rejecting a legal non-zero pivot.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-row-operations-singularity-code-08
+  topic: row-operations-singularity
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  - numpy
+  prompt:
+    vi: Cài đặt `row_ops` bằng NumPy cơ bản; không dùng `np.linalg.*` shortcuts.
+    en: Implement `row_ops` with basic NumPy; do not use `np.linalg.*` shortcuts.
+  explanation:
+    vi: Cài đặt dùng phép dòng đảo được và kiểm tra singularity qua mẫu pivot tạo ra thay vì gọi np.linalg.rank.
+    en: The implementation applies reversible row operations and verifies singularity by the produced pivot pattern rather than by calling np.linalg.rank.
+  hints: []
+  starter: 'import numpy as np
+
+
+    def swap_rows(M,i,j): return np.array(M,dtype=float)
+
+    def scale_row(M,i,factor): return np.array(M,dtype=float)
+
+    '
+  solution: "import numpy as np\n\ndef swap_rows(M,i,j):\n    out=np.array(M,dtype=float).copy(); out[[i,j]]=out[[j,i]]; return out\n\ndef scale_row(M,i,factor):\n    if factor==0: raise ValueError('factor must be non-zero')\n    out=np.array(M,dtype=float).copy(); out[i]=factor*out[i]; return out\n"
+  tests: "import numpy as np\n\ndef test_swap():\n    assert np.allclose(swap_rows(np.array([[1.,2.],[3.,4.]]),0,1), [[3,4],[1,2]])\n\ndef test_scale():\n    assert np.allclose(scale_row(np.array([[1.,2.],[3.,4.]]),1,-2), [[1,2],[-6,-8]])\n\ndef test_zero_rejected():\n    try: scale_row(np.eye(2),0,0)\n    except ValueError: return\n    assert False, 'factor 0 must be rejected'\n"
+- id: c1w2-row-operations-singularity-parametric-11
+  topic: row-operations-singularity
+  type: parametric
+  difficulty: 1
+  tags:
+  - parametric
+  prompt:
+    vi: Bài luyện động theo dõi phép dòng bảo toàn singularity.
+    en: Dynamic row-operation drill for tracking singularity-preserving moves.
+  explanation:
+    vi: Dùng đổi hàng, nhân hàng và cộng bội hợp lệ trên ma trận được sinh, đồng thời quan sát pivot có biến mất không.
+    en: Use valid row swaps, scalings, and replacements on the generated matrix while watching whether pivots disappear.
+  hints: []
+  generator: determinant
+  params:
+    size: 2

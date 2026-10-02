@@ -1,0 +1,254 @@
+'exercises':
+- 'id': 'c3w3-gauss-numeric-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'gaussian-mle'
+  'prompt':
+    'vi': 'Với data $-1,1$, Gaussian MLE mean và variance là gì?'
+    'en': 'For data $-1,1$, what are Gaussian MLE mean and variance?'
+  'explanation':
+    'vi': 'Mean $0$, MLE variance $((1)^2+(-1)^2)/2=1$.'
+    'en': 'Mean $0$, MLE variance $((1)^2+(-1)^2)/2=1$.'
+  'hints': []
+  'answers':
+  - 'label': 'mu'
+    'value': 0
+  - 'label': 'sigma2'
+    'value': 1
+  'tolerance': 1.0e-09
+- 'id': 'c3w3-gauss-code-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'code'
+  'difficulty': 2
+  'tags':
+  - 'code'
+  - 'gaussian-mle'
+  'prompt':
+    'vi': 'Cài `gaussian_mle(x)` trả `(mu, sigma2_mle)` với variance chia $n$.'
+    'en': 'Implement `gaussian_mle(x)` returning `(mu, sigma2_mle)` with variance divided by $n`.'
+  'explanation':
+    'vi': 'Gaussian MLE variance khác sample variance không chệch.'
+    'en': 'Gaussian MLE variance differs from unbiased sample variance.'
+  'hints': []
+  'starter': "import numpy as np\ndef gaussian_mle(x):\n    return (0.0,0.0)\n"
+  'solution': "import numpy as np\ndef gaussian_mle(x):\n    x=np.asarray(x,dtype=float)\n    mu=float(x.mean())\n    sig2=float(np.mean((x-mu)**2))\n    return (mu,sig2)\n"
+  'tests': "def test_two_points():\n    mu,s2=gaussian_mle([-1,1]); assert abs(mu)<1e-12 and abs(s2-1)<1e-12\ndef test_three_points():\n    mu,s2=gaussian_mle([1,2,3]); assert abs(mu-2)<1e-12 and abs(s2-(2/3))<1e-12\n"
+- 'id': 'c3w3-gauss-mcq-figure-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'mcq'
+  'difficulty': 2
+  'tags':
+  - 'figure'
+  - 'likelihood'
+  'prompt':
+    'vi': 'Quan sát ở $-1$ và $1$. Gaussian mean nào hợp lý nhất nếu variance cố định?'
+    'en': 'Observations at $-1$ and $1$. Which Gaussian mean is most plausible if variance is fixed?'
+  'explanation':
+    'vi': 'Mean sample là 0, nên Gaussian tâm 0 cho likelihood cao nhất.'
+    'en': 'The sample mean is 0, so center 0 gives highest likelihood.'
+  'hints': []
+  'figure':
+    'xRange':
+    - -4
+    - 4
+    'yRange':
+    - 0
+    - 0.45
+    'functions':
+    - 'f': '0.399*exp(-0.5*(x+1)^2)'
+      'label': 'mu=-1'
+      'color': '#94a3b8'
+    - 'f': '0.399*exp(-0.5*x^2)'
+      'label': 'mu=0'
+      'color': '#2563eb'
+    - 'f': '0.399*exp(-0.5*(x-1)^2)'
+      'label': 'mu=1'
+      'color': '#94a3b8'
+    'points':
+    - 'at':
+      - -1
+      - 0
+      'label': 'x1'
+    - 'at':
+      - 1
+      - 0
+      'label': 'x2'
+  'options':
+  - 'vi': '$\mu=0$'
+    'en': '$\mu=0$'
+  - 'vi': '$\mu=-1$'
+    'en': '$\mu=-1$'
+  - 'vi': '$\mu=1$'
+    'en': '$\mu=1$'
+  'answer':
+  - 0
+- 'id': 'c3w3-regression-numeric-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'numeric'
+  'difficulty': 1
+  'tags':
+  - 'least-squares'
+  'prompt':
+    'vi': 'Residuals $d=(1,-2,0,3)$. SSE là bao nhiêu?'
+    'en': 'Residuals $d=(1,-2,0,3)$. What is SSE?'
+  'explanation':
+    'vi': '$1+4+0+9=14$.'
+    'en': '$1+4+0+9=14$.'
+  'hints': []
+  'answers':
+  - 'value': 14
+  'tolerance': 0
+- 'id': 'c3w3-regression-matrix-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'matrix'
+  'difficulty': 1
+  'tags':
+  - 'design-matrix'
+  'prompt':
+    'vi': 'Với model $y=\beta_0+\beta_1x$ và $x=0,1,2$, design matrix $X$ là gì?'
+    'en': 'For model $y=\beta_0+\beta_1x$ and $x=0,1,2$, what is design matrix $X$?'
+  'explanation':
+    'vi': 'Cột đầu là 1 cho intercept, cột hai là $x$.'
+    'en': 'First column is 1 for intercept, second is $x$.'
+  'hints': []
+  'answer':
+  - - 1
+    - 0
+  - - 1
+    - 1
+  - - 1
+    - 2
+  'tolerance': 0
+- 'id': 'c3w3-regression-finderror-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'find-error'
+  'difficulty': 2
+  'tags':
+  - 'common-mistake'
+  'prompt':
+    'vi': 'Tìm lỗi đầu tiên khi nối MLE với least squares.'
+    'en': 'Find the first error connecting MLE to least squares.'
+  'explanation':
+    'vi': 'Với Gaussian residual, maximize likelihood tương đương minimize SSE, không maximize SSE.'
+    'en': 'With Gaussian residuals, maximize likelihood equals minimize SSE, not maximize SSE.'
+  'hints': []
+  'steps':
+  - 'vi': 'Residuals $d_i=y_i-(mx_i+b)$.'
+    'en': 'Residuals $d_i=y_i-(mx_i+b)$.'
+  - 'vi': 'Likelihood chứa $\exp(-\frac12\sum d_i^2)$.'
+    'en': 'Likelihood contains $\exp(-\frac12\sum d_i^2)$.'
+  - 'vi': 'Vì exponential tăng khi $\sum d_i^2$ tăng, ta maximize SSE.'
+    'en': 'Because exponential increases as $\sum d_i^2$ increases, maximize SSE.'
+  'answer': 2
+- 'id': 'c3w3-regression-matching-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'matching'
+  'difficulty': 1
+  'tags':
+  - 'connections'
+  'prompt':
+    'vi': 'Ghép ý nghĩa trong Gaussian regression.'
+    'en': 'Match meanings in Gaussian regression.'
+  'explanation':
+    'vi': 'Likelihood dẫn tới least squares.'
+    'en': 'Likelihood leads to least squares.'
+  'hints': []
+  'pairs':
+  - 'left':
+      'vi': '$d_i$'
+      'en': '$d_i$'
+    'right':
+      'vi': 'Residual dọc'
+      'en': 'Vertical residual'
+  - 'left':
+      'vi': '$\sum d_i^2$'
+      'en': '$\sum d_i^2$'
+    'right':
+      'vi': 'SSE cần minimize'
+      'en': 'SSE to minimize'
+  - 'left':
+      'vi': 'Gaussian noise'
+      'en': 'Gaussian noise'
+    'right':
+      'vi': 'Giả định tạo least squares MLE'
+      'en': 'Assumption yielding least-squares MLE'
+  - 'left':
+      'vi': '$\hat\mu$ Gaussian'
+      'en': 'Gaussian $\hat\mu$'
+    'right':
+      'vi': 'Sample mean'
+      'en': 'Sample mean'
+- 'id': 'c3w3-regression-parsons-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'parsons'
+  'difficulty': 2
+  'tags':
+  - 'procedure'
+  'prompt':
+    'vi': 'Sắp xếp đường nối likelihood → least squares.'
+    'en': 'Order the path from likelihood to least squares.'
+  'explanation':
+    'vi': 'Log biến tích thành tổng, dấu âm biến maximum thành minimum.'
+    'en': 'Log turns products into sums, negative sign turns maximum into minimum.'
+  'hints': []
+  'steps':
+  - 'vi': 'Giả định residuals Gaussian độc lập.'
+    'en': 'Assume independent Gaussian residuals.'
+  - 'vi': 'Viết likelihood là tích các densities.'
+    'en': 'Write likelihood as product of densities.'
+  - 'vi': 'Lấy log-likelihood.'
+    'en': 'Take log-likelihood.'
+  - 'vi': 'Bỏ constants và maximize $-\frac12\sum d_i^2$.'
+    'en': 'Drop constants and maximize $-\frac12\sum d_i^2$.'
+  - 'vi': 'Tương đương minimize $\sum d_i^2$.'
+    'en': 'Equivalent to minimizing $\sum d_i^2$.'
+- 'id': 'c3w3-gauss-tf-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'true-false'
+  'difficulty': 1
+  'tags':
+  - 'variance'
+  'prompt':
+    'vi': 'Phương sai MLE của Gaussian chia cho $n$, còn phương sai mẫu không chệch chia cho $n-1$.'
+    'en': 'Gaussian MLE variance divides by $n$, while unbiased sample variance divides by $n-1$.'
+  'explanation':
+    'vi': 'Đúng: hai mục tiêu khác nhau.'
+    'en': 'True: the objectives differ.'
+  'hints': []
+  'answer': true
+- 'id': 'c3w3-gauss-multi-01'
+  'topic': 'mle-gaussian-regression'
+  'type': 'multi-step'
+  'difficulty': 3
+  'tags':
+  - 'mle'
+  'prompt':
+    'vi': 'Dữ liệu Gaussian $2,4,4$.'
+    'en': 'Gaussian data $2,4,4$.'
+  'explanation':
+    'vi': 'Tính mean rồi variance MLE.'
+    'en': 'Compute mean then MLE variance.'
+  'hints': []
+  'parts':
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\hat\mu$?'
+      'en': '$\hat\mu$?'
+    'answers':
+    - 'value': 3.3333333333333335
+    'tolerance': 1.0e-06
+    'explanation':
+      'vi': '$10/3$.'
+      'en': '$10/3$.'
+  - 'type': 'numeric'
+    'prompt':
+      'vi': '$\hat\sigma^2_{MLE}$?'
+      'en': '$\hat\sigma^2_{MLE}$?'
+    'answers':
+    - 'value': 0.8888888888888888
+    'tolerance': 1.0e-06
+    'explanation':
+      'vi': 'Squared deviations sum $8/3$, chia $3$ được $8/9$.'
+      'en': 'Squared deviations sum $8/3$, divide by $3$ gives $8/9$.'

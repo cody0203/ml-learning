@@ -1,0 +1,406 @@
+flashcards:
+- id: c3w4-fc-01
+  topic: confidence-known-sigma
+  kind: formula
+  front:
+    vi: CI 95% cho mean khi biết $\sigma$ có công thức gì?
+    en: What is the 95% CI formula for a mean with known $\sigma$?
+  back:
+    vi: $\bar x\pm1.96\sigma/\sqrt n$. 1.96 là critical value cho central 95%.
+    en: $\bar x\pm1.96\sigma/\sqrt n$. 1.96 is the central 95% critical value.
+- id: c3w4-fc-02
+  topic: confidence-known-sigma
+  kind: compute
+  front:
+    vi: $\bar x=10$, $\sigma=4$, $n=16$, dùng $z=2$. Margin bằng?
+    en: $\bar x=10$, $\sigma=4$, $n=16$, use $z=2$. What is the margin?
+  back:
+    vi: $2$. Vì $2\cdot4/4=2$.
+    en: $2$. Because $2\cdot4/4=2$.
+- id: c3w4-fc-03
+  topic: confidence-known-sigma
+  kind: concept
+  front:
+    vi: Vì sao standard error của $\bar X$ giảm khi $n$ tăng?
+    en: Why does the standard error of $\bar X$ decrease as $n$ grows?
+  back:
+    vi: Trung bình nhiều quan sát triệt tiêu nhiễu; độ lệch chuẩn của mean là $\sigma/\sqrt n$.
+    en: Averaging more observations cancels noise; the standard deviation of the mean is $\sigma/\sqrt n$.
+- id: c3w4-fc-04
+  topic: confidence-known-sigma
+  kind: formula
+  front:
+    vi: Ở confidence level $1-\alpha$, hai tail mỗi bên có diện tích bao nhiêu?
+    en: At confidence level $1-\alpha$, how much area is in each tail?
+  back:
+    vi: $\alpha/2$ cho CI hai phía. Vì tổng phần ngoài khoảng là $\alpha$.
+    en: $\alpha/2$ for a two-sided CI. The total outside area is $\alpha$.
+- id: c3w4-fc-05
+  topic: margin-sample-size
+  kind: formula
+  front:
+    vi: Cỡ mẫu tối thiểu để MOE không quá $m$ khi biết $\sigma$ là gì?
+    en: What minimum sample size keeps MOE at most $m$ when $\sigma$ is known?
+  back:
+    vi: $n\ge (z_{\alpha/2}\sigma/m)^2$, rồi làm tròn lên.
+    en: $n\ge (z_{\alpha/2}\sigma/m)^2$, then round up.
+- id: c3w4-fc-06
+  topic: margin-sample-size
+  kind: compute
+  front:
+    vi: Nếu $n$ tăng từ 25 lên 100, standard error đổi thế nào?
+    en: If $n$ increases from 25 to 100, what happens to standard error?
+  back:
+    vi: Giảm một nửa. $\sqrt{100}/\sqrt{25}=2$.
+    en: It halves. $\sqrt{100}/\sqrt{25}=2$.
+- id: c3w4-fc-07
+  topic: margin-sample-size
+  kind: concept
+  front:
+    vi: Tăng confidence level từ 90% lên 99% làm khoảng thế nào nếu dữ liệu giữ nguyên?
+    en: What happens to the interval when confidence rises from 90% to 99% with the same data?
+  back:
+    vi: Khoảng rộng hơn vì critical value lớn hơn.
+    en: It widens because the critical value is larger.
+- id: c3w4-fc-08
+  topic: interpreting-confidence
+  kind: concept
+  front:
+    vi: Câu diễn giải đúng của CI 95% frequentist là gì?
+    en: What is the correct frequentist interpretation of a 95% CI?
+  back:
+    vi: Trong lặp lại lấy mẫu, khoảng 95% các khoảng được tạo cùng cách sẽ chứa $\mu$.
+    en: In repeated sampling, about 95% of intervals made this way contain $\mu$.
+- id: c3w4-fc-09
+  topic: interpreting-confidence
+  kind: concept
+  front:
+    vi: Vì sao không nói '$P(\mu\in[L,U])=0.95$' sau khi đã có khoảng?
+    en: Why not say '$P(\mu\in[L,U])=0.95$' after observing the interval?
+  back:
+    vi: Vì $\mu$ cố định; khoảng đã tính cũng cố định. Nó hoặc chứa $\mu$, hoặc không.
+    en: Because $\mu$ is fixed and the interval is fixed; it either contains $\mu$ or not.
+- id: c3w4-fc-10
+  topic: interpreting-confidence
+  kind: compute
+  front:
+    vi: Trong 200 CI 95% độc lập, số khoảng kỳ vọng chứa $\mu$ là bao nhiêu?
+    en: In 200 independent 95% CIs, how many are expected to contain $\mu$?
+  back:
+    vi: $190$. Tính $0.95\cdot200$.
+    en: $190$. Compute $0.95\cdot200$.
+- id: c3w4-fc-11
+  topic: t-ci-proportions
+  kind: formula
+  front:
+    vi: CI t cho mean khi chưa biết $\sigma$ là gì?
+    en: What is the t CI for a mean when $\sigma$ is unknown?
+  back:
+    vi: $\bar x\pm t_{\alpha/2,n-1}s/\sqrt n$.
+    en: $\bar x\pm t_{\alpha/2,n-1}s/\sqrt n$.
+- id: c3w4-fc-12
+  topic: t-ci-proportions
+  kind: formula
+  front:
+    vi: Degrees of freedom của one-sample t interval là gì?
+    en: What are the degrees of freedom for a one-sample t interval?
+  back:
+    vi: $n-1$. Một degree mất đi vì ước lượng $\bar x$.
+    en: $n-1$. One degree is used estimating $\bar x$.
+- id: c3w4-fc-13
+  topic: t-ci-proportions
+  kind: formula
+  front:
+    vi: CI Wald cho proportion dùng công thức nào?
+    en: What formula does the Wald CI for a proportion use?
+  back:
+    vi: $\hat p\pm z_{\alpha/2}\sqrt{\hat p(1-\hat p)/n}$.
+    en: $\hat p\pm z_{\alpha/2}\sqrt{\hat p(1-\hat p)/n}$.
+- id: c3w4-fc-14
+  topic: t-ci-proportions
+  kind: compute
+  front:
+    vi: $x=24$, $n=30$. $\hat p$ bằng?
+    en: $x=24$, $n=30$. What is $\hat p$?
+  back:
+    vi: $0.8$. Vì $24/30=0.8$.
+    en: $0.8$. Because $24/30=0.8$.
+- id: c3w4-fc-15
+  topic: hypotheses-errors
+  kind: concept
+  front:
+    vi: $H_0$ thường đóng vai trò gì?
+    en: What role does $H_0$ usually play?
+  back:
+    vi: Baseline/default giả định đúng cho đến khi dữ liệu đủ bất thường.
+    en: The baseline/default assumed true until data are sufficiently surprising.
+- id: c3w4-fc-16
+  topic: hypotheses-errors
+  kind: concept
+  front:
+    vi: Type I error là gì?
+    en: What is a Type I error?
+  back:
+    vi: Reject $H_0$ khi $H_0$ thật sự đúng; false positive.
+    en: Rejecting $H_0$ when $H_0$ is actually true; a false positive.
+- id: c3w4-fc-17
+  topic: hypotheses-errors
+  kind: concept
+  front:
+    vi: Type II error là gì?
+    en: What is a Type II error?
+  back:
+    vi: Không reject $H_0$ khi $H_0$ sai; false negative.
+    en: Failing to reject $H_0$ when $H_0$ is false; a false negative.
+- id: c3w4-fc-18
+  topic: hypotheses-errors
+  kind: formula
+  front:
+    vi: Significance level $\alpha$ kiểm soát xác suất nào?
+    en: Which probability does significance level $\alpha$ control?
+  back:
+    vi: Tối đa $P(\text{reject }H_0\mid H_0\text{ true})$.
+    en: The maximum $P(\text{reject }H_0\mid H_0\text{ true})$.
+- id: c3w4-fc-19
+  topic: hypotheses-errors
+  kind: compute
+  front:
+    vi: Nếu $p=0.041$ và $\alpha=0.05$, quyết định?
+    en: If $p=0.041$ and $\alpha=0.05$, what is the decision?
+  back:
+    vi: Reject $H_0$ vì $p<\alpha$.
+    en: Reject $H_0$ because $p<\alpha$.
+- id: c3w4-fc-20
+  topic: tails-pvalues-critical
+  kind: concept
+  front:
+    vi: Alternative $H_1:\mu>\mu_0$ tương ứng test phía nào?
+    en: Alternative $H_1:\mu>\mu_0$ corresponds to which tail?
+  back:
+    vi: Right-tailed test; p-value là diện tích đuôi phải.
+    en: Right-tailed test; the p-value is right-tail area.
+- id: c3w4-fc-21
+  topic: tails-pvalues-critical
+  kind: concept
+  front:
+    vi: Alternative $H_1:\mu\ne\mu_0$ tương ứng test phía nào?
+    en: Alternative $H_1:\mu\ne\mu_0$ corresponds to which tail?
+  back:
+    vi: Two-tailed test; hai phía đều extreme.
+    en: Two-tailed test; both sides are extreme.
+- id: c3w4-fc-22
+  topic: tails-pvalues-critical
+  kind: formula
+  front:
+    vi: Z statistic cho kiểm định mean khi biết $\sigma$ là gì?
+    en: What is the z statistic for a mean test with known $\sigma$?
+  back:
+    vi: $z=(\bar x-\mu_0)/(\sigma/\sqrt n)$.
+    en: $z=(\bar x-\mu_0)/(\sigma/\sqrt n)$.
+- id: c3w4-fc-23
+  topic: tails-pvalues-critical
+  kind: compute
+  front:
+    vi: Nếu right-tail $z=1.96$, p-value xấp xỉ?
+    en: If a right-tail test has $z=1.96$, what is the p-value?
+  back:
+    vi: Khoảng $0.025$.
+    en: About $0.025$.
+- id: c3w4-fc-24
+  topic: tails-pvalues-critical
+  kind: formula
+  front:
+    vi: Rule p-value ở mức $\alpha$ là gì?
+    en: What is the p-value rule at level $\alpha$?
+  back:
+    vi: Reject $H_0$ nếu $p\le\alpha$; nếu không, fail to reject.
+    en: Reject $H_0$ if $p\le\alpha$; otherwise fail to reject.
+- id: c3w4-fc-25
+  topic: power-results
+  kind: formula
+  front:
+    vi: Power của test liên hệ với $\beta$ như thế nào?
+    en: How is test power related to $\beta$?
+  back:
+    vi: Power $=1-\beta$, với $\beta$ là xác suất Type II error.
+    en: Power $=1-\beta$, where $\beta$ is Type II error probability.
+- id: c3w4-fc-26
+  topic: power-results
+  kind: concept
+  front:
+    vi: Tăng sample size thường ảnh hưởng power thế nào?
+    en: How does increasing sample size usually affect power?
+  back:
+    vi: Tăng power vì standard error nhỏ hơn, dễ phát hiện hiệu ứng hơn.
+    en: It increases power because standard error shrinks and effects are easier to detect.
+- id: c3w4-fc-27
+  topic: power-results
+  kind: concept
+  front:
+    vi: Kết quả không significant có nghĩa là $H_0$ đúng không?
+    en: Does a non-significant result mean $H_0$ is true?
+  back:
+    vi: Không. Nó chỉ nói chưa đủ bằng chứng để reject $H_0$.
+    en: No. It only says there is not enough evidence to reject $H_0$.
+- id: c3w4-fc-28
+  topic: power-results
+  kind: compute
+  front:
+    vi: Nếu $\beta=0.20$, power bằng?
+    en: If $\beta=0.20$, what is the power?
+  back:
+    vi: $0.80$. Power $=1-0.20$.
+    en: $0.80$. Power $=1-0.20$.
+- id: c3w4-fc-29
+  topic: t-tests-ab-testing
+  kind: formula
+  front:
+    vi: One-sample t statistic là gì?
+    en: What is the one-sample t statistic?
+  back:
+    vi: $t=(\bar x-\mu_0)/(s/\sqrt n)$.
+    en: $t=(\bar x-\mu_0)/(s/\sqrt n)$.
+- id: c3w4-fc-30
+  topic: t-tests-ab-testing
+  kind: formula
+  front:
+    vi: Welch two-sample t statistic là gì?
+    en: What is the Welch two-sample t statistic?
+  back:
+    vi: $t=(\bar x-\bar y-\Delta_0)/\sqrt{s_x^2/n_x+s_y^2/n_y}$.
+    en: $t=(\bar x-\bar y-\Delta_0)/\sqrt{s_x^2/n_x+s_y^2/n_y}$.
+- id: c3w4-fc-31
+  topic: t-tests-ab-testing
+  kind: concept
+  front:
+    vi: Khi nào dùng paired t-test thay vì two-sample t-test?
+    en: When should you use a paired t-test instead of a two-sample t-test?
+  back:
+    vi: 'Khi hai quan sát được ghép theo cùng đơn vị: before/after, same user, matched pairs.'
+    en: 'When observations are matched by unit: before/after, same user, matched pairs.'
+- id: c3w4-fc-32
+  topic: t-tests-ab-testing
+  kind: formula
+  front:
+    vi: Two-proportion z-test dùng pooled $\hat p$ nào dưới $H_0:p_A=p_B$?
+    en: What pooled $\hat p$ is used in a two-proportion z-test under $H_0:p_A=p_B$?
+  back:
+    vi: $\hat p=(x_A+x_B)/(n_A+n_B)$.
+    en: $\hat p=(x_A+x_B)/(n_A+n_B)$.
+- id: c3w4-fc-33
+  topic: t-tests-ab-testing
+  kind: compute
+  front:
+    vi: 'A/B: $x_A=20,n_A=80,x_B=8,n_B=20$. $\hat p_A-\hat p_B$ bằng?'
+    en: 'A/B: $x_A=20,n_A=80,x_B=8,n_B=20$. What is $\hat p_A-\hat p_B$?'
+  back:
+    vi: $0.25-0.40=-0.15$.
+    en: $0.25-0.40=-0.15$.
+- id: c3w4-fc-34
+  topic: confidence-known-sigma
+  kind: compute
+  front:
+    vi: Với $\sigma=10,n=100$, standard error là?
+    en: With $\sigma=10,n=100$, what is the standard error?
+  back:
+    vi: $1$. Vì $10/\sqrt{100}=1$.
+    en: $1$. Because $10/\sqrt{100}=1$.
+- id: c3w4-fc-35
+  topic: margin-sample-size
+  kind: compute
+  front:
+    vi: Với $z=2,\sigma=6,MOE=3$, cần $n\ge$ bao nhiêu?
+    en: With $z=2,\sigma=6,MOE=3$, need $n\ge$ what?
+  back:
+    vi: $16$. $(2\cdot6/3)^2=16$.
+    en: $16$. $(2\cdot6/3)^2=16$.
+- id: c3w4-fc-36
+  topic: t-ci-proportions
+  kind: concept
+  front:
+    vi: Vì sao t distribution có đuôi nặng hơn normal?
+    en: Why does the t distribution have heavier tails than normal?
+  back:
+    vi: Vì nó tính thêm bất định do ước lượng $\sigma$ bằng $s$.
+    en: Because it includes uncertainty from estimating $\sigma$ by $s$.
+- id: c3w4-fc-37
+  topic: hypotheses-errors
+  kind: compute
+  front:
+    vi: 'Coin fair: $P(X=10)$ trong 10 tosses là?'
+    en: 'Fair coin: what is $P(X=10)$ in 10 tosses?'
+  back:
+    vi: $1/1024\approx0.00098$.
+    en: $1/1024\approx0.00098$.
+- id: c3w4-fc-38
+  topic: tails-pvalues-critical
+  kind: concept
+  front:
+    vi: Critical value là gì?
+    en: What is a critical value?
+  back:
+    vi: Ngưỡng ít extreme nhất vẫn dẫn tới reject ở mức $\alpha$.
+    en: The least extreme threshold that still causes rejection at level $\alpha$.
+- id: c3w4-fc-39
+  topic: power-results
+  kind: concept
+  front:
+    vi: Giảm $\alpha$ thường ảnh hưởng Type II error thế nào nếu giữ $n$?
+    en: How does lowering $\alpha$ usually affect Type II error with fixed $n$?
+  back:
+    vi: Thường làm Type II error tăng vì rejection region nhỏ hơn.
+    en: It usually increases Type II error because the rejection region is smaller.
+- id: c3w4-fc-40
+  topic: t-tests-ab-testing
+  kind: compute
+  front:
+    vi: Paired differences $2,0,1,3$ có mean difference?
+    en: Paired differences $2,0,1,3$ have what mean difference?
+  back:
+    vi: $1.5$. Tổng $6$ chia $4$.
+    en: $1.5$. Sum $6$ divided by $4$.
+- id: c3w4-fc-41
+  topic: interpreting-confidence
+  kind: concept
+  front:
+    vi: CI cho mean có nói trực tiếp về từng cá thể trong population không?
+    en: Does a CI for a mean directly describe individual population values?
+  back:
+    vi: Không. Nó ước lượng mean, không phải khoảng chứa cá thể.
+    en: No. It estimates the mean, not an interval containing individuals.
+- id: c3w4-fc-42
+  topic: t-ci-proportions
+  kind: compute
+  front:
+    vi: Nếu $\hat p=0.5,n=100$, SE proportion là?
+    en: If $\hat p=0.5,n=100$, what is the proportion SE?
+  back:
+    vi: $0.05$. $\sqrt{0.25/100}=0.05$.
+    en: $0.05$. $\sqrt{0.25/100}=0.05$.
+- id: c3w4-fc-43
+  topic: tails-pvalues-critical
+  kind: compute
+  front:
+    vi: Two-tail p-value khi one-tail extremeness là 0.03?
+    en: What is the two-tail p-value when one-tail extremeness is 0.03?
+  back:
+    vi: $0.06$ với statistic đối xứng.
+    en: $0.06$ for a symmetric statistic.
+- id: c3w4-fc-44
+  topic: hypotheses-errors
+  kind: concept
+  front:
+    vi: Trong spam filter, email ham bị gắn spam là lỗi gì?
+    en: In spam filtering, a ham email marked as spam is what error?
+  back:
+    vi: False positive / Type I nếu $H_0$ là ham.
+    en: False positive / Type I if $H_0$ is ham.
+- id: c3w4-fc-45
+  topic: t-tests-ab-testing
+  kind: concept
+  front:
+    vi: Trong A/B conversion, vì sao dùng test tỷ lệ thay vì t-test purchase amount?
+    en: In A/B conversion, why use a proportion test instead of a purchase-amount t-test?
+  back:
+    vi: Outcome là nhị phân converted/not converted nên parameter là tỷ lệ.
+    en: The outcome is binary converted/not converted, so the parameter is a proportion.

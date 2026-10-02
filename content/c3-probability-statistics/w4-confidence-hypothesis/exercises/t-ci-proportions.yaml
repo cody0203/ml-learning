@@ -1,0 +1,247 @@
+exercises:
+- id: c3w4-t-ci-proportions-mcq-04
+  topic: t-ci-proportions
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Khi $\sigma$ chưa biết trong CI cho mean, phát biểu nào đúng?
+    en: When $\sigma$ is unknown in a CI for a mean, which statement is correct?
+  explanation:
+    vi: Thay $\sigma$ bằng $s$ làm statistic theo t distribution với $n-1$ degrees of freedom, đặc biệt quan trọng khi mẫu nhỏ.
+    en: Replacing $\sigma$ by $s$ gives a t distribution with $n-1$ degrees of freedom, especially important for small samples.
+  hints: []
+  options:
+  - vi: Dùng $t_{\alpha/2,n-1}$ và $s/\sqrt n$.
+    en: Use $t_{\alpha/2,n-1}$ and $s/\sqrt n$.
+  - vi: Vẫn luôn dùng $z=1.96$ cho mọi mẫu nhỏ.
+    en: Always keep using $z=1.96$ for any small sample.
+  - vi: Degrees of freedom bằng $n$.
+    en: The degrees of freedom equal $n$.
+  answer:
+  - 0
+- id: c3w4-t-ci-proportions-tf-04
+  topic: t-ci-proportions
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Student's t có đuôi nặng hơn normal khi degrees of freedom nhỏ.
+    en: Student's t has heavier tails than normal when degrees of freedom are small.
+  explanation:
+    vi: Đúng. Đuôi nặng phản ánh bất định khi dùng $s$ để ước lượng $\sigma$; khi df tăng, t gần normal hơn.
+    en: True. Heavy tails reflect uncertainty from estimating $\sigma$ with $s$; as df grows, t approaches normal.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Ước lượng $\sigma$ bằng $s$ làm phân phối có đuôi nặng hơn.
+    en: Estimating $\sigma$ with $s$ makes the reference distribution heavier-tailed.
+  - vi: t và normal luôn giống hệt nhau với mọi df.
+    en: t and normal are exactly identical for every df.
+  reasonAnswer: 0
+- id: c3w4-t-ci-proportions-match-04
+  topic: t-ci-proportions
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép công thức t/proportion với trường hợp dùng.
+    en: Match each t/proportion formula with when it is used.
+  explanation:
+    vi: Mean chưa biết $\sigma$ dùng t; proportion dùng Bernoulli standard error từ $\hat p$.
+    en: A mean with unknown $\sigma$ uses t; a proportion uses Bernoulli standard error from $\hat p$.
+  hints: []
+  pairs:
+  - left:
+      vi: $\bar x\pm t^*s/\sqrt n$
+      en: $\bar x\pm t^*s/\sqrt n$
+    right:
+      vi: mean, $\sigma$ unknown
+      en: mean, $\sigma$ unknown
+  - left:
+      vi: $\hat p\pm z^*\sqrt{\hat p(1-\hat p)/n}$
+      en: $\hat p\pm z^*\sqrt{\hat p(1-\hat p)/n}$
+    right:
+      vi: single proportion
+      en: single proportion
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-t-ci-proportions-parsons-04
+  topic: t-ci-proportions
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp bước tính CI t một mẫu.
+    en: Order the steps for a one-sample t confidence interval.
+  explanation:
+    vi: CI t cần sample mean, sample standard deviation, df, rồi critical value từ t distribution.
+    en: A t CI needs the sample mean, sample standard deviation, df, then a critical value from the t distribution.
+  hints:
+  - vi: Degrees of freedom là $n-1$.
+    en: The degrees of freedom are $n-1$.
+  steps:
+  - vi: Tính $\bar x$ và sample standard deviation $s$.
+    en: Compute $\bar x$ and sample standard deviation $s$.
+  - vi: Đặt $df=n-1$.
+    en: Set $df=n-1$.
+  - vi: Lấy $t_{\alpha/2,df}$ theo confidence level.
+    en: Get $t_{\alpha/2,df}$ for the confidence level.
+  - vi: Tạo $\bar x\pm t^*s/\sqrt n$.
+    en: Form $\bar x\pm t^*s/\sqrt n$.
+- id: c3w4-t-ci-proportions-numeric-01
+  topic: t-ci-proportions
+  type: numeric
+  difficulty: 2
+  tags:
+  - t-ci
+  prompt:
+    vi: Tính CI t 95% với $n=10$, $\bar x=68.442$, $s=3.113$, $t^*=2.262$.
+    en: Compute the 95% t CI with $n=10$, $\bar x=68.442$, $s=3.113$, $t^*=2.262$.
+  explanation:
+    vi: MOE=$2.262\cdot3.113/\sqrt{10}=2.227$. CI $(66.215,70.669)$.
+    en: MOE=$2.262\cdot3.113/\sqrt{10}=2.227$. CI $(66.215,70.669)$.
+  hints: []
+  answers:
+  - label: lower
+    value: 66.215
+  - label: upper
+    value: 70.669
+  tolerance: 0.001
+- id: c3w4-t-ci-proportions-numeric-02
+  topic: t-ci-proportions
+  type: numeric
+  difficulty: 2
+  tags:
+  - proportion-ci
+  prompt:
+    vi: $x=24$ successes trong $n=30$, $z=1.96$. Tính CI proportion 95%.
+    en: $x=24$ successes in $n=30$, $z=1.96$. Compute the 95% proportion CI.
+  explanation:
+    vi: $\hat p=0.8$, SE=$\sqrt{0.8(0.2)/30}=0.0730$, MOE=$0.143$.
+    en: $\hat p=0.8$, SE=$\sqrt{0.8(0.2)/30}=0.0730$, MOE=$0.143$.
+  hints: []
+  answers:
+  - label: lower
+    value: 0.657
+  - label: upper
+    value: 0.943
+  tolerance: 0.002
+- id: c3w4-t-ci-proportions-mcq-figure-01
+  topic: t-ci-proportions
+  type: mcq
+  difficulty: 1
+  tags:
+  - figure
+  - t
+  prompt:
+    vi: Hình cho thấy điều gì về $t$ với df=9 so với normal?
+    en: What does the figure show about $t$ with df=9 versus normal?
+  explanation:
+    vi: t distribution có đuôi nặng hơn để phản ánh bất định khi ước lượng $\sigma$.
+    en: The t distribution has heavier tails to reflect uncertainty in estimating $\sigma$.
+  hints: []
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.388*(1+x^2/9)^(-5)
+      label: t(df=9)
+      color: '#7c3aed'
+    - f: 0.3989*exp(-0.5*x^2)
+      label: N(0,1)
+      color: '#94a3b8'
+      dashed: true
+    areas:
+    - f: 0.388*(1+x^2/9)^(-5)
+      from: 1.833
+      to: 4
+      color: '#c4b5fd'
+    xLabel: t
+    yLabel: density
+  options:
+  - vi: t có đuôi nặng hơn normal
+    en: t has heavier tails than normal
+  - vi: t luôn hẹp hơn normal
+    en: t is always narrower than normal
+  - vi: t không phụ thuộc degrees of freedom
+    en: t does not depend on degrees of freedom
+  answer:
+  - 0
+- id: c3w4-t-ci-proportions-construct-01
+  topic: t-ci-proportions
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  - proportion
+  prompt:
+    vi: Tạo probability vector cho outcomes {fail, success} có expected value 0.8 nếu success=1, fail=0.
+    en: Construct a probability vector for outcomes {fail, success} with expected value 0.8 if success=1 and fail=0.
+  explanation:
+    vi: Vector $[0.2,0.8]$ không âm, tổng 1, expectation $0\cdot0.2+1\cdot0.8=0.8$.
+    en: Vector $[0.2,0.8]$ is nonnegative, sums to 1, and has expectation $0\cdot0.2+1\cdot0.8=0.8$.
+  hints: []
+  rows: 1
+  cols: 2
+  constraints:
+  - kind: probabilityVector
+  - kind: expectation
+    values:
+    - 0
+    - 1
+    value: 0.8
+  example:
+  - - 0.2
+    - 0.8
+- id: c3w4-t-ci-proportions-find-error-01
+  topic: t-ci-proportions
+  type: find-error
+  difficulty: 2
+  tags:
+  - proportion
+  prompt:
+    vi: Tìm bước sai đầu tiên trong CI proportion.
+    en: Find the first wrong step in the proportion CI.
+  explanation:
+    vi: 'Sai ở bước 2: SE proportion dùng $\sqrt{\hat p(1-\hat p)/n}$, không dùng $s/\sqrt n$.'
+    en: 'Step 2 is wrong: proportion SE uses $\sqrt{\hat p(1-\hat p)/n}$, not $s/\sqrt n$.'
+  hints: []
+  steps:
+  - vi: $\hat p=24/30=0.8$.
+    en: $\hat p=24/30=0.8$.
+  - vi: SE = $s/\sqrt{30}$ vì đang ước lượng tỷ lệ.
+    en: SE = $s/\sqrt{30}$ because we estimate a proportion.
+  - vi: MOE = $1.96\cdot SE$.
+    en: MOE = $1.96\cdot SE$.
+  - vi: CI = $\hat p\pm MOE$.
+    en: CI = $\hat p\pm MOE$.
+  answer: 1
+- id: c3w4-t-ci-proportions-param-01
+  topic: t-ci-proportions
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - ci
+  prompt:
+    vi: Generator confidence interval known sigma.
+    en: Generator confidence interval known sigma.
+  explanation:
+    vi: Dùng để luyện z interval, đối chiếu với t/proportion khi không phù hợp.
+    en: Use it to practice z intervals and compare with cases needing t/proportion.
+  hints: []
+  generator: confidence-interval
+  params: {}

@@ -1,0 +1,208 @@
+formulas:
+  - id: c3w4-f-mean-standard-error-known-sigma
+    topic: confidence-known-sigma
+    name: { vi: 'Sai số chuẩn khi biết sigma', en: 'Known-sigma standard error' }
+    tex: 'SE(\bar X)=\frac{\sigma}{\sqrt n}'
+    where:
+      vi: '$\sigma$ là độ lệch chuẩn tổng thể đã biết; dùng cho trung bình mẫu.'
+      en: '$\sigma$ is the known population standard deviation; use for a sample mean.'
+    exercises: [c3w4-confidence-known-sigma-match-01, c3w4-confidence-known-sigma-numeric-01, c3w4-power-results-numeric-01]
+  - id: c3w4-f-known-sigma-ci
+    topic: confidence-known-sigma
+    name: { vi: 'Khoảng tin cậy z cho trung bình', en: 'Known-sigma z confidence interval' }
+    tex: '\bar x\pm z_{\alpha/2}\frac{\sigma}{\sqrt n}'
+    where:
+      vi: 'Dùng cho CI hai phía mức $1-\alpha$ của $\mu$ khi $\sigma$ đã biết hoặc mẫu lớn thích hợp.'
+      en: 'Use for a two-sided level $1-\alpha$ CI for $\mu$ when $\sigma$ is known or a suitable large-sample setting holds.'
+    numpy: '(xbar - z*sigma/np.sqrt(n), xbar + z*sigma/np.sqrt(n))'
+    exercises: [c3w4-confidence-known-sigma-numeric-01, c3w4-confidence-known-sigma-code-01, c3w4-confidence-known-sigma-param-01]
+  - id: c3w4-f-normal-critical-tails
+    topic: confidence-known-sigma
+    name: { vi: 'Mốc tới hạn hai đuôi', en: 'Two-sided critical value tails' }
+    tex: 'P(-z_{\alpha/2}\le Z\le z_{\alpha/2})=1-\alpha,\qquad P(Z>z_{\alpha/2})=\alpha/2'
+    where:
+      vi: '$Z\sim\mathcal N(0,1)$; 95% dùng $z_{0.025}=1.96$.'
+      en: '$Z\sim\mathcal N(0,1)$; 95% uses $z_{0.025}=1.96$.'
+    numpy: 'scipy.stats.norm.ppf(1 - alpha/2)'
+    exercises: [c3w4-confidence-known-sigma-figure-01, c3w4-tails-pvalues-critical-figure-two-01]
+  - id: c3w4-f-margin-of-error
+    topic: margin-sample-size
+    name: { vi: 'Biên sai số', en: 'Margin of error' }
+    tex: 'MOE=z_{\alpha/2}\frac{\sigma}{\sqrt n}'
+    where:
+      vi: 'Nửa độ rộng của CI z khi biết $\sigma$; giảm theo $1/\sqrt n$.'
+      en: 'Half-width of a known-$\sigma$ z CI; decreases as $1/\sqrt n$.'
+    numpy: 'z * sigma / np.sqrt(n)'
+    exercises: [c3w4-margin-sample-size-mcq-02, c3w4-margin-sample-size-mcq-figure-01, c3w4-confidence-known-sigma-predict-01]
+  - id: c3w4-f-sample-size-for-moe
+    topic: margin-sample-size
+    name: { vi: 'Cỡ mẫu cho biên sai số mục tiêu', en: 'Sample size for target margin' }
+    tex: 'n\ge\left(\frac{z_{\alpha/2}\sigma}{m}\right)^2'
+    where:
+      vi: '$m$ là MOE tối đa cho phép; sau khi tính phải làm tròn lên.'
+      en: '$m$ is the maximum allowed MOE; round the computed value up.'
+    numpy: 'math.ceil((z * sigma / m)**2)'
+    exercises: [c3w4-margin-sample-size-numeric-01, c3w4-margin-sample-size-find-error-01, c3w4-margin-sample-size-multi-01]
+  - id: c3w4-f-coverage-interpretation
+    topic: interpreting-confidence
+    name: { vi: 'Diễn giải độ phủ', en: 'Coverage interpretation' }
+    tex: 'P_\mu(L(X)\le \mu\le U(X))=1-\alpha'
+    where:
+      vi: 'Xác suất thuộc về thủ tục lấy mẫu lặp lại; sau khi thấy dữ liệu, khoảng đã cố định.'
+      en: 'The probability belongs to the repeated-sampling procedure; after observing data, the interval is fixed.'
+    exercises: [c3w4-interpreting-confidence-mcq-03, c3w4-interpreting-confidence-find-error-01, c3w4-interpreting-confidence-code-01]
+  - id: c3w4-f-expected-covered-intervals
+    topic: interpreting-confidence
+    name: { vi: 'Số khoảng kỳ vọng bao phủ', en: 'Expected number of covering intervals' }
+    tex: 'E[\#\text{covering intervals}]=(1-\alpha)m'
+    where:
+      vi: '$m$ là số khoảng độc lập được dựng bằng cùng thủ tục mức $1-\alpha$.'
+      en: '$m$ is the number of independent intervals built by the same level $1-\alpha$ procedure.'
+    exercises: [c3w4-interpreting-confidence-numeric-01, c3w4-interpreting-confidence-parsons-03]
+  - id: c3w4-f-t-confidence-interval
+    topic: t-ci-proportions
+    name: { vi: 'Khoảng tin cậy t một mẫu', en: 'One-sample t confidence interval' }
+    tex: '\bar x\pm t_{\alpha/2,n-1}\frac{s}{\sqrt n}'
+    where:
+      vi: 'Dùng cho trung bình khi $\sigma$ chưa biết và dùng độ lệch chuẩn mẫu $s$.'
+      en: 'Use for a mean when $\sigma$ is unknown and the sample standard deviation $s$ is used.'
+    numpy: 'scipy.stats.t.interval(confidence, df=n-1, loc=xbar, scale=s/np.sqrt(n))'
+    exercises: [c3w4-t-ci-proportions-numeric-01, c3w4-t-ci-proportions-parsons-04, c3w4-t-ci-proportions-mcq-04]
+  - id: c3w4-f-t-degrees-freedom
+    topic: t-ci-proportions
+    name: { vi: 'Bậc tự do t một mẫu', en: 'One-sample t degrees of freedom' }
+    tex: 'df=n-1'
+    where:
+      vi: 'Một bậc tự do mất đi do đã ước lượng $\bar x$ trước khi tính $s$.'
+      en: 'One degree of freedom is lost because $\bar x$ is estimated before computing $s$.'
+    exercises: [c3w4-t-ci-proportions-match-04, c3w4-t-ci-proportions-numeric-01]
+  - id: c3w4-f-proportion-ci
+    topic: t-ci-proportions
+    name: { vi: 'Khoảng tin cậy Wald cho tỉ lệ', en: 'Wald confidence interval for a proportion' }
+    tex: '\hat p\pm z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}'
+    where:
+      vi: '$\hat p=x/n$; dùng xấp xỉ chuẩn khi số thành công và thất bại đủ lớn.'
+      en: '$\hat p=x/n$; use the normal approximation when successes and failures are sufficiently numerous.'
+    numpy: 'phat + np.array([-1, 1]) * z*np.sqrt(phat*(1-phat)/n)'
+    exercises: [c3w4-t-ci-proportions-numeric-02, c3w4-t-ci-proportions-find-error-01, c3w4-t-ci-proportions-construct-01]
+  - id: c3w4-f-hypotheses
+    topic: hypotheses-errors
+    name: { vi: 'Giả thuyết không và đối', en: 'Null and alternative hypotheses' }
+    tex: 'H_0:\theta=\theta_0,\qquad H_1:\theta\ne\theta_0\;\text{or}\;\theta>\theta_0\;\text{or}\;\theta<\theta_0'
+    where:
+      vi: '$H_0$ là mô hình nền; $H_1$ quyết định kiểm định hai đuôi, phải đuôi hay trái đuôi.'
+      en: '$H_0$ is the baseline model; $H_1$ determines a two-, right-, or left-tailed test.'
+    exercises: [c3w4-hypotheses-errors-mcq-05, c3w4-hypotheses-errors-parsons-05, c3w4-tails-pvalues-critical-match-06]
+  - id: c3w4-f-type-i-error
+    topic: hypotheses-errors
+    name: { vi: 'Lỗi loại I và mức ý nghĩa', en: 'Type I error and significance level' }
+    tex: '\alpha=P(\text{reject }H_0\mid H_0\text{ true})'
+    where:
+      vi: 'Mức ý nghĩa kiểm soát xác suất dương tính giả tối đa theo mô hình null.'
+      en: 'The significance level controls the maximum false-positive probability under the null model.'
+    exercises: [c3w4-hypotheses-errors-tf-05, c3w4-hypotheses-errors-match-05, c3w4-hypotheses-errors-matching-02]
+  - id: c3w4-f-type-ii-power
+    topic: power-results
+    name: { vi: 'Lỗi loại II và power', en: 'Type II error and power' }
+    tex: '\beta=P(\text{fail to reject }H_0\mid H_1\text{ true}),\qquad \text{power}=1-\beta'
+    where:
+      vi: '$\beta$ phụ thuộc vào giá trị thay thế cụ thể; power là xác suất phát hiện hiệu ứng đó.'
+      en: '$\beta$ depends on a specific alternative value; power is the probability of detecting that effect.'
+    exercises: [c3w4-power-results-mcq-07, c3w4-power-results-numeric-01, c3w4-power-results-match-07]
+  - id: c3w4-f-binomial-right-tail-pvalue
+    topic: hypotheses-errors
+    name: { vi: 'p-value nhị thức phải đuôi', en: 'Right-tail binomial p-value' }
+    tex: 'p=P(X\ge x_{obs}\mid H_0)=\sum_{k=x_{obs}}^n \binom nk p_0^k(1-p_0)^{n-k}'
+    where:
+      vi: 'Dùng cho kiểm định một phía $H_1:p>p_0$ với số thành công quan sát $x_{obs}$.'
+      en: 'Use for a one-sided test $H_1:p>p_0$ with observed success count $x_{obs}$.'
+    numpy: 'scipy.stats.binom.sf(x_obs-1, n, p0)'
+    exercises: [c3w4-hypotheses-errors-numeric-01, c3w4-hypotheses-errors-find-error-01, c3w4-hypotheses-errors-multi-01]
+  - id: c3w4-f-z-test-known-sigma
+    topic: tails-pvalues-critical
+    name: { vi: 'Thống kê z khi biết sigma', en: 'Known-sigma z test statistic' }
+    tex: 'z=\frac{\bar x-\mu_0}{\sigma/\sqrt n}'
+    where:
+      vi: 'So sánh trung bình mẫu với giả thuyết $\mu_0$ khi biết $\sigma$.'
+      en: 'Compares a sample mean with hypothesized value $\mu_0$ when $\sigma$ is known.'
+    numpy: '(xbar - mu0) / (sigma / np.sqrt(n))'
+    exercises: [c3w4-tails-pvalues-critical-numeric-01, c3w4-tails-pvalues-critical-code-01, c3w4-tails-pvalues-critical-param-01]
+  - id: c3w4-f-pvalue-tails
+    topic: tails-pvalues-critical
+    name: { vi: 'p-value theo hướng đuôi', en: 'P-value by tail direction' }
+    tex: 'p=\begin{cases}P(Z\ge z_{obs}),&H_1:\mu>\mu_0\\P(Z\le z_{obs}),&H_1:\mu<\mu_0\\2P(Z\ge |z_{obs}|),&H_1:\mu\ne\mu_0\end{cases}'
+    where:
+      vi: 'Tính dưới $H_0$; hướng của $H_1$ quyết định vùng cực đoan.'
+      en: 'Compute under $H_0$; the direction of $H_1$ determines the extreme region.'
+    numpy: 'norm.sf(z), norm.cdf(z), or 2*norm.sf(abs(z))'
+    exercises: [c3w4-tails-pvalues-critical-code-01, c3w4-tails-pvalues-critical-figure-right-01, c3w4-tails-pvalues-critical-find-error-01]
+  - id: c3w4-f-reject-rule
+    topic: tails-pvalues-critical
+    name: { vi: 'Quy tắc bác bỏ bằng p-value', en: 'P-value rejection rule' }
+    tex: 'p\le\alpha\Rightarrow \text{reject }H_0,\qquad p>\alpha\Rightarrow \text{fail to reject }H_0'
+    where:
+      vi: 'Không nói “chấp nhận $H_0$”; p-value lớn chỉ là không đủ bằng chứng để bác bỏ.'
+      en: 'Do not say “accept $H_0$”; a large p-value means insufficient evidence to reject.'
+    exercises: [c3w4-hypotheses-errors-multi-01, c3w4-tails-pvalues-critical-parsons-06, c3w4-power-results-find-error-01]
+  - id: c3w4-f-critical-regions
+    topic: tails-pvalues-critical
+    name: { vi: 'Vùng bác bỏ z', en: 'Z critical regions' }
+    tex: '\text{right: }z\ge z_{1-\alpha},\qquad \text{left: }z\le z_{\alpha},\qquad \text{two-sided: }|z|\ge z_{1-\alpha/2}'
+    where:
+      vi: 'Dùng khi quyết định bằng giá trị tới hạn thay vì p-value.'
+      en: 'Use when making the decision by critical value instead of p-value.'
+    numpy: 'scipy.stats.norm.ppf(1-alpha)'
+    exercises: [c3w4-tails-pvalues-critical-match-06, c3w4-tails-pvalues-critical-figure-two-01]
+  - id: c3w4-f-right-tail-power
+    topic: power-results
+    name: { vi: 'Power kiểm định z phải đuôi', en: 'Right-tail z-test power' }
+    tex: 'k=\mu_0+z_{1-\alpha}\frac{\sigma}{\sqrt n},\qquad \text{power}(\mu_1)=P_{\mu_1}(\bar X>k)'
+    where:
+      vi: '$k$ là ngưỡng bác bỏ theo $H_0$; power được tính dưới trung bình thật $\mu_1$.'
+      en: '$k$ is the rejection cutoff under $H_0$; power is computed under the true mean $\mu_1$.'
+    numpy: '1 - scipy.stats.norm.cdf(k, loc=mu1, scale=sigma/np.sqrt(n))'
+    exercises: [c3w4-power-results-numeric-01, c3w4-power-results-code-01, c3w4-power-results-parsons-07]
+  - id: c3w4-f-one-sample-t-test
+    topic: t-tests-ab-testing
+    name: { vi: 'Thống kê t một mẫu', en: 'One-sample t statistic' }
+    tex: 't=\frac{\bar x-\mu_0}{s/\sqrt n}'
+    where:
+      vi: 'Kiểm định trung bình một mẫu khi $\sigma$ chưa biết; dùng $df=n-1$.'
+      en: 'Tests a one-sample mean when $\sigma$ is unknown; use $df=n-1$.'
+    numpy: 'scipy.stats.ttest_1samp(x, popmean=mu0)'
+    exercises: [c3w4-t-tests-ab-testing-numeric-01, c3w4-t-tests-ab-testing-code-02, c3w4-t-ci-proportions-numeric-01]
+  - id: c3w4-f-welch-t-test
+    topic: t-tests-ab-testing
+    name: { vi: 'Thống kê t Welch hai mẫu', en: 'Welch two-sample t statistic' }
+    tex: 't=\frac{\bar x-\bar y-\Delta_0}{\sqrt{s_x^2/n_x+s_y^2/n_y}}'
+    where:
+      vi: 'So sánh hai trung bình độc lập, không giả sử phương sai hai nhóm bằng nhau.'
+      en: 'Compares two independent means without assuming equal group variances.'
+    numpy: 'scipy.stats.ttest_ind(x, y, equal_var=False)'
+    exercises: [c3w4-t-tests-ab-testing-multi-01, c3w4-t-tests-ab-testing-match-08]
+  - id: c3w4-f-paired-t-test
+    topic: t-tests-ab-testing
+    name: { vi: 'Kiểm định t cặp', en: 'Paired t statistic' }
+    tex: 'd_i=y_i-x_i,\qquad t=\frac{\bar d-\Delta_0}{s_d/\sqrt n}'
+    where:
+      vi: 'Dùng cho dữ liệu ghép cặp trước/sau hoặc cùng đối tượng; kiểm định trên sai khác trong từng cặp.'
+      en: 'Use for before/after or matched-unit data; test the within-pair differences.'
+    numpy: 'scipy.stats.ttest_rel(after, before)'
+    exercises: [c3w4-t-tests-ab-testing-mcq-08, c3w4-t-tests-ab-testing-find-error-01, c3w4-t-tests-ab-testing-match-08]
+  - id: c3w4-f-two-proportion-pooled
+    topic: t-tests-ab-testing
+    name: { vi: 'Tỉ lệ gộp cho kiểm định hai tỉ lệ', en: 'Pooled proportion for a two-proportion test' }
+    tex: '\hat p=\frac{x_A+x_B}{n_A+n_B}'
+    where:
+      vi: 'Dùng dưới $H_0:p_A=p_B$ để ước lượng tỉ lệ chung.'
+      en: 'Use under $H_0:p_A=p_B$ to estimate the common conversion rate.'
+    exercises: [c3w4-t-tests-ab-testing-tf-08, c3w4-t-tests-ab-testing-numeric-02, c3w4-t-tests-ab-testing-code-01]
+  - id: c3w4-f-two-proportion-z
+    topic: t-tests-ab-testing
+    name: { vi: 'Thống kê z hai tỉ lệ', en: 'Two-proportion z statistic' }
+    tex: 'z=\frac{\hat p_A-\hat p_B}{\sqrt{\hat p(1-\hat p)(1/n_A+1/n_B)}}'
+    where:
+      vi: '$\hat p_A=x_A/n_A$, $\hat p_B=x_B/n_B$, và $\hat p$ là tỉ lệ gộp dưới null.'
+      en: '$\hat p_A=x_A/n_A$, $\hat p_B=x_B/n_B$, and $\hat p$ is the pooled null proportion.'
+    numpy: 'statsmodels.stats.proportion.proportions_ztest([xA,xB], [nA,nB])'
+    exercises: [c3w4-t-tests-ab-testing-numeric-02, c3w4-t-tests-ab-testing-code-01, c3w4-t-tests-ab-testing-parsons-08]

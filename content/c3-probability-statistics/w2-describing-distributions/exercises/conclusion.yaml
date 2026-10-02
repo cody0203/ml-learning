@@ -1,0 +1,184 @@
+exercises:
+- id: c3w2-conclusion-mcq-01
+  topic: conclusion
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về conclusion.
+    en: Choose the best statement about conclusion.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: The week combines summaries of one variable with joint summaries, so no single number describes everything.
+  hints: []
+  options:
+  - vi: Tuần này kết hợp tâm, spread, hình dạng, joint probability và dependence.
+    en: This week combines center, spread, shape, joint probability, and dependence.
+  - vi: Chỉ cần thuộc công thức mean là đủ cho mọi phần của tuần.
+    en: Memorizing the mean formula is enough for every part of the week.
+  - vi: QQ plot và covariance matrix trả lời cùng một câu hỏi.
+    en: QQ plots and covariance matrices answer the exact same question.
+  - vi: Phân phối nhiều biến bỏ qua hoàn toàn các phân phối một biến.
+    en: Multivariable distributions completely ignore one-variable distributions.
+  answer:
+  - 0
+- id: c3w2-conclusion-tf-02
+  topic: conclusion
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: a good distribution summary may need center, spread, shape, visualization, and dependence.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the slides move from mean and median to QQ plots, joint tables, covariance, and Gaussian models for this reason.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Mỗi công cụ trả lời một câu hỏi khác về dữ liệu.
+    en: Each tool answers a different question about the data.
+  - vi: Sau khi biết mean, không cần xem spread hay shape.
+    en: Once the mean is known, spread and shape are unnecessary.
+  - vi: Joint distributions chỉ dùng cho một biến.
+    en: Joint distributions are only used for one variable.
+  reasonAnswer: 0
+- id: c3w2-conclusion-matching-03
+  topic: conclusion
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho conclusion.
+    en: Match concepts for conclusion.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: 'The pairs review which tool answers which question: typical value, risk, normality, or relationship.'
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-conclusion-parsons-04
+  topic: conclusion
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho conclusion.
+    en: Order the solution workflow for conclusion.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: A final review workflow chooses the summary after deciding whether the question is about one variable or several.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-conclusion-multi-05
+  topic: conclusion
+  type: multi-step
+  difficulty: 2
+  tags:
+  - word-problem
+  prompt:
+    vi: Bài nhiều bước về conclusion.
+    en: Multi-step problem about conclusion.
+  explanation:
+    vi: Giải từng phần giúp tách tâm, độ phân tán và diễn giải.
+    en: The multi-step item revisits mean, variance, and symmetry so the final topic ties back to the start of the week.
+  hints:
+  - vi: Tính mean trước, rồi khoảng cách tới mean.
+    en: Compute mean first, then deviations from it.
+  parts:
+  - type: numeric
+    prompt:
+      vi: Dữ liệu 2, 4, 6. Mean là bao nhiêu?
+      en: Data 2, 4, 6. What is the mean?
+    answers:
+    - value: 4
+  - type: numeric
+    prompt:
+      vi: Phương sai tổng thể của 2, 4, 6 là bao nhiêu?
+      en: What is the population variance of 2, 4, 6?
+    answers:
+    - value: 2.6666666666666665
+    tolerance: 0.001
+  - type: mcq
+    prompt:
+      vi: Dữ liệu có lệch phải mạnh không?
+      en: Is the data strongly right-skewed?
+    options:
+    - vi: Không, nó đối xứng quanh 4.
+      en: No; the three observations balance exactly around the center 4.
+    - vi: Có, vì mean lớn.
+      en: Yes; skewness is decided only by whether the mean is positive.
+    answer:
+    - 0
+- id: c3w2-conclusion-parametric-06
+  topic: conclusion
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: Bài sinh tự động từ generator.
+    en: Auto-generated drill from the generator.
+  explanation:
+    vi: Generator sẽ thay prompt bằng dữ liệu mới.
+    en: The generator replaces this prompt with fresh data.
+  hints: []
+  generator: descriptive-stats
+  params: {}
+- id: c3w2-conclusion-code-07
+  topic: conclusion
+  type: code
+  difficulty: 3
+  tags:
+  - code
+  prompt:
+    vi: Cài đặt `standardize` từ đầu; không dùng shortcut một dòng của thư viện.
+    en: Implement `standardize` from scratch; avoid one-line library shortcuts.
+  explanation:
+    vi: Lời giải duyệt dữ liệu rõ ràng và kiểm tra edge cases.
+    en: Standardization is checked by requiring zero mean and unit population variance on a concrete three-value list.
+  hints:
+  - vi: Viết công thức trước rồi chuyển thành vòng lặp/NumPy cơ bản.
+    en: Write the formula first, then turn it into loops/basic NumPy.
+  starter: "def standardize(x):\n    return x\n"
+  solution: "def standardize(x):\n    n=len(x); m=sum(x)/n; var=sum((a-m)**2 for a in x)/n; s=var**0.5\n    return [(a-m)/s\
+    \ for a in x]\n"
+  tests: "def test_standardize():\n    z=standardize([2,4,6])\n    assert abs(sum(z)) < 1e-9\n    assert abs(sum(v*v for v\
+    \ in z)/len(z)-1) < 1e-9\n"

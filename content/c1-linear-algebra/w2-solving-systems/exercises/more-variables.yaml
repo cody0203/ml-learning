@@ -1,0 +1,213 @@
+exercises:
+- id: c1w2-more-variables-mcq-01
+  topic: more-variables
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    en: In the three-variable slide example, elimination reaches $c=3$, then $b=2$, then $a=4$. Why is this order natural?
+    vi: Trong ví dụ ba biến của slide, khử biến đi đến $c=3$, rồi $b=2$, rồi $a=4$. Vì sao thứ tự này tự nhiên?
+  explanation:
+    en: Forward elimination creates a triangular system whose last row contains the last variable, so back-substitution starts with $c$ and moves upward. Alphabetical order is irrelevant; constants do not set the solving order; and a three-variable system can be non-singular before reaching RREF.
+    vi: Khử tiến tạo hệ tam giác mà hàng cuối chứa biến cuối, nên thế ngược bắt đầu từ $c$ rồi đi lên. Thứ tự chữ cái không liên quan; hằng số không quyết định thứ tự giải; và hệ ba biến có thể non-singular trước khi đạt RREF.
+  hints: []
+  options:
+  - en: The triangular form exposes the bottom variable first, so back-substitution moves upward.
+    vi: Dạng tam giác làm lộ biến dưới cùng trước, nên thế ngược đi từ dưới lên.
+  - en: Alphabetical order forces solving $c$ before $b$ and $a$.
+    vi: Thứ tự chữ cái buộc phải giải $c$ trước $b$ và $a$.
+  - en: The largest constant must be handled last.
+    vi: Hằng số lớn nhất phải xử lý sau cùng.
+  - en: A three-variable system is always singular until RREF is computed.
+    vi: Hệ ba biến luôn singular cho đến khi tính RREF.
+  answer:
+  - 0
+- id: c1w2-more-variables-truefalse-02
+  topic: more-variables
+  type: true-false
+  difficulty: 1
+  tags:
+  - definition
+  prompt:
+    vi: Trong hệ ba biến nhất quán, hai pivot nghĩa là có một biến tự do.
+    en: In a consistent three-variable system, two pivots mean one free variable.
+  explanation:
+    vi: Có ba ẩn nhưng chỉ hai phương trình độc lập; cột không pivot có thể được chọn làm tham số.
+    en: There are three unknowns but only two independent equations; the non-pivot column can be chosen as a parameter.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Biến tự do đến từ cột không pivot.
+    en: Free variables come from non-pivot columns.
+  - vi: Hai pivot trong ba biến vẫn cố định cả ba biến nếu hệ nhất quán.
+    en: Two pivots in three variables still fix all three variables when the system is consistent.
+  - vi: Biến tự do chỉ xuất hiện khi có hàng mâu thuẫn $0=c$.
+    en: Free variables appear only when there is a contradictory row $0=c$.
+  reasonAnswer: 0
+- id: c1w2-more-variables-matching-03
+  topic: more-variables
+  type: matching
+  difficulty: 1
+  tags:
+  - connections
+  prompt:
+    vi: Ghép khái niệm liên quan đến hệ có nhiều biến.
+    en: Match concepts related to systems with more variables.
+  explanation:
+    vi: Các cặp nhấn mạnh pivot, biến tự do, và thế ngược trong hệ có nhiều cột hơn ví dụ đầu.
+    en: The pairs emphasize pivots, free variables, and back-substitution in systems with more columns than the first examples.
+  hints: []
+  pairs:
+  - left:
+      vi: Pivot
+      en: Pivot
+    right:
+      vi: Phần tử khác 0 đầu tiên của hàng trong REF
+      en: First non-zero entry of a REF row
+  - left:
+      vi: Rank
+      en: Rank
+    right:
+      vi: Số pivot/thông tin độc lập
+      en: Number of pivots/independent information
+  - left:
+      vi: $0=c, c\ne0$
+      en: $0=c, c\ne0$
+    right:
+      vi: Mâu thuẫn, vô nghiệm
+      en: Contradiction, no solution
+  - left:
+      vi: Cộng bội hàng
+      en: Row replacement
+    right:
+      vi: Phép dòng hợp lệ
+      en: Valid row operation
+- id: c1w2-more-variables-matrix-04
+  topic: more-variables
+  type: matrix
+  difficulty: 2
+  tags:
+  - calculation
+  prompt:
+    vi: Nhập nghiệm cột của hệ slide 3 ẩn.
+    en: Enter the column solution of the 3-variable slide system.
+  explanation:
+    vi: Khử tiến cho $c=3$, $b=2$, $a=4$.
+    en: Forward elimination gives $c=3$, $b=2$, $a=4$.
+  hints: []
+  answer:
+  - - 4
+  - - 2
+  - - 3
+  tolerance: 0.001
+- id: c1w2-more-variables-construct-05
+  topic: more-variables
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo vector nghiệm cho hệ tam giác đã cho.
+    en: Construct a solution vector for the given triangular system.
+  explanation:
+    vi: Ví dụ có hai hàng độc lập trong ba cột; hàng 3 bằng hàng 1 cộng hàng 2, nên rank đúng bằng 2.
+    en: The sample has two independent rows in three columns; row 3 equals row 1 plus row 2, so it demonstrates exactly rank 2.
+  hints: []
+  rows: 3
+  cols: 1
+  constraints:
+  - kind: solves
+    A:
+    - - 1
+      - 1
+      - 1
+    - - 0
+      - 1
+      - 2
+    - - 0
+      - 0
+      - 1
+    b:
+    - 6
+    - 5
+    - 2
+  example:
+  - - 3
+  - - 1
+  - - 2
+- id: c1w2-more-variables-parsons-06
+  topic: more-variables
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình làm việc cho hệ có nhiều biến.
+    en: Order the workflow for systems with more variables.
+  explanation:
+    vi: Trong hệ ba biến, xóa cột đầu rồi cột thứ hai, và chờ đến dạng tam giác mới thế ngược để tìm giá trị.
+    en: In a three-variable system, clear the first column, then the second, and postpone numerical values until the triangular rows are ready for back-substitution.
+  hints: []
+  steps:
+  - vi: Chọn pivot khác 0 ở hàng/cột hiện tại.
+    en: Choose a non-zero pivot in the current row/column.
+  - vi: Đổi hàng nếu pivot hiện tại bằng 0.
+    en: Swap rows if the current pivot is zero.
+  - vi: Cộng bội hàng pivot để khử các phần tử dưới pivot.
+    en: Add multiples of the pivot row to clear entries below the pivot.
+  - vi: Lặp lại ở hệ con bên dưới/bên phải.
+    en: Repeat on the lower/right sub-system.
+  - vi: Đếm pivot hoặc thế ngược để kết luận.
+    en: Count pivots or back-substitute to conclude.
+- id: c1w2-more-variables-finderror-07
+  topic: more-variables
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lập luận về hệ có nhiều biến.
+    en: Find the first error in the argument about systems with more variables.
+  explanation:
+    vi: Mệnh đề sai đầu tiên là pivot 2 ngăn REF. Trong hệ lớn hơn, một hàng có thể là hàng pivot hợp lệ trước khi chuẩn hóa.
+    en: The first false claim is that pivot 2 prevents REF. In larger systems, a row can be a valid pivot row before any normalization.
+  hints: []
+  steps:
+  - vi: Ma trận có hàng 0 ở cuối và pivot dịch sang phải.
+    en: The matrix has zero rows at the bottom and pivots move right.
+  - vi: Các phần tử dưới pivot đều bằng 0 nên ma trận ở REF.
+    en: Entries below pivots are zero, so the matrix is in REF.
+  - vi: Vì một pivot bằng 2, ma trận không thể ở REF.
+    en: Because one pivot is 2, the matrix cannot be in REF.
+  - vi: Kết luận rank không thể đếm bằng số pivot.
+    en: Conclude rank cannot be counted by pivots.
+  answer: 2
+- id: c1w2-more-variables-predictoutput-09
+  topic: more-variables
+  type: predict-output
+  difficulty: 2
+  tags:
+  - numpy
+  prompt:
+    vi: Đoán output khi nhân ma trận hệ số ba biến với vector nghiệm đề xuất.
+    en: Predict the output after multiplying a 3-variable coefficient matrix by the proposed solution vector.
+  explanation:
+    vi: Tính tích vô hướng từng hàng với ba phần tử; khớp cả ba output xác nhận vector thỏa hệ đã mã hóa.
+    en: Compute each row dot product with the three entries; matching all three outputs confirms the vector satisfies the encoded system.
+  hints: []
+  code: 'import numpy as np
+
+    A=np.array([[1,1,2],[3,-3,-1],[2,-1,6]])
+
+    x=np.array([4,2,3])
+
+    print(A @ x)
+
+    '
+  options:
+  - '[12  3 24]'
+  - '[4 2 3]'
+  - '[12 24  3]'
+  - '[0 0 0]'
+  answer: 0

@@ -1,0 +1,199 @@
+exercises:
+- id: c3w2-skewness-kurtosis-mcq-01
+  topic: skewness-kurtosis
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về skewness-kurtosis.
+    en: Choose the best statement about skewness-kurtosis.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Skewness uses the third standardized moment for tail direction; kurtosis uses the fourth for tail heaviness.
+  hints: []
+  options:
+  - vi: Skewness dương cho thấy đuôi phải đóng góp mạnh vào moment bậc ba.
+    en: Positive skewness means the right tail contributes strongly to the third moment.
+  - vi: Kurtosis âm nghĩa là xác suất âm xuất hiện ở đuôi.
+    en: Negative kurtosis means negative probabilities appear in the tails.
+  - vi: Hai phân phối có cùng variance thì kurtosis cũng phải bằng nhau.
+    en: Two distributions with the same variance must also have the same kurtosis.
+  - vi: Skewness được tính bằng moment bậc hai đã chuẩn hóa.
+    en: Skewness is computed from the standardized second moment.
+  answer:
+  - 0
+  figure:
+    xRange:
+    - 0
+    - 6
+    yRange:
+    - 0
+    - 0.45
+    bars:
+    - x: 0
+      h: 0.03
+    - x: 1
+      h: 0.16
+    - x: 2
+      h: 0.31
+    - x: 3
+      h: 0.36
+    - x: 4
+      h: 0.13
+    - x: 5
+      h: 0.03
+    xLabel: k
+    yLabel: P(X=k)
+- id: c3w2-skewness-kurtosis-tf-02
+  topic: skewness-kurtosis
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: positive skew corresponds to a longer or heavier right tail.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: the cubed standardized deviations are positive for far-right observations and negative for far-left ones.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Lũy thừa bậc ba giữ dấu nên đuôi phải làm moment dương.
+    en: The third power keeps sign, so a right tail pushes the moment positive.
+  - vi: Đuôi phải dài làm skewness âm.
+    en: A long right tail makes skewness negative.
+  - vi: Kurtosis và skewness đều là moment bậc hai.
+    en: Kurtosis and skewness are both second moments.
+  reasonAnswer: 0
+- id: c3w2-skewness-kurtosis-matching-03
+  topic: skewness-kurtosis
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho skewness-kurtosis.
+    en: Match concepts for skewness-kurtosis.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The matches separate right-tail asymmetry, left-tail asymmetry, and thick-tail behavior.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-skewness-kurtosis-parsons-04
+  topic: skewness-kurtosis
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho skewness-kurtosis.
+    en: Order the solution workflow for skewness-kurtosis.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: Moments of order three and four should be computed after standardization so scale does not dominate the comparison.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-skewness-kurtosis-numeric-05
+  topic: skewness-kurtosis
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: A standardized variable has third moment -0.8. What is its skewness?
+    en: A standardized variable has third moment -0.8. What is its skewness?
+  explanation:
+    vi: Skewness is the third standardized moment.
+    en: Skewness is the third standardized moment.
+  hints: []
+  answers:
+  - value: -0.8
+  tolerance: 0.001
+- id: c3w2-skewness-kurtosis-construct-06
+  topic: skewness-kurtosis
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo 5 giá trị khác nhau sao cho mean nhỏ hơn median.
+    en: Build 5 distinct values where mean is less than median.
+  explanation:
+    vi: Ví dụ mẫu thỏa tất cả ràng buộc; nhiều đáp án khác cũng đúng.
+    en: The set 0,5,6,7,8 has median 6 and mean 5.2, giving a small left pull with distinct values.
+  hints:
+  - vi: Kiểm tra từng constraint từ trái sang phải.
+    en: Check constraints one by one.
+  rows: 1
+  cols: 5
+  constraints:
+  - kind: meanLessThanMedian
+  - kind: distinctValues
+    min: 4
+  example:
+  - - 0
+    - 5
+    - 6
+    - 7
+    - 8
+- id: c3w2-skewness-kurtosis-find-error-07
+  topic: skewness-kurtosis
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải về skewness-kurtosis.
+    en: Find the first error in this skewness-kurtosis solution.
+  explanation:
+    vi: Bước sai áp dụng một điều kiện không được đảm bảo.
+    en: The faulty reasoning confuses equal mean and variance with equal tails; kurtosis can still differ greatly.
+  hints:
+  - vi: Độc lập phải được cho hoặc chứng minh.
+    en: Independence must be stated or proven.
+  steps:
+  - vi: Gọi dữ liệu/PMF đã cho là đối tượng cần phân tích.
+    en: Let the given data/PMF be the object to analyze.
+  - vi: Viết công thức tổng quát trước khi thay số.
+    en: Write the general formula before substituting.
+  - vi: Giả sử các biến độc lập chỉ vì chúng có hai tên khác nhau.
+    en: Assume the variables are independent just because they have two different names.
+  - vi: Tiếp tục dùng công thức tích để ra kết quả.
+    en: Continue using the product formula to get the result.
+  answer: 2

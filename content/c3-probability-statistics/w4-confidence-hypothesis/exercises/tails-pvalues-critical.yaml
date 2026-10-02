@@ -1,0 +1,260 @@
+exercises:
+- id: c3w4-tails-pvalues-critical-mcq-06
+  topic: tails-pvalues-critical
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Với $H_1:\mu>66.7$, p-value lấy vùng nào?
+    en: With $H_1:\mu>66.7$, which region gives the p-value?
+  explanation:
+    vi: Alternative dấu lớn hơn làm test right-tailed; p-value là xác suất statistic lớn ít nhất như quan sát.
+    en: A greater-than alternative makes the test right-tailed; the p-value is the probability of a statistic at least as large as observed.
+  hints: []
+  options:
+  - vi: Đuôi phải từ $z_{obs}$ trở lên.
+    en: The right tail from $z_{obs}$ upward.
+  - vi: Luôn là vùng giữa $-z_{obs}$ và $z_{obs}$.
+    en: Always the region between $-z_{obs}$ and $z_{obs}$.
+  - vi: Đuôi trái bất kể dấu của $H_1$.
+    en: The left tail regardless of the sign in $H_1$.
+  answer:
+  - 0
+- id: c3w4-tails-pvalues-critical-tf-06
+  topic: tails-pvalues-critical
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: Với two-tailed test đối xứng, p-value thường gấp đôi tail một phía tương ứng với $|z_{obs}|$.
+    en: For a symmetric two-tailed test, the p-value is usually twice the one-tail area beyond $|z_{obs}|$.
+  explanation:
+    vi: Đúng. Hai phía nghĩa là cả độ lệch dương và âm đều extreme, nên cộng hai tail đối xứng.
+    en: True. Two-sided means both positive and negative deviations are extreme, so the two symmetric tails are added.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Cả hai hướng lệch khỏi $\mu_0$ đều tính là extreme.
+    en: Deviations in both directions from $\mu_0$ count as extreme.
+  - vi: Two-tailed test chỉ nhìn đuôi phải.
+    en: A two-tailed test only looks at the right tail.
+  reasonAnswer: 0
+- id: c3w4-tails-pvalues-critical-match-06
+  topic: tails-pvalues-critical
+  type: matching
+  difficulty: 1
+  tags:
+  - vocabulary
+  prompt:
+    vi: Ghép alternative với vùng rejection chuẩn hóa.
+    en: Match each alternative with its standardized rejection region.
+  explanation:
+    vi: Dấu trong $H_1$ quyết định dùng đuôi phải, đuôi trái hay hai đuôi.
+    en: The sign in $H_1$ determines whether to use the right tail, left tail, or both tails.
+  hints: []
+  pairs:
+  - left:
+      vi: $H_1:\mu>\mu_0$
+      en: $H_1:\mu>\mu_0$
+    right:
+      vi: reject nếu $z$ rất lớn
+      en: reject for very large $z$
+  - left:
+      vi: $H_1:\mu<\mu_0$
+      en: $H_1:\mu<\mu_0$
+    right:
+      vi: reject nếu $z$ rất nhỏ
+      en: reject for very small $z$
+  - left:
+      vi: standard error
+      en: standard error
+    right:
+      vi: độ lệch chuẩn của estimator
+      en: standard deviation of an estimator
+- id: c3w4-tails-pvalues-critical-parsons-06
+  topic: tails-pvalues-critical
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp bước p-value cho z-test right-tailed.
+    en: Order the p-value steps for a right-tailed z-test.
+  explanation:
+    vi: Right-tailed z-test chuẩn hóa mean, lấy survival probability, rồi so với $\alpha$.
+    en: A right-tailed z-test standardizes the mean, takes a survival probability, then compares it with $\alpha$.
+  hints:
+  - vi: Dùng survival function cho đuôi phải.
+    en: Use the survival function for the right tail.
+  steps:
+  - vi: Viết $H_0:\mu=\mu_0$ và $H_1:\mu>\mu_0$.
+    en: Write $H_0:\mu=\mu_0$ and $H_1:\mu>\mu_0$.
+  - vi: Tính $z=(\bar x-\mu_0)/(\sigma/\sqrt n)$.
+    en: Compute $z=(\bar x-\mu_0)/(\sigma/\sqrt n)$.
+  - vi: Tính $p=P(Z\ge z_{obs})$.
+    en: Compute $p=P(Z\ge z_{obs})$.
+  - vi: Reject nếu $p\le\alpha$.
+    en: Reject if $p\le\alpha$.
+- id: c3w4-tails-pvalues-critical-numeric-01
+  topic: tails-pvalues-critical
+  type: numeric
+  difficulty: 2
+  tags:
+  - z-test
+  prompt:
+    vi: Với $\bar x=68.442$, $\mu_0=66.7$, $\sigma=3$, $n=10$, tính z statistic.
+    en: With $\bar x=68.442$, $\mu_0=66.7$, $\sigma=3$, $n=10$, compute the z statistic.
+  explanation:
+    vi: $z=(68.442-66.7)/(3/\sqrt{10})=1.837$.
+    en: $z=(68.442-66.7)/(3/\sqrt{10})=1.837$.
+  hints: []
+  answers:
+  - value: 1.837
+  tolerance: 0.001
+- id: c3w4-tails-pvalues-critical-figure-right-01
+  topic: tails-pvalues-critical
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - p-value
+  prompt:
+    vi: Với right-tailed test và $z_{obs}=1.84$, vùng tô là gì?
+    en: For a right-tailed test with $z_{obs}=1.84$, what is the shaded region?
+  explanation:
+    vi: p-value right-tail là xác suất $Z\ge z_{obs}$ dưới $H_0$.
+    en: A right-tail p-value is $P(Z\ge z_{obs})$ under $H_0$.
+  hints: []
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.3989*exp(-0.5*x^2)
+      label: N(0,1)
+      color: '#1f77b4'
+    areas:
+    - f: 0.3989*exp(-0.5*x^2)
+      from: 1.84
+      to: 4
+      color: '#fca5a5'
+    xLabel: z
+    yLabel: density
+  options:
+  - vi: p-value
+    en: p-value
+  - vi: central confidence level
+    en: central confidence level
+  - vi: Type II error tại $\mu=70$
+    en: Type II error at $\mu=70$
+  answer:
+  - 0
+- id: c3w4-tails-pvalues-critical-figure-two-01
+  topic: tails-pvalues-critical
+  type: mcq
+  difficulty: 2
+  tags:
+  - figure
+  - critical
+  prompt:
+    vi: 'Two-tailed test ở $\alpha=0.05$: rejection region là vùng nào?'
+    en: 'Two-tailed test at $\alpha=0.05$: which is the rejection region?'
+  explanation:
+    vi: Rejection region gồm hai đuôi, mỗi đuôi $0.025$, ngoài $\pm1.96$.
+    en: The rejection region is two tails of $0.025$ each, beyond $\pm1.96$.
+  hints: []
+  figure:
+    xRange:
+    - -4
+    - 4
+    yRange:
+    - 0
+    - 0.45
+    functions:
+    - f: 0.3989*exp(-0.5*x^2)
+      label: N(0,1)
+      color: '#1f77b4'
+    areas:
+    - f: 0.3989*exp(-0.5*x^2)
+      from: -4
+      to: -1.96
+      color: '#fecaca'
+    - f: 0.3989*exp(-0.5*x^2)
+      from: 1.96
+      to: 4
+      color: '#fecaca'
+    xLabel: z
+    yLabel: density
+  options:
+  - vi: Hai đuôi ngoài $-1.96$ và $1.96$
+    en: Both tails outside $-1.96$ and $1.96$
+  - vi: Chỉ đuôi phải ngoài $1.645$
+    en: Only right tail beyond $1.645$
+  - vi: Vùng giữa $-1.96$ và $1.96$
+    en: Area between $-1.96$ and $1.96$
+  answer:
+  - 0
+- id: c3w4-tails-pvalues-critical-code-01
+  topic: tails-pvalues-critical
+  type: code
+  difficulty: 2
+  tags:
+  - python
+  - p-value
+  prompt:
+    vi: Viết hàm p-value z-test cho tails `'right'`, `'left'`, `'two'` dùng `math.erf`.
+    en: Write a z-test p-value function for tails `'right'`, `'left'`, `'two'` using `math.erf`.
+  explanation:
+    vi: CDF chuẩn là $\Phi(z)=0.5(1+erf(z/\sqrt2))$. Right tail là $1-\Phi(z)$, left là $\Phi(z)$, two là $2\min(\Phi(z),1-\Phi(z))$.
+    en: The normal CDF is $\Phi(z)=0.5(1+erf(z/\sqrt2))$. Right tail is $1-\Phi(z)$, left is $\Phi(z)$, two is $2\min(\Phi(z),1-\Phi(z))$.
+  hints: []
+  starter: "import math\n\ndef z_pvalue(z, tail):\n    return None\n"
+  solution: "import math\n\ndef z_pvalue(z, tail):\n    phi = 0.5 * (1 + math.erf(z / math.sqrt(2)))\n    if tail == 'right':\n\
+    \        return 1 - phi\n    if tail == 'left':\n        return phi\n    if tail == 'two':\n        return 2 * min(phi,\
+    \ 1 - phi)\n    raise ValueError('tail must be right, left, or two')\n"
+  tests: "def test_right():\n    assert abs(z_pvalue(1.837, 'right') - 0.03315) < 0.002\n\ndef test_two_symmetry():\n    assert\
+    \ abs(z_pvalue(-2, 'two') - z_pvalue(2, 'two')) < 1e-12\n\ndef test_left():\n    assert z_pvalue(-1, 'left') < 0.16\n"
+- id: c3w4-tails-pvalues-critical-find-error-01
+  topic: tails-pvalues-critical
+  type: find-error
+  difficulty: 2
+  tags:
+  - tail
+  prompt:
+    vi: Tìm lỗi đầu tiên trong kiểm định tail.
+    en: Find the first tail-choice error.
+  explanation:
+    vi: 'Sai ở bước 3: $H_1:\mu<\mu_0$ là left-tail, nên p-value dùng $P(Z\le z_{obs})$.'
+    en: 'Step 3 is wrong: $H_1:\mu<\mu_0$ is left-tailed, so the p-value uses $P(Z\le z_{obs})$.'
+  hints: []
+  steps:
+  - vi: Đặt $H_0:\mu=100$, $H_1:\mu<100$.
+    en: Set $H_0:\mu=100$, $H_1:\mu<100$.
+  - vi: Tính được $z_{obs}=-1.9$.
+    en: Compute $z_{obs}=-1.9$.
+  - vi: Vì statistic là z, p-value = $P(Z\ge -1.9)$.
+    en: Because the statistic is z, p-value = $P(Z\ge -1.9)$.
+  - vi: So sánh p-value với $\alpha$.
+    en: Compare p-value with $\alpha$.
+  answer: 2
+- id: c3w4-tails-pvalues-critical-param-01
+  topic: tails-pvalues-critical
+  type: parametric
+  difficulty: 1
+  tags:
+  - generator
+  - z
+  prompt:
+    vi: Generator z-score để luyện chuẩn hóa.
+    en: z-score generator for standardization practice.
+  explanation:
+    vi: Kiểm định z bắt đầu bằng chuẩn hóa statistic.
+    en: A z-test starts by standardizing the statistic.
+  hints: []
+  generator: z-score
+  params: {}

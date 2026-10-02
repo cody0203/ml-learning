@@ -1,0 +1,165 @@
+exercises:
+- id: c3w2-sum-expectations-mcq-01
+  topic: sum-expectations
+  type: mcq
+  difficulty: 1
+  tags:
+  - concept
+  prompt:
+    vi: Chọn phát biểu đúng nhất về sum-expectations.
+    en: Choose the best statement about sum-expectations.
+  explanation:
+    vi: Đáp án đúng dùng đúng định nghĩa trong bối cảnh của chủ đề.
+    en: Linearity says expected totals can be found by adding expected pieces before enumerating all combined outcomes.
+  hints: []
+  options:
+  - vi: Có thể cộng kỳ vọng của từng phần thưởng để được kỳ vọng tổng.
+    en: You may add the expectations of the separate rewards to get the total expectation.
+  - vi: Tuyến tính của kỳ vọng chỉ đúng khi các biến độc lập.
+    en: Linearity of expectation only works when the variables are independent.
+  - vi: Phải liệt kê mọi kết quả kết hợp trước khi được cộng kỳ vọng.
+    en: You must enumerate every combined outcome before adding expectations.
+  - vi: Kỳ vọng của tổng bằng tích hai kỳ vọng.
+    en: The expectation of a sum equals the product of the two expectations.
+  answer:
+  - 0
+- id: c3w2-sum-expectations-tf-02
+  topic: sum-expectations
+  type: true-false
+  difficulty: 1
+  tags:
+  - misconception
+  prompt:
+    vi: 'Phát biểu: phải kiểm tra điều kiện trước khi dùng công thức xác suất/thống kê.'
+    en: 'Statement: $E[X+Y]=E[X]+E[Y]$ still holds when $X$ and $Y$ are dependent.'
+  explanation:
+    vi: 'Đúng: cùng ký hiệu có thể có công thức rời rạc, liên tục, dữ liệu mẫu hoặc tổng thể.'
+    en: 'True: independence is unnecessary for sums of expectations; it is needed for some product and variance shortcuts.'
+  hints: []
+  answer: true
+  reasons:
+  - vi: Tuyến tính của kỳ vọng là tính chất đại số của phép trung bình.
+    en: Linearity of expectation is an algebraic property of averaging.
+  - vi: Công thức cộng chỉ đúng sau khi chứng minh độc lập.
+    en: The sum rule only works after proving independence.
+  - vi: Kỳ vọng của tổng phải bằng tích các kỳ vọng.
+    en: The expectation of a sum must equal the product of expectations.
+  reasonAnswer: 0
+- id: c3w2-sum-expectations-matching-03
+  topic: sum-expectations
+  type: matching
+  difficulty: 1
+  tags:
+  - matching
+  prompt:
+    vi: Ghép khái niệm cho sum-expectations.
+    en: Match concepts for sum-expectations.
+  explanation:
+    vi: Các cặp phân biệt định nghĩa, công thức và diễn giải.
+    en: The matches identify indicators, expected counts, and the additivity rule used in the name-card example.
+  hints: []
+  pairs:
+  - left:
+      vi: Mean / kỳ vọng
+      en: Mean / expectation
+    right:
+      vi: Trung bình có trọng số
+      en: Weighted average
+  - left:
+      vi: Variance
+      en: Variance
+    right:
+      vi: Độ phân tán bình phương quanh mean
+      en: Squared spread around mean
+  - left:
+      vi: Conditional
+      en: Conditional
+    right:
+      vi: Chuẩn hóa một lát cắt
+      en: Renormalized slice
+  - left:
+      vi: Correlation
+      en: Correlation
+    right:
+      vi: Covariance đã chuẩn hóa
+      en: Standardized covariance
+- id: c3w2-sum-expectations-parsons-04
+  topic: sum-expectations
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp quy trình giải cho sum-expectations.
+    en: Order the solution workflow for sum-expectations.
+  explanation:
+    vi: Thứ tự đúng bắt đầu bằng xác định dữ liệu, rồi công thức, rồi tính và diễn giải.
+    en: The right workflow decomposes a total payoff into simpler random variables before summing their expectations.
+  hints:
+  - vi: Đừng tính trước khi biết đang cần đại lượng nào.
+    en: Do not compute before knowing the target quantity.
+  steps:
+  - vi: Xác định biến, dữ liệu và loại phân phối.
+    en: Identify variables, data, and distribution type.
+  - vi: Chọn công thức phù hợp với rời rạc/liên tục/mẫu.
+    en: Choose the formula matching discrete/continuous/sample setting.
+  - vi: Thay số cẩn thận và tính toán.
+    en: Substitute values carefully and compute.
+  - vi: Kiểm tra đơn vị, dấu và ý nghĩa.
+    en: Check units, sign, and meaning.
+- id: c3w2-sum-expectations-numeric-05
+  topic: sum-expectations
+  type: numeric
+  difficulty: 1
+  tags:
+  - calculation
+  prompt:
+    vi: Bạn nhận $1 nếu đồng xu công bằng ra heads và nhận thêm số điểm của một lần gieo xúc xắc. Kỳ vọng tổng tiền thắng là bao nhiêu?
+    en: You get $1 for heads in one fair coin flip and the result of one fair die roll. Expected total winnings?
+  explanation:
+    vi: 'Linearity: $0.5+3.5=4$.'
+    en: 'Linearity: $0.5+3.5=4$.'
+  hints: []
+  answers:
+  - value: 4
+  tolerance: 0.001
+- id: c3w2-sum-expectations-find-error-06
+  topic: sum-expectations
+  type: find-error
+  difficulty: 2
+  tags:
+  - error
+  prompt:
+    vi: Tìm lỗi đầu tiên trong lời giải về sum-expectations.
+    en: Find the first error in this sum-expectations solution.
+  explanation:
+    vi: Bước sai áp dụng một điều kiện không được đảm bảo.
+    en: The error is treating dependence as automatic independence; expectation of a sum did not require that extra step.
+  hints:
+  - vi: Độc lập phải được cho hoặc chứng minh.
+    en: Independence must be stated or proven.
+  steps:
+  - vi: Gọi dữ liệu/PMF đã cho là đối tượng cần phân tích.
+    en: Let the given data/PMF be the object to analyze.
+  - vi: Viết công thức tổng quát trước khi thay số.
+    en: Write the general formula before substituting.
+  - vi: Giả sử các biến độc lập chỉ vì chúng có hai tên khác nhau.
+    en: Assume the variables are independent just because they have two different names.
+  - vi: Tiếp tục dùng công thức tích để ra kết quả.
+    en: Continue using the product formula to get the result.
+  answer: 2
+- id: c3w2-sum-expectations-parametric-07
+  topic: sum-expectations
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: Bài sinh tự động từ generator.
+    en: Auto-generated drill from the generator.
+  explanation:
+    vi: Generator sẽ thay prompt bằng dữ liệu mới.
+    en: The generator replaces this prompt with fresh data.
+  hints: []
+  generator: binomial-prob
+  params: {}

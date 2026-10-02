@@ -1,0 +1,361 @@
+flashcards:
+- id: c1w4-fc-pca-01
+  topic: ml-motivation-pca
+  kind: concept
+  front:
+    vi: 'PCA cố gắng giữ loại thông tin nào khi giảm từ 8 chiều xuống 3 chiều?'
+    en: 'What kind of information does PCA try to keep when reducing 8 dimensions to 3?'
+  back:
+    vi: 'Các hướng có variance lớn nhất. Chúng thường chứa tín hiệu mạnh hơn các hướng gần như phẳng.'
+    en: 'The directions with largest variance. They usually carry more signal than nearly flat directions.'
+- id: c1w4-fc-pca-02
+  topic: ml-motivation-pca
+  kind: formula
+  front:
+    vi: 'Tỉ lệ variance giữ bởi hai PC đầu có eigenvalues $7,2,1$ là gì?'
+    en: 'What variance ratio do the first two PCs keep for eigenvalues $7,2,1$?'
+  back:
+    vi: '$(7+2)/(7+2+1)=0.9$.'
+    en: '$(7+2)/(7+2+1)=0.9$.'
+- id: c1w4-fc-pca-03
+  topic: ml-motivation-pca
+  kind: compute
+  front:
+    vi: 'Nếu covariance có eigenvalues $9$ và $1$, PC1 giữ bao nhiêu phần trăm variance?'
+    en: 'If covariance eigenvalues are $9$ and $1$, what percent of variance does PC1 keep?'
+  back:
+    vi: '$90\%$, vì $9/(9+1)=0.9$.'
+    en: '$90\%$, because $9/(9+1)=0.9$.'
+- id: c1w4-fc-rank-01
+  topic: singularity-rank-transformations
+  kind: concept
+  front:
+    vi: 'Rank 1 của phép biến đổi 2D nói gì về hình ảnh của cả mặt phẳng?'
+    en: 'What does rank 1 of a 2D transformation say about the image of the plane?'
+  back:
+    vi: 'Cả mặt phẳng bị ép lên một đường qua gốc.'
+    en: 'The whole plane is collapsed onto one line through the origin.'
+- id: c1w4-fc-rank-02
+  topic: singularity-rank-transformations
+  kind: formula
+  front:
+    vi: 'Điều kiện determinant nào tương đương full rank cho ma trận 2×2?'
+    en: 'What determinant condition is equivalent to full rank for a 2×2 matrix?'
+  back:
+    vi: '$\det(A)\ne0$. Khi đó rank là 2.'
+    en: '$\det(A)\ne0$. Then the rank is 2.'
+- id: c1w4-fc-rank-03
+  topic: singularity-rank-transformations
+  kind: compute
+  front:
+    vi: 'Rank của $[[1,1],[2,2]]$ là bao nhiêu?'
+    en: 'What is the rank of $[[1,1],[2,2]]$?'
+  back:
+    vi: '$1$. Hàng hai là 2 lần hàng một.'
+    en: '$1$. The second row is twice the first.'
+- id: c1w4-fc-area-01
+  topic: determinant-area
+  kind: formula
+  front:
+    vi: 'Determinant của $[[a,b],[c,d]]$ là gì?'
+    en: 'What is the determinant of $[[a,b],[c,d]]$?'
+  back:
+    vi: '$ad-bc$.'
+    en: '$ad-bc$.'
+- id: c1w4-fc-area-02
+  topic: determinant-area
+  kind: concept
+  front:
+    vi: 'Vì sao determinant âm không có nghĩa là diện tích âm?'
+    en: 'Why does a negative determinant not mean negative geometric area?'
+  back:
+    vi: 'Dấu cho orientation; diện tích hình học là trị tuyệt đối.'
+    en: 'The sign gives orientation; geometric area is the absolute value.'
+- id: c1w4-fc-area-03
+  topic: determinant-area
+  kind: compute
+  front:
+    vi: '$\det([[1,3],[2,1]])=?$'
+    en: '$\det([[1,3],[2,1]])=?$'
+  back:
+    vi: '$-5$, vì $1\cdot1-3\cdot2=-5$.'
+    en: '$-5$, because $1\cdot1-3\cdot2=-5$.'
+- id: c1w4-fc-product-01
+  topic: determinant-product
+  kind: formula
+  front:
+    vi: 'Công thức determinant cho tích $AB$ là gì?'
+    en: 'What is the determinant formula for a product $AB$?'
+  back:
+    vi: '$\det(AB)=\det(A)\det(B)$.'
+    en: '$\det(AB)=\det(A)\det(B)$.'
+- id: c1w4-fc-product-02
+  topic: determinant-product
+  kind: compute
+  front:
+    vi: 'Nếu $\det(A)=5$ và $\det(B)=8$, $\det(AB)$ bằng bao nhiêu?'
+    en: 'If $\det(A)=5$ and $\det(B)=8$, what is $\det(AB)$?'
+  back:
+    vi: '$40$. Determinants nhân với nhau.'
+    en: '$40$. Determinants multiply.'
+- id: c1w4-fc-product-03
+  topic: determinant-product
+  kind: concept
+  front:
+    vi: 'Tích của ma trận singular với ma trận non-singular luôn thuộc loại nào?'
+    en: 'What type is the product of a singular matrix and a non-singular matrix?'
+  back:
+    vi: 'Singular, vì determinant của tích có một thừa số bằng 0.'
+    en: 'Singular, because the product determinant has a zero factor.'
+- id: c1w4-fc-inverse-01
+  topic: determinant-inverse
+  kind: formula
+  front:
+    vi: 'Nếu $A$ khả nghịch, $\det(A^{-1})$ bằng gì?'
+    en: 'If $A$ is invertible, what is $\det(A^{-1})$?'
+  back:
+    vi: '$1/\det(A)$.'
+    en: '$1/\det(A)$.'
+- id: c1w4-fc-inverse-02
+  topic: determinant-inverse
+  kind: compute
+  front:
+    vi: 'Nếu $\det(A^{-1})=0.125$, $\det(A)$ bằng bao nhiêu?'
+    en: 'If $\det(A^{-1})=0.125$, what is $\det(A)$?'
+  back:
+    vi: '$8$, vì $0.125=1/8$.'
+    en: '$8$, because $0.125=1/8$.'
+- id: c1w4-fc-inverse-03
+  topic: determinant-inverse
+  kind: concept
+  front:
+    vi: 'Tại sao không hỏi determinant của inverse khi $\det(A)=0$?'
+    en: 'Why should we not ask for the determinant of the inverse when $\det(A)=0$?'
+  back:
+    vi: 'Vì inverse không tồn tại; phép biến đổi đã làm mất chiều.'
+    en: 'Because the inverse does not exist; the transformation has lost dimension.'
+- id: c1w4-fc-bases-01
+  topic: bases
+  kind: concept
+  front:
+    vi: 'Hai vector nào tạo basis của $\mathbb R^2$?'
+    en: 'Which two vectors form a basis of $\mathbb R^2$?'
+  back:
+    vi: 'Hai vector không song song, tương đương determinant của ma trận cột khác 0.'
+    en: 'Two non-parallel vectors, equivalently a nonzero column-matrix determinant.'
+- id: c1w4-fc-bases-02
+  topic: bases
+  kind: formula
+  front:
+    vi: 'Một basis phải thỏa hai điều kiện nào?'
+    en: 'What two conditions must a basis satisfy?'
+  back:
+    vi: 'Span toàn không gian và độc lập tuyến tính.'
+    en: 'It spans the space and is linearly independent.'
+- id: c1w4-fc-bases-03
+  topic: bases
+  kind: compute
+  front:
+    vi: '$(1,0)$ và $(2,0)$ có là basis của $\mathbb R^2$ không?'
+    en: 'Do $(1,0)$ and $(2,0)$ form a basis of $\mathbb R^2$?'
+  back:
+    vi: 'Không. Chúng song song và chỉ span trục x.'
+    en: 'No. They are parallel and only span the x-axis.'
+- id: c1w4-fc-span-01
+  topic: span
+  kind: formula
+  front:
+    vi: 'Span của $v_1,v_2$ được mô tả bằng tập nào?'
+    en: 'How is the span of $v_1,v_2$ described as a set?'
+  back:
+    vi: '$\{c_1v_1+c_2v_2: c_1,c_2\in\mathbb R\}$.'
+    en: '$\{c_1v_1+c_2v_2: c_1,c_2\in\mathbb R\}$.'
+- id: c1w4-fc-span-02
+  topic: span
+  kind: concept
+  front:
+    vi: 'Span của một vector khác 0 trong mặt phẳng có hình dạng gì?'
+    en: 'What shape is the span of one nonzero vector in the plane?'
+  back:
+    vi: 'Một đường thẳng qua gốc theo hướng vector đó.'
+    en: 'A line through the origin in that vector direction.'
+- id: c1w4-fc-span-03
+  topic: span
+  kind: compute
+  front:
+    vi: '$(3,6)$ có thuộc span của $(1,2)$ không?'
+    en: 'Is $(3,6)$ in the span of $(1,2)$?'
+  back:
+    vi: 'Có, vì $(3,6)=3(1,2)$.'
+    en: 'Yes, because $(3,6)=3(1,2)$.'
+- id: c1w4-fc-ebasis-01
+  topic: eigenbasis
+  kind: concept
+  front:
+    vi: 'Trong eigenbasis, ma trận biến đổi có dạng đặc biệt nào?'
+    en: 'In an eigenbasis, what special form does the transformation matrix have?'
+  back:
+    vi: 'Dạng diagonal; mỗi trục riêng chỉ bị scale.'
+    en: 'Diagonal form; each eigen-axis is only scaled.'
+- id: c1w4-fc-ebasis-02
+  topic: eigenbasis
+  kind: formula
+  front:
+    vi: 'Trong $A=PDP^{-1}$, các cột của $P$ là gì?'
+    en: 'In $A=PDP^{-1}$, what are the columns of $P$?'
+  back:
+    vi: 'Các eigenvectors độc lập của $A$.'
+    en: 'Independent eigenvectors of $A$.'
+- id: c1w4-fc-ebasis-03
+  topic: eigenbasis
+  kind: compute
+  front:
+    vi: 'Với $D=\mathrm{diag}(2,3)$, $D(4,5)^T=?$'
+    en: 'For $D=\mathrm{diag}(2,3)$, what is $D(4,5)^T$?'
+  back:
+    vi: '$(8,15)^T$. Tọa độ thứ nhất nhân 2, tọa độ thứ hai nhân 3.'
+    en: '$(8,15)^T$. The first coordinate is doubled, the second tripled.'
+- id: c1w4-fc-eig-01
+  topic: eigenvalues-eigenvectors
+  kind: formula
+  front:
+    vi: 'Phương trình định nghĩa eigenvector là gì?'
+    en: 'What equation defines an eigenvector?'
+  back:
+    vi: '$Av=\lambda v$ với $v\ne0$.'
+    en: '$Av=\lambda v$ with $v\ne0$.'
+- id: c1w4-fc-eig-02
+  topic: eigenvalues-eigenvectors
+  kind: concept
+  front:
+    vi: 'Vì sao vector 0 bị loại khỏi định nghĩa eigenvector?'
+    en: 'Why is the zero vector excluded from the definition of eigenvector?'
+  back:
+    vi: 'Vì $A0=\lambda0$ đúng với mọi $\lambda$, nên nó không chỉ ra hướng riêng nào.'
+    en: 'Because $A0=\lambda0$ for every $\lambda$, so it gives no special direction.'
+- id: c1w4-fc-eig-03
+  topic: eigenvalues-eigenvectors
+  kind: compute
+  front:
+    vi: 'Eigenvalues của $[[2,0],[0,3]]$ là gì?'
+    en: 'What are the eigenvalues of $[[2,0],[0,3]]$?'
+  back:
+    vi: '$2$ và $3$, vì ma trận diagonal có eigenvalues trên đường chéo.'
+    en: '$2$ and $3$, because a diagonal matrix has diagonal eigenvalues.'
+- id: c1w4-fc-char-01
+  topic: characteristic-polynomial-pca
+  kind: formula
+  front:
+    vi: 'Characteristic equation được viết như thế nào?'
+    en: 'How is the characteristic equation written?'
+  back:
+    vi: '$\det(A-\lambda I)=0$.'
+    en: '$\det(A-\lambda I)=0$.'
+- id: c1w4-fc-char-02
+  topic: characteristic-polynomial-pca
+  kind: compute
+  front:
+    vi: 'Trace và determinant của $[[2,1],[0,3]]$ là gì?'
+    en: 'What are the trace and determinant of $[[2,1],[0,3]]$?'
+  back:
+    vi: 'Trace $5$, determinant $6$. Polynomial là $\lambda^2-5\lambda+6$.'
+    en: 'Trace $5$, determinant $6$. The polynomial is $\lambda^2-5\lambda+6$.'
+- id: c1w4-fc-char-03
+  topic: characteristic-polynomial-pca
+  kind: concept
+  front:
+    vi: 'Trong PCA, vì sao eigenvalue lớn được ưu tiên?'
+    en: 'In PCA, why is a large eigenvalue preferred?'
+  back:
+    vi: 'Nó biểu thị variance lớn theo eigenvector tương ứng.'
+    en: 'It represents large variance along the corresponding eigenvector.'
+- id: c1w4-fc-numpy-01
+  topic: determinant-area
+  kind: formula
+  front:
+    vi: 'Hàm NumPy nào tính determinant?'
+    en: 'Which NumPy function computes a determinant?'
+  back:
+    vi: '`np.linalg.det(A)`.'
+    en: '`np.linalg.det(A)`.'
+- id: c1w4-fc-numpy-02
+  topic: singularity-rank-transformations
+  kind: formula
+  front:
+    vi: 'Hàm NumPy nào ước lượng rank của ma trận?'
+    en: 'Which NumPy function estimates matrix rank?'
+  back:
+    vi: '`np.linalg.matrix_rank(A)`.'
+    en: '`np.linalg.matrix_rank(A)`.'
+- id: c1w4-fc-numpy-03
+  topic: eigenvalues-eigenvectors
+  kind: formula
+  front:
+    vi: 'Hàm NumPy nào trả eigenvalues và eigenvectors tổng quát?'
+    en: 'Which NumPy function returns general eigenvalues and eigenvectors?'
+  back:
+    vi: '`np.linalg.eig(A)`; eigenvectors nằm trong các cột.'
+    en: '`np.linalg.eig(A)`; eigenvectors are stored in the columns.'
+- id: c1w4-fc-numpy-04
+  topic: characteristic-polynomial-pca
+  kind: formula
+  front:
+    vi: 'Với covariance đối xứng trong PCA, nên dùng hàm eigen nào?'
+    en: 'For a symmetric covariance matrix in PCA, which eigen routine is preferred?'
+  back:
+    vi: '`np.linalg.eigh(C)`, vì covariance là symmetric/Hermitian.'
+    en: '`np.linalg.eigh(C)`, because covariance is symmetric/Hermitian.'
+- id: c1w4-fc-quiz-01
+  topic: determinant-product
+  kind: concept
+  front:
+    vi: 'Quiz trong slides: singular nhân non-singular cho kết quả gì?'
+    en: 'Slide quiz: singular times non-singular gives what result?'
+  back:
+    vi: 'Singular. Determinant của tích bằng 0.'
+    en: 'Singular. The product determinant is 0.'
+- id: c1w4-fc-quiz-02
+  topic: determinant-inverse
+  kind: compute
+  front:
+    vi: 'Slide inverse: determinant $5$ cho inverse determinant nào?'
+    en: 'Slide inverse: determinant $5$ gives what inverse determinant?'
+  back:
+    vi: '$0.2$, vì đó là $1/5$.'
+    en: '$0.2$, because it is $1/5$.'
+- id: c1w4-fc-quiz-03
+  topic: eigenvalues-eigenvectors
+  kind: compute
+  front:
+    vi: 'Ma trận quiz $[[9,4],[4,3]]$ có eigenvalues nào?'
+    en: 'What eigenvalues does the quiz matrix $[[9,4],[4,3]]$ have?'
+  back:
+    vi: '$11$ và $1$. Polynomial là $\lambda^2-12\lambda+11$.'
+    en: '$11$ and $1$. The polynomial is $\lambda^2-12\lambda+11$.'
+- id: c1w4-fc-null-01
+  topic: singularity-rank-transformations
+  kind: concept
+  front:
+    vi: 'Null space dimension liên hệ với rank thế nào trong các slide 2D?'
+    en: 'How does null-space dimension relate to rank in the 2D slides?'
+  back:
+    vi: 'Rank 2 cho null space chỉ gốc; rank 1 cho một đường; rank 0 cho cả mặt phẳng.'
+    en: 'Rank 2 gives only the origin; rank 1 gives a line; rank 0 gives the whole plane.'
+- id: c1w4-fc-orth-01
+  topic: bases
+  kind: concept
+  front:
+    vi: 'Orthogonal basis khác gì so với basis thường?'
+    en: 'How does an orthogonal basis differ from a general basis?'
+  back:
+    vi: 'Các vector basis vuông góc nhau; nếu thêm độ dài 1 thì là orthonormal.'
+    en: 'Basis vectors are perpendicular; with length 1 they are orthonormal.'
+- id: c1w4-fc-pca-04
+  topic: ml-motivation-pca
+  kind: formula
+  front:
+    vi: 'Công thức projection của dữ liệu đã center $X_c$ lên PC đơn vị $u$ là gì?'
+    en: 'What is the projection formula for centered data $X_c$ onto a unit PC $u$?'
+  back:
+    vi: '$X_cu$. Mỗi hàng cho một tọa độ 1D.'
+    en: '$X_cu$. Each row gives one 1D coordinate.'

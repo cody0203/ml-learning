@@ -1,0 +1,143 @@
+exercises:
+- id: c1w1-mat-mcq-01
+  topic: matrices-singularity
+  type: mcq
+  difficulty: 1
+  tags:
+  - matrix-form
+  prompt:
+    vi: Ma trận hệ số của $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$?
+    en: Coefficient matrix of $a+b+c=10$, $a+2b+c=15$, $a+b+2c=12$?
+  explanation:
+    vi: Lấy hệ số $a,b,c$ theo hàng.
+    en: Take coefficients of $a,b,c$ by row.
+  hints: []
+  options:
+  - vi: $\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$
+    en: $\begin{bmatrix}1&1&1\\1&2&1\\1&1&2\end{bmatrix}$
+  - vi: $\begin{bmatrix}10\\15\\12\end{bmatrix}$
+    en: $\begin{bmatrix}10\\15\\12\end{bmatrix}$
+  answer:
+  - 0
+- id: c1w1-mat-tf-02
+  topic: matrices-singularity
+  type: true-false
+  difficulty: 2
+  tags:
+  - singular
+  prompt:
+    vi: Đổi $b$ có thể biến $A$ singular thành non-singular.
+    en: Changing $b$ can make singular $A$ non-singular.
+  explanation:
+    vi: 'Sai: singularity thuộc về $A$.'
+    en: 'False: singularity belongs to $A$.'
+  hints: []
+  answer: false
+  reasons:
+  - vi: $A$ quyết định determinant.
+    en: $A$ determines determinant.
+  - vi: $b$ là một hàng của $A$.
+    en: $b$ is a row of $A$.
+  reasonAnswer: 0
+- id: c1w1-mat-matrix-03
+  topic: matrices-singularity
+  type: matrix
+  difficulty: 1
+  tags:
+  - augmented
+  prompt:
+    vi: Ma trận mở rộng của $a+b=10$, $a+2b=12$?
+    en: Augmented matrix of $a+b=10$, $a+2b=12$?
+  explanation:
+    vi: Thêm cột hằng số vào bên phải.
+    en: Append constants on the right.
+  hints: []
+  answer:
+  - - 1
+    - 1
+    - 10
+  - - 1
+    - 2
+    - 12
+- id: c1w1-mat-construct-04
+  topic: matrices-singularity
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo ma trận 2×2 nguyên sao cho với $b=[1,2]^T$ có nghiệm duy nhất.
+    en: Construct integer 2×2 matrix so with $b=[1,2]^T$ the system has unique solution.
+  explanation:
+    vi: Bất kỳ ma trận non-singular nào cũng được.
+    en: Any non-singular matrix works.
+  hints: []
+  rows: 2
+  cols: 2
+  constraints:
+  - kind: uniqueSolutionWith
+    b:
+    - 1
+    - 2
+  - kind: integerEntries
+  example:
+  - - 1
+    - 0
+  - - 0
+    - 1
+- id: c1w1-mat-code-05
+  topic: matrices-singularity
+  type: code
+  difficulty: 2
+  tags:
+  - code
+  prompt:
+    vi: Cài `is_singular_2x2(A)` bằng $ad-bc$, không dùng `np.linalg.det`.
+    en: Implement `is_singular_2x2(A)` using $ad-bc$, no `np.linalg.det`.
+  explanation:
+    vi: Det gần 0 thì singular.
+    en: Near-zero det means singular.
+  hints: []
+  starter: "def is_singular_2x2(A):\n    return False"
+  solution: "def is_singular_2x2(A):\n    det=A[0][0]*A[1][1]-A[0][1]*A[1][0]\n    return abs(det)<1e-9"
+  tests: "def test_cases():\n    assert is_singular_2x2([[1,2],[2,4]]) is True\n    assert is_singular_2x2([[1,1],[1,2]]) is False\n    assert is_singular_2x2([[2,-1],[-6,3]]) is True"
+- id: c1w1-mat-multi-06
+  topic: matrices-singularity
+  type: multi-step
+  difficulty: 2
+  tags:
+  - constants
+  prompt:
+    vi: Cùng $A=\begin{bmatrix}1&1\\2&2\end{bmatrix}$, xét hai $b$.
+    en: Same $A=\begin{bmatrix}1&1\\2&2\end{bmatrix}$, compare two $b$.
+  explanation:
+    vi: $A$ singular; $b$ quyết định nhất quán hay mâu thuẫn.
+    en: $A$ is singular; $b$ decides consistency.
+  hints: []
+  parts:
+  - type: true-false
+    prompt:
+      vi: $b=[10,20]^T$ cho vô số nghiệm.
+      en: $b=[10,20]^T$ gives infinite solutions.
+    answer: true
+  - type: true-false
+    prompt:
+      vi: $b=[10,24]^T$ cũng vô số nghiệm.
+      en: $b=[10,24]^T$ also gives infinite solutions.
+    answer: false
+- id: c1w1-mat-param-07
+  topic: matrices-singularity
+  type: parametric
+  difficulty: 1
+  tags:
+  - drill
+  prompt:
+    vi: 'Bài luyện: tìm rank ma trận 3×3.'
+    en: 'Drill: find rank of a 3×3 matrix.'
+  explanation:
+    vi: Rank là số pivot.
+    en: Rank is the number of pivots.
+  hints: []
+  generator: rank
+  params:
+    size: 3

@@ -1,0 +1,232 @@
+{
+  "exercises": [
+    {
+      "id": "c3w1-complement-rule-mcq-01",
+      "topic": "complement-rule",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "concept"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Phát biểu nào mô tả đúng nhất chủ đề quy tắc bù?",
+        "en": "Which statement best describes complement rule?"
+      },
+      "explanation": {
+        "vi": "Đáp án đúng dùng biến cố đối để tránh liệt kê dài. Các đáp án sai hoặc trừ nhầm khỏi số lần tung, hoặc xem biến cố bù của HHH là TTT, hoặc quên rằng xác suất toàn bộ bằng 1.",
+        "en": "The correct answer uses the opposite event to avoid a long listing. The wrong choices subtract from the number of tosses, treat the complement of HHH as only TTT, or forget that total probability is 1."
+      },
+      "options": [
+        {
+          "vi": "Trọng tâm là using the easier opposite event.",
+          "en": "The focus is using the easier opposite event."
+        },
+        {
+          "vi": "Để tìm not HHH, lấy $3-P(HHH)$ vì có ba lần tung.",
+          "en": "To find not HHH, compute $3-P(HHH)$ because there are three tosses."
+        },
+        {
+          "vi": "Biến cố bù của HHH chỉ là TTT.",
+          "en": "The complement of HHH is only TTT."
+        },
+        {
+          "vi": "$P(A^c)$ bằng $P(A)$ nếu đồng xu công bằng.",
+          "en": "$P(A^c)$ equals $P(A)$ whenever the coin is fair."
+        }
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "c3w1-complement-rule-numeric-02",
+      "topic": "complement-rule",
+      "type": "numeric",
+      "difficulty": 1,
+      "tags": [
+        "compute"
+      ],
+      "hints": [],
+      "prompt": {
+        "vi": "Nếu $P(A)=1/8$, tính $P(A^c)$.",
+        "en": "If $P(A)=1/8$, compute $P(A^c)$."
+      },
+      "explanation": {
+        "vi": "1-1/8=7/8.",
+        "en": "1-1/8=7/8."
+      },
+      "answers": [
+        {
+          "value": 0.875
+        }
+      ],
+      "tolerance": 0.001
+    },
+    {
+      "id": "c3w1-complement-rule-finderror-03",
+      "topic": "complement-rule",
+      "type": "find-error",
+      "difficulty": 2,
+      "tags": [
+        "error-analysis"
+      ],
+      "hints": [
+        {
+          "vi": "Hãy nhớ công thức hợp tổng quát.",
+          "en": "Remember the general union formula."
+        }
+      ],
+      "prompt": {
+        "vi": "Tìm lỗi đầu tiên trong lời giải quy tắc bù.",
+        "en": "Find the first wrong step in the complement rule solution."
+      },
+      "explanation": {
+        "vi": "Lỗi là dùng quy tắc sai trước khi kiểm tra điều kiện áp dụng.",
+        "en": "The first wrong step ignores that a complement should remove only the target event from probability 1."
+      },
+      "steps": [
+        {
+          "vi": "Gọi $A$ và $B$ là hai biến cố cần xét.",
+          "en": "Let $A$ and $B$ be the events of interest."
+        },
+        {
+          "vi": "Nhìn thấy từ 'or' nên viết ngay $P(A\\cup B)=P(A)+P(B)$.",
+          "en": "Seeing the word 'or', immediately write $P(A\\cup B)=P(A)+P(B)$."
+        },
+        {
+          "vi": "Không cần biết $A$ và $B$ có giao nhau hay không.",
+          "en": "There is no need to know whether $A$ and $B$ overlap."
+        },
+        {
+          "vi": "Kết luận xác suất cuối cùng có thể lớn hơn 1.",
+          "en": "Conclude the final probability may be greater than 1."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "c3w1-complement-rule-parsons-04",
+      "topic": "complement-rule",
+      "type": "parsons",
+      "difficulty": 2,
+      "tags": [
+        "procedure"
+      ],
+      "hints": [
+        {
+          "vi": "Đừng bắt đầu bằng máy tính.",
+          "en": "Do not start with the calculator."
+        }
+      ],
+      "prompt": {
+        "vi": "Sắp xếp quy trình giải bài quy tắc bù.",
+        "en": "Order the workflow for a complement rule problem."
+      },
+      "explanation": {
+        "vi": "Thứ tự đúng luôn đi từ mô hình đến công thức rồi mới tính.",
+        "en": "For complements, the efficient order is to find the easier opposite event and subtract from 1."
+      },
+      "steps": [
+        {
+          "vi": "Xác định thí nghiệm và biến cố/biến ngẫu nhiên.",
+          "en": "Identify the experiment and event/random variable."
+        },
+        {
+          "vi": "Kiểm tra giả định: rời nhau, độc lập, có điều kiện, rời rạc hay liên tục.",
+          "en": "Check assumptions: disjoint, independent, conditional, discrete, or continuous."
+        },
+        {
+          "vi": "Chọn công thức phù hợp và thay số.",
+          "en": "Choose the appropriate formula and substitute values."
+        },
+        {
+          "vi": "Kiểm tra kết quả nằm trong khoảng xác suất hợp lệ.",
+          "en": "Check the result lies in the valid probability range."
+        }
+      ]
+    },
+    {
+      "id": "c3w1-complement-rule-multistep-05",
+      "topic": "complement-rule",
+      "type": "multi-step",
+      "difficulty": 3,
+      "tags": [
+        "word-problem"
+      ],
+      "hints": [
+        {
+          "vi": "Xác định mẫu số ở từng phần.",
+          "en": "Identify the denominator in each part."
+        }
+      ],
+      "prompt": {
+        "vi": "Bài nhiều bước kết nối quy tắc bù với ví dụ xúc xắc/email.",
+        "en": "Multi-step problem connecting complement rule to a dice/email example."
+      },
+      "explanation": {
+        "vi": "Mỗi phần kiểm tra một quyết định mô hình hóa khác nhau.",
+        "en": "The parts separate counting coin strings, recognizing the complement, and avoiding the all-tails trap."
+      },
+      "parts": [
+        {
+          "type": "numeric",
+          "prompt": {
+            "vi": "Hai xúc xắc: xác suất tổng bằng 7 là bao nhiêu?",
+            "en": "Two dice: what is the probability the sum is 7?"
+          },
+          "answers": [
+            {
+              "value": 0.16666666666666666
+            }
+          ],
+          "tolerance": 0.001,
+          "explanation": {
+            "vi": "Có 6 kết quả trên 36.",
+            "en": "There are 6 outcomes out of 36."
+          }
+        },
+        {
+          "type": "true-false",
+          "prompt": {
+            "vi": "Biết xúc xắc đầu là 6 không đổi mẫu số.",
+            "en": "Knowing the first die is 6 does not change the denominator."
+          },
+          "answer": false,
+          "explanation": {
+            "vi": "Điều kiện làm mẫu số còn 6.",
+            "en": "The condition reduces the denominator to 6."
+          }
+        },
+        {
+          "type": "mcq",
+          "prompt": {
+            "vi": "Trong lọc spam, prior là gì?",
+            "en": "In spam filtering, what is the prior?"
+          },
+          "options": [
+            {
+              "vi": "Tỉ lệ email spam trong hộp thư trước khi mở email.",
+              "en": "The mailbox spam rate before inspecting the message text."
+            },
+            {
+              "vi": "$P(word\\mid spam)$.",
+              "en": "$P(word\\mid spam)$."
+            },
+            {
+              "vi": "Xác suất spam sau khi đã thấy từ 'lottery'.",
+              "en": "The spam probability after seeing the word 'lottery'."
+            }
+          ],
+          "answer": [
+            0
+          ],
+          "explanation": {
+            "vi": "Prior là xác suất trước bằng chứng.",
+            "en": "The prior is probability before evidence."
+          }
+        }
+      ]
+    }
+  ]
+}

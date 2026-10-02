@@ -1,0 +1,173 @@
+exercises:
+- id: c1w1-plane-mcq-01
+  topic: planes-3d
+  type: mcq
+  difficulty: 1
+  tags:
+  - planes
+  prompt:
+    vi: $a+b+c=1$ biểu diễn gì?
+    en: What does $a+b+c=1$ represent?
+  explanation:
+    vi: Một phương trình tuyến tính 3 biến là mặt phẳng.
+    en: A linear equation in 3 variables is a plane.
+  hints: []
+  options:
+  - vi: Điểm
+    en: Point
+  - vi: Đường parabol
+    en: Parabola
+  - vi: Mặt phẳng
+    en: Plane
+  answer:
+  - 2
+- id: c1w1-plane-tf-02
+  topic: planes-3d
+  type: true-false
+  difficulty: 1
+  tags:
+  - substitution
+  prompt:
+    vi: $(0,0,0)$ nằm trên $3a-5b+2c=0$.
+    en: $(0,0,0)$ lies on $3a-5b+2c=0$.
+  explanation:
+    vi: Thay vào được $0=0$.
+    en: Substitution gives $0=0$.
+  hints: []
+  answer: true
+  reasons:
+  - vi: Tọa độ thỏa phương trình.
+    en: The coordinates satisfy the equation.
+  - vi: Mọi mặt phẳng qua gốc.
+    en: Every plane passes through origin.
+  reasonAnswer: 0
+- id: c1w1-plane-match-03
+  topic: planes-3d
+  type: matching
+  difficulty: 1
+  tags:
+  - geometry
+  prompt:
+    vi: Ghép giao ba mặt phẳng với số nghiệm.
+    en: Match three-plane intersection to solution count.
+  explanation:
+    vi: Nghiệm là giao chung.
+    en: Solutions are common intersections.
+  hints: []
+  pairs:
+  - left:
+      vi: Một điểm
+      en: One point
+    right:
+      vi: Một nghiệm
+      en: One solution
+  - left:
+      vi: Một đường
+      en: One line
+    right:
+      vi: Vô số nghiệm
+      en: Infinitely many
+  - left:
+      vi: Không điểm chung
+      en: No common point
+    right:
+      vi: Vô nghiệm
+      en: No solution
+- id: c1w1-plane-num-04
+  topic: planes-3d
+  type: numeric
+  difficulty: 1
+  tags:
+  - intercept
+  prompt:
+    vi: Mặt phẳng $a+b+c=6$ cắt trục $c$ tại đâu?
+    en: Where does $a+b+c=6$ meet the $c$-axis?
+  explanation:
+    vi: Đặt $a=b=0$, được $c=6$.
+    en: Set $a=b=0$, get $c=6$.
+  hints: []
+  answers:
+  - value: 6
+- id: c1w1-plane-construct-05
+  topic: planes-3d
+  type: construct
+  difficulty: 2
+  tags:
+  - construct
+  prompt:
+    vi: Tạo vector nguyên khác 0 trên mặt phẳng $a+b+c=0$.
+    en: Construct a nonzero integer vector on plane $a+b+c=0$.
+  explanation:
+    vi: Cần tổng ba tọa độ bằng 0.
+    en: Need coordinates to sum to 0.
+  hints: []
+  rows: 3
+  cols: 1
+  constraints:
+  - kind: solves
+    A:
+    - - 1
+      - 1
+      - 1
+    b:
+    - 0
+  - kind: integerEntries
+  - kind: nonzero
+  example:
+  - - 1
+  - - -1
+  - - 0
+- id: c1w1-plane-multi-06
+  topic: planes-3d
+  type: multi-step
+  difficulty: 2
+  tags:
+  - homogeneous
+  prompt:
+    vi: Hệ thuần nhất $a+b+c=0$, $a+2b+c=0$, $a+b+2c=0$.
+    en: Homogeneous system $a+b+c=0$, $a+2b+c=0$, $a+b+2c=0$.
+  explanation:
+    vi: Gốc luôn là nghiệm; hàng độc lập nên là nghiệm duy nhất.
+    en: Origin is always a solution; independent rows make it unique.
+  hints: []
+  parts:
+  - type: true-false
+    prompt:
+      vi: $(0,0,0)$ là nghiệm.
+      en: $(0,0,0)$ is a solution.
+    answer: true
+  - type: mcq
+    prompt:
+      vi: Loại hệ?
+      en: System type?
+    options:
+    - vi: Non-singular, duy nhất
+      en: Non-singular, unique
+    - vi: Redundant
+      en: Redundant
+    - vi: Contradictory
+      en: Contradictory
+    answer:
+    - 0
+- id: c1w1-plane-parsons-07
+  topic: planes-3d
+  type: parsons
+  difficulty: 2
+  tags:
+  - procedure
+  prompt:
+    vi: Sắp xếp cách kiểm tra điểm trên mặt phẳng.
+    en: Order how to check a point on a plane.
+  explanation:
+    vi: Thay tọa độ vào rồi so sánh hai vế.
+    en: Substitute coordinates and compare sides.
+  hints: []
+  steps:
+  - vi: Ghi phương trình mặt phẳng.
+    en: Write the plane equation.
+  - vi: Lấy tọa độ điểm.
+    en: Take point coordinates.
+  - vi: Thay vào vế trái.
+    en: Substitute into left side.
+  - vi: So sánh với vế phải.
+    en: Compare with right side.
